@@ -31,7 +31,7 @@ const CommentItem: React.FC<IProps> = (***REMOVED*** comment ***REMOVED***) => *
               ***REMOVED***moment(new Date(comment.stats.published)).fromNow()***REMOVED***
             </Typography>
           </div>
-          <Typography>***REMOVED***comment.comment.html***REMOVED***</Typography>
+          <Typography dangerouslySetInnerHTML=***REMOVED******REMOVED*** __html: comment.comment.html ***REMOVED******REMOVED*** />
         </div>
       </div>
       <Divider sx=***REMOVED******REMOVED*** backgroundColor: "#fff" ***REMOVED******REMOVED*** />
