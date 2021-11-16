@@ -12,7 +12,7 @@ interface IProps {
 const MetaHead: React.FC<IProps> = ({
   title,
   description = "The Unus Anus Archive",
-  image = "thumbnail.jpg",
+  image = "thumbnail.png",
   width = "1920",
   height = "1080",
 }) => {
