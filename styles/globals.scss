@@ -39,7 +39,10 @@ body ***REMOVED***
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: block;
+
+    @include md-down ***REMOVED***
+      display: block;
+***REMOVED***
 
     &:after ***REMOVED***
       content: "";
