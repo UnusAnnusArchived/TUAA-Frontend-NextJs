@@ -31,7 +31,7 @@ const CommentItem: React.FC<IProps> = ({ comment }) => {
               {moment(new Date(comment.stats.published)).fromNow()}
             </Typography>
           </div>
-          <Typography>{comment.comment.plaintext}</Typography>
+          <Typography>{comment.comment.html}</Typography>
         </div>
       </div>
       <Divider sx={{ backgroundColor: "#fff" }} />
