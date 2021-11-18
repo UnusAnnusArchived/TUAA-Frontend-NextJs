@@ -7,6 +7,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../components/theme/theme";
 import { RecoilRoot } from "recoil";
 import { GeistProvider } from "@geist-ui/react";
+import { useRouter } from "next/router";
+import { initTranslations } from "../src/i18n/i18n";
 
 export const reportWebVitals = (metric: NextWebVitalsMetric) => {
   const { id, name, label, value } = metric;
@@ -24,6 +26,9 @@ export const reportWebVitals = (metric: NextWebVitalsMetric) => {
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+  initTranslations(router.locale);
+
   return (
     <>
       <Head>

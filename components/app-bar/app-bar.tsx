@@ -23,11 +23,13 @@ import Menu from "@mui/material/Menu";
 import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { theme } from "../theme/theme";
+import { useTranslation } from "react-i18next";
 
 const ABar: React.FC = () => {
   const [isRouting, setIsRouting] = useState(false);
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setPreviousPage] = useRecoilState(previousPageAtom);
+  const { t } = useTranslation();
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -62,8 +64,6 @@ const ABar: React.FC = () => {
     setPreviousPage(router.asPath);
     router.push("/login");
   };
-
-  console.log(loggedInUser);
 
   return (
     <>
@@ -112,12 +112,12 @@ const ABar: React.FC = () => {
               </Link>
               {!loggedInUser && (
                 <Link passHref href="/register">
-                  <Button color="inherit">Register</Button>
+                  <Button color="inherit">{t("register:title")}</Button>
                 </Link>
               )}
               {!loggedInUser && (
                 <Button color="inherit" onClick={onClickLogin}>
-                  Login
+                  {t("login:title")}
                 </Button>
               )}
             </div>
@@ -165,12 +165,12 @@ const ABar: React.FC = () => {
         <Divider />
         <Link passHref href="/register">
           <MenuItem>
-            <Button color="inherit">Register</Button>
+            <Button color="inherit">{t("register:title")}</Button>
           </MenuItem>
         </Link>
         <MenuItem>
           <Button color="inherit" onClick={onClickLogin}>
-            Login
+            {t("login:title")}
           </Button>
         </MenuItem>
       </Menu>

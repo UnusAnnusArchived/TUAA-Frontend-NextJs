@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { IComment } from "../../src/types";
 import { endpoint } from "../../src/endpoints";
 import { AddComment, CommentItem } from ".";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   watchCode: string;
@@ -12,6 +13,8 @@ interface IProps {
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const CommentList: React.FC<IProps> = ({ watchCode }) => {
+  const { t } = useTranslation();
+
   const { data, mutate, isValidating, error } = useSWR<IComment[], any>(
     `${endpoint}/api/v2/comments/get/${watchCode}`,
     fetcher
@@ -24,12 +27,12 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
   return (
     <div>
       <Typography variant="h6" component="h2">
-        Comments
+        {t("comments:title")}
       </Typography>
       <AddComment watchCode={watchCode} onComment={onAdded} />
-      {error && <Typography>Comments failed to load</Typography>}
+      {error && <Typography>{t("comments:loadFail")}</Typography>}
       {data && data.length < 1 && (
-        <Typography>There are no comments</Typography>
+        <Typography>{t("comments:noComments")}</Typography>
       )}
       {data &&
         data.length > 0 &&

@@ -20,9 +20,11 @@ import { MetaHead } from "../components/meta-head";
 import { useRouter } from "next/router";
 import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
+import { useTranslation } from "react-i18next";
 
 const LoginPage: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
+  const { t } = useTranslation();
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -76,7 +78,7 @@ const LoginPage: React.FC = () => {
           router.push("/login");
           setToast({
             type: "success",
-            text: "Your account has been created! Please, login now.",
+            text: t("register:success"),
             delay: 10000,
           });
           return;
@@ -100,9 +102,9 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title="Register | The Unus Anus Archive" />
+      <MetaHead title={`${t("register:title")} | The Unus Anus Archive`} />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        Register new account
+        {t("register:titleLong")}
       </Typography>
       <form id="register-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -110,7 +112,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
             id="email-archive"
             name="email-archive"
-            label="Email"
+            label={t("register:email")}
             variant="standard"
             value={email}
             type="email"
@@ -120,7 +122,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
             id="username-archive"
             name="username-archive"
-            label="Username"
+            label={t("register:username")}
             variant="standard"
             value={username}
             type="text"
@@ -131,7 +133,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
           >
             <InputLabel htmlFor="standard-adornment-password">
-              Password
+              {t("register:password")}
             </InputLabel>
             <Input
               id="password-archive"
@@ -158,7 +160,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
           >
             <InputLabel htmlFor="standard-adornment-password">
-              Confirm password
+              {t("register:confirmPassword")}
             </InputLabel>
             <Input
               id="confirm-password-archive"
@@ -193,7 +195,7 @@ const LoginPage: React.FC = () => {
               disabled={!isValid()}
               onClick={onSubmit}
             >
-              Create an account
+              {t("register:registerBtn")}
             </Button>
           </div>
         </div>

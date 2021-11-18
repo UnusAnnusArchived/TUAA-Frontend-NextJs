@@ -15,6 +15,7 @@ import { ChangePFPResponse, CheckLoginKeyResponse } from "../../src/types";
 import Fade from "@mui/material/Fade";
 import LinearProgress from "@mui/material/LinearProgress";
 import { useToasts } from "@geist-ui/react";
+import { useTranslation } from "react-i18next";
 
 const Input = styled("input")({
   display: "none",
@@ -28,6 +29,7 @@ const ChangePic: React.FC = () => {
   const [isSendingImage, setIsSendingImage] = useState(false);
   const [progress, setProgress] = useState(0);
   const [, setToast] = useToasts();
+  const { t, i18n } = useTranslation();
 
   const { user } = loggedInUser;
 
@@ -88,7 +90,7 @@ const ChangePic: React.FC = () => {
           if (success) {
             setToast({
               type: "success",
-              text: "Profile picture changed!",
+              text: t("profile:pfp:success"),
             });
             handleClose();
             return;
@@ -101,7 +103,7 @@ const ChangePic: React.FC = () => {
     setIsSendingImage(false);
     setToast({
       type: "error",
-      text: "There has been an error changing your profile picture.",
+      text: t("profile:pfp:error"),
     });
   };
 
@@ -128,18 +130,21 @@ const ChangePic: React.FC = () => {
   return (
     <div>
       <Button variant="text" onClick={handleClickOpen}>
-        Change profile picture
+        {t("profile:pfp:change")}
       </Button>
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle className="text-center">
-          Change profile picture
+          {t("profile:pfp:change")}
         </DialogTitle>
 
         <DialogContent>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <DialogContentText>Upload a new profile picture.</DialogContentText>
             <DialogContentText>
-              Currently selected file: {image ? image.name : "none"}
+              {t("profile:pfp:description")}
+            </DialogContentText>
+            <DialogContentText>
+              {t("profile:pfp:selected")}:{" "}
+              {image ? image.name : t("profile:pfp:none")}
             </DialogContentText>
 
             {imageUrl && (
@@ -156,7 +161,7 @@ const ChangePic: React.FC = () => {
                   type="file"
                 />
                 <Button variant="contained" component="span">
-                  Choose image file
+                  {t("profile:pfp:fileSelect")}
                 </Button>
               </label>
             </div>
@@ -168,13 +173,13 @@ const ChangePic: React.FC = () => {
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onCancel}>Cancel</Button>
+          <Button onClick={onCancel}>{t("common:cancel")}</Button>
           <Button
             onClick={handleSubmit}
             disabled={image == null || isSendingImage}
             autoFocus
           >
-            Save
+            {t("common:save")}
           </Button>
         </DialogActions>
       </Dialog>

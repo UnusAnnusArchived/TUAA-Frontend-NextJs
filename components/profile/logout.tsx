@@ -8,11 +8,13 @@ import { userAtom } from "../../src/atoms";
 import { endpoint } from "../../src/endpoints";
 import { LogoutResponse } from "../../src/types";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 const Logout: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setToast] = useToasts();
   const router = useRouter();
+  const { t, i18n } = useTranslation();
 
   const { user } = loggedInUser;
 
@@ -29,7 +31,7 @@ const Logout: React.FC = () => {
           router.push("/");
           setToast({
             type: "success",
-            text: "You have logged out successfully",
+            text: t("profile:logout:successLocal"),
           });
         } else {
           setToast({ type: "error", text: res.data.error });
@@ -53,7 +55,7 @@ const Logout: React.FC = () => {
           router.push("/");
           setToast({
             type: "success",
-            text: "You have been logged out from all devices",
+            text: t("profile:logout:successAll"),
           });
         } else {
           setToast({ type: "error", text: res.data.error });
@@ -67,18 +69,22 @@ const Logout: React.FC = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-2">
-        Logout options
+        {t("profile:logout:title")}
       </Typography>
-      <div className="d-flex justify-content-center">
-        <Button variant="contained" onClick={logout} className="mx-3 my-1">
-          Log out from this device
+      <div className="d-flex flex-column flex-md-row justify-content-center">
+        <Button
+          variant="contained"
+          onClick={logout}
+          className="mx-3 my-2 my-md-1"
+        >
+          {t("profile:logout:local")}
         </Button>
         <Button
           variant="contained"
           onClick={logoutEverywhere}
-          className="mx-3 my-1"
+          className="mx-3 my-2 my-md-1"
         >
-          Log out everywhere
+          {t("profile:logout:all")}
         </Button>
       </div>
     </div>

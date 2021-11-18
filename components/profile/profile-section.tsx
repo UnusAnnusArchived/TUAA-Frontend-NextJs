@@ -1,12 +1,8 @@
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Logout, ProfileData, ProfilePicture } from ".";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
 
 const ProfileSection: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);

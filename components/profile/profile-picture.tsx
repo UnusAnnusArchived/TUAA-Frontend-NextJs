@@ -2,6 +2,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { ChangePic } from ".";
 import { userAtom } from "../../src/atoms";
@@ -9,13 +10,14 @@ import { endpoint } from "../../src/endpoints";
 
 const ProfilePicture: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
+  const { t, i18n } = useTranslation();
 
   const { user } = loggedInUser;
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-3">
-        Your profile picture
+        {t("profile:pfp:title")}
       </Typography>
       <Avatar
         src={`${endpoint}${user.pfp.filename}`}

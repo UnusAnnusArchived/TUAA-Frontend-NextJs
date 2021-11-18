@@ -20,8 +20,10 @@ import { MetaHead } from "../components/meta-head";
 import { useRouter } from "next/router";
 import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
+import { useTranslation } from "react-i18next";
 
 const LoginPage: React.FC = () => {
+  const { t } = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
@@ -74,7 +76,7 @@ const LoginPage: React.FC = () => {
 
         setToast({
           type: "error",
-          text: "There has been an error logging you in",
+          text: t("login:error"),
         });
       }
     } catch (err) {
@@ -90,9 +92,9 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title="Login | The Unus Anus Archive" />
+      <MetaHead title={`${t("login:title")} | The Unus Anus Archive`} />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        Login to your account
+        {t("login:titleLong")}
       </Typography>
       <form id="login-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -100,7 +102,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
             id="email-archive"
             name="email-archive"
-            label="Username"
+            label={t("login:usernameEmail")}
             variant="standard"
             value={email}
             type="email"
@@ -111,7 +113,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
           >
             <InputLabel htmlFor="standard-adornment-password">
-              Password
+              {t("login:password")}
             </InputLabel>
             <Input
               id="password-archive"
@@ -143,7 +145,7 @@ const LoginPage: React.FC = () => {
               disabled={!isValid()}
               onClick={onSubmit}
             >
-              Login
+              {t("login:loginBtn")}
             </Button>
           </div>
         </div>

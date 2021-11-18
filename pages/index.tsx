@@ -3,6 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Layout } from "../components/layout";
 import { MetaHead } from "../components/meta-head";
 import { VideoList } from "../components/video-list";
@@ -15,6 +16,7 @@ interface IProps {
 
 const Page: React.FC<IProps> = ({ seasons }) => {
   const [currentTab, setCurrentTab] = useState(1);
+  const { t, i18n } = useTranslation();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setCurrentTab(newValue);
@@ -22,17 +24,14 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 
   return (
     <Layout>
-      <Head>
-        <title>The Unus Anus Archive</title>
-      </Head>
       <MetaHead
         title="The Unus Anus Archive"
         description="The Unus Anus Archive"
       />
       <div>
         <Tabs value={currentTab} onChange={handleChange} centered>
-          <Tab label="Season 1" value={1} />
-          <Tab label="Specials" value={0} />
+          <Tab label={t("seasons:season1")} value={1} />
+          <Tab label={t("seasons:season2")} value={0} />
         </Tabs>
         {seasons.map((season, i) => {
           return (

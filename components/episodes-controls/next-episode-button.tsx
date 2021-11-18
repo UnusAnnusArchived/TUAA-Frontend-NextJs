@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react";
 import { localApi } from "../../src/endpoints";
 import { IEpisodeAround } from "../../src/types";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   watchCode: string;
 }
 
 const NextEpisodeButton: React.FC<IProps> = ({ watchCode }) => {
+  const { t, i18n } = useTranslation();
+
   useEffect(() => {
     fetchNextEpisode();
   }, []);
@@ -40,7 +43,7 @@ const NextEpisodeButton: React.FC<IProps> = ({ watchCode }) => {
         sx={{ pointerEvents: "auto" }}
         endIcon={<SkipNextIcon />}
       >
-        Next episode
+        {t("player:nextEpisode")}
       </Button>
     </Link>
   );

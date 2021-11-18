@@ -6,10 +6,12 @@ import { userAtom } from "../src/atoms";
 import { useRouter } from "next/router";
 import Typography from "@mui/material/Typography";
 import { ProfileSection } from "../components/profile";
+import { useTranslation } from "react-i18next";
 
 const Profile: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const router = useRouter();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (!loggedInUser) {
@@ -25,10 +27,10 @@ const Profile: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title="Profile | The Unus Anus Archive" />
+      <MetaHead title={`${t("profile:title")} | The Unus Anus Archive`} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          Profile
+          {t("profile:title")}
         </Typography>
         {loggedInUser && <ProfileSection />}
       </div>

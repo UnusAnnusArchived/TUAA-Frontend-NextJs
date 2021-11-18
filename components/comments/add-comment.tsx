@@ -8,6 +8,7 @@ import { userAtom } from "../../src/atoms";
 import { endpoint } from "../../src/endpoints";
 import { PostCommentResponse } from "../../src/types";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   watchCode: string;
@@ -15,8 +16,10 @@ interface IProps {
 }
 
 const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
+  const { t } = useTranslation();
+
   const [comment, setComment] = useState("");
-  const [loggedInUser,] = useRecoilState(userAtom);
+  const [loggedInUser] = useRecoilState(userAtom);
   const [isSendingComment, setIsSendingComment] = useState(false);
 
   const onComment = async () => {
@@ -47,7 +50,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
   if (!loggedInUser) {
     return (
       <div className="my-2">
-        <Typography>You need to login to comment on this video</Typography>
+        <Typography>{t("comments:loggedOut")}</Typography>
         <Divider className="my-2 mt-4" sx={{ backgroundColor: "#fff" }} />
       </div>
     );
@@ -60,7 +63,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
           <TextField
             variant="standard"
             fullWidth
-            label="Add a public comment"
+            label={t("comments:placeholder")}
             id="comment-text"
             name="comment-text"
             autoComplete="off"
@@ -77,7 +80,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
             disabled={comment.trim().length < 1 || isSendingComment}
             onClick={onComment}
           >
-            Comment
+            {t("comments:send")}
           </LoadingButton>
         </div>
       </div>

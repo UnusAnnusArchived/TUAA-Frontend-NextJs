@@ -5,6 +5,7 @@ import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import { numberToNPlaces } from "../../src/utils";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   video: IVideo;
@@ -16,6 +17,8 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
   const img = `https:${posterUrl}`;
 
   const date = new Date(video.date);
+
+  const { t, i18n } = useTranslation();
 
   return (
     <Paper className="p-2 h-100">
@@ -34,7 +37,7 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
       </div>
       <div className="text-center mt-2">
         <Typography variant="body2">
-          Episode {numberToNPlaces(video.episode)} -{" "}
+          {t("player:episode")} {numberToNPlaces(video.episode)} -{" "}
           {moment(date).format("DD. MMM YYYY")}
         </Typography>
       </div>
