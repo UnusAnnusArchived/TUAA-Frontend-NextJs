@@ -7,7 +7,7 @@ module.exports = withPWA({
     domains: ['cdn.unusannusarchive.tk'],
   },
   i18n: {
-    locales: ['en', 'cs'],
+    locales: ['en', 'de', 'cs'],
     defaultLocale: 'en',
   },
   pwa: {
