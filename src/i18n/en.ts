@@ -40,7 +40,7 @@ const en = ***REMOVED***
     username: "Username",
     password: "Password",
     confirmPassword: "Confirm password",
-    registerBtn: "Crate new account",
+    registerBtn: "Create new account",
     error: "There has been an error creating you an account",
     success: "Your account has been created! Please, login now.",
 ***REMOVED***
