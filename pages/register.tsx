@@ -20,9 +20,11 @@ import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
 import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
 import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 const LoginPage: React.FC = () => ***REMOVED***
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
+  const ***REMOVED*** t ***REMOVED*** = useTranslation();
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -76,7 +78,7 @@ const LoginPage: React.FC = () => ***REMOVED***
           router.push("/login");
           setToast(***REMOVED***
             type: "success",
-            text: "Your account has been created! Please, login now.",
+            text: t("register:success"),
             delay: 10000,
       ***REMOVED***);
           return;
@@ -100,9 +102,9 @@ const LoginPage: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead title="Register | The Unus Anus Archive" />
+      <MetaHead title=***REMOVED***`$***REMOVED***t("register:title")***REMOVED*** | The Unus Anus Archive`***REMOVED*** />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        Register new account
+        ***REMOVED***t("register:titleLong")***REMOVED***
       </Typography>
       <form id="register-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -110,7 +112,7 @@ const LoginPage: React.FC = () => ***REMOVED***
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
             id="email-archive"
             name="email-archive"
-            label="Email"
+            label=***REMOVED***t("register:email")***REMOVED***
             variant="standard"
             value=***REMOVED***email***REMOVED***
             type="email"
@@ -120,7 +122,7 @@ const LoginPage: React.FC = () => ***REMOVED***
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
             id="username-archive"
             name="username-archive"
-            label="Username"
+            label=***REMOVED***t("register:username")***REMOVED***
             variant="standard"
             value=***REMOVED***username***REMOVED***
             type="text"
@@ -131,7 +133,7 @@ const LoginPage: React.FC = () => ***REMOVED***
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
           >
             <InputLabel htmlFor="standard-adornment-password">
-              Password
+              ***REMOVED***t("register:password")***REMOVED***
             </InputLabel>
             <Input
               id="password-archive"
@@ -158,7 +160,7 @@ const LoginPage: React.FC = () => ***REMOVED***
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
           >
             <InputLabel htmlFor="standard-adornment-password">
-              Confirm password
+              ***REMOVED***t("register:confirmPassword")***REMOVED***
             </InputLabel>
             <Input
               id="confirm-password-archive"
@@ -193,7 +195,7 @@ const LoginPage: React.FC = () => ***REMOVED***
               disabled=***REMOVED***!isValid()***REMOVED***
               onClick=***REMOVED***onSubmit***REMOVED***
             >
-              Create an account
+              ***REMOVED***t("register:registerBtn")***REMOVED***
             </Button>
           </div>
         </div>

@@ -8,6 +8,7 @@ import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** PostCommentResponse ***REMOVED*** from "../../src/types";
 import LoadingButton from "@mui/lab/LoadingButton";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 interface IProps ***REMOVED***
   watchCode: string;
@@ -15,8 +16,10 @@ interface IProps ***REMOVED***
 ***REMOVED***
 
 const AddComment: React.FC<IProps> = (***REMOVED*** watchCode, onComment: onC ***REMOVED***) => ***REMOVED***
+  const ***REMOVED*** t ***REMOVED*** = useTranslation();
+
   const [comment, setComment] = useState("");
-  const [loggedInUser,] = useRecoilState(userAtom);
+  const [loggedInUser] = useRecoilState(userAtom);
   const [isSendingComment, setIsSendingComment] = useState(false);
 
   const onComment = async () => ***REMOVED***
@@ -47,7 +50,7 @@ const AddComment: React.FC<IProps> = (***REMOVED*** watchCode, onComment: onC **
   if (!loggedInUser) ***REMOVED***
     return (
       <div className="my-2">
-        <Typography>You need to login to comment on this video</Typography>
+        <Typography>***REMOVED***t("comments:loggedOut")***REMOVED***</Typography>
         <Divider className="my-2 mt-4" sx=***REMOVED******REMOVED*** backgroundColor: "#fff" ***REMOVED******REMOVED*** />
       </div>
     );
@@ -60,7 +63,7 @@ const AddComment: React.FC<IProps> = (***REMOVED*** watchCode, onComment: onC **
           <TextField
             variant="standard"
             fullWidth
-            label="Add a public comment"
+            label=***REMOVED***t("comments:placeholder")***REMOVED***
             id="comment-text"
             name="comment-text"
             autoComplete="off"
@@ -77,7 +80,7 @@ const AddComment: React.FC<IProps> = (***REMOVED*** watchCode, onComment: onC **
             disabled=***REMOVED***comment.trim().length < 1 || isSendingComment***REMOVED***
             onClick=***REMOVED***onComment***REMOVED***
           >
-            Comment
+            ***REMOVED***t("comments:send")***REMOVED***
           </LoadingButton>
         </div>
       </div>

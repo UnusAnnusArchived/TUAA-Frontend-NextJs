@@ -8,11 +8,13 @@ import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** LogoutResponse ***REMOVED*** from "../../src/types";
 import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 const Logout: React.FC = () => ***REMOVED***
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setToast] = useToasts();
   const router = useRouter();
+  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
   const ***REMOVED*** user ***REMOVED*** = loggedInUser;
 
@@ -29,7 +31,7 @@ const Logout: React.FC = () => ***REMOVED***
           router.push("/");
           setToast(***REMOVED***
             type: "success",
-            text: "You have logged out successfully",
+            text: t("profile:logout:successLocal"),
       ***REMOVED***);
     ***REMOVED*** else ***REMOVED***
           setToast(***REMOVED*** type: "error", text: res.data.error ***REMOVED***);
@@ -53,7 +55,7 @@ const Logout: React.FC = () => ***REMOVED***
           router.push("/");
           setToast(***REMOVED***
             type: "success",
-            text: "You have been logged out from all devices",
+            text: t("profile:logout:successAll"),
       ***REMOVED***);
     ***REMOVED*** else ***REMOVED***
           setToast(***REMOVED*** type: "error", text: res.data.error ***REMOVED***);
@@ -67,18 +69,22 @@ const Logout: React.FC = () => ***REMOVED***
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-2">
-        Logout options
+        ***REMOVED***t("profile:logout:title")***REMOVED***
       </Typography>
-      <div className="d-flex justify-content-center">
-        <Button variant="contained" onClick=***REMOVED***logout***REMOVED*** className="mx-3 my-1">
-          Log out from this device
+      <div className="d-flex flex-column flex-md-row justify-content-center">
+        <Button
+          variant="contained"
+          onClick=***REMOVED***logout***REMOVED***
+          className="mx-3 my-2 my-md-1"
+        >
+          ***REMOVED***t("profile:logout:local")***REMOVED***
         </Button>
         <Button
           variant="contained"
           onClick=***REMOVED***logoutEverywhere***REMOVED***
-          className="mx-3 my-1"
+          className="mx-3 my-2 my-md-1"
         >
-          Log out everywhere
+          ***REMOVED***t("profile:logout:all")***REMOVED***
         </Button>
       </div>
     </div>

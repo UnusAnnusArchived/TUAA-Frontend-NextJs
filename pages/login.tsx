@@ -20,8 +20,10 @@ import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
 import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
 import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 const LoginPage: React.FC = () => ***REMOVED***
+  const ***REMOVED*** t ***REMOVED*** = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
@@ -74,7 +76,7 @@ const LoginPage: React.FC = () => ***REMOVED***
 
         setToast(***REMOVED***
           type: "error",
-          text: "There has been an error logging you in",
+          text: t("login:error"),
     ***REMOVED***);
   ***REMOVED***
 ***REMOVED*** catch (err) ***REMOVED***
@@ -90,9 +92,9 @@ const LoginPage: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead title="Login | The Unus Anus Archive" />
+      <MetaHead title=***REMOVED***`$***REMOVED***t("login:title")***REMOVED*** | The Unus Anus Archive`***REMOVED*** />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        Login to your account
+        ***REMOVED***t("login:titleLong")***REMOVED***
       </Typography>
       <form id="login-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -100,7 +102,7 @@ const LoginPage: React.FC = () => ***REMOVED***
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
             id="email-archive"
             name="email-archive"
-            label="Username"
+            label=***REMOVED***t("login:usernameEmail")***REMOVED***
             variant="standard"
             value=***REMOVED***email***REMOVED***
             type="email"
@@ -111,7 +113,7 @@ const LoginPage: React.FC = () => ***REMOVED***
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
           >
             <InputLabel htmlFor="standard-adornment-password">
-              Password
+              ***REMOVED***t("login:password")***REMOVED***
             </InputLabel>
             <Input
               id="password-archive"
@@ -143,7 +145,7 @@ const LoginPage: React.FC = () => ***REMOVED***
               disabled=***REMOVED***!isValid()***REMOVED***
               onClick=***REMOVED***onSubmit***REMOVED***
             >
-              Login
+              ***REMOVED***t("login:loginBtn")***REMOVED***
             </Button>
           </div>
         </div>

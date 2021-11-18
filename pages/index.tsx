@@ -3,6 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import ***REMOVED*** GetServerSideProps ***REMOVED*** from "next";
 import Head from "next/head";
 import React, ***REMOVED*** useState ***REMOVED*** from "react";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
 import ***REMOVED*** VideoList ***REMOVED*** from "../components/video-list";
@@ -15,6 +16,7 @@ interface IProps ***REMOVED***
 
 const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOVED***
   const [currentTab, setCurrentTab] = useState(1);
+  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => ***REMOVED***
     setCurrentTab(newValue);
@@ -22,17 +24,14 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
 
   return (
     <Layout>
-      <Head>
-        <title>The Unus Anus Archive</title>
-      </Head>
       <MetaHead
         title="The Unus Anus Archive"
         description="The Unus Anus Archive"
       />
       <div>
         <Tabs value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>
-          <Tab label="Season 1" value=***REMOVED***1***REMOVED*** />
-          <Tab label="Specials" value=***REMOVED***0***REMOVED*** />
+          <Tab label=***REMOVED***t("seasons:season1")***REMOVED*** value=***REMOVED***1***REMOVED*** />
+          <Tab label=***REMOVED***t("seasons:season2")***REMOVED*** value=***REMOVED***0***REMOVED*** />
         </Tabs>
         ***REMOVED***seasons.map((season, i) => ***REMOVED***
           return (

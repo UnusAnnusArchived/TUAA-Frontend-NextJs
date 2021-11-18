@@ -23,11 +23,13 @@ import Menu from "@mui/material/Menu";
 import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 const ABar: React.FC = () => ***REMOVED***
   const [isRouting, setIsRouting] = useState(false);
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setPreviousPage] = useRecoilState(previousPageAtom);
+  const ***REMOVED*** t ***REMOVED*** = useTranslation();
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -62,8 +64,6 @@ const ABar: React.FC = () => ***REMOVED***
     setPreviousPage(router.asPath);
     router.push("/login");
 ***REMOVED***;
-
-  console.log(loggedInUser);
 
   return (
     <>
@@ -112,12 +112,12 @@ const ABar: React.FC = () => ***REMOVED***
               </Link>
               ***REMOVED***!loggedInUser && (
                 <Link passHref href="/register">
-                  <Button color="inherit">Register</Button>
+                  <Button color="inherit">***REMOVED***t("register:title")***REMOVED***</Button>
                 </Link>
               )***REMOVED***
               ***REMOVED***!loggedInUser && (
                 <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
-                  Login
+                  ***REMOVED***t("login:title")***REMOVED***
                 </Button>
               )***REMOVED***
             </div>
@@ -165,12 +165,12 @@ const ABar: React.FC = () => ***REMOVED***
         <Divider />
         <Link passHref href="/register">
           <MenuItem>
-            <Button color="inherit">Register</Button>
+            <Button color="inherit">***REMOVED***t("register:title")***REMOVED***</Button>
           </MenuItem>
         </Link>
         <MenuItem>
           <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
-            Login
+            ***REMOVED***t("login:title")***REMOVED***
           </Button>
         </MenuItem>
       </Menu>

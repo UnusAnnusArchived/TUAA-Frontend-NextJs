@@ -7,12 +7,15 @@ import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import Fade from "@mui/material/Fade";
 import Box from "@mui/system/Box";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 interface IProps ***REMOVED***
   watchCode: string;
 ***REMOVED***
 
 const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) => ***REMOVED***
+  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+
   useEffect(() => ***REMOVED***
     fetchNextEpisode();
 ***REMOVED*** []);
@@ -45,7 +48,7 @@ const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) =>
               sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED***
               startIcon=***REMOVED***<SkipPreviousIcon />***REMOVED***
             >
-              Previous episode
+              ***REMOVED***t("player:previousEpisode")***REMOVED***
             </Button>
           </Link>
         )***REMOVED***
@@ -61,7 +64,7 @@ const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) =>
               sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED***
               endIcon=***REMOVED***<SkipNextIcon />***REMOVED***
             >
-              Next episode
+              ***REMOVED***t("player:nextEpisode")***REMOVED***
             </Button>
           </Link>
         )***REMOVED***

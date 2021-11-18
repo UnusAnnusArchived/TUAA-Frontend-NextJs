@@ -5,6 +5,7 @@ import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import ***REMOVED*** numberToNPlaces ***REMOVED*** from "../../src/utils";
 import moment from "moment";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 interface IProps ***REMOVED***
   video: IVideo;
@@ -16,6 +17,8 @@ const VideoThumbnail: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => 
   const img = `https:$***REMOVED***posterUrl***REMOVED***`;
 
   const date = new Date(video.date);
+
+  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
   return (
     <Paper className="p-2 h-100">
@@ -34,7 +37,7 @@ const VideoThumbnail: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => 
       </div>
       <div className="text-center mt-2">
         <Typography variant="body2">
-          Episode ***REMOVED***numberToNPlaces(video.episode)***REMOVED*** -***REMOVED***" "***REMOVED***
+          ***REMOVED***t("player:episode")***REMOVED*** ***REMOVED***numberToNPlaces(video.episode)***REMOVED*** -***REMOVED***" "***REMOVED***
           ***REMOVED***moment(date).format("DD. MMM YYYY")***REMOVED***
         </Typography>
       </div>

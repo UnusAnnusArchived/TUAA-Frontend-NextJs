@@ -7,6 +7,8 @@ import ***REMOVED*** ThemeProvider ***REMOVED*** from "@mui/material/styles";
 import ***REMOVED*** theme ***REMOVED*** from "../components/theme/theme";
 import ***REMOVED*** RecoilRoot ***REMOVED*** from "recoil";
 import ***REMOVED*** GeistProvider ***REMOVED*** from "@geist-ui/react";
+import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
+import ***REMOVED*** initTranslations ***REMOVED*** from "../src/i18n/i18n";
 
 export const reportWebVitals = (metric: NextWebVitalsMetric) => ***REMOVED***
   const ***REMOVED*** id, name, label, value ***REMOVED*** = metric;
@@ -24,6 +26,9 @@ export const reportWebVitals = (metric: NextWebVitalsMetric) => ***REMOVED***
 ***REMOVED***;
 
 const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***REMOVED***
+  const router = useRouter();
+  initTranslations(router.locale);
+
   return (
     <>
       <Head>

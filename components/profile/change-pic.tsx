@@ -15,6 +15,7 @@ import ***REMOVED*** ChangePFPResponse, CheckLoginKeyResponse ***REMOVED*** from
 import Fade from "@mui/material/Fade";
 import LinearProgress from "@mui/material/LinearProgress";
 import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 const Input = styled("input")(***REMOVED***
   display: "none",
@@ -28,6 +29,7 @@ const ChangePic: React.FC = () => ***REMOVED***
   const [isSendingImage, setIsSendingImage] = useState(false);
   const [progress, setProgress] = useState(0);
   const [, setToast] = useToasts();
+  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
   const ***REMOVED*** user ***REMOVED*** = loggedInUser;
 
@@ -88,7 +90,7 @@ const ChangePic: React.FC = () => ***REMOVED***
           if (success) ***REMOVED***
             setToast(***REMOVED***
               type: "success",
-              text: "Profile picture changed!",
+              text: t("profile:pfp:success"),
         ***REMOVED***);
             handleClose();
             return;
@@ -101,7 +103,7 @@ const ChangePic: React.FC = () => ***REMOVED***
     setIsSendingImage(false);
     setToast(***REMOVED***
       type: "error",
-      text: "There has been an error changing your profile picture.",
+      text: t("profile:pfp:error"),
 ***REMOVED***);
 ***REMOVED***;
 
@@ -128,18 +130,21 @@ const ChangePic: React.FC = () => ***REMOVED***
   return (
     <div>
       <Button variant="text" onClick=***REMOVED***handleClickOpen***REMOVED***>
-        Change profile picture
+        ***REMOVED***t("profile:pfp:change")***REMOVED***
       </Button>
       <Dialog open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED*** maxWidth="sm" fullWidth>
         <DialogTitle className="text-center">
-          Change profile picture
+          ***REMOVED***t("profile:pfp:change")***REMOVED***
         </DialogTitle>
 
         <DialogContent>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <DialogContentText>Upload a new profile picture.</DialogContentText>
             <DialogContentText>
-              Currently selected file: ***REMOVED***image ? image.name : "none"***REMOVED***
+              ***REMOVED***t("profile:pfp:description")***REMOVED***
+            </DialogContentText>
+            <DialogContentText>
+              ***REMOVED***t("profile:pfp:selected")***REMOVED***:***REMOVED***" "***REMOVED***
+              ***REMOVED***image ? image.name : t("profile:pfp:none")***REMOVED***
             </DialogContentText>
 
             ***REMOVED***imageUrl && (
@@ -156,7 +161,7 @@ const ChangePic: React.FC = () => ***REMOVED***
                   type="file"
                 />
                 <Button variant="contained" component="span">
-                  Choose image file
+                  ***REMOVED***t("profile:pfp:fileSelect")***REMOVED***
                 </Button>
               </label>
             </div>
@@ -168,13 +173,13 @@ const ChangePic: React.FC = () => ***REMOVED***
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick=***REMOVED***onCancel***REMOVED***>Cancel</Button>
+          <Button onClick=***REMOVED***onCancel***REMOVED***>***REMOVED***t("common:cancel")***REMOVED***</Button>
           <Button
             onClick=***REMOVED***handleSubmit***REMOVED***
             disabled=***REMOVED***image == null || isSendingImage***REMOVED***
             autoFocus
           >
-            Save
+            ***REMOVED***t("common:save")***REMOVED***
           </Button>
         </DialogActions>
       </Dialog>
