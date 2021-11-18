@@ -39,7 +39,7 @@ const Layout: React.FC = ({ children }) => {
 
     if (res.status === 200) {
       if (res.data.isValid) {
-        setLoggedInUser({ ...loggedInUser, ...res.data });
+        // setLoggedInUser({ ...loggedInUser, ...res.data });
         return true;
       }
     }

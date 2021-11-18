@@ -32,13 +32,11 @@ const ProfileIcon: React.FC = () => {
     setAnchorEl(null);
   };
 
-  const { user } = loggedInUser;
-
   const logout = async () => {
     try {
       const res = await axios.post<LogoutResponse>(
         `${endpoint}/api/v2/account/logout`,
-        { id: user.id, loginKey: loggedInUser.loginKey }
+        { id: loggedInUser.user.id, loginKey: loggedInUser.loginKey }
       );
 
       if (res.status === 200) {
@@ -59,8 +57,14 @@ const ProfileIcon: React.FC = () => {
     }
   };
 
+  if (loggedInUser == null) {
+    return null;
+  }
+
+  const { user } = loggedInUser;
+
   return (
-    <div>
+    <div id="logged-in-user-icon">
       <IconButton onClick={handleClick}>
         <Avatar src={`${endpoint}${user.pfp.filename}`} alt={user.username} />
       </IconButton>
