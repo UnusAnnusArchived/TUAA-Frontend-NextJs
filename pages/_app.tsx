@@ -1,14 +1,27 @@
 import Head from "next/head";
 import React from "react";
 import "../styles/globals.scss";
-import type ***REMOVED***
-  AppProps /*, AppContext , NextWebVitalsMetric */,
-***REMOVED*** from "next/app";
+import type ***REMOVED*** AppProps /*, AppContext*/, NextWebVitalsMetric ***REMOVED*** from "next/app";
 import Script from "next/script";
 import ***REMOVED*** ThemeProvider ***REMOVED*** from "@mui/material/styles";
 import ***REMOVED*** theme ***REMOVED*** from "../components/theme/theme";
 import ***REMOVED*** RecoilRoot ***REMOVED*** from "recoil";
 import ***REMOVED*** GeistProvider ***REMOVED*** from "@geist-ui/react";
+
+export const reportWebVitals = (metric: NextWebVitalsMetric) => ***REMOVED***
+  const ***REMOVED*** id, name, label, value ***REMOVED*** = metric;
+  // Use `window.gtag` if you initialized Google Analytics as this example:
+  // https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_document.js
+
+  // @ts-ignore
+  window.gtag("event", name, ***REMOVED***
+    event_category:
+      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
+    value: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
+    event_label: id, // id unique to current page load
+    non_interaction: true, // avoids affecting bounce rate.
+***REMOVED***);
+***REMOVED***;
 
 const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***REMOVED***
   return (
@@ -42,12 +55,12 @@ const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***R
         <link
           rel="mask-icon"
           href="/favs/safari-pinned-tab.svg"
-          color="#5bbad5"
+          color="#121212"
         />
         <link rel="shortcut icon" href="/favs/favicon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/favs/browserconfig.xml" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#121212" />
       </Head>
       <RecoilRoot>
         <ThemeProvider theme=***REMOVED***theme***REMOVED***>

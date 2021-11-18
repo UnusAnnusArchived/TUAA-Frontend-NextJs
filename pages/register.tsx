@@ -13,7 +13,7 @@ import classNames from "classnames";
 import Button from "@mui/material/Button";
 import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
 import axios from "axios";
-import ***REMOVED*** LoginResponse ***REMOVED*** from "../src/types";
+import ***REMOVED*** SignupResponse ***REMOVED*** from "../src/types";
 import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** previousPageAtom, userAtom ***REMOVED*** from "../src/atoms";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
@@ -26,6 +26,8 @@ const LoginPage: React.FC = () => ***REMOVED***
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const router = useRouter();
   const [, setToast] = useToasts();
@@ -35,7 +37,11 @@ const LoginPage: React.FC = () => ***REMOVED***
 ***REMOVED***;
 
   const isValid = () => ***REMOVED***
-    return email.length > 0 && password.length > 0;
+    return (
+      email.trim().length > 0 &&
+      password.trim().length > 5 &&
+      password.trim() === confirmPassword.trim()
+    );
 ***REMOVED***;
 
   const onSubmit = async () => ***REMOVED***
@@ -44,11 +50,13 @@ const LoginPage: React.FC = () => ***REMOVED***
 ***REMOVED***
 
     try ***REMOVED***
-      const res = await axios.post<LoginResponse>(
-        `$***REMOVED***endpoint***REMOVED***/api/v2/account/login`,
+      const res = await axios.post<SignupResponse>(
+        `$***REMOVED***endpoint***REMOVED***/api/v2/account/signup`,
         ***REMOVED***
-          username: email,
-          password,
+          email: email.trim(),
+          username: username.trim(),
+          password: password.trim(),
+          confirmpassword: confirmPassword.trim(),
       ***REMOVED***
         ***REMOVED***
           headers: ***REMOVED***
@@ -64,17 +72,19 @@ const LoginPage: React.FC = () => ***REMOVED***
       const ***REMOVED*** data ***REMOVED*** = res;
 
       if (data) ***REMOVED***
-        if (data.isValid) ***REMOVED***
-          setLoggedInUser(data);
-          if (previousPage && previousPage.length > 3) ***REMOVED***
-            router.push(previousPage);
-      ***REMOVED*** else router.push("/");
+        if (data.success) ***REMOVED***
+          router.push("/login");
+          setToast(***REMOVED***
+            type: "success",
+            text: "Your account has been created! Please, login now.",
+            delay: 10000,
+      ***REMOVED***);
           return;
     ***REMOVED***
 
         setToast(***REMOVED***
           type: "error",
-          text: "There has been an error logging you in",
+          text: data.error.message,
     ***REMOVED***);
   ***REMOVED***
 ***REMOVED*** catch (err) ***REMOVED***
@@ -90,21 +100,31 @@ const LoginPage: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead title="Login | The Unus Anus Archive" />
+      <MetaHead title="Register | The Unus Anus Archive" />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        Login to your account
+        Register new account
       </Typography>
-      <form id="login-form">
+      <form id="register-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <TextField
             className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
             id="email-archive"
             name="email-archive"
-            label="Username"
+            label="Email"
             variant="standard"
             value=***REMOVED***email***REMOVED***
             type="email"
             onChange=***REMOVED***(e) => setEmail(e.target.value)***REMOVED***
+          />
+          <TextField
+            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            id="username-archive"
+            name="username-archive"
+            label="Username"
+            variant="standard"
+            value=***REMOVED***username***REMOVED***
+            type="text"
+            onChange=***REMOVED***(e) => setUsername(e.target.value)***REMOVED***
           />
           <FormControl
             variant="standard"
@@ -118,7 +138,37 @@ const LoginPage: React.FC = () => ***REMOVED***
               name="password-archive"
               type=***REMOVED***showPassword ? "text" : "password"***REMOVED***
               value=***REMOVED***password***REMOVED***
+              autoComplete="new-password"
               onChange=***REMOVED***(event) => setPassword(event.currentTarget.value)***REMOVED***
+              endAdornment=***REMOVED***
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick=***REMOVED***handleClickShowPassword***REMOVED***
+                    onMouseDown=***REMOVED***handleMouseDownPassword***REMOVED***
+                  >
+                    ***REMOVED***showPassword ? <VisibilityOff /> : <Visibility />***REMOVED***
+                  </IconButton>
+                </InputAdornment>
+          ***REMOVED***
+            />
+          </FormControl>
+          <FormControl
+            variant="standard"
+            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+          >
+            <InputLabel htmlFor="standard-adornment-password">
+              Confirm password
+            </InputLabel>
+            <Input
+              id="confirm-password-archive"
+              name="confirm-password-archive"
+              type=***REMOVED***showPassword ? "text" : "password"***REMOVED***
+              value=***REMOVED***confirmPassword***REMOVED***
+              autoComplete="new-password"
+              onChange=***REMOVED***(event) =>
+                setConfirmPassword(event.currentTarget.value)
+          ***REMOVED***
               endAdornment=***REMOVED***
                 <InputAdornment position="end">
                   <IconButton
@@ -143,7 +193,7 @@ const LoginPage: React.FC = () => ***REMOVED***
               disabled=***REMOVED***!isValid()***REMOVED***
               onClick=***REMOVED***onSubmit***REMOVED***
             >
-              Login
+              Create an account
             </Button>
           </div>
         </div>

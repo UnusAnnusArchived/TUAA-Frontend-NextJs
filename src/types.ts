@@ -91,3 +91,16 @@ export interface CheckLoginKeyResponse ***REMOVED***
   isValid: boolean;
   user?: LimitedUser;
 ***REMOVED***
+
+export interface SignupResponse ***REMOVED***
+  success: boolean;
+  loginURI?: "/api/v2/account/login";
+  error?: ***REMOVED***
+    code: 0 | 1 | 2 | number;
+    message:
+      | "Passwords do not match!"
+      | "Account exists!"
+      | "Missing info!"
+      | string;
+***REMOVED***;
+***REMOVED***
