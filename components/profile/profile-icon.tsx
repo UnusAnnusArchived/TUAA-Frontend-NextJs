@@ -21,11 +21,15 @@ import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ***REMOVED*** FaDiscord ***REMOVED*** from "react-icons/fa";
+import ***REMOVED*** useMediaQuery ***REMOVED*** from "@mui/material";
+import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
 
 const ProfileIcon: React.FC = () => ***REMOVED***
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
+  const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const ***REMOVED*** t ***REMOVED*** = useTranslation();
 
@@ -97,9 +101,11 @@ const ProfileIcon: React.FC = () => ***REMOVED***
                 <ListItemText>***REMOVED***t("common:profile")***REMOVED***</ListItemText>
               </MenuItem>
             </Link>
-            <div onClick=***REMOVED***() => setAnchorEl(null)***REMOVED***>
-              <LanguageSelect />
-            </div>
+            ***REMOVED***isMdDown && (
+              <div onClick=***REMOVED***() => setAnchorEl(null)***REMOVED***>
+                <LanguageSelect />
+              </div>
+            )***REMOVED***
             <Divider />
             <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
               <a
