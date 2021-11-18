@@ -21,7 +21,7 @@ const VideoList: React.FC<IProps> = ({ videos }) => {
               )}.e${numberToNPlaces(video.episode, 3)}`}
               passHref
             >
-              <div className="pointer">
+              <div className="pointer h-100">
                 <VideoThumbnail video={video} />
               </div>
             </Link>

@@ -26,6 +26,10 @@ export interface IEpisodeAround {
   prevEp?: string;
 }
 
+export interface ChangePFPResponse {
+  status?: "success" | string;
+  error?: "Not logged in!" | string;
+}
 export interface IComment {
   episode: string;
   uid: string;
@@ -81,4 +85,9 @@ export interface PostCommentResponse {
     code: 3 | "401" | number | string;
     message: "Invalid message length!" | "Unauthorized!" | string;
   };
+}
+
+export interface CheckLoginKeyResponse {
+  isValid: boolean;
+  user?: LimitedUser;
 }

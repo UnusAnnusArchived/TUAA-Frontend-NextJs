@@ -10,6 +10,13 @@ import axios from "axios";
 import { LogoutResponse } from "../../src/types";
 import { useToasts } from "@geist-ui/react";
 import Link from "next/link";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import PersonIcon from "@mui/icons-material/Person";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import MenuList from "@mui/material/MenuList";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const ProfileIcon: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
@@ -37,6 +44,11 @@ const ProfileIcon: React.FC = () => {
       if (res.status === 200) {
         if (res.data.status === "success") {
           setLoggedInUser(null);
+          setToast({
+            type: "success",
+            text: "You have logged out successfully",
+          });
+
           handleClose();
         } else {
           setToast({ type: "error", text: res.data.error });
@@ -60,10 +72,28 @@ const ProfileIcon: React.FC = () => {
         onClose={handleClose}
       >
         <div className="profile-menu-container">
-          <Link passHref href="/profile">
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-          </Link>
-          <MenuItem onClick={logout}>Logout</MenuItem>
+          <div className="my-2">
+            <Typography variant="h6" component="p" className="text-center">
+              {user.username}
+            </Typography>
+            <Divider className="mt-2" />
+          </div>
+          <MenuList>
+            <Link passHref href="/profile">
+              <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                  <PersonIcon />
+                </ListItemIcon>
+                <ListItemText>Profile</ListItemText>
+              </MenuItem>
+            </Link>
+            <MenuItem onClick={logout}>
+              <ListItemIcon>
+                <LogoutIcon />
+              </ListItemIcon>
+              <ListItemText>Log out</ListItemText>
+            </MenuItem>
+          </MenuList>
         </div>
       </Menu>
     </div>
