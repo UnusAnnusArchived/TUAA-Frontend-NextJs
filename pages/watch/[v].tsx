@@ -1,9 +1,10 @@
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import ***REMOVED*** GetServerSideProps ***REMOVED*** from "next";
 import React from "react";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** CommentList ***REMOVED*** from "../../components/comments";
 import ***REMOVED*** EpisodesRow ***REMOVED*** from "../../components/episodes-controls";
 import ***REMOVED*** Layout ***REMOVED*** from "../../components/layout";
@@ -18,6 +19,7 @@ interface IProps ***REMOVED***
 ***REMOVED***
 
 const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) => ***REMOVED***
+  const ***REMOVED*** i18n ***REMOVED*** = useTranslation();
   const image =
     video.thumbnail ??
     video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
@@ -38,7 +40,7 @@ const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) =
           ***REMOVED***video.title***REMOVED***
         </Typography>
         <Typography variant="body2" component="p">
-          ***REMOVED***moment(published).format("DD MMMM YYYY")***REMOVED***
+          ***REMOVED***moment(published).locale(i18n.language).format("DD MMMM YYYY")***REMOVED***
         </Typography>
         <Divider className="my-2" sx=***REMOVED******REMOVED*** backgroundColor: "#fff" ***REMOVED******REMOVED*** />
         <Typography variant="body1" component="p">

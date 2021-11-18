@@ -24,6 +24,7 @@ import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
 
 const ABar: React.FC = () => ***REMOVED***
   const [isRouting, setIsRouting] = useState(false);
@@ -95,7 +96,7 @@ const ABar: React.FC = () => ***REMOVED***
         )***REMOVED*** */***REMOVED***
           <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
           ***REMOVED***!isMdDown && (
-            <div>
+            <div className="d-flex">
               <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <IconButton>
@@ -110,6 +111,7 @@ const ABar: React.FC = () => ***REMOVED***
                   </IconButton>
                 </a>
               </Link>
+              <LanguageSelect />
               ***REMOVED***!loggedInUser && (
                 <Link passHref href="/register">
                   <Button color="inherit">***REMOVED***t("register:title")***REMOVED***</Button>
@@ -163,6 +165,9 @@ const ABar: React.FC = () => ***REMOVED***
           </a>
         </Link>
         <Divider />
+        <LanguageSelect />
+        <Divider />
+
         <Link passHref href="/register">
           <MenuItem>
             <Button color="inherit">***REMOVED***t("register:title")***REMOVED***</Button>

@@ -104,3 +104,8 @@ export interface SignupResponse ***REMOVED***
       | string;
 ***REMOVED***;
 ***REMOVED***
+
+export interface ILanguage ***REMOVED***
+  name: string;
+  code: string;
+***REMOVED***

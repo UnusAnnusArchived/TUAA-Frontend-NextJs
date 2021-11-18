@@ -1,8 +1,9 @@
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import React from "react";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** IComment ***REMOVED*** from "../../src/types";
 
@@ -11,6 +12,8 @@ interface IProps ***REMOVED***
 ***REMOVED***
 
 const CommentItem: React.FC<IProps> = (***REMOVED*** comment ***REMOVED***) => ***REMOVED***
+  const ***REMOVED*** i18n ***REMOVED*** = useTranslation();
+
   return (
     <div>
       <div className="row my-2">
@@ -28,10 +31,14 @@ const CommentItem: React.FC<IProps> = (***REMOVED*** comment ***REMOVED***) => *
             </Typography>
             &nbsp;
             <Typography variant="body2" sx=***REMOVED******REMOVED*** color: "#a3a3a3" ***REMOVED******REMOVED***>
-              ***REMOVED***moment(new Date(comment.stats.published)).fromNow()***REMOVED***
+              ***REMOVED***moment(new Date(comment.stats.published))
+                .locale(i18n.language)
+                .fromNow()***REMOVED***
             </Typography>
           </div>
-          <Typography dangerouslySetInnerHTML=***REMOVED******REMOVED*** __html: comment.comment.html ***REMOVED******REMOVED*** />
+          <Typography
+            dangerouslySetInnerHTML=***REMOVED******REMOVED*** __html: comment.comment.html ***REMOVED******REMOVED***
+          />
         </div>
       </div>
       <Divider sx=***REMOVED******REMOVED*** backgroundColor: "#fff" ***REMOVED******REMOVED*** />
