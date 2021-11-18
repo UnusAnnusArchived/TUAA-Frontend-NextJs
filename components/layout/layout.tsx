@@ -28,7 +28,7 @@ const Layout: React.FC = ({ children }) => {
     <div className={classNames(classes.main, styles.main)}>
       <AppBar />
       <div className={styles.toolbar} />
-      <main className="container pb-5">{children}</main>
+      <main className="container pb-5 text-white">{children}</main>
     </div>
   );
 };

@@ -7,6 +7,8 @@ import type {
 import Script from "next/script";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../components/theme/theme";
+import { RecoilRoot } from "recoil";
+import { GeistProvider } from "@geist-ui/react";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -47,9 +49,13 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="msapplication-config" content="/favs/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <RecoilRoot>
+        <ThemeProvider theme={theme}>
+          <GeistProvider>
+            <Component {...pageProps} />
+          </GeistProvider>
+        </ThemeProvider>
+      </RecoilRoot>
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"

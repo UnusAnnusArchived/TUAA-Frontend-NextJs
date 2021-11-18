@@ -7,9 +7,15 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Fade from "@mui/material/Fade";
 import { useRouter } from "next/router";
 import Box from "@mui/system/Box";
+import { useRecoilState } from "recoil";
+import { previousPageAtom, userAtom } from "../../src/atoms";
+import { ProfileIcon } from "../profile";
+import Button from "@mui/material/Button";
 
 const ABar: React.FC = () => {
   const [isRouting, setIsRouting] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
+  const [, setPreviousPage] = useRecoilState(previousPageAtom);
 
   const router = useRouter();
 
@@ -28,6 +34,11 @@ const ABar: React.FC = () => {
       router.events.off("routeChangeComplete", handleRoutingEnd);
     };
   }, []);
+
+  const onClickLogin = () => {
+    setPreviousPage(router.asPath);
+    router.push("/login");
+  };
 
   return (
     <AppBar position="sticky">
@@ -57,8 +68,12 @@ const ABar: React.FC = () => {
           </Typography>
         )} */}
         <Box sx={{ flexGrow: 1 }} />
-
-        {/* <Button color="inherit">Login</Button> */}
+        {loggedInUser && <ProfileIcon />}
+        {!loggedInUser && (
+          <Button color="inherit" onClick={onClickLogin}>
+            Login
+          </Button>
+        )}
       </Toolbar>
       <Fade in={isRouting}>
         <LinearProgress className="routing-progress" />

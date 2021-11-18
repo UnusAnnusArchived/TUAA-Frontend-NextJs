@@ -1,4 +1,4 @@
-const endpoint = "https://unusannusarchive.tk";
+const endpoint = "https://unusann.us";
 
 // TODO: Update in production
 const isDev = process.env.NODE_ENV === "development";
