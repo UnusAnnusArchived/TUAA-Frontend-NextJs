@@ -11,6 +11,7 @@ body ***REMOVED***
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
+  background-color: $dark-bkg;
 
   &::-webkit-scrollbar-track ***REMOVED***
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -111,4 +112,16 @@ body ***REMOVED***
 
 .no-x-overflow ***REMOVED***
   overflow-x: hidden;
+***REMOVED***
+
+.profile-menu-container ***REMOVED***
+  width: 200px;
+
+  @include md-down ***REMOVED***
+    width: 90%;
+***REMOVED***
+***REMOVED***
+
+.flex-grow ***REMOVED***
+  flex-grow: 1;
 ***REMOVED***

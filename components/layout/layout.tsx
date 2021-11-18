@@ -28,7 +28,7 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
     <div className=***REMOVED***classNames(classes.main, styles.main)***REMOVED***>
       <AppBar />
       <div className=***REMOVED***styles.toolbar***REMOVED*** />
-      <main className="container pb-5">***REMOVED***children***REMOVED***</main>
+      <main className="container pb-5 text-white">***REMOVED***children***REMOVED***</main>
     </div>
   );
 ***REMOVED***;

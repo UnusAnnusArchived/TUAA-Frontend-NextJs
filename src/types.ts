@@ -55,3 +55,30 @@ export interface UserPFP ***REMOVED***
   height: number;
   format: "image/jpeg";
 ***REMOVED***
+
+export interface LoginResponse ***REMOVED***
+  isValid?: boolean;
+  loginKey?: string;
+  user?: LimitedUser;
+***REMOVED***
+
+export interface LimitedUser ***REMOVED***
+  id: string;
+  email: string;
+  username: string;
+  pfp: UserPFP;
+***REMOVED***
+
+export interface LogoutResponse ***REMOVED***
+  status: "success" | "error";
+  error?: "Account does not exist!" | string;
+***REMOVED***
+
+export interface PostCommentResponse ***REMOVED***
+  status?: "success";
+  comment?: IComment;
+  error?: ***REMOVED***
+    code: 3 | "401" | number | string;
+    message: "Invalid message length!" | "Unauthorized!" | string;
+***REMOVED***;
+***REMOVED***

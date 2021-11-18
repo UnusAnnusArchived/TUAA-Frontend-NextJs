@@ -3,7 +3,7 @@ import React from "react";
 
 interface IProps ***REMOVED***
   title: string;
-  description: string;
+  description?: string;
   image?: string;
   width?: string;
   height?: string;
