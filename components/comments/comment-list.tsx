@@ -27,7 +27,7 @@ const CommentList: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) =>
         Comments
       </Typography>
       <AddComment watchCode=***REMOVED***watchCode***REMOVED*** onComment=***REMOVED***onAdded***REMOVED*** />
-      ***REMOVED***error && <div>failed to load</div>***REMOVED***
+      ***REMOVED***error && <Typography>Comments failed to load</Typography>***REMOVED***
       ***REMOVED***data && data.length < 1 && (
         <Typography>There are no comments</Typography>
       )***REMOVED***

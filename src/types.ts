@@ -26,6 +26,10 @@ export interface IEpisodeAround ***REMOVED***
   prevEp?: string;
 ***REMOVED***
 
+export interface ChangePFPResponse ***REMOVED***
+  status?: "success" | string;
+  error?: "Not logged in!" | string;
+***REMOVED***
 export interface IComment ***REMOVED***
   episode: string;
   uid: string;
@@ -81,4 +85,9 @@ export interface PostCommentResponse ***REMOVED***
     code: 3 | "401" | number | string;
     message: "Invalid message length!" | "Unauthorized!" | string;
 ***REMOVED***;
+***REMOVED***
+
+export interface CheckLoginKeyResponse ***REMOVED***
+  isValid: boolean;
+  user?: LimitedUser;
 ***REMOVED***

@@ -17,7 +17,7 @@ const VideoThumbnail: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => 
   const img = `https:$***REMOVED***posterUrl***REMOVED***`;
 
   return (
-    <Paper className="p-2">
+    <Paper className="p-2 h-100">
       <div className="ratio ratio-16x9">
         <Image
           src=***REMOVED***img***REMOVED***
