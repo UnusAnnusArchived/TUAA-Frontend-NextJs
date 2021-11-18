@@ -48,12 +48,15 @@ const LanguageSelect: React.FC = () => ***REMOVED***
         </Tooltip>
       )***REMOVED***
       ***REMOVED***isMdDown && (
-        <MenuItem>
-          <ListItemIcon>
-            <LanguageIcon />
-          </ListItemIcon>
-          <ListItemText>***REMOVED***t("common:language")***REMOVED***</ListItemText>
-        </MenuItem>
+        <div onClick=***REMOVED***(event) => setAnchorEl(event.currentTarget)***REMOVED***>
+          <MenuItem>
+            <ListItemIcon>
+              <LanguageIcon />
+            </ListItemIcon>
+            <ListItemText>***REMOVED***t("common:language")***REMOVED***</ListItemText>
+          </MenuItem>
+        </div>
+
         // <Button
         //   aria-haspopup="true"
         //   aria-expanded=***REMOVED***open ? "true" : undefined***REMOVED***
@@ -63,19 +66,21 @@ const LanguageSelect: React.FC = () => ***REMOVED***
         // </Button>
       )***REMOVED***
       <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
-        ***REMOVED***availableLanguages.map((language, i) => (
-          <Link
-            key=***REMOVED***i***REMOVED***
-            passHref
-            href=***REMOVED******REMOVED***
-              pathname: router.pathname,
-              query: ***REMOVED*** ...router.query ***REMOVED***,
-        ***REMOVED******REMOVED***
-            locale=***REMOVED***language.code***REMOVED***
-          >
-            <MenuItem onClick=***REMOVED***handleClose***REMOVED***>***REMOVED***language.name***REMOVED***</MenuItem>
-          </Link>
-        ))***REMOVED***
+        <div className="menu-container">
+          ***REMOVED***availableLanguages.map((language, i) => (
+            <Link
+              key=***REMOVED***i***REMOVED***
+              passHref
+              href=***REMOVED******REMOVED***
+                pathname: router.pathname,
+                query: ***REMOVED*** ...router.query ***REMOVED***,
+          ***REMOVED******REMOVED***
+              locale=***REMOVED***language.code***REMOVED***
+            >
+              <MenuItem onClick=***REMOVED***handleClose***REMOVED***>***REMOVED***language.name***REMOVED***</MenuItem>
+            </Link>
+          ))***REMOVED***
+        </div>
       </Menu>
     </div>
   );

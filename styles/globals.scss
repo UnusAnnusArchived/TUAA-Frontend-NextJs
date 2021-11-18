@@ -118,7 +118,15 @@ body ***REMOVED***
   width: 200px;
 
   @include md-down ***REMOVED***
-    width: 90%;
+    min-width: 200px;
+***REMOVED***
+***REMOVED***
+
+.menu-container ***REMOVED***
+  width: 200px;
+
+  @include md-down ***REMOVED***
+    min-width: 200px;
 ***REMOVED***
 ***REMOVED***
 

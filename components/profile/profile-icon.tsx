@@ -18,6 +18,9 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuList from "@mui/material/MenuList";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import ***REMOVED*** FaDiscord ***REMOVED*** from "react-icons/fa";
 
 const ProfileIcon: React.FC = () => ***REMOVED***
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
@@ -94,6 +97,39 @@ const ProfileIcon: React.FC = () => ***REMOVED***
                 <ListItemText>***REMOVED***t("common:profile")***REMOVED***</ListItemText>
               </MenuItem>
             </Link>
+            <div onClick=***REMOVED***() => setAnchorEl(null)***REMOVED***>
+              <LanguageSelect />
+            </div>
+            <Divider />
+            <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
+              >
+                <MenuItem>
+                  <ListItemIcon>
+                    <FaDiscord />
+                  </ListItemIcon>
+                  <ListItemText>Discord</ListItemText>
+                </MenuItem>
+              </a>
+            </Link>
+            <Link href="https://github.com/UnusAnnusArchived" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
+              >
+                <MenuItem>
+                  <ListItemIcon>
+                    <GitHubIcon />
+                  </ListItemIcon>
+                  <ListItemText>Github</ListItemText>
+                </MenuItem>
+              </a>
+            </Link>
+            <Divider />
             <MenuItem onClick=***REMOVED***logout***REMOVED***>
               <ListItemIcon>
                 <LogoutIcon />
