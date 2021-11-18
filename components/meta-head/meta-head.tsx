@@ -17,7 +17,7 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
   height = "1080",
 ***REMOVED***) => ***REMOVED***
   // TODO: Change in production
-  const baseDomain = "https://uaarchive.withmarkiplier.com/";
+  const baseDomain = "https://unusann.us/";
 
   if (!image.startsWith("http")) ***REMOVED***
     image = baseDomain + image;
@@ -36,7 +36,7 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
       <meta property="og:title" content=***REMOVED***title***REMOVED*** />
       <meta property="og:description" content=***REMOVED***description***REMOVED*** />
       <meta property="og:image" content=***REMOVED***image***REMOVED*** />
-      <meta property="og:url" content="https://uaarchive.withmarkiplier.com/" />
+      <meta property="og:url" content="https://unusann.us/" />
       <meta property="og:site_name" content="The Unus Anus Archive" />
       <meta property="og:locale" content="en_UK" />
       <meta property="og:type" content="website" />

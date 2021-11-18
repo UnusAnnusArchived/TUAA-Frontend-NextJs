@@ -63,9 +63,7 @@ export default Watch;
 export const getServerSideProps: GetServerSideProps<IProps, ***REMOVED*** v: string ***REMOVED***> =
   async (context) => ***REMOVED***
     const watchCode = context.query.v.toString();
-    const res = await fetch(
-      `$***REMOVED***endpoint***REMOVED***/api/v2/metadata/video/episode/$***REMOVED***watchCode***REMOVED***`
-    );
+    const res = await fetch(`$***REMOVED***endpoint***REMOVED***/api/v2/metadata/episode/$***REMOVED***watchCode***REMOVED***`);
 
     if (res.status !== 200) ***REMOVED***
       return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
