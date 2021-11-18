@@ -13,7 +13,7 @@ import classNames from "classnames";
 import Button from "@mui/material/Button";
 import { endpoint } from "../src/endpoints";
 import axios from "axios";
-import { LoginResponse } from "../src/types";
+import { SignupResponse } from "../src/types";
 import { useRecoilState } from "recoil";
 import { previousPageAtom, userAtom } from "../src/atoms";
 import { MetaHead } from "../components/meta-head";
@@ -26,6 +26,8 @@ const LoginPage: React.FC = () => {
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const router = useRouter();
   const [, setToast] = useToasts();
@@ -35,7 +37,11 @@ const LoginPage: React.FC = () => {
   };
 
   const isValid = () => {
-    return email.length > 0 && password.length > 0;
+    return (
+      email.trim().length > 0 &&
+      password.trim().length > 5 &&
+      password.trim() === confirmPassword.trim()
+    );
   };
 
   const onSubmit = async () => {
@@ -44,11 +50,13 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const res = await axios.post<LoginResponse>(
-        `${endpoint}/api/v2/account/login`,
+      const res = await axios.post<SignupResponse>(
+        `${endpoint}/api/v2/account/signup`,
         {
-          username: email,
-          password,
+          email: email.trim(),
+          username: username.trim(),
+          password: password.trim(),
+          confirmpassword: confirmPassword.trim(),
         },
         {
           headers: {
@@ -64,17 +72,19 @@ const LoginPage: React.FC = () => {
       const { data } = res;
 
       if (data) {
-        if (data.isValid) {
-          setLoggedInUser(data);
-          if (previousPage && previousPage.length > 3) {
-            router.push(previousPage);
-          } else router.push("/");
+        if (data.success) {
+          router.push("/login");
+          setToast({
+            type: "success",
+            text: "Your account has been created! Please, login now.",
+            delay: 10000,
+          });
           return;
         }
 
         setToast({
           type: "error",
-          text: "There has been an error logging you in",
+          text: data.error.message,
         });
       }
     } catch (err) {
@@ -90,21 +100,31 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title="Login | The Unus Anus Archive" />
+      <MetaHead title="Register | The Unus Anus Archive" />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        Login to your account
+        Register new account
       </Typography>
-      <form id="login-form">
+      <form id="register-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <TextField
             className={classNames("my-3", styles.field)}
             id="email-archive"
             name="email-archive"
-            label="Username"
+            label="Email"
             variant="standard"
             value={email}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            className={classNames("my-3", styles.field)}
+            id="username-archive"
+            name="username-archive"
+            label="Username"
+            variant="standard"
+            value={username}
+            type="text"
+            onChange={(e) => setUsername(e.target.value)}
           />
           <FormControl
             variant="standard"
@@ -118,7 +138,37 @@ const LoginPage: React.FC = () => {
               name="password-archive"
               type={showPassword ? "text" : "password"}
               value={password}
+              autoComplete="new-password"
               onChange={(event) => setPassword(event.currentTarget.value)}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+          </FormControl>
+          <FormControl
+            variant="standard"
+            className={classNames("my-3", styles.field)}
+          >
+            <InputLabel htmlFor="standard-adornment-password">
+              Confirm password
+            </InputLabel>
+            <Input
+              id="confirm-password-archive"
+              name="confirm-password-archive"
+              type={showPassword ? "text" : "password"}
+              value={confirmPassword}
+              autoComplete="new-password"
+              onChange={(event) =>
+                setConfirmPassword(event.currentTarget.value)
+              }
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -143,7 +193,7 @@ const LoginPage: React.FC = () => {
               disabled={!isValid()}
               onClick={onSubmit}
             >
-              Login
+              Create an account
             </Button>
           </div>
         </div>

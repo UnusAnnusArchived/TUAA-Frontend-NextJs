@@ -91,3 +91,16 @@ export interface CheckLoginKeyResponse {
   isValid: boolean;
   user?: LimitedUser;
 }
+
+export interface SignupResponse {
+  success: boolean;
+  loginURI?: "/api/v2/account/login";
+  error?: {
+    code: 0 | 1 | 2 | number;
+    message:
+      | "Passwords do not match!"
+      | "Account exists!"
+      | "Missing info!"
+      | string;
+  };
+}

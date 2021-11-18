@@ -1,14 +1,27 @@
 import Head from "next/head";
 import React from "react";
 import "../styles/globals.scss";
-import type {
-  AppProps /*, AppContext , NextWebVitalsMetric */,
-} from "next/app";
+import type { AppProps /*, AppContext*/, NextWebVitalsMetric } from "next/app";
 import Script from "next/script";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../components/theme/theme";
 import { RecoilRoot } from "recoil";
 import { GeistProvider } from "@geist-ui/react";
+
+export const reportWebVitals = (metric: NextWebVitalsMetric) => {
+  const { id, name, label, value } = metric;
+  // Use `window.gtag` if you initialized Google Analytics as this example:
+  // https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_document.js
+
+  // @ts-ignore
+  window.gtag("event", name, {
+    event_category:
+      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
+    value: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
+    event_label: id, // id unique to current page load
+    non_interaction: true, // avoids affecting bounce rate.
+  });
+};
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -42,12 +55,12 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link
           rel="mask-icon"
           href="/favs/safari-pinned-tab.svg"
-          color="#5bbad5"
+          color="#121212"
         />
         <link rel="shortcut icon" href="/favs/favicon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/favs/browserconfig.xml" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#121212" />
       </Head>
       <RecoilRoot>
         <ThemeProvider theme={theme}>

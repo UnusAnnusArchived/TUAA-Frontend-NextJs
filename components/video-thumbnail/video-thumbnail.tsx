@@ -4,8 +4,7 @@ import { IVideo } from "../../src/types";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import { numberToNPlaces } from "../../src/utils";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { theme } from "../theme/theme";
+import moment from "moment";
 
 interface IProps {
   video: IVideo;
@@ -15,6 +14,8 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
   const posterUrl =
     video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
   const img = `https:${posterUrl}`;
+
+  const date = new Date(video.date);
 
   return (
     <Paper className="p-2 h-100">
@@ -33,7 +34,8 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
       </div>
       <div className="text-center mt-2">
         <Typography variant="body2">
-          S{numberToNPlaces(video.season, 2)}E{numberToNPlaces(video.episode)}
+          Episode {numberToNPlaces(video.episode)} -{" "}
+          {moment(date).format("DD. MMM YYYY")}
         </Typography>
       </div>
     </Paper>
