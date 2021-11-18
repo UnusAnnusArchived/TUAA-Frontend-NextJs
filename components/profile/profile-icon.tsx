@@ -17,11 +17,14 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuList from "@mui/material/MenuList";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 
 const ProfileIcon: React.FC = () => ***REMOVED***
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
+  const ***REMOVED*** t ***REMOVED*** = useTranslation();
 
   const [, setToast] = useToasts();
 
@@ -44,7 +47,7 @@ const ProfileIcon: React.FC = () => ***REMOVED***
           setLoggedInUser(null);
           setToast(***REMOVED***
             type: "success",
-            text: "You have logged out successfully",
+            text: t("profile:logout:successLocal"),
       ***REMOVED***);
 
           handleClose();
@@ -88,14 +91,14 @@ const ProfileIcon: React.FC = () => ***REMOVED***
                 <ListItemIcon>
                   <PersonIcon />
                 </ListItemIcon>
-                <ListItemText>Profile</ListItemText>
+                <ListItemText>***REMOVED***t("common:profile")***REMOVED***</ListItemText>
               </MenuItem>
             </Link>
             <MenuItem onClick=***REMOVED***logout***REMOVED***>
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
-              <ListItemText>Log out</ListItemText>
+              <ListItemText>***REMOVED***t("common:logout")***REMOVED***</ListItemText>
             </MenuItem>
           </MenuList>
         </div>
