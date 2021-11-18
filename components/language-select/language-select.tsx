@@ -48,12 +48,15 @@ const LanguageSelect: React.FC = () => {
         </Tooltip>
       )}
       {isMdDown && (
-        <MenuItem>
-          <ListItemIcon>
-            <LanguageIcon />
-          </ListItemIcon>
-          <ListItemText>{t("common:language")}</ListItemText>
-        </MenuItem>
+        <div onClick={(event) => setAnchorEl(event.currentTarget)}>
+          <MenuItem>
+            <ListItemIcon>
+              <LanguageIcon />
+            </ListItemIcon>
+            <ListItemText>{t("common:language")}</ListItemText>
+          </MenuItem>
+        </div>
+
         // <Button
         //   aria-haspopup="true"
         //   aria-expanded={open ? "true" : undefined}
@@ -63,19 +66,21 @@ const LanguageSelect: React.FC = () => {
         // </Button>
       )}
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        {availableLanguages.map((language, i) => (
-          <Link
-            key={i}
-            passHref
-            href={{
-              pathname: router.pathname,
-              query: { ...router.query },
-            }}
-            locale={language.code}
-          >
-            <MenuItem onClick={handleClose}>{language.name}</MenuItem>
-          </Link>
-        ))}
+        <div className="menu-container">
+          {availableLanguages.map((language, i) => (
+            <Link
+              key={i}
+              passHref
+              href={{
+                pathname: router.pathname,
+                query: { ...router.query },
+              }}
+              locale={language.code}
+            >
+              <MenuItem onClick={handleClose}>{language.name}</MenuItem>
+            </Link>
+          ))}
+        </div>
       </Menu>
     </div>
   );

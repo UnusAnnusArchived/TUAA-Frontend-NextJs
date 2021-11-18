@@ -15,7 +15,6 @@ import IconButton from "@mui/material/IconButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { FaDiscord } from "react-icons/fa";
 import MenuIcon from "@mui/icons-material/Menu";
-import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -136,48 +135,50 @@ const ABar: React.FC = () => {
         </Fade>
       </AppBar>
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none", color: "#fff" }}
-          >
-            <MenuItem>
-              <ListItemIcon>
-                <FaDiscord />
-              </ListItemIcon>
-              <ListItemText>Discord</ListItemText>
-            </MenuItem>
-          </a>
-        </Link>
-        <Link href="https://github.com/UnusAnnusArchived" passHref>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none", color: "#fff" }}
-          >
-            <MenuItem>
-              <ListItemIcon>
-                <GitHubIcon />
-              </ListItemIcon>
-              <ListItemText>Github</ListItemText>
-            </MenuItem>
-          </a>
-        </Link>
-        <Divider />
-        <LanguageSelect />
-        <Divider />
+        <div className="menu-container">
+          <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <MenuItem>
+                <ListItemIcon>
+                  <FaDiscord />
+                </ListItemIcon>
+                <ListItemText>Discord</ListItemText>
+              </MenuItem>
+            </a>
+          </Link>
+          <Link href="https://github.com/UnusAnnusArchived" passHref>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <MenuItem>
+                <ListItemIcon>
+                  <GitHubIcon />
+                </ListItemIcon>
+                <ListItemText>Github</ListItemText>
+              </MenuItem>
+            </a>
+          </Link>
+          <Divider />
+          <LanguageSelect />
+          <Divider />
 
-        <Link passHref href="/register">
+          <Link passHref href="/register">
+            <MenuItem>
+              <Button color="inherit">{t("register:title")}</Button>
+            </MenuItem>
+          </Link>
           <MenuItem>
-            <Button color="inherit">{t("register:title")}</Button>
+            <Button color="inherit" onClick={onClickLogin}>
+              {t("login:title")}
+            </Button>
           </MenuItem>
-        </Link>
-        <MenuItem>
-          <Button color="inherit" onClick={onClickLogin}>
-            {t("login:title")}
-          </Button>
-        </MenuItem>
+        </div>
       </Menu>
     </>
   );

@@ -18,6 +18,9 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuList from "@mui/material/MenuList";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useTranslation } from "react-i18next";
+import { LanguageSelect } from "../language-select";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { FaDiscord } from "react-icons/fa";
 
 const ProfileIcon: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
@@ -94,6 +97,39 @@ const ProfileIcon: React.FC = () => {
                 <ListItemText>{t("common:profile")}</ListItemText>
               </MenuItem>
             </Link>
+            <div onClick={() => setAnchorEl(null)}>
+              <LanguageSelect />
+            </div>
+            <Divider />
+            <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                <MenuItem>
+                  <ListItemIcon>
+                    <FaDiscord />
+                  </ListItemIcon>
+                  <ListItemText>Discord</ListItemText>
+                </MenuItem>
+              </a>
+            </Link>
+            <Link href="https://github.com/UnusAnnusArchived" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                <MenuItem>
+                  <ListItemIcon>
+                    <GitHubIcon />
+                  </ListItemIcon>
+                  <ListItemText>Github</ListItemText>
+                </MenuItem>
+              </a>
+            </Link>
+            <Divider />
             <MenuItem onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />
