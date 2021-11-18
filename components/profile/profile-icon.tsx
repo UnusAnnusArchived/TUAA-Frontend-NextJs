@@ -17,11 +17,14 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuList from "@mui/material/MenuList";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useTranslation } from "react-i18next";
 
 const ProfileIcon: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
+  const { t } = useTranslation();
 
   const [, setToast] = useToasts();
 
@@ -44,7 +47,7 @@ const ProfileIcon: React.FC = () => {
           setLoggedInUser(null);
           setToast({
             type: "success",
-            text: "You have logged out successfully",
+            text: t("profile:logout:successLocal"),
           });
 
           handleClose();
@@ -88,14 +91,14 @@ const ProfileIcon: React.FC = () => {
                 <ListItemIcon>
                   <PersonIcon />
                 </ListItemIcon>
-                <ListItemText>Profile</ListItemText>
+                <ListItemText>{t("common:profile")}</ListItemText>
               </MenuItem>
             </Link>
             <MenuItem onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
-              <ListItemText>Log out</ListItemText>
+              <ListItemText>{t("common:logout")}</ListItemText>
             </MenuItem>
           </MenuList>
         </div>
