@@ -21,11 +21,15 @@ import { useTranslation } from "react-i18next";
 import { LanguageSelect } from "../language-select";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { FaDiscord } from "react-icons/fa";
+import { useMediaQuery } from "@mui/material";
+import { theme } from "../theme/theme";
 
 const ProfileIcon: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
+  const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const { t } = useTranslation();
 
@@ -97,9 +101,11 @@ const ProfileIcon: React.FC = () => {
                 <ListItemText>{t("common:profile")}</ListItemText>
               </MenuItem>
             </Link>
-            <div onClick={() => setAnchorEl(null)}>
-              <LanguageSelect />
-            </div>
+            {isMdDown && (
+              <div onClick={() => setAnchorEl(null)}>
+                <LanguageSelect />
+              </div>
+            )}
             <Divider />
             <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
               <a
