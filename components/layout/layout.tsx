@@ -39,7 +39,7 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
 
     if (res.status === 200) ***REMOVED***
       if (res.data.isValid) ***REMOVED***
-        setLoggedInUser(***REMOVED*** ...loggedInUser, ...res.data ***REMOVED***);
+        // setLoggedInUser(***REMOVED*** ...loggedInUser, ...res.data ***REMOVED***);
         return true;
   ***REMOVED***
 ***REMOVED***

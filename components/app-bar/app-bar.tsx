@@ -21,11 +21,15 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Menu from "@mui/material/Menu";
 import Divider from "@mui/material/Divider";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
 
 const ABar: React.FC = () => ***REMOVED***
   const [isRouting, setIsRouting] = useState(false);
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setPreviousPage] = useRecoilState(previousPageAtom);
+
+  const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -59,10 +63,13 @@ const ABar: React.FC = () => ***REMOVED***
     router.push("/login");
 ***REMOVED***;
 
+  console.log(loggedInUser);
+
   return (
-    <AppBar position="sticky">
-      <Toolbar>
-        ***REMOVED***/* <IconButton
+    <>
+      <AppBar position="sticky">
+        <Toolbar>
+          ***REMOVED***/* <IconButton
           size="large"
           edge="start"
           color="inherit"
@@ -71,102 +78,103 @@ const ABar: React.FC = () => ***REMOVED***
         >
           <MenuIcon />
         </IconButton> */***REMOVED***
-        <Link href="/" passHref>
-          <Typography
-            variant="h6"
-            component="div"
-            className="pointer"
-            // sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***
-          >
-            The Unus Anus Archive
-          </Typography>
-        </Link>
-        ***REMOVED***/* ***REMOVED***course && (
+          <Link href="/" passHref>
+            <Typography
+              variant="h6"
+              component="div"
+              className="pointer"
+              // sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***
+            >
+              The Unus Anus Archive
+            </Typography>
+          </Link>
+          ***REMOVED***/* ***REMOVED***course && (
           <Typography variant="h6" component="div" className="ellipsis">
             ***REMOVED***course.name***REMOVED***
           </Typography>
         )***REMOVED*** */***REMOVED***
-        <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
-        <div className="d-md-flex d-none">
-          <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <IconButton>
-                <FaDiscord />
-              </IconButton>
-            </a>
-          </Link>
-          <Link href="https://github.com/UnusAnnusArchived" passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <IconButton>
-                <GitHubIcon />
-              </IconButton>
-            </a>
-          </Link>
-          ***REMOVED***!loggedInUser && (
-            <Link passHref href="/register">
-              <Button color="inherit">Register</Button>
-            </Link>
-          )***REMOVED***
-          ***REMOVED***!loggedInUser && (
-            <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
-              Login
-            </Button>
-          )***REMOVED***
-        </div>
-        ***REMOVED***!loggedInUser && (
-          <div className="d-flex d-md-none">
-            <IconButton onClick=***REMOVED***handleClick***REMOVED***>
-              <MenuIcon />
-            </IconButton>
-            <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
+          <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
+          ***REMOVED***!isMdDown && (
+            <div>
               <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-                >
-                  <MenuItem>
-                    <ListItemIcon>
-                      <FaDiscord />
-                    </ListItemIcon>
-                    <ListItemText>Discord</ListItemText>
-                  </MenuItem>
+                <a target="_blank" rel="noopener noreferrer">
+                  <IconButton>
+                    <FaDiscord />
+                  </IconButton>
                 </a>
               </Link>
               <Link href="https://github.com/UnusAnnusArchived" passHref>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-                >
-                  <MenuItem>
-                    <ListItemIcon>
-                      <GitHubIcon />
-                    </ListItemIcon>
-                    <ListItemText>Github</ListItemText>
-                  </MenuItem>
+                <a target="_blank" rel="noopener noreferrer">
+                  <IconButton>
+                    <GitHubIcon />
+                  </IconButton>
                 </a>
               </Link>
-              <Divider />
-              <Link passHref href="/register">
-                <MenuItem>
+              ***REMOVED***!loggedInUser && (
+                <Link passHref href="/register">
                   <Button color="inherit">Register</Button>
-                </MenuItem>
-              </Link>
-              <MenuItem>
+                </Link>
+              )***REMOVED***
+              ***REMOVED***!loggedInUser && (
                 <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
                   Login
                 </Button>
-              </MenuItem>
-            </Menu>
-          </div>
-        )***REMOVED***
-        ***REMOVED***loggedInUser && <ProfileIcon />***REMOVED***
-      </Toolbar>
-      <Fade in=***REMOVED***isRouting***REMOVED***>
-        <LinearProgress className="routing-progress" />
-      </Fade>
-    </AppBar>
+              )***REMOVED***
+            </div>
+          )***REMOVED***
+          ***REMOVED***!loggedInUser && isMdDown && (
+            <IconButton onClick=***REMOVED***handleClick***REMOVED***>
+              <MenuIcon />
+            </IconButton>
+          )***REMOVED***
+          <ProfileIcon />
+        </Toolbar>
+        <Fade in=***REMOVED***isRouting***REMOVED***>
+          <LinearProgress className="routing-progress" />
+        </Fade>
+      </AppBar>
+      <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
+        <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
+          >
+            <MenuItem>
+              <ListItemIcon>
+                <FaDiscord />
+              </ListItemIcon>
+              <ListItemText>Discord</ListItemText>
+            </MenuItem>
+          </a>
+        </Link>
+        <Link href="https://github.com/UnusAnnusArchived" passHref>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
+          >
+            <MenuItem>
+              <ListItemIcon>
+                <GitHubIcon />
+              </ListItemIcon>
+              <ListItemText>Github</ListItemText>
+            </MenuItem>
+          </a>
+        </Link>
+        <Divider />
+        <Link passHref href="/register">
+          <MenuItem>
+            <Button color="inherit">Register</Button>
+          </MenuItem>
+        </Link>
+        <MenuItem>
+          <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
+            Login
+          </Button>
+        </MenuItem>
+      </Menu>
+    </>
   );
 ***REMOVED***;
 

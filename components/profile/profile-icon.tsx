@@ -32,13 +32,11 @@ const ProfileIcon: React.FC = () => ***REMOVED***
     setAnchorEl(null);
 ***REMOVED***;
 
-  const ***REMOVED*** user ***REMOVED*** = loggedInUser;
-
   const logout = async () => ***REMOVED***
     try ***REMOVED***
       const res = await axios.post<LogoutResponse>(
         `$***REMOVED***endpoint***REMOVED***/api/v2/account/logout`,
-        ***REMOVED*** id: user.id, loginKey: loggedInUser.loginKey ***REMOVED***
+        ***REMOVED*** id: loggedInUser.user.id, loginKey: loggedInUser.loginKey ***REMOVED***
       );
 
       if (res.status === 200) ***REMOVED***
@@ -59,8 +57,14 @@ const ProfileIcon: React.FC = () => ***REMOVED***
 ***REMOVED***
 ***REMOVED***;
 
+  if (loggedInUser == null) ***REMOVED***
+    return null;
+***REMOVED***
+
+  const ***REMOVED*** user ***REMOVED*** = loggedInUser;
+
   return (
-    <div>
+    <div id="logged-in-user-icon">
       <IconButton onClick=***REMOVED***handleClick***REMOVED***>
         <Avatar src=***REMOVED***`$***REMOVED***endpoint***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED*** alt=***REMOVED***user.username***REMOVED*** />
       </IconButton>
