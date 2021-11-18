@@ -63,7 +63,7 @@ export default Watch;
 export const getServerSideProps: GetServerSideProps<IProps, { v: string }> =
   async (context) => {
     const watchCode = context.query.v.toString();
-    const res = await fetch(`${endpoint}/api/v2/metadata/episode/${watchCode}`);
+    const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
 
     if (res.status !== 200) {
       return { props: { video: null }, notFound: true };

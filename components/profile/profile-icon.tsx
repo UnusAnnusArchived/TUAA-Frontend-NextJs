@@ -45,7 +45,7 @@ const ProfileIcon: React.FC = () => {
   const logout = async () => {
     try {
       const res = await axios.post<LogoutResponse>(
-        `${endpoint}/api/v2/account/logout`,
+        `${endpoint}/v2/account/logout`,
         { id: loggedInUser.user.id, loginKey: loggedInUser.loginKey }
       );
 

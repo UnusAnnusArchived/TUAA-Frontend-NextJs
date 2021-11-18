@@ -41,7 +41,7 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
       tracks: video.tracks ?? [],
       previewThumbnails: {
         enabled: true,
-        src: `${endpoint}/api/v2/preview/${watchCode}`,
+        src: `${endpoint}/v2/preview/${watchCode}`,
       },
     };
 
@@ -78,7 +78,7 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
       tracks: video.tracks ?? [],
       previewThumbnails: {
         enabled: true,
-        src: `${endpoint}/api/v2/preview/${watchCode}`,
+        src: `${endpoint}/v2/preview/${watchCode}`,
       },
     };
 

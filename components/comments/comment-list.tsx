@@ -16,7 +16,7 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
   const { t } = useTranslation();
 
   const { data, mutate, isValidating, error } = useSWR<IComment[], any>(
-    `${endpoint}/api/v2/comments/get/${watchCode}`,
+    `${endpoint}/v2/comments/get/${watchCode}`,
     fetcher
   );
 

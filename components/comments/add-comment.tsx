@@ -32,7 +32,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
     setIsSendingComment(true);
     try {
       const res = await axios.post<PostCommentResponse>(
-        `${endpoint}/api/v2/comments/post/${watchCode}`,
+        `${endpoint}/v2/comments/post/${watchCode}`,
         { loginKey: loggedInUser.loginKey, comment: commentText }
       );
 

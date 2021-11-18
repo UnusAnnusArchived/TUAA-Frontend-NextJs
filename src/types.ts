@@ -94,7 +94,7 @@ export interface CheckLoginKeyResponse {
 
 export interface SignupResponse {
   success: boolean;
-  loginURI?: "/api/v2/account/login";
+  loginURI?: "/v2/account/login";
   error?: {
     code: 0 | 1 | 2 | number;
     message:

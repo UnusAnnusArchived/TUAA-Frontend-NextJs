@@ -47,7 +47,7 @@ const LoginPage: React.FC = () => {
 
     try {
       const res = await axios.post<LoginResponse>(
-        `${endpoint}/api/v2/account/login`,
+        `${endpoint}/v2/account/login`,
         {
           username: email,
           password,

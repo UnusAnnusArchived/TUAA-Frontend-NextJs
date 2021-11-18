@@ -53,7 +53,7 @@ const LoginPage: React.FC = () => {
 
     try {
       const res = await axios.post<SignupResponse>(
-        `${endpoint}/api/v2/account/signup`,
+        `${endpoint}/v2/account/signup`,
         {
           email: email.trim(),
           username: username.trim(),
