@@ -24,6 +24,7 @@ import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { theme } from "../theme/theme";
 import { useTranslation } from "react-i18next";
+import { LanguageSelect } from "../language-select";
 
 const ABar: React.FC = () => {
   const [isRouting, setIsRouting] = useState(false);
@@ -95,7 +96,7 @@ const ABar: React.FC = () => {
         )} */}
           <Box sx={{ flexGrow: 1 }} />
           {!isMdDown && (
-            <div>
+            <div className="d-flex">
               <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <IconButton>
@@ -110,6 +111,7 @@ const ABar: React.FC = () => {
                   </IconButton>
                 </a>
               </Link>
+              <LanguageSelect />
               {!loggedInUser && (
                 <Link passHref href="/register">
                   <Button color="inherit">{t("register:title")}</Button>
@@ -163,6 +165,9 @@ const ABar: React.FC = () => {
           </a>
         </Link>
         <Divider />
+        <LanguageSelect />
+        <Divider />
+
         <Link passHref href="/register">
           <MenuItem>
             <Button color="inherit">{t("register:title")}</Button>

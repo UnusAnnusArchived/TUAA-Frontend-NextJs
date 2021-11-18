@@ -3,8 +3,9 @@ import { initReactI18next } from "react-i18next";
 
 //Import language definitions
 import en from "./en";
-import de from './de';
+import de from "./de";
 import cs from "./cs";
+import { ILanguage } from "../types";
 
 export const initTranslations = async (locale: string) => {
   await i18next.use(initReactI18next).init({
@@ -20,3 +21,18 @@ export const initTranslations = async (locale: string) => {
     },
   });
 };
+
+export const availableLanguages: ILanguage[] = [
+  {
+    name: "English",
+    code: "en",
+  },
+  {
+    name: "Deutsch",
+    code: "de",
+  },
+  {
+    name: "Čeština",
+    code: "cs",
+  },
+];

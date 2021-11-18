@@ -4,7 +4,7 @@ import { IVideo } from "../../src/types";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import { numberToNPlaces } from "../../src/utils";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import { useTranslation } from "react-i18next";
 
 interface IProps {
@@ -38,7 +38,7 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
       <div className="text-center mt-2">
         <Typography variant="body2">
           {t("player:episode")} {numberToNPlaces(video.episode)} -{" "}
-          {moment(date).format("DD. MMM YYYY")}
+          {moment(date).locale(i18n.language).format("DD. MMM YYYY")}
         </Typography>
       </div>
     </Paper>

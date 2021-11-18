@@ -104,3 +104,8 @@ export interface SignupResponse {
       | string;
   };
 }
+
+export interface ILanguage {
+  name: string;
+  code: string;
+}
