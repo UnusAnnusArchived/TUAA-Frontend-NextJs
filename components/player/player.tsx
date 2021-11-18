@@ -41,7 +41,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
       tracks: video.tracks ?? [],
       previewThumbnails: ***REMOVED***
         enabled: true,
-        src: `$***REMOVED***endpoint***REMOVED***/api/v2/preview/$***REMOVED***watchCode***REMOVED***`,
+        src: `$***REMOVED***endpoint***REMOVED***/v2/preview/$***REMOVED***watchCode***REMOVED***`,
     ***REMOVED***
 ***REMOVED***;
 
@@ -78,7 +78,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
       tracks: video.tracks ?? [],
       previewThumbnails: ***REMOVED***
         enabled: true,
-        src: `$***REMOVED***endpoint***REMOVED***/api/v2/preview/$***REMOVED***watchCode***REMOVED***`,
+        src: `$***REMOVED***endpoint***REMOVED***/v2/preview/$***REMOVED***watchCode***REMOVED***`,
     ***REMOVED***
 ***REMOVED***;
 

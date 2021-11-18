@@ -33,7 +33,7 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
 
   const refetchUser = async (): Promise<boolean> => ***REMOVED***
     const res = await axios.post<CheckLoginKeyResponse>(
-      `$***REMOVED***endpoint***REMOVED***/api/v2/account/checkloginkey`,
+      `$***REMOVED***endpoint***REMOVED***/v2/account/checkloginkey`,
       ***REMOVED*** loginKey: loggedInUser.loginKey ***REMOVED***
     );
 

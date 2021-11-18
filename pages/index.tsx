@@ -53,7 +53,7 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (
   // Perhaps change to build only once
   // However web app will need to be rebuild every time the video dataset changes
 
-  const res = await fetch(`$***REMOVED***endpoint***REMOVED***/api/v2/metadata/all`);
+  const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
   const data: Seasons = await res.json();
 
   return ***REMOVED***

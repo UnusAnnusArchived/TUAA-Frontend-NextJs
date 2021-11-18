@@ -53,7 +53,7 @@ const LoginPage: React.FC = () => ***REMOVED***
 
     try ***REMOVED***
       const res = await axios.post<SignupResponse>(
-        `$***REMOVED***endpoint***REMOVED***/api/v2/account/signup`,
+        `$***REMOVED***endpoint***REMOVED***/v2/account/signup`,
         ***REMOVED***
           email: email.trim(),
           username: username.trim(),

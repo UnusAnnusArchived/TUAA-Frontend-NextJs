@@ -76,7 +76,7 @@ const ChangePic: React.FC = () => ***REMOVED***
       formData.append("loginKey", loggedInUser.loginKey);
 
       const imageUploadResult = await axios.post<ChangePFPResponse>(
-        `$***REMOVED***endpoint***REMOVED***/api/v2/account/changepfp`,
+        `$***REMOVED***endpoint***REMOVED***/v2/account/changepfp`,
         formData,
         ***REMOVED***
           onUploadProgress: (progressEvent) =>
@@ -109,7 +109,7 @@ const ChangePic: React.FC = () => ***REMOVED***
 
   const refetchUser = async (): Promise<boolean> => ***REMOVED***
     const res = await axios.post<CheckLoginKeyResponse>(
-      `$***REMOVED***endpoint***REMOVED***/api/v2/account/checkloginkey`,
+      `$***REMOVED***endpoint***REMOVED***/v2/account/checkloginkey`,
       ***REMOVED*** loginKey: loggedInUser.loginKey ***REMOVED***
     );
 

@@ -45,7 +45,7 @@ const ProfileIcon: React.FC = () => ***REMOVED***
   const logout = async () => ***REMOVED***
     try ***REMOVED***
       const res = await axios.post<LogoutResponse>(
-        `$***REMOVED***endpoint***REMOVED***/api/v2/account/logout`,
+        `$***REMOVED***endpoint***REMOVED***/v2/account/logout`,
         ***REMOVED*** id: loggedInUser.user.id, loginKey: loggedInUser.loginKey ***REMOVED***
       );
 

@@ -94,7 +94,7 @@ export interface CheckLoginKeyResponse ***REMOVED***
 
 export interface SignupResponse ***REMOVED***
   success: boolean;
-  loginURI?: "/api/v2/account/login";
+  loginURI?: "/v2/account/login";
   error?: ***REMOVED***
     code: 0 | 1 | 2 | number;
     message:

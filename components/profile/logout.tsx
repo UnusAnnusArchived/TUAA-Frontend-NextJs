@@ -21,7 +21,7 @@ const Logout: React.FC = () => ***REMOVED***
   const logout = async () => ***REMOVED***
     try ***REMOVED***
       const res = await axios.post<LogoutResponse>(
-        `$***REMOVED***endpoint***REMOVED***/api/v2/account/logout`,
+        `$***REMOVED***endpoint***REMOVED***/v2/account/logout`,
         ***REMOVED*** id: user.id, loginKey: loggedInUser.loginKey ***REMOVED***
       );
 
@@ -45,7 +45,7 @@ const Logout: React.FC = () => ***REMOVED***
   const logoutEverywhere = async () => ***REMOVED***
     try ***REMOVED***
       const res = await axios.post<LogoutResponse>(
-        `$***REMOVED***endpoint***REMOVED***/api/v2/account/logoutall`,
+        `$***REMOVED***endpoint***REMOVED***/v2/account/logoutall`,
         ***REMOVED*** id: user.id ***REMOVED***
       );
 
