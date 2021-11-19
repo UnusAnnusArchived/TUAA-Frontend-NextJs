@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Plyr from "plyr";
 import { IVideo } from "../../src/types";
-import { endpoint } from "../../src/endpoints";
+import { endpoint, localApi } from "../../src/endpoints";
 import { Button, Fade, Portal } from "@mui/material";
 import styles from "../../styles/Player.module.scss";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
@@ -38,7 +38,10 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
       title: video.title ?? "",
       poster: video.thumbnail ?? video.posters[0].src,
       sources: video.sources,
-      tracks: video.tracks ?? [],
+      tracks:
+        video.tracks.map((track) => {
+          return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
+        }) ?? [],
       previewThumbnails: {
         enabled: true,
         src: `${endpoint}/v2/preview/${watchCode}`,
@@ -75,7 +78,10 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
       title: video.title ?? "",
       poster: video.thumbnail ?? video.posters[0].src,
       sources: video.sources,
-      tracks: video.tracks ?? [],
+      tracks:
+        video.tracks.map((track) => {
+          return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
+        }) ?? [],
       previewThumbnails: {
         enabled: true,
         src: `${endpoint}/v2/preview/${watchCode}`,
