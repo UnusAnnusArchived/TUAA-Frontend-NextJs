@@ -6,7 +6,7 @@ export interface IVideo ***REMOVED***
   title: string;
   description: string;
   date?: number;
-  releasedate?: number
+  releasedate?: number;
   duration: number;
   sources: PlyrSource[];
   tracks: PlyrTrack[];
