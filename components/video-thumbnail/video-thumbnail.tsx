@@ -16,7 +16,7 @@ const VideoThumbnail: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => 
     video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
   const img = `https:$***REMOVED***posterUrl***REMOVED***`;
 
-  const date = new Date(video.date);
+  const date = new Date(video.date || video.releasedate);
 
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 

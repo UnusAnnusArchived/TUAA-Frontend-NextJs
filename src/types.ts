@@ -5,7 +5,8 @@ export interface IVideo ***REMOVED***
   episode: number;
   title: string;
   description: string;
-  date: number;
+  date?: number;
+  releasedate?: number
   duration: number;
   sources: PlyrSource[];
   tracks: PlyrTrack[];
@@ -94,7 +95,7 @@ export interface CheckLoginKeyResponse ***REMOVED***
 
 export interface SignupResponse ***REMOVED***
   success: boolean;
-  loginURI?: "/v2/account/login";
+  loginURI?: "/api/v2/account/login";
   error?: ***REMOVED***
     code: 0 | 1 | 2 | number;
     message:

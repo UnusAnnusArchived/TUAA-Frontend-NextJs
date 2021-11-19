@@ -4,7 +4,7 @@ const runtimeCaching = require('next-pwa/cache');
 module.exports = withPWA(***REMOVED***
   reactStrictMode: true,
   images: ***REMOVED***
-    domains: ['cdn.unusannusarchive.tk', 'cdn.unusann.us'],
+    domains: ['cdn.unusann.us'],
 ***REMOVED***
   i18n: ***REMOVED***
     locales: ['en', 'de', 'cs'],
