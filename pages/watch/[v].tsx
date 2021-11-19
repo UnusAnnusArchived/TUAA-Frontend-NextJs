@@ -29,8 +29,8 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   return (
     <Layout>
       <MetaHead
-        title={`${video.title} | The Unus Anus Archive`}
-        description="The Unus Anus Archive"
+        title={`${video.title} | The Unus Annus Archive`}
+        description="The Unus Annus Archive"
         image={`https:${image}`}
       />
       <Player video={video} watchCode={watchCode} />

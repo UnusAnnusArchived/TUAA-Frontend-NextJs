@@ -39,7 +39,7 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
       poster: video.thumbnail ?? video.posters[0].src,
       sources: video.sources,
       tracks:
-        video.tracks.map((track) => {
+        video.tracks?.map((track) => {
           return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
         }) ?? [],
       previewThumbnails: {
@@ -77,9 +77,16 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
       type: "video",
       title: video.title ?? "",
       poster: video.thumbnail ?? video.posters[0].src,
-      sources: video.sources,
+      sources: !!video.video
+        ? [
+            {
+              src: video.video,
+              type: "video/mp4",
+            },
+          ]
+        : video.sources,
       tracks:
-        video.tracks.map((track) => {
+        video.tracks?.map((track) => {
           return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
         }) ?? [],
       previewThumbnails: {

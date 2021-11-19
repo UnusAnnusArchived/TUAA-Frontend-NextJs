@@ -11,7 +11,7 @@ interface IProps {
 
 const MetaHead: React.FC<IProps> = ({
   title,
-  description = "The Unus Anus Archive",
+  description = "The Unus Annus Archive",
   image = "thumbnail.png",
   width = "1920",
   height = "1080",
@@ -37,7 +37,7 @@ const MetaHead: React.FC<IProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:url" content="https://unusann.us/" />
-      <meta property="og:site_name" content="The Unus Anus Archive" />
+      <meta property="og:site_name" content="The Unus Annus Archive" />
       <meta property="og:locale" content="en_UK" />
       <meta property="og:type" content="website" />
       <meta property="og:image:width" content={width} />

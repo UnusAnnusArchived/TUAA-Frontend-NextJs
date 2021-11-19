@@ -85,7 +85,7 @@ const ABar: React.FC = () => {
               className="pointer"
               // sx={{ flexGrow: 1 }}
             >
-              The Unus Anus Archive
+              The Unus Annus Archive
             </Typography>
           </Link>
           {/* {course && (
