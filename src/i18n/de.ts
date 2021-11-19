@@ -71,6 +71,43 @@ const en = ***REMOVED***
     errors: ***REMOVED***
       pageNotFound: 'Die gesuchte Seite wurde nicht gefunden',
       returnToHome: 'Zurück zur Startseite'
+  ***REMOVED***
+    plyr: ***REMOVED***
+      restart: 'Neu starten',
+      rewind: 'Rewind ***REMOVED***seektime***REMOVED***s',
+      play: 'Play',
+      pause: 'Pause',
+      fastForward: 'Forward ***REMOVED***seektime***REMOVED***s',
+      seek: 'Seek',
+      seekLabel: '***REMOVED***currentTime***REMOVED*** of ***REMOVED***duration***REMOVED***',
+      played: 'Played',
+      buffered: 'Buffered',
+      currentTime: 'Current time',
+      duration: 'Duration',
+      volume: 'Volume',
+      mute: 'Mute',
+      unmute: 'Unmute',
+      enableCaptions: 'Enable captions',
+      disableCaptions: 'Disable captions',
+      download: 'Download',
+      enterFullscreen: 'Enter fullscreen',
+      exitFullscreen: 'Exit fullscreen',
+      frameTitle: 'Player for ***REMOVED***title***REMOVED***',
+      captions: 'Captions',
+      settings: 'Settings',
+      pip: 'PIP',
+      menuBack: 'Go back to previous menu',
+      speed: 'Speed',
+      normal: 'Normal',
+      quality: 'Quality',
+      loop: 'Loop',
+      start: 'Start',
+      end: 'End',
+      all: 'All',
+      reset: 'Reset',
+      disabled: 'Disabled',
+      enabled: 'Enabled',
+      advertisement: 'Ad',
 ***REMOVED***
 ***REMOVED***;
   
