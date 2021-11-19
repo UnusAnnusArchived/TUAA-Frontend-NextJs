@@ -2,7 +2,7 @@ import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
-import ***REMOVED*** GetServerSideProps ***REMOVED*** from "next";
+import ***REMOVED*** GetServerSideProps, GetStaticPaths, GetStaticProps ***REMOVED*** from "next";
 import React from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** CommentList ***REMOVED*** from "../../components/comments";
@@ -11,7 +11,7 @@ import ***REMOVED*** Layout ***REMOVED*** from "../../components/layout";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../../components/meta-head";
 import ***REMOVED*** Player ***REMOVED*** from "../../components/player";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
+import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../../src/types";
 
 interface IProps ***REMOVED***
   watchCode: string;
@@ -60,21 +60,64 @@ const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) =
 
 export default Watch;
 
-export const getServerSideProps: GetServerSideProps<IProps, ***REMOVED*** v: string ***REMOVED***> =
-  async (context) => ***REMOVED***
-    const watchCode = context.query.v.toString();
-    const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/episode/$***REMOVED***watchCode***REMOVED***`);
+// export const getServerSideProps: GetServerSideProps<IProps, ***REMOVED*** v: string ***REMOVED***> =
+//   async (context) => ***REMOVED***
+//     const watchCode = context.query.v.toString();
+//     const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/episode/$***REMOVED***watchCode***REMOVED***`);
 
-    if (res.status !== 200) ***REMOVED***
-      return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
+//     if (res.status !== 200) ***REMOVED***
+//       return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
+// ***REMOVED***
+
+//     const data: IVideo = await res.json();
+
+//     return ***REMOVED***
+//       props: ***REMOVED***
+//         watchCode,
+//         video: data,
+//     ***REMOVED***
+// ***REMOVED***;
+// ***REMOVED***;
+
+export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMOVED***
+  const watchCode = context.params.v.toString();
+  const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/episode/$***REMOVED***watchCode***REMOVED***`);
+
+  if (res.status !== 200) ***REMOVED***
+    return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
 ***REMOVED***
 
-    const data: IVideo = await res.json();
+  const data: IVideo = await res.json();
 
-    return ***REMOVED***
-      props: ***REMOVED***
-        watchCode,
-        video: data,
-    ***REMOVED***
+  return ***REMOVED***
+    props: ***REMOVED***
+      watchCode,
+      video: data,
+  ***REMOVED***
+    revalidate: 60 * 60 * 24, // 1 day
+***REMOVED***;
+***REMOVED***;
+
+export const getStaticPaths: GetStaticPaths = async (context) => ***REMOVED***
+  const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
+  const data: Seasons = await res.json();
+
+  const paths = [];
+
+  for (const season of data) ***REMOVED***
+    for (const episode of season) ***REMOVED***
+      paths.push(***REMOVED***
+        params: ***REMOVED***
+          v: `s$***REMOVED***episode.season.toString().padStart(2, "0")***REMOVED***.e$***REMOVED***episode.episode
+            .toString()
+            .padStart(3, "0")***REMOVED***`,
+      ***REMOVED***
+  ***REMOVED***);
+***REMOVED***
+***REMOVED***
+
+  return ***REMOVED***
+    paths,
+    fallback: "blocking",
 ***REMOVED***;
 ***REMOVED***;

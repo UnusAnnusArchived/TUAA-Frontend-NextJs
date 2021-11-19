@@ -1,6 +1,6 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import ***REMOVED*** GetServerSideProps ***REMOVED*** from "next";
+import ***REMOVED*** GetServerSideProps, GetStaticProps ***REMOVED*** from "next";
 import Head from "next/head";
 import React, ***REMOVED*** useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
@@ -47,12 +47,7 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
 
 export default Page;
 
-export const getServerSideProps: GetServerSideProps<IProps> = async (
-  context
-) => ***REMOVED***
-  // Perhaps change to build only once
-  // However web app will need to be rebuild every time the video dataset changes
-
+export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMOVED***
   const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
   const data: Seasons = await res.json();
 
@@ -60,5 +55,22 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (
     props: ***REMOVED***
       seasons: data,
   ***REMOVED***
+    revalidate: 60 * 60 * 24, // 1 day
 ***REMOVED***;
 ***REMOVED***;
+
+// export const getServerSideProps: GetServerSideProps<IProps> = async (
+//   context
+// ) => ***REMOVED***
+//   // Perhaps change to build only once
+//   // However web app will need to be rebuild every time the video dataset changes
+
+//   const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
+//   const data: Seasons = await res.json();
+
+//   return ***REMOVED***
+//     props: ***REMOVED***
+//       seasons: data,
+//   ***REMOVED***
+// ***REMOVED***;
+// ***REMOVED***;
