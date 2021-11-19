@@ -53,7 +53,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
     try ***REMOVED***
       plyr.play();
 ***REMOVED*** catch (err) ***REMOVED******REMOVED***
-***REMOVED*** [router.asPath]);
+***REMOVED*** [router.query.v]);
 
   const initPlayer = () => ***REMOVED***
     if (plyr) return;
