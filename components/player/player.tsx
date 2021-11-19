@@ -1,7 +1,7 @@
 import React, ***REMOVED*** useEffect, useRef, useState ***REMOVED*** from "react";
 import Plyr from "plyr";
 import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
-import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
+import ***REMOVED*** endpoint, localApi ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** Button, Fade, Portal ***REMOVED*** from "@mui/material";
 import styles from "../../styles/Player.module.scss";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
@@ -38,7 +38,10 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
       title: video.title ?? "",
       poster: video.thumbnail ?? video.posters[0].src,
       sources: video.sources,
-      tracks: video.tracks ?? [],
+      tracks:
+        video.tracks.map((track) => ***REMOVED***
+          return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
+    ***REMOVED***) ?? [],
       previewThumbnails: ***REMOVED***
         enabled: true,
         src: `$***REMOVED***endpoint***REMOVED***/v2/preview/$***REMOVED***watchCode***REMOVED***`,
@@ -75,7 +78,10 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
       title: video.title ?? "",
       poster: video.thumbnail ?? video.posters[0].src,
       sources: video.sources,
-      tracks: video.tracks ?? [],
+      tracks:
+        video.tracks.map((track) => ***REMOVED***
+          return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
+    ***REMOVED***) ?? [],
       previewThumbnails: ***REMOVED***
         enabled: true,
         src: `$***REMOVED***endpoint***REMOVED***/v2/preview/$***REMOVED***watchCode***REMOVED***`,
