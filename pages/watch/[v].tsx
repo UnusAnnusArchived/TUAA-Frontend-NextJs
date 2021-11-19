@@ -24,7 +24,7 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
     video.thumbnail ??
     video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
 
-  const published = new Date(video.date);
+  const published = new Date(video.date || video.releasedate);
 
   return (
     <Layout>
