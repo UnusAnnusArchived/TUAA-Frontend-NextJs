@@ -16,7 +16,7 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
     video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
   const img = `https:${posterUrl}`;
 
-  const date = new Date(video.date || video.releasedate);
+  const date = new Date(video.date ?? video.releasedate);
 
   const { t, i18n } = useTranslation();
 
