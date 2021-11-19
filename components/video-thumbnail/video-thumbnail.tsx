@@ -37,7 +37,7 @@ const VideoThumbnail: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => 
       </div>
       <div className="text-center mt-2">
         <Typography variant="body2">
-          ***REMOVED***t("player:episode")***REMOVED*** ***REMOVED***numberToNPlaces(video.episode)***REMOVED*** -***REMOVED***" "***REMOVED***
+          ***REMOVED***t("player:episode")***REMOVED*** ***REMOVED***video.episode.toString()***REMOVED*** -***REMOVED***" "***REMOVED***
           ***REMOVED***moment(date).locale(i18n.language).format("DD. MMM YYYY")***REMOVED***
         </Typography>
       </div>
