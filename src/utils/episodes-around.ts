@@ -1,10 +1,8 @@
-import type ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
 import ***REMOVED*** IEpisodeAround ***REMOVED*** from "../../src/types";
 import ***REMOVED*** numberToNPlaces ***REMOVED*** from "../../src/utils";
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => ***REMOVED***
+const getEpisodesAround = (currentEpisodeCode: string) => ***REMOVED***
   try ***REMOVED***
-    const currentEpisodeCode = req.query.episode.toString();
     // const currentSeasonCode = currentEpisodeCode.substring(0, 3);
     const currentEpisode = parseInt(currentEpisodeCode.slice(-3));
     const next = currentEpisode + 1;
@@ -19,7 +17,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => ***REMOVED***
         prevEp: prev >= 1 && prev <= 368 ? prevEp : null,
   ***REMOVED***;
 
-      res.status(200).json(response);
+      return response;
 ***REMOVED*** else if (currentEpisodeCode.includes("s00")) ***REMOVED***
       const prevEp = `s00.e$***REMOVED***numberToNPlaces(currentEpisode - 1)***REMOVED***`;
       const nextEp = `s00.e$***REMOVED***numberToNPlaces(currentEpisode + 1)***REMOVED***`;
@@ -28,13 +26,13 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => ***REMOVED***
         nextEp: next >= 1 && next <= 14 ? nextEp : null,
         prevEp: prev >= 1 && prev <= 14 ? prevEp : null,
   ***REMOVED***;
-      res.status(200).json(response);
+      return response;
 ***REMOVED*** else ***REMOVED***
-      res.status(404).json(null);
+      return null;
 ***REMOVED***
 ***REMOVED*** catch (err) ***REMOVED***
-    res.status(500).json(null);
+    return null;
 ***REMOVED***
 ***REMOVED***;
 
-export default handler;
+export default getEpisodesAround;

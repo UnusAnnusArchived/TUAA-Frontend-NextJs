@@ -1,42 +1,25 @@
 import Button from "@mui/material/Button";
 import Link from "next/link";
-import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
-import ***REMOVED*** localApi ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** IEpisodeAround ***REMOVED*** from "../../src/types";
+import React from "react";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import getEpisodesAround from "../../src/utils/episodes-around";
 
 interface IProps ***REMOVED***
   watchCode: string;
 ***REMOVED***
 
 const NextEpisodeButton: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) => ***REMOVED***
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const ***REMOVED*** t ***REMOVED*** = useTranslation();
 
-  useEffect(() => ***REMOVED***
-    fetchNextEpisode();
-***REMOVED*** []);
+  const nextEpisodeWatchCode = getEpisodesAround(watchCode)?.nextEp;
 
-  useEffect(() => ***REMOVED***
-    fetchNextEpisode();
-***REMOVED*** [watchCode]);
-
-  const [nextEpWatchCode, setNextEpWatchCode] = useState<string>(null);
-
-  const fetchNextEpisode = async () => ***REMOVED***
-    const response = await fetch(
-      `$***REMOVED***localApi***REMOVED***/episodes-around?episode=$***REMOVED***watchCode***REMOVED***`
-    );
-    const data: IEpisodeAround = await response.json();
-    setNextEpWatchCode(data.nextEp);
-***REMOVED***;
-
-  if (!nextEpWatchCode) ***REMOVED***
+  if (!nextEpisodeWatchCode) ***REMOVED***
     return null;
 ***REMOVED***
 
   return (
-    <Link href=***REMOVED***`/watch/$***REMOVED***nextEpWatchCode***REMOVED***`***REMOVED*** passHref>
+    <Link href=***REMOVED***`/watch/$***REMOVED***nextEpisodeWatchCode***REMOVED***`***REMOVED*** passHref>
       <Button
         variant="contained"
         color="primary"
