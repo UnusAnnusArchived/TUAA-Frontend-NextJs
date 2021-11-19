@@ -1,4 +1,4 @@
-# The Unus Anus Archive Frontend
+# The Unus Annus Archive Frontend
 
 ## Getting Started
 

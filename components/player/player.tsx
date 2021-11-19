@@ -39,7 +39,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
       poster: video.thumbnail ?? video.posters[0].src,
       sources: video.sources,
       tracks:
-        video.tracks.map((track) => ***REMOVED***
+        video.tracks?.map((track) => ***REMOVED***
           return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
     ***REMOVED***) ?? [],
       previewThumbnails: ***REMOVED***
@@ -77,9 +77,16 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode ***REMOVED***) 
       type: "video",
       title: video.title ?? "",
       poster: video.thumbnail ?? video.posters[0].src,
-      sources: video.sources,
+      sources: !!video.video
+        ? [
+            ***REMOVED***
+              src: video.video,
+              type: "video/mp4",
+          ***REMOVED***
+          ]
+        : video.sources,
       tracks:
-        video.tracks.map((track) => ***REMOVED***
+        video.tracks?.map((track) => ***REMOVED***
           return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
     ***REMOVED***) ?? [],
       previewThumbnails: ***REMOVED***

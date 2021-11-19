@@ -25,8 +25,8 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
   return (
     <Layout>
       <MetaHead
-        title="The Unus Anus Archive"
-        description="The Unus Anus Archive"
+        title="The Unus Annus Archive"
+        description="The Unus Annus Archive"
       />
       <div>
         <Tabs value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>

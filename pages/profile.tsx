@@ -27,7 +27,7 @@ const Profile: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead title=***REMOVED***`$***REMOVED***t("profile:title")***REMOVED*** | The Unus Anus Archive`***REMOVED*** />
+      <MetaHead title=***REMOVED***`$***REMOVED***t("profile:title")***REMOVED*** | The Unus Annus Archive`***REMOVED*** />
       <div className="text-center">
         <Typography variant="h5" component="h1">
           ***REMOVED***t("profile:title")***REMOVED***

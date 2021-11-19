@@ -8,7 +8,8 @@ export interface IVideo ***REMOVED***
   date?: number;
   releasedate?: number;
   duration: number;
-  sources: PlyrSource[];
+  sources?: PlyrSource[];
+  video?: string;
   tracks: PlyrTrack[];
   posters?: IVideoPoster[];
   thumbnail?: string;

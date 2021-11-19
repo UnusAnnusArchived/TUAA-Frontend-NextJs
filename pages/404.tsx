@@ -11,7 +11,7 @@ const Page: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead title="Not Found | The Unus Anus Archive" />
+      <MetaHead title="Not Found | The Unus Annus Archive" />
       <div className="d-flex flex-column align-items-center justify-content-center">
         <Typography variant="h5" className="text-white my-5">
           ***REMOVED***t("errors:pageNotFound")***REMOVED***

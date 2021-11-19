@@ -85,7 +85,7 @@ const ABar: React.FC = () => ***REMOVED***
               className="pointer"
               // sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***
             >
-              The Unus Anus Archive
+              The Unus Annus Archive
             </Typography>
           </Link>
           ***REMOVED***/* ***REMOVED***course && (
