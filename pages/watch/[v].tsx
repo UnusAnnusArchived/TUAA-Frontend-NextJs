@@ -2,7 +2,7 @@ import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { CommentList } from "../../components/comments";
@@ -11,7 +11,7 @@ import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
 import { endpoint } from "../../src/endpoints";
-import { IVideo } from "../../src/types";
+import { IVideo, Seasons } from "../../src/types";
 
 interface IProps {
   watchCode: string;
@@ -60,21 +60,64 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
 
 export default Watch;
 
-export const getServerSideProps: GetServerSideProps<IProps, { v: string }> =
-  async (context) => {
-    const watchCode = context.query.v.toString();
-    const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
+// export const getServerSideProps: GetServerSideProps<IProps, { v: string }> =
+//   async (context) => {
+//     const watchCode = context.query.v.toString();
+//     const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
 
-    if (res.status !== 200) {
-      return { props: { video: null }, notFound: true };
-    }
+//     if (res.status !== 200) {
+//       return { props: { video: null }, notFound: true };
+//     }
 
-    const data: IVideo = await res.json();
+//     const data: IVideo = await res.json();
 
-    return {
-      props: {
-        watchCode,
-        video: data,
-      },
-    };
+//     return {
+//       props: {
+//         watchCode,
+//         video: data,
+//       },
+//     };
+//   };
+
+export const getStaticProps: GetStaticProps<IProps> = async (context) => {
+  const watchCode = context.params.v.toString();
+  const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
+
+  if (res.status !== 200) {
+    return { props: { video: null }, notFound: true };
+  }
+
+  const data: IVideo = await res.json();
+
+  return {
+    props: {
+      watchCode,
+      video: data,
+    },
+    revalidate: 60 * 60 * 24, // 1 day
   };
+};
+
+export const getStaticPaths: GetStaticPaths = async (context) => {
+  const res = await fetch(`${endpoint}/v2/metadata/all`);
+  const data: Seasons = await res.json();
+
+  const paths = [];
+
+  for (const season of data) {
+    for (const episode of season) {
+      paths.push({
+        params: {
+          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode
+            .toString()
+            .padStart(3, "0")}`,
+        },
+      });
+    }
+  }
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
