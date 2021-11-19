@@ -37,7 +37,7 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
       </div>
       <div className="text-center mt-2">
         <Typography variant="body2">
-          {t("player:episode")} {numberToNPlaces(video.episode)} -{" "}
+          {t("player:episode")} {video.episode.toString()} -{" "}
           {moment(date).locale(i18n.language).format("DD. MMM YYYY")}
         </Typography>
       </div>
