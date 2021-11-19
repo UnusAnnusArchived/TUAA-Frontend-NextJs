@@ -8,6 +8,7 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import Fade from "@mui/material/Fade";
 import Box from "@mui/system/Box";
 import { useTranslation } from "react-i18next";
+import getEpisodesAround from "../../src/utils/episodes-around";
 
 interface IProps {
   watchCode: string;
@@ -16,33 +17,15 @@ interface IProps {
 const EpisodesRow: React.FC<IProps> = ({ watchCode }) => {
   const { t, i18n } = useTranslation();
 
-  useEffect(() => {
-    fetchNextEpisode();
-  }, []);
+  const epsAround = getEpisodesAround(watchCode);
 
-  useEffect(() => {
-    fetchNextEpisode();
-  }, [watchCode]);
-
-  const [nextEpWatchCode, setNextEpWatchCode] = useState<string>(null);
-  const [prevEpWatchCode, setPrevEpWatchCode] = useState<string>(null);
-
-  const fetchNextEpisode = async () => {
-    const response = await fetch(
-      `${localApi}/episodes-around?episode=${watchCode}`
-    );
-    const data: IEpisodeAround = await response.json();
-    setNextEpWatchCode(data.nextEp);
-    setPrevEpWatchCode(data.prevEp);
-  };
-
-  const display = !!nextEpWatchCode || !!prevEpWatchCode;
+  const display = !!epsAround?.nextEp || !!epsAround?.prevEp;
 
   return (
     <Fade in={display} unmountOnExit>
       <div className="d-flex my-2">
-        {prevEpWatchCode && (
-          <Link href={`/watch/${prevEpWatchCode}`} passHref>
+        {epsAround?.prevEp && (
+          <Link href={`/watch/${epsAround?.prevEp}`} passHref>
             <Button
               color="primary"
               sx={{ pointerEvents: "auto" }}
@@ -57,8 +40,8 @@ const EpisodesRow: React.FC<IProps> = ({ watchCode }) => {
             flexGrow: 1,
           }}
         />
-        {nextEpWatchCode && (
-          <Link href={`/watch/${nextEpWatchCode}`} passHref>
+        {epsAround?.nextEp && (
+          <Link href={`/watch/${epsAround?.nextEp}`} passHref>
             <Button
               color="primary"
               sx={{ pointerEvents: "auto" }}
