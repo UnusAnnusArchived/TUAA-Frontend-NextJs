@@ -23,6 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const text = await subtitles.text();
 
     res.setHeader("Content-Type", "text/vtt");
+    res.setHeader('Access-Control-Allow-Origin', 'unusann.us')
     res.status(200).send(text);
   } catch (error) {
     console.log(error);
