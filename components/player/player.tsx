@@ -7,13 +7,15 @@ import styles from "../../styles/Player.module.scss";
 import { useRouter } from "next/router";
 import { NextEpisodeButton } from "../episodes-controls";
 import { useTranslation } from "react-i18next";
+import embedStyles from "../../styles/embed.module.scss";
 
 interface IProps {
   video: IVideo;
   watchCode: string;
+  isEmbed?: boolean;
 }
 
-const Player: React.FC<IProps> = ({ video, watchCode }) => {
+const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
   const playerEl = useRef(null);
   const [plyr, setPlyr] = useState<Plyr>(null);
   const [customControlsContainer, setCustomControlsContainer] = useState(null);
@@ -71,7 +73,7 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
         "airplay",
         "fullscreen",
       ],
-      ratio: "16:9",
+      ratio: isEmbed ? null : "16:9",
       i18n: {
         //theres probably a much more efficient way to do this but I don't have much time rn lmao
         restart: t("plyr:restart"),
@@ -146,6 +148,10 @@ const Player: React.FC<IProps> = ({ video, watchCode }) => {
     setPlyr(player);
 
     const playerContainer = document.getElementsByClassName("plyr")[0];
+
+    if (isEmbed) {
+      playerContainer.classList.add(embedStyles['embed-player'])
+    }
 
     /* Choice Bar */
     const container = document.createElement("div");
