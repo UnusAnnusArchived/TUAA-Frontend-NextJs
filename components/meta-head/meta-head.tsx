@@ -3,6 +3,8 @@ import React from "react";
 
 interface IProps ***REMOVED***
   title: string;
+  video?: string;
+  embed?: string;
   description?: string;
   image?: string;
   width?: string;
@@ -11,6 +13,8 @@ interface IProps ***REMOVED***
 
 const MetaHead: React.FC<IProps> = (***REMOVED***
   title,
+  video,
+  embed,
   description = "The Unus Annus Archive",
   image = "thumbnail.png",
   width = "1920",
@@ -47,6 +51,11 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
       <meta property="twitter:title" content=***REMOVED***title***REMOVED*** />
       <meta property="twitter:description" content=***REMOVED***description***REMOVED*** />
       <meta property="twitter:image:src" content=***REMOVED***image***REMOVED*** />
+      ***REMOVED***/* ***REMOVED***video &&
+        <meta name="twitter:player" content=***REMOVED***embed***REMOVED*** />
+        <meta name="twitter:player:stream" content=***REMOVED***video***REMOVED*** />
+        
+  ***REMOVED*** */***REMOVED***
     </Head>
   );
 ***REMOVED***;
