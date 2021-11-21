@@ -102,7 +102,7 @@ const LoginPage: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead title=***REMOVED***`$***REMOVED***t("register:title")***REMOVED*** | The Unus Annus Archive`***REMOVED*** />
+      <MetaHead baseTitle=***REMOVED***t("register:title")***REMOVED*** />
       <Typography className="text-center my-2" variant="h5" component="h1">
         ***REMOVED***t("register:titleLong")***REMOVED***
       </Typography>
