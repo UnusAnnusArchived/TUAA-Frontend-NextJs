@@ -5,6 +5,7 @@ interface IProps {
   title: string;
   video?: string;
   embed?: string;
+  date?: number
   description?: string;
   image?: string;
   width?: string;
@@ -15,6 +16,7 @@ const MetaHead: React.FC<IProps> = ({
   title,
   video,
   embed,
+  date,
   description = "The Unus Annus Archive",
   image = "thumbnail.png",
   width = "1920",
@@ -37,25 +39,32 @@ const MetaHead: React.FC<IProps> = ({
       <meta itemProp="description" content={description} />
       <meta itemProp="image" content={image} />
       {/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:url" content="https://unusann.us/" />
-      <meta property="og:site_name" content="The Unus Annus Archive" />
-      <meta property="og:locale" content="en_UK" />
-      <meta property="og:type" content="website" />
-      <meta property="og:image:width" content={width} />
-      <meta property="og:image:height" content={height} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={description} />
+      <meta name="og:image" content={image} />
+      <meta name="og:url" content="https://unusann.us/" />
+      <meta name="og:site_name" content="The Unus Annus Archive" />
+      <meta name="og:locale" content="en_UK" />
+      <meta name="og:type" content={video ? "player" : "website"} />
+      <meta name="og:image:width" content={width} />
+      <meta name="og:image:height" content={height} />
       {/* <!-- Twitter --> */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image:src" content={image} />
-      {/* {video &&
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image:src" content={image} />
+      <meta name="twitter:site" content="@UA_Archive" />
+
+      {video && <React.Fragment>
         <meta name="twitter:player" content={embed} />
         <meta name="twitter:player:stream" content={video} />
-        
-      } */}
+        <meta name="og:video" content={video} />
+        <meta name="twitter:card" content="player" />
+        <meta name="twitter:player:stream:content_type" content="video/mp4" />
+        <meta name="video:type" content="video/mp4" />
+        <meta name="video:release_date" content={date.toString()} />
+      </React.Fragment>
+      }
     </Head>
   );
 };

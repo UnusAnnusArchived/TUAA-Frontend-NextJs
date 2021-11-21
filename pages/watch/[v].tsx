@@ -34,6 +34,7 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
         title={`${video.title} | The Unus Annus Archive`}
         embed={embedUrl}
         video={metaVideoUrl}
+        date={video.date ?? video.releasedate}
         description="The Unus Annus Archive"
         image={`https:${image}`}
       />
