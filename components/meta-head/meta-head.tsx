@@ -19,8 +19,6 @@ const MetaHead: React.FC<IProps> = ({
   date,
   description,
   image,
-  width = "1920",
-  height = "1080",
 }) => {
   // TODO: Change in production
   const baseDomain = "https://unusann.us/";
@@ -49,8 +47,6 @@ const MetaHead: React.FC<IProps> = ({
       <meta name="og:site_name" content="The Unus Annus Archive" />
       <meta name="og:locale" content="en_UK" />
       <meta name="og:type" content={video ? "video.other" : "website"} />
-      <meta name="og:image:width" content={width} />
-      <meta name="og:image:height" content={height} />
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content={video ? "player" : useSmallImage ? "summary" : "summary_large_image"} />
       <meta name="twitter:title" content={baseTitle} />
