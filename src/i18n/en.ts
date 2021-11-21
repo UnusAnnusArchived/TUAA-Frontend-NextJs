@@ -68,6 +68,13 @@ const en = {
       error: "There has been an error logging you out",
     },
   },
+  downloads: {
+    title: "Downloads",
+    imageAlt: "Image of {downloadName}",
+    tuaaDownloader: {
+      description: "An easy way to download any of our episodes"
+    }
+  },
   errors: {
     pageNotFound: "The page you were looking for was not found",
     returnToHome: "Return to the home page",
