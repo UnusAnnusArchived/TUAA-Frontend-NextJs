@@ -72,6 +72,7 @@ const es = ***REMOVED***
     pageNotFound: "La pagina que estabas buscando no ha sido encontrada",
     returnToHome: "Volver a la pagina principal",
 ***REMOVED***
+  //TODO: add plyr translations for Spanish
 ***REMOVED***;
 
 export default es;

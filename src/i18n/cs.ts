@@ -72,6 +72,7 @@ const cs = ***REMOVED***
     pageNotFound: "Stránka, kterou jste hledali, nebyla nalezena",
     returnToHome: "Vrátit se na hlavní stránku",
 ***REMOVED***
+  //TODO: add plyr translations for Czech
 ***REMOVED***;
 
 export default cs;
