@@ -5,6 +5,7 @@ interface IProps ***REMOVED***
   title: string;
   video?: string;
   embed?: string;
+  date?: number
   description?: string;
   image?: string;
   width?: string;
@@ -15,6 +16,7 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
   title,
   video,
   embed,
+  date,
   description = "The Unus Annus Archive",
   image = "thumbnail.png",
   width = "1920",
@@ -37,25 +39,32 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
       <meta itemProp="description" content=***REMOVED***description***REMOVED*** />
       <meta itemProp="image" content=***REMOVED***image***REMOVED*** />
       ***REMOVED***/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */***REMOVED***
-      <meta property="og:title" content=***REMOVED***title***REMOVED*** />
-      <meta property="og:description" content=***REMOVED***description***REMOVED*** />
-      <meta property="og:image" content=***REMOVED***image***REMOVED*** />
-      <meta property="og:url" content="https://unusann.us/" />
-      <meta property="og:site_name" content="The Unus Annus Archive" />
-      <meta property="og:locale" content="en_UK" />
-      <meta property="og:type" content="website" />
-      <meta property="og:image:width" content=***REMOVED***width***REMOVED*** />
-      <meta property="og:image:height" content=***REMOVED***height***REMOVED*** />
+      <meta name="og:title" content=***REMOVED***title***REMOVED*** />
+      <meta name="og:description" content=***REMOVED***description***REMOVED*** />
+      <meta name="og:image" content=***REMOVED***image***REMOVED*** />
+      <meta name="og:url" content="https://unusann.us/" />
+      <meta name="og:site_name" content="The Unus Annus Archive" />
+      <meta name="og:locale" content="en_UK" />
+      <meta name="og:type" content=***REMOVED***video ? "player" : "website"***REMOVED*** />
+      <meta name="og:image:width" content=***REMOVED***width***REMOVED*** />
+      <meta name="og:image:height" content=***REMOVED***height***REMOVED*** />
       ***REMOVED***/* <!-- Twitter --> */***REMOVED***
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:title" content=***REMOVED***title***REMOVED*** />
-      <meta property="twitter:description" content=***REMOVED***description***REMOVED*** />
-      <meta property="twitter:image:src" content=***REMOVED***image***REMOVED*** />
-      ***REMOVED***/* ***REMOVED***video &&
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content=***REMOVED***title***REMOVED*** />
+      <meta name="twitter:description" content=***REMOVED***description***REMOVED*** />
+      <meta name="twitter:image:src" content=***REMOVED***image***REMOVED*** />
+      <meta name="twitter:site" content="@UA_Archive" />
+
+      ***REMOVED***video && <React.Fragment>
         <meta name="twitter:player" content=***REMOVED***embed***REMOVED*** />
         <meta name="twitter:player:stream" content=***REMOVED***video***REMOVED*** />
-        
-  ***REMOVED*** */***REMOVED***
+        <meta name="og:video" content=***REMOVED***video***REMOVED*** />
+        <meta name="twitter:card" content="player" />
+        <meta name="twitter:player:stream:content_type" content="video/mp4" />
+        <meta name="video:type" content="video/mp4" />
+        <meta name="video:release_date" content=***REMOVED***date.toString()***REMOVED*** />
+      </React.Fragment>
+  ***REMOVED***
     </Head>
   );
 ***REMOVED***;
