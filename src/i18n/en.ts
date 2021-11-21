@@ -68,6 +68,13 @@ const en = ***REMOVED***
       error: "There has been an error logging you out",
   ***REMOVED***
 ***REMOVED***
+  downloads: ***REMOVED***
+    title: "Downloads",
+    imageAlt: "Image of ***REMOVED***downloadName***REMOVED***",
+    tuaaDownloader: ***REMOVED***
+      description: "An easy way to download any of our episodes"
+***REMOVED***
+***REMOVED***
   errors: ***REMOVED***
     pageNotFound: "The page you were looking for was not found",
     returnToHome: "Return to the home page",
