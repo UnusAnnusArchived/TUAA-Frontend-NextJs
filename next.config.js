@@ -7,7 +7,7 @@ module.exports = withPWA(***REMOVED***
     domains: ['cdn.unusann.us'],
 ***REMOVED***
   i18n: ***REMOVED***
-    locales: ['cs', 'de', 'en', 'es'],
+    locales: ['cs', 'de', 'en', 'es', 'fa'],
     defaultLocale: 'en',
 ***REMOVED***
   pwa: ***REMOVED***

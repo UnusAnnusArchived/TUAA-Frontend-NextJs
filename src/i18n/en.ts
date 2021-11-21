@@ -1,4 +1,7 @@
 const en = ***REMOVED***
+  home: ***REMOVED***
+    title: "Home"
+***REMOVED***
   player: ***REMOVED***
     nextEpisode: "Next episode",
     previousEpisode: "Previous episode",

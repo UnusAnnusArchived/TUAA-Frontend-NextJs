@@ -4,9 +4,10 @@ import ***REMOVED*** ILanguage ***REMOVED*** from "../types";
 
 //Import language definitions
 import en from "./en";
-import es from './es';
+import es from "./es";
 import de from "./de";
 import cs from "./cs";
+import fa from "./fa";
 
 export const initTranslations = async (locale: string) => ***REMOVED***
   await i18next.use(initReactI18next).init(***REMOVED***
@@ -14,7 +15,8 @@ export const initTranslations = async (locale: string) => ***REMOVED***
       en,
       es,
       de,
-      cs
+      cs,
+      fa
   ***REMOVED***
     lng: locale,
     fallbackLng: "en",
@@ -27,18 +29,22 @@ export const initTranslations = async (locale: string) => ***REMOVED***
 export const availableLanguages: ILanguage[] = [
   ***REMOVED***
     name: "English",
-    code: "en",
+    code: "en"
 ***REMOVED***
   ***REMOVED***
-    name: 'Español',
-    code: 'es'
+    name: "Español",
+    code: "es"
 ***REMOVED***
   ***REMOVED***
     name: "Deutsch",
-    code: "de",
+    code: "de"
 ***REMOVED***
   ***REMOVED***
     name: "Čeština",
-    code: "cs",
+    code: "cs"
+***REMOVED***
+  ***REMOVED***
+    name: "فارسی",
+    code: "fa"
 ***REMOVED***
 ];
