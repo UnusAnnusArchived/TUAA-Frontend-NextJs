@@ -11,7 +11,7 @@ const Page: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title="Not Found | The Unus Annus Archive" />
+      <MetaHead baseTitle="Not Found" />
       <div className="d-flex flex-column align-items-center justify-content-center">
         <Typography variant="h5" className="text-white my-5">
           {t("errors:pageNotFound")}

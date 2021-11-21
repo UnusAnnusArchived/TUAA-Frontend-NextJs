@@ -92,7 +92,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title={`${t("login:title")} | The Unus Annus Archive`} />
+      <MetaHead baseTitle={t("login:title")} />
       <Typography className="text-center my-2" variant="h5" component="h1">
         {t("login:titleLong")}
       </Typography>

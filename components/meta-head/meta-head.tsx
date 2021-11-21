@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 interface IProps {
-  title: string;
+  baseTitle?: string;
   video?: string;
   embed?: string;
   date?: number
@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const MetaHead: React.FC<IProps> = ({
-  title,
+  baseTitle,
   video,
   embed,
   date,
@@ -31,16 +31,14 @@ const MetaHead: React.FC<IProps> = ({
 
   return (
     <Head>
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{baseTitle ? baseTitle + " | The Unus Annus Archive" : "The Unus Annus Archive"}</title>
       <meta name="image" content={image} />
       {/* <!-- Schema.org for Google --> */}
-      <meta itemProp="name" content={title} />
-      <meta itemProp="description" content={description} />
+      <meta itemProp="name" content={baseTitle} />
       <meta itemProp="image" content={image} />
       {/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */}
-      <meta name="og:title" content={title} />
-      <meta name="og:description" content={description} />
+      <meta name="og:title" content={baseTitle} />
+      
       <meta name="og:image" content={image} />
       <meta name="og:url" content="https://unusann.us/" />
       <meta name="og:site_name" content="The Unus Annus Archive" />
@@ -50,12 +48,11 @@ const MetaHead: React.FC<IProps> = ({
       <meta name="og:image:height" content={height} />
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={baseTitle} />
       <meta name="twitter:image:src" content={image} />
       <meta name="twitter:site" content="@UA_Archive" />
 
-      {video && <React.Fragment>
+      { video && <React.Fragment>
         <meta name="twitter:player" content={embed} />
         <meta name="twitter:player:stream" content={video} />
         <meta name="og:video" content={video} />
@@ -63,8 +60,14 @@ const MetaHead: React.FC<IProps> = ({
         <meta name="twitter:player:stream:content_type" content="video/mp4" />
         <meta name="video:type" content="video/mp4" />
         <meta name="video:release_date" content={date.toString()} />
-      </React.Fragment>
-      }
+      </React.Fragment> }
+
+      { description && <React.Fragment>
+        <meta name="description" content={description} />
+        <meta itemProp="description" content={description} />
+        <meta name="og:description" content={description} />
+        <meta name="twitter:description" content={description} />
+      </React.Fragment> }
     </Head>
   );
 };

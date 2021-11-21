@@ -27,7 +27,7 @@ const Profile: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead title={`${t("profile:title")} | The Unus Annus Archive`} />
+      <MetaHead baseTitle={t("profile:title")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
           {t("profile:title")}
