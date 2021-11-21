@@ -25,7 +25,7 @@ const MetaHead: React.FC<IProps> = ({
   // TODO: Change in production
   const baseDomain = "https://unusann.us/";
 
-  if (!image.startsWith("http")) {
+  if (!image?.startsWith("http")) {
     image = baseDomain + image;
   }
 
