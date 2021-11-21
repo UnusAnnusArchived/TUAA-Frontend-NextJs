@@ -25,11 +25,15 @@ const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) =
     video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
 
   const published = new Date(video.date ?? video.releasedate);
+  const embedUrl = `https://unusann.us/embed/$***REMOVED***watchCode***REMOVED***`;
+  const metaVideoUrl = video.video ?? video.sources[0].src;
 
   return (
     <Layout>
       <MetaHead
         title=***REMOVED***`$***REMOVED***video.title***REMOVED*** | The Unus Annus Archive`***REMOVED***
+        embed=***REMOVED***embedUrl***REMOVED***
+        video=***REMOVED***metaVideoUrl***REMOVED***
         description="The Unus Annus Archive"
         image=***REMOVED***`https:$***REMOVED***image***REMOVED***`***REMOVED***
       />
