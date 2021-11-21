@@ -24,7 +24,7 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 
   return (
     <Layout>
-      <MetaHead />
+      <MetaHead baseTitle="Home" />
       <div>
         <Tabs value={currentTab} onChange={handleChange} centered>
           <Tab label={t("seasons:season1")} value={1} />
