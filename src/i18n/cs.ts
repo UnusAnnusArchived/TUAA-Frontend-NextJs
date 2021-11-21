@@ -72,6 +72,7 @@ const cs = {
     pageNotFound: "Stránka, kterou jste hledali, nebyla nalezena",
     returnToHome: "Vrátit se na hlavní stránku",
   },
+  //TODO: add plyr translations for Czech
 };
 
 export default cs;

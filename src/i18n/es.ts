@@ -72,6 +72,7 @@ const es = {
     pageNotFound: "La pagina que estabas buscando no ha sido encontrada",
     returnToHome: "Volver a la pagina principal",
   },
+  //TODO: add plyr translations for Spanish
 };
 
 export default es;
