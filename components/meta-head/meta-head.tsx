@@ -25,6 +25,13 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
   // TODO: Change in production
   const baseDomain = "https://unusann.us/";
 
+  var useSmallImage = false
+
+  if (!image) ***REMOVED***
+    image = "https://unusann.us/ua.png"
+    useSmallImage = true
+***REMOVED***
+
   if (!image?.startsWith("http")) ***REMOVED***
     image = baseDomain + image;
 ***REMOVED***
@@ -45,7 +52,7 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
       <meta name="og:image:width" content=***REMOVED***width***REMOVED*** />
       <meta name="og:image:height" content=***REMOVED***height***REMOVED*** />
       ***REMOVED***/* <!-- Twitter --> */***REMOVED***
-      <meta name="twitter:card" content=***REMOVED***video ? "player" : "summary"***REMOVED*** />
+      <meta name="twitter:card" content=***REMOVED***video ? "player" : useSmallImage ? "summary" : "summary_large_image"***REMOVED*** />
       <meta name="twitter:title" content=***REMOVED***baseTitle***REMOVED*** />
       <meta name="twitter:image:src" content=***REMOVED***image***REMOVED*** />
       <meta name="twitter:site" content="@UA_Archive" />
