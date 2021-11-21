@@ -25,6 +25,13 @@ const MetaHead: React.FC<IProps> = ({
   // TODO: Change in production
   const baseDomain = "https://unusann.us/";
 
+  var useSmallImage = false
+
+  if (!image) {
+    image = "https://unusann.us/ua.png"
+    useSmallImage = true
+  }
+
   if (!image?.startsWith("http")) {
     image = baseDomain + image;
   }
@@ -45,7 +52,7 @@ const MetaHead: React.FC<IProps> = ({
       <meta name="og:image:width" content={width} />
       <meta name="og:image:height" content={height} />
       {/* <!-- Twitter --> */}
-      <meta name="twitter:card" content={video ? "player" : "summary"} />
+      <meta name="twitter:card" content={video ? "player" : useSmallImage ? "summary" : "summary_large_image"} />
       <meta name="twitter:title" content={baseTitle} />
       <meta name="twitter:image:src" content={image} />
       <meta name="twitter:site" content="@UA_Archive" />
