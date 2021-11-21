@@ -1,4 +1,7 @@
 const en = {
+  home: {
+    title: "Home"
+  },
   player: {
     nextEpisode: "Next episode",
     previousEpisode: "Previous episode",
