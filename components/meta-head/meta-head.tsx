@@ -17,8 +17,8 @@ const MetaHead: React.FC<IProps> = ({
   video,
   embed,
   date,
-  description = "The Unus Annus Archive",
-  image = "thumbnail.png",
+  description,
+  image,
   width = "1920",
   height = "1080",
 }) => {
@@ -32,10 +32,8 @@ const MetaHead: React.FC<IProps> = ({
   return (
     <Head>
       <title>{baseTitle ? baseTitle + " | The Unus Annus Archive" : "The Unus Annus Archive"}</title>
-      <meta name="image" content={image} />
       {/* <!-- Schema.org for Google --> */}
       <meta itemProp="name" content={baseTitle} />
-      <meta itemProp="image" content={image} />
       {/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */}
       <meta name="og:title" content={baseTitle} />
       
@@ -43,11 +41,11 @@ const MetaHead: React.FC<IProps> = ({
       <meta name="og:url" content="https://unusann.us/" />
       <meta name="og:site_name" content="The Unus Annus Archive" />
       <meta name="og:locale" content="en_UK" />
-      <meta name="og:type" content={video ? "player" : "website"} />
+      <meta name="og:type" content={video ? "video.other" : "website"} />
       <meta name="og:image:width" content={width} />
       <meta name="og:image:height" content={height} />
       {/* <!-- Twitter --> */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content={video ? "player" : "summary"} />
       <meta name="twitter:title" content={baseTitle} />
       <meta name="twitter:image:src" content={image} />
       <meta name="twitter:site" content="@UA_Archive" />
@@ -67,6 +65,11 @@ const MetaHead: React.FC<IProps> = ({
         <meta itemProp="description" content={description} />
         <meta name="og:description" content={description} />
         <meta name="twitter:description" content={description} />
+      </React.Fragment> }
+
+      { image && <React.Fragment>
+        <meta name="image" content={image} />
+        <meta itemProp="image" content={image} />
       </React.Fragment> }
     </Head>
   );
