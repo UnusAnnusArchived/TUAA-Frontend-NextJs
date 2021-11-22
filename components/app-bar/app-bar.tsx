@@ -12,9 +12,10 @@ import { previousPageAtom, userAtom } from "../../src/atoms";
 import { ProfileIcon } from "../profile";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { FaDiscord } from "react-icons/fa";
+import DownloadIcon from "@mui/icons-material/Download"
+import { FaDiscord, FaGithub } from "react-icons/fa";
 import MenuIcon from "@mui/icons-material/Menu";
+import BackIcon from "@mui/icons-material/ArrowBack";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -65,19 +66,47 @@ const ABar: React.FC = () => {
     router.push("/login");
   };
 
+  useEffect(() => {
+    const storage = globalThis?.sessionStorage;
+
+    if (!storage) return;
+
+    let sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
+
+    const path = globalThis?.location.pathname
+    if (path) {
+      sessionHistory.push(globalThis?.location.pathname);
+    };
+
+    storage.setItem("history", JSON.stringify(sessionHistory))
+
+    console.log(sessionHistory)
+  }, [router.asPath])
+
+  const onClickBack = () => {
+    const storage = globalThis?.sessionStorage;
+    if (storage) {
+
+    }
+    router.back()
+  }
+
   return (
     <>
       <AppBar position="sticky">
         <Toolbar>
-          {/* <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-          <MenuIcon />
-        </IconButton> */}
+          {/* {globalThis?.sessionStorage?.getItem("prevPath") &&
+            <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            onClick={onClickBack}
+          >
+            <BackIcon />
+          </IconButton>
+          } */}
           <Link href="/" passHref>
             <Typography
               variant="h6"
@@ -96,6 +125,11 @@ const ABar: React.FC = () => {
           <Box sx={{ flexGrow: 1 }} />
           {!isMdDown && (
             <div className="d-flex">
+              <Link href="/downloads" passHref>
+                <IconButton>
+                  <DownloadIcon />
+                </IconButton>
+              </Link>
               <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <IconButton>
@@ -106,7 +140,7 @@ const ABar: React.FC = () => {
               <Link href="https://github.com/UnusAnnusArchived" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <IconButton>
-                    <GitHubIcon />
+                    <FaGithub />
                   </IconButton>
                 </a>
               </Link>
@@ -158,7 +192,7 @@ const ABar: React.FC = () => {
             >
               <MenuItem>
                 <ListItemIcon>
-                  <GitHubIcon />
+                  <FaGithub />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>
