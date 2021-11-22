@@ -85,17 +85,40 @@ const ABar: React.FC = () => {
 
   const onClickBack = () => {
     const storage = globalThis?.sessionStorage;
-    if (storage) {
 
+    if (storage) {
+      const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]")
+
+      const lastPage = sessionHistory[sessionHistory.length-2]
+      
+      //Remove current page and last page from history (we remove the last page because navigating to it after will cause it to get added back)
+      sessionHistory.splice(sessionHistory.length-2, 2)
+      storage.setItem("history", JSON.stringify(sessionHistory))
+
+      router.replace(lastPage)
+    } else {
+      router.back()
     }
-    router.back()
+  }
+
+  const hasHistory = () => {
+    const storage = globalThis?.sessionStorage;
+
+    if (storage) {
+      try {
+        return JSON.parse(storage.getItem("history")).length > 0
+      } catch (err) {
+        console.error(err)
+        return false
+      }
+    } else return false
   }
 
   return (
     <>
       <AppBar position="sticky">
         <Toolbar>
-          {/* {globalThis?.sessionStorage?.getItem("prevPath") &&
+          {hasHistory() &&
             <IconButton
             size="large"
             edge="start"
@@ -106,7 +129,7 @@ const ABar: React.FC = () => {
           >
             <BackIcon />
           </IconButton>
-          } */}
+          }
           <Link href="/" passHref>
             <Typography
               variant="h6"
