@@ -12,9 +12,10 @@ import ***REMOVED*** previousPageAtom, userAtom ***REMOVED*** from "../../src/at
 import ***REMOVED*** ProfileIcon ***REMOVED*** from "../profile";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import ***REMOVED*** FaDiscord ***REMOVED*** from "react-icons/fa";
+import DownloadIcon from "@mui/icons-material/Download"
+import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
 import MenuIcon from "@mui/icons-material/Menu";
+import BackIcon from "@mui/icons-material/ArrowBack";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -65,19 +66,47 @@ const ABar: React.FC = () => ***REMOVED***
     router.push("/login");
 ***REMOVED***;
 
+  useEffect(() => ***REMOVED***
+    const storage = globalThis?.sessionStorage;
+
+    if (!storage) return;
+
+    let sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
+
+    const path = globalThis?.location.pathname
+    if (path) ***REMOVED***
+      sessionHistory.push(globalThis?.location.pathname);
+***REMOVED***;
+
+    storage.setItem("history", JSON.stringify(sessionHistory))
+
+    console.log(sessionHistory)
+***REMOVED*** [router.asPath])
+
+  const onClickBack = () => ***REMOVED***
+    const storage = globalThis?.sessionStorage;
+    if (storage) ***REMOVED***
+
+***REMOVED***
+    router.back()
+***REMOVED***
+
   return (
     <>
       <AppBar position="sticky">
         <Toolbar>
-          ***REMOVED***/* <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx=***REMOVED******REMOVED*** mr: 2 ***REMOVED******REMOVED***
-        >
-          <MenuIcon />
-        </IconButton> */***REMOVED***
+          ***REMOVED***/* ***REMOVED***globalThis?.sessionStorage?.getItem("prevPath") &&
+            <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx=***REMOVED******REMOVED*** mr: 2 ***REMOVED******REMOVED***
+            onClick=***REMOVED***onClickBack***REMOVED***
+          >
+            <BackIcon />
+          </IconButton>
+      ***REMOVED*** */***REMOVED***
           <Link href="/" passHref>
             <Typography
               variant="h6"
@@ -96,6 +125,11 @@ const ABar: React.FC = () => ***REMOVED***
           <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
           ***REMOVED***!isMdDown && (
             <div className="d-flex">
+              <Link href="/downloads" passHref>
+                <IconButton>
+                  <DownloadIcon />
+                </IconButton>
+              </Link>
               <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <IconButton>
@@ -106,7 +140,7 @@ const ABar: React.FC = () => ***REMOVED***
               <Link href="https://github.com/UnusAnnusArchived" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <IconButton>
-                    <GitHubIcon />
+                    <FaGithub />
                   </IconButton>
                 </a>
               </Link>
@@ -158,7 +192,7 @@ const ABar: React.FC = () => ***REMOVED***
             >
               <MenuItem>
                 <ListItemIcon>
-                  <GitHubIcon />
+                  <FaGithub />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import React, ***REMOVED*** useEffect ***REMOVED*** from "react";
 import "../styles/globals.scss";
 import type ***REMOVED*** AppProps /*, AppContext*/, NextWebVitalsMetric ***REMOVED*** from "next/app";
 import Script from "next/script";
