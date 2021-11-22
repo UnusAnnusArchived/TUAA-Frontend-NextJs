@@ -51,7 +51,7 @@ const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) =
         <Typography variant="body1" component="p">
           <div
             dangerouslySetInnerHTML=***REMOVED******REMOVED***
-              __html: video.description.replace(/(\r\n)/g, "<br />"),
+              __html: video.description.replace(/(\n)/g, "<br />"),
         ***REMOVED******REMOVED***
           />
         </Typography>
