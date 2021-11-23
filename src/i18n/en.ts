@@ -76,6 +76,9 @@ const en = ***REMOVED***
     imageAlt: "Image of ***REMOVED***downloadName***REMOVED***",
     tuaaDownloader: ***REMOVED***
       description: "An easy way to download any of our episodes"
+  ***REMOVED***
+    tuaaNodeApi: ***REMOVED***
+      description: 'An easy way to communicate with our API in Node.JS'
 ***REMOVED***
 ***REMOVED***
   errors: ***REMOVED***
