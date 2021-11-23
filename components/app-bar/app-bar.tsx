@@ -12,7 +12,7 @@ import { previousPageAtom, userAtom } from "../../src/atoms";
 import { ProfileIcon } from "../profile";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import DownloadIcon from "@mui/icons-material/Download"
+import DownloadIcon from "@mui/icons-material/Download";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import MenuIcon from "@mui/icons-material/Menu";
 import BackIcon from "@mui/icons-material/ArrowBack";
@@ -73,46 +73,46 @@ const ABar: React.FC = () => {
 
     let sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
-    const path = globalThis?.location.pathname
+    const path = globalThis?.location.pathname;
     if (path) {
       sessionHistory.push(globalThis?.location.pathname);
     };
 
-    storage.setItem("history", JSON.stringify(sessionHistory))
+    storage.setItem("history", JSON.stringify(sessionHistory));
 
-    console.log(sessionHistory)
-  }, [router.asPath])
+    console.log(sessionHistory);
+  }, [router.asPath]);
 
   const onClickBack = () => {
     const storage = globalThis?.sessionStorage;
 
     if (storage) {
-      const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]")
+      const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
-      const lastPage = sessionHistory[sessionHistory.length-2]
+      const lastPage = sessionHistory[sessionHistory.length-2];
       
       //Remove current page and last page from history (we remove the last page because navigating to it after will cause it to get added back)
-      sessionHistory.splice(sessionHistory.length-2, 2)
-      storage.setItem("history", JSON.stringify(sessionHistory))
+      sessionHistory.splice(sessionHistory.length-2, 2);
+      storage.setItem("history", JSON.stringify(sessionHistory));
 
-      router.replace(lastPage)
+      router.replace(lastPage);
     } else {
-      router.back()
+      router.back();
     }
-  }
+  };
 
   const hasHistory = () => {
     const storage = globalThis?.sessionStorage;
 
     if (storage) {
       try {
-        return JSON.parse(storage.getItem("history")).length > 0
+        return JSON.parse(storage.getItem("history")).length > 0;
       } catch (err) {
-        console.error(err)
-        return false
+        console.error(err);
+        return false;
       }
-    } else return false
-  }
+    } else return false;
+  };
 
   return (
     <>

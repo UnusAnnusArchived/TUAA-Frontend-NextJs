@@ -1,6 +1,5 @@
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button"
-import Divider from "@mui/material/Divider"
+import Divider from "@mui/material/Divider";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Layout } from "../components/layout";
@@ -12,7 +11,7 @@ import tuaaDownloaderPic from "../assets/tuaa-downloader.png";
 import tuaaNodeApiPic from "../assets/tuaa-node-api.png";
 
 const Download: React.FC<void> = (props) => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
   return (
     <Layout>
@@ -22,7 +21,7 @@ const Download: React.FC<void> = (props) => {
           {t("downloads:title")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <Divider sx={{ width: "50%", backgroundColor: '#fff' }} className="my-3" />
+          <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
 
           <DownloadItem name="The Unus Annus Downloader" description={t("downloads:tuaaDownloader:description")} image={tuaaDownloaderPic} link="http://github.com/TheUnusAnnusArchive/TUAA-Downloader/releases/latest"></DownloadItem>
           <DownloadItem name="The Unus Annus Archive Node.JS API" description={t("downloads:tuaaNodeApi:description")} image={tuaaNodeApiPic} link="http://github.com/TheUnusAnnusArchive/TUAA-Node-API"></DownloadItem>
@@ -30,7 +29,7 @@ const Download: React.FC<void> = (props) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Download
+export default Download;

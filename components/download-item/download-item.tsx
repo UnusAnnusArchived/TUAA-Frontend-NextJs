@@ -35,4 +35,4 @@ const DownloadItem: React.FC<IProps> = ({ name, description, image, link }) => {
   );
 };
 
-export default DownloadItem
+export default DownloadItem;

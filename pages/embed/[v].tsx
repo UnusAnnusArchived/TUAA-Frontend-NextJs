@@ -14,20 +14,20 @@ interface IProps {
 const Embed: React.FC<IProps> = ({ watchCode, video }) => {
   return (
     <Player video={video} watchCode={watchCode} isEmbed />
-  )
-}
+  );
+};
 
-export default Embed
+export default Embed;
 
 export const getStaticProps: GetStaticProps<IProps> = async (context) => {
   const watchCode = context.params.v.toString();
   const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
 
   if (res.status !== 200) {
-    return { props: { video: null }, notFound: true }
+    return { props: { video: null }, notFound: true };
   }
 
-  const data: IVideo = await res.json()
+  const data: IVideo = await res.json();
 
   return {
     props: {

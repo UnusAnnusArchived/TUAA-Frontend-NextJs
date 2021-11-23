@@ -150,7 +150,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
     const playerContainer = document.getElementsByClassName("plyr")[0];
 
     if (isEmbed) {
-      playerContainer.classList.add(embedStyles['embed-player'])
+      playerContainer.classList.add(embedStyles["embed-player"]);
     }
 
     /* Choice Bar */
