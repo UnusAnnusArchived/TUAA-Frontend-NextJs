@@ -76,6 +76,9 @@ const en = {
     imageAlt: "Image of {downloadName}",
     tuaaDownloader: {
       description: "An easy way to download any of our episodes"
+    },
+    tuaaNodeApi: {
+      description: 'An easy way to communicate with our API in Node.JS'
     }
   },
   errors: {
