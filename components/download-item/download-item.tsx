@@ -35,4 +35,4 @@ const DownloadItem: React.FC<IProps> = (***REMOVED*** name, description, image, 
   );
 ***REMOVED***;
 
-export default DownloadItem
+export default DownloadItem;

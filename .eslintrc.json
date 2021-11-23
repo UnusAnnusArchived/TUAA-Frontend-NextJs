@@ -1,3 +1,11 @@
 ***REMOVED***
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": ***REMOVED***
+    "quotes": ["error", "double", ***REMOVED***
+      "allowTemplateLiterals": true,
+      "avoidEscape": true
+***REMOVED***],
+    "semi": ["error", "always"],
+    "eol-last": ["error", "always"]
+***REMOVED***
 ***REMOVED***

@@ -15,7 +15,7 @@ const VideoList: React.FC<IProps> = (***REMOVED*** videos ***REMOVED***) => ***R
         return (
           <div key=***REMOVED***index***REMOVED*** className="col-12 col-md-4 p-2">
             <Link
-              href=***REMOVED***`/watch/s$***REMOVED***video.season.toString().padStart(2, '0')***REMOVED***.e$***REMOVED***video.episode.toString().padStart(3, '0')***REMOVED***`***REMOVED***
+              href=***REMOVED***`/watch/s$***REMOVED***video.season.toString().padStart(2, "0")***REMOVED***.e$***REMOVED***video.episode.toString().padStart(3, "0")***REMOVED***`***REMOVED***
               passHref
             >
               <div className="pointer h-100">

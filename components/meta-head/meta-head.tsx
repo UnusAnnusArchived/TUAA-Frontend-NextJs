@@ -23,11 +23,11 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
   // TODO: Change in production
   const baseDomain = "https://unusann.us/";
 
-  var useSmallImage = false
+  var useSmallImage = false;
 
   if (!image) ***REMOVED***
-    image = "https://unusann.us/ua.png"
-    useSmallImage = true
+    image = "https://unusann.us/ua.png";
+    useSmallImage = true;
 ***REMOVED***
 
   if (!image?.startsWith("http")) ***REMOVED***

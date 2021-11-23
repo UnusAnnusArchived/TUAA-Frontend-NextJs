@@ -12,7 +12,7 @@ import ***REMOVED*** previousPageAtom, userAtom ***REMOVED*** from "../../src/at
 import ***REMOVED*** ProfileIcon ***REMOVED*** from "../profile";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import DownloadIcon from "@mui/icons-material/Download"
+import DownloadIcon from "@mui/icons-material/Download";
 import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
 import MenuIcon from "@mui/icons-material/Menu";
 import BackIcon from "@mui/icons-material/ArrowBack";
@@ -73,46 +73,46 @@ const ABar: React.FC = () => ***REMOVED***
 
     let sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
-    const path = globalThis?.location.pathname
+    const path = globalThis?.location.pathname;
     if (path) ***REMOVED***
       sessionHistory.push(globalThis?.location.pathname);
 ***REMOVED***;
 
-    storage.setItem("history", JSON.stringify(sessionHistory))
+    storage.setItem("history", JSON.stringify(sessionHistory));
 
-    console.log(sessionHistory)
-***REMOVED*** [router.asPath])
+    console.log(sessionHistory);
+***REMOVED*** [router.asPath]);
 
   const onClickBack = () => ***REMOVED***
     const storage = globalThis?.sessionStorage;
 
     if (storage) ***REMOVED***
-      const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]")
+      const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
-      const lastPage = sessionHistory[sessionHistory.length-2]
+      const lastPage = sessionHistory[sessionHistory.length-2];
       
       //Remove current page and last page from history (we remove the last page because navigating to it after will cause it to get added back)
-      sessionHistory.splice(sessionHistory.length-2, 2)
-      storage.setItem("history", JSON.stringify(sessionHistory))
+      sessionHistory.splice(sessionHistory.length-2, 2);
+      storage.setItem("history", JSON.stringify(sessionHistory));
 
-      router.replace(lastPage)
+      router.replace(lastPage);
 ***REMOVED*** else ***REMOVED***
-      router.back()
+      router.back();
 ***REMOVED***
-***REMOVED***
+***REMOVED***;
 
   const hasHistory = () => ***REMOVED***
     const storage = globalThis?.sessionStorage;
 
     if (storage) ***REMOVED***
       try ***REMOVED***
-        return JSON.parse(storage.getItem("history")).length > 0
+        return JSON.parse(storage.getItem("history")).length > 0;
   ***REMOVED*** catch (err) ***REMOVED***
-        console.error(err)
-        return false
+        console.error(err);
+        return false;
   ***REMOVED***
-***REMOVED*** else return false
-***REMOVED***
+***REMOVED*** else return false;
+***REMOVED***;
 
   return (
     <>
