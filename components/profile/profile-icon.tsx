@@ -19,8 +19,8 @@ import MenuList from "@mui/material/MenuList";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useTranslation } from "react-i18next";
 import { LanguageSelect } from "../language-select";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { FaDiscord } from "react-icons/fa";
+import DownloadIcon from "@mui/icons-material/Download";
+import { FaDiscord, FaGithub } from "react-icons/fa";
 import { useMediaQuery } from "@mui/material";
 import { theme } from "../theme/theme";
 
@@ -90,9 +90,9 @@ const ProfileIcon: React.FC = () => {
             <Typography variant="h6" component="p" className="text-center">
               {user.username}
             </Typography>
-            <Divider className="mt-2" />
           </div>
-          <MenuList>
+          <Divider style={{margin:"4px 0"}} />
+          <MenuList style={{paddingTop:0}}>
             <Link passHref href="/profile">
               <MenuItem onClick={handleClose}>
                 <ListItemIcon>
@@ -102,40 +102,54 @@ const ProfileIcon: React.FC = () => {
               </MenuItem>
             </Link>
             {isMdDown && (
-              <div onClick={() => setAnchorEl(null)}>
-                <LanguageSelect />
-              </div>
+              <Link passHref href="/downloads">
+                <MenuItem onClick={handleClose}>
+                  <ListItemIcon>
+                    <DownloadIcon />
+                  </ListItemIcon>
+                  <ListItemText>{t("downloads:title")}</ListItemText>
+                </MenuItem>
+              </Link>
             )}
-            <Divider />
-            <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", color: "#fff" }}
-              >
-                <MenuItem>
-                  <ListItemIcon>
-                    <FaDiscord />
-                  </ListItemIcon>
-                  <ListItemText>Discord</ListItemText>
-                </MenuItem>
-              </a>
-            </Link>
-            <Link href="https://github.com/UnusAnnusArchived" passHref>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", color: "#fff" }}
-              >
-                <MenuItem>
-                  <ListItemIcon>
-                    <GitHubIcon />
-                  </ListItemIcon>
-                  <ListItemText>Github</ListItemText>
-                </MenuItem>
-              </a>
-            </Link>
-            <Divider />
+
+            {isMdDown && (
+              <React.Fragment>
+                <div>
+                  <Divider style={{margin:"4px 0"}} />
+                  <LanguageSelect />
+                </div>
+                <Divider style={{margin:"4px 0"}} />
+                <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "#fff" }}
+                  >
+                    <MenuItem>
+                      <ListItemIcon>
+                        <FaDiscord style={{width:"1.5rem"}} />
+                      </ListItemIcon>
+                      <ListItemText>Discord</ListItemText>
+                    </MenuItem>
+                  </a>
+                </Link>
+                <Link href="https://github.com/UnusAnnusArchived" passHref>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "#fff" }}
+                  >
+                    <MenuItem>
+                      <ListItemIcon>
+                        <FaGithub style={{width:"1.5rem"}} />
+                      </ListItemIcon>
+                      <ListItemText>Github</ListItemText>
+                    </MenuItem>
+                  </a>
+                </Link>
+              </React.Fragment>
+            )}
+            <Divider style={{margin:"4px 0"}} />
             <MenuItem onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />

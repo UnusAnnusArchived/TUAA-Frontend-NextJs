@@ -14,6 +14,8 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import DownloadIcon from "@mui/icons-material/Download";
 import { FaDiscord, FaGithub } from "react-icons/fa";
+import RegisterIcon from "@mui/icons-material/AppRegistration";
+import LoginIcon from "@mui/icons-material/Login";
 import MenuIcon from "@mui/icons-material/Menu";
 import BackIcon from "@mui/icons-material/ArrowBack";
 import MenuItem from "@mui/material/MenuItem";
@@ -135,16 +137,10 @@ const ABar: React.FC = () => {
               variant="h6"
               component="div"
               className="pointer"
-              // sx={{ flexGrow: 1 }}
             >
               The Unus Annus Archive
             </Typography>
           </Link>
-          {/* {course && (
-          <Typography variant="h6" component="div" className="ellipsis">
-            {course.name}
-          </Typography>
-        )} */}
           <Box sx={{ flexGrow: 1 }} />
           {!isMdDown && (
             <div className="d-flex">
@@ -193,6 +189,15 @@ const ABar: React.FC = () => {
       </AppBar>
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">
+          <Link href="/downloads" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <DownloadIcon />
+              </ListItemIcon>
+              <ListItemText>{t("downloads:title")}</ListItemText>
+            </MenuItem>
+          </Link>
+          <Divider style={{margin:"4px 0"}} />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
             <a
               target="_blank"
@@ -201,7 +206,7 @@ const ABar: React.FC = () => {
             >
               <MenuItem>
                 <ListItemIcon>
-                  <FaDiscord />
+                  <FaDiscord style={{width:"1.5rem"}} />
                 </ListItemIcon>
                 <ListItemText>Discord</ListItemText>
               </MenuItem>
@@ -215,26 +220,32 @@ const ABar: React.FC = () => {
             >
               <MenuItem>
                 <ListItemIcon>
-                  <FaGithub />
+                  <FaGithub style={{width:"1.5rem"}} />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>
             </a>
           </Link>
-          <Divider />
+          <Divider style={{margin:"4px 0"}} />
           <LanguageSelect />
-          <Divider />
+          <Divider style={{margin:"4px 0"}} />
 
           <Link passHref href="/register">
             <MenuItem>
-              <Button color="inherit">{t("register:title")}</Button>
+              <ListItemIcon>
+                <RegisterIcon />
+              </ListItemIcon>
+              <ListItemText>{t("register:title")}</ListItemText>
             </MenuItem>
           </Link>
-          <MenuItem>
-            <Button color="inherit" onClick={onClickLogin}>
-              {t("login:title")}
-            </Button>
-          </MenuItem>
+          <Link passHref href="/login">
+            <MenuItem>
+              <ListItemIcon>
+                <LoginIcon />
+              </ListItemIcon>
+              <ListItemText>{t("login:title")}</ListItemText>
+            </MenuItem>
+          </Link>
         </div>
       </Menu>
     </>
