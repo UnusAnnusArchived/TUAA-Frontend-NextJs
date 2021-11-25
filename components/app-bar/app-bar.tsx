@@ -14,6 +14,8 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import DownloadIcon from "@mui/icons-material/Download";
 import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
+import RegisterIcon from "@mui/icons-material/AppRegistration";
+import LoginIcon from "@mui/icons-material/Login";
 import MenuIcon from "@mui/icons-material/Menu";
 import BackIcon from "@mui/icons-material/ArrowBack";
 import MenuItem from "@mui/material/MenuItem";
@@ -135,16 +137,10 @@ const ABar: React.FC = () => ***REMOVED***
               variant="h6"
               component="div"
               className="pointer"
-              // sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***
             >
               The Unus Annus Archive
             </Typography>
           </Link>
-          ***REMOVED***/* ***REMOVED***course && (
-          <Typography variant="h6" component="div" className="ellipsis">
-            ***REMOVED***course.name***REMOVED***
-          </Typography>
-        )***REMOVED*** */***REMOVED***
           <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
           ***REMOVED***!isMdDown && (
             <div className="d-flex">
@@ -193,6 +189,15 @@ const ABar: React.FC = () => ***REMOVED***
       </AppBar>
       <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
         <div className="menu-container">
+          <Link href="/downloads" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <DownloadIcon />
+              </ListItemIcon>
+              <ListItemText>***REMOVED***t("downloads:title")***REMOVED***</ListItemText>
+            </MenuItem>
+          </Link>
+          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
             <a
               target="_blank"
@@ -201,7 +206,7 @@ const ABar: React.FC = () => ***REMOVED***
             >
               <MenuItem>
                 <ListItemIcon>
-                  <FaDiscord />
+                  <FaDiscord style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
                 </ListItemIcon>
                 <ListItemText>Discord</ListItemText>
               </MenuItem>
@@ -215,26 +220,32 @@ const ABar: React.FC = () => ***REMOVED***
             >
               <MenuItem>
                 <ListItemIcon>
-                  <FaGithub />
+                  <FaGithub style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>
             </a>
           </Link>
-          <Divider />
+          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
           <LanguageSelect />
-          <Divider />
+          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
 
           <Link passHref href="/register">
             <MenuItem>
-              <Button color="inherit">***REMOVED***t("register:title")***REMOVED***</Button>
+              <ListItemIcon>
+                <RegisterIcon />
+              </ListItemIcon>
+              <ListItemText>***REMOVED***t("register:title")***REMOVED***</ListItemText>
             </MenuItem>
           </Link>
-          <MenuItem>
-            <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
-              ***REMOVED***t("login:title")***REMOVED***
-            </Button>
-          </MenuItem>
+          <Link passHref href="/login">
+            <MenuItem>
+              <ListItemIcon>
+                <LoginIcon />
+              </ListItemIcon>
+              <ListItemText>***REMOVED***t("login:title")***REMOVED***</ListItemText>
+            </MenuItem>
+          </Link>
         </div>
       </Menu>
     </>

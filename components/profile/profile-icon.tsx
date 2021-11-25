@@ -19,8 +19,8 @@ import MenuList from "@mui/material/MenuList";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import ***REMOVED*** FaDiscord ***REMOVED*** from "react-icons/fa";
+import DownloadIcon from "@mui/icons-material/Download";
+import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
 import ***REMOVED*** useMediaQuery ***REMOVED*** from "@mui/material";
 import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
 
@@ -90,9 +90,9 @@ const ProfileIcon: React.FC = () => ***REMOVED***
             <Typography variant="h6" component="p" className="text-center">
               ***REMOVED***user.username***REMOVED***
             </Typography>
-            <Divider className="mt-2" />
           </div>
-          <MenuList>
+          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+          <MenuList style=***REMOVED******REMOVED***paddingTop:0***REMOVED******REMOVED***>
             <Link passHref href="/profile">
               <MenuItem onClick=***REMOVED***handleClose***REMOVED***>
                 <ListItemIcon>
@@ -102,40 +102,54 @@ const ProfileIcon: React.FC = () => ***REMOVED***
               </MenuItem>
             </Link>
             ***REMOVED***isMdDown && (
-              <div onClick=***REMOVED***() => setAnchorEl(null)***REMOVED***>
-                <LanguageSelect />
-              </div>
+              <Link passHref href="/downloads">
+                <MenuItem onClick=***REMOVED***handleClose***REMOVED***>
+                  <ListItemIcon>
+                    <DownloadIcon />
+                  </ListItemIcon>
+                  <ListItemText>***REMOVED***t("downloads:title")***REMOVED***</ListItemText>
+                </MenuItem>
+              </Link>
             )***REMOVED***
-            <Divider />
-            <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-              >
-                <MenuItem>
-                  <ListItemIcon>
-                    <FaDiscord />
-                  </ListItemIcon>
-                  <ListItemText>Discord</ListItemText>
-                </MenuItem>
-              </a>
-            </Link>
-            <Link href="https://github.com/UnusAnnusArchived" passHref>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-              >
-                <MenuItem>
-                  <ListItemIcon>
-                    <GitHubIcon />
-                  </ListItemIcon>
-                  <ListItemText>Github</ListItemText>
-                </MenuItem>
-              </a>
-            </Link>
-            <Divider />
+
+            ***REMOVED***isMdDown && (
+              <React.Fragment>
+                <div>
+                  <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+                  <LanguageSelect />
+                </div>
+                <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+                <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
+                  >
+                    <MenuItem>
+                      <ListItemIcon>
+                        <FaDiscord style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
+                      </ListItemIcon>
+                      <ListItemText>Discord</ListItemText>
+                    </MenuItem>
+                  </a>
+                </Link>
+                <Link href="https://github.com/UnusAnnusArchived" passHref>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
+                  >
+                    <MenuItem>
+                      <ListItemIcon>
+                        <FaGithub style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
+                      </ListItemIcon>
+                      <ListItemText>Github</ListItemText>
+                    </MenuItem>
+                  </a>
+                </Link>
+              </React.Fragment>
+            )***REMOVED***
+            <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
             <MenuItem onClick=***REMOVED***logout***REMOVED***>
               <ListItemIcon>
                 <LogoutIcon />
