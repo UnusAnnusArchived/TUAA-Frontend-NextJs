@@ -1,8 +1,6 @@
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { localApi } from "../../src/endpoints";
-import { IEpisodeAround } from "../../src/types";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import Fade from "@mui/material/Fade";

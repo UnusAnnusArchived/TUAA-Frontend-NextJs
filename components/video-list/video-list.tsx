@@ -2,7 +2,6 @@ import React from "react";
 import { IVideo } from "../../src/types";
 import VideoThumbnail from "../video-thumbnail/video-thumbnail";
 import Link from "next/link";
-import { numberToNPlaces } from "../../src/utils";
 
 interface IProps {
   videos: IVideo[];

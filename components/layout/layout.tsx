@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "../../styles/Layout.module.scss";
-// import { Appbar } from "../appbar";
 import { theme } from "../theme/theme";
 import classNames from "classnames";
 import { AppBar } from "../app-bar";
@@ -11,12 +10,6 @@ import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import { endpoint } from "../../src/endpoints";
 import { CheckLoginKeyResponse } from "../../src/types";
-
-// const useStyles = makeStyles({
-//   main: {
-//     backgroundColor: theme.palette?.background.default,
-//   },
-// });
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,7 +32,6 @@ const Layout: React.FC = ({ children }) => {
 
     if (res.status === 200) {
       if (res.data.isValid) {
-        // setLoggedInUser({ ...loggedInUser, ...res.data });
         return true;
       }
     }

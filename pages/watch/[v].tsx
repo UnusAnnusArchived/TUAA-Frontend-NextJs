@@ -65,25 +65,6 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
 
 export default Watch;
 
-// export const getServerSideProps: GetServerSideProps<IProps, { v: string }> =
-//   async (context) => {
-//     const watchCode = context.query.v.toString();
-//     const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
-
-//     if (res.status !== 200) {
-//       return { props: { video: null }, notFound: true };
-//     }
-
-//     const data: IVideo = await res.json();
-
-//     return {
-//       props: {
-//         watchCode,
-//         video: data,
-//       },
-//     };
-//   };
-
 export const getStaticProps: GetStaticProps<IProps> = async (context) => {
   const watchCode = context.params.v.toString();
   const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);

@@ -1,10 +1,8 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { IVideo, Seasons } from "../../src/types";
 import { Player } from "../../components/player";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { endpoint } from "../../src/endpoints";
-import { Container } from "@mui/material";
 
 interface IProps {
   watchCode: string;

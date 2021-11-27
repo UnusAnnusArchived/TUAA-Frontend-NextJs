@@ -1,7 +1,7 @@
 import Head from "next/head";
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/globals.scss";
-import type { AppProps /*, AppContext*/, NextWebVitalsMetric } from "next/app";
+import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Script from "next/script";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../components/theme/theme";

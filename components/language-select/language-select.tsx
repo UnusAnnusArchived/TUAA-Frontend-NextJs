@@ -56,14 +56,6 @@ const LanguageSelect: React.FC = () => {
             <ListItemText>{t("common:language")}</ListItemText>
           </MenuItem>
         </div>
-
-        // <Button
-        //   aria-haspopup="true"
-        //   aria-expanded={open ? "true" : undefined}
-        //   onClick={handleClick}
-        // >
-
-        // </Button>
       )}
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">

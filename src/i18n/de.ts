@@ -1,4 +1,4 @@
-const en = {
+const de = {
   home: {
     title: "Startseite"
   },
@@ -114,4 +114,4 @@ const en = {
   }
 };
   
-  export default en;
+export default de;

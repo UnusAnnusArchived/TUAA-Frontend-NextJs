@@ -1,5 +1,4 @@
 import { IEpisodeAround } from "../../src/types";
-import { numberToNPlaces } from "../../src/utils";
 
 const getEpisodesAround = (currentEpisodeCode: string) => {
   try {
@@ -9,8 +8,8 @@ const getEpisodesAround = (currentEpisodeCode: string) => {
     const prev = currentEpisode - 1;
 
     if (currentEpisodeCode.includes("s01")) {
-      const prevEp = `s01.e${numberToNPlaces(currentEpisode - 1)}`;
-      const nextEp = `s01.e${numberToNPlaces(currentEpisode + 1)}`;
+      const prevEp = `s01.e${(currentEpisode - 1).toString().padStart(3, "0")}`;
+      const nextEp = `s01.e${(currentEpisode + 1).toString().padStart(3, "0")}`;
 
       const response: IEpisodeAround = {
         nextEp: next >= 1 && next <= 368 ? nextEp : null,
@@ -19,8 +18,8 @@ const getEpisodesAround = (currentEpisodeCode: string) => {
 
       return response;
     } else if (currentEpisodeCode.includes("s00")) {
-      const prevEp = `s00.e${numberToNPlaces(currentEpisode - 1)}`;
-      const nextEp = `s00.e${numberToNPlaces(currentEpisode + 1)}`;
+      const prevEp = `s00.e${(currentEpisode - 1).toString().padStart(3, "0")}`;
+      const nextEp = `s00.e${(currentEpisode + 1).toString().padStart(3, "0")}`;
 
       const response: IEpisodeAround = {
         nextEp: next >= 1 && next <= 14 ? nextEp : null,
