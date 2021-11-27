@@ -1,10 +1,8 @@
 import React from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../../src/types";
 import ***REMOVED*** Player ***REMOVED*** from "../../components/player";
 import ***REMOVED*** GetStaticProps, GetStaticPaths ***REMOVED*** from "next";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** Container ***REMOVED*** from "@mui/material";
 
 interface IProps ***REMOVED***
   watchCode: string;

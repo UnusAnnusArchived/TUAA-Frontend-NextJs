@@ -2,7 +2,6 @@ import React from "react";
 import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
 import VideoThumbnail from "../video-thumbnail/video-thumbnail";
 import Link from "next/link";
-import ***REMOVED*** numberToNPlaces ***REMOVED*** from "../../src/utils";
 
 interface IProps ***REMOVED***
   videos: IVideo[];

@@ -1,8 +1,6 @@
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
-import ***REMOVED*** localApi ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** IEpisodeAround ***REMOVED*** from "../../src/types";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import Fade from "@mui/material/Fade";

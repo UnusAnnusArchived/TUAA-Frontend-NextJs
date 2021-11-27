@@ -1,4 +1,4 @@
-const en = ***REMOVED***
+const de = ***REMOVED***
   home: ***REMOVED***
     title: "Startseite"
 ***REMOVED***
@@ -114,4 +114,4 @@ const en = ***REMOVED***
 ***REMOVED***
 ***REMOVED***;
   
-  export default en;
+export default de;

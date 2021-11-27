@@ -56,14 +56,6 @@ const LanguageSelect: React.FC = () => ***REMOVED***
             <ListItemText>***REMOVED***t("common:language")***REMOVED***</ListItemText>
           </MenuItem>
         </div>
-
-        // <Button
-        //   aria-haspopup="true"
-        //   aria-expanded=***REMOVED***open ? "true" : undefined***REMOVED***
-        //   onClick=***REMOVED***handleClick***REMOVED***
-        // >
-
-        // </Button>
       )***REMOVED***
       <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
         <div className="menu-container">

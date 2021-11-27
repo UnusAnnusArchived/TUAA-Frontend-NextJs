@@ -1,6 +1,5 @@
 import React, ***REMOVED*** useEffect ***REMOVED*** from "react";
 import styles from "../../styles/Layout.module.scss";
-// import ***REMOVED*** Appbar ***REMOVED*** from "../appbar";
 import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
 import classNames from "classnames";
 import ***REMOVED*** AppBar ***REMOVED*** from "../app-bar";
@@ -11,12 +10,6 @@ import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** CheckLoginKeyResponse ***REMOVED*** from "../../src/types";
-
-// const useStyles = makeStyles(***REMOVED***
-//   main: ***REMOVED***
-//     backgroundColor: theme.palette?.background.default,
-// ***REMOVED***
-// ***REMOVED***);
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles(***REMOVED***
@@ -39,7 +32,6 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
 
     if (res.status === 200) ***REMOVED***
       if (res.data.isValid) ***REMOVED***
-        // setLoggedInUser(***REMOVED*** ...loggedInUser, ...res.data ***REMOVED***);
         return true;
   ***REMOVED***
 ***REMOVED***

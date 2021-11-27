@@ -1,7 +1,6 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import ***REMOVED*** GetServerSideProps, GetStaticProps ***REMOVED*** from "next";
-import Head from "next/head";
+import ***REMOVED*** GetStaticProps ***REMOVED*** from "next";
 import React, ***REMOVED*** useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
@@ -55,19 +54,3 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMO
     revalidate: 60 * 60 * 24, // 1 day
 ***REMOVED***;
 ***REMOVED***;
-
-// export const getServerSideProps: GetServerSideProps<IProps> = async (
-//   context
-// ) => ***REMOVED***
-//   // Perhaps change to build only once
-//   // However web app will need to be rebuild every time the video dataset changes
-
-//   const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
-//   const data: Seasons = await res.json();
-
-//   return ***REMOVED***
-//     props: ***REMOVED***
-//       seasons: data,
-//   ***REMOVED***
-// ***REMOVED***;
-// ***REMOVED***;

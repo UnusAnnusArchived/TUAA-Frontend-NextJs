@@ -1,5 +1,4 @@
 import ***REMOVED*** IEpisodeAround ***REMOVED*** from "../../src/types";
-import ***REMOVED*** numberToNPlaces ***REMOVED*** from "../../src/utils";
 
 const getEpisodesAround = (currentEpisodeCode: string) => ***REMOVED***
   try ***REMOVED***
@@ -9,8 +8,8 @@ const getEpisodesAround = (currentEpisodeCode: string) => ***REMOVED***
     const prev = currentEpisode - 1;
 
     if (currentEpisodeCode.includes("s01")) ***REMOVED***
-      const prevEp = `s01.e$***REMOVED***numberToNPlaces(currentEpisode - 1)***REMOVED***`;
-      const nextEp = `s01.e$***REMOVED***numberToNPlaces(currentEpisode + 1)***REMOVED***`;
+      const prevEp = `s01.e$***REMOVED***(currentEpisode - 1).toString().padStart(3, "0")***REMOVED***`;
+      const nextEp = `s01.e$***REMOVED***(currentEpisode + 1).toString().padStart(3, "0")***REMOVED***`;
 
       const response: IEpisodeAround = ***REMOVED***
         nextEp: next >= 1 && next <= 368 ? nextEp : null,
@@ -19,8 +18,8 @@ const getEpisodesAround = (currentEpisodeCode: string) => ***REMOVED***
 
       return response;
 ***REMOVED*** else if (currentEpisodeCode.includes("s00")) ***REMOVED***
-      const prevEp = `s00.e$***REMOVED***numberToNPlaces(currentEpisode - 1)***REMOVED***`;
-      const nextEp = `s00.e$***REMOVED***numberToNPlaces(currentEpisode + 1)***REMOVED***`;
+      const prevEp = `s00.e$***REMOVED***(currentEpisode - 1).toString().padStart(3, "0")***REMOVED***`;
+      const nextEp = `s00.e$***REMOVED***(currentEpisode + 1).toString().padStart(3, "0")***REMOVED***`;
 
       const response: IEpisodeAround = ***REMOVED***
         nextEp: next >= 1 && next <= 14 ? nextEp : null,

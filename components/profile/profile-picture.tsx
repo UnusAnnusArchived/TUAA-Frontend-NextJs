@@ -1,5 +1,4 @@
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";

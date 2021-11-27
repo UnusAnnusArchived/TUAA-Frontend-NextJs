@@ -20,7 +20,6 @@ const MetaHead: React.FC<IProps> = (***REMOVED***
   description,
   image,
 ***REMOVED***) => ***REMOVED***
-  // TODO: Change in production
   const baseDomain = "https://unusann.us/";
 
   var useSmallImage = false;
