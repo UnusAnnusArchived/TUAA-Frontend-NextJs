@@ -3,7 +3,6 @@ import React from "react";
 import { IVideo } from "../../src/types";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
-import { numberToNPlaces } from "../../src/utils";
 import moment from "moment-with-locales-es6";
 import { useTranslation } from "react-i18next";
 
