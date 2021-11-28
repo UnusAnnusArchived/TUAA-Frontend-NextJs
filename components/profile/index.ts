@@ -1,5 +1,3 @@
-export ***REMOVED*** default as ProfileIcon ***REMOVED*** from "./profile-icon";
-
 export ***REMOVED*** default as ProfileSection ***REMOVED*** from "./profile-section";
 
 export ***REMOVED*** default as ProfilePicture ***REMOVED*** from "./profile-picture";

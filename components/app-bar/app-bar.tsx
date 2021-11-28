@@ -9,41 +9,20 @@ import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
 import Box from "@mui/system/Box";
 import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** previousPageAtom, userAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** ProfileIcon ***REMOVED*** from "../profile";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import DownloadIcon from "@mui/icons-material/Download";
-import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
-import RegisterIcon from "@mui/icons-material/AppRegistration";
-import LoginIcon from "@mui/icons-material/Login";
-import MenuIcon from "@mui/icons-material/Menu";
 import BackIcon from "@mui/icons-material/ArrowBack";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import Menu from "@mui/material/Menu";
-import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
+import SearchIcon from "@mui/icons-material/Search";
+import AppMenu from "./menu";
+import ***REMOVED*** TextField ***REMOVED*** from "@mui/material";
 
 const ABar: React.FC = () => ***REMOVED***
   const [isRouting, setIsRouting] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
-  const [, setPreviousPage] = useRecoilState(previousPageAtom);
   const ***REMOVED*** t ***REMOVED*** = useTranslation();
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
-
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => ***REMOVED***
-    setAnchorEl(event.currentTarget);
-***REMOVED***;
-  const handleClose = () => ***REMOVED***
-    setAnchorEl(null);
-***REMOVED***;
 
   const router = useRouter();
 
@@ -62,11 +41,6 @@ const ABar: React.FC = () => ***REMOVED***
       router.events.off("routeChangeComplete", handleRoutingEnd);
 ***REMOVED***;
 ***REMOVED*** []);
-
-  const onClickLogin = () => ***REMOVED***
-    setPreviousPage(router.asPath);
-    router.push("/login");
-***REMOVED***;
 
   useEffect(() => ***REMOVED***
     const storage = globalThis?.sessionStorage;
@@ -141,113 +115,26 @@ const ABar: React.FC = () => ***REMOVED***
               The Unus Annus Archive
             </Typography>
           </Link>
-          <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
-          ***REMOVED***!isMdDown && (
-            <div className="d-flex">
-              <Link href="/downloads" passHref>
-                <IconButton>
-                  <DownloadIcon />
-                </IconButton>
-              </Link>
-              <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <IconButton>
-                    <FaDiscord />
-                  </IconButton>
-                </a>
-              </Link>
-              <Link href="https://github.com/UnusAnnusArchived" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <IconButton>
-                    <FaGithub />
-                  </IconButton>
-                </a>
-              </Link>
-              <LanguageSelect />
-              ***REMOVED***!loggedInUser && (
-                <Link passHref href="/register">
-                  <Button color="inherit">***REMOVED***t("register:title")***REMOVED***</Button>
-                </Link>
-              )***REMOVED***
-              ***REMOVED***!loggedInUser && (
-                <Button color="inherit" onClick=***REMOVED***onClickLogin***REMOVED***>
-                  ***REMOVED***t("login:title")***REMOVED***
-                </Button>
-              )***REMOVED***
-            </div>
-          )***REMOVED***
-          ***REMOVED***!loggedInUser && isMdDown && (
-            <IconButton onClick=***REMOVED***handleClick***REMOVED***>
-              <MenuIcon />
-            </IconButton>
-          )***REMOVED***
-          <ProfileIcon />
+          <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>
+            ***REMOVED***/* ***REMOVED***!isMdDown && (
+              <div style=***REMOVED******REMOVED***justifyContent:"center",alignItems:"center",textAlign:"center"***REMOVED******REMOVED***>
+                <TextField style=***REMOVED******REMOVED***width:"50%"***REMOVED******REMOVED*** label=***REMOVED***t("common:search")***REMOVED*** variant="standard" />
+              </div>
+            )***REMOVED*** */***REMOVED***
+          </Box>
+          <div className="d-flex">
+            ***REMOVED***/* ***REMOVED***isMdDown && (
+              <IconButton>
+                <SearchIcon />
+              </IconButton>
+            )***REMOVED*** */***REMOVED***
+            <AppMenu />
+          </div>
         </Toolbar>
         <Fade in=***REMOVED***isRouting***REMOVED***>
           <LinearProgress className="routing-progress" />
         </Fade>
       </AppBar>
-      <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
-        <div className="menu-container">
-          <Link href="/downloads" passHref>
-            <MenuItem>
-              <ListItemIcon>
-                <DownloadIcon />
-              </ListItemIcon>
-              <ListItemText>***REMOVED***t("downloads:title")***REMOVED***</ListItemText>
-            </MenuItem>
-          </Link>
-          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
-          <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-            >
-              <MenuItem>
-                <ListItemIcon>
-                  <FaDiscord style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
-                </ListItemIcon>
-                <ListItemText>Discord</ListItemText>
-              </MenuItem>
-            </a>
-          </Link>
-          <Link href="https://github.com/UnusAnnusArchived" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-            >
-              <MenuItem>
-                <ListItemIcon>
-                  <FaGithub style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
-                </ListItemIcon>
-                <ListItemText>Github</ListItemText>
-              </MenuItem>
-            </a>
-          </Link>
-          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
-          <LanguageSelect />
-          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
-
-          <Link passHref href="/register">
-            <MenuItem>
-              <ListItemIcon>
-                <RegisterIcon />
-              </ListItemIcon>
-              <ListItemText>***REMOVED***t("register:title")***REMOVED***</ListItemText>
-            </MenuItem>
-          </Link>
-          <Link passHref href="/login">
-            <MenuItem>
-              <ListItemIcon>
-                <LoginIcon />
-              </ListItemIcon>
-              <ListItemText>***REMOVED***t("login:title")***REMOVED***</ListItemText>
-            </MenuItem>
-          </Link>
-        </div>
-      </Menu>
     </>
   );
 ***REMOVED***;

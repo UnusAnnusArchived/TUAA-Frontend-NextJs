@@ -36,27 +36,14 @@ const LanguageSelect: React.FC = () => ***REMOVED***
 
   return (
     <div>
-      ***REMOVED***!isMdDown && (
-        <Tooltip title=***REMOVED***t("common:language")***REMOVED***>
-          <IconButton
-            aria-haspopup="true"
-            aria-expanded=***REMOVED***open ? "true" : undefined***REMOVED***
-            onClick=***REMOVED***handleClick***REMOVED***
-          >
+      <div onClick=***REMOVED***(event) => setAnchorEl(event.currentTarget)***REMOVED***>
+        <MenuItem>
+          <ListItemIcon>
             <LanguageIcon />
-          </IconButton>
-        </Tooltip>
-      )***REMOVED***
-      ***REMOVED***isMdDown && (
-        <div onClick=***REMOVED***(event) => setAnchorEl(event.currentTarget)***REMOVED***>
-          <MenuItem>
-            <ListItemIcon>
-              <LanguageIcon />
-            </ListItemIcon>
-            <ListItemText>***REMOVED***t("common:language")***REMOVED***</ListItemText>
-          </MenuItem>
-        </div>
-      )***REMOVED***
+          </ListItemIcon>
+          <ListItemText>***REMOVED***t("common:language")***REMOVED***</ListItemText>
+        </MenuItem>
+      </div>
       <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
         <div className="menu-container">
           ***REMOVED***availableLanguages.map((language, i) => (

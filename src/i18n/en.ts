@@ -27,6 +27,7 @@ const en = ***REMOVED***
     register: "Register",
     cancel: "Cancel",
     save: "Save",
+    search: "Search"
 ***REMOVED***
   login: ***REMOVED***
     title: "Login",
