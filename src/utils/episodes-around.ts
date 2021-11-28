@@ -2,7 +2,6 @@ import { IEpisodeAround } from "../../src/types";
 
 const getEpisodesAround = (currentEpisodeCode: string) => {
   try {
-    // const currentSeasonCode = currentEpisodeCode.substring(0, 3);
     const currentEpisode = parseInt(currentEpisodeCode.slice(-3));
     const next = currentEpisode + 1;
     const prev = currentEpisode - 1;

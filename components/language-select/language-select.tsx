@@ -36,27 +36,14 @@ const LanguageSelect: React.FC = () => {
 
   return (
     <div>
-      {!isMdDown && (
-        <Tooltip title={t("common:language")}>
-          <IconButton
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
+      <div onClick={(event) => setAnchorEl(event.currentTarget)}>
+        <MenuItem>
+          <ListItemIcon>
             <LanguageIcon />
-          </IconButton>
-        </Tooltip>
-      )}
-      {isMdDown && (
-        <div onClick={(event) => setAnchorEl(event.currentTarget)}>
-          <MenuItem>
-            <ListItemIcon>
-              <LanguageIcon />
-            </ListItemIcon>
-            <ListItemText>{t("common:language")}</ListItemText>
-          </MenuItem>
-        </div>
-      )}
+          </ListItemIcon>
+          <ListItemText>{t("common:language")}</ListItemText>
+        </MenuItem>
+      </div>
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">
           {availableLanguages.map((language, i) => (

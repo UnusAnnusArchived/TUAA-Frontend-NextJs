@@ -1,5 +1,3 @@
-export { default as ProfileIcon } from "./profile-icon";
-
 export { default as ProfileSection } from "./profile-section";
 
 export { default as ProfilePicture } from "./profile-picture";

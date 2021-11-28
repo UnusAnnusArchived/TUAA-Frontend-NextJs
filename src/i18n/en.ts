@@ -27,6 +27,7 @@ const en = {
     register: "Register",
     cancel: "Cancel",
     save: "Save",
+    search: "Search"
   },
   login: {
     title: "Login",

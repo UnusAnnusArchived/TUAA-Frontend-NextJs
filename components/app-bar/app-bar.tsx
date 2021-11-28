@@ -9,41 +9,20 @@ import { useRouter } from "next/router";
 import Box from "@mui/system/Box";
 import { useRecoilState } from "recoil";
 import { previousPageAtom, userAtom } from "../../src/atoms";
-import { ProfileIcon } from "../profile";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import DownloadIcon from "@mui/icons-material/Download";
-import { FaDiscord, FaGithub } from "react-icons/fa";
-import RegisterIcon from "@mui/icons-material/AppRegistration";
-import LoginIcon from "@mui/icons-material/Login";
-import MenuIcon from "@mui/icons-material/Menu";
 import BackIcon from "@mui/icons-material/ArrowBack";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import Menu from "@mui/material/Menu";
-import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { theme } from "../theme/theme";
 import { useTranslation } from "react-i18next";
-import { LanguageSelect } from "../language-select";
+import SearchIcon from "@mui/icons-material/Search";
+import AppMenu from "./menu";
+import { TextField } from "@mui/material";
 
 const ABar: React.FC = () => {
   const [isRouting, setIsRouting] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
-  const [, setPreviousPage] = useRecoilState(previousPageAtom);
   const { t } = useTranslation();
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
-
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const router = useRouter();
 
@@ -62,11 +41,6 @@ const ABar: React.FC = () => {
       router.events.off("routeChangeComplete", handleRoutingEnd);
     };
   }, []);
-
-  const onClickLogin = () => {
-    setPreviousPage(router.asPath);
-    router.push("/login");
-  };
 
   useEffect(() => {
     const storage = globalThis?.sessionStorage;
@@ -141,113 +115,26 @@ const ABar: React.FC = () => {
               The Unus Annus Archive
             </Typography>
           </Link>
-          <Box sx={{ flexGrow: 1 }} />
-          {!isMdDown && (
-            <div className="d-flex">
-              <Link href="/downloads" passHref>
-                <IconButton>
-                  <DownloadIcon />
-                </IconButton>
-              </Link>
-              <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <IconButton>
-                    <FaDiscord />
-                  </IconButton>
-                </a>
-              </Link>
-              <Link href="https://github.com/UnusAnnusArchived" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <IconButton>
-                    <FaGithub />
-                  </IconButton>
-                </a>
-              </Link>
-              <LanguageSelect />
-              {!loggedInUser && (
-                <Link passHref href="/register">
-                  <Button color="inherit">{t("register:title")}</Button>
-                </Link>
-              )}
-              {!loggedInUser && (
-                <Button color="inherit" onClick={onClickLogin}>
-                  {t("login:title")}
-                </Button>
-              )}
-            </div>
-          )}
-          {!loggedInUser && isMdDown && (
-            <IconButton onClick={handleClick}>
-              <MenuIcon />
-            </IconButton>
-          )}
-          <ProfileIcon />
+          <Box sx={{ flexGrow: 1 }}>
+            {/* {!isMdDown && (
+              <div style={{justifyContent:"center",alignItems:"center",textAlign:"center"}}>
+                <TextField style={{width:"50%"}} label={t("common:search")} variant="standard" />
+              </div>
+            )} */}
+          </Box>
+          <div className="d-flex">
+            {/* {isMdDown && (
+              <IconButton>
+                <SearchIcon />
+              </IconButton>
+            )} */}
+            <AppMenu />
+          </div>
         </Toolbar>
         <Fade in={isRouting}>
           <LinearProgress className="routing-progress" />
         </Fade>
       </AppBar>
-      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <div className="menu-container">
-          <Link href="/downloads" passHref>
-            <MenuItem>
-              <ListItemIcon>
-                <DownloadIcon />
-              </ListItemIcon>
-              <ListItemText>{t("downloads:title")}</ListItemText>
-            </MenuItem>
-          </Link>
-          <Divider style={{margin:"4px 0"}} />
-          <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "#fff" }}
-            >
-              <MenuItem>
-                <ListItemIcon>
-                  <FaDiscord style={{width:"1.5rem"}} />
-                </ListItemIcon>
-                <ListItemText>Discord</ListItemText>
-              </MenuItem>
-            </a>
-          </Link>
-          <Link href="https://github.com/UnusAnnusArchived" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "#fff" }}
-            >
-              <MenuItem>
-                <ListItemIcon>
-                  <FaGithub style={{width:"1.5rem"}} />
-                </ListItemIcon>
-                <ListItemText>Github</ListItemText>
-              </MenuItem>
-            </a>
-          </Link>
-          <Divider style={{margin:"4px 0"}} />
-          <LanguageSelect />
-          <Divider style={{margin:"4px 0"}} />
-
-          <Link passHref href="/register">
-            <MenuItem>
-              <ListItemIcon>
-                <RegisterIcon />
-              </ListItemIcon>
-              <ListItemText>{t("register:title")}</ListItemText>
-            </MenuItem>
-          </Link>
-          <Link passHref href="/login">
-            <MenuItem>
-              <ListItemIcon>
-                <LoginIcon />
-              </ListItemIcon>
-              <ListItemText>{t("login:title")}</ListItemText>
-            </MenuItem>
-          </Link>
-        </div>
-      </Menu>
     </>
   );
 };
