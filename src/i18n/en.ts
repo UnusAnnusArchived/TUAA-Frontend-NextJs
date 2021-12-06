@@ -27,7 +27,8 @@ const en = {
     register: "Register",
     cancel: "Cancel",
     save: "Save",
-    search: "Search"
+    search: "Search",
+    page: "page"
   },
   login: {
     title: "Login",
@@ -81,6 +82,11 @@ const en = {
     tuaaNodeApi: {
       description: "An easy way to communicate with our API in Node.JS"
     }
+  },
+  settings: {
+    title: "Settings",
+    accountSettings: "Looking for account settings? They're on the {link}",
+    autoplay: "Autoplay",
   },
   errors: {
     pageNotFound: "The page you were looking for was not found",

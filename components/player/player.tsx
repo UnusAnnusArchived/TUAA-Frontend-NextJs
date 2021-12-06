@@ -177,7 +177,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
         <div>
           <Fade in={currentTime > video.duration - 10}>
             <div>
-              <NextEpisodeButton watchCode={watchCode} />
+              <NextEpisodeButton watchCode={watchCode} currentTime={currentTime} duration={video.duration} />
             </div>
           </Fade>
         </div>
