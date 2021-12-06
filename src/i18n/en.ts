@@ -27,7 +27,8 @@ const en = ***REMOVED***
     register: "Register",
     cancel: "Cancel",
     save: "Save",
-    search: "Search"
+    search: "Search",
+    page: "page"
 ***REMOVED***
   login: ***REMOVED***
     title: "Login",
@@ -81,6 +82,11 @@ const en = ***REMOVED***
     tuaaNodeApi: ***REMOVED***
       description: "An easy way to communicate with our API in Node.JS"
 ***REMOVED***
+***REMOVED***
+  settings: ***REMOVED***
+    title: "Settings",
+    accountSettings: "Looking for account settings? They're on the ***REMOVED***link***REMOVED***",
+    autoplay: "Autoplay",
 ***REMOVED***
   errors: ***REMOVED***
     pageNotFound: "The page you were looking for was not found",

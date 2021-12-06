@@ -6,6 +6,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import DownloadIcon from "@mui/icons-material/Download";
+import SettingsIcon from "@mui/icons-material/Settings";
 import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
 import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
@@ -104,6 +105,14 @@ const AppMenu: React.FC = () => ***REMOVED***
               </Link>
             </React.Fragment>
           )***REMOVED***
+          <Link href="/settings" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText>***REMOVED***t("settings:title")***REMOVED***</ListItemText>
+            </MenuItem>
+          </Link>
           <Link href="/downloads" passHref>
             <MenuItem>
               <ListItemIcon>
