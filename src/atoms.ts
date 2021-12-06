@@ -27,3 +27,9 @@ export const previousPageAtom = atom<string>({
   key: "previousPageAtom",
   default: null,
 });
+
+export const autoplayAtom = atom<boolean>({
+  key: "autoplay",
+  default: null,
+  effects_UNSTABLE: [localStorageEffect("autoplay")]
+});

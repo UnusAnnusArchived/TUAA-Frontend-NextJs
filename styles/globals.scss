@@ -133,3 +133,23 @@ body {
 .flex-grow {
   flex-grow: 1;
 }
+
+.autoplay-scroll::before {
+  animation: AutoplayScroll 11s linear;
+  display: block;
+  background-color: rgba(0, 0, 0, .3);
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+@keyframes AutoplayScroll {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
