@@ -6,25 +6,20 @@ import { useRecoilState } from "recoil";
 import { autoplayAtom } from "../../src/atoms";
 
 const Autoplay: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [autoplay, setAutoplay] = useRecoilState(autoplayAtom);
 
-  // console.log(autoplay);
-
-  const autoplayEnabled = !!autoplay;
-  
-  const handleClick = () => {
-    setAutoplay(!autoplay);
+  const handleClick = (_, checked: boolean) => {
+    setAutoplay(checked);
   };
 
   return (
-    <FormControlLabel control={
-      <Checkbox checked={(() => {
-        console.log(autoplayEnabled);
-        return autoplayEnabled;
-      })()} />
-    } label={t("settings:autoplay") as string} onChange={handleClick} />
+    <FormControlLabel
+      control={<Checkbox checked={autoplay} defaultChecked={autoplay} />}
+      label={t("settings:autoplay") as string}
+      onChange={handleClick}
+    />
   );
 };
 
