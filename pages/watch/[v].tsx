@@ -70,7 +70,12 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMO
   const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/episode/$***REMOVED***watchCode***REMOVED***`);
 
   if (res.status !== 200) ***REMOVED***
-    return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
+    return ***REMOVED***
+      props: ***REMOVED*** video: null ***REMOVED***,
+      notFound: true,
+      // revalidate in 30 minutes
+      revalidate: 30 * 60,
+***REMOVED***;
 ***REMOVED***
 
   const data: IVideo = await res.json();
