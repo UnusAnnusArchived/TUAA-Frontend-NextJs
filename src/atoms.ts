@@ -30,6 +30,6 @@ export const previousPageAtom = atom<string>(***REMOVED***
 
 export const autoplayAtom = atom<boolean>(***REMOVED***
   key: "autoplay",
-  default: null,
-  effects_UNSTABLE: [localStorageEffect("autoplay")]
+  default: false,
+  effects_UNSTABLE: [localStorageEffect("autoplay")],
 ***REMOVED***);
