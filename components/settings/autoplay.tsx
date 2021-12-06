@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -7,7 +7,6 @@ import { autoplayAtom } from "../../src/atoms";
 
 const Autoplay: React.FC = () => {
   const { t } = useTranslation();
-
   const [autoplay, setAutoplay] = useRecoilState(autoplayAtom);
 
   const handleClick = (_, checked: boolean) => {
