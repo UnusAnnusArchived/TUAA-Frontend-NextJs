@@ -55,8 +55,6 @@ const ABar: React.FC = () => {
     };
 
     storage.setItem("history", JSON.stringify(sessionHistory));
-
-    console.log(sessionHistory);
   }, [router.asPath]);
 
   const onClickBack = () => {

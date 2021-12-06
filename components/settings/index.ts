@@ -1,1 +1,1 @@
-export { default as Autoplay } from "./autoplay";
+export { default as Autoplay } from "./autoplay-dynamic";

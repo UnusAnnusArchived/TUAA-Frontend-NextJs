@@ -11,7 +11,6 @@ import reactStringReplace from "react-string-replace";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../src/atoms";
 import { NextEpisodeButton } from "../components/episodes-controls";
-import AutoplayDynamic from "../components/settings/autoplay-dynamic";
 
 const Settings: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -34,24 +33,25 @@ const Settings: React.FC = () => {
           />
 
           {user && (
-            <Typography variant="body1" component="p">
-              {reactStringReplace(
-                t("settings:accountSettings"),
-                "{link}",
-                () => (
-                  <Link href="/profile">
-                    {t("profile:title")} {t("common:page")}
-                  </Link>
-                )
-              )}
-            </Typography>
+            <React.Fragment>
+              <Typography variant="body1" component="p">
+                {reactStringReplace(
+                  t("settings:accountSettings"),
+                  "{link}",
+                  () => (
+                    <Link href="/profile">
+                      {t("profile:title")} {t("common:page")}
+                    </Link>
+                  )
+                )}
+              </Typography>
+              <br />
+            </React.Fragment>
           )}
 
           <FormGroup>
-            <AutoplayDynamic />
+            <Autoplay />
           </FormGroup>
-
-          <NextEpisodeButton watchCode="wdfsadf" />
         </div>
       </div>
     </Layout>
