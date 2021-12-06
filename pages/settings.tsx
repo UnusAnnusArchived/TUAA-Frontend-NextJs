@@ -11,6 +11,7 @@ import reactStringReplace from "react-string-replace";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../src/atoms";
 import { NextEpisodeButton } from "../components/episodes-controls";
+import AutoplayDynamic from "../components/settings/autoplay-dynamic";
 
 const Settings: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -27,18 +28,27 @@ const Settings: React.FC = () => {
           {t("settings:title")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
+          <Divider
+            sx={{ width: "50%", backgroundColor: "#fff" }}
+            className="my-3"
+          />
 
           {user && (
             <Typography variant="body1" component="p">
-              {reactStringReplace(t("settings:accountSettings"), "{link}", () => (
-                  <Link href="/profile">{t("profile:title")} {t("common:page")}</Link>
-              ))}
+              {reactStringReplace(
+                t("settings:accountSettings"),
+                "{link}",
+                () => (
+                  <Link href="/profile">
+                    {t("profile:title")} {t("common:page")}
+                  </Link>
+                )
+              )}
             </Typography>
           )}
 
           <FormGroup>
-            <Autoplay />
+            <AutoplayDynamic />
           </FormGroup>
 
           <NextEpisodeButton watchCode="wdfsadf" />
