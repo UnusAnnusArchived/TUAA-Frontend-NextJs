@@ -1,4 +1,4 @@
-import React, ***REMOVED*** useEffect ***REMOVED*** from "react";
+import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -7,7 +7,6 @@ import ***REMOVED*** autoplayAtom ***REMOVED*** from "../../src/atoms";
 
 const Autoplay: React.FC = () => ***REMOVED***
   const ***REMOVED*** t ***REMOVED*** = useTranslation();
-
   const [autoplay, setAutoplay] = useRecoilState(autoplayAtom);
 
   const handleClick = (_, checked: boolean) => ***REMOVED***
