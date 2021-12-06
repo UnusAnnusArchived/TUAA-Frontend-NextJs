@@ -11,7 +11,6 @@ import reactStringReplace from "react-string-replace";
 import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** userAtom ***REMOVED*** from "../src/atoms";
 import ***REMOVED*** NextEpisodeButton ***REMOVED*** from "../components/episodes-controls";
-import AutoplayDynamic from "../components/settings/autoplay-dynamic";
 
 const Settings: React.FC = () => ***REMOVED***
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
@@ -34,24 +33,25 @@ const Settings: React.FC = () => ***REMOVED***
           />
 
           ***REMOVED***user && (
-            <Typography variant="body1" component="p">
-              ***REMOVED***reactStringReplace(
-                t("settings:accountSettings"),
-                "***REMOVED***link***REMOVED***",
-                () => (
-                  <Link href="/profile">
-                    ***REMOVED***t("profile:title")***REMOVED*** ***REMOVED***t("common:page")***REMOVED***
-                  </Link>
-                )
-              )***REMOVED***
-            </Typography>
+            <React.Fragment>
+              <Typography variant="body1" component="p">
+                ***REMOVED***reactStringReplace(
+                  t("settings:accountSettings"),
+                  "***REMOVED***link***REMOVED***",
+                  () => (
+                    <Link href="/profile">
+                      ***REMOVED***t("profile:title")***REMOVED*** ***REMOVED***t("common:page")***REMOVED***
+                    </Link>
+                  )
+                )***REMOVED***
+              </Typography>
+              <br />
+            </React.Fragment>
           )***REMOVED***
 
           <FormGroup>
-            <AutoplayDynamic />
+            <Autoplay />
           </FormGroup>
-
-          <NextEpisodeButton watchCode="wdfsadf" />
         </div>
       </div>
     </Layout>

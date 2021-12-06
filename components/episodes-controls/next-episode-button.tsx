@@ -10,22 +10,30 @@ import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 
 interface IProps ***REMOVED***
   watchCode: string;
+  currentTime: number;
+  duration: number;
 ***REMOVED***
 
-const NextEpisodeButton: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) => ***REMOVED***
+const NextEpisodeButton: React.FC<IProps> = (***REMOVED*** watchCode, currentTime, duration ***REMOVED***) => ***REMOVED***
   const ***REMOVED*** t ***REMOVED*** = useTranslation();
 
   const [autoplay, setAutoplay] = useRecoilState(autoplayAtom);
 
+  const [startAutoplayCountdown, setStartAutoplayCountdown] = useState(false);
+
   const nextEpisodeWatchCode = getEpisodesAround(watchCode)?.nextEp;
 
-  // if (!nextEpisodeWatchCode) ***REMOVED***
-  //   return null;
-  // ***REMOVED***
+  if (!nextEpisodeWatchCode) ***REMOVED***
+    return null;
+***REMOVED***
 
-  setTimeout(() => ***REMOVED***
-    // router.push(`/watch/$***REMOVED***nextEpisodeWatchCode***REMOVED***`);
-***REMOVED*** 11000);
+  if (currentTime > duration - 10 && startAutoplayCountdown === false) ***REMOVED***
+    setStartAutoplayCountdown(true);
+    setTimeout(() => ***REMOVED***
+      router.push(`/watch/$***REMOVED***nextEpisodeWatchCode***REMOVED***`);
+      setStartAutoplayCountdown(false);
+  ***REMOVED*** 10000);
+***REMOVED***
 
   return (
     <Link href=***REMOVED***`/watch/$***REMOVED***nextEpisodeWatchCode***REMOVED***`***REMOVED*** passHref>
@@ -34,10 +42,7 @@ const NextEpisodeButton: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED*
         color="primary"
         sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED***
         endIcon=***REMOVED***<SkipNextIcon />***REMOVED***
-        className=***REMOVED***(() => ***REMOVED***
-          // console.log(storage);
-          return autoplay ? "autoplay-scroll" : "";
-    ***REMOVED***)()***REMOVED***
+        className=***REMOVED***autoplay && startAutoplayCountdown ? "autoplay-scroll" : ""***REMOVED***
       >
         ***REMOVED***t("player:nextEpisode")***REMOVED***
       </Button>
