@@ -11,6 +11,7 @@ import reactStringReplace from "react-string-replace";
 import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** userAtom ***REMOVED*** from "../src/atoms";
 import ***REMOVED*** NextEpisodeButton ***REMOVED*** from "../components/episodes-controls";
+import AutoplayDynamic from "../components/settings/autoplay-dynamic";
 
 const Settings: React.FC = () => ***REMOVED***
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
@@ -27,18 +28,27 @@ const Settings: React.FC = () => ***REMOVED***
           ***REMOVED***t("settings:title")***REMOVED***
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <Divider sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED*** className="my-3" />
+          <Divider
+            sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED***
+            className="my-3"
+          />
 
           ***REMOVED***user && (
             <Typography variant="body1" component="p">
-              ***REMOVED***reactStringReplace(t("settings:accountSettings"), "***REMOVED***link***REMOVED***", () => (
-                  <Link href="/profile">***REMOVED***t("profile:title")***REMOVED*** ***REMOVED***t("common:page")***REMOVED***</Link>
-              ))***REMOVED***
+              ***REMOVED***reactStringReplace(
+                t("settings:accountSettings"),
+                "***REMOVED***link***REMOVED***",
+                () => (
+                  <Link href="/profile">
+                    ***REMOVED***t("profile:title")***REMOVED*** ***REMOVED***t("common:page")***REMOVED***
+                  </Link>
+                )
+              )***REMOVED***
             </Typography>
           )***REMOVED***
 
           <FormGroup>
-            <Autoplay />
+            <AutoplayDynamic />
           </FormGroup>
 
           <NextEpisodeButton watchCode="wdfsadf" />
