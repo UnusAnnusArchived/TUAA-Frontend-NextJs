@@ -64,23 +64,21 @@ const Search: React.FC = () => ***REMOVED***
     setOpen(false);
 ***REMOVED***;
 
-  const handleOptionEqualToValue = (option:IVideo, value:IVideo) => ***REMOVED***
-    console.log(option, value);
-
-    const season = value.season.toString().padStart(2, "0");
-    const episode = value.episode.toString().padStart(3, "0");
-
-    router.push(`/watch/s$***REMOVED***season***REMOVED***.e$***REMOVED***episode***REMOVED***`);
-
-    return option.title === value.title;
-***REMOVED***;
+  const handleOptionEqualToValue = (option:IVideo, value:IVideo) => option.title === value.title;
 
   const getOptionLabel = (option:IVideo) => ***REMOVED***
     return option.title;
 ***REMOVED***;
 
+  const handleChange = (_, value:IVideo) => ***REMOVED***
+    const season = value.season.toString().padStart(2, "0");
+    const episode = value.episode.toString().padStart(3, "0");
+
+    router.push(`/watch/s$***REMOVED***season***REMOVED***.e$***REMOVED***episode***REMOVED***`);
+***REMOVED***;
+
   return (
-    <Autocomplete sx=***REMOVED******REMOVED***textAlign: "center"***REMOVED******REMOVED*** open=***REMOVED***open***REMOVED*** onOpen=***REMOVED***handleOpen***REMOVED*** onClose=***REMOVED***handleClose***REMOVED*** isOptionEqualToValue=***REMOVED***handleOptionEqualToValue***REMOVED*** getOptionLabel=***REMOVED***getOptionLabel***REMOVED*** options=***REMOVED***options***REMOVED*** loading=***REMOVED***loading***REMOVED*** renderInput=***REMOVED***(params) => (
+    <Autocomplete onChange=***REMOVED***handleChange***REMOVED*** sx=***REMOVED******REMOVED***textAlign: "center"***REMOVED******REMOVED*** open=***REMOVED***open***REMOVED*** onOpen=***REMOVED***handleOpen***REMOVED*** onClose=***REMOVED***handleClose***REMOVED*** isOptionEqualToValue=***REMOVED***handleOptionEqualToValue***REMOVED*** getOptionLabel=***REMOVED***getOptionLabel***REMOVED*** options=***REMOVED***options***REMOVED*** loading=***REMOVED***loading***REMOVED*** renderInput=***REMOVED***(params) => (
       <TextField ***REMOVED***...params***REMOVED*** variant="standard" style=***REMOVED******REMOVED*** width: isMdDown ? "calc(100% - 18px)" : "50%" ***REMOVED******REMOVED*** label=***REMOVED***t("common:search")***REMOVED*** InputProps=***REMOVED******REMOVED***
         ...params.InputProps,
         endAdornment: (
