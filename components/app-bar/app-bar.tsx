@@ -7,8 +7,6 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Fade from "@mui/material/Fade";
 import { useRouter } from "next/router";
 import Box from "@mui/system/Box";
-import { useRecoilState } from "recoil";
-import { previousPageAtom, userAtom } from "../../src/atoms";
 import IconButton from "@mui/material/IconButton";
 import BackIcon from "@mui/icons-material/ArrowBack";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -16,11 +14,11 @@ import { theme } from "../theme/theme";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "@mui/icons-material/Search";
 import AppMenu from "./menu";
-import { TextField } from "@mui/material";
+import Search from "../search/search";
 
 const ABar: React.FC = () => {
   const [isRouting, setIsRouting] = useState(false);
-  const { t } = useTranslation();
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -88,6 +86,10 @@ const ABar: React.FC = () => {
     } else return false;
   };
 
+  const toggleMobileSearch = () => {
+    setShowMobileSearch(!showMobileSearch);
+  };
+
   return (
     <>
       <AppBar position="sticky">
@@ -114,24 +116,29 @@ const ABar: React.FC = () => {
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }}>
-            {/* {!isMdDown && (
+            {!isMdDown && (
               <div style={{justifyContent:"center",alignItems:"center",textAlign:"center"}}>
-                <TextField style={{width:"50%"}} label={t("common:search")} variant="standard" />
+                <Search />
               </div>
-            )} */}
+            )}
           </Box>
-          <div className="d-flex">
-            {/* {isMdDown && (
-              <IconButton>
+          {isMdDown && (
+              <IconButton onClick={toggleMobileSearch}>
                 <SearchIcon />
               </IconButton>
-            )} */}
+            )}
+          <div className="d-flex">
             <AppMenu />
           </div>
         </Toolbar>
         <Fade in={isRouting}>
           <LinearProgress className="routing-progress" />
         </Fade>
+        {isMdDown && showMobileSearch && (
+          <div style={{marginBottom:16}}>
+            <Search />
+          </div>
+        )}
       </AppBar>
     </>
   );
