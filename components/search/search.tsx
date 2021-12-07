@@ -64,23 +64,21 @@ const Search: React.FC = () => {
     setOpen(false);
   };
 
-  const handleOptionEqualToValue = (option:IVideo, value:IVideo) => {
-    console.log(option, value);
-
-    const season = value.season.toString().padStart(2, "0");
-    const episode = value.episode.toString().padStart(3, "0");
-
-    router.push(`/watch/s${season}.e${episode}`);
-
-    return option.title === value.title;
-  };
+  const handleOptionEqualToValue = (option:IVideo, value:IVideo) => option.title === value.title;
 
   const getOptionLabel = (option:IVideo) => {
     return option.title;
   };
 
+  const handleChange = (_, value:IVideo) => {
+    const season = value.season.toString().padStart(2, "0");
+    const episode = value.episode.toString().padStart(3, "0");
+
+    router.push(`/watch/s${season}.e${episode}`);
+  };
+
   return (
-    <Autocomplete sx={{textAlign: "center"}} open={open} onOpen={handleOpen} onClose={handleClose} isOptionEqualToValue={handleOptionEqualToValue} getOptionLabel={getOptionLabel} options={options} loading={loading} renderInput={(params) => (
+    <Autocomplete onChange={handleChange} sx={{textAlign: "center"}} open={open} onOpen={handleOpen} onClose={handleClose} isOptionEqualToValue={handleOptionEqualToValue} getOptionLabel={getOptionLabel} options={options} loading={loading} renderInput={(params) => (
       <TextField {...params} variant="standard" style={{ width: isMdDown ? "calc(100% - 18px)" : "50%" }} label={t("common:search")} InputProps={{
         ...params.InputProps,
         endAdornment: (
