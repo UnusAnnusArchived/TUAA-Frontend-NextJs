@@ -112,7 +112,7 @@ const ABar: React.FC = () => {
               component="div"
               className="pointer"
             >
-              The Unus Annus Archive
+              {isMdDown ? "TUAA" : "The Unus Annus Archive"}
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }}>
