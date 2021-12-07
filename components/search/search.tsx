@@ -65,6 +65,8 @@ const Search: React.FC = () => {
   };
 
   const handleOptionEqualToValue = (option:IVideo, value:IVideo) => {
+    console.log(option, value);
+
     const season = value.season.toString().padStart(2, "0");
     const episode = value.episode.toString().padStart(3, "0");
 
