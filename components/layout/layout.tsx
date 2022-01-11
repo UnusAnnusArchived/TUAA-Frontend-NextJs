@@ -56,11 +56,21 @@ const Layout: React.FC = ({ children }) => {
   }, [loggedInUser]);
 
   return (
-    <div className={classNames(classes.main, styles.main)}>
-      <AppBar />
-      <div className={styles.toolbar} />
-      <main className="container pb-5 text-white">{children}</main>
+    <React.Fragment>
+      <noscript>
+        <style>
+          {`body { all: unset; } #main { display: none!important; }`}
+        </style>
+        {/*eslint-disable-next-line*/}
+        <h1>Please enable JavaScript, or go to our <a href="/legacy/01">Legacy browser page</a>.</h1>
+      </noscript>
+
+      <div id="main" className={classNames(classes.main, styles.main)}>
+        <AppBar />
+        <div className={styles.toolbar} />
+        <main id="main" className="container pb-5 text-white">{children}</main>
     </div>
+    </React.Fragment>
   );
 };
 
