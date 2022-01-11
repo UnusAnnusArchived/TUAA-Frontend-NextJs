@@ -13,6 +13,12 @@ export interface IVideo ***REMOVED***
   tracks: PlyrTrack[];
   posters?: IVideoPoster[];
   thumbnail?: string;
+  previewSprites?: IVideoPreviewSprite[];
+***REMOVED***
+
+interface IVideoPreviewSprite ***REMOVED***
+  src: string;
+  length: number;
 ***REMOVED***
 
 interface IVideoPoster ***REMOVED***
@@ -51,10 +57,10 @@ export interface CommentStats ***REMOVED***
 export interface CommentUser ***REMOVED***
   id: string;
   username: string;
-  pfp: UserPFP;
+  pfp: IUserPFP;
 ***REMOVED***
 
-export interface UserPFP ***REMOVED***
+export interface IUserPFP ***REMOVED***
   originalFilename: string;
   filename: string;
   width: number;
@@ -72,7 +78,7 @@ export interface LimitedUser ***REMOVED***
   id: string;
   email: string;
   username: string;
-  pfp: UserPFP;
+  pfp: IUserPFP;
 ***REMOVED***
 
 export interface LogoutResponse ***REMOVED***
@@ -110,4 +116,78 @@ export interface SignupResponse ***REMOVED***
 export interface ILanguage ***REMOVED***
   name: string;
   code: string;
+***REMOVED***
+
+export interface IRokuFeed ***REMOVED***
+  providerName: "The Unus Annus Archive";
+  lastUpdated: string;
+  language: "en";
+  playlists: IRokuPlaylist[];
+  series: IRokuSeries[];
+***REMOVED***
+
+export interface IRokuPlaylist ***REMOVED***
+  name: "Specials" | "Season 1";
+  itemIds: string[];
+***REMOVED***
+
+export interface IRokuSeries ***REMOVED***
+  id: "UnusAnnus";
+  title: "Unus Annus";
+  seasons: IRokuSeason[];
+  genres: ["comedy"];
+  thumbnail: "https://cdn.unusann.us/roku-assets/series-thumbnail.jpg";
+  releaseDate: "2019-11-15";
+  shortDescription: "What would you do if you only had a year left to live? Would you squander the time you were given? Or would you make every second count? Welcome to Unus Annus. In exactly 365 days this channel will be...";
+  longDescription: "What would you do if you only had a year left to live? Would you squander the time you were given? Or would you make every second count? Welcome to Unus Annus. In exactly 365 days this channel will be deleted along with all of the daily uploads accumulated since then. Nothing will be saved. Nothing will be reuploaded. This is your one chance to join us at the onset of our adventure. To be there from the beginning. To make every second count. Subscribe now and relish what little time we have left or have the choice made for you as we disappear from existence forever. But remember... everything has an end. Even you. Memento mori. Unus annus.";
+***REMOVED***
+
+export interface IRokuSeason ***REMOVED***
+  seasonNumber: "0" | "1";
+  episodes: IRokuEpisode[];
+***REMOVED***
+
+export interface IRokuEpisode ***REMOVED***
+  id: string;
+  title: string;
+  content: ***REMOVED***
+    dateAdded: string;
+    videos: IRokuVideo[];
+    duration: number;
+    captions: IRokuCaption[];
+    language: "en";
+***REMOVED***;
+  thumbnail: string;
+  releaseDate: string;
+  episodeNumber: number;
+  shortDescription: string;
+  longDescription?: string;
+***REMOVED***
+
+export interface IRokuVideo ***REMOVED***
+  url: string;
+  quality: "SD" | "HD" | "FHD" | "UHD";
+  videoType: string;
+***REMOVED***
+
+export interface IRokuCaption ***REMOVED***
+  url: string;
+  language: string;
+  captionType: "SUBTITLE";
+***REMOVED***
+
+export interface ISwiftMetadata ***REMOVED***
+  specials: IVideo[],
+  season1: IVideo[]
+***REMOVED***
+
+export interface IUser ***REMOVED***
+  id: string;
+  email: string;
+  username: string;
+  hash: string;
+  salt: string;
+  pfp: IUserPFP;
+  loginKeys: string[];
+  isAdmin?: boolean;
 ***REMOVED***

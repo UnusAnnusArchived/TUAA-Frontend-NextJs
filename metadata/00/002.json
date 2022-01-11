@@ -1,0 +1,53 @@
+***REMOVED***
+  "sources": [
+    ***REMOVED***
+      "src": "//cdn.unusann.us/00/002/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+  ***REMOVED***
+    ***REMOVED***
+      "src": "//cdn.unusann.us/00/002/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+  ***REMOVED***
+    ***REMOVED***
+      "src": "//cdn.unusann.us/00/002/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+  ***REMOVED***
+    ***REMOVED***
+      "src": "//cdn.unusann.us/00/002/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+  ***REMOVED***
+    ***REMOVED***
+      "src": "//cdn.unusann.us/00/002/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+***REMOVED***
+  ],
+  "tracks": [
+    ***REMOVED***
+      "kind": "captions",
+      "label": "English",
+      "srclang": "en",
+      "src": "//cdn.unusann.us/subs/00/002.en.vtt"
+***REMOVED***
+  ],
+  "posters": [
+    ***REMOVED***
+      "src": "//cdn.unusann.us/thumbnails/00/002.webp",
+      "type": "image/webp"
+  ***REMOVED***
+    ***REMOVED***
+      "src": "//cdn.unusann.us/thumbnails/00/002.jpg",
+      "type": "image/jpeg"
+***REMOVED***
+  ],
+  "season": 0,
+  "episode": 2,
+  "title": "This Will End in One Year (Ethan)",
+  "description": "",
+  "date": 1573844400000,
+  "duration": 57
+***REMOVED***

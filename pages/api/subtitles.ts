@@ -4,12 +4,21 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => ***REMOVED*
   try ***REMOVED***
     let url = req.query.url.toString();
 
+    if (url.startsWith("http")) ***REMOVED***
+      url.replace("http://", "https://");
+***REMOVED***
+
     if (!url.startsWith("https")) ***REMOVED***
       url = "https:" + url;
 ***REMOVED***
 
     if (!url || url.length < 1) ***REMOVED***
       res.status(400).json(***REMOVED*** error: "url is required" ***REMOVED***);
+      return;
+***REMOVED***
+
+    if (!url.startsWith("https://cdn.unusann.us/subs") || !url.startsWith("https://cdn.unusannusarchive.tk/subs")) ***REMOVED***
+      res.status(403).json(***REMOVED*** error: "Unauthorized website/path!" ***REMOVED***);
       return;
 ***REMOVED***
 

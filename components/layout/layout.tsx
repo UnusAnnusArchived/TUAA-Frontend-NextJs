@@ -56,11 +56,21 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
 ***REMOVED*** [loggedInUser]);
 
   return (
-    <div className=***REMOVED***classNames(classes.main, styles.main)***REMOVED***>
-      <AppBar />
-      <div className=***REMOVED***styles.toolbar***REMOVED*** />
-      <main className="container pb-5 text-white">***REMOVED***children***REMOVED***</main>
+    <React.Fragment>
+      <noscript>
+        <style>
+          ***REMOVED***`body ***REMOVED*** all: unset; ***REMOVED*** #main ***REMOVED*** display: none!important; ***REMOVED***`***REMOVED***
+        </style>
+        ***REMOVED***/*eslint-disable-next-line*/***REMOVED***
+        <h1>Please enable JavaScript, or go to our <a href="/legacy/01">Legacy browser page</a>.</h1>
+      </noscript>
+
+      <div id="main" className=***REMOVED***classNames(classes.main, styles.main)***REMOVED***>
+        <AppBar />
+        <div className=***REMOVED***styles.toolbar***REMOVED*** />
+        <main id="main" className="container pb-5 text-white">***REMOVED***children***REMOVED***</main>
     </div>
+    </React.Fragment>
   );
 ***REMOVED***;
 
