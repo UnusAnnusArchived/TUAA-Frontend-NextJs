@@ -5,12 +5,50 @@ import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
 import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
 
 export default function getallmetadata(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
-  var metadata:IVideo[] = [];
+  const users = fs.readdirSync("db/users");
 
-  const s01 = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/01`);
-  for (var i = 0; i < s01.length; i++) ***REMOVED***
-    metadata.push(JSON.parse(fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/01/$***REMOVED***s01[i]***REMOVED***`, "utf-8")));
+  const postInfo = ***REMOVED***
+    username: (<string>req.body.username).toLowerCase(),
+    password: <string>req.body.password,
+    sendEmail: (<string>req.body.sendEmail)?.toLowerCase() || "true"
+***REMOVED***;
+
+  let isEmail = postInfo.username.includes("@");
+
+  let validUser: false|IUser = false;
+  let loginKey: string;
+
+  for (let i = 0; i < users.length; i++) ***REMOVED***
+    const user:IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
+
+    if (postInfo.username === user[isEmail ? "email" : "username"].toLowerCase()) ***REMOVED***
+      const hash = crypto.scryptSync(postInfo.password, user.salt, 64).toString("hex");
+      if (user.hash === hash) ***REMOVED***
+        loginKey = crypto.randomBytes(8).toString("hex");
+        user.loginKeys.push(loginKey);
+        fs.writeFileSync(`db/users/$***REMOVED***user.id***REMOVED***.json`, JSON.stringify(user, null, 2));
+        validUser = user;
+  ***REMOVED***
+      break;
+***REMOVED***
 ***REMOVED***
 
-  res.send(metadata);
+  if (validUser) ***REMOVED***
+    res.send(***REMOVED***
+      isValid: true,
+      loginKey,
+      user: ***REMOVED***
+        id: validUser.id,
+        email: validUser.email,
+        username: validUser.username,
+        pfp: validUser.pfp
+  ***REMOVED***
+***REMOVED***);
+    if (postInfo.sendEmail === "true") ***REMOVED***
+      sendEmail("newLogin", validUser.email, (string, isHTML = false) => ***REMOVED***
+        validUser = <IUser>validUser; // ts is being weird
+        
+  ***REMOVED***);
+***REMOVED***
+***REMOVED***
 ***REMOVED***
