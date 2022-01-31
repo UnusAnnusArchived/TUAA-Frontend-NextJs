@@ -47,7 +47,13 @@ export default function getallmetadata(req: NextApiRequest, res: NextApiResponse
     if (postInfo.sendEmail === "true") ***REMOVED***
       sendEmail("newLogin", validUser.email, (string, isHTML = false) => ***REMOVED***
         validUser = <IUser>validUser; // ts is being weird
-        
+        let str = string.replace(/***REMOVED******REMOVED*** user.email ***REMOVED******REMOVED***/g, validUser.email).replace(/***REMOVED******REMOVED*** user.pfp.filename ***REMOVED******REMOVED***/g, validUser.pfp.filename);
+        if (isHTML) ***REMOVED***
+          str = str.replace(/***REMOVED******REMOVED*** user.username ***REMOVED******REMOVED***/g, validUser.username.replace(/ /g, "&nbsp;"));
+    ***REMOVED*** else ***REMOVED***
+          str = str.replace(/***REMOVED******REMOVED*** user.username ***REMOVED******REMOVED***/g, validUser.username);
+    ***REMOVED***
+        return str;
   ***REMOVED***);
 ***REMOVED***
 ***REMOVED***
