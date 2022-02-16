@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
+import fs from "fs";
+import config from "../../src/config.json";
 import { useTranslation } from "react-i18next";
 import { CommentList } from "../../components/comments";
 import { EpisodesRow } from "../../components/episodes-controls";
@@ -11,7 +13,7 @@ import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
 import { endpoint } from "../../src/endpoints";
-import { IVideo, Seasons } from "../../src/types";
+import { IVideo, Seasons, Season } from "../../src/types";
 
 interface IProps {
   watchCode: string;
@@ -20,9 +22,7 @@ interface IProps {
 
 const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   const { i18n } = useTranslation();
-  const image =
-    video.thumbnail ??
-    video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
+  const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
 
   const published = new Date(video.date ?? video.releasedate);
   const embedUrl = `https://unusann.us/embed/${watchCode}`;
@@ -95,13 +95,16 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 
   const paths = [];
 
-  for (const season of data) {
-    for (const episode of season) {
+  const seasons = fs.readdirSync(config.metadataPath);
+  for (const seasonName of seasons) {
+    const season = fs.readdirSync(`${config.metadataPath}/${seasonName}`);
+    for (const episodeName of season) {
+      const episode: IVideo = JSON.parse(
+        fs.readFileSync(`${config.metadataPath}/${seasonName}/${episodeName}`, "utf-8")
+      );
       paths.push({
         params: {
-          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode
-            .toString()
-            .padStart(3, "0")}`,
+          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode.toString().padStart(3, "0")}`,
         },
       });
     }
