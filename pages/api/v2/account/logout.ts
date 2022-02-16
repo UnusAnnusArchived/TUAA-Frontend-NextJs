@@ -28,14 +28,14 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) ***REM
   if (account) ***REMOVED***
     if (postInfo.loginKeys.includes("*")) ***REMOVED***
       account.loginKeys = [];
-      fs.writeFileSync(`src/db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account));
+      fs.writeFileSync(`db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account));
       res.send(***REMOVED*** status: "success" ***REMOVED***);
 ***REMOVED*** else ***REMOVED***
       for (let i = 0; i < postInfo.loginKeys.length; i++) ***REMOVED***
         const index = account.loginKeys.indexOf(postInfo.loginKeys[i]);
         account.loginKeys.splice(index, 1);
   ***REMOVED***
-      fs.writeFileSync(`src/db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account, null, 2));
+      fs.writeFileSync(`db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account, null, 2));
       res.send(***REMOVED*** status: "success" ***REMOVED***);
 ***REMOVED***
 ***REMOVED*** else ***REMOVED***

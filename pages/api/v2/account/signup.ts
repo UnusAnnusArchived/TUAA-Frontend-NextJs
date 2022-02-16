@@ -11,7 +11,7 @@ interface IPostInfo ***REMOVED***
 ***REMOVED***
 
 export default function signup(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
-  const users = fs.readdirSync("src/db/users");
+  const users = fs.readdirSync("db/users");
 
   let body: IPostInfo = req.body;
 
@@ -20,7 +20,7 @@ export default function signup(req: NextApiRequest, res: NextApiResponse) ***REM
       let exists = false;
 
       for (let i = 0; i < users.length; i++) ***REMOVED***
-        const user: IUser = JSON.parse(fs.readFileSync(`src/db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
+        const user: IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
         if (user.email.toLowerCase() === body.email.toLowerCase()) ***REMOVED***
           exists = true;
           break;
@@ -53,7 +53,7 @@ export default function signup(req: NextApiRequest, res: NextApiResponse) ***REM
           loginKeys: [],
     ***REMOVED***;
 
-        fs.writeFileSync(`src/db/users/$***REMOVED***id***REMOVED***.json`, JSON.stringify(user, null, 2));
+        fs.writeFileSync(`db/users/$***REMOVED***id***REMOVED***.json`, JSON.stringify(user, null, 2));
 
         res.send(***REMOVED*** success: true, loginURI: "/v2/account/login" ***REMOVED***);
   ***REMOVED***

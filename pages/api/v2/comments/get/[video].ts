@@ -28,7 +28,7 @@ export default async function getComments(req: NextApiRequest, res: NextApiRespo
     if (typeof comments[i] === "object") ***REMOVED***
       try ***REMOVED***
         const fulluser: IUser = JSON.parse(
-          fs.readFileSync(`src/db/users/$***REMOVED***comments[i].uid || comments[i].user.id***REMOVED***.json`, "utf-8")
+          fs.readFileSync(`db/users/$***REMOVED***comments[i].uid || comments[i].user.id***REMOVED***.json`, "utf-8")
         );
         const user: CommentUser = ***REMOVED***
           id: fulluser.id,

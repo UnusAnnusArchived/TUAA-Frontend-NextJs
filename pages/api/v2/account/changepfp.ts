@@ -6,16 +6,16 @@ import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
 import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
 
 export default async function changepfp(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
-  const users = fs.readdirSync("src/db/users");
+  const users = fs.readdirSync("db/users");
   const body = await parseBody(req);
 
   const pfp = <formidable.File>body.files.pfp;
-  
+
   const ***REMOVED*** loginKey ***REMOVED*** = req.body;
 
-  var user:IUser;
+  var user: IUser;
   for (var i = 0; i < users.length; i++) ***REMOVED***
-    const currentUser:IUser = JSON.parse(fs.readFileSync(`src/db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
+    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
     if (currentUser.loginKeys.includes(loginKey)) ***REMOVED***
       user = currentUser;
       break;
@@ -23,7 +23,7 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
 ***REMOVED***
 
   if (!user) ***REMOVED***
-    return res.send(***REMOVED***error:"Not logged in!"***REMOVED***);
+    return res.send(***REMOVED*** error: "Not logged in!" ***REMOVED***);
 ***REMOVED***
 
   const imageMeta = await sharp(pfp.filepath).metadata();
@@ -55,23 +55,23 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
   if (req.query.redirect) ***REMOVED***
     res.redirect(req.query.redirect.toString());
 ***REMOVED*** else ***REMOVED***
-    res.send(***REMOVED***status:"success"***REMOVED***);
+    res.send(***REMOVED*** status: "success" ***REMOVED***);
 ***REMOVED***
 ***REMOVED***
 
 export const config = ***REMOVED***
   api: ***REMOVED***
-    bodyParser: false
+    bodyParser: false,
 ***REMOVED***
 ***REMOVED***;
 
-function parseBody(req: NextApiRequest):Promise<***REMOVED***fields: formidable.Fields, files: formidable.Files***REMOVED***> ***REMOVED***
-  return new Promise((resolve, reject) => ***REMOVED*** 
+function parseBody(req: NextApiRequest): Promise<***REMOVED*** fields: formidable.Fields; files: formidable.Files ***REMOVED***> ***REMOVED***
+  return new Promise((resolve, reject) => ***REMOVED***
     formidable(***REMOVED*** multiples: false, uploadDir: "db/userdata/profilepics" ***REMOVED***).parse(req, (err, fields, files) => ***REMOVED***
       if (err) ***REMOVED***
         return reject(err);
   ***REMOVED***
-      resolve(***REMOVED***fields, files***REMOVED***);
+      resolve(***REMOVED*** fields, files ***REMOVED***);
 ***REMOVED***);
 ***REMOVED***);
 ***REMOVED***

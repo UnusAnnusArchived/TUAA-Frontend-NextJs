@@ -73,8 +73,6 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMO
 
   const path = `$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***season***REMOVED***/$***REMOVED***episode***REMOVED***.json`;
 
-  console.log(path);
-
   if (fs.existsSync(path)) ***REMOVED***
     const video: IVideo = JSON.parse(fs.readFileSync(path, "utf-8"));
     return ***REMOVED***
