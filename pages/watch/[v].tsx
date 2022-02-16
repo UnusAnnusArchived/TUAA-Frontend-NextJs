@@ -90,9 +90,6 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMO
 ***REMOVED***;
 
 export const getStaticPaths: GetStaticPaths = async (context) => ***REMOVED***
-  const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
-  const data: Seasons = await res.json();
-
   const paths = [];
 
   const seasons = fs.readdirSync(config.metadataPath);
