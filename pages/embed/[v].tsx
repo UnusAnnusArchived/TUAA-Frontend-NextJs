@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMO
   const season = split[0].replace("s", "");
   const episode = split[1].replace("e", "");
 
-  const path = `$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***season***REMOVED***/$***REMOVED***episode***REMOVED***`;
+  const path = `$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***season***REMOVED***/$***REMOVED***episode***REMOVED***.json`;
 
   if (fs.existsSync(path)) ***REMOVED***
     const video: IVideo = JSON.parse(fs.readFileSync(path, "utf-8"));
