@@ -20,7 +20,7 @@ const CommentItem: React.FC<IProps> = ({ comment }) => {
         <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
           <Avatar
             alt={comment.user.username}
-            src={`${endpoint}${comment.user.pfp.filename.startsWith("/") ? "" : "/"}${comment.user.pfp.filename}`}
+            src={`${comment.user.pfp.filename.startsWith("/") ? "" : "/"}${comment.user.pfp.filename}`}
             sx={{ width: 56, height: 56 }}
           />
         </div>
