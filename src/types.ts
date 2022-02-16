@@ -60,6 +60,15 @@ export interface CommentUser ***REMOVED***
   pfp: IUserPFP;
 ***REMOVED***
 
+export interface IStoredComment ***REMOVED***
+  id?: string;
+  episode: string;
+  uid: string;
+  user?: CommentUser;
+  comment: CommentBody;
+  stats: CommentStats;
+***REMOVED***
+
 export interface IUserPFP ***REMOVED***
   originalFilename: string;
   filename: string;
@@ -105,11 +114,7 @@ export interface SignupResponse ***REMOVED***
   loginURI?: "/api/v2/account/login";
   error?: ***REMOVED***
     code: 0 | 1 | 2 | number;
-    message:
-      | "Passwords do not match!"
-      | "Account exists!"
-      | "Missing info!"
-      | string;
+    message: "Passwords do not match!" | "Account exists!" | "Missing info!" | string;
 ***REMOVED***;
 ***REMOVED***
 
@@ -177,8 +182,8 @@ export interface IRokuCaption ***REMOVED***
 ***REMOVED***
 
 export interface ISwiftMetadata ***REMOVED***
-  specials: IVideo[],
-  season1: IVideo[]
+  specials: IVideo[];
+  season1: IVideo[];
 ***REMOVED***
 
 export interface IUser ***REMOVED***

@@ -1,10 +1,10 @@
-import fs from "fs";
-import config from "../../../../src/config.json";
-import ***REMOVED*** handle404 ***REMOVED*** from "../../_handleErrors";
 import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
+import config from "../../../../../src/config.json";
+import fs from "fs";
+import ***REMOVED*** handle404 ***REMOVED*** from "../../../_handleErrors";
 
-export default function getallmetadata(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
-  const split = (<string>req.query.video).toLowerCase().split(".");
+export default function videoMetadata(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
+  const split = req.query.video.toString().toLowerCase().split(".");
   const season = split[0].replace("s", "");
   const episode = split[1].replace("e", "");
 
@@ -12,6 +12,6 @@ export default function getallmetadata(req: NextApiRequest, res: NextApiResponse
   if (fs.existsSync(path)) ***REMOVED***
     res.send(JSON.parse(fs.readFileSync(path, "utf-8")));
 ***REMOVED*** else ***REMOVED***
-    return handle404(req, res);
+    handle404(req, res);
 ***REMOVED***
 ***REMOVED***
