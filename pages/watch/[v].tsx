@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
 import ***REMOVED*** GetServerSideProps, GetStaticPaths, GetStaticProps ***REMOVED*** from "next";
 import React from "react";
+import fs from "fs";
+import config from "../../src/config.json";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** CommentList ***REMOVED*** from "../../components/comments";
 import ***REMOVED*** EpisodesRow ***REMOVED*** from "../../components/episodes-controls";
@@ -11,7 +13,7 @@ import ***REMOVED*** Layout ***REMOVED*** from "../../components/layout";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../../components/meta-head";
 import ***REMOVED*** Player ***REMOVED*** from "../../components/player";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../../src/types";
+import ***REMOVED*** IVideo, Seasons, Season ***REMOVED*** from "../../src/types";
 
 interface IProps ***REMOVED***
   watchCode: string;
@@ -20,9 +22,7 @@ interface IProps ***REMOVED***
 
 const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) => ***REMOVED***
   const ***REMOVED*** i18n ***REMOVED*** = useTranslation();
-  const image =
-    video.thumbnail ??
-    video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
+  const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
 
   const published = new Date(video.date ?? video.releasedate);
   const embedUrl = `https://unusann.us/embed/$***REMOVED***watchCode***REMOVED***`;
@@ -95,13 +95,16 @@ export const getStaticPaths: GetStaticPaths = async (context) => ***REMOVED***
 
   const paths = [];
 
-  for (const season of data) ***REMOVED***
-    for (const episode of season) ***REMOVED***
+  const seasons = fs.readdirSync(config.metadataPath);
+  for (const seasonName of seasons) ***REMOVED***
+    const season = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***seasonName***REMOVED***`);
+    for (const episodeName of season) ***REMOVED***
+      const episode: IVideo = JSON.parse(
+        fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***seasonName***REMOVED***/$***REMOVED***episodeName***REMOVED***`, "utf-8")
+      );
       paths.push(***REMOVED***
         params: ***REMOVED***
-          v: `s$***REMOVED***episode.season.toString().padStart(2, "0")***REMOVED***.e$***REMOVED***episode.episode
-            .toString()
-            .padStart(3, "0")***REMOVED***`,
+          v: `s$***REMOVED***episode.season.toString().padStart(2, "0")***REMOVED***.e$***REMOVED***episode.episode.toString().padStart(3, "0")***REMOVED***`,
       ***REMOVED***
   ***REMOVED***);
 ***REMOVED***
