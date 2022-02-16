@@ -20,7 +20,7 @@ const CommentItem: React.FC<IProps> = ({ comment }) => {
         <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
           <Avatar
             alt={comment.user.username}
-            src={`${endpoint}${comment.user.pfp.filename}`}
+            src={`${endpoint}${comment.user.pfp.filename.startsWith("/") ? "" : "/"}${comment.user.pfp.filename}`}
             sx={{ width: 56, height: 56 }}
           />
         </div>
@@ -31,14 +31,10 @@ const CommentItem: React.FC<IProps> = ({ comment }) => {
             </Typography>
             &nbsp;
             <Typography variant="body2" sx={{ color: "#a3a3a3" }}>
-              {moment(new Date(comment.stats.published))
-                .locale(i18n.language)
-                .fromNow()}
+              {moment(new Date(comment.stats.published)).locale(i18n.language).fromNow()}
             </Typography>
           </div>
-          <Typography
-            dangerouslySetInnerHTML={{ __html: comment.comment.html }}
-          />
+          <Typography dangerouslySetInnerHTML={{ __html: comment.comment.html }} />
         </div>
       </div>
       <Divider sx={{ backgroundColor: "#fff" }} />
