@@ -1,5 +1,7 @@
 import React from "react";
-import { IVideo, Seasons } from "../../src/types";
+import fs from "fs";
+import config from "../../src/config.json";
+import { IVideo } from "../../src/types";
 import { Player } from "../../components/player";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { endpoint } from "../../src/endpoints";
@@ -10,9 +12,7 @@ interface IProps {
 }
 
 const Embed: React.FC<IProps> = ({ watchCode, video }) => {
-  return (
-    <Player video={video} watchCode={watchCode} isEmbed />
-  );
+  return <Player video={video} watchCode={watchCode} isEmbed />;
 };
 
 export default Embed;
@@ -30,25 +30,25 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => {
   return {
     props: {
       watchCode,
-      video: data
+      video: data,
     },
     revalidate: 60 * 60 * 24, //1 day
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async (context) => {
-  const res = await fetch(`${endpoint}/v2/metadata/all`);
-  const data: Seasons = await res.json();
-
   const paths = [];
 
-  for (const season of data) {
-    for (const episode of season) {
+  const seasons = fs.readdirSync(config.metadataPath);
+  for (const seasonName of seasons) {
+    const season = fs.readdirSync(`${config.metadataPath}/${seasonName}`);
+    for (const episodeName of season) {
+      const episode: IVideo = JSON.parse(
+        fs.readFileSync(`${config.metadataPath}/${seasonName}/${episodeName}`, "utf-8")
+      );
       paths.push({
         params: {
-          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode
-            .toString()
-            .padStart(3, "0")}`,
+          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode.toString().padStart(3, "0")}`,
         },
       });
     }

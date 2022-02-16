@@ -2,7 +2,7 @@ import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import fs from "fs";
 import config from "../../src/config.json";
@@ -13,7 +13,7 @@ import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
 import { endpoint } from "../../src/endpoints";
-import { IVideo, Seasons, Season } from "../../src/types";
+import { IVideo } from "../../src/types";
 
 interface IProps {
   watchCode: string;
