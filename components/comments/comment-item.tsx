@@ -20,7 +20,7 @@ const CommentItem: React.FC<IProps> = (***REMOVED*** comment ***REMOVED***) => *
         <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
           <Avatar
             alt=***REMOVED***comment.user.username***REMOVED***
-            src=***REMOVED***`$***REMOVED***endpoint***REMOVED***$***REMOVED***comment.user.pfp.filename.startsWith("/") ? "" : "/"***REMOVED***$***REMOVED***comment.user.pfp.filename***REMOVED***`***REMOVED***
+            src=***REMOVED***`$***REMOVED***comment.user.pfp.filename.startsWith("/") ? "" : "/"***REMOVED***$***REMOVED***comment.user.pfp.filename***REMOVED***`***REMOVED***
             sx=***REMOVED******REMOVED*** width: 56, height: 56 ***REMOVED******REMOVED***
           />
         </div>
