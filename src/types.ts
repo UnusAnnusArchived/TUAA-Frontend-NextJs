@@ -60,6 +60,15 @@ export interface CommentUser {
   pfp: IUserPFP;
 }
 
+export interface IStoredComment {
+  id?: string;
+  episode: string;
+  uid: string;
+  user?: CommentUser;
+  comment: CommentBody;
+  stats: CommentStats;
+}
+
 export interface IUserPFP {
   originalFilename: string;
   filename: string;
@@ -105,11 +114,7 @@ export interface SignupResponse {
   loginURI?: "/api/v2/account/login";
   error?: {
     code: 0 | 1 | 2 | number;
-    message:
-      | "Passwords do not match!"
-      | "Account exists!"
-      | "Missing info!"
-      | string;
+    message: "Passwords do not match!" | "Account exists!" | "Missing info!" | string;
   };
 }
 
@@ -177,8 +182,8 @@ export interface IRokuCaption {
 }
 
 export interface ISwiftMetadata {
-  specials: IVideo[],
-  season1: IVideo[]
+  specials: IVideo[];
+  season1: IVideo[];
 }
 
 export interface IUser {
