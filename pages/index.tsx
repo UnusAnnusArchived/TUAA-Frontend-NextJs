@@ -1,5 +1,7 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+import fs from "fs";
+import config from "../src/config.json";
 import ***REMOVED*** GetStaticProps ***REMOVED*** from "next";
 import React, ***REMOVED*** useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
@@ -7,7 +9,7 @@ import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
 import ***REMOVED*** VideoList ***REMOVED*** from "../components/video-list";
 import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
-import ***REMOVED*** Seasons ***REMOVED*** from "../src/types";
+import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../src/types";
 
 interface IProps ***REMOVED***
   seasons: Seasons;
@@ -44,12 +46,23 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
 export default Page;
 
 export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMOVED***
-  const res = await fetch(`$***REMOVED***endpoint***REMOVED***/v2/metadata/all`);
-  const data: Seasons = await res.json();
+  let metadata: Seasons = [[], []];
+
+  const s00 = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/00`);
+  for (let i = 0; i < s00.length; i++) ***REMOVED***
+    const episode: IVideo = JSON.parse(fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/00/$***REMOVED***s00[i]***REMOVED***`, "utf-8"));
+    metadata[0].push(episode);
+***REMOVED***
+
+  const s01 = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/01`);
+  for (let i = 0; i < s01.length; i++) ***REMOVED***
+    const episode: IVideo = JSON.parse(fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/01/$***REMOVED***s01[i]***REMOVED***`, "utf-8"));
+    metadata[1].push(episode);
+***REMOVED***
 
   return ***REMOVED***
     props: ***REMOVED***
-      seasons: data,
+      seasons: metadata,
   ***REMOVED***
     revalidate: 60 * 60 * 24, // 1 day
 ***REMOVED***;
