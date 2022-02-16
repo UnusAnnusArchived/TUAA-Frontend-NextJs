@@ -90,9 +90,6 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async (context) => {
-  const res = await fetch(`${endpoint}/v2/metadata/all`);
-  const data: Seasons = await res.json();
-
   const paths = [];
 
   const seasons = fs.readdirSync(config.metadataPath);
