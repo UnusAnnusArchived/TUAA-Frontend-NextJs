@@ -6,16 +6,16 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { IUser } from "../../../../src/types";
 
 export default async function changepfp(req: NextApiRequest, res: NextApiResponse) {
-  const users = fs.readdirSync("src/db/users");
+  const users = fs.readdirSync("db/users");
   const body = await parseBody(req);
 
   const pfp = <formidable.File>body.files.pfp;
-  
+
   const { loginKey } = req.body;
 
-  var user:IUser;
+  var user: IUser;
   for (var i = 0; i < users.length; i++) {
-    const currentUser:IUser = JSON.parse(fs.readFileSync(`src/db/users/${users[i]}`, "utf-8"));
+    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
     if (currentUser.loginKeys.includes(loginKey)) {
       user = currentUser;
       break;
@@ -23,7 +23,7 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
   }
 
   if (!user) {
-    return res.send({error:"Not logged in!"});
+    return res.send({ error: "Not logged in!" });
   }
 
   const imageMeta = await sharp(pfp.filepath).metadata();
@@ -55,23 +55,23 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
   if (req.query.redirect) {
     res.redirect(req.query.redirect.toString());
   } else {
-    res.send({status:"success"});
+    res.send({ status: "success" });
   }
 }
 
 export const config = {
   api: {
-    bodyParser: false
-  }
+    bodyParser: false,
+  },
 };
 
-function parseBody(req: NextApiRequest):Promise<{fields: formidable.Fields, files: formidable.Files}> {
-  return new Promise((resolve, reject) => { 
+function parseBody(req: NextApiRequest): Promise<{ fields: formidable.Fields; files: formidable.Files }> {
+  return new Promise((resolve, reject) => {
     formidable({ multiples: false, uploadDir: "db/userdata/profilepics" }).parse(req, (err, fields, files) => {
       if (err) {
         return reject(err);
       }
-      resolve({fields, files});
+      resolve({ fields, files });
     });
   });
 }

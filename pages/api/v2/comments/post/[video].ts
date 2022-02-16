@@ -17,7 +17,7 @@ const md = MarkdownIt({ html: false, xhtmlOut: false, breaks: true, langPrefix: 
   });
 
 export default function post(req: NextApiRequest, res: NextApiResponse) {
-  const users = fs.readdirSync("src/db/users");
+  const users = fs.readdirSync("db/users");
 
   const comment: string = req.body.comment;
   const loginKey: string = req.body.loginKey;
@@ -29,7 +29,7 @@ export default function post(req: NextApiRequest, res: NextApiResponse) {
   let user: IUser;
 
   for (let i = 0; i < users.length; i++) {
-    const currentUser: IUser = JSON.parse(fs.readFileSync(`src/db/users/${users[i]}`, "utf-8"));
+    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
     if (currentUser.loginKeys.includes(loginKey)) {
       user = currentUser;
       break;

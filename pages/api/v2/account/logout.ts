@@ -28,14 +28,14 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) {
   if (account) {
     if (postInfo.loginKeys.includes("*")) {
       account.loginKeys = [];
-      fs.writeFileSync(`src/db/users/${account.id}.json`, JSON.stringify(account));
+      fs.writeFileSync(`db/users/${account.id}.json`, JSON.stringify(account));
       res.send({ status: "success" });
     } else {
       for (let i = 0; i < postInfo.loginKeys.length; i++) {
         const index = account.loginKeys.indexOf(postInfo.loginKeys[i]);
         account.loginKeys.splice(index, 1);
       }
-      fs.writeFileSync(`src/db/users/${account.id}.json`, JSON.stringify(account, null, 2));
+      fs.writeFileSync(`db/users/${account.id}.json`, JSON.stringify(account, null, 2));
       res.send({ status: "success" });
     }
   } else {

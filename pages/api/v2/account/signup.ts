@@ -11,7 +11,7 @@ interface IPostInfo {
 }
 
 export default function signup(req: NextApiRequest, res: NextApiResponse) {
-  const users = fs.readdirSync("src/db/users");
+  const users = fs.readdirSync("db/users");
 
   let body: IPostInfo = req.body;
 
@@ -20,7 +20,7 @@ export default function signup(req: NextApiRequest, res: NextApiResponse) {
       let exists = false;
 
       for (let i = 0; i < users.length; i++) {
-        const user: IUser = JSON.parse(fs.readFileSync(`src/db/users/${users[i]}`, "utf-8"));
+        const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
         if (user.email.toLowerCase() === body.email.toLowerCase()) {
           exists = true;
           break;
@@ -53,7 +53,7 @@ export default function signup(req: NextApiRequest, res: NextApiResponse) {
           loginKeys: [],
         };
 
-        fs.writeFileSync(`src/db/users/${id}.json`, JSON.stringify(user, null, 2));
+        fs.writeFileSync(`db/users/${id}.json`, JSON.stringify(user, null, 2));
 
         res.send({ success: true, loginURI: "/v2/account/login" });
       }

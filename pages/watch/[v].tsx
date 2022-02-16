@@ -73,8 +73,6 @@ export const getStaticProps: GetStaticProps<IProps> = async (context) => {
 
   const path = `${config.metadataPath}/${season}/${episode}.json`;
 
-  console.log(path);
-
   if (fs.existsSync(path)) {
     const video: IVideo = JSON.parse(fs.readFileSync(path, "utf-8"));
     return {
