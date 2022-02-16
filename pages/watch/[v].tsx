@@ -67,26 +67,24 @@ export default Watch;
 
 export const getStaticProps: GetStaticProps<IProps> = async (context) => {
   const watchCode = context.params.v.toString();
-  const res = await fetch(`${endpoint}/v2/metadata/episode/${watchCode}`);
+  const split = watchCode.split(".");
+  const season = split[0].replace("s", "");
+  const episode = split[1].replace("e", "");
 
-  if (res.status !== 200) {
+  const path = `${config.metadataPath}/${season}/${episode}`;
+
+  if (fs.existsSync(path)) {
+    const video: IVideo = JSON.parse(fs.readFileSync(path, "utf-8"));
     return {
-      props: { video: null },
-      notFound: true,
-      // revalidate in 30 minutes
-      revalidate: 30 * 60,
+      props: {
+        watchCode,
+        video,
+      },
+      revalidate: 60 * 60 * 24, //1 day
     };
+  } else {
+    return { props: { video: null }, notFound: true };
   }
-
-  const data: IVideo = await res.json();
-
-  return {
-    props: {
-      watchCode,
-      video: data,
-    },
-    revalidate: 60 * 60 * 24, // 1 day
-  };
 };
 
 export const getStaticPaths: GetStaticPaths = async (context) => {
