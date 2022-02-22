@@ -120,6 +120,9 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
           480: "SD",
         },
       },
+      fullscreen: {
+        iosNative: true,
+      },
     });
     player.source = {
       type: "video",
