@@ -120,6 +120,9 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
           480: "SD",
       ***REMOVED***
     ***REMOVED***
+      fullscreen: ***REMOVED***
+        iosNative: true,
+    ***REMOVED***
 ***REMOVED***);
     player.source = ***REMOVED***
       type: "video",
