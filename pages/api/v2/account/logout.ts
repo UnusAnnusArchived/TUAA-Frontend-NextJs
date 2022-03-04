@@ -4,7 +4,7 @@ import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
 import ***REMOVED*** handle401 ***REMOVED*** from "../../_handleErrors";
 
 interface IPostInfo ***REMOVED***
-  loginKeys: string[];
+  loginKeys: string[] | string;
   loginKey: string;
   id: string;
 ***REMOVED***
@@ -26,6 +26,10 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) ***REM
 ***REMOVED***
 
   if (account) ***REMOVED***
+    if (postInfo.loginKey && !postInfo.loginKeys) ***REMOVED***
+      postInfo.loginKeys = [postInfo.loginKey];
+***REMOVED***
+
     if (postInfo.loginKeys.includes("*")) ***REMOVED***
       account.loginKeys = [];
       fs.writeFileSync(`db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account));

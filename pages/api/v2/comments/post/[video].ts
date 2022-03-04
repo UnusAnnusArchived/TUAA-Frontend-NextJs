@@ -72,7 +72,7 @@ function plainTextToHTML(plaintext: string, episode: string) ***REMOVED***
 
   const matches = plaintext.match(timeReg);
 
-  for (let i = 0; i < matches.length; i++) ***REMOVED***
+  for (let i = 0; i < matches?.length ?? 0; i++) ***REMOVED***
     const split = matches[i].split(":");
     let seconds = parseInt(split[split.length - 1]);
     seconds += parseInt(split[split.length - 2]) * 60;

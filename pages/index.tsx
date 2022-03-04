@@ -3,13 +3,17 @@ import Tabs from "@mui/material/Tabs";
 import fs from "fs";
 import config from "../src/config.json";
 import ***REMOVED*** GetStaticProps ***REMOVED*** from "next";
-import React, ***REMOVED*** useState ***REMOVED*** from "react";
+import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
 import ***REMOVED*** VideoList ***REMOVED*** from "../components/video-list";
 import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
 import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../src/types";
+import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
+import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
+import ***REMOVED*** showPatreonAtom ***REMOVED*** from "../src/atoms";
+import PatreonPopup from "../components/patreon-popup";
 
 interface IProps ***REMOVED***
   seasons: Seasons;
@@ -27,7 +31,9 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
     <Layout>
       <MetaHead baseTitle=***REMOVED***t("home:title")***REMOVED*** />
       <div>
-        <Tabs value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>
+        ***REMOVED***/* <PatreonPopup key="patreon" /> */***REMOVED***
+
+        <Tabs key="tabs" value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>
           <Tab label=***REMOVED***t("seasons:season1")***REMOVED*** value=***REMOVED***1***REMOVED*** />
           <Tab label=***REMOVED***t("seasons:season2")***REMOVED*** value=***REMOVED***0***REMOVED*** />
         </Tabs>

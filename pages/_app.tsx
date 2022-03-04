@@ -5,7 +5,7 @@ import type ***REMOVED*** AppProps, NextWebVitalsMetric ***REMOVED*** from "next
 import Script from "next/script";
 import ***REMOVED*** ThemeProvider ***REMOVED*** from "@mui/material/styles";
 import ***REMOVED*** theme ***REMOVED*** from "../components/theme/theme";
-import ***REMOVED*** RecoilRoot ***REMOVED*** from "recoil";
+import ***REMOVED*** RecoilRoot, useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** GeistProvider ***REMOVED*** from "@geist-ui/react";
 import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
 import ***REMOVED*** initTranslations ***REMOVED*** from "../src/i18n/i18n";
@@ -17,8 +17,7 @@ export const reportWebVitals = (metric: NextWebVitalsMetric) => ***REMOVED***
 
   // @ts-ignore
   window.gtag("event", name, ***REMOVED***
-    event_category:
-      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
+    event_category: label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
     value: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
     event_label: id, // id unique to current page load
     non_interaction: true, // avoids affecting bounce rate.
@@ -39,29 +38,11 @@ const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***R
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favs/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favs/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favs/favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favs/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favs/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favs/favicon-16x16.png" />
         <link rel="manifest" href="/favs/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/favs/safari-pinned-tab.svg"
-          color="#121212"
-        />
+        <link rel="mask-icon" href="/favs/safari-pinned-tab.svg" color="#121212" />
         <link rel="shortcut icon" href="/favs/favicon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/favs/browserconfig.xml" />

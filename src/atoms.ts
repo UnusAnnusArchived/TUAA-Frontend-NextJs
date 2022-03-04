@@ -33,3 +33,9 @@ export const autoplayAtom = atom<boolean>(***REMOVED***
   default: false,
   effects_UNSTABLE: [localStorageEffect("autoplay")],
 ***REMOVED***);
+
+export const showPatreonAtom = atom<boolean>(***REMOVED***
+  key: "patreon",
+  default: true,
+  effects_UNSTABLE: [localStorageEffect("patreon")],
+***REMOVED***);

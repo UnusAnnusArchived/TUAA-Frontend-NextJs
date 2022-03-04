@@ -15,7 +15,7 @@ import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
 import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
 import ***REMOVED*** LogoutResponse ***REMOVED*** from "../../src/types";
-import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
+import ***REMOVED*** endpoint, siteRoot ***REMOVED*** from "../../src/endpoints";
 import axios from "axios";
 import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
 import Avatar from "@mui/material/Avatar";
@@ -50,10 +50,10 @@ const AppMenu: React.FC = () => ***REMOVED***
 
   const logout = async () => ***REMOVED***
     try ***REMOVED***
-      const res = await axios.post<LogoutResponse>(
-        `$***REMOVED***endpoint***REMOVED***/v2/account/logout`,
-        ***REMOVED*** id: loggedInUser.user.id, loginKey: loggedInUser.loginKey ***REMOVED***
-      );
+      const res = await axios.post<LogoutResponse>(`$***REMOVED***endpoint***REMOVED***/v2/account/logout`, ***REMOVED***
+        id: loggedInUser.user.id,
+        loginKey: loggedInUser.loginKey,
+  ***REMOVED***);
 
       if (res.status === 200) ***REMOVED***
         if (res.data.status === "success") ***REMOVED***
@@ -77,12 +77,10 @@ const AppMenu: React.FC = () => ***REMOVED***
     <React.Fragment>
       <IconButton onClick=***REMOVED***handleClick***REMOVED***>
         ***REMOVED***user && (
-          <Avatar src=***REMOVED***`$***REMOVED***endpoint***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED*** alt=***REMOVED***user.username***REMOVED*** />
+          <Avatar src=***REMOVED***`$***REMOVED***user.pfp.filename.startsWith("/") ? "" : "/"***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED*** alt=***REMOVED***user.username***REMOVED*** />
         )***REMOVED***
 
-        ***REMOVED***!user && (
-          <MenuIcon />
-        )***REMOVED***
+        ***REMOVED***!user && <MenuIcon />***REMOVED***
       </IconButton>
 
       <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
@@ -94,7 +92,7 @@ const AppMenu: React.FC = () => ***REMOVED***
                   ***REMOVED***user.username***REMOVED***
                 </Typography>
               </div>
-              <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+              <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
               <Link passHref href="/profile">
                 <MenuItem onClick=***REMOVED***handleClose***REMOVED***>
                   <ListItemIcon>
@@ -121,38 +119,30 @@ const AppMenu: React.FC = () => ***REMOVED***
               <ListItemText>***REMOVED***t("downloads:title")***REMOVED***</ListItemText>
             </MenuItem>
           </Link>
-          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+          <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-            >
+            <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
               <MenuItem>
                 <ListItemIcon>
-                  <FaDiscord style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
+                  <FaDiscord style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
                 </ListItemIcon>
                 <ListItemText>Discord</ListItemText>
               </MenuItem>
             </a>
           </Link>
           <Link href="https://github.com/UnusAnnusArchived" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***
-            >
+            <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
               <MenuItem>
                 <ListItemIcon>
-                  <FaGithub style=***REMOVED******REMOVED***width:"1.5rem"***REMOVED******REMOVED*** />
+                  <FaGithub style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>
             </a>
           </Link>
-          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+          <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
           <LanguageSelect />
-          <Divider style=***REMOVED******REMOVED***margin:"4px 0"***REMOVED******REMOVED*** />
+          <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
 
           ***REMOVED***user && (
             <MenuItem onClick=***REMOVED***logout***REMOVED***>
