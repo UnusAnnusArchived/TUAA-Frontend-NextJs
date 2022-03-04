@@ -19,7 +19,7 @@ const ProfilePicture: React.FC = () => {
         {t("profile:pfp:title")}
       </Typography>
       <Avatar
-        src={`${endpoint}${user.pfp.filename}`}
+        src={`${user.pfp.filename.startsWith("/") ? "" : "/"}${user.pfp.filename}`}
         alt={user.username}
         className="my-1"
         sx={{ width: 80, height: 80 }}

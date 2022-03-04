@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import { LogoutResponse } from "../../src/types";
-import { endpoint } from "../../src/endpoints";
+import { endpoint, siteRoot } from "../../src/endpoints";
 import axios from "axios";
 import { useToasts } from "@geist-ui/react";
 import Avatar from "@mui/material/Avatar";
@@ -50,10 +50,10 @@ const AppMenu: React.FC = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.post<LogoutResponse>(
-        `${endpoint}/v2/account/logout`,
-        { id: loggedInUser.user.id, loginKey: loggedInUser.loginKey }
-      );
+      const res = await axios.post<LogoutResponse>(`${endpoint}/v2/account/logout`, {
+        id: loggedInUser.user.id,
+        loginKey: loggedInUser.loginKey,
+      });
 
       if (res.status === 200) {
         if (res.data.status === "success") {
@@ -77,12 +77,10 @@ const AppMenu: React.FC = () => {
     <React.Fragment>
       <IconButton onClick={handleClick}>
         {user && (
-          <Avatar src={`${endpoint}${user.pfp.filename}`} alt={user.username} />
+          <Avatar src={`${user.pfp.filename.startsWith("/") ? "" : "/"}${user.pfp.filename}`} alt={user.username} />
         )}
 
-        {!user && (
-          <MenuIcon />
-        )}
+        {!user && <MenuIcon />}
       </IconButton>
 
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
@@ -94,7 +92,7 @@ const AppMenu: React.FC = () => {
                   {user.username}
                 </Typography>
               </div>
-              <Divider style={{margin:"4px 0"}} />
+              <Divider style={{ margin: "4px 0" }} />
               <Link passHref href="/profile">
                 <MenuItem onClick={handleClose}>
                   <ListItemIcon>
@@ -121,38 +119,30 @@ const AppMenu: React.FC = () => {
               <ListItemText>{t("downloads:title")}</ListItemText>
             </MenuItem>
           </Link>
-          <Divider style={{margin:"4px 0"}} />
+          <Divider style={{ margin: "4px 0" }} />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "#fff" }}
-            >
+            <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
               <MenuItem>
                 <ListItemIcon>
-                  <FaDiscord style={{width:"1.5rem"}} />
+                  <FaDiscord style={{ width: "1.5rem" }} />
                 </ListItemIcon>
                 <ListItemText>Discord</ListItemText>
               </MenuItem>
             </a>
           </Link>
           <Link href="https://github.com/UnusAnnusArchived" passHref>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "#fff" }}
-            >
+            <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
               <MenuItem>
                 <ListItemIcon>
-                  <FaGithub style={{width:"1.5rem"}} />
+                  <FaGithub style={{ width: "1.5rem" }} />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>
             </a>
           </Link>
-          <Divider style={{margin:"4px 0"}} />
+          <Divider style={{ margin: "4px 0" }} />
           <LanguageSelect />
-          <Divider style={{margin:"4px 0"}} />
+          <Divider style={{ margin: "4px 0" }} />
 
           {user && (
             <MenuItem onClick={logout}>

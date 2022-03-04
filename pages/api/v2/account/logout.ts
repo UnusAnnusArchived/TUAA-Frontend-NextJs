@@ -4,7 +4,7 @@ import { IUser } from "../../../../src/types";
 import { handle401 } from "../../_handleErrors";
 
 interface IPostInfo {
-  loginKeys: string[];
+  loginKeys: string[] | string;
   loginKey: string;
   id: string;
 }
@@ -26,6 +26,10 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) {
   }
 
   if (account) {
+    if (postInfo.loginKey && !postInfo.loginKeys) {
+      postInfo.loginKeys = [postInfo.loginKey];
+    }
+
     if (postInfo.loginKeys.includes("*")) {
       account.loginKeys = [];
       fs.writeFileSync(`db/users/${account.id}.json`, JSON.stringify(account));

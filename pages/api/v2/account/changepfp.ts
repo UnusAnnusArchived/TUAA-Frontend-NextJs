@@ -11,7 +11,7 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
 
   const pfp = <formidable.File>body.files.pfp;
 
-  const { loginKey } = req.body;
+  const loginKey = body.fields.loginKey as string;
 
   var user: IUser;
   for (var i = 0; i < users.length; i++) {
@@ -67,11 +67,14 @@ export const config = {
 
 function parseBody(req: NextApiRequest): Promise<{ fields: formidable.Fields; files: formidable.Files }> {
   return new Promise((resolve, reject) => {
-    formidable({ multiples: false, uploadDir: "db/userdata/profilepics" }).parse(req, (err, fields, files) => {
-      if (err) {
-        return reject(err);
+    formidable({ multiples: false, uploadDir: "db/userdata/profilepics", keepExtensions: true }).parse(
+      req,
+      (err, fields, files) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve({ fields, files });
       }
-      resolve({ fields, files });
-    });
+    );
   });
 }

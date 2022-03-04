@@ -3,13 +3,17 @@ import Tabs from "@mui/material/Tabs";
 import fs from "fs";
 import config from "../src/config.json";
 import { GetStaticProps } from "next";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Layout } from "../components/layout";
 import { MetaHead } from "../components/meta-head";
 import { VideoList } from "../components/video-list";
 import { endpoint } from "../src/endpoints";
 import { IVideo, Seasons } from "../src/types";
+import { useToasts } from "@geist-ui/react";
+import { useRecoilState } from "recoil";
+import { showPatreonAtom } from "../src/atoms";
+import PatreonPopup from "../components/patreon-popup";
 
 interface IProps {
   seasons: Seasons;
@@ -27,7 +31,9 @@ const Page: React.FC<IProps> = ({ seasons }) => {
     <Layout>
       <MetaHead baseTitle={t("home:title")} />
       <div>
-        <Tabs value={currentTab} onChange={handleChange} centered>
+        {/* <PatreonPopup key="patreon" /> */}
+
+        <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
           <Tab label={t("seasons:season1")} value={1} />
           <Tab label={t("seasons:season2")} value={0} />
         </Tabs>
