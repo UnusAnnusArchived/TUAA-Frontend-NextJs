@@ -173,14 +173,23 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
     setCurrentTime(event.detail.plyr.currentTime);
   };
 
+  const [duration, setDuration] = useState(video.duration);
+
+  useEffect(() => {
+    if (!duration && playerEl.current) {
+      setDuration(playerEl.current.duration);
+      console.log(duration);
+    }
+  }, []);
+
   return (
     <div>
       <video className="player" autoPlay ref={playerEl} />
       <Portal container={customControlsContainer}>
         <div>
-          <Fade in={currentTime > video.duration - 10}>
+          <Fade in={currentTime > duration - 10}>
             <div>
-              <NextEpisodeButton watchCode={watchCode} currentTime={currentTime} duration={video.duration} />
+              <NextEpisodeButton watchCode={watchCode} currentTime={currentTime} duration={duration} />
             </div>
           </Fade>
         </div>
