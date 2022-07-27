@@ -31,7 +31,7 @@ const Page: React.FC<IProps> = ({ seasons }) => {
     <Layout>
       <MetaHead baseTitle={t("home:title")} />
       <div>
-        {/* <PatreonPopup key="patreon" /> */}
+        <PatreonPopup key="patreon" />
 
         <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
           <Tab label={t("seasons:season1")} value={1} />
