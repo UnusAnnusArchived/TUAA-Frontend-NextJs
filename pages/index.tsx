@@ -31,7 +31,7 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
     <Layout>
       <MetaHead baseTitle=***REMOVED***t("home:title")***REMOVED*** />
       <div>
-        ***REMOVED***/* <PatreonPopup key="patreon" /> */***REMOVED***
+        <PatreonPopup key="patreon" />
 
         <Tabs key="tabs" value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>
           <Tab label=***REMOVED***t("seasons:season1")***REMOVED*** value=***REMOVED***1***REMOVED*** />
