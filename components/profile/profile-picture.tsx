@@ -19,7 +19,7 @@ const ProfilePicture: React.FC = () => {
         {t("profile:pfp:title")}
       </Typography>
       <Avatar
-        src={`${user.pfp.filename.startsWith("/") ? "/" : "//"}${user.pfp.filename}`}
+        src={`${user.pfp.filename.startsWith("/") ? "./" : "/./"}${user.pfp.filename}`} //very hacky way of fixing profile picture issue
         alt={user.username}
         className="my-1"
         sx={{ width: 80, height: 80 }}
