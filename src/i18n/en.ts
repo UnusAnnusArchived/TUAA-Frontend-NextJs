@@ -1,6 +1,6 @@
 const en = {
   home: {
-    title: "Home"
+    title: "Home",
   },
   player: {
     nextEpisode: "Next episode",
@@ -28,7 +28,7 @@ const en = {
     cancel: "Cancel",
     save: "Save",
     search: "Search",
-    page: "page"
+    page: "page",
   },
   login: {
     title: "Login",
@@ -76,12 +76,19 @@ const en = {
   downloads: {
     title: "Downloads",
     imageAlt: "Image of {downloadName}",
+    specificEpisode: {
+      title: "Download Specific Episode",
+      description: "Download a specific episode without the use of a program",
+      downloadOptions: {
+        title: "Download Options",
+      },
+    },
     tuaaDownloader: {
-      description: "An easy way to download any of our episodes"
+      description: "An easy way to mass download any of our episodes",
     },
     tuaaNodeApi: {
-      description: "An easy way to communicate with our API in Node.JS"
-    }
+      description: "An easy way to communicate with our API in Node.JS",
+    },
   },
   settings: {
     title: "Settings",
@@ -128,7 +135,7 @@ const en = {
     disabled: "Disabled",
     enabled: "Enabled",
     advertisement: "Ad",
-  }
+  },
 };
 
 export default en;

@@ -9,7 +9,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaPatreon, FaMoneyBill } from "react-icons/fa";
 import { LanguageSelect } from "../language-select";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
@@ -119,6 +119,14 @@ const AppMenu: React.FC = () => {
               <ListItemText>{t("downloads:title")}</ListItemText>
             </MenuItem>
           </Link>
+          <Link href="/patreon-donors" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <FaMoneyBill style={{ width: "1.5rem" }} />
+              </ListItemIcon>
+              <ListItemText>Patreon Donors</ListItemText>
+            </MenuItem>
+          </Link>
           <Divider style={{ margin: "4px 0" }} />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
             <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
@@ -137,6 +145,16 @@ const AppMenu: React.FC = () => {
                   <FaGithub style={{ width: "1.5rem" }} />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
+              </MenuItem>
+            </a>
+          </Link>
+          <Link href="https://www.patreon.com/theunusannusarchive" passHref>
+            <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
+              <MenuItem>
+                <ListItemIcon>
+                  <FaPatreon style={{ width: "1.5rem" }} />
+                </ListItemIcon>
+                <ListItemText>Patreon</ListItemText>
               </MenuItem>
             </a>
           </Link>

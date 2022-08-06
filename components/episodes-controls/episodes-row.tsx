@@ -10,9 +10,10 @@ import getEpisodesAround from "../../src/utils/episodes-around";
 
 interface IProps {
   watchCode: string;
+  onDownloadPage?: boolean;
 }
 
-const EpisodesRow: React.FC<IProps> = ({ watchCode }) => {
+const EpisodesRow: React.FC<IProps> = ({ watchCode, onDownloadPage }) => {
   const { t, i18n } = useTranslation();
 
   const epsAround = getEpisodesAround(watchCode);
@@ -23,12 +24,11 @@ const EpisodesRow: React.FC<IProps> = ({ watchCode }) => {
     <Fade in={display} unmountOnExit>
       <div className="d-flex my-2">
         {epsAround?.prevEp && (
-          <Link href={`/watch/${epsAround?.prevEp}`} passHref>
-            <Button
-              color="primary"
-              sx={{ pointerEvents: "auto" }}
-              startIcon={<SkipPreviousIcon />}
-            >
+          <Link
+            href={onDownloadPage ? `/downloads/specific-episode/${epsAround?.prevEp}` : `/watch/${epsAround?.prevEp}`}
+            passHref
+          >
+            <Button color="primary" sx={{ pointerEvents: "auto" }} startIcon={<SkipPreviousIcon />}>
               {t("player:previousEpisode")}
             </Button>
           </Link>
@@ -39,12 +39,11 @@ const EpisodesRow: React.FC<IProps> = ({ watchCode }) => {
           }}
         />
         {epsAround?.nextEp && (
-          <Link href={`/watch/${epsAround?.nextEp}`} passHref>
-            <Button
-              color="primary"
-              sx={{ pointerEvents: "auto" }}
-              endIcon={<SkipNextIcon />}
-            >
+          <Link
+            href={onDownloadPage ? `/downloads/specific-episode/${epsAround?.nextEp}` : `/watch/${epsAround?.nextEp}`}
+            passHref
+          >
+            <Button color="primary" sx={{ pointerEvents: "auto" }} endIcon={<SkipNextIcon />}>
               {t("player:nextEpisode")}
             </Button>
           </Link>

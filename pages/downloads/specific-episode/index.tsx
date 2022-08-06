@@ -1,19 +1,15 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import fs from "fs";
-import config from "../src/config.json";
+import config from "../../../src/config.json";
 import { GetStaticProps } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Layout } from "../components/layout";
-import { MetaHead } from "../components/meta-head";
-import { VideoList } from "../components/video-list";
-import { endpoint } from "../src/endpoints";
-import { IVideo, Seasons } from "../src/types";
-import { useToasts } from "@geist-ui/react";
-import { useRecoilState } from "recoil";
-import { showPatreonAtom } from "../src/atoms";
-import PatreonPopup from "../components/patreon-popup";
+import { Layout } from "../../../components/layout";
+import { MetaHead } from "../../../components/meta-head";
+import { VideoList } from "../../../components/video-list";
+import { IVideo, Seasons } from "../../../src/types";
+import { Typography } from "@mui/material";
 
 interface IProps {
   seasons: Seasons;
@@ -29,8 +25,11 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("home:title")} />
+      <MetaHead baseTitle={t("downloads:specificEpisode:title")} />
       <div>
+        <Typography textAlign="center" component="h2" variant="h5">
+          Select an episode to download
+        </Typography>
         <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
           <Tab label={t("seasons:season1")} value={1} />
           <Tab label={t("seasons:season2")} value={0} />
@@ -38,7 +37,7 @@ const Page: React.FC<IProps> = ({ seasons }) => {
         {seasons.map((season, i) => {
           return (
             <div key={`season-${i}`} hidden={currentTab !== i}>
-              <VideoList videos={season} />
+              <VideoList videos={season} onDownloadPage={true} />
             </div>
           );
         })}
