@@ -19,7 +19,7 @@ const ProfilePicture: React.FC = () => ***REMOVED***
         ***REMOVED***t("profile:pfp:title")***REMOVED***
       </Typography>
       <Avatar
-        src=***REMOVED***`$***REMOVED***user.pfp.filename.startsWith("/") ? "" : "/"***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED***
+        src=***REMOVED***`$***REMOVED***user.pfp.filename.startsWith("/") ? "/" : "//"***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED***
         alt=***REMOVED***user.username***REMOVED***
         className="my-1"
         sx=***REMOVED******REMOVED*** width: 80, height: 80 ***REMOVED******REMOVED***
