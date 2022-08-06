@@ -9,7 +9,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
-import ***REMOVED*** FaDiscord, FaGithub ***REMOVED*** from "react-icons/fa";
+import ***REMOVED*** FaDiscord, FaGithub, FaPatreon, FaMoneyBill ***REMOVED*** from "react-icons/fa";
 import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
@@ -119,6 +119,14 @@ const AppMenu: React.FC = () => ***REMOVED***
               <ListItemText>***REMOVED***t("downloads:title")***REMOVED***</ListItemText>
             </MenuItem>
           </Link>
+          <Link href="/patreon-donors" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <FaMoneyBill style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
+              </ListItemIcon>
+              <ListItemText>Patreon Donors</ListItemText>
+            </MenuItem>
+          </Link>
           <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
             <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
@@ -137,6 +145,16 @@ const AppMenu: React.FC = () => ***REMOVED***
                   <FaGithub style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
+              </MenuItem>
+            </a>
+          </Link>
+          <Link href="https://www.patreon.com/theunusannusarchive" passHref>
+            <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
+              <MenuItem>
+                <ListItemIcon>
+                  <FaPatreon style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
+                </ListItemIcon>
+                <ListItemText>Patreon</ListItemText>
               </MenuItem>
             </a>
           </Link>

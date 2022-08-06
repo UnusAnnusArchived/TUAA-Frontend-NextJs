@@ -1,6 +1,6 @@
 const en = ***REMOVED***
   home: ***REMOVED***
-    title: "Home"
+    title: "Home",
 ***REMOVED***
   player: ***REMOVED***
     nextEpisode: "Next episode",
@@ -28,7 +28,7 @@ const en = ***REMOVED***
     cancel: "Cancel",
     save: "Save",
     search: "Search",
-    page: "page"
+    page: "page",
 ***REMOVED***
   login: ***REMOVED***
     title: "Login",
@@ -76,12 +76,19 @@ const en = ***REMOVED***
   downloads: ***REMOVED***
     title: "Downloads",
     imageAlt: "Image of ***REMOVED***downloadName***REMOVED***",
+    specificEpisode: ***REMOVED***
+      title: "Download Specific Episode",
+      description: "Download a specific episode without the use of a program",
+      downloadOptions: ***REMOVED***
+        title: "Download Options",
+    ***REMOVED***
+  ***REMOVED***
     tuaaDownloader: ***REMOVED***
-      description: "An easy way to download any of our episodes"
+      description: "An easy way to mass download any of our episodes",
   ***REMOVED***
     tuaaNodeApi: ***REMOVED***
-      description: "An easy way to communicate with our API in Node.JS"
-***REMOVED***
+      description: "An easy way to communicate with our API in Node.JS",
+  ***REMOVED***
 ***REMOVED***
   settings: ***REMOVED***
     title: "Settings",

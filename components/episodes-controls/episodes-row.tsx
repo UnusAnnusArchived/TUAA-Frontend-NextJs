@@ -10,9 +10,10 @@ import getEpisodesAround from "../../src/utils/episodes-around";
 
 interface IProps ***REMOVED***
   watchCode: string;
+  onDownloadPage?: boolean;
 ***REMOVED***
 
-const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) => ***REMOVED***
+const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode, onDownloadPage ***REMOVED***) => ***REMOVED***
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
   const epsAround = getEpisodesAround(watchCode);
@@ -23,12 +24,11 @@ const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) =>
     <Fade in=***REMOVED***display***REMOVED*** unmountOnExit>
       <div className="d-flex my-2">
         ***REMOVED***epsAround?.prevEp && (
-          <Link href=***REMOVED***`/watch/$***REMOVED***epsAround?.prevEp***REMOVED***`***REMOVED*** passHref>
-            <Button
-              color="primary"
-              sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED***
-              startIcon=***REMOVED***<SkipPreviousIcon />***REMOVED***
-            >
+          <Link
+            href=***REMOVED***onDownloadPage ? `/downloads/specific-episode/$***REMOVED***epsAround?.prevEp***REMOVED***` : `/watch/$***REMOVED***epsAround?.prevEp***REMOVED***`***REMOVED***
+            passHref
+          >
+            <Button color="primary" sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED*** startIcon=***REMOVED***<SkipPreviousIcon />***REMOVED***>
               ***REMOVED***t("player:previousEpisode")***REMOVED***
             </Button>
           </Link>
@@ -39,12 +39,11 @@ const EpisodesRow: React.FC<IProps> = (***REMOVED*** watchCode ***REMOVED***) =>
       ***REMOVED******REMOVED***
         />
         ***REMOVED***epsAround?.nextEp && (
-          <Link href=***REMOVED***`/watch/$***REMOVED***epsAround?.nextEp***REMOVED***`***REMOVED*** passHref>
-            <Button
-              color="primary"
-              sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED***
-              endIcon=***REMOVED***<SkipNextIcon />***REMOVED***
-            >
+          <Link
+            href=***REMOVED***onDownloadPage ? `/downloads/specific-episode/$***REMOVED***epsAround?.nextEp***REMOVED***` : `/watch/$***REMOVED***epsAround?.nextEp***REMOVED***`***REMOVED***
+            passHref
+          >
+            <Button color="primary" sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED*** endIcon=***REMOVED***<SkipNextIcon />***REMOVED***>
               ***REMOVED***t("player:nextEpisode")***REMOVED***
             </Button>
           </Link>

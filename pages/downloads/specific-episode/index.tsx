@@ -1,19 +1,15 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import fs from "fs";
-import config from "../src/config.json";
+import config from "../../../src/config.json";
 import ***REMOVED*** GetStaticProps ***REMOVED*** from "next";
-import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
+import React, ***REMOVED*** useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
-import ***REMOVED*** VideoList ***REMOVED*** from "../components/video-list";
-import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
-import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../src/types";
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** showPatreonAtom ***REMOVED*** from "../src/atoms";
-import PatreonPopup from "../components/patreon-popup";
+import ***REMOVED*** Layout ***REMOVED*** from "../../../components/layout";
+import ***REMOVED*** MetaHead ***REMOVED*** from "../../../components/meta-head";
+import ***REMOVED*** VideoList ***REMOVED*** from "../../../components/video-list";
+import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../../../src/types";
+import ***REMOVED*** Typography ***REMOVED*** from "@mui/material";
 
 interface IProps ***REMOVED***
   seasons: Seasons;
@@ -29,8 +25,11 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("home:title")***REMOVED*** />
+      <MetaHead baseTitle=***REMOVED***t("downloads:specificEpisode:title")***REMOVED*** />
       <div>
+        <Typography textAlign="center" component="h2" variant="h5">
+          Select an episode to download
+        </Typography>
         <Tabs key="tabs" value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>
           <Tab label=***REMOVED***t("seasons:season1")***REMOVED*** value=***REMOVED***1***REMOVED*** />
           <Tab label=***REMOVED***t("seasons:season2")***REMOVED*** value=***REMOVED***0***REMOVED*** />
@@ -38,7 +37,7 @@ const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOV
         ***REMOVED***seasons.map((season, i) => ***REMOVED***
           return (
             <div key=***REMOVED***`season-$***REMOVED***i***REMOVED***`***REMOVED*** hidden=***REMOVED***currentTab !== i***REMOVED***>
-              <VideoList videos=***REMOVED***season***REMOVED*** />
+              <VideoList videos=***REMOVED***season***REMOVED*** onDownloadPage=***REMOVED***true***REMOVED*** />
             </div>
           );
     ***REMOVED***)***REMOVED***

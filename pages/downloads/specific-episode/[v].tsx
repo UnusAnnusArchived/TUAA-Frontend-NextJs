@@ -1,0 +1,109 @@
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import moment from "moment-with-locales-es6";
+import ***REMOVED*** GetStaticPaths, GetStaticProps ***REMOVED*** from "next";
+import React, ***REMOVED*** useState ***REMOVED*** from "react";
+import fs from "fs";
+import config from "../../../src/config.json";
+import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import ***REMOVED*** EpisodesRow ***REMOVED*** from "../../../components/episodes-controls";
+import ***REMOVED*** Layout ***REMOVED*** from "../../../components/layout";
+import ***REMOVED*** MetaHead ***REMOVED*** from "../../../components/meta-head";
+import ***REMOVED*** IVideo ***REMOVED*** from "../../../src/types";
+import VideoDownloadOptions from "../../../components/video-download-options";
+
+interface IProps ***REMOVED***
+  watchCode: string;
+  video: IVideo;
+***REMOVED***
+
+const Download: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) => ***REMOVED***
+  const ***REMOVED*** i18n ***REMOVED*** = useTranslation();
+  const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
+
+  const published = new Date(video.date ?? video.releasedate);
+  const embedUrl = `https://unusann.us/embed/$***REMOVED***watchCode***REMOVED***`;
+  const metaVideoUrl = video.video ?? video.sources[0].src;
+
+  return (
+    <Layout>
+      <MetaHead
+        baseTitle=***REMOVED***video.title***REMOVED***
+        embed=***REMOVED***embedUrl***REMOVED***
+        video=***REMOVED***metaVideoUrl***REMOVED***
+        date=***REMOVED***video.date ?? video.releasedate***REMOVED***
+        description=***REMOVED***video.description***REMOVED***
+        image=***REMOVED***`https:$***REMOVED***image***REMOVED***`***REMOVED***
+      />
+      <Paper className="my-3 p-3 desc">
+        <Typography variant="h6" component="h1">
+          ***REMOVED***video.title***REMOVED***
+        </Typography>
+        <Typography variant="body2" component="p">
+          ***REMOVED***moment(published).locale(i18n.language).format("DD MMMM YYYY")***REMOVED***
+        </Typography>
+        <Divider className="my-2" sx=***REMOVED******REMOVED*** backgroundColor: "#fff" ***REMOVED******REMOVED*** />
+        <Typography variant="body1" component="p">
+          <div
+            dangerouslySetInnerHTML=***REMOVED******REMOVED***
+              __html: video.description.replace(/(\n)/g, "<br />"),
+        ***REMOVED******REMOVED***
+          />
+        </Typography>
+      </Paper>
+      <EpisodesRow watchCode=***REMOVED***watchCode***REMOVED*** onDownloadPage=***REMOVED***true***REMOVED*** />
+      <Paper className="my-3 p-3">
+        <VideoDownloadOptions video=***REMOVED***video***REMOVED*** />
+      </Paper>
+    </Layout>
+  );
+***REMOVED***;
+
+export default Download;
+
+export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMOVED***
+  const watchCode = context.params.v.toString();
+  const split = watchCode.split(".");
+  const season = split[0].replace("s", "");
+  const episode = split[1].replace("e", "");
+
+  const path = `$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***season***REMOVED***/$***REMOVED***episode***REMOVED***.json`;
+
+  if (fs.existsSync(path)) ***REMOVED***
+    const video: IVideo = JSON.parse(fs.readFileSync(path, "utf-8"));
+    return ***REMOVED***
+      props: ***REMOVED***
+        watchCode,
+        video,
+    ***REMOVED***
+      revalidate: 60 * 60 * 24, //1 day
+***REMOVED***;
+***REMOVED*** else ***REMOVED***
+    return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
+***REMOVED***
+***REMOVED***;
+
+export const getStaticPaths: GetStaticPaths = async (context) => ***REMOVED***
+  const paths = [];
+
+  const seasons = fs.readdirSync(config.metadataPath);
+  for (const seasonName of seasons) ***REMOVED***
+    const season = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***seasonName***REMOVED***`);
+    for (const episodeName of season) ***REMOVED***
+      const episode: IVideo = JSON.parse(
+        fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***seasonName***REMOVED***/$***REMOVED***episodeName***REMOVED***`, "utf-8")
+      );
+      paths.push(***REMOVED***
+        params: ***REMOVED***
+          v: `s$***REMOVED***episode.season.toString().padStart(2, "0")***REMOVED***.e$***REMOVED***episode.episode.toString().padStart(3, "0")***REMOVED***`,
+      ***REMOVED***
+  ***REMOVED***);
+***REMOVED***
+***REMOVED***
+
+  return ***REMOVED***
+    paths,
+    fallback: "blocking",
+***REMOVED***;
+***REMOVED***;

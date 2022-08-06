@@ -9,24 +9,30 @@ interface IProps ***REMOVED***
   description: string;
   image: StaticImageData;
   link: string;
+  newTab: boolean;
 ***REMOVED***
 
-const DownloadItem: React.FC<IProps> = (***REMOVED*** name, description, image, link ***REMOVED***) => ***REMOVED***
+const DownloadItem: React.FC<IProps> = (***REMOVED*** name, description, image, link, newTab ***REMOVED***) => ***REMOVED***
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+
+  console.log(image);
 
   return (
     <div className="col-12 col-md-4 p-2">
-      <a href=***REMOVED***link***REMOVED*** target="_blank" rel="noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none" ***REMOVED******REMOVED***>
+      <a href=***REMOVED***link***REMOVED*** target=***REMOVED***newTab ? "_blank" : ""***REMOVED*** rel="noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none" ***REMOVED******REMOVED***>
         <div className="pointer h-100">
           <Paper className="p-2 h-100">
-            <Image src=***REMOVED***image.src***REMOVED*** alt=***REMOVED***t("downloads:imageAlt").replace("***REMOVED***downloadName", name)***REMOVED*** width=***REMOVED***image.width***REMOVED*** height=***REMOVED***image.height***REMOVED*** />
+            <Image
+              src=***REMOVED***image.src***REMOVED***
+              alt=***REMOVED***t("downloads:imageAlt").replace("***REMOVED***downloadName", name)***REMOVED***
+              width=***REMOVED***image.width***REMOVED***
+              height=***REMOVED***image.height***REMOVED***
+            />
             <div className="text-center mt-2">
               <Typography variant="body1">***REMOVED***name***REMOVED***</Typography>
             </div>
             <div className="text-center mt-2">
-              <Typography variant="body2">
-                ***REMOVED***description***REMOVED***
-              </Typography>
+              <Typography variant="body2">***REMOVED***description***REMOVED***</Typography>
             </div>
           </Paper>
         </div>
