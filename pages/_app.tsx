@@ -9,6 +9,7 @@ import { RecoilRoot, useRecoilState } from "recoil";
 import { GeistProvider } from "@geist-ui/react";
 import { useRouter } from "next/router";
 import { initTranslations } from "../src/i18n/i18n";
+import NonSsrWrapper from "../components/non-ssr-wrapper";
 
 export const reportWebVitals = (metric: NextWebVitalsMetric) => {
   const { id, name, label, value } = metric;
@@ -51,7 +52,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <RecoilRoot>
         <ThemeProvider theme={theme}>
           <GeistProvider>
-            <Component {...pageProps} />
+            <NonSsrWrapper>
+              <Component {...pageProps} />
+            </NonSsrWrapper>
           </GeistProvider>
         </ThemeProvider>
       </RecoilRoot>
