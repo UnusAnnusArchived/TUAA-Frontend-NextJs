@@ -188,9 +188,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
       <Portal container={customControlsContainer}>
         <div>
           <Fade in={currentTime > duration - 10}>
-            <div>
-              <NextEpisodeButton watchCode={watchCode} currentTime={currentTime} duration={duration} />
-            </div>
+            <div>{/* <NextEpisodeButton watchCode={watchCode} currentTime={currentTime} duration={duration} /> */}</div>
           </Fade>
         </div>
       </Portal>
