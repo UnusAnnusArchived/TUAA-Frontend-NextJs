@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Plyr from "plyr";
 import { IVideo } from "../../src/types";
-import { endpoint, localApi } from "../../src/endpoints";
+import { cdn, endpoint, localApi } from "../../src/endpoints";
 import { Fade, Portal } from "@mui/material";
 import styles from "../../styles/Player.module.scss";
 import { useRouter } from "next/router";
@@ -22,6 +22,9 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const { t, i18n } = useTranslation();
 
+  const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
+  const poster = `${cdn}${posterUrl}`;
+
   const router = useRouter();
 
   useEffect(() => {
@@ -38,8 +41,13 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
     plyr.source = {
       type: "video",
       title: video.title ?? "",
-      poster: video.thumbnail ?? video.posters[0].src,
-      sources: video.sources,
+      poster,
+      sources: video.sources?.map((source) => {
+        return {
+          ...source,
+          src: `${cdn}${source.src}`,
+        };
+      }),
       tracks:
         video.tracks?.map((track) => {
           return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
@@ -127,15 +135,14 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
     player.source = {
       type: "video",
       title: video.title ?? "",
-      poster: video.thumbnail ?? video.posters[0].src,
-      sources: !!video.video
-        ? [
-            {
-              src: video.video,
-              type: "video/mp4",
-            },
-          ]
-        : video.sources,
+      poster,
+      sources:
+        video.sources?.map((source) => {
+          return {
+            ...source,
+            src: `${cdn}${source.src}`,
+          };
+        }) ?? [],
       tracks:
         video.tracks?.map((track) => {
           return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
@@ -178,7 +185,6 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
   useEffect(() => {
     if (!duration && playerEl.current) {
       setDuration(playerEl.current.duration);
-      console.log(duration);
     }
   }, []);
 

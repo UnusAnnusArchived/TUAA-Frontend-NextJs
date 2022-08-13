@@ -1,37 +1,37 @@
 {
   "sources": [
     {
-      "src": "//cdn.unusann.us/01/001/2160.mp4",
+      "src": "/01/001/2160.mp4",
       "type": "video/mp4",
       "size": 2160
     },
     {
-      "src": "//cdn.unusann.us/01/001/1440.mp4",
+      "src": "/01/001/1440.mp4",
       "type": "video/mp4",
       "size": 1440
     },
     {
-      "src": "//cdn.unusann.us/01/001/1080.mp4",
+      "src": "/01/001/1080.mp4",
       "type": "video/mp4",
       "size": 1080
     },
     {
-      "src": "//cdn.unusann.us/01/001/720.mp4",
+      "src": "/01/001/720.mp4",
       "type": "video/mp4",
       "size": 720
     },
     {
-      "src": "//cdn.unusann.us/01/001/480.mp4",
+      "src": "/01/001/480.mp4",
       "type": "video/mp4",
       "size": 480
     },
     {
-      "src": "//cdn.unusann.us/01/001/360.mp4",
+      "src": "/01/001/360.mp4",
       "type": "video/mp4",
       "size": 360
     },
     {
-      "src": "//cdn.unusann.us/01/001/240.mp4",
+      "src": "/01/001/240.mp4",
       "type": "video/mp4",
       "size": 240
     }
@@ -41,40 +41,40 @@
       "kind": "captions",
       "label": "English",
       "srclang": "en",
-      "src": "//cdn.unusann.us/subs/01/001.en.vtt"
+      "src": "/subs/01/001.en.vtt"
     },
     {
       "kind": "captions",
       "label": "Chinese (Auto Translated)",
       "srclang": "zh",
-      "src": "//cdn.unusann.us/subs/01/001.zh.vtt"
+      "src": "/subs/01/001.zh.vtt"
     },
     {
       "kind": "captions",
       "label": "Spanish (Auto Translated)",
       "srclang": "es",
-      "src": "//cdn.unusann.us/subs/01/001.es.vtt"
+      "src": "/subs/01/001.es.vtt"
     },
     {
       "kind": "captions",
       "label": "German (Auto Translated)",
       "srclang": "de",
-      "src": "//cdn.unusann.us/subs/01/001.de.vtt"
+      "src": "/subs/01/001.de.vtt"
     },
     {
       "kind": "captions",
       "label": "Polskie",
       "srclang": "pl",
-      "src": "//cdn.unusann.us/subs/01/001.pl.vtt"
+      "src": "/subs/01/001.pl.vtt"
     }
   ],
   "posters": [
     {
-      "src": "//cdn.unusann.us/thumbnails/01/001.webp",
+      "src": "/thumbnails/01/001.webp",
       "type": "image/webp"
     },
     {
-      "src": "//cdn.unusann.us/thumbnails/01/001.jpg",
+      "src": "/thumbnails/01/001.jpg",
       "type": "image/jpeg"
     }
   ],

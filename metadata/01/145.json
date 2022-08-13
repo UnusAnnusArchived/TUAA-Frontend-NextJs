@@ -1,27 +1,27 @@
 {
   "sources": [
     {
-      "src": "//cdn.unusann.us/01/145/1080.mp4",
+      "src": "/01/145/1080.mp4",
       "type": "video/mp4",
       "size": 1080
     },
     {
-      "src": "//cdn.unusann.us/01/145/720.mp4",
+      "src": "/01/145/720.mp4",
       "type": "video/mp4",
       "size": 720
     },
     {
-      "src": "//cdn.unusann.us/01/145/480.mp4",
+      "src": "/01/145/480.mp4",
       "type": "video/mp4",
       "size": 480
     },
     {
-      "src": "//cdn.unusann.us/01/145/360.mp4",
+      "src": "/01/145/360.mp4",
       "type": "video/mp4",
       "size": 360
     },
     {
-      "src": "//cdn.unusann.us/01/145/240.mp4",
+      "src": "/01/145/240.mp4",
       "type": "video/mp4",
       "size": 240
     }
@@ -29,11 +29,11 @@
   "tracks": [],
   "posters": [
     {
-      "src": "//cdn.unusann.us/thumbnails/01/145.webp",
+      "src": "/thumbnails/01/145.webp",
       "type": "image/webp"
     },
     {
-      "src": "//cdn.unusann.us/thumbnails/01/145.jpg",
+      "src": "/thumbnails/01/145.jpg",
       "type": "image/jpeg"
     }
   ],
