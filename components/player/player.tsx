@@ -1,7 +1,7 @@
 import React, ***REMOVED*** useEffect, useRef, useState ***REMOVED*** from "react";
 import Plyr from "plyr";
 import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
-import ***REMOVED*** endpoint, localApi ***REMOVED*** from "../../src/endpoints";
+import ***REMOVED*** cdn, endpoint, localApi ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** Fade, Portal ***REMOVED*** from "@mui/material";
 import styles from "../../styles/Player.module.scss";
 import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
@@ -22,6 +22,9 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
   const [currentTime, setCurrentTime] = useState(0);
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
+  const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
+  const poster = `$***REMOVED***cdn***REMOVED***$***REMOVED***posterUrl***REMOVED***`;
+
   const router = useRouter();
 
   useEffect(() => ***REMOVED***
@@ -38,8 +41,13 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
     plyr.source = ***REMOVED***
       type: "video",
       title: video.title ?? "",
-      poster: video.thumbnail ?? video.posters[0].src,
-      sources: video.sources,
+      poster,
+      sources: video.sources?.map((source) => ***REMOVED***
+        return ***REMOVED***
+          ...source,
+          src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
+    ***REMOVED***;
+  ***REMOVED***),
       tracks:
         video.tracks?.map((track) => ***REMOVED***
           return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
@@ -127,15 +135,14 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
     player.source = ***REMOVED***
       type: "video",
       title: video.title ?? "",
-      poster: video.thumbnail ?? video.posters[0].src,
-      sources: !!video.video
-        ? [
-            ***REMOVED***
-              src: video.video,
-              type: "video/mp4",
-          ***REMOVED***
-          ]
-        : video.sources,
+      poster,
+      sources:
+        video.sources?.map((source) => ***REMOVED***
+          return ***REMOVED***
+            ...source,
+            src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
+      ***REMOVED***;
+    ***REMOVED***) ?? [],
       tracks:
         video.tracks?.map((track) => ***REMOVED***
           return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
@@ -178,7 +185,6 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
   useEffect(() => ***REMOVED***
     if (!duration && playerEl.current) ***REMOVED***
       setDuration(playerEl.current.duration);
-      console.log(duration);
 ***REMOVED***
 ***REMOVED*** []);
 

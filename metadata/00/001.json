@@ -1,27 +1,27 @@
 ***REMOVED***
   "sources": [
     ***REMOVED***
-      "src": "//cdn.unusann.us/00/001/1080.mp4",
+      "src": "/00/001/1080.mp4",
       "type": "video/mp4",
       "size": 1080
   ***REMOVED***
     ***REMOVED***
-      "src": "//cdn.unusann.us/00/001/720.mp4",
+      "src": "/00/001/720.mp4",
       "type": "video/mp4",
       "size": 720
   ***REMOVED***
     ***REMOVED***
-      "src": "//cdn.unusann.us/00/001/480.mp4",
+      "src": "/00/001/480.mp4",
       "type": "video/mp4",
       "size": 480
   ***REMOVED***
     ***REMOVED***
-      "src": "//cdn.unusann.us/00/001/360.mp4",
+      "src": "/00/001/360.mp4",
       "type": "video/mp4",
       "size": 360
   ***REMOVED***
     ***REMOVED***
-      "src": "//cdn.unusann.us/00/001/240.mp4",
+      "src": "/00/001/240.mp4",
       "type": "video/mp4",
       "size": 240
 ***REMOVED***
@@ -31,16 +31,16 @@
       "kind": "captions",
       "label": "English",
       "srclang": "en",
-      "src": "//cdn.unusann.us/subs/00/001.en.vtt"
+      "src": "/subs/00/001.en.vtt"
 ***REMOVED***
   ],
   "posters": [
     ***REMOVED***
-      "src": "//cdn.unusann.us/thumbnails/00/001.webp",
+      "src": "/thumbnails/00/001.webp",
       "type": "image/webp"
   ***REMOVED***
     ***REMOVED***
-      "src": "//cdn.unusann.us/thumbnails/00/001.jpg",
+      "src": "/thumbnails/00/001.jpg",
       "type": "image/jpeg"
 ***REMOVED***
   ],
