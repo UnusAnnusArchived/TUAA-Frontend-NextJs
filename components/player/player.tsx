@@ -194,9 +194,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
       <Portal container=***REMOVED***customControlsContainer***REMOVED***>
         <div>
           <Fade in=***REMOVED***currentTime > duration - 10***REMOVED***>
-            <div>
-              <NextEpisodeButton watchCode=***REMOVED***watchCode***REMOVED*** currentTime=***REMOVED***currentTime***REMOVED*** duration=***REMOVED***duration***REMOVED*** />
-            </div>
+            <div>***REMOVED***/* <NextEpisodeButton watchCode=***REMOVED***watchCode***REMOVED*** currentTime=***REMOVED***currentTime***REMOVED*** duration=***REMOVED***duration***REMOVED*** /> */***REMOVED***</div>
           </Fade>
         </div>
       </Portal>
