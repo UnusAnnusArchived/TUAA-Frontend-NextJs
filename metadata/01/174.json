@@ -1,9 +1,45 @@
 {
-  "video": "/01/174.mp4",
+  "sources": [
+    {
+      "src": "/01/174/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+    },
+    {
+      "src": "/01/174/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+    },
+    {
+      "src": "/01/174/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+    },
+    {
+      "src": "/01/174/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+    },
+    {
+      "src": "/01/174/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+    }
+  ],
+  "tracks": [],
+  "posters": [
+    {
+      "src": "/thumbnails/01/174.webp",
+      "type": "image/webp"
+    },
+    {
+      "src": "/thumbnails/01/174.jpg",
+      "type": "image/jpeg"
+    }
+  ],
   "season": 1,
   "episode": 174,
   "title": "An A.I. Generates Our Worst Nightmare",
   "description": "We dream of a future where A.I. will help humanity flourish. This is not one of those times.",
-  "releasedate": 1588705200000,
-  "thumbnail": "/thumbnails/01/174.webp"
+  "date": 1588705200000
 }

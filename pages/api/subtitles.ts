@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { cdn } from "../../src/endpoints";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -17,7 +18,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return;
     }
 
-    if (!url.startsWith("https://cdn.unusann.us/subs") || !url.startsWith("https://cdn.unusannusarchive.tk/subs")) {
+    if (
+      !url.startsWith(`${cdn}/subs`) ??
+      !url.startsWith("https://cdn.unusann.us/subs") ??
+      !url.startsWith("https://cdn.unusannusarchive.tk/subs")
+    ) {
       res.status(403).json({ error: "Unauthorized website/path!" });
       return;
     }

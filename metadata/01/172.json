@@ -1,9 +1,45 @@
 {
-  "video": "/01/172.mp4",
+  "sources": [
+    {
+      "src": "/01/172/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+    },
+    {
+      "src": "/01/172/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+    },
+    {
+      "src": "/01/172/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+    },
+    {
+      "src": "/01/172/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+    },
+    {
+      "src": "/01/172/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+    }
+  ],
+  "tracks": [],
+  "posters": [
+    {
+      "src": "/thumbnails/01/172.webp",
+      "type": "image/webp"
+    },
+    {
+      "src": "/thumbnails/01/172.jpg",
+      "type": "image/jpeg"
+    }
+  ],
   "season": 1,
   "episode": 172,
   "title": "Professional Fetish Scientists Rank the Best/Worst Fetishes of 2020",
   "description": "The world is full of fetishes. From the mainstream to the obscure, there's something for everybody out there. But what's the most obscure one we can find?",
-  "releasedate": 1588532400000,
-  "thumbnail": "/thumbnails/01/172.webp"
+  "date": 1588532400000
 }

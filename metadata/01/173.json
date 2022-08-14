@@ -1,9 +1,45 @@
 {
-  "video": "/01/173.mp4",
+  "sources": [
+    {
+      "src": "/01/173/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+    },
+    {
+      "src": "/01/173/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+    },
+    {
+      "src": "/01/173/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+    },
+    {
+      "src": "/01/173/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+    },
+    {
+      "src": "/01/173/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+    }
+  ],
+  "tracks": [],
+  "posters": [
+    {
+      "src": "/thumbnails/01/173.webp",
+      "type": "image/webp"
+    },
+    {
+      "src": "/thumbnails/01/173.jpg",
+      "type": "image/jpeg"
+    }
+  ],
   "season": 1,
   "episode": 173,
   "title": "Mark and Ethan Desperately Attempt to Feel Something",
   "description": "Mark and Ethan scour the internet to try and find videos that make them FEEL something before their hearts stop",
-  "releasedate": 1588618800000,
-  "thumbnail": "/thumbnails/01/173.webp"
+  "date": 1588618800000
 }

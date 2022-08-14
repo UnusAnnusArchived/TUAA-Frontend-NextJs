@@ -47,7 +47,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
           ...source,
           src: `${cdn}${source.src}`,
         };
-      }),
+      }) ?? [{ src: `${cdn}${video.video}` }],
       tracks:
         video.tracks?.map((track) => {
           return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
@@ -132,20 +132,27 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
         iosNative: true,
       },
     });
+    console.log(
+      video.sources?.map((source) => {
+        return {
+          ...source,
+          src: `${cdn}${source.src}`,
+        };
+      }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }]
+    );
     player.source = {
       type: "video",
       title: video.title ?? "",
       poster,
-      sources:
-        video.sources?.map((source) => {
-          return {
-            ...source,
-            src: `${cdn}${source.src}`,
-          };
-        }) ?? [],
+      sources: video.sources?.map((source) => {
+        return {
+          ...source,
+          src: `${cdn}${source.src}`,
+        };
+      }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
+          return { ...track, src: `${localApi}/subtitles?url=${cdn}${track.src}` };
         }) ?? [],
       previewThumbnails: {
         enabled: true,
