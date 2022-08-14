@@ -47,7 +47,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
           ...source,
           src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
     ***REMOVED***;
-  ***REMOVED***),
+  ***REMOVED***) ?? [***REMOVED*** src: `$***REMOVED***cdn***REMOVED***$***REMOVED***video.video***REMOVED***` ***REMOVED***],
       tracks:
         video.tracks?.map((track) => ***REMOVED***
           return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
@@ -132,20 +132,27 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
         iosNative: true,
     ***REMOVED***
 ***REMOVED***);
+    console.log(
+      video.sources?.map((source) => ***REMOVED***
+        return ***REMOVED***
+          ...source,
+          src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
+    ***REMOVED***;
+  ***REMOVED***) ?? [***REMOVED*** src: `$***REMOVED***cdn***REMOVED***$***REMOVED***video.video***REMOVED***`, type: "video/mp4" ***REMOVED***]
+    );
     player.source = ***REMOVED***
       type: "video",
       title: video.title ?? "",
       poster,
-      sources:
-        video.sources?.map((source) => ***REMOVED***
-          return ***REMOVED***
-            ...source,
-            src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
-      ***REMOVED***;
-    ***REMOVED***) ?? [],
+      sources: video.sources?.map((source) => ***REMOVED***
+        return ***REMOVED***
+          ...source,
+          src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
+    ***REMOVED***;
+  ***REMOVED***) ?? [***REMOVED*** src: `$***REMOVED***cdn***REMOVED***$***REMOVED***video.video***REMOVED***`, type: "video/mp4" ***REMOVED***],
       tracks:
         video.tracks?.map((track) => ***REMOVED***
-          return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
+          return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***cdn***REMOVED***$***REMOVED***track.src***REMOVED***` ***REMOVED***;
     ***REMOVED***) ?? [],
       previewThumbnails: ***REMOVED***
         enabled: true,

@@ -1,9 +1,45 @@
 ***REMOVED***
-  "video": "/01/178.mp4",
+  "sources": [
+    ***REMOVED***
+      "src": "/01/178/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/178/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/178/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/178/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/178/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+***REMOVED***
+  ],
+  "tracks": [],
+  "posters": [
+    ***REMOVED***
+      "src": "/thumbnails/01/178.webp",
+      "type": "image/webp"
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/thumbnails/01/178.jpg",
+      "type": "image/jpeg"
+***REMOVED***
+  ],
   "season": 1,
   "episode": 178,
   "title": "Unus Annus ASMR",
   "description": "Unus AnnuSMR. You wanted this. You asked for this. You deserve this. Turn out the lights, turn up the volume, and get ready to relax. You deserve this.",
-  "releasedate": 1589050800000,
-  "thumbnail": "/thumbnails/01/178.webp"
+  "date": 1589050800000
 ***REMOVED***

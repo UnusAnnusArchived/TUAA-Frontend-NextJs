@@ -1,9 +1,45 @@
 ***REMOVED***
-  "video": "/01/174.mp4",
+  "sources": [
+    ***REMOVED***
+      "src": "/01/174/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/174/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/174/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/174/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/01/174/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+***REMOVED***
+  ],
+  "tracks": [],
+  "posters": [
+    ***REMOVED***
+      "src": "/thumbnails/01/174.webp",
+      "type": "image/webp"
+  ***REMOVED***
+    ***REMOVED***
+      "src": "/thumbnails/01/174.jpg",
+      "type": "image/jpeg"
+***REMOVED***
+  ],
   "season": 1,
   "episode": 174,
   "title": "An A.I. Generates Our Worst Nightmare",
   "description": "We dream of a future where A.I. will help humanity flourish. This is not one of those times.",
-  "releasedate": 1588705200000,
-  "thumbnail": "/thumbnails/01/174.webp"
+  "date": 1588705200000
 ***REMOVED***
