@@ -1,9 +1,12 @@
 import ***REMOVED*** Typography, Button, Stack, FormControl, InputLabel, Select, MenuItem ***REMOVED*** from "@mui/material";
+import ***REMOVED*** FaTimes ***REMOVED*** from "react-icons/fa";
 import ***REMOVED*** useState ***REMOVED*** from "react";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import type ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
 import DownloadPopupUI from "../download-popup-ui";
 import SubtitlePopup from "../subtitlePopup";
+import VideoPopup from "../videoPopup";
+import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
 
 interface IProps ***REMOVED***
   video: IVideo;
@@ -36,7 +39,7 @@ const VideoDownloadOptions: React.FC<IProps> = (***REMOVED*** video ***REMOVED**
 ***REMOVED***;
 
   const downloadThumbnail = () => ***REMOVED***
-    fetch(video.thumbnail ?? video.posters[0].src)
+    fetch(`$***REMOVED***cdn***REMOVED***$***REMOVED***video.thumbnail ?? video.posters[0].src***REMOVED***`)
       .then((res) => res.blob())
       .then((blob) => ***REMOVED***
         const dataUrl = new FileReader();
@@ -44,7 +47,7 @@ const VideoDownloadOptions: React.FC<IProps> = (***REMOVED*** video ***REMOVED**
           const url = e.target.result as string;
           const element = document.createElement("a");
           element.setAttribute("href", url);
-          element.setAttribute("download", `$***REMOVED***video.title***REMOVED*** Thumbnail.jpg`);
+          element.setAttribute("download", `$***REMOVED***video.title***REMOVED*** Thumbnail.webp`);
           element.style.display = "none";
           document.body.appendChild(element);
           element.click();
@@ -70,28 +73,44 @@ const VideoDownloadOptions: React.FC<IProps> = (***REMOVED*** video ***REMOVED**
         ***REMOVED***t("downloads:specificEpisode:downloadOptions:title")***REMOVED***
       </Typography>
       <Stack spacing=***REMOVED***1***REMOVED*** direction="column" justifyContent="center" alignItems="flex-start">
-        <Button variant="contained" onClick=***REMOVED***downloadMetadata***REMOVED***>
-          Metadata
-        </Button>
-        <Button variant="contained" onClick=***REMOVED***downloadDescription***REMOVED***>
-          Description
-        </Button>
-        <Button variant="contained" onClick=***REMOVED***downloadThumbnail***REMOVED***>
-          Thumbnail
+        <Button variant="contained" onClick=***REMOVED***toggleVideoPopup***REMOVED***>
+          Video
         </Button>
         <Button variant="contained" onClick=***REMOVED***toggleSubtitlesPopup***REMOVED*** disabled=***REMOVED***!video.tracks || video.tracks.length < 1***REMOVED***>
           Subtitles
         </Button>
-        <Button variant="contained" onClick=***REMOVED***toggleVideoPopup***REMOVED***>
-          Video
+        <Button variant="contained" onClick=***REMOVED***downloadThumbnail***REMOVED***>
+          Thumbnail
+        </Button>
+        <Button variant="contained" onClick=***REMOVED***downloadDescription***REMOVED***>
+          Description
+        </Button>
+        <Button variant="contained" onClick=***REMOVED***downloadMetadata***REMOVED***>
+          Metadata
         </Button>
       </Stack>
       ***REMOVED***showSubtitlesPopup && (
         <DownloadPopupUI>
+          <div style=***REMOVED******REMOVED*** marginBottom: 30, display: "flex" ***REMOVED******REMOVED***>
+            <h3 style=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>Subtitles</h3>
+            <a href="#" style=***REMOVED******REMOVED*** color: "#ffffff" ***REMOVED******REMOVED*** onClick=***REMOVED***toggleSubtitlesPopup***REMOVED***>
+              <FaTimes style=***REMOVED******REMOVED*** fontSize: "1.5rem" ***REMOVED******REMOVED*** />
+            </a>
+          </div>
           <SubtitlePopup video=***REMOVED***video***REMOVED*** />
         </DownloadPopupUI>
       )***REMOVED***
-      ***REMOVED***showVideoPopup && <h1>video</h1>***REMOVED***
+      ***REMOVED***showVideoPopup && (
+        <DownloadPopupUI>
+          <div style=***REMOVED******REMOVED*** marginBottom: 30, display: "flex" ***REMOVED******REMOVED***>
+            <h3 style=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>Video</h3>
+            <a href="#" style=***REMOVED******REMOVED*** color: "#ffffff" ***REMOVED******REMOVED*** onClick=***REMOVED***toggleVideoPopup***REMOVED***>
+              <FaTimes style=***REMOVED******REMOVED*** fontSize: "1.5rem" ***REMOVED******REMOVED*** />
+            </a>
+          </div>
+          <VideoPopup video=***REMOVED***video***REMOVED*** />
+        </DownloadPopupUI>
+      )***REMOVED***
     </>
   );
 ***REMOVED***;

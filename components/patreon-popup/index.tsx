@@ -11,8 +11,6 @@ const PatreonPopup: React.FC = () => ***REMOVED***
   const [showPatreonToast, setPatreonToast] = useRecoilState(showPatreonAtom);
   const ref = useRef(null);
 
-  console.log(showPatreonToast);
-
   return (
     <NonSsrWrapper>
       ***REMOVED***showPatreonToast ? (

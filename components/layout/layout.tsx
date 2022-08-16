@@ -25,10 +25,9 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
   const classes = useStyles(theme);
 
   const refetchUser = async (): Promise<boolean> => ***REMOVED***
-    const res = await axios.post<CheckLoginKeyResponse>(
-      `$***REMOVED***endpoint***REMOVED***/v2/account/checkloginkey`,
-      ***REMOVED*** loginKey: loggedInUser.loginKey ***REMOVED***
-    );
+    const res = await axios.post<CheckLoginKeyResponse>(`$***REMOVED***endpoint***REMOVED***/v2/account/checkloginkey`, ***REMOVED***
+      loginKey: loggedInUser.loginKey,
+***REMOVED***);
 
     if (res.status === 200) ***REMOVED***
       if (res.data.isValid) ***REMOVED***
@@ -58,18 +57,20 @@ const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
   return (
     <React.Fragment>
       <noscript>
-        <style>
-          ***REMOVED***`body ***REMOVED*** all: unset; ***REMOVED*** #main ***REMOVED*** display: none!important; ***REMOVED***`***REMOVED***
-        </style>
+        <style>***REMOVED***`body ***REMOVED*** all: unset; ***REMOVED*** #main ***REMOVED*** display: none!important; ***REMOVED***`***REMOVED***</style>
         ***REMOVED***/*eslint-disable-next-line*/***REMOVED***
-        <h1>Please enable JavaScript, or go to our <a href="/legacy/01">Legacy browser page</a>.</h1>
+        <h1>
+          Please enable JavaScript, or go to our <a href="/legacy/01">Legacy browser page</a>.
+        </h1>
       </noscript>
 
       <div id="main" className=***REMOVED***classNames(classes.main, styles.main)***REMOVED***>
         <AppBar />
         <div className=***REMOVED***styles.toolbar***REMOVED*** />
-        <main id="main" className="container pb-5 text-white">***REMOVED***children***REMOVED***</main>
-    </div>
+        <main id="main" className="container pb-5 text-white">
+          ***REMOVED***children***REMOVED***
+        </main>
+      </div>
     </React.Fragment>
   );
 ***REMOVED***;

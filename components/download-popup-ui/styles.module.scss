@@ -1,0 +1,28 @@
+@import "../../styles/breakpoints";
+
+.downloadPopupContainer ***REMOVED***
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+***REMOVED***
+
+.downloadPopup ***REMOVED***
+  width: 980px;
+  height: 500px;
+  box-sizing: border-box;
+
+  @include lg-down ***REMOVED***
+    width: 756px;
+***REMOVED***
+
+  @include md-down ***REMOVED***
+    width: calc(100vw - 30px);
+***REMOVED***
+***REMOVED***

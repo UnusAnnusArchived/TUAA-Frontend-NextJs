@@ -15,8 +15,6 @@ interface IProps ***REMOVED***
 const DownloadItem: React.FC<IProps> = (***REMOVED*** name, description, image, link, newTab ***REMOVED***) => ***REMOVED***
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
 
-  console.log(image);
-
   return (
     <div className="col-12 col-md-4 p-2">
       <a href=***REMOVED***link***REMOVED*** target=***REMOVED***newTab ? "_blank" : ""***REMOVED*** rel="noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none" ***REMOVED******REMOVED***>

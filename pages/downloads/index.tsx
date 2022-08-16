@@ -9,6 +9,7 @@ import ***REMOVED*** DownloadItem ***REMOVED*** from "../../components/download-
 //Images
 import tuaaDownloaderPic from "../../assets/tuaa-downloader.png";
 import tuaaNodeApiPic from "../../assets/tuaa-node-api.png";
+import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
 
 const Download: React.FC<void> = (props) => ***REMOVED***
   const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
@@ -23,13 +24,13 @@ const Download: React.FC<void> = (props) => ***REMOVED***
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED*** className="my-3" />
 
-          ***REMOVED***/* <DownloadItem
+          <DownloadItem
             name="Download Specific Episode"
             description=***REMOVED***t("downloads:specificEpisode:description")***REMOVED***
-            image=***REMOVED******REMOVED*** src: "https://cdn.unusann.us/thumbnails/01/001.jpg", width: 1280, height: 720 ***REMOVED******REMOVED***
+            image=***REMOVED******REMOVED*** src: `$***REMOVED***cdn***REMOVED***/thumbnails/01/001.webp`, width: 1280, height: 720 ***REMOVED******REMOVED***
             link="/downloads/specific-episode/"
             newTab=***REMOVED***false***REMOVED***
-          /> */***REMOVED***
+          />
           <DownloadItem
             name="The Unus Annus Downloader"
             description=***REMOVED***t("downloads:tuaaDownloader:description")***REMOVED***

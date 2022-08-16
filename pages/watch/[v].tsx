@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
 import ***REMOVED*** GetStaticPaths, GetStaticProps ***REMOVED*** from "next";
-import React from "react";
+import React, ***REMOVED*** useState ***REMOVED*** from "react";
 import fs from "fs";
 import config from "../../src/config.json";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
@@ -14,6 +14,7 @@ import ***REMOVED*** MetaHead ***REMOVED*** from "../../components/meta-head";
 import ***REMOVED*** Player ***REMOVED*** from "../../components/player";
 import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
 import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
+import VideoDownloadOptions from "../../components/video-download-options";
 
 interface IProps ***REMOVED***
   watchCode: string;
@@ -28,6 +29,8 @@ const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) =
   const embedUrl = `https://unusann.us/embed/$***REMOVED***watchCode***REMOVED***`;
   const metaVideoUrl = video.video ?? video.sources[0].src;
 
+  const [showDownloadOptions, setShowDownloadOptions] = useState(false);
+
   return (
     <Layout>
       <MetaHead
@@ -38,8 +41,11 @@ const Watch: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) =
         description=***REMOVED***video.description***REMOVED***
         image=***REMOVED***`https:$***REMOVED***image***REMOVED***`***REMOVED***
       />
-      <Player video=***REMOVED***video***REMOVED*** watchCode=***REMOVED***watchCode***REMOVED*** />
+      <Player video=***REMOVED***video***REMOVED*** watchCode=***REMOVED***watchCode***REMOVED*** setShowDownloadOptions=***REMOVED***setShowDownloadOptions***REMOVED*** />
       <EpisodesRow watchCode=***REMOVED***watchCode***REMOVED*** />
+      <Paper className=***REMOVED***`my-3 p-3 $***REMOVED***showDownloadOptions ? "" : "display-none"***REMOVED***`***REMOVED***>
+        <VideoDownloadOptions video=***REMOVED***video***REMOVED*** />
+      </Paper>
       <Paper className="my-3 p-3 desc">
         <Typography variant="h6" component="h1">
           ***REMOVED***video.title***REMOVED***

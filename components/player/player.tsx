@@ -13,9 +13,10 @@ interface IProps ***REMOVED***
   video: IVideo;
   watchCode: string;
   isEmbed?: boolean;
+  setShowDownloadOptions: React.Dispatch<React.SetStateAction<boolean>>;
 ***REMOVED***
 
-const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REMOVED***) => ***REMOVED***
+const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed, setShowDownloadOptions ***REMOVED***) => ***REMOVED***
   const playerEl = useRef(null);
   const [plyr, setPlyr] = useState<Plyr>(null);
   const [customControlsContainer, setCustomControlsContainer] = useState(null);
@@ -78,6 +79,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
         "volume",
         "captions",
         "settings",
+        "download",
         "airplay",
         "fullscreen",
       ],
@@ -132,14 +134,6 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
         iosNative: true,
     ***REMOVED***
 ***REMOVED***);
-    console.log(
-      video.sources?.map((source) => ***REMOVED***
-        return ***REMOVED***
-          ...source,
-          src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
-    ***REMOVED***;
-  ***REMOVED***) ?? [***REMOVED*** src: `$***REMOVED***cdn***REMOVED***$***REMOVED***video.video***REMOVED***`, type: "video/mp4" ***REMOVED***]
-    );
     player.source = ***REMOVED***
       type: "video",
       title: video.title ?? "",
@@ -169,6 +163,12 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed ***REM
     if (isEmbed) ***REMOVED***
       playerContainer.classList.add(embedStyles["embed-player"]);
 ***REMOVED***
+
+    const plyrDownloadBtn = document.querySelector('a[data-plyr="download"]') as HTMLAnchorElement;
+    plyrDownloadBtn.addEventListener("click", (evt) => ***REMOVED***
+      evt.preventDefault();
+      setShowDownloadOptions(true);
+***REMOVED***);
 
     /* Choice Bar */
     const container = document.createElement("div");
