@@ -9,6 +9,7 @@ import { DownloadItem } from "../../components/download-item";
 //Images
 import tuaaDownloaderPic from "../../assets/tuaa-downloader.png";
 import tuaaNodeApiPic from "../../assets/tuaa-node-api.png";
+import { cdn } from "../../src/endpoints";
 
 const Download: React.FC<void> = (props) => {
   const { t, i18n } = useTranslation();
@@ -23,13 +24,13 @@ const Download: React.FC<void> = (props) => {
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
 
-          {/* <DownloadItem
+          <DownloadItem
             name="Download Specific Episode"
             description={t("downloads:specificEpisode:description")}
-            image={{ src: "https://cdn.unusann.us/thumbnails/01/001.jpg", width: 1280, height: 720 }}
+            image={{ src: `${cdn}/thumbnails/01/001.webp`, width: 1280, height: 720 }}
             link="/downloads/specific-episode/"
             newTab={false}
-          /> */}
+          />
           <DownloadItem
             name="The Unus Annus Downloader"
             description={t("downloads:tuaaDownloader:description")}

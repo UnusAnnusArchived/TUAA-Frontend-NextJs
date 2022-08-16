@@ -1,5 +1,6 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { useState } from "react";
+import { cdn } from "../../src/endpoints";
 import { IVideo } from "../../src/types";
 
 interface IProps {
@@ -7,25 +8,31 @@ interface IProps {
 }
 
 const SubtitlePopup: React.FC<IProps> = ({ video }) => {
-  const [subtitleLanguage, setSubtitleLanguage] = useState("en");
+  const [subtitleUrl, setSubtitleUrl] = useState<string>();
 
   const handleChange = (event: SelectChangeEvent) => {
-    console.log(event.target);
-    // setSubtitleLanguage(event.target.value as string);
+    setSubtitleUrl(`${cdn}${event.target.value}`);
   };
 
   return (
     <FormControl fullWidth>
       <InputLabel>Language</InputLabel>
-      <Select label="Language" value={subtitleLanguage ?? "ass"} onChange={handleChange}>
+      <Select label="Language" onChange={handleChange}>
         {video.tracks.map((subtitle) => {
-          return (
-            <MenuItem key={subtitle.srcLang} value={subtitle.srcLang}>
-              {subtitle.label}
-            </MenuItem>
-          );
+          if (subtitle.kind === "captions") {
+            return (
+              <MenuItem key={subtitle.srcLang} value={subtitle.src}>
+                {subtitle.label}
+              </MenuItem>
+            );
+          }
         })}
       </Select>
+      <div style={{ marginTop: 10, textAlign: "center" }}>
+        <Button href={subtitleUrl} variant="contained" disabled={subtitleUrl === undefined}>
+          Download
+        </Button>
+      </div>
     </FormControl>
   );
 };

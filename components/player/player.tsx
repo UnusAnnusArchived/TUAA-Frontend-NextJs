@@ -13,9 +13,10 @@ interface IProps {
   video: IVideo;
   watchCode: string;
   isEmbed?: boolean;
+  setShowDownloadOptions: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
+const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOptions }) => {
   const playerEl = useRef(null);
   const [plyr, setPlyr] = useState<Plyr>(null);
   const [customControlsContainer, setCustomControlsContainer] = useState(null);
@@ -78,6 +79,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
         "volume",
         "captions",
         "settings",
+        "download",
         "airplay",
         "fullscreen",
       ],
@@ -132,14 +134,6 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
         iosNative: true,
       },
     });
-    console.log(
-      video.sources?.map((source) => {
-        return {
-          ...source,
-          src: `${cdn}${source.src}`,
-        };
-      }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }]
-    );
     player.source = {
       type: "video",
       title: video.title ?? "",
@@ -169,6 +163,12 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed }) => {
     if (isEmbed) {
       playerContainer.classList.add(embedStyles["embed-player"]);
     }
+
+    const plyrDownloadBtn = document.querySelector('a[data-plyr="download"]') as HTMLAnchorElement;
+    plyrDownloadBtn.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      setShowDownloadOptions(true);
+    });
 
     /* Choice Bar */
     const container = document.createElement("div");

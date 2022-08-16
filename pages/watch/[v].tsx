@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React from "react";
+import React, { useState } from "react";
 import fs from "fs";
 import config from "../../src/config.json";
 import { useTranslation } from "react-i18next";
@@ -14,6 +14,7 @@ import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
 import { endpoint } from "../../src/endpoints";
 import { IVideo } from "../../src/types";
+import VideoDownloadOptions from "../../components/video-download-options";
 
 interface IProps {
   watchCode: string;
@@ -28,6 +29,8 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   const embedUrl = `https://unusann.us/embed/${watchCode}`;
   const metaVideoUrl = video.video ?? video.sources[0].src;
 
+  const [showDownloadOptions, setShowDownloadOptions] = useState(false);
+
   return (
     <Layout>
       <MetaHead
@@ -38,8 +41,11 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
         description={video.description}
         image={`https:${image}`}
       />
-      <Player video={video} watchCode={watchCode} />
+      <Player video={video} watchCode={watchCode} setShowDownloadOptions={setShowDownloadOptions} />
       <EpisodesRow watchCode={watchCode} />
+      <Paper className={`my-3 p-3 ${showDownloadOptions ? "" : "display-none"}`}>
+        <VideoDownloadOptions video={video} />
+      </Paper>
       <Paper className="my-3 p-3 desc">
         <Typography variant="h6" component="h1">
           {video.title}
