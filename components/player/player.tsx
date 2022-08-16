@@ -13,7 +13,7 @@ interface IProps {
   video: IVideo;
   watchCode: string;
   isEmbed?: boolean;
-  setShowDownloadOptions: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowDownloadOptions?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOptions }) => {
