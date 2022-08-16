@@ -165,10 +165,12 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
     }
 
     const plyrDownloadBtn = document.querySelector('a[data-plyr="download"]') as HTMLAnchorElement;
-    plyrDownloadBtn.addEventListener("click", (evt) => {
-      evt.preventDefault();
-      setShowDownloadOptions(true);
-    });
+    if (plyrDownloadBtn) {
+      plyrDownloadBtn.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        setShowDownloadOptions(true);
+      });
+    }
 
     /* Choice Bar */
     const container = document.createElement("div");
