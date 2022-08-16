@@ -79,7 +79,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
         "volume",
         "captions",
         "settings",
-        "download",
+        isEmbed ? "" : "download",
         "airplay",
         "fullscreen",
       ],
