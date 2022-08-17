@@ -5,13 +5,15 @@ import moment from "moment";
 import { Layout } from "../components/layout";
 import { MetaHead } from "../components/meta-head";
 import styles from "../styles/PatreonDonors.module.scss";
-
-// Import Profile Pictures
-import CaitieP from "../patreon-donor-pfps/Caitie P.jpeg";
-import Colyn from "../patreon-donor-pfps/Colyn.jpeg";
-import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..jpeg";
 import Link from "next/link";
 import { Divider, Typography } from "@mui/material";
+
+// Import Profile Pictures
+import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
+import Colyn from "../patreon-donor-pfps/Colyn.webp";
+import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
+import rae from "../patreon-donor-pfps/rae.webp";
+import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
 const PatreonDonors = () => {
   return (
@@ -38,7 +40,7 @@ const PatreonDonors = () => {
             <div className={styles.infoContainer}>
               <span className={styles.name}>Caitie P</span>
               <span>Since {moment("2022-03-03").fromNow()}</span>
-              <span>$5</span>
+              <span>€4.50</span>
             </div>
           </Paper>
         </div>
@@ -49,6 +51,32 @@ const PatreonDonors = () => {
               <span className={styles.name}>Colyn</span>
               <span>Since {moment("2022-08-01").fromNow()}</span>
               <span>$5</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={HopeVictoriaLiepe}
+              alt="Hope Victoria Liepe's Patreon Profile Picture"
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Hope Victoria Liepe</span>
+              <span>Since {moment("2022-08-13").fromNow()}</span>
+              <span>$5</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image className={styles.pfp} width="100" height="100" src={rae} alt="rae's Patreon Profile Picture" />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>rae</span>
+              <span>Since {moment("2022-08-14").fromNow()}</span>
+              <span>$2</span>
             </div>
           </Paper>
         </div>
