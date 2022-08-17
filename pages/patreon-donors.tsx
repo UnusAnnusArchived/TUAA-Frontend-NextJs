@@ -5,13 +5,15 @@ import moment from "moment";
 import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
 import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
 import styles from "../styles/PatreonDonors.module.scss";
-
-// Import Profile Pictures
-import CaitieP from "../patreon-donor-pfps/Caitie P.jpeg";
-import Colyn from "../patreon-donor-pfps/Colyn.jpeg";
-import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..jpeg";
 import Link from "next/link";
 import ***REMOVED*** Divider, Typography ***REMOVED*** from "@mui/material";
+
+// Import Profile Pictures
+import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
+import Colyn from "../patreon-donor-pfps/Colyn.webp";
+import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
+import rae from "../patreon-donor-pfps/rae.webp";
+import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
 const PatreonDonors = () => ***REMOVED***
   return (
@@ -38,7 +40,7 @@ const PatreonDonors = () => ***REMOVED***
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>Caitie P</span>
               <span>Since ***REMOVED***moment("2022-03-03").fromNow()***REMOVED***</span>
-              <span>$5</span>
+              <span>€4.50</span>
             </div>
           </Paper>
         </div>
@@ -49,6 +51,32 @@ const PatreonDonors = () => ***REMOVED***
               <span className=***REMOVED***styles.name***REMOVED***>Colyn</span>
               <span>Since ***REMOVED***moment("2022-08-01").fromNow()***REMOVED***</span>
               <span>$5</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***HopeVictoriaLiepe***REMOVED***
+              alt="Hope Victoria Liepe's Patreon Profile Picture"
+            />
+            <div className=***REMOVED***styles.infoContainer***REMOVED***>
+              <span className=***REMOVED***styles.name***REMOVED***>Hope Victoria Liepe</span>
+              <span>Since ***REMOVED***moment("2022-08-13").fromNow()***REMOVED***</span>
+              <span>$5</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+            <Image className=***REMOVED***styles.pfp***REMOVED*** width="100" height="100" src=***REMOVED***rae***REMOVED*** alt="rae's Patreon Profile Picture" />
+            <div className=***REMOVED***styles.infoContainer***REMOVED***>
+              <span className=***REMOVED***styles.name***REMOVED***>rae</span>
+              <span>Since ***REMOVED***moment("2022-08-14").fromNow()***REMOVED***</span>
+              <span>$2</span>
             </div>
           </Paper>
         </div>
