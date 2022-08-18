@@ -29,12 +29,19 @@
   "tracks": [],
   "posters": [
     {
+      "src": "/thumbnails/00/005.avif",
+      "type": "image/avif",
+      "size": 20953
+    },
+    {
       "src": "/thumbnails/00/005.webp",
-      "type": "image/webp"
+      "type": "image/webp",
+      "size": 46380
     },
     {
       "src": "/thumbnails/00/005.jpg",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "size": 54632
     }
   ],
   "season": 0,

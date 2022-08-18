@@ -24,6 +24,7 @@ interface IVideoPreviewSprite {
 interface IVideoPoster {
   src: string;
   type: string;
+  size: number;
 }
 
 export type Season = IVideo[];

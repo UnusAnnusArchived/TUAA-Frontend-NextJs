@@ -4,7 +4,7 @@ import { IUser } from "../../../../src/types";
 import { handle401 } from "../../_handleErrors";
 
 interface IPostInfo {
-  loginKeys: string[] | string;
+  loginKeys: string[];
   loginKey: string;
   id: string;
 }
