@@ -12,6 +12,7 @@ import { Divider, Typography } from "@mui/material";
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
 import Colyn from "../patreon-donor-pfps/Colyn.webp";
 import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
+import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
@@ -67,6 +68,22 @@ const PatreonDonors = () => {
               <span className={styles.name}>Hope Victoria Liepe</span>
               <span>Since {moment("2022-08-13").fromNow()}</span>
               <span>$5</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={Katsam87}
+              alt="Katsam87's Patreon Profile Picture"
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Katsam87</span>
+              <span>Since {moment("2022-08-20").fromNow()}</span>
+              <span>$1</span>
             </div>
           </Paper>
         </div>
