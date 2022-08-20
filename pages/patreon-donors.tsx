@@ -12,6 +12,7 @@ import ***REMOVED*** Divider, Typography ***REMOVED*** from "@mui/material";
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
 import Colyn from "../patreon-donor-pfps/Colyn.webp";
 import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
+import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
@@ -67,6 +68,22 @@ const PatreonDonors = () => ***REMOVED***
               <span className=***REMOVED***styles.name***REMOVED***>Hope Victoria Liepe</span>
               <span>Since ***REMOVED***moment("2022-08-13").fromNow()***REMOVED***</span>
               <span>$5</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***Katsam87***REMOVED***
+              alt="Katsam87's Patreon Profile Picture"
+            />
+            <div className=***REMOVED***styles.infoContainer***REMOVED***>
+              <span className=***REMOVED***styles.name***REMOVED***>Katsam87</span>
+              <span>Since ***REMOVED***moment("2022-08-20").fromNow()***REMOVED***</span>
+              <span>$1</span>
             </div>
           </Paper>
         </div>
