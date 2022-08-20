@@ -36,12 +36,19 @@
   ],
   "posters": [
     {
+      "src": "/thumbnails/00/002.avif",
+      "type": "image/avif",
+      "size": 9000
+    },
+    {
       "src": "/thumbnails/00/002.webp",
-      "type": "image/webp"
+      "type": "image/webp",
+      "size": 18204
     },
     {
       "src": "/thumbnails/00/002.jpg",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "size": 25825
     }
   ],
   "season": 0,
