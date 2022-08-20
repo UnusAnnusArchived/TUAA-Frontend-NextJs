@@ -29,12 +29,19 @@
   "tracks": [],
   "posters": [
     ***REMOVED***
+      "src": "/thumbnails/00/005.avif",
+      "type": "image/avif",
+      "size": 20953
+  ***REMOVED***
+    ***REMOVED***
       "src": "/thumbnails/00/005.webp",
-      "type": "image/webp"
+      "type": "image/webp",
+      "size": 46380
   ***REMOVED***
     ***REMOVED***
       "src": "/thumbnails/00/005.jpg",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "size": 54632
 ***REMOVED***
   ],
   "season": 0,

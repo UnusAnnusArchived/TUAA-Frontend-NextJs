@@ -24,6 +24,7 @@ interface IVideoPreviewSprite ***REMOVED***
 interface IVideoPoster ***REMOVED***
   src: string;
   type: string;
+  size: number;
 ***REMOVED***
 
 export type Season = IVideo[];

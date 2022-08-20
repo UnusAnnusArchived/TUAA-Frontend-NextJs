@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
 import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
 import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
+import ***REMOVED*** ThumbnailImage ***REMOVED*** from "../thumbnail-image/thumbnail-image";
 
 interface IProps ***REMOVED***
   video: IVideo;
@@ -22,7 +23,14 @@ const VideoThumbnail: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => 
   return (
     <Paper className="p-2 h-100">
       <div className="ratio ratio-16x9">
-        <Image src=***REMOVED***img***REMOVED*** alt="" objectFit="cover" objectPosition="center center" quality=***REMOVED***100***REMOVED*** layout="fill" />
+        <ThumbnailImage
+          video=***REMOVED***video***REMOVED***
+          alt=""
+          objectFit="cover"
+          objectPosition="center center"
+          quality=***REMOVED***100***REMOVED***
+          layout="fill"
+        />
       </div>
       <div className="text-center mt-2">
         <Typography variant="body1">***REMOVED***video.title***REMOVED***</Typography>

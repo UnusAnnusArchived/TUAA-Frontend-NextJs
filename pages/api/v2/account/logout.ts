@@ -4,7 +4,7 @@ import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
 import ***REMOVED*** handle401 ***REMOVED*** from "../../_handleErrors";
 
 interface IPostInfo ***REMOVED***
-  loginKeys: string[] | string;
+  loginKeys: string[];
   loginKey: string;
   id: string;
 ***REMOVED***
