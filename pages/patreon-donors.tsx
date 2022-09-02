@@ -10,8 +10,11 @@ import ***REMOVED*** Divider, Typography ***REMOVED*** from "@mui/material";
 
 // Import Profile Pictures
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
+import CHGJake from "../patreon-donor-pfps/CHG Jake.webp";
 import Colyn from "../patreon-donor-pfps/Colyn.webp";
 import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
+import ItsMe from "../patreon-donor-pfps/It's Me.webp";
+import JoshuaPerez from "../patreon-donor-pfps/Joshua Perez.webp";
 import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
@@ -29,14 +32,15 @@ const PatreonDonors = () => ***REMOVED***
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-md-4 p-2 h-100">
+        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
             <Image
               className=***REMOVED***styles.pfp***REMOVED***
               width="100"
               height="100"
-              src=***REMOVED***CaitieP***REMOVED***
+              src=***REMOVED***CaitieP.src***REMOVED***
               alt="Caitie P's Patreon Profile Picture"
+              blurDataURL=***REMOVED***CaitieP.blurDataURL***REMOVED***
             />
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>Caitie P</span>
@@ -44,10 +48,34 @@ const PatreonDonors = () => ***REMOVED***
               <span>€4.50</span>
             </div>
           </Paper>
-        </div>
+        </div> */***REMOVED***
+        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***CHGJake.src***REMOVED***
+              alt="CHG Jake's Patreon Profile Picture"
+              blurDataURL=***REMOVED***CHGJake.blurDataURL***REMOVED***
+            />
+            <div className=***REMOVED***styles.infoContainer***REMOVED***>
+              <span className=***REMOVED***styles.name***REMOVED***>CHG Jake</span>
+              <span>Since ***REMOVED***moment("2022-09-01").fromNow()***REMOVED***</span>
+              <span>$5</span>
+            </div>
+          </Paper>
+        </div> */***REMOVED***
         <div className="col-12 col-md-4 p-2 h-100">
           <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
-            <Image className=***REMOVED***styles.pfp***REMOVED*** width="100" height="100" src=***REMOVED***Colyn***REMOVED*** alt="Colyn's Patreon Profile Picture" />
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***Colyn.src***REMOVED***
+              alt="Colyn's Patreon Profile Picture"
+              blurDataURL=***REMOVED***Colyn.blurDataURL***REMOVED***
+            />
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>Colyn</span>
               <span>Since ***REMOVED***moment("2022-08-01").fromNow()***REMOVED***</span>
@@ -55,14 +83,15 @@ const PatreonDonors = () => ***REMOVED***
             </div>
           </Paper>
         </div>
-        <div className="col-12 col-md-4 p-2 h-100">
+        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
             <Image
               className=***REMOVED***styles.pfp***REMOVED***
               width="100"
               height="100"
-              src=***REMOVED***HopeVictoriaLiepe***REMOVED***
+              src=***REMOVED***HopeVictoriaLiepe.src***REMOVED***
               alt="Hope Victoria Liepe's Patreon Profile Picture"
+              blurDataURL=***REMOVED***HopeVictoriaLiepe.blurDataURL***REMOVED***
             />
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>Hope Victoria Liepe</span>
@@ -70,15 +99,50 @@ const PatreonDonors = () => ***REMOVED***
               <span>$5</span>
             </div>
           </Paper>
-        </div>
+        </div> */***REMOVED***
+        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***ItsMe.src***REMOVED***
+              alt="It's Me's Patreon Profile Picture"
+              blurDataURL=***REMOVED***ItsMe.blurDataURL***REMOVED***
+            />
+            <div className=***REMOVED***styles.infoContainer***REMOVED***>
+              <span className=***REMOVED***styles.name***REMOVED***>It&apos;s Me</span>
+              <span>Since ***REMOVED***moment("2022-08-25").fromNow()***REMOVED***</span>
+              <span>$1</span>
+            </div>
+          </Paper>
+        </div> */***REMOVED***
+        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***JoshuaPerez.src***REMOVED***
+              alt="Joshua Perez's Patreon Profile Picture"
+              blurDataURL=***REMOVED***JoshuaPerez.blurDataURL***REMOVED***
+            />
+            <div className=***REMOVED***styles.infoContainer***REMOVED***>
+              <span className=***REMOVED***styles.name***REMOVED***>Joshua Perez</span>
+              <span>Since ***REMOVED***moment("2022-08-30").fromNow()***REMOVED***</span>
+              <span>$1</span>
+            </div>
+          </Paper>
+        </div> */***REMOVED***
         <div className="col-12 col-md-4 p-2 h-100">
           <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
             <Image
               className=***REMOVED***styles.pfp***REMOVED***
               width="100"
               height="100"
-              src=***REMOVED***Katsam87***REMOVED***
+              src=***REMOVED***Katsam87.src***REMOVED***
               alt="Katsam87's Patreon Profile Picture"
+              blurDataURL=***REMOVED***Katsam87.blurDataURL***REMOVED***
             />
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>Katsam87</span>
@@ -87,24 +151,32 @@ const PatreonDonors = () => ***REMOVED***
             </div>
           </Paper>
         </div>
-        <div className="col-12 col-md-4 p-2 h-100">
+        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
-            <Image className=***REMOVED***styles.pfp***REMOVED*** width="100" height="100" src=***REMOVED***rae***REMOVED*** alt="rae's Patreon Profile Picture" />
+            <Image
+              className=***REMOVED***styles.pfp***REMOVED***
+              width="100"
+              height="100"
+              src=***REMOVED***rae.src***REMOVED***
+              alt="rae's Patreon Profile Picture"
+              blurDataURL=***REMOVED***rae.blurDataURL***REMOVED***
+            />
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>rae</span>
               <span>Since ***REMOVED***moment("2022-08-14").fromNow()***REMOVED***</span>
               <span>$2</span>
             </div>
           </Paper>
-        </div>
+        </div> */***REMOVED***
         <div className="col-12 col-md-4 p-2 h-100">
           <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
             <Image
               className=***REMOVED***styles.pfp***REMOVED***
               width="100"
               height="100"
-              src=***REMOVED***TheBoltLord***REMOVED***
+              src=***REMOVED***TheBoltLord.src***REMOVED***
               alt="TheBoltLord .'s Patreon Profile Picture"
+              blurDataURL=***REMOVED***TheBoltLord.blurDataURL***REMOVED***
             />
             <div className=***REMOVED***styles.infoContainer***REMOVED***>
               <span className=***REMOVED***styles.name***REMOVED***>TheBoltLord .</span>
