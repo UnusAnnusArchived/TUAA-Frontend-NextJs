@@ -10,8 +10,11 @@ import { Divider, Typography } from "@mui/material";
 
 // Import Profile Pictures
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
+import CHGJake from "../patreon-donor-pfps/CHG Jake.webp";
 import Colyn from "../patreon-donor-pfps/Colyn.webp";
 import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
+import ItsMe from "../patreon-donor-pfps/It's Me.webp";
+import JoshuaPerez from "../patreon-donor-pfps/Joshua Perez.webp";
 import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
@@ -29,14 +32,15 @@ const PatreonDonors = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-md-4 p-2 h-100">
+        {/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
               className={styles.pfp}
               width="100"
               height="100"
-              src={CaitieP}
+              src={CaitieP.src}
               alt="Caitie P's Patreon Profile Picture"
+              blurDataURL={CaitieP.blurDataURL}
             />
             <div className={styles.infoContainer}>
               <span className={styles.name}>Caitie P</span>
@@ -44,10 +48,34 @@ const PatreonDonors = () => {
               <span>€4.50</span>
             </div>
           </Paper>
-        </div>
+        </div> */}
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={CHGJake.src}
+              alt="CHG Jake's Patreon Profile Picture"
+              blurDataURL={CHGJake.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>CHG Jake</span>
+              <span>Since {moment("2022-09-01").fromNow()}</span>
+              <span>$5</span>
+            </div>
+          </Paper>
+        </div> */}
         <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
-            <Image className={styles.pfp} width="100" height="100" src={Colyn} alt="Colyn's Patreon Profile Picture" />
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={Colyn.src}
+              alt="Colyn's Patreon Profile Picture"
+              blurDataURL={Colyn.blurDataURL}
+            />
             <div className={styles.infoContainer}>
               <span className={styles.name}>Colyn</span>
               <span>Since {moment("2022-08-01").fromNow()}</span>
@@ -55,14 +83,15 @@ const PatreonDonors = () => {
             </div>
           </Paper>
         </div>
-        <div className="col-12 col-md-4 p-2 h-100">
+        {/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
               className={styles.pfp}
               width="100"
               height="100"
-              src={HopeVictoriaLiepe}
+              src={HopeVictoriaLiepe.src}
               alt="Hope Victoria Liepe's Patreon Profile Picture"
+              blurDataURL={HopeVictoriaLiepe.blurDataURL}
             />
             <div className={styles.infoContainer}>
               <span className={styles.name}>Hope Victoria Liepe</span>
@@ -70,15 +99,50 @@ const PatreonDonors = () => {
               <span>$5</span>
             </div>
           </Paper>
-        </div>
+        </div> */}
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={ItsMe.src}
+              alt="It's Me's Patreon Profile Picture"
+              blurDataURL={ItsMe.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>It&apos;s Me</span>
+              <span>Since {moment("2022-08-25").fromNow()}</span>
+              <span>$1</span>
+            </div>
+          </Paper>
+        </div> */}
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={JoshuaPerez.src}
+              alt="Joshua Perez's Patreon Profile Picture"
+              blurDataURL={JoshuaPerez.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Joshua Perez</span>
+              <span>Since {moment("2022-08-30").fromNow()}</span>
+              <span>$1</span>
+            </div>
+          </Paper>
+        </div> */}
         <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
               className={styles.pfp}
               width="100"
               height="100"
-              src={Katsam87}
+              src={Katsam87.src}
               alt="Katsam87's Patreon Profile Picture"
+              blurDataURL={Katsam87.blurDataURL}
             />
             <div className={styles.infoContainer}>
               <span className={styles.name}>Katsam87</span>
@@ -87,24 +151,32 @@ const PatreonDonors = () => {
             </div>
           </Paper>
         </div>
-        <div className="col-12 col-md-4 p-2 h-100">
+        {/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
-            <Image className={styles.pfp} width="100" height="100" src={rae} alt="rae's Patreon Profile Picture" />
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={rae.src}
+              alt="rae's Patreon Profile Picture"
+              blurDataURL={rae.blurDataURL}
+            />
             <div className={styles.infoContainer}>
               <span className={styles.name}>rae</span>
               <span>Since {moment("2022-08-14").fromNow()}</span>
               <span>$2</span>
             </div>
           </Paper>
-        </div>
+        </div> */}
         <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
               className={styles.pfp}
               width="100"
               height="100"
-              src={TheBoltLord}
+              src={TheBoltLord.src}
               alt="TheBoltLord .'s Patreon Profile Picture"
+              blurDataURL={TheBoltLord.blurDataURL}
             />
             <div className={styles.infoContainer}>
               <span className={styles.name}>TheBoltLord .</span>
