@@ -1,25 +1,25 @@
-const en = ***REMOVED***
-  home: ***REMOVED***
+const en = {
+  home: {
     title: "Home",
-***REMOVED***
-  player: ***REMOVED***
+  },
+  player: {
     nextEpisode: "Next episode",
     previousEpisode: "Previous episode",
     episode: "Episode",
-***REMOVED***
-  comments: ***REMOVED***
+  },
+  comments: {
     title: "Comments",
     placeholder: "Add a public comment",
     send: "Comment",
     noComments: "There are no comments",
     loadFail: "Comments failed to load",
     loggedOut: "You need to login to comment on this video",
-***REMOVED***
-  seasons: ***REMOVED***
+  },
+  seasons: {
     season1: "Season 1",
     season2: "Specials",
-***REMOVED***
-  common: ***REMOVED***
+  },
+  common: {
     profile: "Profile",
     language: "Language",
     logout: "Logout",
@@ -29,16 +29,16 @@ const en = ***REMOVED***
     save: "Save",
     search: "Search",
     page: "page",
-***REMOVED***
-  login: ***REMOVED***
+  },
+  login: {
     title: "Login",
     titleLong: "Login to your account",
     usernameEmail: "Username or Email",
     password: "Password",
     loginBtn: "Login",
     error: "There has been an error logging you in",
-***REMOVED***
-  register: ***REMOVED***
+  },
+  register: {
     title: "Register",
     titleLong: "Register a new account",
     email: "Email",
@@ -48,10 +48,10 @@ const en = ***REMOVED***
     registerBtn: "Create new account",
     error: "There has been an error creating you an account",
     success: "Your account has been created! Please, login now.",
-***REMOVED***
-  profile: ***REMOVED***
+  },
+  profile: {
     title: "Profile",
-    pfp: ***REMOVED***
+    pfp: {
       title: "Your profile picture",
       change: "Change profile picture",
       description: "Upload a new profile picture.",
@@ -60,53 +60,53 @@ const en = ***REMOVED***
       fileSelect: "Choose image file",
       error: "There has been an error changing your profile picture",
       success: "Profile picture changed!",
-  ***REMOVED***
+    },
     username: "Username",
     email: "Email",
     dataTitle: "Data held about your profile",
-    logout: ***REMOVED***
+    logout: {
       title: "Logout options",
       local: "Logout from this device",
       all: "Logout from all devices",
       successAll: "You have been logged out from all devices",
       successLocal: "You have been logged out from this device",
       error: "There has been an error logging you out",
-  ***REMOVED***
-***REMOVED***
-  downloads: ***REMOVED***
+    },
+  },
+  downloads: {
     title: "Downloads",
-    imageAlt: "Image of ***REMOVED***downloadName***REMOVED***",
-    specificEpisode: ***REMOVED***
+    imageAlt: "Image of {downloadName}",
+    specificEpisode: {
       title: "Download Specific Episode",
       description: "Download a specific episode without the use of a program",
-      downloadOptions: ***REMOVED***
+      downloadOptions: {
         title: "Download Options",
-    ***REMOVED***
-  ***REMOVED***
-    tuaaDownloader: ***REMOVED***
+      },
+    },
+    tuaaDownloader: {
       description: "An easy way to mass download any of our episodes",
-  ***REMOVED***
-    tuaaNodeApi: ***REMOVED***
+    },
+    tuaaNodeApi: {
       description: "An easy way to communicate with our API in Node.JS",
-  ***REMOVED***
-***REMOVED***
-  settings: ***REMOVED***
+    },
+  },
+  settings: {
     title: "Settings",
-    accountSettings: "Looking for account settings? They're on the ***REMOVED***link***REMOVED***",
+    accountSettings: "Looking for account settings? They're on the {link}",
     autoplay: "Autoplay",
-***REMOVED***
-  errors: ***REMOVED***
+  },
+  errors: {
     pageNotFound: "The page you were looking for was not found",
     returnToHome: "Return to the home page",
-***REMOVED***
-  plyr: ***REMOVED***
+  },
+  plyr: {
     restart: "Restart",
-    rewind: "Rewind ***REMOVED***seektime***REMOVED***s",
+    rewind: "Rewind {seektime}s",
     play: "Play",
     pause: "Pause",
-    fastForward: "Forward ***REMOVED***seektime***REMOVED***s",
+    fastForward: "Forward {seektime}s",
     seek: "Seek",
-    seekLabel: "***REMOVED***currentTime***REMOVED*** of ***REMOVED***duration***REMOVED***",
+    seekLabel: "{currentTime} of {duration}",
     played: "Played",
     buffered: "Buffered",
     currentTime: "Current time",
@@ -119,7 +119,7 @@ const en = ***REMOVED***
     download: "Download",
     enterFullscreen: "Enter fullscreen",
     exitFullscreen: "Exit fullscreen",
-    frameTitle: "Player for ***REMOVED***title***REMOVED***",
+    frameTitle: "Player for {title}",
     captions: "Captions",
     settings: "Settings",
     pip: "PIP",
@@ -135,7 +135,7 @@ const en = ***REMOVED***
     disabled: "Disabled",
     enabled: "Enabled",
     advertisement: "Ad",
-***REMOVED***
-***REMOVED***;
+  },
+};
 
 export default en;

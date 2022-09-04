@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
-import React, ***REMOVED*** useState ***REMOVED*** from "react";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
+import React, { useState } from "react";
+import { Layout } from "../components/layout";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import InputLabel from "@mui/material/InputLabel";
@@ -11,20 +11,20 @@ import IconButton from "@mui/material/IconButton";
 import styles from "../styles/Login.module.scss";
 import classNames from "classnames";
 import Button from "@mui/material/Button";
-import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
+import { endpoint } from "../src/endpoints";
 import axios from "axios";
-import ***REMOVED*** SignupResponse ***REMOVED*** from "../src/types";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** previousPageAtom, userAtom ***REMOVED*** from "../src/atoms";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
+import { SignupResponse } from "../src/types";
+import { useRecoilState } from "recoil";
+import { previousPageAtom, userAtom } from "../src/atoms";
+import { MetaHead } from "../components/meta-head";
+import { useRouter } from "next/router";
+import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-const LoginPage: React.FC = () => ***REMOVED***
+const LoginPage: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
-  const ***REMOVED*** t ***REMOVED*** = useTranslation();
+  const { t } = useTranslation();
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -34,174 +34,174 @@ const LoginPage: React.FC = () => ***REMOVED***
   const router = useRouter();
   const [, setToast] = useToasts();
 
-  const handleClickShowPassword = () => ***REMOVED***
+  const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
-***REMOVED***;
+  };
 
-  const isValid = () => ***REMOVED***
+  const isValid = () => {
     return (
       email.trim().length > 0 &&
       password.trim().length > 5 &&
       password.trim() === confirmPassword.trim()
     );
-***REMOVED***;
+  };
 
-  const onSubmit = async () => ***REMOVED***
-    if (!isValid()) ***REMOVED***
+  const onSubmit = async () => {
+    if (!isValid()) {
       return;
-***REMOVED***
+    }
 
-    try ***REMOVED***
+    try {
       const res = await axios.post<SignupResponse>(
-        `$***REMOVED***endpoint***REMOVED***/v2/account/signup`,
-        ***REMOVED***
+        `${endpoint}/v2/account/signup`,
+        {
           email: email.trim(),
           username: username.trim(),
           password: password.trim(),
           confirmpassword: confirmPassword.trim(),
-      ***REMOVED***
-        ***REMOVED***
-          headers: ***REMOVED***
+        },
+        {
+          headers: {
             "Access-Control-Allow-Origin": "*",
-        ***REMOVED***
-    ***REMOVED***
+          },
+        }
       );
 
-      if (res.status !== 200) ***REMOVED***
+      if (res.status !== 200) {
         return;
-  ***REMOVED***
+      }
 
-      const ***REMOVED*** data ***REMOVED*** = res;
+      const { data } = res;
 
-      if (data) ***REMOVED***
-        if (data.success) ***REMOVED***
+      if (data) {
+        if (data.success) {
           router.push("/login");
-          setToast(***REMOVED***
+          setToast({
             type: "success",
             text: t("register:success"),
             delay: 10000,
-      ***REMOVED***);
+          });
           return;
-    ***REMOVED***
+        }
 
-        setToast(***REMOVED***
+        setToast({
           type: "error",
           text: data.error.message,
-    ***REMOVED***);
-  ***REMOVED***
-***REMOVED*** catch (err) ***REMOVED***
+        });
+      }
+    } catch (err) {
       console.log(err);
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
   const handleMouseDownPassword = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => ***REMOVED***
+  ) => {
     event.preventDefault();
-***REMOVED***;
+  };
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("register:title")***REMOVED*** />
+      <MetaHead baseTitle={t("register:title")} />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        ***REMOVED***t("register:titleLong")***REMOVED***
+        {t("register:titleLong")}
       </Typography>
       <form id="register-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <TextField
-            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            className={classNames("my-3", styles.field)}
             id="email-archive"
             name="email-archive"
-            label=***REMOVED***t("register:email")***REMOVED***
+            label={t("register:email")}
             variant="standard"
-            value=***REMOVED***email***REMOVED***
+            value={email}
             type="email"
-            onChange=***REMOVED***(e) => setEmail(e.target.value)***REMOVED***
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
-            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            className={classNames("my-3", styles.field)}
             id="username-archive"
             name="username-archive"
-            label=***REMOVED***t("register:username")***REMOVED***
+            label={t("register:username")}
             variant="standard"
-            value=***REMOVED***username***REMOVED***
+            value={username}
             type="text"
-            onChange=***REMOVED***(e) => setUsername(e.target.value)***REMOVED***
+            onChange={(e) => setUsername(e.target.value)}
           />
           <FormControl
             variant="standard"
-            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            className={classNames("my-3", styles.field)}
           >
             <InputLabel htmlFor="standard-adornment-password">
-              ***REMOVED***t("register:password")***REMOVED***
+              {t("register:password")}
             </InputLabel>
             <Input
               id="password-archive"
               name="password-archive"
-              type=***REMOVED***showPassword ? "text" : "password"***REMOVED***
-              value=***REMOVED***password***REMOVED***
+              type={showPassword ? "text" : "password"}
+              value={password}
               autoComplete="new-password"
-              onChange=***REMOVED***(event) => setPassword(event.currentTarget.value)***REMOVED***
-              endAdornment=***REMOVED***
+              onChange={(event) => setPassword(event.currentTarget.value)}
+              endAdornment={
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
-                    onClick=***REMOVED***handleClickShowPassword***REMOVED***
-                    onMouseDown=***REMOVED***handleMouseDownPassword***REMOVED***
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
                   >
-                    ***REMOVED***showPassword ? <VisibilityOff /> : <Visibility />***REMOVED***
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-          ***REMOVED***
+              }
             />
           </FormControl>
           <FormControl
             variant="standard"
-            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            className={classNames("my-3", styles.field)}
           >
             <InputLabel htmlFor="standard-adornment-password">
-              ***REMOVED***t("register:confirmPassword")***REMOVED***
+              {t("register:confirmPassword")}
             </InputLabel>
             <Input
               id="confirm-password-archive"
               name="confirm-password-archive"
-              type=***REMOVED***showPassword ? "text" : "password"***REMOVED***
-              value=***REMOVED***confirmPassword***REMOVED***
+              type={showPassword ? "text" : "password"}
+              value={confirmPassword}
               autoComplete="new-password"
-              onChange=***REMOVED***(event) =>
+              onChange={(event) =>
                 setConfirmPassword(event.currentTarget.value)
-          ***REMOVED***
-              endAdornment=***REMOVED***
+              }
+              endAdornment={
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
-                    onClick=***REMOVED***handleClickShowPassword***REMOVED***
-                    onMouseDown=***REMOVED***handleMouseDownPassword***REMOVED***
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
                   >
-                    ***REMOVED***showPassword ? <VisibilityOff /> : <Visibility />***REMOVED***
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-          ***REMOVED***
+              }
             />
           </FormControl>
           <div
-            className=***REMOVED***classNames(
+            className={classNames(
               "my-4 d-flex justify-content-end",
               styles.field
-            )***REMOVED***
+            )}
           >
             <Button
               variant="contained"
-              disabled=***REMOVED***!isValid()***REMOVED***
-              onClick=***REMOVED***onSubmit***REMOVED***
+              disabled={!isValid()}
+              onClick={onSubmit}
             >
-              ***REMOVED***t("register:registerBtn")***REMOVED***
+              {t("register:registerBtn")}
             </Button>
           </div>
         </div>
       </form>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default LoginPage;

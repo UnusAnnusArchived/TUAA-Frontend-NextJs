@@ -1,24 +1,24 @@
 import fs from "fs";
-import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
-import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
+import { NextApiRequest, NextApiResponse } from "next";
+import { IUser } from "../../../../src/types";
 
-export default function checkloginkey(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
-  const ***REMOVED*** loginKey ***REMOVED*** = req.body;
+export default function checkloginkey(req: NextApiRequest, res: NextApiResponse) {
+  const { loginKey } = req.body;
   const users = fs.readdirSync("db/users");
 
   var isValid = false;
 
-  for (var i = 0; i < users.length; i++) ***REMOVED***
-    const user: IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
-    if (user.loginKeys.includes(loginKey)) ***REMOVED***
+  for (var i = 0; i < users.length; i++) {
+    const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+    if (user.loginKeys.includes(loginKey)) {
       //If the key is valid, send the client updated data in case it changed
       isValid = true;
-      res.send(***REMOVED*** isValid, user: ***REMOVED*** id: user.id, email: user.email, username: user.username, pfp: user.pfp ***REMOVED*** ***REMOVED***);
+      res.send({ isValid, user: { id: user.id, email: user.email, username: user.username, pfp: user.pfp } });
       break;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  if (!isValid) ***REMOVED***
-    res.send(***REMOVED*** isValid ***REMOVED***);
-***REMOVED***
-***REMOVED***
+  if (!isValid) {
+    res.send({ isValid });
+  }
+}

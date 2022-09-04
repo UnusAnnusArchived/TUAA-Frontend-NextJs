@@ -1,45 +1,45 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/01/122/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/122/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/122/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/122/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/122/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/01/122.webp",
       "type": "image/webp"
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/01/122.jpg",
       "type": "image/jpeg"
-***REMOVED***
+    }
   ],
   "season": 1,
   "episode": 122,
   "title": "Mark Needs To Rub Ethan and Only His Mom Can Help Him",
   "description": "Mark's mom was a licensed massage therapist at one point in her life. Does her son carry the innate talents to allow Ethan to finally get the Rub-Down he deserves?",
   "date": 1584212400000
-***REMOVED***
+}

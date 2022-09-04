@@ -1,45 +1,45 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/01/124/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/124/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/124/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/124/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/124/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/01/124.webp",
       "type": "image/webp"
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/01/124.jpg",
       "type": "image/jpeg"
-***REMOVED***
+    }
   ],
   "season": 1,
   "episode": 124,
   "title": "Beer Sauna: Turning a Portable Sauna into a Portable Hell",
   "description": "Amy bought us a portable sauna that allows you to enjoy a steamy sauna wherever you'd like! Just add liquid! Unfortunately... the liquid we chose was Beer and Redbull...",
   "date": 1584385200000
-***REMOVED***
+}

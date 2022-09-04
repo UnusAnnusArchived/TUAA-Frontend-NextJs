@@ -1,45 +1,45 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/01/130/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/130/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/130/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/130/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/130/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/01/130.webp",
       "type": "image/webp"
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/01/130.jpg",
       "type": "image/jpeg"
-***REMOVED***
+    }
   ],
   "season": 1,
   "episode": 130,
   "title": "Mark and Ethan Are Now Fathers",
   "description": "After 2 days of labor and delivery, Unus and Annus have given birth to 2 beautiful baby boys! Now they get to experience the joy of fatherhood.",
   "date": 1584903600000
-***REMOVED***
+}

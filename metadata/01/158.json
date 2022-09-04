@@ -1,45 +1,45 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/01/158/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/158/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/158/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/158/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/158/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/01/158.webp",
       "type": "image/webp"
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/01/158.jpg",
       "type": "image/jpeg"
-***REMOVED***
+    }
   ],
   "season": 1,
   "episode": 158,
   "title": "The Illuminati... Do They Really Exist?",
   "description": "We dive deep into the realms of Google and Wikipedia to discover the truth behind the curtain of the Illuminati. Are they real? Do they really control the world? Are they watching you right now?",
   "date": 1587322800000
-***REMOVED***
+}

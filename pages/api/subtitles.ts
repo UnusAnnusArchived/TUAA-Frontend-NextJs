@@ -1,48 +1,48 @@
-import type ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
-import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { cdn } from "../../src/endpoints";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => ***REMOVED***
-  try ***REMOVED***
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
     let url = req.query.url.toString();
 
-    if (url.startsWith("http")) ***REMOVED***
+    if (url.startsWith("http")) {
       url.replace("http://", "https://");
-***REMOVED***
+    }
 
-    if (!url.startsWith("https")) ***REMOVED***
+    if (!url.startsWith("https")) {
       url = "https:" + url;
-***REMOVED***
+    }
 
-    if (!url || url.length < 1) ***REMOVED***
-      res.status(400).json(***REMOVED*** error: "url is required" ***REMOVED***);
+    if (!url || url.length < 1) {
+      res.status(400).json({ error: "url is required" });
       return;
-***REMOVED***
+    }
 
     if (
-      !url.startsWith(`$***REMOVED***cdn***REMOVED***/subs`) ??
+      !url.startsWith(`${cdn}/subs`) ??
       !url.startsWith("https://cdn.unusann.us/subs") ??
       !url.startsWith("https://cdn.unusannusarchive.tk/subs")
-    ) ***REMOVED***
-      res.status(403).json(***REMOVED*** error: "Unauthorized website/path!" ***REMOVED***);
+    ) {
+      res.status(403).json({ error: "Unauthorized website/path!" });
       return;
-***REMOVED***
+    }
 
     const subtitles = await fetch(url);
 
-    if (!subtitles.ok) ***REMOVED***
-      res.status(500).json(***REMOVED*** error: "Server error" ***REMOVED***);
+    if (!subtitles.ok) {
+      res.status(500).json({ error: "Server error" });
       return;
-***REMOVED***
+    }
 
     const text = await subtitles.text();
 
     res.setHeader("Content-Type", "text/vtt");
     res.setHeader("Access-Control-Allow-Origin", "unusann.us");
     res.status(200).send(text);
-***REMOVED*** catch (error) ***REMOVED***
+  } catch (error) {
     console.log(error);
-    res.status(500).json(***REMOVED*** error: "Server error" ***REMOVED***);
-***REMOVED***
-***REMOVED***;
+    res.status(500).json({ error: "Server error" });
+  }
+};
 
 export default handler;

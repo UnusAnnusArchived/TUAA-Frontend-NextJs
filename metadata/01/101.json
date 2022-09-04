@@ -1,41 +1,41 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/01/101/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/101/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/101/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/101/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/01/101/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/01/101.webp",
       "type": "image/webp"
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/01/101.jpg",
       "type": "image/jpeg"
-***REMOVED***
+    }
   ],
   "season": 1,
   "episode": 101,
@@ -43,4 +43,4 @@
   "description": "Goat Yoga. Yoga with Goats. The Yoga that you do with Goats. Yoga of the Goat. The Yoga Goat.",
   "date": 1582398000000,
   "duration": 1539
-***REMOVED***
+}

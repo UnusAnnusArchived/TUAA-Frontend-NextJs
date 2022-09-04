@@ -1,1 +1,1 @@
-export ***REMOVED*** default as LanguageSelect ***REMOVED*** from "./language-select";
+export { default as LanguageSelect } from "./language-select";

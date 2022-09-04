@@ -1,27 +1,27 @@
-import React, ***REMOVED*** useState ***REMOVED*** from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** styled ***REMOVED*** from "@mui/material/styles";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
+import { styled } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import axios from "axios";
-import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** ChangePFPResponse, CheckLoginKeyResponse ***REMOVED*** from "../../src/types";
+import { endpoint } from "../../src/endpoints";
+import { ChangePFPResponse, CheckLoginKeyResponse } from "../../src/types";
 import Fade from "@mui/material/Fade";
 import LinearProgress from "@mui/material/LinearProgress";
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useToasts } from "@geist-ui/react";
+import { useTranslation } from "react-i18next";
 
-const Input = styled("input")(***REMOVED***
+const Input = styled("input")({
   display: "none",
-***REMOVED***);
+});
 
-const ChangePic: React.FC = () => ***REMOVED***
+const ChangePic: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [image, setImage] = useState<File>(null);
@@ -29,162 +29,162 @@ const ChangePic: React.FC = () => ***REMOVED***
   const [isSendingImage, setIsSendingImage] = useState(false);
   const [progress, setProgress] = useState(0);
   const [, setToast] = useToasts();
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const ***REMOVED*** user ***REMOVED*** = loggedInUser;
+  const { user } = loggedInUser;
 
-  const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => ***REMOVED***
+  const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files[0];
     setImage(file);
 
     const reader = new FileReader();
-    reader.onload = (e: any) => ***REMOVED***
+    reader.onload = (e: any) => {
       const src = e.target.result;
       setImageUrl(src);
-***REMOVED***;
-    if (file) ***REMOVED***
-      try ***REMOVED***
+    };
+    if (file) {
+      try {
         reader.readAsDataURL(file);
-  ***REMOVED*** catch (err) ***REMOVED******REMOVED***
-***REMOVED***
-***REMOVED***;
+      } catch (err) {}
+    }
+  };
 
-  const uploadProgressHandler = (progressEvent: any) => ***REMOVED***
+  const uploadProgressHandler = (progressEvent: any) => {
     const final: number = Math.round(
       (progressEvent.loaded * 100) / progressEvent.total
     );
     setProgress(final);
-***REMOVED***;
+  };
 
-  const handleClickOpen = () => ***REMOVED***
+  const handleClickOpen = () => {
     setOpen(true);
-***REMOVED***;
+  };
 
-  const handleClose = () => ***REMOVED***
+  const handleClose = () => {
     setOpen(false);
     setImage(null);
     setImageUrl(null);
     setProgress(0);
     setIsSendingImage(false);
-***REMOVED***;
+  };
 
-  const handleSubmit = async () => ***REMOVED***
+  const handleSubmit = async () => {
     setIsSendingImage(true);
-    try ***REMOVED***
+    try {
       const formData = new FormData();
       formData.append("pfp", image);
       formData.append("loginKey", loggedInUser.loginKey);
 
       const imageUploadResult = await axios.post<ChangePFPResponse>(
-        `$***REMOVED***endpoint***REMOVED***/v2/account/changepfp`,
+        `${endpoint}/v2/account/changepfp`,
         formData,
-        ***REMOVED***
+        {
           onUploadProgress: (progressEvent) =>
             uploadProgressHandler(progressEvent),
-    ***REMOVED***
+        }
       );
 
-      if (imageUploadResult.status === 200) ***REMOVED***
-        if (imageUploadResult.data.status === "success") ***REMOVED***
+      if (imageUploadResult.status === 200) {
+        if (imageUploadResult.data.status === "success") {
           const success = await refetchUser();
-          if (success) ***REMOVED***
-            setToast(***REMOVED***
+          if (success) {
+            setToast({
               type: "success",
               text: t("profile:pfp:success"),
-        ***REMOVED***);
+            });
             handleClose();
             return;
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED*** catch (error) ***REMOVED***
+          }
+        }
+      }
+    } catch (error) {
       console.log(error);
-***REMOVED***
+    }
     setIsSendingImage(false);
-    setToast(***REMOVED***
+    setToast({
       type: "error",
       text: t("profile:pfp:error"),
-***REMOVED***);
-***REMOVED***;
+    });
+  };
 
-  const refetchUser = async (): Promise<boolean> => ***REMOVED***
+  const refetchUser = async (): Promise<boolean> => {
     const res = await axios.post<CheckLoginKeyResponse>(
-      `$***REMOVED***endpoint***REMOVED***/v2/account/checkloginkey`,
-      ***REMOVED*** loginKey: loggedInUser.loginKey ***REMOVED***
+      `${endpoint}/v2/account/checkloginkey`,
+      { loginKey: loggedInUser.loginKey }
     );
 
-    if (res.status === 200) ***REMOVED***
-      if (res.data.isValid) ***REMOVED***
-        setLoggedInUser(***REMOVED*** ...loggedInUser, ...res.data ***REMOVED***);
+    if (res.status === 200) {
+      if (res.data.isValid) {
+        setLoggedInUser({ ...loggedInUser, ...res.data });
         return true;
-  ***REMOVED***
-***REMOVED***
+      }
+    }
 
     return false;
-***REMOVED***;
+  };
 
-  const onCancel = () => ***REMOVED***
+  const onCancel = () => {
     handleClose();
-***REMOVED***;
+  };
 
   return (
     <div>
-      <Button variant="text" onClick=***REMOVED***handleClickOpen***REMOVED***>
-        ***REMOVED***t("profile:pfp:change")***REMOVED***
+      <Button variant="text" onClick={handleClickOpen}>
+        {t("profile:pfp:change")}
       </Button>
-      <Dialog open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED*** maxWidth="sm" fullWidth>
+      <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle className="text-center">
-          ***REMOVED***t("profile:pfp:change")***REMOVED***
+          {t("profile:pfp:change")}
         </DialogTitle>
 
         <DialogContent>
           <div className="d-flex flex-column justify-content-center align-items-center">
             <DialogContentText>
-              ***REMOVED***t("profile:pfp:description")***REMOVED***
+              {t("profile:pfp:description")}
             </DialogContentText>
             <DialogContentText>
-              ***REMOVED***t("profile:pfp:selected")***REMOVED***:***REMOVED***" "***REMOVED***
-              ***REMOVED***image ? image.name : t("profile:pfp:none")***REMOVED***
+              {t("profile:pfp:selected")}:{" "}
+              {image ? image.name : t("profile:pfp:none")}
             </DialogContentText>
 
-            ***REMOVED***imageUrl && (
+            {imageUrl && (
               <div className="mt-2">
-                <Avatar src=***REMOVED***imageUrl***REMOVED*** sx=***REMOVED******REMOVED*** width: 200, height: 200 ***REMOVED******REMOVED*** />
+                <Avatar src={imageUrl} sx={{ width: 200, height: 200 }} />
               </div>
-            )***REMOVED***
+            )}
             <div className="mt-3">
               <label htmlFor="contained-button-file">
                 <Input
                   accept="image/*"
                   id="contained-button-file"
-                  onChange=***REMOVED***onFileChange***REMOVED***
+                  onChange={onFileChange}
                   type="file"
                 />
                 <Button variant="contained" component="span">
-                  ***REMOVED***t("profile:pfp:fileSelect")***REMOVED***
+                  {t("profile:pfp:fileSelect")}
                 </Button>
               </label>
             </div>
-            <Fade in=***REMOVED***isSendingImage***REMOVED***>
+            <Fade in={isSendingImage}>
               <div className="w-100 mt-3">
-                <LinearProgress value=***REMOVED***progress***REMOVED*** variant="determinate" />
+                <LinearProgress value={progress} variant="determinate" />
               </div>
             </Fade>
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick=***REMOVED***onCancel***REMOVED***>***REMOVED***t("common:cancel")***REMOVED***</Button>
+          <Button onClick={onCancel}>{t("common:cancel")}</Button>
           <Button
-            onClick=***REMOVED***handleSubmit***REMOVED***
-            disabled=***REMOVED***image == null || isSendingImage***REMOVED***
+            onClick={handleSubmit}
+            disabled={image == null || isSendingImage}
             autoFocus
           >
-            ***REMOVED***t("common:save")***REMOVED***
+            {t("common:save")}
           </Button>
         </DialogActions>
       </Dialog>
     </div>
   );
-***REMOVED***;
+};
 
 export default ChangePic;

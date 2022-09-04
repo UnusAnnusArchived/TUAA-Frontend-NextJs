@@ -1,90 +1,90 @@
-import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import MarkdownIt from "markdown-it";
 import mdIterator from "markdown-it-for-inline";
-import ***REMOVED*** IStoredComment, IUser ***REMOVED*** from "../../../../../src/types";
-import ***REMOVED*** promiseQuery ***REMOVED*** from "../../../../../src/mysqlSetup";
+import { IStoredComment, IUser } from "../../../../../src/types";
+import { promiseQuery } from "../../../../../src/mysqlSetup";
 
-const md = MarkdownIt(***REMOVED*** html: false, xhtmlOut: false, breaks: true, langPrefix: "", linkify: true ***REMOVED***)
+const md = MarkdownIt({ html: false, xhtmlOut: false, breaks: true, langPrefix: "", linkify: true })
   .disable(["image", "link"])
-  .use(mdIterator, "url_new_win", "link_open", (tokens, idx) => ***REMOVED***
+  .use(mdIterator, "url_new_win", "link_open", (tokens, idx) => {
     const [attrName, href] = tokens[idx].attrs.find((attr) => attr[0] === "href");
 
-    if (href) ***REMOVED***
+    if (href) {
       tokens[idx].attrPush(["target", "_blank"]);
       tokens[idx].attrPush(["rel", "noopener noreferrer"]);
-***REMOVED***
-***REMOVED***);
+    }
+  });
 
-export default function post(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
+export default function post(req: NextApiRequest, res: NextApiResponse) {
   const users = fs.readdirSync("db/users");
 
   const comment: string = req.body.comment;
   const loginKey: string = req.body.loginKey;
 
-  if (comment.length > 500) ***REMOVED***
-    return res.send(***REMOVED*** error: ***REMOVED*** code: 3, message: "Invalid message length!" ***REMOVED*** ***REMOVED***);
-***REMOVED***
+  if (comment.length > 500) {
+    return res.send({ error: { code: 3, message: "Invalid message length!" } });
+  }
 
   let user: IUser;
 
-  for (let i = 0; i < users.length; i++) ***REMOVED***
-    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
-    if (currentUser.loginKeys.includes(loginKey)) ***REMOVED***
+  for (let i = 0; i < users.length; i++) {
+    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+    if (currentUser.loginKeys.includes(loginKey)) {
       user = currentUser;
       break;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  if (!user) ***REMOVED***
-    return res.status(401).send(***REMOVED*** error: ***REMOVED*** code: 401, message: "Unauthorized!" ***REMOVED*** ***REMOVED***);
-***REMOVED***
+  if (!user) {
+    return res.status(401).send({ error: { code: 401, message: "Unauthorized!" } });
+  }
 
-  const JSONComment: IStoredComment = ***REMOVED***
+  const JSONComment: IStoredComment = {
     episode: <string>req.query.video,
     uid: user.id,
-    comment: ***REMOVED***
+    comment: {
       plaintext: comment,
       html: plainTextToHTML(comment, <string>req.query.video),
-  ***REMOVED***
-    stats: ***REMOVED***
+    },
+    stats: {
       published: Date.now(),
       likes: 0,
       dislikes: 0,
-  ***REMOVED***
-***REMOVED***;
+    },
+  };
 
   const b64Comment = tob64(JSON.stringify(JSONComment));
 
-  promiseQuery(`INSERT INTO comments (json) values ('$***REMOVED***b64Comment***REMOVED***')`);
+  promiseQuery(`INSERT INTO comments (json) values ('${b64Comment}')`);
 
-  res.send(***REMOVED*** status: "success", comment: JSONComment ***REMOVED***);
-***REMOVED***
+  res.send({ status: "success", comment: JSONComment });
+}
 
-function tob64(string: string) ***REMOVED***
+function tob64(string: string) {
   return Buffer.from(string, "utf-8").toString("base64");
-***REMOVED***
+}
 
-function plainTextToHTML(plaintext: string, episode: string) ***REMOVED***
+function plainTextToHTML(plaintext: string, episode: string) {
   const timeReg = /(?:([0-5]?[0-9]):)?([0-5]?[0-9]):([0-5][0-9])/g;
 
   let html = md.render(plaintext);
 
   const matches = plaintext.match(timeReg);
 
-  for (let i = 0; i < matches?.length ?? 0; i++) ***REMOVED***
+  for (let i = 0; i < matches?.length ?? 0; i++) {
     const split = matches[i].split(":");
     let seconds = parseInt(split[split.length - 1]);
     seconds += parseInt(split[split.length - 2]) * 60;
-    if (split.length === 3) ***REMOVED***
+    if (split.length === 3) {
       seconds += parseInt(split[0]) * 60 * 60;
-***REMOVED***
+    }
 
     html = html.replace(
       matches[i],
-      `<a href="/watch/$***REMOVED***episode***REMOVED***?t=$***REMOVED***seconds***REMOVED***">$***REMOVED***matches[i].replace(/:/g, "&colon;")***REMOVED***</a>`
+      `<a href="/watch/${episode}?t=${seconds}">${matches[i].replace(/:/g, "&colon;")}</a>`
     );
-***REMOVED***
+  }
 
   return html;
-***REMOVED***
+}

@@ -1,58 +1,58 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/012/2160.mp4",
       "type": "video/mp4",
       "size": 2160
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/012/1440.mp4",
       "type": "video/mp4",
       "size": 1440
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/012/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/012/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/012/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/012/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/012/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/012.avif",
       "type": "image/avif",
       "size": 28740
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/012.webp",
       "type": "image/webp",
       "size": 49472
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/012.jpg",
       "type": "image/jpeg",
       "size": 58136
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 12,
@@ -61,4 +61,4 @@
   "date": 1636916400000,
   "islast": false,
   "duration": 296
-***REMOVED***
+}

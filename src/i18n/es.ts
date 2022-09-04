@@ -1,22 +1,22 @@
-const es = ***REMOVED***
-  player: ***REMOVED***
+const es = {
+  player: {
     nextEpisode: "Siguiente Episodio",
     previousEpisode: "Anterior Episodio",
     episode: "Episodio",
-***REMOVED***
-  comments: ***REMOVED***
+  },
+  comments: {
     title: "Comentarios",
     placeholder: "Agrega un comentario publico",
     send: "Comentar",
     noComments: "No se han encontrado comentarios",
     loadFail: "Ha habido un error al tratar de cargar los comentarios",
     loggedOut: "Necesitas iniciar sesión para poder comentar en este video",
-***REMOVED***
-  seasons: ***REMOVED***
+  },
+  seasons: {
     season1: "Temporada 1",
     season2: "Especiales",
-***REMOVED***
-  common: ***REMOVED***
+  },
+  common: {
     profile: "Perfil",
     language: "Lenguaje",
     logout: "Cerrar sesión",
@@ -24,16 +24,16 @@ const es = ***REMOVED***
     register: "Registarse",
     cancel: "Cancelar",
     save: "Guardar",
-***REMOVED***
-  login: ***REMOVED***
+  },
+  login: {
     title: "Iniciar sesión",
     titleLong: "Iniciar sesión a tu cuenta",
     usernameEmail: "Nombre de usuario o correo electronico",
     password: "Contraseña",
     loginBtn: "Iniciar sesión",
     error: "Ha habido un error al intentar iniciar sesión",
-***REMOVED***
-  register: ***REMOVED***
+  },
+  register: {
     title: "Registrar",
     titleLong: "Registrar una nueva cuenta ",
     email: "Correo electronico",
@@ -43,10 +43,10 @@ const es = ***REMOVED***
     registerBtn: "Crear una nueva cuenta",
     error: "Ha habido un error al intentar crearse una nueva cuenta",
     success: "Tu cuenta ha sido creada! Por favor, Inicia sesión ahora.",
-***REMOVED***
-  profile: ***REMOVED***
+  },
+  profile: {
     title: "Perfil",
-    pfp: ***REMOVED***
+    pfp: {
       title: "Tu foto de perfil",
       change: "Cambiar foto de perfil",
       description: "Subir una nueva foto de perfil",
@@ -55,31 +55,31 @@ const es = ***REMOVED***
       fileSelect: "Escoge un archivo de imagen",
       error: "Ha habido un error al intentar tratar de cambiar tu foto de perfil",
       success: "Foto de perfil cambiada!",
-  ***REMOVED***
+    },
     username: "Nombre de usuario",
     email: "Correo electronico",
     dataTitle: "Datos sobre su perfil",
-    logout: ***REMOVED***
+    logout: {
       title: "Opciones para cerrar sesión",
       local: "Cerrar sesión en este dispositivo",
       all: "Cerrar sesión en todos los dispositivos",
       successAll: "Se ha cerrado la sesión en todos los dispositivos",
       successLocal: "Se ha cerrado la sesión en este dispositivo",
       error: "Ha habido un error tratando de cerrar sesión",
-  ***REMOVED***
-***REMOVED***
-  errors: ***REMOVED***
+    },
+  },
+  errors: {
     pageNotFound: "La pagina que estabas buscando no ha sido encontrada",
     returnToHome: "Volver a la pagina principal",
-***REMOVED***
-  plyr: ***REMOVED***
+  },
+  plyr: {
     restart: "Reiniciar",
-    rewind: "Repetir ***REMOVED***seektime***REMOVED***s",
+    rewind: "Repetir {seektime}s",
     play: "Reproducir",
     pause: "Pausa",
-    fastForward: "Hacia adelante ***REMOVED***seektime***REMOVED***s",
+    fastForward: "Hacia adelante {seektime}s",
     seek: "Buscar",
-    seekLabel: "***REMOVED***currentTime***REMOVED*** de ***REMOVED***duration***REMOVED***",
+    seekLabel: "{currentTime} de {duration}",
     played: "Visto",
     buffered: "Buffered",
     currentTime: "Tiempo actual",
@@ -92,7 +92,7 @@ const es = ***REMOVED***
     download: "Descargar",
     enterFullscreen: "Entrar en pantalla completa ",
     exitFullscreen: "Salir de la pantalla completa",
-    frameTitle: "Reproductor para ***REMOVED***title***REMOVED***",
+    frameTitle: "Reproductor para {title}",
     captions: "Subtitulos",
     settings: "Ajustes",
     pip: "PIP",
@@ -108,8 +108,8 @@ const es = ***REMOVED***
     disabled: "Desactivado",
     enabled: "Habilitado",
     advertisement: "Anuncio",
-***REMOVED***
-***REMOVED***;
+  }
+};
 
 export default es;
 

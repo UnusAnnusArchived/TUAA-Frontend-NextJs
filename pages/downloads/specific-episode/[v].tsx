@@ -2,108 +2,108 @@ import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
-import ***REMOVED*** GetStaticPaths, GetStaticProps ***REMOVED*** from "next";
-import React, ***REMOVED*** useState ***REMOVED*** from "react";
+import { GetStaticPaths, GetStaticProps } from "next";
+import React, { useState } from "react";
 import fs from "fs";
 import config from "../../../src/config.json";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** EpisodesRow ***REMOVED*** from "../../../components/episodes-controls";
-import ***REMOVED*** Layout ***REMOVED*** from "../../../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../../../components/meta-head";
-import ***REMOVED*** IVideo ***REMOVED*** from "../../../src/types";
+import { useTranslation } from "react-i18next";
+import { EpisodesRow } from "../../../components/episodes-controls";
+import { Layout } from "../../../components/layout";
+import { MetaHead } from "../../../components/meta-head";
+import { IVideo } from "../../../src/types";
 import VideoDownloadOptions from "../../../components/video-download-options";
 
-interface IProps ***REMOVED***
+interface IProps {
   watchCode: string;
   video: IVideo;
-***REMOVED***
+}
 
-const Download: React.FC<IProps> = (***REMOVED*** watchCode, video ***REMOVED***) => ***REMOVED***
-  const ***REMOVED*** i18n ***REMOVED*** = useTranslation();
+const Download: React.FC<IProps> = ({ watchCode, video }) => {
+  const { i18n } = useTranslation();
   const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
 
   const published = new Date(video.date ?? video.releasedate);
-  const embedUrl = `https://unusann.us/embed/$***REMOVED***watchCode***REMOVED***`;
+  const embedUrl = `https://unusann.us/embed/${watchCode}`;
   const metaVideoUrl = video.video ?? video.sources[0].src;
 
   return (
     <Layout>
       <MetaHead
-        baseTitle=***REMOVED***video.title***REMOVED***
-        embed=***REMOVED***embedUrl***REMOVED***
-        video=***REMOVED***metaVideoUrl***REMOVED***
-        date=***REMOVED***video.date ?? video.releasedate***REMOVED***
-        description=***REMOVED***video.description***REMOVED***
-        image=***REMOVED***`https:$***REMOVED***image***REMOVED***`***REMOVED***
+        baseTitle={video.title}
+        embed={embedUrl}
+        video={metaVideoUrl}
+        date={video.date ?? video.releasedate}
+        description={video.description}
+        image={`https:${image}`}
       />
       <Paper className="my-3 p-3 desc">
         <Typography variant="h6" component="h1">
-          ***REMOVED***video.title***REMOVED***
+          {video.title}
         </Typography>
         <Typography variant="body2" component="p">
-          ***REMOVED***moment(published).locale(i18n.language).format("DD MMMM YYYY")***REMOVED***
+          {moment(published).locale(i18n.language).format("DD MMMM YYYY")}
         </Typography>
-        <Divider className="my-2" sx=***REMOVED******REMOVED*** backgroundColor: "#fff" ***REMOVED******REMOVED*** />
+        <Divider className="my-2" sx={{ backgroundColor: "#fff" }} />
         <Typography variant="body1" component="p">
           <div
-            dangerouslySetInnerHTML=***REMOVED******REMOVED***
+            dangerouslySetInnerHTML={{
               __html: video.description.replace(/(\n)/g, "<br />"),
-        ***REMOVED******REMOVED***
+            }}
           />
         </Typography>
       </Paper>
-      <EpisodesRow watchCode=***REMOVED***watchCode***REMOVED*** onDownloadPage=***REMOVED***true***REMOVED*** />
+      <EpisodesRow watchCode={watchCode} onDownloadPage={true} />
       <Paper className="my-3 p-3">
-        <VideoDownloadOptions video=***REMOVED***video***REMOVED*** />
+        <VideoDownloadOptions video={video} />
       </Paper>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default Download;
 
-export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMOVED***
+export const getStaticProps: GetStaticProps<IProps> = async (context) => {
   const watchCode = context.params.v.toString();
   const split = watchCode.split(".");
   const season = split[0].replace("s", "");
   const episode = split[1].replace("e", "");
 
-  const path = `$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***season***REMOVED***/$***REMOVED***episode***REMOVED***.json`;
+  const path = `${config.metadataPath}/${season}/${episode}.json`;
 
-  if (fs.existsSync(path)) ***REMOVED***
+  if (fs.existsSync(path)) {
     const video: IVideo = JSON.parse(fs.readFileSync(path, "utf-8"));
-    return ***REMOVED***
-      props: ***REMOVED***
+    return {
+      props: {
         watchCode,
         video,
-    ***REMOVED***
+      },
       revalidate: 60 * 60 * 24, //1 day
-***REMOVED***;
-***REMOVED*** else ***REMOVED***
-    return ***REMOVED*** props: ***REMOVED*** video: null ***REMOVED***, notFound: true ***REMOVED***;
-***REMOVED***
-***REMOVED***;
+    };
+  } else {
+    return { props: { video: null }, notFound: true };
+  }
+};
 
-export const getStaticPaths: GetStaticPaths = async (context) => ***REMOVED***
+export const getStaticPaths: GetStaticPaths = async (context) => {
   const paths = [];
 
   const seasons = fs.readdirSync(config.metadataPath);
-  for (const seasonName of seasons) ***REMOVED***
-    const season = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***seasonName***REMOVED***`);
-    for (const episodeName of season) ***REMOVED***
+  for (const seasonName of seasons) {
+    const season = fs.readdirSync(`${config.metadataPath}/${seasonName}`);
+    for (const episodeName of season) {
       const episode: IVideo = JSON.parse(
-        fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/$***REMOVED***seasonName***REMOVED***/$***REMOVED***episodeName***REMOVED***`, "utf-8")
+        fs.readFileSync(`${config.metadataPath}/${seasonName}/${episodeName}`, "utf-8")
       );
-      paths.push(***REMOVED***
-        params: ***REMOVED***
-          v: `s$***REMOVED***episode.season.toString().padStart(2, "0")***REMOVED***.e$***REMOVED***episode.episode.toString().padStart(3, "0")***REMOVED***`,
-      ***REMOVED***
-  ***REMOVED***);
-***REMOVED***
-***REMOVED***
+      paths.push({
+        params: {
+          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode.toString().padStart(3, "0")}`,
+        },
+      });
+    }
+  }
 
-  return ***REMOVED***
+  return {
     paths,
     fallback: "blocking",
-***REMOVED***;
-***REMOVED***;
+  };
+};

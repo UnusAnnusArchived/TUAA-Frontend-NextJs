@@ -1,5 +1,5 @@
-***REMOVED***
-  "compilerOptions": ***REMOVED***
+{
+  "compilerOptions": {
     "target": "es5",
     "lib": [
       "dom",
@@ -18,7 +18,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"
-***REMOVED***
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -27,4 +27,4 @@
   "exclude": [
     "node_modules"
   ]
-***REMOVED***
+}

@@ -1,58 +1,58 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/007/2160.mp4",
       "type": "video/mp4",
       "size": 2160
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/007/1440.mp4",
       "type": "video/mp4",
       "size": 1440
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/007/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/007/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/007/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/007/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/007/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/007.avif",
       "type": "image/avif",
       "size": 27370
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/007.webp",
       "type": "image/webp",
       "size": 54302
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/007.jpg",
       "type": "image/jpeg",
       "size": 55861
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 7,
@@ -60,4 +60,4 @@
   "description": "It's been quite a year for Unus Annus. But a year is not forever... and time has finally run out. So join us Friday, November 13th for The End of Unus Annus and help us say goodbye one last time.",
   "date": 1604689200000,
   "duration": 110
-***REMOVED***
+}

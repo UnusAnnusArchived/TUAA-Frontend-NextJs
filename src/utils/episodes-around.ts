@@ -1,36 +1,36 @@
-import ***REMOVED*** IEpisodeAround ***REMOVED*** from "../../src/types";
+import { IEpisodeAround } from "../../src/types";
 
-const getEpisodesAround = (currentEpisodeCode: string) => ***REMOVED***
-  try ***REMOVED***
+const getEpisodesAround = (currentEpisodeCode: string) => {
+  try {
     const currentEpisode = parseInt(currentEpisodeCode.slice(-3));
     const next = currentEpisode + 1;
     const prev = currentEpisode - 1;
 
-    if (currentEpisodeCode.includes("s01")) ***REMOVED***
-      const prevEp = `s01.e$***REMOVED***(currentEpisode - 1).toString().padStart(3, "0")***REMOVED***`;
-      const nextEp = `s01.e$***REMOVED***(currentEpisode + 1).toString().padStart(3, "0")***REMOVED***`;
+    if (currentEpisodeCode.includes("s01")) {
+      const prevEp = `s01.e${(currentEpisode - 1).toString().padStart(3, "0")}`;
+      const nextEp = `s01.e${(currentEpisode + 1).toString().padStart(3, "0")}`;
 
-      const response: IEpisodeAround = ***REMOVED***
+      const response: IEpisodeAround = {
         nextEp: next >= 1 && next <= 368 ? nextEp : null,
         prevEp: prev >= 1 && prev <= 368 ? prevEp : null,
-  ***REMOVED***;
+      };
 
       return response;
-***REMOVED*** else if (currentEpisodeCode.includes("s00")) ***REMOVED***
-      const prevEp = `s00.e$***REMOVED***(currentEpisode - 1).toString().padStart(3, "0")***REMOVED***`;
-      const nextEp = `s00.e$***REMOVED***(currentEpisode + 1).toString().padStart(3, "0")***REMOVED***`;
+    } else if (currentEpisodeCode.includes("s00")) {
+      const prevEp = `s00.e${(currentEpisode - 1).toString().padStart(3, "0")}`;
+      const nextEp = `s00.e${(currentEpisode + 1).toString().padStart(3, "0")}`;
 
-      const response: IEpisodeAround = ***REMOVED***
+      const response: IEpisodeAround = {
         nextEp: next >= 1 && next <= 14 ? nextEp : null,
         prevEp: prev >= 1 && prev <= 14 ? prevEp : null,
-  ***REMOVED***;
+      };
       return response;
-***REMOVED*** else ***REMOVED***
+    } else {
       return null;
-***REMOVED***
-***REMOVED*** catch (err) ***REMOVED***
+    }
+  } catch (err) {
     return null;
-***REMOVED***
-***REMOVED***;
+  }
+};
 
 export default getEpisodesAround;

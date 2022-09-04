@@ -1,1 +1,1 @@
-export ***REMOVED*** default as Search ***REMOVED*** from "./search";
+export { default as Search } from "./search";

@@ -1,6 +1,6 @@
-import type ***REMOVED*** Source as PlyrSource, Track as PlyrTrack ***REMOVED*** from "plyr";
+import type { Source as PlyrSource, Track as PlyrTrack } from "plyr";
 
-export interface IVideo ***REMOVED***
+export interface IVideo {
   season: number;
   episode: number;
   title: string;
@@ -14,130 +14,130 @@ export interface IVideo ***REMOVED***
   posters?: IVideoPoster[];
   thumbnail?: string;
   previewSprites?: IVideoPreviewSprite[];
-***REMOVED***
+}
 
-interface IVideoPreviewSprite ***REMOVED***
+interface IVideoPreviewSprite {
   src: string;
   length: number;
-***REMOVED***
+}
 
-interface IVideoPoster ***REMOVED***
+interface IVideoPoster {
   src: string;
   type: string;
   size: number;
-***REMOVED***
+}
 
 export type Season = IVideo[];
 export type Seasons = Season[];
 
-export interface IEpisodeAround ***REMOVED***
+export interface IEpisodeAround {
   nextEp?: string;
   prevEp?: string;
-***REMOVED***
+}
 
-export interface ChangePFPResponse ***REMOVED***
+export interface ChangePFPResponse {
   status?: "success" | string;
   error?: "Not logged in!" | string;
-***REMOVED***
-export interface IComment ***REMOVED***
+}
+export interface IComment {
   episode: string;
   uid: string;
   comment: CommentBody;
   stats: CommentStats;
   user: CommentUser;
-***REMOVED***
-export interface CommentBody ***REMOVED***
+}
+export interface CommentBody {
   plaintext: string;
   html: string;
-***REMOVED***
-export interface CommentStats ***REMOVED***
+}
+export interface CommentStats {
   published: number;
   likes: number;
   dislikes: number;
-***REMOVED***
-export interface CommentUser ***REMOVED***
+}
+export interface CommentUser {
   id: string;
   username: string;
   pfp: IUserPFP;
-***REMOVED***
+}
 
-export interface IStoredComment ***REMOVED***
+export interface IStoredComment {
   id?: string;
   episode: string;
   uid: string;
   user?: CommentUser;
   comment: CommentBody;
   stats: CommentStats;
-***REMOVED***
+}
 
-export interface IUserPFP ***REMOVED***
+export interface IUserPFP {
   originalFilename: string;
   filename: string;
   width: number;
   height: number;
   format: "image/jpeg";
-***REMOVED***
+}
 
-export interface LoginResponse ***REMOVED***
+export interface LoginResponse {
   isValid?: boolean;
   loginKey?: string;
   user?: LimitedUser;
-***REMOVED***
+}
 
-export interface LimitedUser ***REMOVED***
+export interface LimitedUser {
   id: string;
   email: string;
   username: string;
   pfp: IUserPFP;
-***REMOVED***
+}
 
-export interface LogoutResponse ***REMOVED***
+export interface LogoutResponse {
   status: "success" | "error";
   error?: "Account does not exist!" | string;
-***REMOVED***
+}
 
-export interface PostCommentResponse ***REMOVED***
+export interface PostCommentResponse {
   status?: "success";
   comment?: IComment;
-  error?: ***REMOVED***
+  error?: {
     code: 3 | "401" | number | string;
     message: "Invalid message length!" | "Unauthorized!" | string;
-***REMOVED***;
-***REMOVED***
+  };
+}
 
-export interface CheckLoginKeyResponse ***REMOVED***
+export interface CheckLoginKeyResponse {
   isValid: boolean;
   user?: LimitedUser;
-***REMOVED***
+}
 
-export interface SignupResponse ***REMOVED***
+export interface SignupResponse {
   success: boolean;
   loginURI?: "/api/v2/account/login";
-  error?: ***REMOVED***
+  error?: {
     code: 0 | 1 | 2 | number;
     message: "Passwords do not match!" | "Account exists!" | "Missing info!" | string;
-***REMOVED***;
-***REMOVED***
+  };
+}
 
-export interface ILanguage ***REMOVED***
+export interface ILanguage {
   name: string;
   code: string;
-***REMOVED***
+}
 
-export interface IRokuFeed ***REMOVED***
+export interface IRokuFeed {
   providerName: "The Unus Annus Archive";
   lastUpdated: string;
   language: "en";
   playlists: IRokuPlaylist[];
   series: IRokuSeries[];
-***REMOVED***
+}
 
-export interface IRokuPlaylist ***REMOVED***
+export interface IRokuPlaylist {
   name: "Specials" | "Season 1";
   itemIds: string[];
-***REMOVED***
+}
 
-export interface IRokuSeries ***REMOVED***
+export interface IRokuSeries {
   id: "UnusAnnus";
   title: "Unus Annus";
   seasons: IRokuSeason[];
@@ -146,48 +146,48 @@ export interface IRokuSeries ***REMOVED***
   releaseDate: "2019-11-15";
   shortDescription: "What would you do if you only had a year left to live? Would you squander the time you were given? Or would you make every second count? Welcome to Unus Annus. In exactly 365 days this channel will be...";
   longDescription: "What would you do if you only had a year left to live? Would you squander the time you were given? Or would you make every second count? Welcome to Unus Annus. In exactly 365 days this channel will be deleted along with all of the daily uploads accumulated since then. Nothing will be saved. Nothing will be reuploaded. This is your one chance to join us at the onset of our adventure. To be there from the beginning. To make every second count. Subscribe now and relish what little time we have left or have the choice made for you as we disappear from existence forever. But remember... everything has an end. Even you. Memento mori. Unus annus.";
-***REMOVED***
+}
 
-export interface IRokuSeason ***REMOVED***
+export interface IRokuSeason {
   seasonNumber: "0" | "1";
   episodes: IRokuEpisode[];
-***REMOVED***
+}
 
-export interface IRokuEpisode ***REMOVED***
+export interface IRokuEpisode {
   id: string;
   title: string;
-  content: ***REMOVED***
+  content: {
     dateAdded: string;
     videos: IRokuVideo[];
     duration: number;
     captions: IRokuCaption[];
     language: "en";
-***REMOVED***;
+  };
   thumbnail: string;
   releaseDate: string;
   episodeNumber: number;
   shortDescription: string;
   longDescription?: string;
-***REMOVED***
+}
 
-export interface IRokuVideo ***REMOVED***
+export interface IRokuVideo {
   url: string;
   quality: "SD" | "HD" | "FHD" | "UHD";
   videoType: string;
-***REMOVED***
+}
 
-export interface IRokuCaption ***REMOVED***
+export interface IRokuCaption {
   url: string;
   language: string;
   captionType: "SUBTITLE";
-***REMOVED***
+}
 
-export interface ISwiftMetadata ***REMOVED***
+export interface ISwiftMetadata {
   specials: IVideo[];
   season1: IVideo[];
-***REMOVED***
+}
 
-export interface IUser ***REMOVED***
+export interface IUser {
   id: string;
   email: string;
   username: string;
@@ -196,4 +196,4 @@ export interface IUser ***REMOVED***
   pfp: IUserPFP;
   loginKeys: string[];
   isAdmin?: boolean;
-***REMOVED***
+}

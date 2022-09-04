@@ -1,48 +1,48 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/011/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/011/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/011/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/011/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/011/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/011.avif",
       "type": "image/avif",
       "size": 52639
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/011.jpg",
       "type": "image/jpeg",
       "size": 79127
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/011.webp",
       "type": "image/webp",
       "size": 189396
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 11,
@@ -51,4 +51,4 @@
   "date": 1605380400000,
   "islast": false,
   "duration": 745
-***REMOVED***
+}

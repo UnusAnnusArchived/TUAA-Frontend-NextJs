@@ -1,20 +1,20 @@
-***REMOVED***
-***REMOVED***
-  "mysql": ***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-  "smtp": ***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-    "auth": ***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+{
+  "metadataPath": "metadata",
+  "mysql": {
+    "connectionLimit": 10,
+    "host": "207.244.243.55",
+    "user": "unusannusarchive",
+    "password": "65snTYshf8pE2pCL",
+    "database": "unusannusarchive"
+  },
+  "smtp": {
+    "pool": true,
+    "host": "smtp.example.com",
+    "port": 465,
+    "secure": true,
+    "auth": {
+      "user": "noreply@unusannusarchive.tk",
+      "pass": "abc123"
+    }
+  }
+}

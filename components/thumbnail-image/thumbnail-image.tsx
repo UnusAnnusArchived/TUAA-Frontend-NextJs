@@ -1,99 +1,99 @@
 import Image from "next/image";
-import ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
-import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
-import type ***REMOVED*** ImageProps ***REMOVED*** from "next/image";
-import type ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
+import { useEffect, useState } from "react";
+import { cdn } from "../../src/endpoints";
+import type { ImageProps } from "next/image";
+import type { IVideo } from "../../src/types";
 
 type OmittedProps = "src" | "onError" | "loading";
 
-interface IProps extends Omit<ImageProps, OmittedProps> ***REMOVED***
+interface IProps extends Omit<ImageProps, OmittedProps> {
   video: IVideo;
-***REMOVED***
+}
 
-const ThumbnailImage: React.FC<IProps> = (props) => ***REMOVED***
+const ThumbnailImage: React.FC<IProps> = (props) => {
   const video = props.video;
 
-  const [src, setSrc] = useState(`$***REMOVED***cdn***REMOVED***$***REMOVED***video.thumbnail ?? video.posters[0].src***REMOVED***`);
+  const [src, setSrc] = useState(`${cdn}${video.thumbnail ?? video.posters[0].src}`);
 
-  useEffect(() => ***REMOVED***
-    if (video.thumbnail) ***REMOVED***
-      setSrc(`$***REMOVED***cdn***REMOVED***$***REMOVED***video.thumbnail***REMOVED***`);
-***REMOVED*** else ***REMOVED***
-      if (video.posters[0].size) ***REMOVED***
+  useEffect(() => {
+    if (video.thumbnail) {
+      setSrc(`${cdn}${video.thumbnail}`);
+    } else {
+      if (video.posters[0].size) {
         // If the metadata is updated to have poster filesize
-        video.posters.sort((a, b) => ***REMOVED***
-          if (a.size > b.size) ***REMOVED***
+        video.posters.sort((a, b) => {
+          if (a.size > b.size) {
             return 1;
-      ***REMOVED*** else if (a.size < b.size) ***REMOVED***
+          } else if (a.size < b.size) {
             return -1;
-      ***REMOVED*** else if (a.size == b.size) ***REMOVED***
+          } else if (a.size == b.size) {
             return 0;
-      ***REMOVED***
-    ***REMOVED***);
-  ***REMOVED*** else ***REMOVED***
+          }
+        });
+      } else {
         // If not, then sort by what format will most likely have the smallest filesize
         let newArr = new Array(3);
-        for (let i = 0; i < video.posters.length; i++) ***REMOVED***
+        for (let i = 0; i < video.posters.length; i++) {
           const poster = video.posters[i];
 
-          switch (poster.type) ***REMOVED***
-            case "image/avif": ***REMOVED***
+          switch (poster.type) {
+            case "image/avif": {
               newArr[0] = poster;
               break;
-        ***REMOVED***
-            case "image/webp": ***REMOVED***
+            }
+            case "image/webp": {
               newArr[1] = poster;
               break;
-        ***REMOVED***
-            case "image/jpeg": ***REMOVED***
+            }
+            case "image/jpeg": {
               newArr[3] = poster;
               break;
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
+            }
+          }
+        }
+      }
 
       // Use first/smallest size for first load before we can check for compatibility
-      setSrc(`$***REMOVED***cdn***REMOVED***$***REMOVED***video.posters[0].src***REMOVED***`);
-***REMOVED***
-***REMOVED***);
+      setSrc(`${cdn}${video.posters[0].src}`);
+    }
+  });
 
-  useEffect(() => ***REMOVED***
-    if (!video.thumbnail) ***REMOVED***
+  useEffect(() => {
+    if (!video.thumbnail) {
       // Once we load into the page, check for compatibility starting with smallest format going up until a supported format is found.
-      for (let i = 0; i < video.posters.length; i++) ***REMOVED***
+      for (let i = 0; i < video.posters.length; i++) {
         const poster = video.posters[i];
 
-        if (poster) ***REMOVED***
-          if (checkImageType(poster.type)) ***REMOVED***
-            setSrc(`$***REMOVED***cdn***REMOVED***$***REMOVED***poster.src***REMOVED***`);
+        if (poster) {
+          if (checkImageType(poster.type)) {
+            setSrc(`${cdn}${poster.src}`);
             break;
-      ***REMOVED*** else ***REMOVED***
-            if (video.posters.length - 1 === i) ***REMOVED***
-              setSrc(`$***REMOVED***cdn***REMOVED***$***REMOVED***poster.src***REMOVED***`);
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED*** []);
+          } else {
+            if (video.posters.length - 1 === i) {
+              setSrc(`${cdn}${poster.src}`);
+            }
+          }
+        }
+      }
+    }
+  }, []);
 
   return (
     <>
-      ***REMOVED***/* eslint-disable-next-line jsx-a11y/alt-text */***REMOVED***
-      <Image onError=***REMOVED***() => setTimeout(() => setSrc(src), 1000)***REMOVED*** src=***REMOVED***src***REMOVED*** ***REMOVED***...props***REMOVED*** />
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <Image onError={() => setTimeout(() => setSrc(src), 1000)} src={src} {...props} />
     </>
   );
-***REMOVED***;
+};
 
-const checkImageType = (type: string) => ***REMOVED***
+const checkImageType = (type: string) => {
   let canvas = document.createElement("canvas");
 
-  if (!!(canvas.getContext && canvas.getContext("2d"))) ***REMOVED***
-    return canvas.toDataURL(type).indexOf(`data:$***REMOVED***type***REMOVED***`) == 0;
-***REMOVED*** else ***REMOVED***
+  if (!!(canvas.getContext && canvas.getContext("2d"))) {
+    return canvas.toDataURL(type).indexOf(`data:${type}`) == 0;
+  } else {
     return false;
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-export ***REMOVED*** ThumbnailImage ***REMOVED***;
+export { ThumbnailImage };

@@ -9,26 +9,26 @@ import DownloadIcon from "@mui/icons-material/Download";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
-import ***REMOVED*** FaDiscord, FaGithub, FaPatreon, FaMoneyBill ***REMOVED*** from "react-icons/fa";
-import ***REMOVED*** LanguageSelect ***REMOVED*** from "../language-select";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** LogoutResponse ***REMOVED*** from "../../src/types";
-import ***REMOVED*** endpoint, siteRoot ***REMOVED*** from "../../src/endpoints";
+import { FaDiscord, FaGithub, FaPatreon, FaMoneyBill } from "react-icons/fa";
+import { LanguageSelect } from "../language-select";
+import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
+import { LogoutResponse } from "../../src/types";
+import { endpoint, siteRoot } from "../../src/endpoints";
 import axios from "axios";
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
+import { useToasts } from "@geist-ui/react";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
-import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
+import { theme } from "../theme/theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const AppMenu: React.FC = () => ***REMOVED***
-  const ***REMOVED*** t ***REMOVED*** = useTranslation();
+const AppMenu: React.FC = () => {
+  const { t } = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -40,75 +40,75 @@ const AppMenu: React.FC = () => ***REMOVED***
 
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => ***REMOVED***
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
-***REMOVED***;
+  };
 
-  const handleClose = () => ***REMOVED***
+  const handleClose = () => {
     setAnchorEl(null);
-***REMOVED***;
+  };
 
-  const logout = async () => ***REMOVED***
-    try ***REMOVED***
-      const res = await axios.post<LogoutResponse>(`$***REMOVED***endpoint***REMOVED***/v2/account/logout`, ***REMOVED***
+  const logout = async () => {
+    try {
+      const res = await axios.post<LogoutResponse>(`${endpoint}/v2/account/logout`, {
         id: loggedInUser.user.id,
         loginKey: loggedInUser.loginKey,
-  ***REMOVED***);
+      });
 
-      if (res.status === 200) ***REMOVED***
-        if (res.data.status === "success") ***REMOVED***
+      if (res.status === 200) {
+        if (res.data.status === "success") {
           setLoggedInUser(null);
-          setToast(***REMOVED***
+          setToast({
             type: "success",
             text: t("profile:logout:successLocal"),
-      ***REMOVED***);
+          });
 
           handleClose();
-    ***REMOVED*** else ***REMOVED***
-          setToast(***REMOVED*** type: "error", text: res.data.error ***REMOVED***);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED*** catch (error) ***REMOVED***
+        } else {
+          setToast({ type: "error", text: res.data.error });
+        }
+      }
+    } catch (error) {
       console.log(error);
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
   return (
     <React.Fragment>
-      <IconButton onClick=***REMOVED***handleClick***REMOVED***>
-        ***REMOVED***user && (
-          <Avatar src=***REMOVED***`$***REMOVED***user.pfp.filename.startsWith("/") ? "" : "/"***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED*** alt=***REMOVED***user.username***REMOVED*** />
-        )***REMOVED***
+      <IconButton onClick={handleClick}>
+        {user && (
+          <Avatar src={`${user.pfp.filename.startsWith("/") ? "" : "/"}${user.pfp.filename}`} alt={user.username} />
+        )}
 
-        ***REMOVED***!user && <MenuIcon />***REMOVED***
+        {!user && <MenuIcon />}
       </IconButton>
 
-      <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">
-          ***REMOVED***user && (
+          {user && (
             <React.Fragment>
               <div className="my-2">
                 <Typography variant="h6" component="p" className="text-center">
-                  ***REMOVED***user.username***REMOVED***
+                  {user.username}
                 </Typography>
               </div>
-              <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
+              <Divider style={{ margin: "4px 0" }} />
               <Link passHref href="/profile">
-                <MenuItem onClick=***REMOVED***handleClose***REMOVED***>
+                <MenuItem onClick={handleClose}>
                   <ListItemIcon>
                     <PersonIcon />
                   </ListItemIcon>
-                  <ListItemText>***REMOVED***t("common:profile")***REMOVED***</ListItemText>
+                  <ListItemText>{t("common:profile")}</ListItemText>
                 </MenuItem>
               </Link>
             </React.Fragment>
-          )***REMOVED***
+          )}
           <Link href="/settings" passHref>
             <MenuItem>
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText>***REMOVED***t("settings:title")***REMOVED***</ListItemText>
+              <ListItemText>{t("settings:title")}</ListItemText>
             </MenuItem>
           </Link>
           <Link href="/downloads" passHref>
@@ -116,69 +116,69 @@ const AppMenu: React.FC = () => ***REMOVED***
               <ListItemIcon>
                 <DownloadIcon />
               </ListItemIcon>
-              <ListItemText>***REMOVED***t("downloads:title")***REMOVED***</ListItemText>
+              <ListItemText>{t("downloads:title")}</ListItemText>
             </MenuItem>
           </Link>
           <Link href="/patreon-donors" passHref>
             <MenuItem>
               <ListItemIcon>
-                <FaMoneyBill style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
+                <FaMoneyBill style={{ width: "1.5rem" }} />
               </ListItemIcon>
               <ListItemText>Patreon Donors</ListItemText>
             </MenuItem>
           </Link>
-          <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
+          <Divider style={{ margin: "4px 0" }} />
           <Link href="https://discord.gg/PbpJz8r4Pr" passHref>
-            <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
+            <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
               <MenuItem>
                 <ListItemIcon>
-                  <FaDiscord style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
+                  <FaDiscord style={{ width: "1.5rem" }} />
                 </ListItemIcon>
                 <ListItemText>Discord</ListItemText>
               </MenuItem>
             </a>
           </Link>
           <Link href="https://github.com/UnusAnnusArchived" passHref>
-            <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
+            <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
               <MenuItem>
                 <ListItemIcon>
-                  <FaGithub style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
+                  <FaGithub style={{ width: "1.5rem" }} />
                 </ListItemIcon>
                 <ListItemText>Github</ListItemText>
               </MenuItem>
             </a>
           </Link>
           <Link href="https://www.patreon.com/theunusannusarchive" passHref>
-            <a target="_blank" rel="noopener noreferrer" style=***REMOVED******REMOVED*** textDecoration: "none", color: "#fff" ***REMOVED******REMOVED***>
+            <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#fff" }}>
               <MenuItem>
                 <ListItemIcon>
-                  <FaPatreon style=***REMOVED******REMOVED*** width: "1.5rem" ***REMOVED******REMOVED*** />
+                  <FaPatreon style={{ width: "1.5rem" }} />
                 </ListItemIcon>
                 <ListItemText>Patreon</ListItemText>
               </MenuItem>
             </a>
           </Link>
-          <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
+          <Divider style={{ margin: "4px 0" }} />
           <LanguageSelect />
-          <Divider style=***REMOVED******REMOVED*** margin: "4px 0" ***REMOVED******REMOVED*** />
+          <Divider style={{ margin: "4px 0" }} />
 
-          ***REMOVED***user && (
-            <MenuItem onClick=***REMOVED***logout***REMOVED***>
+          {user && (
+            <MenuItem onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
-              <ListItemText>***REMOVED***t("common:logout")***REMOVED***</ListItemText>
+              <ListItemText>{t("common:logout")}</ListItemText>
             </MenuItem>
-          )***REMOVED***
+          )}
 
-          ***REMOVED***!user && (
+          {!user && (
             <React.Fragment>
               <Link passHref href="/register">
                 <MenuItem>
                   <ListItemIcon>
                     <RegisterIcon />
                   </ListItemIcon>
-                  <ListItemText>***REMOVED***t("register:title")***REMOVED***</ListItemText>
+                  <ListItemText>{t("register:title")}</ListItemText>
                 </MenuItem>
               </Link>
               <Link passHref href="/login">
@@ -186,15 +186,15 @@ const AppMenu: React.FC = () => ***REMOVED***
                   <ListItemIcon>
                     <LoginIcon />
                   </ListItemIcon>
-                  <ListItemText>***REMOVED***t("login:title")***REMOVED***</ListItemText>
+                  <ListItemText>{t("login:title")}</ListItemText>
                 </MenuItem>
               </Link>
             </React.Fragment>
-          )***REMOVED***
+          )}
         </div>
       </Menu>
     </React.Fragment>
   );
-***REMOVED***;
+};
 
 export default AppMenu;

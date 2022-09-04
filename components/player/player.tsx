@@ -1,75 +1,75 @@
-import React, ***REMOVED*** useEffect, useRef, useState ***REMOVED*** from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Plyr from "plyr";
-import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
-import ***REMOVED*** cdn, endpoint, localApi ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** Fade, Portal ***REMOVED*** from "@mui/material";
+import { IVideo } from "../../src/types";
+import { cdn, endpoint, localApi } from "../../src/endpoints";
+import { Fade, Portal } from "@mui/material";
 import styles from "../../styles/Player.module.scss";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
-import ***REMOVED*** NextEpisodeButton ***REMOVED*** from "../episodes-controls";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useRouter } from "next/router";
+import { NextEpisodeButton } from "../episodes-controls";
+import { useTranslation } from "react-i18next";
 import embedStyles from "../../styles/embed.module.scss";
 
-interface IProps ***REMOVED***
+interface IProps {
   video: IVideo;
   watchCode: string;
   isEmbed?: boolean;
   setShowDownloadOptions?: React.Dispatch<React.SetStateAction<boolean>>;
-***REMOVED***
+}
 
-const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed, setShowDownloadOptions ***REMOVED***) => ***REMOVED***
+const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOptions }) => {
   const playerEl = useRef(null);
   const [plyr, setPlyr] = useState<Plyr>(null);
   const [customControlsContainer, setCustomControlsContainer] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
-  const poster = `$***REMOVED***cdn***REMOVED***$***REMOVED***posterUrl***REMOVED***`;
+  const poster = `${cdn}${posterUrl}`;
 
   const router = useRouter();
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     initPlayer();
-***REMOVED*** []);
+  }, []);
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     if (!plyr) return;
-    if (plyr.playing) ***REMOVED***
-      try ***REMOVED***
+    if (plyr.playing) {
+      try {
         plyr.stop();
-  ***REMOVED*** catch (err) ***REMOVED******REMOVED***
-***REMOVED***
-    plyr.source = ***REMOVED***
+      } catch (err) {}
+    }
+    plyr.source = {
       type: "video",
       title: video.title ?? "",
       poster,
-      sources: video.sources?.map((source) => ***REMOVED***
-        return ***REMOVED***
+      sources: video.sources?.map((source) => {
+        return {
           ...source,
-          src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
-    ***REMOVED***;
-  ***REMOVED***) ?? [***REMOVED*** src: `$***REMOVED***cdn***REMOVED***$***REMOVED***video.video***REMOVED***` ***REMOVED***],
+          src: `${cdn}${source.src}`,
+        };
+      }) ?? [{ src: `${cdn}${video.video}` }],
       tracks:
-        video.tracks?.map((track) => ***REMOVED***
-          return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***track.src***REMOVED***` ***REMOVED***;
-    ***REMOVED***) ?? [],
-      previewThumbnails: ***REMOVED***
+        video.tracks?.map((track) => {
+          return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
+        }) ?? [],
+      previewThumbnails: {
         enabled: true,
-        src: `$***REMOVED***endpoint***REMOVED***/v2/preview/$***REMOVED***watchCode***REMOVED***`,
-    ***REMOVED***
-***REMOVED***;
+        src: `${endpoint}/v2/preview/${watchCode}`,
+      },
+    };
 
     rebind(plyr);
 
-    try ***REMOVED***
+    try {
       plyr.play();
-***REMOVED*** catch (err) ***REMOVED******REMOVED***
-***REMOVED*** [router.query.v]);
+    } catch (err) {}
+  }, [router.query.v]);
 
-  const initPlayer = () => ***REMOVED***
+  const initPlayer = () => {
     if (plyr) return;
 
-    const player = new Plyr(playerEl.current, ***REMOVED***
+    const player = new Plyr(playerEl.current, {
       controls: [
         "play-large",
         "play",
@@ -84,7 +84,7 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed, setSh
         "fullscreen",
       ],
       ratio: isEmbed ? null : "16:9",
-      i18n: ***REMOVED***
+      i18n: {
         //theres probably a much more efficient way to do this but I don't have much time rn lmao
         restart: t("plyr:restart"),
         rewind: t("plyr:rewind"),
@@ -121,38 +121,38 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed, setSh
         disabled: t("plyr:disabled"),
         enabled: t("plyr:enabled"),
         advertisement: t("plyr:advertisement"),
-        qualityBadge: ***REMOVED***
+        qualityBadge: {
           2160: "4K",
           1440: "HD",
           1080: "HD",
           720: "HD",
           576: "SD",
           480: "SD",
-      ***REMOVED***
-    ***REMOVED***
-      fullscreen: ***REMOVED***
+        },
+      },
+      fullscreen: {
         iosNative: true,
-    ***REMOVED***
-***REMOVED***);
-    player.source = ***REMOVED***
+      },
+    });
+    player.source = {
       type: "video",
       title: video.title ?? "",
       poster,
-      sources: video.sources?.map((source) => ***REMOVED***
-        return ***REMOVED***
+      sources: video.sources?.map((source) => {
+        return {
           ...source,
-          src: `$***REMOVED***cdn***REMOVED***$***REMOVED***source.src***REMOVED***`,
-    ***REMOVED***;
-  ***REMOVED***) ?? [***REMOVED*** src: `$***REMOVED***cdn***REMOVED***$***REMOVED***video.video***REMOVED***`, type: "video/mp4" ***REMOVED***],
+          src: `${cdn}${source.src}`,
+        };
+      }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }],
       tracks:
-        video.tracks?.map((track) => ***REMOVED***
-          return ***REMOVED*** ...track, src: `$***REMOVED***localApi***REMOVED***/subtitles?url=$***REMOVED***cdn***REMOVED***$***REMOVED***track.src***REMOVED***` ***REMOVED***;
-    ***REMOVED***) ?? [],
-      previewThumbnails: ***REMOVED***
+        video.tracks?.map((track) => {
+          return { ...track, src: `${localApi}/subtitles?url=${cdn}${track.src}` };
+        }) ?? [],
+      previewThumbnails: {
         enabled: true,
-        src: `$***REMOVED***endpoint***REMOVED***/v2/preview/$***REMOVED***watchCode***REMOVED***`,
-    ***REMOVED***
-***REMOVED***;
+        src: `${endpoint}/v2/preview/${watchCode}`,
+      },
+    };
 
     rebind(player);
 
@@ -160,17 +160,17 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed, setSh
 
     const playerContainer = document.getElementsByClassName("plyr")[0];
 
-    if (isEmbed) ***REMOVED***
+    if (isEmbed) {
       playerContainer.classList.add(embedStyles["embed-player"]);
-***REMOVED***
+    }
 
     const plyrDownloadBtn = document.querySelector('a[data-plyr="download"]') as HTMLAnchorElement;
-    if (plyrDownloadBtn) ***REMOVED***
-      plyrDownloadBtn.addEventListener("click", (evt) => ***REMOVED***
+    if (plyrDownloadBtn) {
+      plyrDownloadBtn.addEventListener("click", (evt) => {
         evt.preventDefault();
         setShowDownloadOptions(true);
-  ***REMOVED***);
-***REMOVED***
+      });
+    }
 
     /* Choice Bar */
     const container = document.createElement("div");
@@ -178,37 +178,37 @@ const Player: React.FC<IProps> = (***REMOVED*** video, watchCode, isEmbed, setSh
     container.className = styles.customControls;
     playerContainer.appendChild(container);
     setCustomControlsContainer(container);
-***REMOVED***;
+  };
 
-  const rebind = (player: Plyr = plyr) => ***REMOVED***
+  const rebind = (player: Plyr = plyr) => {
     player.off("timeupdate", setNewTime);
     player.on("timeupdate", setNewTime);
-***REMOVED***;
+  };
 
-  const setNewTime = (event: Plyr.PlyrEvent) => ***REMOVED***
+  const setNewTime = (event: Plyr.PlyrEvent) => {
     setCurrentTime(event.detail.plyr.currentTime);
-***REMOVED***;
+  };
 
   const [duration, setDuration] = useState(video.duration);
 
-  useEffect(() => ***REMOVED***
-    if (!duration && playerEl.current) ***REMOVED***
+  useEffect(() => {
+    if (!duration && playerEl.current) {
       setDuration(playerEl.current.duration);
-***REMOVED***
-***REMOVED*** []);
+    }
+  }, []);
 
   return (
     <div>
-      <video className="player" autoPlay ref=***REMOVED***playerEl***REMOVED*** />
-      <Portal container=***REMOVED***customControlsContainer***REMOVED***>
+      <video className="player" autoPlay ref={playerEl} />
+      <Portal container={customControlsContainer}>
         <div>
-          <Fade in=***REMOVED***currentTime > duration - 10***REMOVED***>
-            <div>***REMOVED***/* <NextEpisodeButton watchCode=***REMOVED***watchCode***REMOVED*** currentTime=***REMOVED***currentTime***REMOVED*** duration=***REMOVED***duration***REMOVED*** /> */***REMOVED***</div>
+          <Fade in={currentTime > duration - 10}>
+            <div>{/* <NextEpisodeButton watchCode={watchCode} currentTime={currentTime} duration={duration} /> */}</div>
           </Fade>
         </div>
       </Portal>
     </div>
   );
-***REMOVED***;
+};
 
 export default Player;

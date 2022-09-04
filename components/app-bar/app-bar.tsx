@@ -1,22 +1,22 @@
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import React, ***REMOVED*** useState, useEffect ***REMOVED*** from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import LinearProgress from "@mui/material/LinearProgress";
 import Fade from "@mui/material/Fade";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
+import { useRouter } from "next/router";
 import Box from "@mui/system/Box";
 import IconButton from "@mui/material/IconButton";
 import BackIcon from "@mui/icons-material/ArrowBack";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { theme } from "../theme/theme";
+import { useTranslation } from "react-i18next";
 import SearchIcon from "@mui/icons-material/Search";
 import AppMenu from "./menu";
 import Search from "../search/search";
 
-const ABar: React.FC = () => ***REMOVED***
+const ABar: React.FC = () => {
   const [isRouting, setIsRouting] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
@@ -24,23 +24,23 @@ const ABar: React.FC = () => ***REMOVED***
 
   const router = useRouter();
 
-  const handleRoutingEnd = () => ***REMOVED***
+  const handleRoutingEnd = () => {
     setIsRouting(false);
-***REMOVED***;
-  const handleRoutingStart = () => ***REMOVED***
+  };
+  const handleRoutingStart = () => {
     setIsRouting(true);
-***REMOVED***;
+  };
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     router.events.on("routeChangeStart", handleRoutingStart);
     router.events.on("routeChangeComplete", handleRoutingEnd);
-    return () => ***REMOVED***
+    return () => {
       router.events.off("routeChangeStart", handleRoutingStart);
       router.events.off("routeChangeComplete", handleRoutingEnd);
-***REMOVED***;
-***REMOVED*** []);
+    };
+  }, []);
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     const storage = globalThis?.sessionStorage;
 
     if (!storage) return;
@@ -48,17 +48,17 @@ const ABar: React.FC = () => ***REMOVED***
     let sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
     const path = globalThis?.location.pathname;
-    if (path) ***REMOVED***
+    if (path) {
       sessionHistory.push(globalThis?.location.pathname);
-***REMOVED***;
+    };
 
     storage.setItem("history", JSON.stringify(sessionHistory));
-***REMOVED*** [router.asPath]);
+  }, [router.asPath]);
 
-  const onClickBack = () => ***REMOVED***
+  const onClickBack = () => {
     const storage = globalThis?.sessionStorage;
 
-    if (storage) ***REMOVED***
+    if (storage) {
       const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
       const lastPage = sessionHistory[sessionHistory.length-2];
@@ -68,80 +68,80 @@ const ABar: React.FC = () => ***REMOVED***
       storage.setItem("history", JSON.stringify(sessionHistory));
 
       router.replace(lastPage);
-***REMOVED*** else ***REMOVED***
+    } else {
       router.back();
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
-  const hasHistory = () => ***REMOVED***
+  const hasHistory = () => {
     const storage = globalThis?.sessionStorage;
 
-    if (storage) ***REMOVED***
-      try ***REMOVED***
+    if (storage) {
+      try {
         return JSON.parse(storage.getItem("history")).length > 0;
-  ***REMOVED*** catch (err) ***REMOVED***
+      } catch (err) {
         console.error(err);
         return false;
-  ***REMOVED***
-***REMOVED*** else return false;
-***REMOVED***;
+      }
+    } else return false;
+  };
 
-  const toggleMobileSearch = () => ***REMOVED***
+  const toggleMobileSearch = () => {
     setShowMobileSearch(!showMobileSearch);
-***REMOVED***;
+  };
 
   return (
     <>
       <AppBar position="sticky">
         <Toolbar>
-          ***REMOVED***hasHistory() &&
+          {hasHistory() &&
             <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx=***REMOVED******REMOVED*** mr: 2 ***REMOVED******REMOVED***
-            onClick=***REMOVED***onClickBack***REMOVED***
+            sx={{ mr: 2 }}
+            onClick={onClickBack}
           >
             <BackIcon />
           </IconButton>
-      ***REMOVED***
+          }
           <Link href="/" passHref>
             <Typography
               variant="h6"
               component="div"
               className="pointer"
             >
-              ***REMOVED***isMdDown ? "TUAA" : "The Unus Annus Archive"***REMOVED***
+              {isMdDown ? "TUAA" : "The Unus Annus Archive"}
             </Typography>
           </Link>
-          <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>
-            ***REMOVED***!isMdDown && (
-              <div style=***REMOVED******REMOVED***justifyContent:"center",alignItems:"center",textAlign:"center"***REMOVED******REMOVED***>
+          <Box sx={{ flexGrow: 1 }}>
+            {!isMdDown && (
+              <div style={{justifyContent:"center",alignItems:"center",textAlign:"center"}}>
                 <Search />
               </div>
-            )***REMOVED***
+            )}
           </Box>
-          ***REMOVED***isMdDown && (
-              <IconButton onClick=***REMOVED***toggleMobileSearch***REMOVED***>
+          {isMdDown && (
+              <IconButton onClick={toggleMobileSearch}>
                 <SearchIcon />
               </IconButton>
-            )***REMOVED***
+            )}
           <div className="d-flex">
             <AppMenu />
           </div>
         </Toolbar>
-        <Fade in=***REMOVED***isRouting***REMOVED***>
+        <Fade in={isRouting}>
           <LinearProgress className="routing-progress" />
         </Fade>
-        ***REMOVED***isMdDown && showMobileSearch && (
-          <div style=***REMOVED******REMOVED***marginBottom:16***REMOVED******REMOVED***>
+        {isMdDown && showMobileSearch && (
+          <div style={{marginBottom:16}}>
             <Search />
           </div>
-        )***REMOVED***
+        )}
       </AppBar>
     </>
   );
-***REMOVED***;
+};
 
 export default ABar;

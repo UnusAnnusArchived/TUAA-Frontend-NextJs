@@ -1,118 +1,118 @@
-import ***REMOVED*** Typography, Button, Stack, FormControl, InputLabel, Select, MenuItem ***REMOVED*** from "@mui/material";
-import ***REMOVED*** FaTimes ***REMOVED*** from "react-icons/fa";
-import ***REMOVED*** useState ***REMOVED*** from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import type ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
+import { Typography, Button, Stack, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { FaTimes } from "react-icons/fa";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import type { IVideo } from "../../src/types";
 import DownloadPopupUI from "../download-popup-ui";
 import SubtitlePopup from "../subtitlePopup";
 import VideoPopup from "../videoPopup";
-import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
+import { cdn } from "../../src/endpoints";
 
-interface IProps ***REMOVED***
+interface IProps {
   video: IVideo;
-***REMOVED***
+}
 
-const VideoDownloadOptions: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => ***REMOVED***
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
+  const { t, i18n } = useTranslation();
 
   const [showSubtitlesPopup, setShowSubtitlesPopup] = useState(false);
   const [showVideoPopup, setShowVideoPopup] = useState(false);
 
-  const downloadMetadata = () => ***REMOVED***
+  const downloadMetadata = () => {
     const element = document.createElement("a");
-    element.setAttribute("href", `data:text/plain;charset=utf-8,$***REMOVED***encodeURIComponent(JSON.stringify(video, null, 2))***REMOVED***`);
-    element.setAttribute("download", `$***REMOVED***video.title***REMOVED*** Metadata.json`);
+    element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(JSON.stringify(video, null, 2))}`);
+    element.setAttribute("download", `${video.title} Metadata.json`);
     element.style.display = "none";
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-***REMOVED***;
+  };
 
-  const downloadDescription = () => ***REMOVED***
+  const downloadDescription = () => {
     const element = document.createElement("a");
-    element.setAttribute("href", `data:text/plain;charset=utf-8,$***REMOVED***encodeURIComponent(video.description)***REMOVED***`);
-    element.setAttribute("download", `$***REMOVED***video.title***REMOVED*** Description.html`);
+    element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(video.description)}`);
+    element.setAttribute("download", `${video.title} Description.html`);
     element.style.display = "none";
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-***REMOVED***;
+  };
 
-  const downloadThumbnail = () => ***REMOVED***
-    fetch(`$***REMOVED***cdn***REMOVED***$***REMOVED***video.thumbnail ?? video.posters[0].src***REMOVED***`)
+  const downloadThumbnail = () => {
+    fetch(`${cdn}${video.thumbnail ?? video.posters[0].src}`)
       .then((res) => res.blob())
-      .then((blob) => ***REMOVED***
+      .then((blob) => {
         const dataUrl = new FileReader();
-        dataUrl.onload = function (e) ***REMOVED***
+        dataUrl.onload = function (e) {
           const url = e.target.result as string;
           const element = document.createElement("a");
           element.setAttribute("href", url);
-          element.setAttribute("download", `$***REMOVED***video.title***REMOVED*** Thumbnail.webp`);
+          element.setAttribute("download", `${video.title} Thumbnail.webp`);
           element.style.display = "none";
           document.body.appendChild(element);
           element.click();
           document.body.removeChild(element);
-    ***REMOVED***;
+        };
         dataUrl.readAsDataURL(blob);
-  ***REMOVED***);
-***REMOVED***;
+      });
+  };
 
-  const toggleSubtitlesPopup = () => ***REMOVED***
+  const toggleSubtitlesPopup = () => {
     setShowSubtitlesPopup(!showSubtitlesPopup);
     setShowVideoPopup(false);
-***REMOVED***;
+  };
 
-  const toggleVideoPopup = () => ***REMOVED***
+  const toggleVideoPopup = () => {
     setShowVideoPopup(!showVideoPopup);
     setShowSubtitlesPopup(false);
-***REMOVED***;
+  };
 
   return (
     <>
       <Typography variant="h6" component="h2" marginBottom="6px">
-        ***REMOVED***t("downloads:specificEpisode:downloadOptions:title")***REMOVED***
+        {t("downloads:specificEpisode:downloadOptions:title")}
       </Typography>
-      <Stack spacing=***REMOVED***1***REMOVED*** direction="column" justifyContent="center" alignItems="flex-start">
-        <Button variant="contained" onClick=***REMOVED***toggleVideoPopup***REMOVED***>
+      <Stack spacing={1} direction="column" justifyContent="center" alignItems="flex-start">
+        <Button variant="contained" onClick={toggleVideoPopup}>
           Video
         </Button>
-        <Button variant="contained" onClick=***REMOVED***toggleSubtitlesPopup***REMOVED*** disabled=***REMOVED***!video.tracks || video.tracks.length < 1***REMOVED***>
+        <Button variant="contained" onClick={toggleSubtitlesPopup} disabled={!video.tracks || video.tracks.length < 1}>
           Subtitles
         </Button>
-        <Button variant="contained" onClick=***REMOVED***downloadThumbnail***REMOVED***>
+        <Button variant="contained" onClick={downloadThumbnail}>
           Thumbnail
         </Button>
-        <Button variant="contained" onClick=***REMOVED***downloadDescription***REMOVED***>
+        <Button variant="contained" onClick={downloadDescription}>
           Description
         </Button>
-        <Button variant="contained" onClick=***REMOVED***downloadMetadata***REMOVED***>
+        <Button variant="contained" onClick={downloadMetadata}>
           Metadata
         </Button>
       </Stack>
-      ***REMOVED***showSubtitlesPopup && (
+      {showSubtitlesPopup && (
         <DownloadPopupUI>
-          <div style=***REMOVED******REMOVED*** marginBottom: 30, display: "flex" ***REMOVED******REMOVED***>
-            <h3 style=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>Subtitles</h3>
-            <a href="#" style=***REMOVED******REMOVED*** color: "#ffffff" ***REMOVED******REMOVED*** onClick=***REMOVED***toggleSubtitlesPopup***REMOVED***>
-              <FaTimes style=***REMOVED******REMOVED*** fontSize: "1.5rem" ***REMOVED******REMOVED*** />
+          <div style={{ marginBottom: 30, display: "flex" }}>
+            <h3 style={{ flexGrow: 1 }}>Subtitles</h3>
+            <a href="#" style={{ color: "#ffffff" }} onClick={toggleSubtitlesPopup}>
+              <FaTimes style={{ fontSize: "1.5rem" }} />
             </a>
           </div>
-          <SubtitlePopup video=***REMOVED***video***REMOVED*** />
+          <SubtitlePopup video={video} />
         </DownloadPopupUI>
-      )***REMOVED***
-      ***REMOVED***showVideoPopup && (
+      )}
+      {showVideoPopup && (
         <DownloadPopupUI>
-          <div style=***REMOVED******REMOVED*** marginBottom: 30, display: "flex" ***REMOVED******REMOVED***>
-            <h3 style=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>Video</h3>
-            <a href="#" style=***REMOVED******REMOVED*** color: "#ffffff" ***REMOVED******REMOVED*** onClick=***REMOVED***toggleVideoPopup***REMOVED***>
-              <FaTimes style=***REMOVED******REMOVED*** fontSize: "1.5rem" ***REMOVED******REMOVED*** />
+          <div style={{ marginBottom: 30, display: "flex" }}>
+            <h3 style={{ flexGrow: 1 }}>Video</h3>
+            <a href="#" style={{ color: "#ffffff" }} onClick={toggleVideoPopup}>
+              <FaTimes style={{ fontSize: "1.5rem" }} />
             </a>
           </div>
-          <VideoPopup video=***REMOVED***video***REMOVED*** />
+          <VideoPopup video={video} />
         </DownloadPopupUI>
-      )***REMOVED***
+      )}
     </>
   );
-***REMOVED***;
+};
 
 export default VideoDownloadOptions;

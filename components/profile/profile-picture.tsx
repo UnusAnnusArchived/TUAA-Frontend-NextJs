@@ -1,34 +1,34 @@
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import React from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** ChangePic ***REMOVED*** from ".";
-import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
+import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
+import { ChangePic } from ".";
+import { userAtom } from "../../src/atoms";
+import { endpoint } from "../../src/endpoints";
 
-const ProfilePicture: React.FC = () => ***REMOVED***
+const ProfilePicture: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const ***REMOVED*** user ***REMOVED*** = loggedInUser;
+  const { user } = loggedInUser;
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-3">
-        ***REMOVED***t("profile:pfp:title")***REMOVED***
+        {t("profile:pfp:title")}
       </Typography>
       <Avatar
-        src=***REMOVED***`$***REMOVED***user.pfp.filename.startsWith("/") ? "./" : "/./"***REMOVED***$***REMOVED***user.pfp.filename***REMOVED***`***REMOVED*** //very hacky way of fixing profile picture issue
-        alt=***REMOVED***user.username***REMOVED***
+        src={`${user.pfp.filename.startsWith("/") ? "./" : "/./"}${user.pfp.filename}`} //very hacky way of fixing profile picture issue
+        alt={user.username}
         className="my-1"
-        sx=***REMOVED******REMOVED*** width: 80, height: 80 ***REMOVED******REMOVED***
+        sx={{ width: 80, height: 80 }}
       />
       <div className="my-3">
         <ChangePic />
       </div>
     </div>
   );
-***REMOVED***;
+};
 
 export default ProfilePicture;

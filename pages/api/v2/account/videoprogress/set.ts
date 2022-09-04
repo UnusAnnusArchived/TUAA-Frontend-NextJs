@@ -1,37 +1,37 @@
 import fs from "fs";
-import ***REMOVED*** IUser ***REMOVED*** from "../../../../../src/types";
-import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
-import ***REMOVED*** handle401 ***REMOVED*** from "../../../_handleErrors";
+import { IUser } from "../../../../../src/types";
+import { NextApiRequest, NextApiResponse } from "next";
+import { handle401 } from "../../../_handleErrors";
 
-export default function setVideoProgress(req:NextApiRequest, res:NextApiResponse) ***REMOVED***
-  const ***REMOVED*** uid, loginKey, uaid, progress ***REMOVED*** = req.body;
+export default function setVideoProgress(req:NextApiRequest, res:NextApiResponse) {
+  const { uid, loginKey, uaid, progress } = req.body;
   const users = fs.readdirSync("db/users");
 
   let loginIsValid = false;
 
-  for (let i = 0; i < users.length; i++) ***REMOVED***
-    const user:IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
-    if (user.id === uid && user.loginKeys.includes(loginKey)) ***REMOVED***
+  for (let i = 0; i < users.length; i++) {
+    const user:IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+    if (user.id === uid && user.loginKeys.includes(loginKey)) {
       loginIsValid = true;
       break;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  if (loginIsValid) ***REMOVED***
-    if (uaid && progress) ***REMOVED***
-      const videoProgress = ***REMOVED***
+  if (loginIsValid) {
+    if (uaid && progress) {
+      const videoProgress = {
         uaid,
         progress
-  ***REMOVED***;
-      if (!fs.existsSync(`db/uservideoprogress/$***REMOVED***uid***REMOVED***`)) ***REMOVED***
-        fs.mkdirSync(`db/uservideoprogress/$***REMOVED***uid***REMOVED***`);
-  ***REMOVED***
-      fs.writeFileSync(`db/uservideoprogress/$***REMOVED***uid***REMOVED***/$***REMOVED***uaid***REMOVED***.json`, JSON.stringify(videoProgress));
+      };
+      if (!fs.existsSync(`db/uservideoprogress/${uid}`)) {
+        fs.mkdirSync(`db/uservideoprogress/${uid}`);
+      }
+      fs.writeFileSync(`db/uservideoprogress/${uid}/${uaid}.json`, JSON.stringify(videoProgress));
       res.send(videoProgress);
-***REMOVED*** else ***REMOVED***
-      res.status(400).send(***REMOVED***error:***REMOVED***code:400,message:"Missing fields!"***REMOVED******REMOVED***);
-***REMOVED***
-***REMOVED*** else ***REMOVED***
+    } else {
+      res.status(400).send({error:{code:400,message:"Missing fields!"}});
+    }
+  } else {
     handle401(req, res);
-***REMOVED***
-***REMOVED***
+  }
+}

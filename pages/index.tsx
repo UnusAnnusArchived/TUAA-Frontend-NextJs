@@ -2,74 +2,74 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import fs from "fs";
 import config from "../src/config.json";
-import ***REMOVED*** GetStaticProps ***REMOVED*** from "next";
-import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
-import ***REMOVED*** VideoList ***REMOVED*** from "../components/video-list";
-import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
-import ***REMOVED*** IVideo, Seasons ***REMOVED*** from "../src/types";
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** showPatreonAtom ***REMOVED*** from "../src/atoms";
+import { GetStaticProps } from "next";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Layout } from "../components/layout";
+import { MetaHead } from "../components/meta-head";
+import { VideoList } from "../components/video-list";
+import { endpoint } from "../src/endpoints";
+import { IVideo, Seasons } from "../src/types";
+import { useToasts } from "@geist-ui/react";
+import { useRecoilState } from "recoil";
+import { showPatreonAtom } from "../src/atoms";
 import PatreonPopup from "../components/patreon-popup";
 
-interface IProps ***REMOVED***
+interface IProps {
   seasons: Seasons;
-***REMOVED***
+}
 
-const Page: React.FC<IProps> = (***REMOVED*** seasons ***REMOVED***) => ***REMOVED***
+const Page: React.FC<IProps> = ({ seasons }) => {
   const [currentTab, setCurrentTab] = useState(1);
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => ***REMOVED***
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setCurrentTab(newValue);
-***REMOVED***;
+  };
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("home:title")***REMOVED*** />
+      <MetaHead baseTitle={t("home:title")} />
       <div>
         <PatreonPopup key="patreon" />
 
-        <Tabs key="tabs" value=***REMOVED***currentTab***REMOVED*** onChange=***REMOVED***handleChange***REMOVED*** centered>
-          <Tab label=***REMOVED***t("seasons:season1")***REMOVED*** value=***REMOVED***1***REMOVED*** />
-          <Tab label=***REMOVED***t("seasons:season2")***REMOVED*** value=***REMOVED***0***REMOVED*** />
+        <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
+          <Tab label={t("seasons:season1")} value={1} />
+          <Tab label={t("seasons:season2")} value={0} />
         </Tabs>
-        ***REMOVED***seasons.map((season, i) => ***REMOVED***
+        {seasons.map((season, i) => {
           return (
-            <div key=***REMOVED***`season-$***REMOVED***i***REMOVED***`***REMOVED*** hidden=***REMOVED***currentTab !== i***REMOVED***>
-              <VideoList videos=***REMOVED***season***REMOVED*** />
+            <div key={`season-${i}`} hidden={currentTab !== i}>
+              <VideoList videos={season} />
             </div>
           );
-    ***REMOVED***)***REMOVED***
+        })}
       </div>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default Page;
 
-export const getStaticProps: GetStaticProps<IProps> = async (context) => ***REMOVED***
+export const getStaticProps: GetStaticProps<IProps> = async (context) => {
   let metadata: Seasons = [[], []];
 
-  const s00 = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/00`);
-  for (let i = 0; i < s00.length; i++) ***REMOVED***
-    const episode: IVideo = JSON.parse(fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/00/$***REMOVED***s00[i]***REMOVED***`, "utf-8"));
+  const s00 = fs.readdirSync(`${config.metadataPath}/00`);
+  for (let i = 0; i < s00.length; i++) {
+    const episode: IVideo = JSON.parse(fs.readFileSync(`${config.metadataPath}/00/${s00[i]}`, "utf-8"));
     metadata[0].push(episode);
-***REMOVED***
+  }
 
-  const s01 = fs.readdirSync(`$***REMOVED***config.metadataPath***REMOVED***/01`);
-  for (let i = 0; i < s01.length; i++) ***REMOVED***
-    const episode: IVideo = JSON.parse(fs.readFileSync(`$***REMOVED***config.metadataPath***REMOVED***/01/$***REMOVED***s01[i]***REMOVED***`, "utf-8"));
+  const s01 = fs.readdirSync(`${config.metadataPath}/01`);
+  for (let i = 0; i < s01.length; i++) {
+    const episode: IVideo = JSON.parse(fs.readFileSync(`${config.metadataPath}/01/${s01[i]}`, "utf-8"));
     metadata[1].push(episode);
-***REMOVED***
+  }
 
-  return ***REMOVED***
-    props: ***REMOVED***
+  return {
+    props: {
       seasons: metadata,
-  ***REMOVED***
+    },
     revalidate: 60 * 60 * 24, // 1 day
-***REMOVED***;
-***REMOVED***;
+  };
+};

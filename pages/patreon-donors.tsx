@@ -2,11 +2,11 @@ import Paper from "@mui/material/Paper";
 import Plus from "@mui/icons-material/Add";
 import Image from "next/image";
 import moment from "moment";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
+import { Layout } from "../components/layout";
+import { MetaHead } from "../components/meta-head";
 import styles from "../styles/PatreonDonors.module.scss";
 import Link from "next/link";
-import ***REMOVED*** Divider, Typography ***REMOVED*** from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 
 // Import Profile Pictures
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
@@ -16,10 +16,11 @@ import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
 import ItsMe from "../patreon-donor-pfps/It's Me.webp";
 import JoshuaPerez from "../patreon-donor-pfps/Joshua Perez.webp";
 import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
+import Nagapup from "../patreon-donor-pfps/Nagapup.webp";
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
-const PatreonDonors = () => ***REMOVED***
+const PatreonDonors = () => {
   return (
     <Layout>
       <MetaHead baseTitle="Patreon Donors" />
@@ -28,176 +29,193 @@ const PatreonDonors = () => ***REMOVED***
           Patreon Donors
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <Divider sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED*** className="my-3" />
+          <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
         </div>
       </div>
       <div className="row">
-        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***CaitieP.src***REMOVED***
+              src={CaitieP.src}
               alt="Caitie P's Patreon Profile Picture"
-              blurDataURL=***REMOVED***CaitieP.blurDataURL***REMOVED***
+              blurDataURL={CaitieP.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>Caitie P</span>
-              <span>Since ***REMOVED***moment("2022-03-03").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Caitie P</span>
+              <span>Since {moment("2022-03-03").fromNow()}</span>
               <span>€4.50</span>
             </div>
           </Paper>
-        </div> */***REMOVED***
-        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+        </div> */}
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***CHGJake.src***REMOVED***
+              src={CHGJake.src}
               alt="CHG Jake's Patreon Profile Picture"
-              blurDataURL=***REMOVED***CHGJake.blurDataURL***REMOVED***
+              blurDataURL={CHGJake.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>CHG Jake</span>
-              <span>Since ***REMOVED***moment("2022-09-01").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>CHG Jake</span>
+              <span>Since {moment("2022-09-01").fromNow()}</span>
               <span>$5</span>
             </div>
           </Paper>
-        </div> */***REMOVED***
+        </div> */}
         <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***Colyn.src***REMOVED***
+              src={Colyn.src}
               alt="Colyn's Patreon Profile Picture"
-              blurDataURL=***REMOVED***Colyn.blurDataURL***REMOVED***
+              blurDataURL={Colyn.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>Colyn</span>
-              <span>Since ***REMOVED***moment("2022-08-01").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Colyn</span>
+              <span>Since {moment("2022-08-01").fromNow()}</span>
               <span>$5</span>
             </div>
           </Paper>
         </div>
-        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***HopeVictoriaLiepe.src***REMOVED***
+              src={HopeVictoriaLiepe.src}
               alt="Hope Victoria Liepe's Patreon Profile Picture"
-              blurDataURL=***REMOVED***HopeVictoriaLiepe.blurDataURL***REMOVED***
+              blurDataURL={HopeVictoriaLiepe.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>Hope Victoria Liepe</span>
-              <span>Since ***REMOVED***moment("2022-08-13").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Hope Victoria Liepe</span>
+              <span>Since {moment("2022-08-13").fromNow()}</span>
               <span>$5</span>
             </div>
           </Paper>
-        </div> */***REMOVED***
-        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+        </div> */}
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***ItsMe.src***REMOVED***
+              src={ItsMe.src}
               alt="It's Me's Patreon Profile Picture"
-              blurDataURL=***REMOVED***ItsMe.blurDataURL***REMOVED***
+              blurDataURL={ItsMe.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>It&apos;s Me</span>
-              <span>Since ***REMOVED***moment("2022-08-25").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>It&apos;s Me</span>
+              <span>Since {moment("2022-08-25").fromNow()}</span>
               <span>$1</span>
             </div>
           </Paper>
-        </div> */***REMOVED***
-        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+        </div> */}
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***JoshuaPerez.src***REMOVED***
+              src={JoshuaPerez.src}
               alt="Joshua Perez's Patreon Profile Picture"
-              blurDataURL=***REMOVED***JoshuaPerez.blurDataURL***REMOVED***
+              blurDataURL={JoshuaPerez.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>Joshua Perez</span>
-              <span>Since ***REMOVED***moment("2022-08-30").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Joshua Perez</span>
+              <span>Since {moment("2022-08-30").fromNow()}</span>
               <span>$1</span>
             </div>
           </Paper>
-        </div> */***REMOVED***
+        </div> */}
         <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***Katsam87.src***REMOVED***
+              src={Katsam87.src}
               alt="Katsam87's Patreon Profile Picture"
-              blurDataURL=***REMOVED***Katsam87.blurDataURL***REMOVED***
+              blurDataURL={Katsam87.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>Katsam87</span>
-              <span>Since ***REMOVED***moment("2022-08-20").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Katsam87</span>
+              <span>Since {moment("2022-08-20").fromNow()}</span>
               <span>$1</span>
             </div>
           </Paper>
         </div>
-        ***REMOVED***/* <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***rae.src***REMOVED***
-              alt="rae's Patreon Profile Picture"
-              blurDataURL=***REMOVED***rae.blurDataURL***REMOVED***
+              src={Nagapup.src}
+              alt="Nagapup's Patreon Profile Picture"
+              blurDataURL={Nagapup.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>rae</span>
-              <span>Since ***REMOVED***moment("2022-08-14").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Nagapup</span>
+              <span>Since {moment("2022-09-03").fromNow()}</span>
+              <span>£1</span>
+            </div>
+          </Paper>
+        </div>
+        {/* <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={rae.src}
+              alt="rae's Patreon Profile Picture"
+              blurDataURL={rae.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>rae</span>
+              <span>Since {moment("2022-08-14").fromNow()}</span>
               <span>$2</span>
             </div>
           </Paper>
-        </div> */***REMOVED***
+        </div> */}
         <div className="col-12 col-md-4 p-2 h-100">
-          <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
-              className=***REMOVED***styles.pfp***REMOVED***
+              className={styles.pfp}
               width="100"
               height="100"
-              src=***REMOVED***TheBoltLord.src***REMOVED***
+              src={TheBoltLord.src}
               alt="TheBoltLord .'s Patreon Profile Picture"
-              blurDataURL=***REMOVED***TheBoltLord.blurDataURL***REMOVED***
+              blurDataURL={TheBoltLord.blurDataURL}
             />
-            <div className=***REMOVED***styles.infoContainer***REMOVED***>
-              <span className=***REMOVED***styles.name***REMOVED***>TheBoltLord .</span>
-              <span>Since ***REMOVED***moment("2022-02-03").fromNow()***REMOVED***</span>
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>TheBoltLord .</span>
+              <span>Since {moment("2022-02-03").fromNow()}</span>
               <span>$1</span>
             </div>
           </Paper>
         </div>
         <div className="col-12 col-md-4 p-2 h-100 pointer">
           <a
-            style=***REMOVED******REMOVED*** textDecoration: "none" ***REMOVED******REMOVED***
+            style={{ textDecoration: "none" }}
             href="https://www.patreon.com/theunusannusarchive"
             rel="noreferrer"
             target="_blank"
           >
-            <Paper className=***REMOVED***`p-2 h-100 $***REMOVED***styles.patreon***REMOVED***`***REMOVED***>
-              <div style=***REMOVED******REMOVED*** borderRadius: "100%", backgroundColor: "#3e3e3e" ***REMOVED******REMOVED***>
-                <Plus style=***REMOVED******REMOVED*** width: 100, height: 100 ***REMOVED******REMOVED*** />
+            <Paper className={`p-2 h-100 ${styles.patreon}`}>
+              <div style={{ borderRadius: "100%", backgroundColor: "#3e3e3e" }}>
+                <Plus style={{ width: 100, height: 100 }} />
               </div>
-              <div className=***REMOVED***styles.infoContainer***REMOVED***>
-                <span className=***REMOVED***styles.name***REMOVED***>Want to see your name listed here?</span>
+              <div className={styles.infoContainer}>
+                <span className={styles.name}>Want to see your name listed here?</span>
                 <span>Subscribe</span>
               </div>
             </Paper>
@@ -206,6 +224,6 @@ const PatreonDonors = () => ***REMOVED***
       </div>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default PatreonDonors;

@@ -1,78 +1,78 @@
-import React, ***REMOVED*** useEffect ***REMOVED*** from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/Layout.module.scss";
-import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
+import { theme } from "../theme/theme";
 import classNames from "classnames";
-import ***REMOVED*** AppBar ***REMOVED*** from "../app-bar";
-import ***REMOVED*** createStyles, makeStyles ***REMOVED*** from "@mui/styles";
-import ***REMOVED*** Theme ***REMOVED*** from "@mui/material";
+import { AppBar } from "../app-bar";
+import { createStyles, makeStyles } from "@mui/styles";
+import { Theme } from "@mui/material";
 import axios from "axios";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** CheckLoginKeyResponse ***REMOVED*** from "../../src/types";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
+import { endpoint } from "../../src/endpoints";
+import { CheckLoginKeyResponse } from "../../src/types";
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles(***REMOVED***
-    main: ***REMOVED***
+  createStyles({
+    main: {
       backgroundColor: theme.palette?.background.default,
-  ***REMOVED***
-***REMOVED***)
+    },
+  })
 );
 
-const Layout: React.FC = (***REMOVED*** children ***REMOVED***) => ***REMOVED***
+const Layout: React.FC = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const classes = useStyles(theme);
 
-  const refetchUser = async (): Promise<boolean> => ***REMOVED***
-    const res = await axios.post<CheckLoginKeyResponse>(`$***REMOVED***endpoint***REMOVED***/v2/account/checkloginkey`, ***REMOVED***
+  const refetchUser = async (): Promise<boolean> => {
+    const res = await axios.post<CheckLoginKeyResponse>(`${endpoint}/v2/account/checkloginkey`, {
       loginKey: loggedInUser.loginKey,
-***REMOVED***);
+    });
 
-    if (res.status === 200) ***REMOVED***
-      if (res.data.isValid) ***REMOVED***
+    if (res.status === 200) {
+      if (res.data.isValid) {
         return true;
-  ***REMOVED***
-***REMOVED***
+      }
+    }
 
     return false;
-***REMOVED***;
+  };
 
-  const checkUser = async () => ***REMOVED***
+  const checkUser = async () => {
     const res = await refetchUser();
 
-    if (!res) ***REMOVED***
+    if (!res) {
       setLoggedInUser(null);
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     if (loggedInUser) checkUser();
-***REMOVED*** []);
+  }, []);
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     if (loggedInUser) checkUser();
-***REMOVED*** [loggedInUser]);
+  }, [loggedInUser]);
 
   return (
     <React.Fragment>
       <noscript>
-        <style>***REMOVED***`body ***REMOVED*** all: unset; ***REMOVED*** #main ***REMOVED*** display: none!important; ***REMOVED***`***REMOVED***</style>
-        ***REMOVED***/*eslint-disable-next-line*/***REMOVED***
+        <style>{`body { all: unset; } #main { display: none!important; }`}</style>
+        {/*eslint-disable-next-line*/}
         <h1>
           Please enable JavaScript, or go to our <a href="/legacy/01">Legacy browser page</a>.
         </h1>
       </noscript>
 
-      <div id="main" className=***REMOVED***classNames(classes.main, styles.main)***REMOVED***>
+      <div id="main" className={classNames(classes.main, styles.main)}>
         <AppBar />
-        <div className=***REMOVED***styles.toolbar***REMOVED*** />
+        <div className={styles.toolbar} />
         <main id="main" className="container pb-5 text-white">
-          ***REMOVED***children***REMOVED***
+          {children}
         </main>
       </div>
     </React.Fragment>
   );
-***REMOVED***;
+};
 
 export default Layout;

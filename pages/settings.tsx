@@ -1,19 +1,19 @@
 import React from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
+import { useTranslation } from "react-i18next";
+import { Layout } from "../components/layout";
+import { MetaHead } from "../components/meta-head";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import FormGroup from "@mui/material/FormGroup";
-import ***REMOVED*** Autoplay ***REMOVED*** from "../components/settings";
-import ***REMOVED*** Link ***REMOVED*** from "@mui/material";
+import { Autoplay } from "../components/settings";
+import { Link } from "@mui/material";
 import reactStringReplace from "react-string-replace";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** userAtom ***REMOVED*** from "../src/atoms";
-import ***REMOVED*** NextEpisodeButton ***REMOVED*** from "../components/episodes-controls";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../src/atoms";
+import { NextEpisodeButton } from "../components/episodes-controls";
 
-const Settings: React.FC = () => ***REMOVED***
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+const Settings: React.FC = () => {
+  const { t, i18n } = useTranslation();
 
   const [loggedInUser] = useRecoilState(userAtom);
 
@@ -21,33 +21,33 @@ const Settings: React.FC = () => ***REMOVED***
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("settings:title")***REMOVED*** />
+      <MetaHead baseTitle={t("settings:title")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          ***REMOVED***t("settings:title")***REMOVED***
+          {t("settings:title")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider
-            sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED***
+            sx={{ width: "50%", backgroundColor: "#fff" }}
             className="my-3"
           />
 
-          ***REMOVED***user && (
+          {user && (
             <React.Fragment>
               <Typography variant="body1" component="p">
-                ***REMOVED***reactStringReplace(
+                {reactStringReplace(
                   t("settings:accountSettings"),
-                  "***REMOVED***link***REMOVED***",
+                  "{link}",
                   () => (
                     <Link href="/profile">
-                      ***REMOVED***t("profile:title")***REMOVED*** ***REMOVED***t("common:page")***REMOVED***
+                      {t("profile:title")} {t("common:page")}
                     </Link>
                   )
-                )***REMOVED***
+                )}
               </Typography>
               <br />
             </React.Fragment>
-          )***REMOVED***
+          )}
 
           <FormGroup>
             <Autoplay />
@@ -56,6 +56,6 @@ const Settings: React.FC = () => ***REMOVED***
       </div>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default Settings;

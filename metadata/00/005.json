@@ -1,48 +1,48 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/005/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/005/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/005/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/005/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/005/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/005.avif",
       "type": "image/avif",
       "size": 20953
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/005.webp",
       "type": "image/webp",
       "size": 46380
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/005.jpg",
       "type": "image/jpeg",
       "size": 54632
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 5,
@@ -50,4 +50,4 @@
   "description": "just subscribe.",
   "date": 1587150000000,
   "duration": 58
-***REMOVED***
+}

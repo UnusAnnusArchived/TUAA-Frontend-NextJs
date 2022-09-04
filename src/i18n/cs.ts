@@ -1,22 +1,22 @@
-const cs = ***REMOVED***
-  player: ***REMOVED***
+const cs = {
+  player: {
     nextEpisode: "Další epizoda",
     previousEpisode: "Předchozí epizoda",
     episode: "Epizoda",
-***REMOVED***
-  comments: ***REMOVED***
+  },
+  comments: {
     title: "Komentáře",
     placeholder: "Přidat veřejný komentář",
     send: "Přidat komentář",
     noComments: "Video nemá žádné komentáře",
     loadFail: "Nastala chyba při načítání komentářů",
     loggedOut: "Pro přidávání komentářů musíte být přihlášeni",
-***REMOVED***
-  seasons: ***REMOVED***
+  },
+  seasons: {
     season1: "Řada 1",
     season2: "Speciály",
-***REMOVED***
-  common: ***REMOVED***
+  },
+  common: {
     profile: "Profil",
     language: "Jazyk",
     logout: "Odhlásit",
@@ -24,16 +24,16 @@ const cs = ***REMOVED***
     register: "Registrace",
     cancel: "Zrušit",
     save: "Uložit",
-***REMOVED***
-  login: ***REMOVED***
+  },
+  login: {
     title: "Přihlášení",
     titleLong: "Přihlaste se ke svému účtu",
     usernameEmail: "Uživatelské jméno nebo email",
     password: "Heslo",
     loginBtn: "Přihlásit se",
     error: "Nastala chyba při přihlašování",
-***REMOVED***
-  register: ***REMOVED***
+  },
+  register: {
     title: "Registrace",
     titleLong: "Zaregistrovat nový účet",
     email: "Email",
@@ -43,10 +43,10 @@ const cs = ***REMOVED***
     registerBtn: "Vytvořit účet",
     error: "Nastava chyba při vytváření vašeho účtu",
     success: "Váš učet byl vytvořen! Prosím, Přihlaste se.",
-***REMOVED***
-  profile: ***REMOVED***
+  },
+  profile: {
     title: "Profil",
-    pfp: ***REMOVED***
+    pfp: {
       title: "Vaše profilová fotka",
       change: "Změnit profilovou fotku",
       description: "Nahrajte novou profilovou fotku.",
@@ -55,24 +55,24 @@ const cs = ***REMOVED***
       fileSelect: "Vyberte obrázek",
       error: "Nastala chyba při změně vaší profilové fotky",
       success: "Profilová fotka změněna!",
-  ***REMOVED***
+    },
     username: "Uživatelské jméno",
     email: "Email",
     dataTitle: "Data která máme o vašem účtu",
-    logout: ***REMOVED***
+    logout: {
       title: "Možnosti odhlášení",
       local: "Odhlásit z tohoto zařízení",
       all: "Odhlásit ze všech zařízení",
       successAll: "Odhlášení ze všech zařízení proběhlo úspěšně",
       successLocal: "Odhlášení z tohoto zařízení proběhlo úspěšně",
       error: "Nastala chyba při odhlašování",
-  ***REMOVED***
-***REMOVED***
-  errors: ***REMOVED***
+    },
+  },
+  errors: {
     pageNotFound: "Stránka, kterou jste hledali, nebyla nalezena",
     returnToHome: "Vrátit se na hlavní stránku",
-***REMOVED***
+  },
   //TODO: add plyr translations for Czech
-***REMOVED***;
+};
 
 export default cs;

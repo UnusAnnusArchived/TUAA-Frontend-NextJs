@@ -1,40 +1,40 @@
-import ***REMOVED*** Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent ***REMOVED*** from "@mui/material";
-import ***REMOVED*** useState ***REMOVED*** from "react";
-import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** IVideo ***REMOVED*** from "../../src/types";
+import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { useState } from "react";
+import { cdn } from "../../src/endpoints";
+import { IVideo } from "../../src/types";
 
-interface IProps ***REMOVED***
+interface IProps {
   video: IVideo;
-***REMOVED***
+}
 
-const SubtitlePopup: React.FC<IProps> = (***REMOVED*** video ***REMOVED***) => ***REMOVED***
+const SubtitlePopup: React.FC<IProps> = ({ video }) => {
   const [subtitleUrl, setSubtitleUrl] = useState<string>();
 
-  const handleChange = (event: SelectChangeEvent) => ***REMOVED***
-    setSubtitleUrl(`$***REMOVED***cdn***REMOVED***$***REMOVED***event.target.value***REMOVED***`);
-***REMOVED***;
+  const handleChange = (event: SelectChangeEvent) => {
+    setSubtitleUrl(`${cdn}${event.target.value}`);
+  };
 
   return (
     <FormControl fullWidth>
       <InputLabel>Language</InputLabel>
-      <Select label="Language" onChange=***REMOVED***handleChange***REMOVED***>
-        ***REMOVED***video.tracks.map((subtitle) => ***REMOVED***
-          if (subtitle.kind === "captions") ***REMOVED***
+      <Select label="Language" onChange={handleChange}>
+        {video.tracks.map((subtitle) => {
+          if (subtitle.kind === "captions") {
             return (
-              <MenuItem key=***REMOVED***subtitle.srcLang***REMOVED*** value=***REMOVED***subtitle.src***REMOVED***>
-                ***REMOVED***subtitle.label***REMOVED***
+              <MenuItem key={subtitle.srcLang} value={subtitle.src}>
+                {subtitle.label}
               </MenuItem>
             );
-      ***REMOVED***
-    ***REMOVED***)***REMOVED***
+          }
+        })}
       </Select>
-      <div style=***REMOVED******REMOVED*** marginTop: 10, textAlign: "center" ***REMOVED******REMOVED***>
-        <Button href=***REMOVED***subtitleUrl***REMOVED*** variant="contained" disabled=***REMOVED***subtitleUrl === undefined***REMOVED***>
+      <div style={{ marginTop: 10, textAlign: "center" }}>
+        <Button href={subtitleUrl} variant="contained" disabled={subtitleUrl === undefined}>
           Download
         </Button>
       </div>
     </FormControl>
   );
-***REMOVED***;
+};
 
 export default SubtitlePopup;

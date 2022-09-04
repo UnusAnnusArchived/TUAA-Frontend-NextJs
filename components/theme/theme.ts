@@ -1,27 +1,27 @@
-import ***REMOVED*** darkScrollbar ***REMOVED*** from "@mui/material";
-import ***REMOVED*** createTheme ***REMOVED*** from "@mui/material/styles";
+import { darkScrollbar } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
-export const theme = createTheme(***REMOVED***
-  palette: ***REMOVED***
+export const theme = createTheme({
+  palette: {
     mode: "dark",
-    primary: ***REMOVED***
+    primary: {
       main: "#ffffff",
       dark: "#ffffff",
       light: "#ffffff",
-  ***REMOVED***
-    secondary: ***REMOVED***
+    },
+    secondary: {
       main: "#3f3f3f",
-  ***REMOVED***
-    // background: ***REMOVED***
+    },
+    // background: {
     //   default: "#121212",
     //   paper: "#3e3e3e",
-    // ***REMOVED***,
-***REMOVED***
-  components: ***REMOVED***
-    MuiCssBaseline: ***REMOVED***
-      styleOverrides: ***REMOVED***
+    // },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
         body: darkScrollbar(),
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***);
+      },
+    },
+  },
+});

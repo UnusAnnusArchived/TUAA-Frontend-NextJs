@@ -1,1 +1,1 @@
-export ***REMOVED*** default as Player ***REMOVED*** from "./player";
+export { default as Player } from "./player";

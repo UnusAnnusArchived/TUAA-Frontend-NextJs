@@ -1,25 +1,25 @@
-import React, ***REMOVED*** useEffect, useState ***REMOVED*** from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** autoplayAtom ***REMOVED*** from "../../src/atoms";
+import { useRecoilState } from "recoil";
+import { autoplayAtom } from "../../src/atoms";
 
-const Autoplay: React.FC = () => ***REMOVED***
-  const ***REMOVED*** t ***REMOVED*** = useTranslation();
+const Autoplay: React.FC = () => {
+  const { t } = useTranslation();
   const [autoplay, setAutoplay] = useRecoilState(autoplayAtom);
 
-  const handleClick = (_, checked: boolean) => ***REMOVED***
+  const handleClick = (_, checked: boolean) => {
     setAutoplay(checked);
-***REMOVED***;
+  };
 
   return (
     <FormControlLabel
-      control=***REMOVED***<Checkbox checked=***REMOVED***autoplay***REMOVED*** defaultChecked=***REMOVED***autoplay***REMOVED*** />***REMOVED***
-      label=***REMOVED***t("settings:autoplay") as string***REMOVED***
-      onChange=***REMOVED***handleClick***REMOVED***
+      control={<Checkbox checked={autoplay} defaultChecked={autoplay} />}
+      label={t("settings:autoplay") as string}
+      onChange={handleClick}
     />
   );
-***REMOVED***;
+};
 
 export default Autoplay;

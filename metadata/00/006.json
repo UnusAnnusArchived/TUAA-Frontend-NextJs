@@ -1,48 +1,48 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/006/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/006/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/006/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/006/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/006/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/006.avif",
       "type": "image/avif",
       "size": 23335
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/006.webp",
       "type": "image/webp",
       "size": 54228
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/006.jpg",
       "type": "image/jpeg",
       "size": 56895
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 6,
@@ -50,4 +50,4 @@
   "description": "An alternate cut of <a target=\"blank\" href=\"/watch/?v=s01.e257\">episode 257</a>.<br><hr><br>Rage, rage against in the dying of the light.",
   "date": 1595790000000,
   "duration": 120
-***REMOVED***
+}

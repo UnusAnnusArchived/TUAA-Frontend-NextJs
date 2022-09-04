@@ -1,1 +1,1 @@
-export ***REMOVED*** default as MetaHead ***REMOVED*** from "./meta-head";
+export { default as MetaHead } from "./meta-head";

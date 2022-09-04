@@ -1,24 +1,24 @@
 // eslint-disable-next-line @next/next/no-document-import-in-page
-import Document, ***REMOVED*** Html, Head, Main, NextScript ***REMOVED*** from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
-export default class MyDocument extends Document ***REMOVED***
-  render() ***REMOVED***
+export default class MyDocument extends Document {
+  render() {
     return (
       <Html>
         <Head>
-          ***REMOVED***/* Global Site Tag (gtag.js) - Google Analytics */***REMOVED***
-          <script async src=***REMOVED***`https://www.googletagmanager.com/gtag/js?id=G-31L94KSXL0`***REMOVED*** />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=G-31L94KSXL0`} />
           <script
-            dangerouslySetInnerHTML=***REMOVED******REMOVED***
+            dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
-            function gtag()***REMOVED***dataLayer.push(arguments);***REMOVED***
+            function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-31L94KSXL0', ***REMOVED***
+            gtag('config', 'G-31L94KSXL0', {
               page_path: window.location.pathname,
-        ***REMOVED***);
+            });
           `,
-        ***REMOVED******REMOVED***
+            }}
           />
         </Head>
         <body>
@@ -27,5 +27,5 @@ export default class MyDocument extends Document ***REMOVED***
         </body>
       </Html>
     );
-***REMOVED***
-***REMOVED***
+  }
+}

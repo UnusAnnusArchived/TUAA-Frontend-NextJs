@@ -1,41 +1,41 @@
-import ***REMOVED*** atom ***REMOVED*** from "recoil";
-import ***REMOVED*** LoginResponse ***REMOVED*** from "./types";
+import { atom } from "recoil";
+import { LoginResponse } from "./types";
 
 const localStorageEffect =
   (key) =>
-  (***REMOVED*** setSelf, onSet ***REMOVED***) => ***REMOVED***
-    try ***REMOVED***
+  ({ setSelf, onSet }) => {
+    try {
       const savedValue = localStorage.getItem(key);
-      if (savedValue != null) ***REMOVED***
+      if (savedValue != null) {
         setSelf(JSON.parse(savedValue));
-  ***REMOVED***
-***REMOVED*** catch (e) ***REMOVED******REMOVED***
-    onSet((newValue) => ***REMOVED***
-      try ***REMOVED***
+      }
+    } catch (e) {}
+    onSet((newValue) => {
+      try {
         localStorage.setItem(key, JSON.stringify(newValue));
-  ***REMOVED*** catch (e) ***REMOVED******REMOVED***
-***REMOVED***);
-***REMOVED***;
+      } catch (e) {}
+    });
+  };
 
-export const userAtom = atom<LoginResponse>(***REMOVED***
+export const userAtom = atom<LoginResponse>({
   key: "userAtom",
   default: null,
   effects_UNSTABLE: [localStorageEffect("userAtom")],
-***REMOVED***);
+});
 
-export const previousPageAtom = atom<string>(***REMOVED***
+export const previousPageAtom = atom<string>({
   key: "previousPageAtom",
   default: null,
-***REMOVED***);
+});
 
-export const autoplayAtom = atom<boolean>(***REMOVED***
+export const autoplayAtom = atom<boolean>({
   key: "autoplay",
   default: false,
   effects_UNSTABLE: [localStorageEffect("autoplay")],
-***REMOVED***);
+});
 
-export const showPatreonAtom = atom<boolean>(***REMOVED***
+export const showPatreonAtom = atom<boolean>({
   key: "patreon",
   default: true,
   effects_UNSTABLE: [localStorageEffect("patreon")],
-***REMOVED***);
+});

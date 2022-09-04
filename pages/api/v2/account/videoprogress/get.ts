@@ -1,34 +1,34 @@
 import fs from "fs";
-import ***REMOVED*** handle401 ***REMOVED*** from "../../../_handleErrors";
-import ***REMOVED*** IUser ***REMOVED*** from "../../../../../src/types";
-import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
+import { handle401 } from "../../../_handleErrors";
+import { IUser } from "../../../../../src/types";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default function getVideoProgress(req:NextApiRequest, res:NextApiResponse) ***REMOVED***
-  const ***REMOVED*** uid, loginKey, uaid ***REMOVED*** = req.body;
+export default function getVideoProgress(req:NextApiRequest, res:NextApiResponse) {
+  const { uid, loginKey, uaid } = req.body;
   const users = fs.readdirSync("db/users");
 
   let loginIsValid = false;
 
-  for (let i = 0; i < users.length; i++) ***REMOVED***
-    const user:IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
-    if (user.id === uid && user.loginKeys.includes(loginKey)) ***REMOVED***
+  for (let i = 0; i < users.length; i++) {
+    const user:IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+    if (user.id === uid && user.loginKeys.includes(loginKey)) {
       loginIsValid = true;
       break;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  if (loginIsValid) ***REMOVED***
-    if (uaid) ***REMOVED***
-      try ***REMOVED***
-        const videoProgress = JSON.parse(fs.readFileSync(`db/uservideoprogress/$***REMOVED***uid***REMOVED***/$***REMOVED***uaid***REMOVED***.json`, "utf-8"));
+  if (loginIsValid) {
+    if (uaid) {
+      try {
+        const videoProgress = JSON.parse(fs.readFileSync(`db/uservideoprogress/${uid}/${uaid}.json`, "utf-8"));
         res.send(videoProgress);
-  ***REMOVED*** catch ***REMOVED***
-        res.send(***REMOVED***uaid,progress:0***REMOVED***);
-  ***REMOVED***
-***REMOVED*** else ***REMOVED***
-      res.status(400).send(***REMOVED***error:***REMOVED***code:400,message:"Missing Fields!"***REMOVED******REMOVED***);
-***REMOVED***
-***REMOVED*** else ***REMOVED***
+      } catch {
+        res.send({uaid,progress:0});
+      }
+    } else {
+      res.status(400).send({error:{code:400,message:"Missing Fields!"}});
+    }
+  } else {
     handle401(req, res);
-***REMOVED***
-***REMOVED***
+  }
+}

@@ -1,23 +1,23 @@
 import * as React from "react";
-import LinearProgress, ***REMOVED*** LinearProgressProps ***REMOVED*** from "@mui/material/LinearProgress";
+import LinearProgress, { LinearProgressProps } from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-interface IProps ***REMOVED***
+interface IProps {
   value: number;
-***REMOVED***
+}
 
-const ProgressBar: React.FC<IProps> = (***REMOVED*** value ***REMOVED***) => ***REMOVED***
+const ProgressBar: React.FC<IProps> = ({ value }) => {
   return (
-    <Box sx=***REMOVED******REMOVED*** display: "flex", alignItems: "center" ***REMOVED******REMOVED***>
-      <Box sx=***REMOVED******REMOVED*** width: "100%", mr: 1 ***REMOVED******REMOVED***>
-        <LinearProgress variant="determinate" value=***REMOVED***value***REMOVED*** />
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box sx={{ width: "100%", mr: 1 }}>
+        <LinearProgress variant="determinate" value={value} />
       </Box>
-      <Box sx=***REMOVED******REMOVED*** minWidth: 35 ***REMOVED******REMOVED***>
-        <Typography variant="body2" color="text.secondary">***REMOVED***`$***REMOVED***Math.round(value)***REMOVED***%`***REMOVED***</Typography>
+      <Box sx={{ minWidth: 35 }}>
+        <Typography variant="body2" color="text.secondary">{`${Math.round(value)}%`}</Typography>
       </Box>
     </Box>
   );
-***REMOVED***;
+};
 
 export default ProgressBar;

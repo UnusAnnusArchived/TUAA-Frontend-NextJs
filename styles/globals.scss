@@ -2,37 +2,37 @@
 @import "./_colours.scss";
 @import "./_breakpoints.scss";
 
-:root ***REMOVED***
+:root {
   --plyr-color-main: #6f6f6f;
-***REMOVED***
+}
 
 html,
-body ***REMOVED***
+body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
   background-color: $dark-bkg;
 
-  &::-webkit-scrollbar-track ***REMOVED***
+  &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
     background-color: transparent;
-***REMOVED***
+  }
 
-  &::-webkit-scrollbar ***REMOVED***
+  &::-webkit-scrollbar {
     width: 6px;
     background-color: transparent;
-***REMOVED***
+  }
 
-  &::-webkit-scrollbar-thumb ***REMOVED***
+  &::-webkit-scrollbar-thumb {
     border-radius: 6px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: $light-bkg;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-.desc ***REMOVED***
-  & a ***REMOVED***
+.desc {
+  & a {
     color: #c2c2c2;
     transition: 0.3s;
     position: relative;
@@ -41,11 +41,11 @@ body ***REMOVED***
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @include md-down ***REMOVED***
+    @include md-down {
       display: block;
-***REMOVED***
+    }
 
-    &:after ***REMOVED***
+    &:after {
       content: "";
       position: absolute;
       width: 100%;
@@ -57,84 +57,84 @@ body ***REMOVED***
 
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
-***REMOVED***
+    }
 
-    &:hover ***REMOVED***
+    &:hover {
       color: #ffffff;
 
-      &:after ***REMOVED***
+      &:after {
         transform: scaleX(1);
         transform-origin: bottom left;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+    }
+  }
+}
 
-.MuiButton-text ***REMOVED***
-  &:hover ***REMOVED***
+.MuiButton-text {
+  &:hover {
     color: #d8d8d8;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-.MuiButton-contained ***REMOVED***
-  &:hover ***REMOVED***
+.MuiButton-contained {
+  &:hover {
     color: #3b3b3b;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-* ***REMOVED***
-  a ***REMOVED***
-    &:hover ***REMOVED***
+* {
+  a {
+    &:hover {
       color: #d8d8d8;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  &::-webkit-scrollbar-track ***REMOVED***
+  &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
     background-color: transparent;
-***REMOVED***
+  }
 
-  &::-webkit-scrollbar ***REMOVED***
+  &::-webkit-scrollbar {
     width: 6px;
     background-color: transparent;
-***REMOVED***
+  }
 
-  &::-webkit-scrollbar-thumb ***REMOVED***
+  &::-webkit-scrollbar-thumb {
     border-radius: 6px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: $light-bkg;
-***REMOVED***
-***REMOVED***
-.pointer ***REMOVED***
+  }
+}
+.pointer {
   cursor: pointer;
-***REMOVED***
+}
 
-.no-x-overflow ***REMOVED***
+.no-x-overflow {
   overflow-x: hidden;
-***REMOVED***
+}
 
-.profile-menu-container ***REMOVED***
+.profile-menu-container {
   width: 200px;
 
-  @include md-down ***REMOVED***
+  @include md-down {
     min-width: 200px;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-.menu-container ***REMOVED***
+.menu-container {
   width: 200px;
 
-  @include md-down ***REMOVED***
+  @include md-down {
     min-width: 200px;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-.flex-grow ***REMOVED***
+.flex-grow {
   flex-grow: 1;
-***REMOVED***
+}
 
-.autoplay-scroll::before ***REMOVED***
+.autoplay-scroll::before {
   animation: AutoplayScroll 10s linear;
   display: block;
   background-color: rgba(0, 0, 0, 0.3);
@@ -143,17 +143,17 @@ body ***REMOVED***
   width: 100%;
   height: 100%;
   left: 0;
-***REMOVED***
+}
 
-@keyframes AutoplayScroll ***REMOVED***
-  0% ***REMOVED***
+@keyframes AutoplayScroll {
+  0% {
     width: 0%;
-***REMOVED***
-  100% ***REMOVED***
+  }
+  100% {
     width: 100%;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-.display-none ***REMOVED***
+.display-none {
   display: none;
-***REMOVED***
+}

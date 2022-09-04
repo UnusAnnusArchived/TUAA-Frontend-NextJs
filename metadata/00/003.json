@@ -1,48 +1,48 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/003/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/003/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/003/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/003/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/003/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/003.avif",
       "type": "image/avif",
       "size": 24440
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/003.jpg",
       "type": "image/jpeg",
       "size": 59051
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/003.webp",
       "type": "image/webp",
       "size": 127550
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 3,
@@ -50,4 +50,4 @@
   "description": "Let me be the Unus to your Annus ► <a target=\"blank\" href=\"<a target=\"blank\" href=\"www.\">www.</a>\">http://www.youtube.com/unusannus</a><br>Soft Boi Merch ☁ <a target=\"blank\" href=\"http://www.crankgameplays.com\">http://www.crankgameplays.com</a><br>chairgameplays ►<a target=\"blank\" href=\"http://bit.ly/2YDvaUt\">http://bit.ly/2YDvaUt</a><br><br>Music I Use ➤ <a target=\"blank\" href=\"http://share.epidemicsound.com/crank\">http://share.epidemicsound.com/crank</a><br>Follow me on twitter ➤ <a target=\"blank\" href=\"http://bit.ly/1CeHBpd\">http://bit.ly/1CeHBpd</a><br>Follow me on Twitch ➤ <a target=\"blank\" href=\"http://www.twitch.tv/CrankGameplays\">http://www.twitch.tv/CrankGameplays</a><br>Follow me on Instagram ➤ <a target=\"blank\" href=\"http://instagram.com/crankgameplays\">http://instagram.com/crankgameplays</a><br><br>edited by ► <a target=\"blank\" href=\"http://www.twitter.com/buffdaddyhd\">http://www.twitter.com/buffdaddyhd</a><br><br>Outro Art Designed by: <a target=\"blank\" href=\"https://www.youtube.com/channel/UCQ1qrORSWqjYgyABk-wzOBw\">https://www.youtube.com/channel/UCQ1qrORSWqjYgyABk-wzOBw</a><br><br>Outro Song Created by: <a target=\"blank\" href=\"https://soundcloud.com/divinewub/the-cranky-crew-a-tribute-to-old-friends\">https://soundcloud.com/divinewub/the-cranky-crew-a-tribute-to-old-friends</a>",
   "date": 1574794800000,
   "duration": 824
-***REMOVED***
+}

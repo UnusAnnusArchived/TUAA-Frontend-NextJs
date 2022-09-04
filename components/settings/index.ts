@@ -1,1 +1,1 @@
-export ***REMOVED*** default as Autoplay ***REMOVED*** from "./autoplay-dynamic";
+export { default as Autoplay } from "./autoplay-dynamic";

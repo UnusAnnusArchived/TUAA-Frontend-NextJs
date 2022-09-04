@@ -11,57 +11,57 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 // Small devices
-@mixin sm-up ***REMOVED***
-  @media (min-width: #***REMOVED***$screen-sm-min***REMOVED***) ***REMOVED***
+@mixin sm-up {
+  @media (min-width: #{$screen-sm-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Medium devices
-@mixin md-up ***REMOVED***
-  @media (min-width: #***REMOVED***$screen-md-min***REMOVED***) ***REMOVED***
+@mixin md-up {
+  @media (min-width: #{$screen-md-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Large devices
-@mixin lg-up ***REMOVED***
-  @media (min-width: #***REMOVED***$screen-lg-min***REMOVED***) ***REMOVED***
+@mixin lg-up {
+  @media (min-width: #{$screen-lg-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Extra large devices
-@mixin xl-up ***REMOVED***
-  @media (min-width: #***REMOVED***$screen-xl-min***REMOVED***) ***REMOVED***
+@mixin xl-up {
+  @media (min-width: #{$screen-xl-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Small devices
-@mixin sm-down ***REMOVED***
-  @media (max-width: #***REMOVED***$screen-sm-min***REMOVED***) ***REMOVED***
+@mixin sm-down {
+  @media (max-width: #{$screen-sm-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Medium devices
-@mixin md-down ***REMOVED***
-  @media (max-width: #***REMOVED***$screen-md-min***REMOVED***) ***REMOVED***
+@mixin md-down {
+  @media (max-width: #{$screen-md-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Large devices
-@mixin lg-down ***REMOVED***
-  @media (max-width: #***REMOVED***$screen-lg-min***REMOVED***) ***REMOVED***
+@mixin lg-down {
+  @media (max-width: #{$screen-lg-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Extra large devices
-@mixin xl-down ***REMOVED***
-  @media (max-width: #***REMOVED***$screen-xl-min***REMOVED***) ***REMOVED***
+@mixin xl-down {
+  @media (max-width: #{$screen-xl-min}) {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}

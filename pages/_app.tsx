@@ -1,31 +1,31 @@
 import Head from "next/head";
 import React from "react";
 import "../styles/globals.scss";
-import type ***REMOVED*** AppProps, NextWebVitalsMetric ***REMOVED*** from "next/app";
+import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Script from "next/script";
-import ***REMOVED*** ThemeProvider ***REMOVED*** from "@mui/material/styles";
-import ***REMOVED*** theme ***REMOVED*** from "../components/theme/theme";
-import ***REMOVED*** RecoilRoot, useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** GeistProvider ***REMOVED*** from "@geist-ui/react";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
-import ***REMOVED*** initTranslations ***REMOVED*** from "../src/i18n/i18n";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "../components/theme/theme";
+import { RecoilRoot, useRecoilState } from "recoil";
+import { GeistProvider } from "@geist-ui/react";
+import { useRouter } from "next/router";
+import { initTranslations } from "../src/i18n/i18n";
 import NonSsrWrapper from "../components/non-ssr-wrapper";
 
-export const reportWebVitals = (metric: NextWebVitalsMetric) => ***REMOVED***
-  const ***REMOVED*** id, name, label, value ***REMOVED*** = metric;
+export const reportWebVitals = (metric: NextWebVitalsMetric) => {
+  const { id, name, label, value } = metric;
   // Use `window.gtag` if you initialized Google Analytics as this example:
   // https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_document.js
 
   // @ts-ignore
-  window.gtag("event", name, ***REMOVED***
+  window.gtag("event", name, {
     event_category: label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
     value: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
     event_label: id, // id unique to current page load
     non_interaction: true, // avoids affecting bounce rate.
-***REMOVED***);
-***REMOVED***;
+  });
+};
 
-const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***REMOVED***
+const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   initTranslations(router.locale);
 
@@ -50,10 +50,10 @@ const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***R
         <meta name="theme-color" content="#121212" />
       </Head>
       <RecoilRoot>
-        <ThemeProvider theme=***REMOVED***theme***REMOVED***>
+        <ThemeProvider theme={theme}>
           <GeistProvider>
             <NonSsrWrapper>
-              <Component ***REMOVED***...pageProps***REMOVED*** />
+              <Component {...pageProps} />
             </NonSsrWrapper>
           </GeistProvider>
         </ThemeProvider>
@@ -65,6 +65,6 @@ const App = (***REMOVED*** Component, pageProps ***REMOVED***: AppProps) => ***R
       />
     </>
   );
-***REMOVED***;
+};
 
 export default App;

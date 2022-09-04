@@ -2,67 +2,67 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useTranslation } from "react-i18next";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import ***REMOVED*** theme ***REMOVED*** from "../theme/theme";
+import { theme } from "../theme/theme";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import LanguageIcon from "@mui/icons-material/Language";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import ***REMOVED*** availableLanguages ***REMOVED*** from "../../src/i18n/i18n";
+import { availableLanguages } from "../../src/i18n/i18n";
 import Link from "next/link";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
+import { useRouter } from "next/router";
 
-const LanguageSelect: React.FC = () => ***REMOVED***
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+const LanguageSelect: React.FC = () => {
+  const { t, i18n } = useTranslation();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => ***REMOVED***
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
-***REMOVED***;
-  const handleClose = () => ***REMOVED***
+  };
+  const handleClose = () => {
     setAnchorEl(null);
-***REMOVED***;
+  };
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleLanguageChange = (lang: string) => ***REMOVED***
+  const handleLanguageChange = (lang: string) => {
     i18n.changeLanguage(lang);
     handleClose();
-***REMOVED***;
+  };
 
   const router = useRouter();
 
   return (
     <div>
-      <div onClick=***REMOVED***(event) => setAnchorEl(event.currentTarget)***REMOVED***>
+      <div onClick={(event) => setAnchorEl(event.currentTarget)}>
         <MenuItem>
           <ListItemIcon>
             <LanguageIcon />
           </ListItemIcon>
-          <ListItemText>***REMOVED***t("common:language")***REMOVED***</ListItemText>
+          <ListItemText>{t("common:language")}</ListItemText>
         </MenuItem>
       </div>
-      <Menu anchorEl=***REMOVED***anchorEl***REMOVED*** open=***REMOVED***open***REMOVED*** onClose=***REMOVED***handleClose***REMOVED***>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">
-          ***REMOVED***availableLanguages.map((language, i) => (
+          {availableLanguages.map((language, i) => (
             <Link
-              key=***REMOVED***i***REMOVED***
+              key={i}
               passHref
-              href=***REMOVED******REMOVED***
+              href={{
                 pathname: router.pathname,
-                query: ***REMOVED*** ...router.query ***REMOVED***,
-          ***REMOVED******REMOVED***
-              locale=***REMOVED***language.code***REMOVED***
+                query: { ...router.query },
+              }}
+              locale={language.code}
             >
-              <MenuItem onClick=***REMOVED***handleClose***REMOVED***>***REMOVED***language.name***REMOVED***</MenuItem>
+              <MenuItem onClick={handleClose}>{language.name}</MenuItem>
             </Link>
-          ))***REMOVED***
+          ))}
         </div>
       </Menu>
     </div>
   );
-***REMOVED***;
+};
 
 export default LanguageSelect;

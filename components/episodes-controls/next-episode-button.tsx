@@ -1,21 +1,21 @@
 import Button from "@mui/material/Button";
 import Link from "next/link";
-import React, ***REMOVED*** useState, useEffect ***REMOVED*** from "react";
+import React, { useState, useEffect } from "react";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useTranslation } from "react-i18next";
 import getEpisodesAround from "../../src/utils/episodes-around";
 import router from "next/router";
-import ***REMOVED*** autoplayAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
+import { autoplayAtom } from "../../src/atoms";
+import { useRecoilState } from "recoil";
 
-interface IProps ***REMOVED***
+interface IProps {
   watchCode: string;
   currentTime: number;
   duration: number;
-***REMOVED***
+}
 
-const NextEpisodeButton: React.FC<IProps> = (***REMOVED*** watchCode, currentTime, duration ***REMOVED***) => ***REMOVED***
-  const ***REMOVED*** t ***REMOVED*** = useTranslation();
+const NextEpisodeButton: React.FC<IProps> = ({ watchCode, currentTime, duration }) => {
+  const { t } = useTranslation();
 
   const [autoplay, setAutoplay] = useRecoilState(autoplayAtom);
 
@@ -23,31 +23,31 @@ const NextEpisodeButton: React.FC<IProps> = (***REMOVED*** watchCode, currentTim
 
   const nextEpisodeWatchCode = getEpisodesAround(watchCode)?.nextEp;
 
-  if (!nextEpisodeWatchCode) ***REMOVED***
+  if (!nextEpisodeWatchCode) {
     return null;
-***REMOVED***
+  }
 
-  if (currentTime > duration - 10 && startAutoplayCountdown === false) ***REMOVED***
+  if (currentTime > duration - 10 && startAutoplayCountdown === false) {
     setStartAutoplayCountdown(true);
-    setTimeout(() => ***REMOVED***
-      router.push(`/watch/$***REMOVED***nextEpisodeWatchCode***REMOVED***`);
+    setTimeout(() => {
+      router.push(`/watch/${nextEpisodeWatchCode}`);
       setStartAutoplayCountdown(false);
-  ***REMOVED*** 10000);
-***REMOVED***
+    }, 10000);
+  }
 
   return (
-    <Link href=***REMOVED***`/watch/$***REMOVED***nextEpisodeWatchCode***REMOVED***`***REMOVED*** passHref>
+    <Link href={`/watch/${nextEpisodeWatchCode}`} passHref>
       <Button
         variant="contained"
         color="primary"
-        sx=***REMOVED******REMOVED*** pointerEvents: "auto" ***REMOVED******REMOVED***
-        endIcon=***REMOVED***<SkipNextIcon />***REMOVED***
-        className=***REMOVED***autoplay && startAutoplayCountdown ? "autoplay-scroll" : ""***REMOVED***
+        sx={{ pointerEvents: "auto" }}
+        endIcon={<SkipNextIcon />}
+        className={autoplay && startAutoplayCountdown ? "autoplay-scroll" : ""}
       >
-        ***REMOVED***t("player:nextEpisode")***REMOVED***
+        {t("player:nextEpisode")}
       </Button>
     </Link>
   );
-***REMOVED***;
+};
 
 export default NextEpisodeButton;

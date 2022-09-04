@@ -1,54 +1,54 @@
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import React from "react";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
-import ***REMOVED*** Layout ***REMOVED*** from "../../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../../components/meta-head";
-import ***REMOVED*** DownloadItem ***REMOVED*** from "../../components/download-item";
+import { useTranslation } from "react-i18next";
+import { Layout } from "../../components/layout";
+import { MetaHead } from "../../components/meta-head";
+import { DownloadItem } from "../../components/download-item";
 
 //Images
 import tuaaDownloaderPic from "../../assets/tuaa-downloader.png";
 import tuaaNodeApiPic from "../../assets/tuaa-node-api.png";
-import ***REMOVED*** cdn ***REMOVED*** from "../../src/endpoints";
+import { cdn } from "../../src/endpoints";
 
-const Download: React.FC<void> = (props) => ***REMOVED***
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+const Download: React.FC<void> = (props) => {
+  const { t, i18n } = useTranslation();
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("downloads:title")***REMOVED*** />
+      <MetaHead baseTitle={t("downloads:title")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          ***REMOVED***t("downloads:title")***REMOVED***
+          {t("downloads:title")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <Divider sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED*** className="my-3" />
+          <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
 
           <DownloadItem
             name="Download Specific Episode"
-            description=***REMOVED***t("downloads:specificEpisode:description")***REMOVED***
-            image=***REMOVED******REMOVED*** src: `$***REMOVED***cdn***REMOVED***/thumbnails/01/001.webp`, width: 1280, height: 720 ***REMOVED******REMOVED***
+            description={t("downloads:specificEpisode:description")}
+            image={{ src: `${cdn}/thumbnails/01/001.webp`, width: 1280, height: 720 }}
             link="/downloads/specific-episode/"
-            newTab=***REMOVED***false***REMOVED***
+            newTab={false}
           />
           <DownloadItem
             name="The Unus Annus Downloader"
-            description=***REMOVED***t("downloads:tuaaDownloader:description")***REMOVED***
-            image=***REMOVED***tuaaDownloaderPic***REMOVED***
+            description={t("downloads:tuaaDownloader:description")}
+            image={tuaaDownloaderPic}
             link="http://github.com/TheUnusAnnusArchive/TUAA-Downloader/releases/latest"
-            newTab=***REMOVED***true***REMOVED***
+            newTab={true}
           ></DownloadItem>
           <DownloadItem
             name="The Unus Annus Archive Node.JS API"
-            description=***REMOVED***t("downloads:tuaaNodeApi:description")***REMOVED***
-            image=***REMOVED***tuaaNodeApiPic***REMOVED***
+            description={t("downloads:tuaaNodeApi:description")}
+            image={tuaaNodeApiPic}
             link="http://github.com/TheUnusAnnusArchive/TUAA-Node-API"
-            newTab=***REMOVED***true***REMOVED***
+            newTab={true}
           ></DownloadItem>
         </div>
       </div>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default Download;

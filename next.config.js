@@ -1,21 +1,21 @@
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 
-module.exports = withPWA(***REMOVED***
+module.exports = withPWA({
   reactStrictMode: true,
-  images: ***REMOVED***
+  images: {
     domains: ["cdn.unusann.us", "usc1.contabostorage.com"],
-***REMOVED***
-  i18n: ***REMOVED***
+  },
+  i18n: {
     locales: ["cs", "de", "en", "es", "fa"],
     defaultLocale: "en",
-***REMOVED***
-  pwa: ***REMOVED***
+  },
+  pwa: {
     dest: "public",
     runtimeCaching,
     register: true,
     skipWaiting: true,
     disable: process.env.NODE_ENV === "development",
     buildExcludes: [/middleware-manifest.json$/],
-***REMOVED***
-***REMOVED***);
+  },
+});

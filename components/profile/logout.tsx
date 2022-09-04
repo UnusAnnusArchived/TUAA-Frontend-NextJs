@@ -1,94 +1,94 @@
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
+import { useToasts } from "@geist-ui/react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 import React from "react";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
-import ***REMOVED*** endpoint ***REMOVED*** from "../../src/endpoints";
-import ***REMOVED*** LogoutResponse ***REMOVED*** from "../../src/types";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
+import { endpoint } from "../../src/endpoints";
+import { LogoutResponse } from "../../src/types";
+import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
-const Logout: React.FC = () => ***REMOVED***
+const Logout: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setToast] = useToasts();
   const router = useRouter();
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const ***REMOVED*** user ***REMOVED*** = loggedInUser;
+  const { user } = loggedInUser;
 
-  const logout = async () => ***REMOVED***
-    try ***REMOVED***
+  const logout = async () => {
+    try {
       const res = await axios.post<LogoutResponse>(
-        `$***REMOVED***endpoint***REMOVED***/v2/account/logout`,
-        ***REMOVED*** id: user.id, loginKey: loggedInUser.loginKey ***REMOVED***
+        `${endpoint}/v2/account/logout`,
+        { id: user.id, loginKey: loggedInUser.loginKey }
       );
 
-      if (res.status === 200) ***REMOVED***
-        if (res.data.status === "success") ***REMOVED***
+      if (res.status === 200) {
+        if (res.data.status === "success") {
           setLoggedInUser(null);
           router.push("/");
-          setToast(***REMOVED***
+          setToast({
             type: "success",
             text: t("profile:logout:successLocal"),
-      ***REMOVED***);
-    ***REMOVED*** else ***REMOVED***
-          setToast(***REMOVED*** type: "error", text: res.data.error ***REMOVED***);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED*** catch (error) ***REMOVED***
+          });
+        } else {
+          setToast({ type: "error", text: res.data.error });
+        }
+      }
+    } catch (error) {
       console.log(error);
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
-  const logoutEverywhere = async () => ***REMOVED***
-    try ***REMOVED***
+  const logoutEverywhere = async () => {
+    try {
       const res = await axios.post<LogoutResponse>(
-        `$***REMOVED***endpoint***REMOVED***/v2/account/logoutall`,
-        ***REMOVED*** id: user.id ***REMOVED***
+        `${endpoint}/v2/account/logoutall`,
+        { id: user.id }
       );
 
-      if (res.status === 200) ***REMOVED***
-        if (res.data.status === "success") ***REMOVED***
+      if (res.status === 200) {
+        if (res.data.status === "success") {
           setLoggedInUser(null);
           router.push("/");
-          setToast(***REMOVED***
+          setToast({
             type: "success",
             text: t("profile:logout:successAll"),
-      ***REMOVED***);
-    ***REMOVED*** else ***REMOVED***
-          setToast(***REMOVED*** type: "error", text: res.data.error ***REMOVED***);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED*** catch (error) ***REMOVED***
+          });
+        } else {
+          setToast({ type: "error", text: res.data.error });
+        }
+      }
+    } catch (error) {
       console.log(error);
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-2">
-        ***REMOVED***t("profile:logout:title")***REMOVED***
+        {t("profile:logout:title")}
       </Typography>
       <div className="d-flex flex-column flex-md-row justify-content-center">
         <Button
           variant="contained"
-          onClick=***REMOVED***logout***REMOVED***
+          onClick={logout}
           className="mx-3 my-2 my-md-1"
         >
-          ***REMOVED***t("profile:logout:local")***REMOVED***
+          {t("profile:logout:local")}
         </Button>
         <Button
           variant="contained"
-          onClick=***REMOVED***logoutEverywhere***REMOVED***
+          onClick={logoutEverywhere}
           className="mx-3 my-2 my-md-1"
         >
-          ***REMOVED***t("profile:logout:all")***REMOVED***
+          {t("profile:logout:all")}
         </Button>
       </div>
     </div>
   );
-***REMOVED***;
+};
 
 export default Logout;

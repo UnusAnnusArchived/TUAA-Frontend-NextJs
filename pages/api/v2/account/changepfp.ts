@@ -1,11 +1,11 @@
 import fs from "fs";
 import sharp from "sharp";
-import ***REMOVED*** randomBytes ***REMOVED*** from "crypto";
+import { randomBytes } from "crypto";
 import formidable from "formidable";
-import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
-import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
+import { NextApiRequest, NextApiResponse } from "next";
+import { IUser } from "../../../../src/types";
 
-export default async function changepfp(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
+export default async function changepfp(req: NextApiRequest, res: NextApiResponse) {
   const users = fs.readdirSync("db/users");
   const body = await parseBody(req);
 
@@ -14,17 +14,17 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
   const loginKey = body.fields.loginKey as string;
 
   var user: IUser;
-  for (var i = 0; i < users.length; i++) ***REMOVED***
-    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
-    if (currentUser.loginKeys.includes(loginKey)) ***REMOVED***
+  for (var i = 0; i < users.length; i++) {
+    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+    if (currentUser.loginKeys.includes(loginKey)) {
       user = currentUser;
       break;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  if (!user) ***REMOVED***
-    return res.send(***REMOVED*** error: "Not logged in!" ***REMOVED***);
-***REMOVED***
+  if (!user) {
+    return res.send({ error: "Not logged in!" });
+  }
 
   const imageMeta = await sharp(pfp.filepath).metadata();
 
@@ -32,49 +32,49 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
 
   var size = 256;
 
-  if (Math.min(imageMeta.width, imageMeta.height) < 256) ***REMOVED***
+  if (Math.min(imageMeta.width, imageMeta.height) < 256) {
     size = Math.min(imageMeta.width, imageMeta.height);
-***REMOVED***
+  }
 
-  if (!fs.existsSync(`db/userdata/profilepics/$***REMOVED***user.id***REMOVED***`)) ***REMOVED***
-    fs.mkdirSync(`db/userdata/profilepics/$***REMOVED***user.id***REMOVED***`);
-***REMOVED***
+  if (!fs.existsSync(`db/userdata/profilepics/${user.id}`)) {
+    fs.mkdirSync(`db/userdata/profilepics/${user.id}`);
+  }
 
-  await sharp(pfp.filepath).resize(size, size).toFile(`db/userdata/profilepics/$***REMOVED***user.id***REMOVED***/$***REMOVED***pfpid***REMOVED***.jpg`);
+  await sharp(pfp.filepath).resize(size, size).toFile(`db/userdata/profilepics/${user.id}/${pfpid}.jpg`);
 
   fs.unlinkSync(pfp.filepath);
-  fs.unlinkSync(`db$***REMOVED***user.pfp.filename***REMOVED***`);
+  fs.unlinkSync(`db${user.pfp.filename}`);
 
   user.pfp.originalFilename = pfp.originalFilename;
-  user.pfp.filename = `/userdata/profilepics/$***REMOVED***user.id***REMOVED***/$***REMOVED***pfpid***REMOVED***.jpg`;
+  user.pfp.filename = `/userdata/profilepics/${user.id}/${pfpid}.jpg`;
   user.pfp.width = size;
   user.pfp.height = size;
 
-  fs.writeFileSync(`db/users/$***REMOVED***user.id***REMOVED***.json`, JSON.stringify(user, null, 2));
+  fs.writeFileSync(`db/users/${user.id}.json`, JSON.stringify(user, null, 2));
 
-  if (req.query.redirect) ***REMOVED***
+  if (req.query.redirect) {
     res.redirect(req.query.redirect.toString());
-***REMOVED*** else ***REMOVED***
-    res.send(***REMOVED*** status: "success" ***REMOVED***);
-***REMOVED***
-***REMOVED***
+  } else {
+    res.send({ status: "success" });
+  }
+}
 
-export const config = ***REMOVED***
-  api: ***REMOVED***
+export const config = {
+  api: {
     bodyParser: false,
-***REMOVED***
-***REMOVED***;
+  },
+};
 
-function parseBody(req: NextApiRequest): Promise<***REMOVED*** fields: formidable.Fields; files: formidable.Files ***REMOVED***> ***REMOVED***
-  return new Promise((resolve, reject) => ***REMOVED***
-    formidable(***REMOVED*** multiples: false, uploadDir: "db/userdata/profilepics", keepExtensions: true ***REMOVED***).parse(
+function parseBody(req: NextApiRequest): Promise<{ fields: formidable.Fields; files: formidable.Files }> {
+  return new Promise((resolve, reject) => {
+    formidable({ multiples: false, uploadDir: "db/userdata/profilepics", keepExtensions: true }).parse(
       req,
-      (err, fields, files) => ***REMOVED***
-        if (err) ***REMOVED***
+      (err, fields, files) => {
+        if (err) {
           return reject(err);
-    ***REMOVED***
-        resolve(***REMOVED*** fields, files ***REMOVED***);
-  ***REMOVED***
+        }
+        resolve({ fields, files });
+      }
     );
-***REMOVED***);
-***REMOVED***
+  });
+}

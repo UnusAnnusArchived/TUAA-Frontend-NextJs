@@ -1,21 +1,21 @@
 @import "./_breakpoints.scss";
 
-.toolbar ***REMOVED***
+.toolbar {
   height: 50px;
 
-  @include md-down ***REMOVED***
+  @include md-down {
     height: 30px;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-// .footer ***REMOVED***
+// .footer {
 //   height: 220px;
-//   @include md-down ***REMOVED***
+//   @include md-down {
 //     height: 400px;
-// ***REMOVED***
-// ***REMOVED***
+//   }
+// }
 
-.main ***REMOVED***
+.main {
   min-height: 100vh;
   position: relative;
-***REMOVED***
+}

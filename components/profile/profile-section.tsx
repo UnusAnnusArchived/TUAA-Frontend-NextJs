@@ -1,33 +1,33 @@
 import Divider from "@mui/material/Divider";
 import React from "react";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** Logout, ProfileData, ProfilePicture ***REMOVED*** from ".";
-import ***REMOVED*** userAtom ***REMOVED*** from "../../src/atoms";
+import { useRecoilState } from "recoil";
+import { Logout, ProfileData, ProfilePicture } from ".";
+import { userAtom } from "../../src/atoms";
 
-const ProfileSection: React.FC = () => ***REMOVED***
+const ProfileSection: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
-  const ***REMOVED*** user ***REMOVED*** = loggedInUser;
+  const { user } = loggedInUser;
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Divider
-        sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED***
+        sx={{ width: "50%", backgroundColor: "#fff" }}
         className="my-3"
       />
       <ProfilePicture />
       <Divider
-        sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED***
+        sx={{ width: "50%", backgroundColor: "#fff" }}
         className="my-3"
       />
       <Logout />
       <Divider
-        sx=***REMOVED******REMOVED*** width: "50%", backgroundColor: "#fff" ***REMOVED******REMOVED***
+        sx={{ width: "50%", backgroundColor: "#fff" }}
         className="my-3"
       />
       <ProfileData />
     </div>
   );
-***REMOVED***;
+};
 
 export default ProfileSection;

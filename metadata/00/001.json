@@ -1,55 +1,55 @@
-***REMOVED***
+{
   "sources": [
-    ***REMOVED***
+    {
       "src": "/00/001/1080.mp4",
       "type": "video/mp4",
       "size": 1080
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/001/720.mp4",
       "type": "video/mp4",
       "size": 720
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/001/480.mp4",
       "type": "video/mp4",
       "size": 480
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/001/360.mp4",
       "type": "video/mp4",
       "size": 360
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/00/001/240.mp4",
       "type": "video/mp4",
       "size": 240
-***REMOVED***
+    }
   ],
   "tracks": [
-    ***REMOVED***
+    {
       "kind": "captions",
       "label": "English",
       "srclang": "en",
       "src": "/subs/00/001.en.vtt"
-***REMOVED***
+    }
   ],
   "posters": [
-    ***REMOVED***
+    {
       "src": "/thumbnails/00/001.avif",
       "type": "image/avif",
       "size": 10641
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/001.webp",
       "type": "image/webp",
       "size": 20692
-  ***REMOVED***
-    ***REMOVED***
+    },
+    {
       "src": "/thumbnails/00/001.jpg",
       "type": "image/jpeg",
       "size": 28346
-***REMOVED***
+    }
   ],
   "season": 0,
   "episode": 1,
@@ -57,4 +57,4 @@
   "description": "",
   "date": 1573844400000,
   "duration": 67
-***REMOVED***
+}

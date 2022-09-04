@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
-import React, ***REMOVED*** useState ***REMOVED*** from "react";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
+import React, { useState } from "react";
+import { Layout } from "../components/layout";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import InputLabel from "@mui/material/InputLabel";
@@ -11,19 +11,19 @@ import IconButton from "@mui/material/IconButton";
 import styles from "../styles/Login.module.scss";
 import classNames from "classnames";
 import Button from "@mui/material/Button";
-import ***REMOVED*** endpoint ***REMOVED*** from "../src/endpoints";
+import { endpoint } from "../src/endpoints";
 import axios from "axios";
-import ***REMOVED*** LoginResponse ***REMOVED*** from "../src/types";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** previousPageAtom, userAtom ***REMOVED*** from "../src/atoms";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
-import ***REMOVED*** useToasts ***REMOVED*** from "@geist-ui/react";
+import { LoginResponse } from "../src/types";
+import { useRecoilState } from "recoil";
+import { previousPageAtom, userAtom } from "../src/atoms";
+import { MetaHead } from "../components/meta-head";
+import { useRouter } from "next/router";
+import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-const LoginPage: React.FC = () => ***REMOVED***
-  const ***REMOVED*** t ***REMOVED*** = useTranslation();
+const LoginPage: React.FC = () => {
+  const { t } = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
@@ -32,126 +32,126 @@ const LoginPage: React.FC = () => ***REMOVED***
   const router = useRouter();
   const [, setToast] = useToasts();
 
-  const handleClickShowPassword = () => ***REMOVED***
+  const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
-***REMOVED***;
+  };
 
-  const isValid = () => ***REMOVED***
+  const isValid = () => {
     return email.length > 0 && password.length > 0;
-***REMOVED***;
+  };
 
-  const onSubmit = async () => ***REMOVED***
-    if (!isValid()) ***REMOVED***
+  const onSubmit = async () => {
+    if (!isValid()) {
       return;
-***REMOVED***
+    }
 
-    try ***REMOVED***
+    try {
       const res = await axios.post<LoginResponse>(
-        `$***REMOVED***endpoint***REMOVED***/v2/account/login`,
-        ***REMOVED***
+        `${endpoint}/v2/account/login`,
+        {
           username: email,
           password,
-      ***REMOVED***
-        ***REMOVED***
-          headers: ***REMOVED***
+        },
+        {
+          headers: {
             "Access-Control-Allow-Origin": "*",
-        ***REMOVED***
-    ***REMOVED***
+          },
+        }
       );
 
-      if (res.status !== 200) ***REMOVED***
+      if (res.status !== 200) {
         return;
-  ***REMOVED***
+      }
 
-      const ***REMOVED*** data ***REMOVED*** = res;
+      const { data } = res;
 
-      if (data) ***REMOVED***
-        if (data.isValid) ***REMOVED***
+      if (data) {
+        if (data.isValid) {
           setLoggedInUser(data);
-          if (previousPage && previousPage.length > 3) ***REMOVED***
+          if (previousPage && previousPage.length > 3) {
             router.push(previousPage);
-      ***REMOVED*** else router.push("/");
+          } else router.push("/");
           return;
-    ***REMOVED***
+        }
 
-        setToast(***REMOVED***
+        setToast({
           type: "error",
           text: t("login:error"),
-    ***REMOVED***);
-  ***REMOVED***
-***REMOVED*** catch (err) ***REMOVED***
+        });
+      }
+    } catch (err) {
       console.log(err);
-***REMOVED***
-***REMOVED***;
+    }
+  };
 
   const handleMouseDownPassword = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => ***REMOVED***
+  ) => {
     event.preventDefault();
-***REMOVED***;
+  };
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("login:title")***REMOVED*** />
+      <MetaHead baseTitle={t("login:title")} />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        ***REMOVED***t("login:titleLong")***REMOVED***
+        {t("login:titleLong")}
       </Typography>
       <form id="login-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <TextField
-            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            className={classNames("my-3", styles.field)}
             id="email-archive"
             name="email-archive"
-            label=***REMOVED***t("login:usernameEmail")***REMOVED***
+            label={t("login:usernameEmail")}
             variant="standard"
-            value=***REMOVED***email***REMOVED***
+            value={email}
             type="email"
-            onChange=***REMOVED***(e) => setEmail(e.target.value)***REMOVED***
+            onChange={(e) => setEmail(e.target.value)}
           />
           <FormControl
             variant="standard"
-            className=***REMOVED***classNames("my-3", styles.field)***REMOVED***
+            className={classNames("my-3", styles.field)}
           >
             <InputLabel htmlFor="standard-adornment-password">
-              ***REMOVED***t("login:password")***REMOVED***
+              {t("login:password")}
             </InputLabel>
             <Input
               id="password-archive"
               name="password-archive"
-              type=***REMOVED***showPassword ? "text" : "password"***REMOVED***
-              value=***REMOVED***password***REMOVED***
-              onChange=***REMOVED***(event) => setPassword(event.currentTarget.value)***REMOVED***
-              endAdornment=***REMOVED***
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(event) => setPassword(event.currentTarget.value)}
+              endAdornment={
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
-                    onClick=***REMOVED***handleClickShowPassword***REMOVED***
-                    onMouseDown=***REMOVED***handleMouseDownPassword***REMOVED***
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
                   >
-                    ***REMOVED***showPassword ? <VisibilityOff /> : <Visibility />***REMOVED***
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-          ***REMOVED***
+              }
             />
           </FormControl>
           <div
-            className=***REMOVED***classNames(
+            className={classNames(
               "my-4 d-flex justify-content-end",
               styles.field
-            )***REMOVED***
+            )}
           >
             <Button
               variant="contained"
-              disabled=***REMOVED***!isValid()***REMOVED***
-              onClick=***REMOVED***onSubmit***REMOVED***
+              disabled={!isValid()}
+              onClick={onSubmit}
             >
-              ***REMOVED***t("login:loginBtn")***REMOVED***
+              {t("login:loginBtn")}
             </Button>
           </div>
         </div>
       </form>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default LoginPage;

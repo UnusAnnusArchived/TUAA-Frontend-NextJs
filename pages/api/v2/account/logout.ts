@@ -1,48 +1,48 @@
 import fs from "fs";
-import ***REMOVED*** NextApiRequest, NextApiResponse ***REMOVED*** from "next";
-import ***REMOVED*** IUser ***REMOVED*** from "../../../../src/types";
-import ***REMOVED*** handle401 ***REMOVED*** from "../../_handleErrors";
+import { NextApiRequest, NextApiResponse } from "next";
+import { IUser } from "../../../../src/types";
+import { handle401 } from "../../_handleErrors";
 
-interface IPostInfo ***REMOVED***
+interface IPostInfo {
   loginKeys: string[];
   loginKey: string;
   id: string;
-***REMOVED***
+}
 
-export default function logout(req: NextApiRequest, res: NextApiResponse) ***REMOVED***
+export default function logout(req: NextApiRequest, res: NextApiResponse) {
   const users = fs.readdirSync("db/users");
 
   const postInfo: IPostInfo = req.body;
 
   let account: IUser;
 
-  for (let i = 0; i < users.length; i++) ***REMOVED***
-    const user: IUser = JSON.parse(fs.readFileSync(`db/users/$***REMOVED***users[i]***REMOVED***`, "utf-8"));
+  for (let i = 0; i < users.length; i++) {
+    const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
 
-    if (user.id === postInfo.id && user.loginKeys.includes(postInfo.loginKey)) ***REMOVED***
+    if (user.id === postInfo.id && user.loginKeys.includes(postInfo.loginKey)) {
       account = user;
       break;
-***REMOVED***
-***REMOVED***
+    }
+  }
 
-  if (account) ***REMOVED***
-    if (postInfo.loginKey && !postInfo.loginKeys) ***REMOVED***
+  if (account) {
+    if (postInfo.loginKey && !postInfo.loginKeys) {
       postInfo.loginKeys = [postInfo.loginKey];
-***REMOVED***
+    }
 
-    if (postInfo.loginKeys.includes("*")) ***REMOVED***
+    if (postInfo.loginKeys.includes("*")) {
       account.loginKeys = [];
-      fs.writeFileSync(`db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account));
-      res.send(***REMOVED*** status: "success" ***REMOVED***);
-***REMOVED*** else ***REMOVED***
-      for (let i = 0; i < postInfo.loginKeys.length; i++) ***REMOVED***
+      fs.writeFileSync(`db/users/${account.id}.json`, JSON.stringify(account));
+      res.send({ status: "success" });
+    } else {
+      for (let i = 0; i < postInfo.loginKeys.length; i++) {
         const index = account.loginKeys.indexOf(postInfo.loginKeys[i]);
         account.loginKeys.splice(index, 1);
-  ***REMOVED***
-      fs.writeFileSync(`db/users/$***REMOVED***account.id***REMOVED***.json`, JSON.stringify(account, null, 2));
-      res.send(***REMOVED*** status: "success" ***REMOVED***);
-***REMOVED***
-***REMOVED*** else ***REMOVED***
+      }
+      fs.writeFileSync(`db/users/${account.id}.json`, JSON.stringify(account, null, 2));
+      res.send({ status: "success" });
+    }
+  } else {
     handle401(req, res);
-***REMOVED***
-***REMOVED***
+  }
+}

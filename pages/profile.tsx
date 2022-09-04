@@ -1,41 +1,41 @@
-import React, ***REMOVED*** useEffect ***REMOVED*** from "react";
-import ***REMOVED*** useRecoilState ***REMOVED*** from "recoil";
-import ***REMOVED*** Layout ***REMOVED*** from "../components/layout";
-import ***REMOVED*** MetaHead ***REMOVED*** from "../components/meta-head";
-import ***REMOVED*** userAtom ***REMOVED*** from "../src/atoms";
-import ***REMOVED*** useRouter ***REMOVED*** from "next/router";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { Layout } from "../components/layout";
+import { MetaHead } from "../components/meta-head";
+import { userAtom } from "../src/atoms";
+import { useRouter } from "next/router";
 import Typography from "@mui/material/Typography";
-import ***REMOVED*** ProfileSection ***REMOVED*** from "../components/profile";
-import ***REMOVED*** useTranslation ***REMOVED*** from "react-i18next";
+import { ProfileSection } from "../components/profile";
+import { useTranslation } from "react-i18next";
 
-const Profile: React.FC = () => ***REMOVED***
+const Profile: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const router = useRouter();
-  const ***REMOVED*** t, i18n ***REMOVED*** = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  useEffect(() => ***REMOVED***
-    if (!loggedInUser) ***REMOVED***
+  useEffect(() => {
+    if (!loggedInUser) {
       router.push("/login");
-***REMOVED***
-***REMOVED*** []);
+    }
+  }, []);
 
-  useEffect(() => ***REMOVED***
-    if (!loggedInUser) ***REMOVED***
+  useEffect(() => {
+    if (!loggedInUser) {
       router.push("/login");
-***REMOVED***
-***REMOVED*** [loggedInUser]);
+    }
+  }, [loggedInUser]);
 
   return (
     <Layout>
-      <MetaHead baseTitle=***REMOVED***t("profile:title")***REMOVED*** />
+      <MetaHead baseTitle={t("profile:title")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          ***REMOVED***t("profile:title")***REMOVED***
+          {t("profile:title")}
         </Typography>
-        ***REMOVED***loggedInUser && <ProfileSection />***REMOVED***
+        {loggedInUser && <ProfileSection />}
       </div>
     </Layout>
   );
-***REMOVED***;
+};
 
 export default Profile;
