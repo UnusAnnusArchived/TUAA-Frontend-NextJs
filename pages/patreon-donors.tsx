@@ -16,6 +16,7 @@ import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
 import ItsMe from "../patreon-donor-pfps/It's Me.webp";
 import JoshuaPerez from "../patreon-donor-pfps/Joshua Perez.webp";
 import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
+import Nagapup from "../patreon-donor-pfps/Nagapup.webp";
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
@@ -148,6 +149,23 @@ const PatreonDonors = () => {
               <span className={styles.name}>Katsam87</span>
               <span>Since {moment("2022-08-20").fromNow()}</span>
               <span>$1</span>
+            </div>
+          </Paper>
+        </div>
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={Nagapup.src}
+              alt="Nagapup's Patreon Profile Picture"
+              blurDataURL={Nagapup.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Nagapup</span>
+              <span>Since {moment("2022-09-03").fromNow()}</span>
+              <span>£1</span>
             </div>
           </Paper>
         </div>
