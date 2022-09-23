@@ -16,5 +16,9 @@
       "user": "noreply@unusannusarchive.tk",
       "pass": "abc123"
     }
+  },
+  "pocketbase": {
+    "email": "contact@unusannusarchive.tk",
+    "password": "abc123"
   }
 }
