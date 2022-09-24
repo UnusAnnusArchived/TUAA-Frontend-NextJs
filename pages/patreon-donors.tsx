@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Divider, Typography } from "@mui/material";
 
 // Import Profile Pictures
+import Alybeanz from "../patreon-donor-pfps/Alybeanz.webp";
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
 import CHGJake from "../patreon-donor-pfps/CHG Jake.webp";
 import Colyn from "../patreon-donor-pfps/Colyn.webp";
@@ -33,6 +34,23 @@ const PatreonDonors = () => {
         </div>
       </div>
       <div className="row">
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={Alybeanz.src}
+              alt="Alybeanz's Patreon Profile Picture"
+              blurDataURL={Alybeanz.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Alybeanz</span>
+              <span>Since {moment("2022-09-23").fromNow()}</span>
+              <span>$1</span>
+            </div>
+          </Paper>
+        </div>
         {/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
