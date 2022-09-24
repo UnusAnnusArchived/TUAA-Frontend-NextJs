@@ -10,12 +10,9 @@ import { ThumbnailImage } from "../thumbnail-image/thumbnail-image";
 
 interface IProps {
   video: IVideo;
-  videos: IVideo[][];
 }
 
-const VideoThumbnail: React.FC<IProps> = ({ video, videos }) => {
-  const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
-
+const VideoThumbnail: React.FC<IProps> = ({ video }) => {
   const date = new Date(video.date ?? video.releasedate);
 
   const { t, i18n } = useTranslation();
