@@ -10,9 +10,16 @@ import { ThumbnailImage } from "../thumbnail-image/thumbnail-image";
 
 interface IProps {
   video: IVideo;
+<<<<<<< HEAD
 }
 
 const VideoThumbnail: React.FC<IProps> = ({ video }) => {
+=======
+  videos: IVideo[][];
+}
+
+const VideoThumbnail: React.FC<IProps> = ({ video, videos }) => {
+>>>>>>> cc1ce9cf765b301326e9fdd4463b059c0ecbdc3e
   const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
   const img = `${cdn}${posterUrl}`;
 
@@ -23,6 +30,7 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
   return (
     <Paper className="p-2 h-100">
       <div className="ratio ratio-16x9">
+<<<<<<< HEAD
         <ThumbnailImage
           video={video}
           alt=""
@@ -31,6 +39,9 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
           quality={100}
           layout="fill"
         />
+=======
+        <ThumbnailImage video={video} />
+>>>>>>> cc1ce9cf765b301326e9fdd4463b059c0ecbdc3e
       </div>
       <div className="text-center mt-2">
         <Typography variant="body1">{video.title}</Typography>

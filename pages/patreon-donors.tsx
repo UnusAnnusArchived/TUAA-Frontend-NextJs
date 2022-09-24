@@ -9,6 +9,10 @@ import Link from "next/link";
 import { Divider, Typography } from "@mui/material";
 
 // Import Profile Pictures
+<<<<<<< HEAD
+=======
+import Alybeanz from "../patreon-donor-pfps/Alybeanz.webp";
+>>>>>>> cc1ce9cf765b301326e9fdd4463b059c0ecbdc3e
 import CaitieP from "../patreon-donor-pfps/Caitie P.webp";
 import CHGJake from "../patreon-donor-pfps/CHG Jake.webp";
 import Colyn from "../patreon-donor-pfps/Colyn.webp";
@@ -16,6 +20,10 @@ import HopeVictoriaLiepe from "../patreon-donor-pfps/Hope Victoria Liepe.webp";
 import ItsMe from "../patreon-donor-pfps/It's Me.webp";
 import JoshuaPerez from "../patreon-donor-pfps/Joshua Perez.webp";
 import Katsam87 from "../patreon-donor-pfps/Katsam87.webp";
+<<<<<<< HEAD
+=======
+import Nagapup from "../patreon-donor-pfps/Nagapup.webp";
+>>>>>>> cc1ce9cf765b301326e9fdd4463b059c0ecbdc3e
 import rae from "../patreon-donor-pfps/rae.webp";
 import TheBoltLord from "../patreon-donor-pfps/TheBoltLord ..webp";
 
@@ -32,6 +40,26 @@ const PatreonDonors = () => {
         </div>
       </div>
       <div className="row">
+<<<<<<< HEAD
+=======
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={Alybeanz.src}
+              alt="Alybeanz's Patreon Profile Picture"
+              blurDataURL={Alybeanz.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Alybeanz</span>
+              <span>Since {moment("2022-09-23").fromNow()}</span>
+              <span>$1</span>
+            </div>
+          </Paper>
+        </div>
+>>>>>>> cc1ce9cf765b301326e9fdd4463b059c0ecbdc3e
         {/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
@@ -151,6 +179,26 @@ const PatreonDonors = () => {
             </div>
           </Paper>
         </div>
+<<<<<<< HEAD
+=======
+        <div className="col-12 col-md-4 p-2 h-100">
+          <Paper className={`p-2 h-100 ${styles.patreon}`}>
+            <Image
+              className={styles.pfp}
+              width="100"
+              height="100"
+              src={Nagapup.src}
+              alt="Nagapup's Patreon Profile Picture"
+              blurDataURL={Nagapup.blurDataURL}
+            />
+            <div className={styles.infoContainer}>
+              <span className={styles.name}>Nagapup</span>
+              <span>Since {moment("2022-09-03").fromNow()}</span>
+              <span>£1</span>
+            </div>
+          </Paper>
+        </div>
+>>>>>>> cc1ce9cf765b301326e9fdd4463b059c0ecbdc3e
         {/* <div className="col-12 col-md-4 p-2 h-100">
           <Paper className={`p-2 h-100 ${styles.patreon}`}>
             <Image
