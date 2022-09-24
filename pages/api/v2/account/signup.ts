@@ -20,13 +20,15 @@ export default function signup(req: NextApiRequest, res: NextApiResponse) {
       let exists = false;
 
       for (let i = 0; i < users.length; i++) {
-        const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
-        if (user.email.toLowerCase() === body.email.toLowerCase()) {
-          exists = true;
-          break;
-        } else if (user.username.toLowerCase() === body.username.toLowerCase()) {
-          exists = true;
-          break;
+        if (users[i].endsWith(".json")) {
+          const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+          if (user.email.toLowerCase() === body.email.toLowerCase()) {
+            exists = true;
+            break;
+          } else if (user.username.toLowerCase() === body.username.toLowerCase()) {
+            exists = true;
+            break;
+          }
         }
       }
 

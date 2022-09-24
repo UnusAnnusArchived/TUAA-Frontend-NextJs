@@ -13,7 +13,7 @@ import classNames from "classnames";
 import Button from "@mui/material/Button";
 import { endpoint } from "../src/endpoints";
 import axios from "axios";
-import { SignupResponse } from "../src/types";
+import { LoginResponse, SignupResponse } from "../src/types";
 import { useRecoilState } from "recoil";
 import { previousPageAtom, userAtom } from "../src/atoms";
 import { MetaHead } from "../components/meta-head";
@@ -21,6 +21,7 @@ import { useRouter } from "next/router";
 import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
+import pb from "../src/pocketbase";
 
 const LoginPage: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
@@ -39,11 +40,7 @@ const LoginPage: React.FC = () => {
   };
 
   const isValid = () => {
-    return (
-      email.trim().length > 0 &&
-      password.trim().length > 5 &&
-      password.trim() === confirmPassword.trim()
-    );
+    return email.trim().length > 0 && password.trim().length > 5 && password.trim() === confirmPassword.trim();
   };
 
   const onSubmit = async () => {
@@ -54,18 +51,57 @@ const LoginPage: React.FC = () => {
     try {
       const res = await axios.post<SignupResponse>(
         `${endpoint}/v2/account/signup`,
-        {
+        JSON.stringify({
           email: email.trim(),
           username: username.trim(),
           password: password.trim(),
           confirmpassword: confirmPassword.trim(),
-        },
+        }),
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
           },
         }
       );
+
+      const pbUser = await pb.users.create({
+        email,
+        password,
+        passwordConfirm: confirmPassword,
+      });
+
+      await pb.users.authViaEmail(email, password);
+
+      const user = (
+        await axios.post<LoginResponse>(
+          `${endpoint}/v2/account/login`,
+          JSON.stringify({
+            username: email,
+            password,
+            sendEmail: "false",
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+      ).data;
+
+      await axios.post(`${endpoint}/v2/account/logout`, {
+        loginKey: user.loginKey,
+        id: user.user.id,
+      });
+
+      await pb.records.update("profiles", pbUser.profile.id, {
+        name: username,
+        legacy_id: user.user.id,
+        emails_account: true,
+        emails_updates: false,
+      });
+
+      await pb.users.requestVerification(email);
 
       if (res.status !== 200) {
         return;
@@ -90,13 +126,11 @@ const LoginPage: React.FC = () => {
         });
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
 
@@ -128,13 +162,8 @@ const LoginPage: React.FC = () => {
             type="text"
             onChange={(e) => setUsername(e.target.value)}
           />
-          <FormControl
-            variant="standard"
-            className={classNames("my-3", styles.field)}
-          >
-            <InputLabel htmlFor="standard-adornment-password">
-              {t("register:password")}
-            </InputLabel>
+          <FormControl variant="standard" className={classNames("my-3", styles.field)}>
+            <InputLabel htmlFor="standard-adornment-password">{t("register:password")}</InputLabel>
             <Input
               id="password-archive"
               name="password-archive"
@@ -155,22 +184,15 @@ const LoginPage: React.FC = () => {
               }
             />
           </FormControl>
-          <FormControl
-            variant="standard"
-            className={classNames("my-3", styles.field)}
-          >
-            <InputLabel htmlFor="standard-adornment-password">
-              {t("register:confirmPassword")}
-            </InputLabel>
+          <FormControl variant="standard" className={classNames("my-3", styles.field)}>
+            <InputLabel htmlFor="standard-adornment-password">{t("register:confirmPassword")}</InputLabel>
             <Input
               id="confirm-password-archive"
               name="confirm-password-archive"
               type={showPassword ? "text" : "password"}
               value={confirmPassword}
               autoComplete="new-password"
-              onChange={(event) =>
-                setConfirmPassword(event.currentTarget.value)
-              }
+              onChange={(event) => setConfirmPassword(event.currentTarget.value)}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -184,17 +206,8 @@ const LoginPage: React.FC = () => {
               }
             />
           </FormControl>
-          <div
-            className={classNames(
-              "my-4 d-flex justify-content-end",
-              styles.field
-            )}
-          >
-            <Button
-              variant="contained"
-              disabled={!isValid()}
-              onClick={onSubmit}
-            >
+          <div className={classNames("my-4 d-flex justify-content-end", styles.field)}>
+            <Button variant="contained" disabled={!isValid()} onClick={onSubmit}>
               {t("register:registerBtn")}
             </Button>
           </div>
