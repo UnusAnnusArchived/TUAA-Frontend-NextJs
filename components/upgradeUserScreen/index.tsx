@@ -10,7 +10,6 @@ import { Record } from "pocketbase";
 const UpgradeUserScreen: React.FC = () => {
   const password = useRef<HTMLInputElement>(null);
   const confirmpassword = useRef<HTMLInputElement>(null);
-
   const [loggedInUser] = useRecoilState(userAtom);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -25,7 +24,6 @@ const UpgradeUserScreen: React.FC = () => {
         password: password.current!.value,
         passwordConfirm: confirmpassword.current!.value,
       });
-
       const form = new FormData();
       console.log(`${siteRoot}${loggedInUser.user.pfp.filename}`);
       const pfp = await fetch(`${siteRoot}${loggedInUser.user.pfp.filename}`)
@@ -37,6 +35,10 @@ const UpgradeUserScreen: React.FC = () => {
       form.append("avatar", pfp as Blob);
       form.append("name", loggedInUser.user.username);
       form.append("legacy_id", loggedInUser.user.id);
+      form.append("emails_account", "true");
+      form.append("emails_updates", "false");
+
+      await pb.users.authViaEmail(loggedInUser.user.email, password.current!.value);
 
       await pb.records.update("profiles", user.profile.id, form);
 
@@ -77,7 +79,7 @@ const UpgradeUserScreen: React.FC = () => {
         console.error("Failed to fetch PocketBase user; most likely just doesn't exist yet.");
       }
 
-      if (loggedInUser.isValid) {
+      if (loggedInUser?.isValid) {
         if (profile?.id) {
           setShowPopup(false);
         } else {
@@ -93,8 +95,9 @@ const UpgradeUserScreen: React.FC = () => {
         <div className={styles.popup}>
           <h1>Migrate Account</h1>
           <p>
-            We are migrating our account system. To continue using your account, please re-enter your password, or set a
-            new one. This will be the password you use to login in the future.
+            We are migrating our account system. To continue, please re-enter your password, or set a new one. We will
+            be deleting unmigrated accounts and switching out logins to the new system on October 10th. If you choose to
+            set a new password for the account, you will have to use your current one until October 10th.
           </p>
           <div className={styles.form} onKeyPress={onKeyPress}>
             <TextField label="Password" type="password" variant="standard" inputRef={password} />

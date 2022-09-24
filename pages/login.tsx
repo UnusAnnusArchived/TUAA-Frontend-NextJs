@@ -84,9 +84,7 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
 
@@ -98,6 +96,10 @@ const LoginPage: React.FC = () => {
       </Typography>
       <form id="login-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
+          <p>
+            If you have already migrated your account and you chose to use a new password, you will have to use your old
+            one until October 10th.
+          </p>
           <TextField
             className={classNames("my-3", styles.field)}
             id="email-archive"
@@ -108,13 +110,8 @@ const LoginPage: React.FC = () => {
             type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <FormControl
-            variant="standard"
-            className={classNames("my-3", styles.field)}
-          >
-            <InputLabel htmlFor="standard-adornment-password">
-              {t("login:password")}
-            </InputLabel>
+          <FormControl variant="standard" className={classNames("my-3", styles.field)}>
+            <InputLabel htmlFor="standard-adornment-password">{t("login:password")}</InputLabel>
             <Input
               id="password-archive"
               name="password-archive"
@@ -134,17 +131,8 @@ const LoginPage: React.FC = () => {
               }
             />
           </FormControl>
-          <div
-            className={classNames(
-              "my-4 d-flex justify-content-end",
-              styles.field
-            )}
-          >
-            <Button
-              variant="contained"
-              disabled={!isValid()}
-              onClick={onSubmit}
-            >
+          <div className={classNames("my-4 d-flex justify-content-end", styles.field)}>
+            <Button variant="contained" disabled={!isValid()} onClick={onSubmit}>
               {t("login:loginBtn")}
             </Button>
           </div>
