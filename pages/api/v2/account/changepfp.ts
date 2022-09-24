@@ -15,10 +15,12 @@ export default async function changepfp(req: NextApiRequest, res: NextApiRespons
 
   var user: IUser;
   for (var i = 0; i < users.length; i++) {
-    const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
-    if (currentUser.loginKeys.includes(loginKey)) {
-      user = currentUser;
-      break;
+    if (users[i].endsWith(".json")) {
+      const currentUser: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+      if (currentUser.loginKeys.includes(loginKey)) {
+        user = currentUser;
+        break;
+      }
     }
   }
 

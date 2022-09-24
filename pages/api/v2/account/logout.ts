@@ -17,11 +17,13 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) {
   let account: IUser;
 
   for (let i = 0; i < users.length; i++) {
-    const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
+    if (users[i].endsWith(".json")) {
+      const user: IUser = JSON.parse(fs.readFileSync(`db/users/${users[i]}`, "utf-8"));
 
-    if (user.id === postInfo.id && user.loginKeys.includes(postInfo.loginKey)) {
-      account = user;
-      break;
+      if (user.id === postInfo.id && user.loginKeys.includes(postInfo.loginKey)) {
+        account = user;
+        break;
+      }
     }
   }
 
