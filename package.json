@@ -1,6 +1,6 @@
 {
   "name": "ua-archive",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,7 +24,7 @@
     "moment": "^2.29.1",
     "moment-with-locales-es6": "^1.0.1",
     "mysql": "^2.18.1",
-    "next": "12.0.3",
+    "next": "^12.3.1",
     "next-pwa": "^5.4.0",
     "nodemailer": "^6.7.2",
     "plyr": "^3.6.9",
