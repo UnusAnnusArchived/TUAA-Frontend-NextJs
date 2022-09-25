@@ -75,8 +75,11 @@ const UpgradeUserScreen: React.FC = () => {
       let profile;
 
       try {
-        const records = await pb.records.getList("profiles", 1, 5, { filter: `legacy_id = '${loggedInUser.user.id}'` });
-        profile = records.items[0];
+        const users = await pb.records.getList("profiles", 1, 5, {
+          filter: `legacy_id="${loggedInUser.user.id}"`,
+        });
+        profile = users.items[0];
+        console.log(users);
       } catch (err) {
         console.error("Failed to fetch PocketBase user; most likely just doesn't exist yet.");
       }
