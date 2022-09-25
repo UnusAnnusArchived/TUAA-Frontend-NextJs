@@ -24,14 +24,17 @@ const UpgradeUserScreen: React.FC = () => {
         passwordConfirm: confirmpassword.current!.value,
       });
       const form = new FormData();
-      console.log(`${siteRoot}${loggedInUser.user.pfp.filename}`);
-      const pfp = await fetch(`${siteRoot}${loggedInUser.user.pfp.filename}`)
-        .then((res) => res.blob())
-        .catch(() => {
-          console.error("Failed to fetch pfp. Most likely using default.");
-        });
-      console.log(pfp);
-      form.append("avatar", pfp as Blob);
+      let pfp: Blob | void;
+      if (loggedInUser.user.pfp.filename !== "/userdata/profilepics/default.jpg") {
+        pfp = await fetch(`${siteRoot}${loggedInUser.user.pfp.filename}`)
+          .then((res) => res.blob())
+          .catch(() => {
+            console.error("Failed to fetch pfp. Most likely using default.");
+          });
+      }
+      if (pfp) {
+        form.append("avatar", pfp as Blob);
+      }
       form.append("name", loggedInUser.user.username);
       form.append("legacy_id", loggedInUser.user.id);
       form.append("emails_account", "true");
