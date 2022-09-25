@@ -1,5 +1,5 @@
 import PocketBase from "pocketbase";
-import config from "../src/config.json";
+import config from "./config.json";
 
 const pocketbase = new PocketBase(config.pocketbase.host);
 
