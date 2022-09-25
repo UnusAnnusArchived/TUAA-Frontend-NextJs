@@ -5,7 +5,6 @@ import { userAtom } from "../../src/atoms";
 import { KeyboardEventHandler, useEffect, useRef, useState } from "react";
 import { siteRoot } from "../../src/endpoints";
 import { Button, TextField } from "@mui/material";
-import { Record } from "pocketbase";
 
 const UpgradeUserScreen: React.FC = () => {
   const password = useRef<HTMLInputElement>(null);
@@ -70,7 +69,7 @@ const UpgradeUserScreen: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      let profile: Record;
+      let profile;
 
       try {
         const records = await pb.records.getList("profiles", 1, 5, { filter: `legacy_id = '${loggedInUser.user.id}'` });
