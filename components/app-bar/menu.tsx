@@ -26,6 +26,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import { theme } from "../theme/theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import pb from "../../src/pocketbase";
+import getUserPfpPath from "../../src/utils/getUserPfp";
 
 const AppMenu: React.FC = () => {
   const { t } = useTranslation();
@@ -33,8 +35,6 @@ const AppMenu: React.FC = () => {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-
-  const user = loggedInUser?.user;
 
   const [, setToast] = useToasts();
 
@@ -50,46 +50,35 @@ const AppMenu: React.FC = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.post<LogoutResponse>(`${endpoint}/v2/account/logout`, {
-        id: loggedInUser.user.id,
-        loginKey: loggedInUser.loginKey,
-      });
+      await pb.authStore.clear();
+      setLoggedInUser(null);
 
-      if (res.status === 200) {
-        if (res.data.status === "success") {
-          setLoggedInUser(null);
-          setToast({
-            type: "success",
-            text: t("profile:logout:successLocal"),
-          });
-
-          handleClose();
-        } else {
-          setToast({ type: "error", text: res.data.error });
-        }
-      }
+      handleClose();
     } catch (error) {
-      console.log(error);
+      setToast({ type: "error", text: error });
     }
   };
 
   return (
     <React.Fragment>
       <IconButton onClick={handleClick}>
-        {user && (
-          <Avatar src={`${user.pfp.filename.startsWith("/") ? "" : "/"}${user.pfp.filename}`} alt={user.username} />
+        {loggedInUser && (
+          <Avatar
+            src={getUserPfpPath(loggedInUser.profile.id, loggedInUser.profile.avatar, 120, 120)}
+            alt={loggedInUser.profile.name}
+          />
         )}
 
-        {!user && <MenuIcon />}
+        {!loggedInUser && <MenuIcon />}
       </IconButton>
 
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">
-          {user && (
+          {loggedInUser && (
             <React.Fragment>
               <div className="my-2">
                 <Typography variant="h6" component="p" className="text-center">
-                  {user.username}
+                  {loggedInUser.profile.name}
                 </Typography>
               </div>
               <Divider style={{ margin: "4px 0" }} />
@@ -162,7 +151,7 @@ const AppMenu: React.FC = () => {
           <LanguageSelect />
           <Divider style={{ margin: "4px 0" }} />
 
-          {user && (
+          {loggedInUser && (
             <MenuItem onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />
@@ -171,7 +160,7 @@ const AppMenu: React.FC = () => {
             </MenuItem>
           )}
 
-          {!user && (
+          {!loggedInUser && (
             <React.Fragment>
               <Link passHref href="/register">
                 <MenuItem>

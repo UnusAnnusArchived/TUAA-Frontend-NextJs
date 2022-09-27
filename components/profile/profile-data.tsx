@@ -8,19 +8,26 @@ const ProfileData: React.FC = () => {
   const [loggedInUser] = useRecoilState(userAtom);
   const { t, i18n } = useTranslation();
 
-  const { user } = loggedInUser;
-
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-2">
         {t("profile:dataTitle")}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>{t("profile:username")}:</strong> {user.username}
+        <strong>{t("profile:username")}:</strong> {loggedInUser.profile.name}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>{t("profile:email")}:</strong> {user.email}
+        <strong>{t("profile:email")}:</strong> {loggedInUser.email}{" "}
+        {loggedInUser.verified ? null : <strong style={{ color: "#ff0000" }}>(Not Verified)</strong>}
       </Typography>
+      <Typography variant="body1" component="p" className="my-1">
+        <strong>User ID:</strong> <code>{loggedInUser.id}</code>
+      </Typography>
+      {loggedInUser.profile.legacy_id ? (
+        <Typography variant="body1" component="p" className="my-1">
+          <strong>Legacy User ID:</strong> <code>{loggedInUser.profile.legacy_id}</code>
+        </Typography>
+      ) : null}
     </div>
   );
 };

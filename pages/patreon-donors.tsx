@@ -1,7 +1,7 @@
 import Paper from "@mui/material/Paper";
 import Plus from "@mui/icons-material/Add";
 import Image from "next/image";
-import moment from "moment";
+ from "moment";
 import { Layout } from "../components/layout";
 import { MetaHead } from "../components/meta-head";
 import styles from "../styles/PatreonDonors.module.scss";

@@ -6,12 +6,11 @@ import { useRecoilState } from "recoil";
 import { ChangePic } from ".";
 import { userAtom } from "../../src/atoms";
 import { endpoint } from "../../src/endpoints";
+import getUserPfpPath from "../../src/utils/getUserPfp";
 
 const ProfilePicture: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const { t, i18n } = useTranslation();
-
-  const { user } = loggedInUser;
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
@@ -19,8 +18,8 @@ const ProfilePicture: React.FC = () => {
         {t("profile:pfp:title")}
       </Typography>
       <Avatar
-        src={`${user.pfp.filename.startsWith("/") ? "./" : "/./"}${user.pfp.filename}`} //very hacky way of fixing profile picture issue
-        alt={user.username}
+        src={getUserPfpPath(loggedInUser.profile.id, loggedInUser.profile.avatar, 240, 240)}
+        alt={loggedInUser.profile.name}
         className="my-1"
         sx={{ width: 80, height: 80 }}
       />
