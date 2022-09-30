@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import { Logout, ProfileData, ProfilePicture } from ".";
 import { userAtom } from "../../src/atoms";
 import EmailPreferences from "./profile-email-preferences";
+import ResetProfile from "./profile-resets";
 import VerifyProfile from "./profile-verify";
 
 const ProfileSection: React.FC = () => {
@@ -11,7 +12,7 @@ const ProfileSection: React.FC = () => {
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
-      {!loggedInUser.verified ? (
+      {!loggedInUser?.verified ? (
         <>
           <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
           <VerifyProfile />
@@ -23,6 +24,8 @@ const ProfileSection: React.FC = () => {
       <ProfileData />
       <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
       <EmailPreferences />
+      <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
+      <ResetProfile />
       <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
       <Logout />
     </div>

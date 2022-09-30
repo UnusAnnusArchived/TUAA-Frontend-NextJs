@@ -54,7 +54,7 @@ const LoginPage: React.FC = () => {
       } else router.push("/");
     } catch (err) {
       setToast({
-        text: err,
+        text: err.message ?? err.code,
         type: "error",
         delay: 1000,
       });

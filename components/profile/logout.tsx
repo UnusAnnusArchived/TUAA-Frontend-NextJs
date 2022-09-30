@@ -2,7 +2,7 @@ import { useToasts } from "@geist-ui/react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import { endpoint } from "../../src/endpoints";
@@ -10,8 +10,10 @@ import { LogoutResponse } from "../../src/types";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import pb from "../../src/pocketbase";
+import DeleteAccountDialog from "./delete-account-dialog";
 
 const Logout: React.FC = () => {
+  const [showDeleteAccountDialog, setShowDeleteAccountDialog] = useState(false);
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [, setToast] = useToasts();
   const router = useRouter();
@@ -28,20 +30,32 @@ const Logout: React.FC = () => {
         text: t("profile:logout:successLocal"),
       });
     } catch (error) {
-      setToast({ type: "error", text: error });
+      setToast({ type: "error", text: error.message ?? error.code });
     }
+  };
+
+  const openDeleteAccountDialog = () => {
+    setShowDeleteAccountDialog(true);
   };
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
-      <Typography variant="h6" component="h2" className="my-2">
-        {t("profile:logout:title")}
-      </Typography>
       <div className="d-flex flex-column flex-md-row justify-content-center">
         <Button variant="contained" onClick={logout} className="mx-3 my-2 my-md-1">
-          {t("profile:logout:local")}
+          Logout
         </Button>
       </div>
+      <div className="d-flex flex-column flex-md-row justify-content-center">
+        <Button
+          variant="contained"
+          onClick={openDeleteAccountDialog}
+          className="mx-3 my-2 my-md-1"
+          style={{ backgroundColor: "#D11A2A", color: "#ffffff" }}
+        >
+          Delete Account
+        </Button>
+      </div>
+      <DeleteAccountDialog open={showDeleteAccountDialog} setOpen={setShowDeleteAccountDialog} />
     </div>
   );
 };

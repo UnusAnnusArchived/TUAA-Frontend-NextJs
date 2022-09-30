@@ -55,7 +55,7 @@ const AppMenu: React.FC = () => {
 
       handleClose();
     } catch (error) {
-      setToast({ type: "error", text: error });
+      setToast({ type: "error", text: error.message ?? error.code });
     }
   };
 
@@ -64,8 +64,8 @@ const AppMenu: React.FC = () => {
       <IconButton onClick={handleClick}>
         {loggedInUser && (
           <Avatar
-            src={getUserPfpPath(loggedInUser.profile.id, loggedInUser.profile.avatar, 120, 120)}
-            alt={loggedInUser.profile.name}
+            src={getUserPfpPath(loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 120, 120)}
+            alt={loggedInUser?.profile?.name}
           />
         )}
 
@@ -78,7 +78,7 @@ const AppMenu: React.FC = () => {
             <React.Fragment>
               <div className="my-2">
                 <Typography variant="h6" component="p" className="text-center">
-                  {loggedInUser.profile.name}
+                  {loggedInUser?.profile?.name === "" ? loggedInUser?.email : loggedInUser?.profile?.name}
                 </Typography>
               </div>
               <Divider style={{ margin: "4px 0" }} />

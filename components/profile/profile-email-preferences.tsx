@@ -10,8 +10,8 @@ const EmailPreferences: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const accountEmailsChange = async () => {
-    const profile = await pb.records.update("profiles", loggedInUser.profile.id, {
-      emails_account: !loggedInUser.profile.emails_account,
+    const profile = await pb.records.update("profiles", loggedInUser?.profile.id, {
+      emails_account: !loggedInUser?.profile.emails_account,
     });
 
     let tempUser = JSON.parse(JSON.stringify(loggedInUser)); // hacky way of copying loggedInUser so we can modify it
@@ -22,8 +22,8 @@ const EmailPreferences: React.FC = () => {
   };
 
   const websiteUpdatesChange = async () => {
-    const profile = await pb.records.update("profiles", loggedInUser.profile.id, {
-      emails_account: !loggedInUser.profile.emails_updates,
+    const profile = await pb.records.update("profiles", loggedInUser?.profile.id, {
+      emails_updates: !loggedInUser?.profile.emails_updates,
     });
 
     let tempUser = JSON.parse(JSON.stringify(loggedInUser)); // hacky way of copying loggedInUser so we can modify it
@@ -40,14 +40,14 @@ const EmailPreferences: React.FC = () => {
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <FormControlLabel
-          control={<Switch defaultChecked={loggedInUser.profile.emails_account} />}
+          control={<Switch defaultChecked={loggedInUser?.profile.emails_account} />}
           label="Account Updates"
           onClick={accountEmailsChange}
         />
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <FormControlLabel
-          control={<Switch defaultChecked={loggedInUser.profile.emails_updates} />}
+          control={<Switch defaultChecked={loggedInUser?.profile.emails_updates} />}
           label="Website Updates"
           onChange={websiteUpdatesChange}
         />

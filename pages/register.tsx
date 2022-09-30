@@ -65,7 +65,7 @@ const LoginPage: React.FC = () => {
 
       await pb.users.requestVerification(email);
 
-      const user = await pb.users.getOne(pbUser.profile.id);
+      const user = await pb.users.getOne(pbUser.id);
 
       router.push("/login");
       setToast({
@@ -76,7 +76,7 @@ const LoginPage: React.FC = () => {
     } catch (err) {
       setToast({
         type: "error",
-        text: err,
+        text: err.message ?? err.code,
       });
     }
   };

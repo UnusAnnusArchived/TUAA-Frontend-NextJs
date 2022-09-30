@@ -18,8 +18,8 @@ const ProfilePicture: React.FC = () => {
         {t("profile:pfp:title")}
       </Typography>
       <Avatar
-        src={getUserPfpPath(loggedInUser.profile.id, loggedInUser.profile.avatar, 240, 240)}
-        alt={loggedInUser.profile.name}
+        src={getUserPfpPath(loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 240, 240)}
+        alt={loggedInUser?.profile?.name}
         className="my-1"
         sx={{ width: 80, height: 80 }}
       />

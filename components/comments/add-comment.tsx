@@ -35,7 +35,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
       await pb.records.create("comments", {
         episode: watchCode,
         markdown: commentText,
-        user: loggedInUser.id,
+        user: loggedInUser?.id,
       });
 
       setComment("");
@@ -61,6 +61,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
       <div className="d-flex flex-row flex-md-row flex-column">
         <div className="flex-grow">
           <TextField
+            multiline
             variant="standard"
             fullWidth
             label={t("comments:placeholder")}

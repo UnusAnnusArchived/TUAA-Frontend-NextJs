@@ -31,7 +31,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
 
   const refetchUser = async () => {
     if (loggedInUser) {
-      const user = await pb.users.getOne(loggedInUser.id);
+      const user = await pb.users.getOne(loggedInUser?.id);
 
       if (user.id) {
         setLoggedInUser(user);

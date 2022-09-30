@@ -11,6 +11,11 @@ import pb from "../../src/pocketbase";
 import getUserPfpPath from "../../src/utils/getUserPfp";
 import MarkdownIt from "markdown-it";
 import mdIterator from "markdown-it-for-inline";
+import CommentOptions from "../comment-options/comment-options";
+import styles from "./comment-item.module.scss";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
+import { KeyedMutator } from "swr";
 
 const md = MarkdownIt({ html: false, xhtmlOut: false, breaks: true, langPrefix: "", linkify: true })
   .disable(["image", "link"])
@@ -49,46 +54,61 @@ const markdownToHTML = (markdown: string, episode: string) => {
 
 interface IProps {
   comment: Record;
+  mutate: KeyedMutator<Record[]>;
 }
 
-const CommentItem: React.FC<IProps> = ({ comment }) => {
+const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
   const { i18n } = useTranslation();
   const [commentProfile, setCommentProfile] = useState<Record>(null);
+  const [loggedInUser] = useRecoilState(userAtom);
 
   useEffect(() => {
-    (async () => {
-      const profile = await pb.records.getList("profiles", 1, 1, {
+    pb.records
+      .getList("profiles", 1, 5, {
         filter: `userId="${comment.user}"`,
+        $autoCancel: false,
+      })
+      .then((profiles) => {
+        setCommentProfile(profiles.items[0]);
+      })
+      .catch((err) => {
+        console.error(err, err.isAbort);
       });
-
-      setCommentProfile(profile.items[0]);
-    })();
   }, []);
 
   return commentProfile ? (
     <div>
-      <div className="row my-2">
-        <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
-          <Avatar
-            alt={commentProfile.name}
-            src={`${getUserPfpPath(commentProfile.id, commentProfile.avatar, 168, 168)}`}
-            sx={{ width: 56, height: 56 }}
-          />
-        </div>
-        <div className="col-10 col-md-11 mb-md-0 my-1 d-flex flex-column justify-content-center">
-          <div className="d-flex align-items-baseline">
-            <Typography variant="body1" className="font-weight-bold">
-              <strong>{commentProfile.name}</strong>
-            </Typography>
-            &nbsp;
-            <Typography variant="body2" sx={{ color: "#a3a3a3" }}>
-              <span title={moment.utc(comment.created).locale(i18n.language).format("MMMM Do YYYY, h:mm A")}>
-                {moment.utc(comment.created).locale(i18n.language).fromNow()}
-              </span>
-            </Typography>
+      <div className={styles.comment}>
+        <div className={`row my-2 ${styles.commentBody}`}>
+          <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
+            <Avatar
+              alt={commentProfile.name}
+              src={`${getUserPfpPath(commentProfile.id, commentProfile.avatar, 168, 168)}`}
+              sx={{ width: 56, height: 56 }}
+            />
           </div>
-          <Typography dangerouslySetInnerHTML={{ __html: markdownToHTML(comment.markdown, comment.episode) }} />
+          <div className="col-10 col-md-11 mb-md-0 my-1 d-flex flex-column justify-content-center">
+            <div className="d-flex align-items-baseline">
+              <Typography variant="body1" className="font-weight-bold">
+                <strong>{commentProfile.name}</strong>
+              </Typography>
+              &nbsp;
+              <Typography variant="body2" sx={{ color: "#a3a3a3" }}>
+                <span title={moment.utc(comment.created).locale(i18n.language).format("MMMM Do YYYY, h:mm A")}>
+                  {moment.utc(comment.created).locale(i18n.language).fromNow()}
+
+                  {comment.isEdited ? <>&nbsp;(edited)</> : null}
+                </span>
+              </Typography>
+            </div>
+            <Typography dangerouslySetInnerHTML={{ __html: markdownToHTML(comment.markdown, comment.episode) }} />
+          </div>
         </div>
+        {comment.user === loggedInUser?.id ? (
+          <CommentOptions comment={comment} commentProfile={commentProfile} mutate={mutate} />
+        ) : loggedInUser?.profile.isAdmin === true ? (
+          <CommentOptions comment={comment} commentProfile={commentProfile} mutate={mutate} />
+        ) : null}
       </div>
       <Divider sx={{ backgroundColor: "#fff" }} />
     </div>

@@ -1,0 +1,10 @@
+.comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.commentBody {
+  flex-grow: 1;
+}

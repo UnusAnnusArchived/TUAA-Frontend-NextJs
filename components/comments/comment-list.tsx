@@ -72,7 +72,9 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
     return comments;
   };
 
-  const { data, mutate, isValidating, error } = useSWR<Record[]>(watchCode, sorter);
+  const { data, mutate, error } = useSWR<Record[]>(watchCode, sorter);
+
+  const [comments, setComment] = useState(null);
 
   const onAdded = async () => {
     mutate();
@@ -88,11 +90,13 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
       {data && data.length < 1 && <Typography>{t("comments:noComments")}</Typography>}
       {data &&
         data.length > 0 &&
-        data.map((comment, i) => (
-          <div key={i}>
-            <CommentItem comment={comment} />
-          </div>
-        ))}
+        data.map((comment, i) => {
+          return (
+            <div key={comment.id}>
+              <CommentItem comment={comment} mutate={mutate} />
+            </div>
+          );
+        })}
     </div>
   );
 };

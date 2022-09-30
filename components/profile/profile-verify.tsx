@@ -10,7 +10,7 @@ const VerifyProfile: React.FC = () => {
   const [sent, setSent] = useState(false);
 
   const handleClick = () => {
-    pb.users.requestVerification(loggedInUser.email);
+    pb.users.requestVerification(loggedInUser?.email);
     setSent(true);
   };
 
@@ -19,7 +19,7 @@ const VerifyProfile: React.FC = () => {
       <Typography variant="h6" component="h2" className="my-2">
         Verify Profile
       </Typography>
-      <Button variant="text" onClick={handleClick} disabled={sent}>
+      <Button variant="contained" onClick={handleClick} disabled={sent}>
         {sent ? "Sent" : "Resend Verification Email"}
       </Button>
     </div>
