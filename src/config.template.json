@@ -1,5 +1,5 @@
 {
-  "metadataPath": "src/metadata",
+  "metadataPath": "metadata",
   "smtp": {
     "pool": true,
     "host": "smtp.example.com",
