@@ -27,7 +27,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { theme } from "../theme/theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import pb from "../../src/pocketbase";
-import getUserPfpPath from "../../src/utils/getUserPfp";
+import getPbImagePath from "../../src/utils/getPbImagePath";
 
 const AppMenu: React.FC = () => {
   const { t } = useTranslation();
@@ -64,7 +64,7 @@ const AppMenu: React.FC = () => {
       <IconButton onClick={handleClick}>
         {loggedInUser && (
           <Avatar
-            src={getUserPfpPath(loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 120, 120)}
+            src={getPbImagePath("systemprofiles0", loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 120, 120)}
             alt={loggedInUser?.profile?.name}
           />
         )}

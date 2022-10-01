@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { endpoint } from "../../src/endpoints";
 import { IComment } from "../../src/types";
 import pb from "../../src/pocketbase";
-import getUserPfpPath from "../../src/utils/getUserPfp";
+import getPbImagePath from "../../src/utils/getPbImagePath";
 import MarkdownIt from "markdown-it";
 import mdIterator from "markdown-it-for-inline";
 import CommentOptions from "../comment-options/comment-options";
@@ -83,7 +83,7 @@ const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
           <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
             <Avatar
               alt={commentProfile.name}
-              src={`${getUserPfpPath(commentProfile.id, commentProfile.avatar, 168, 168)}`}
+              src={`${getPbImagePath("systemprofiles0", commentProfile.id, commentProfile.avatar, 168, 168)}`}
               sx={{ width: 56, height: 56 }}
             />
           </div>

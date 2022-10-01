@@ -6,7 +6,7 @@ import { useRecoilState } from "recoil";
 import { ChangePic } from ".";
 import { userAtom } from "../../src/atoms";
 import { endpoint } from "../../src/endpoints";
-import getUserPfpPath from "../../src/utils/getUserPfp";
+import getPbImagePath from "../../src/utils/getPbImagePath";
 
 const ProfilePicture: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
@@ -18,7 +18,7 @@ const ProfilePicture: React.FC = () => {
         {t("profile:pfp:title")}
       </Typography>
       <Avatar
-        src={getUserPfpPath(loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 240, 240)}
+        src={getPbImagePath("systemprofiles0", loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 240, 240)}
         alt={loggedInUser?.profile?.name}
         className="my-1"
         sx={{ width: 80, height: 80 }}
