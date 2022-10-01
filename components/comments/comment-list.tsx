@@ -8,25 +8,23 @@ import { useTranslation } from "react-i18next";
 import { Collection, Record } from "pocketbase";
 import pb from "../../src/pocketbase";
 import moment from "moment";
+import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 interface IProps {
   watchCode: string;
 }
 
-const fetcher = async (watchCode: string) => {
-  const records = await pb.records.getList("comments", 1, 400, {
-    filter: `episode="${watchCode}"`,
-  });
-
-  return records.items;
-};
-
 const CommentList: React.FC<IProps> = ({ watchCode }) => {
   const { t } = useTranslation();
   const [sortType, setSortType] = useState("latest");
 
-  const sorter = async (watchCode: string) => {
-    const comments = await fetcher(watchCode);
+  const fetcher = async (sortType) => {
+    const comments = (
+      await pb.records.getList("comments", 1, 400, {
+        filter: `episode="${watchCode}"`,
+        $autoCancel: false,
+      })
+    ).items;
 
     if (sortType === "latest" || sortType === "oldest") {
       comments.sort((aDate, bDate) => {
@@ -69,14 +67,22 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
       comments.reverse();
     }
 
+    console.log(comments, sortType);
+
     return comments;
   };
 
-  const { data, mutate, error } = useSWR<Record[]>(watchCode, sorter);
+  const { data, mutate, error } = useSWR<Record[]>(sortType, fetcher);
 
   const [comments, setComment] = useState(null);
 
   const onAdded = async () => {
+    mutate();
+  };
+
+  const onSortChange = (evt: SelectChangeEvent) => {
+    setSortType(evt.target.value);
+    console.log(evt.target.value);
     mutate();
   };
 
@@ -85,6 +91,11 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
       <Typography variant="h6" component="h2">
         {t("comments:title")}
       </Typography>
+      <Select value={sortType} label="Sort By" onChange={onSortChange}>
+        <MenuItem value="latest">Latest</MenuItem>
+        <MenuItem value="oldest">Oldest</MenuItem>
+        {/* <MenuItem value="rating">Rating</MenuItem> */}
+      </Select>
       <AddComment watchCode={watchCode} onComment={onAdded} />
       {error && <Typography>{t("comments:loadFail")}</Typography>}
       {data && data.length < 1 && <Typography>{t("comments:noComments")}</Typography>}
