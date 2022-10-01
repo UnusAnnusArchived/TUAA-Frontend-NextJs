@@ -80,7 +80,7 @@ const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
     <div>
       <div className={styles.comment}>
         <div className={`row my-2 ${styles.commentBody}`}>
-          <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-center">
+          <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-flex-start">
             <Avatar
               alt={commentProfile.name}
               src={`${getPbImagePath("systemprofiles0", commentProfile.id, commentProfile.avatar, 168, 168)}`}
