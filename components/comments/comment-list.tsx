@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Collection, Record } from "pocketbase";
 import pb from "../../src/pocketbase";
 import moment from "moment";
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 interface IProps {
   watchCode: string;
@@ -89,13 +89,19 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
   return (
     <div>
       <Typography variant="h6" component="h2">
-        {t("comments:title")}
+        <div style={{ display: "flex", alignItems: "flex-end" }}>
+          {t("comments:title")}
+          <div style={{ width: 10 }} />
+          <FormControl>
+            <InputLabel>Sort By</InputLabel>
+            <Select size="small" value={sortType} label="Sort By" onChange={onSortChange}>
+              <MenuItem value="latest">Newest</MenuItem>
+              <MenuItem value="oldest">Oldest</MenuItem>
+              {/* <MenuItem value="rating">Rating</MenuItem> */}
+            </Select>
+          </FormControl>
+        </div>
       </Typography>
-      <Select value={sortType} label="Sort By" onChange={onSortChange}>
-        <MenuItem value="latest">Latest</MenuItem>
-        <MenuItem value="oldest">Oldest</MenuItem>
-        {/* <MenuItem value="rating">Rating</MenuItem> */}
-      </Select>
       <AddComment watchCode={watchCode} onComment={onAdded} />
       {error && <Typography>{t("comments:loadFail")}</Typography>}
       {data && data.length < 1 && <Typography>{t("comments:noComments")}</Typography>}
