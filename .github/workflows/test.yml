@@ -24,6 +24,10 @@ jobs:
         run: |
           npm install --force
 
+      - name: Create Sample config.json
+        run: |
+          cp "src/config.template.json" "src/config.json"
+
       - name: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
