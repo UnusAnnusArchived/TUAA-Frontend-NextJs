@@ -1,5 +1,5 @@
 {
-  "metadataPath": "src/metadata",
+  "metadataPath": "metadata",
   "mysql": {
     "connectionLimit": 10,
     "host": "www.example.com",
