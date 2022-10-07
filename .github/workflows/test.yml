@@ -22,9 +22,9 @@ jobs:
 
       - name: npm install
         run: |
-          npm install
+          npm install --force
 
-      - name: build
+      - name: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
