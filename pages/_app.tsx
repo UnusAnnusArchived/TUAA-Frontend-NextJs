@@ -10,7 +10,6 @@ import { GeistProvider } from "@geist-ui/react";
 import { useRouter } from "next/router";
 import { initTranslations } from "../src/i18n/i18n";
 import NonSsrWrapper from "../components/non-ssr-wrapper";
-import UpgradeUserScreen from "../components/upgradeUserScreen";
 
 export const reportWebVitals = (metric: NextWebVitalsMetric) => {
   const { id, name, label, value } = metric;
@@ -54,7 +53,6 @@ const App = ({ Component, pageProps }: AppProps) => {
         <ThemeProvider theme={theme}>
           <GeistProvider>
             <NonSsrWrapper>
-              <UpgradeUserScreen />
               <Component {...pageProps} />
             </NonSsrWrapper>
           </GeistProvider>

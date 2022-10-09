@@ -1,3 +1,4 @@
+import { User } from "pocketbase";
 import { atom } from "recoil";
 import { LoginResponse } from "./types";
 
@@ -17,7 +18,7 @@ const localStorageEffect =
     });
   };
 
-export const userAtom = atom<LoginResponse>({
+export const userAtom = atom<User>({
   key: "userAtom",
   default: null,
   effects_UNSTABLE: [localStorageEffect("userAtom")],

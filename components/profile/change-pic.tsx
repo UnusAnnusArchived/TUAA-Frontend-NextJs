@@ -16,7 +16,7 @@ import Fade from "@mui/material/Fade";
 import LinearProgress from "@mui/material/LinearProgress";
 import { useToasts } from "@geist-ui/react";
 import { useTranslation } from "react-i18next";
-
+import pb from "../../src/pocketbase";
 const Input = styled("input")({
   display: "none",
 });
@@ -30,8 +30,6 @@ const ChangePic: React.FC = () => {
   const [progress, setProgress] = useState(0);
   const [, setToast] = useToasts();
   const { t, i18n } = useTranslation();
-
-  const { user } = loggedInUser;
 
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files[0];
@@ -47,13 +45,6 @@ const ChangePic: React.FC = () => {
         reader.readAsDataURL(file);
       } catch (err) {}
     }
-  };
-
-  const uploadProgressHandler = (progressEvent: any) => {
-    const final: number = Math.round(
-      (progressEvent.loaded * 100) / progressEvent.total
-    );
-    setProgress(final);
   };
 
   const handleClickOpen = () => {
@@ -72,55 +63,28 @@ const ChangePic: React.FC = () => {
     setIsSendingImage(true);
     try {
       const formData = new FormData();
-      formData.append("pfp", image);
-      formData.append("loginKey", loggedInUser.loginKey);
+      formData.append("avatar", image);
 
-      const imageUploadResult = await axios.post<ChangePFPResponse>(
-        `${endpoint}/v2/account/changepfp`,
-        formData,
-        {
-          onUploadProgress: (progressEvent) =>
-            uploadProgressHandler(progressEvent),
-        }
-      );
+      const newProfile = await pb.records.update("profiles", loggedInUser?.profile?.id, formData);
+      setToast({
+        type: "success",
+        text: t("profile:pfp:success"),
+      });
+      handleClose();
 
-      if (imageUploadResult.status === 200) {
-        if (imageUploadResult.data.status === "success") {
-          const success = await refetchUser();
-          if (success) {
-            setToast({
-              type: "success",
-              text: t("profile:pfp:success"),
-            });
-            handleClose();
-            return;
-          }
-        }
-      }
+      let tempUser = JSON.parse(JSON.stringify(loggedInUser));
+
+      tempUser.profile.avatar = newProfile.avatar;
+
+      setLoggedInUser(tempUser);
     } catch (error) {
       console.log(error);
+      setIsSendingImage(false);
+      setToast({
+        type: "error",
+        text: t("profile:pfp:error"),
+      });
     }
-    setIsSendingImage(false);
-    setToast({
-      type: "error",
-      text: t("profile:pfp:error"),
-    });
-  };
-
-  const refetchUser = async (): Promise<boolean> => {
-    const res = await axios.post<CheckLoginKeyResponse>(
-      `${endpoint}/v2/account/checkloginkey`,
-      { loginKey: loggedInUser.loginKey }
-    );
-
-    if (res.status === 200) {
-      if (res.data.isValid) {
-        setLoggedInUser({ ...loggedInUser, ...res.data });
-        return true;
-      }
-    }
-
-    return false;
   };
 
   const onCancel = () => {
@@ -133,18 +97,13 @@ const ChangePic: React.FC = () => {
         {t("profile:pfp:change")}
       </Button>
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
-        <DialogTitle className="text-center">
-          {t("profile:pfp:change")}
-        </DialogTitle>
+        <DialogTitle className="text-center">{t("profile:pfp:change")}</DialogTitle>
 
         <DialogContent>
           <div className="d-flex flex-column justify-content-center align-items-center">
+            <DialogContentText>{t("profile:pfp:description")}</DialogContentText>
             <DialogContentText>
-              {t("profile:pfp:description")}
-            </DialogContentText>
-            <DialogContentText>
-              {t("profile:pfp:selected")}:{" "}
-              {image ? image.name : t("profile:pfp:none")}
+              {t("profile:pfp:selected")}: {image ? image.name : t("profile:pfp:none")}
             </DialogContentText>
 
             {imageUrl && (
@@ -154,12 +113,7 @@ const ChangePic: React.FC = () => {
             )}
             <div className="mt-3">
               <label htmlFor="contained-button-file">
-                <Input
-                  accept="image/*"
-                  id="contained-button-file"
-                  onChange={onFileChange}
-                  type="file"
-                />
+                <Input accept="image/*" id="contained-button-file" onChange={onFileChange} type="file" />
                 <Button variant="contained" component="span">
                   {t("profile:pfp:fileSelect")}
                 </Button>
@@ -174,11 +128,7 @@ const ChangePic: React.FC = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={onCancel}>{t("common:cancel")}</Button>
-          <Button
-            onClick={handleSubmit}
-            disabled={image == null || isSendingImage}
-            autoFocus
-          >
+          <Button onClick={handleSubmit} disabled={image == null || isSendingImage} autoFocus>
             {t("common:save")}
           </Button>
         </DialogActions>
