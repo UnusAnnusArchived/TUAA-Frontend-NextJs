@@ -1,12 +1,5 @@
 {
   "metadataPath": "metadata",
-  "mysql": {
-    "connectionLimit": 10,
-    "host": "www.example.com",
-    "user": "theunusannusarchive",
-    "password": "abc123",
-    "database": "theunusannusarchive"
-  },
   "smtp": {
     "pool": true,
     "host": "smtp.example.com",
