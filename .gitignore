@@ -41,3 +41,6 @@ public/workbox-*.js
 db/*
 
 src/config.json
+
+build.json
+branch.json
