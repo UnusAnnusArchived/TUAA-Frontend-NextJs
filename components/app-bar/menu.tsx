@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Menu from "@mui/material/Menu";
 import Link from "next/link";
 import MenuItem from "@mui/material/MenuItem";
@@ -28,10 +28,13 @@ import { theme } from "../theme/theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import pb from "../../src/pocketbase";
 import getPbImagePath from "../../src/utils/getPbImagePath";
+import { Info as InfoIcon } from "@mui/icons-material";
+import AboutDialog from "../about";
 
 const AppMenu: React.FC = () => {
   const { t } = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
+  const [aboutDialogOpen, setAboutDialogOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -59,6 +62,11 @@ const AppMenu: React.FC = () => {
     }
   };
 
+  const openAbout = () => {
+    setAboutDialogOpen(true);
+    handleClose();
+  };
+
   return (
     <React.Fragment>
       <IconButton onClick={handleClick}>
@@ -82,15 +90,25 @@ const AppMenu: React.FC = () => {
                 </Typography>
               </div>
               <Divider style={{ margin: "4px 0" }} />
-              <Link passHref href="/profile">
-                <MenuItem onClick={handleClose}>
-                  <ListItemIcon>
-                    <PersonIcon />
-                  </ListItemIcon>
-                  <ListItemText>{t("common:profile")}</ListItemText>
-                </MenuItem>
-              </Link>
             </React.Fragment>
+          )}
+
+          <MenuItem onClick={openAbout}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText>About</ListItemText>
+          </MenuItem>
+
+          {loggedInUser && (
+            <Link passHref href="/profile">
+              <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                  <PersonIcon />
+                </ListItemIcon>
+                <ListItemText>{t("common:profile")}</ListItemText>
+              </MenuItem>
+            </Link>
           )}
           <Link href="/settings" passHref>
             <MenuItem>
@@ -182,6 +200,7 @@ const AppMenu: React.FC = () => {
           )}
         </div>
       </Menu>
+      <AboutDialog open={aboutDialogOpen} setOpen={setAboutDialogOpen} />
     </React.Fragment>
   );
 };
