@@ -20,6 +20,7 @@ interface IProps {
 const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const [build, setBuild] = useState<number>(NaN);
   const [builtOn, setBuiltOn] = useState<number>(0);
+  const [branch, setBranch] = useState<string>("Loading Branch");
 
   useEffect(() => {
     fetch(`${endpoint}/v2/build-info`)
@@ -27,6 +28,12 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
       .then((buildInfo) => {
         setBuild(buildInfo.build);
         setBuiltOn(buildInfo.date);
+      });
+
+    fetch(`${endpoint}/v2/branch`)
+      .then((res) => res.json())
+      .then(({ branch }) => {
+        setBranch(branch);
       });
   }, [open]);
 
@@ -44,6 +51,7 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
           <DialogContentText>
             Build {build} ({moment.utc(builtOn).format("MM/DD/YYYY HH:MM:SS")})
           </DialogContentText>
+          <DialogContentText>{branch}</DialogContentText>
         </div>
       </DialogContent>
       <DialogActions>
