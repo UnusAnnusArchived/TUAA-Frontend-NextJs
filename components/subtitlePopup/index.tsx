@@ -38,7 +38,7 @@ const SubtitlePopup: React.FC<IProps> = ({ video, open, setOpen }) => {
         <FormControl fullWidth>
           <InputLabel>Language</InputLabel>
           <Select label="Language" onChange={handleChange}>
-            {video.tracks.map((subtitle) => {
+            {video.tracks?.map((subtitle) => {
               if (subtitle.kind === "captions") {
                 return (
                   <MenuItem key={subtitle.srcLang} value={subtitle.src}>
