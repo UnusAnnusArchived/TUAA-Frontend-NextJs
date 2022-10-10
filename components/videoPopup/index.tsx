@@ -82,10 +82,10 @@ const VideoPopup: React.FC<IProps> = ({ video, open, setOpen }) => {
     <Dialog fullWidth open={open} onClose={handleClose}>
       <DialogTitle>Video</DialogTitle>
       <DialogContent>
-      <FormControl fullWidth>
+        <FormControl fullWidth>
           <InputLabel>Resolution</InputLabel>
           <Select label="Resolution" value={videoUrl} onChange={handleChange}>
-            {video.sources.map((source) => {
+            {(video?.sources ?? [{ size: "1080", src: video.video }]).map((source) => {
               return (
                 <MenuItem key={source.size} value={`${cdn}${source.src}`}>
                   {source.size}p
