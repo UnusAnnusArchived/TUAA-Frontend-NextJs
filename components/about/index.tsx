@@ -49,7 +49,7 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
           <Image src="/ua.png" width="75" height="75" style={{ borderRadius: "100%" }} />
           <Typography variant="h5">The Unus Annus Archive</Typography>
           <DialogContentText>
-            Build {build} ({moment.utc(builtOn).format("MM/DD/YYYY HH:MM:SS")})
+            Build {build} ({moment.utc(builtOn).local().format("MM/DD/YYYY h:mm:ss A")})
           </DialogContentText>
           <DialogContentText>{branch}</DialogContentText>
         </div>
