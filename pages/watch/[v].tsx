@@ -12,7 +12,6 @@ import { EpisodesRow } from "../../components/episodes-controls";
 import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
-import { endpoint } from "../../src/endpoints";
 import { IVideo } from "../../src/types";
 import VideoDownloadOptions from "../../components/video-download-options";
 

@@ -1,6 +1,5 @@
 import { User } from "pocketbase";
 import { atom } from "recoil";
-import { LoginResponse } from "./types";
 
 const localStorageEffect =
   (key) =>

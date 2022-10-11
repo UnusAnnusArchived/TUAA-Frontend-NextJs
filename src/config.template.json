@@ -9,8 +9,5 @@
       "user": "noreply@unusannusarchive.tk",
       "pass": "abc123"
     }
-  },
-  "pocketbase": {
-    "host": "https://db.unusann.us"
   }
 }

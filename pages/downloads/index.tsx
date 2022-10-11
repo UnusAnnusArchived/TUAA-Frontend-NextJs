@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { DownloadItem } from "../../components/download-item";
+import { cdn } from "../../src/endpoints.json";
 
 //Images
 import tuaaDownloaderPic from "../../assets/tuaa-downloader.png";
 import tuaaNodeApiPic from "../../assets/tuaa-node-api.png";
-import { cdn } from "../../src/endpoints";
 
 const Download: React.FC<void> = (props) => {
   const { t, i18n } = useTranslation();

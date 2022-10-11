@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import Typography from "@mui/material/Typography";
 import { ProfileSection } from "../components/profile";
 import { useTranslation } from "react-i18next";
-import pb from "../src/pocketbase";
 
 const Profile: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);

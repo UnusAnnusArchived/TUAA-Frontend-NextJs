@@ -1,11 +1,9 @@
 import Paper from "@mui/material/Paper";
 import React from "react";
 import { IVideo } from "../../src/types";
-import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
-import { cdn } from "../../src/endpoints";
 import { ThumbnailImage } from "../thumbnail-image/thumbnail-image";
 
 interface IProps {

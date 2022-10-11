@@ -1,11 +1,9 @@
 import Paper from "@mui/material/Paper";
 import Plus from "@mui/icons-material/Add";
-import Image from "next/image";
 import moment from "moment";
 import { Layout } from "../components/layout";
 import { MetaHead } from "../components/meta-head";
 import styles from "../styles/PatreonDonors.module.scss";
-import Link from "next/link";
 import { Divider, Typography } from "@mui/material";
 import pb from "../src/pocketbase";
 import { useEffect, useState } from "react";

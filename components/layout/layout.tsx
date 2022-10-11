@@ -5,11 +5,8 @@ import classNames from "classnames";
 import { AppBar } from "../app-bar";
 import { createStyles, makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material";
-import axios from "axios";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
-import { CheckLoginKeyResponse } from "../../src/types";
 import pb from "../../src/pocketbase";
 
 const useStyles = makeStyles((theme: Theme) =>

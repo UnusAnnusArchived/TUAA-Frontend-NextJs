@@ -1,12 +1,9 @@
 import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import axios from "axios";
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
-import { PostCommentResponse } from "../../src/types";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { useTranslation } from "react-i18next";
 import pb from "../../src/pocketbase";

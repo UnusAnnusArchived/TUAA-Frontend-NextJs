@@ -1,6 +1,6 @@
 import PocketBase from "pocketbase";
-import config from "./config.json";
+import endpoints from "./endpoints.json";
 
-const pocketbase = new PocketBase(config.pocketbase.host);
+const pocketbase = new PocketBase(endpoints.pocketbase);
 
 export default pocketbase;

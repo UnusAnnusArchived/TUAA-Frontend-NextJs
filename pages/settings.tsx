@@ -10,7 +10,6 @@ import { Link } from "@mui/material";
 import reactStringReplace from "react-string-replace";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../src/atoms";
-import { NextEpisodeButton } from "../components/episodes-controls";
 
 const Settings: React.FC = () => {
   const { t, i18n } = useTranslation();

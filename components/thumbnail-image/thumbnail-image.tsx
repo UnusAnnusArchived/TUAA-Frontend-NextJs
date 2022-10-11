@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { cdn } from "../../src/endpoints";
-import type { ImageProps } from "next/image";
+import { cdn } from "../../src/endpoints.json";
 import type { IVideo } from "../../src/types";
 
 type OmittedProps = "src" | "onError" | "loading";

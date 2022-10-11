@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { ChangePic } from ".";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
 import getPbImagePath from "../../src/utils/getPbImagePath";
 
 const ProfilePicture: React.FC = () => {

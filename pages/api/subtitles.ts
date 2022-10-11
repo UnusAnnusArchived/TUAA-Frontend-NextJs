@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { cdn } from "../../src/endpoints";
+import { cdn } from "../../src/endpoints.json";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

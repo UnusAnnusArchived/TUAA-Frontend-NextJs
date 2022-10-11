@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-import { endpoint } from "../../src/endpoints";
+import { api } from "../../src/endpoints.json";
 
 interface IProps {
   open: boolean;
@@ -23,14 +23,14 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const [branch, setBranch] = useState<string>("Loading Branch");
 
   useEffect(() => {
-    fetch(`${endpoint}/v2/build-info`)
+    fetch(`${api}/v2/build-info`)
       .then((res) => res.json())
       .then((buildInfo) => {
         setBuild(buildInfo.build);
         setBuiltOn(buildInfo.date);
       });
 
-    fetch(`${endpoint}/v2/branch`)
+    fetch(`${api}/v2/branch`)
       .then((res) => res.json())
       .then(({ branch }) => {
         setBranch(branch);

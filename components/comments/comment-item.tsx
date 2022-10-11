@@ -5,8 +5,6 @@ import moment from "moment";
 import { Record } from "pocketbase";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { endpoint } from "../../src/endpoints";
-import { IComment } from "../../src/types";
 import pb from "../../src/pocketbase";
 import getPbImagePath from "../../src/utils/getPbImagePath";
 import MarkdownIt from "markdown-it";

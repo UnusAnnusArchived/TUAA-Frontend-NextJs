@@ -5,7 +5,7 @@ import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Script from "next/script";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../components/theme/theme";
-import { RecoilRoot, useRecoilState } from "recoil";
+import { RecoilRoot } from "recoil";
 import { GeistProvider } from "@geist-ui/react";
 import { useRouter } from "next/router";
 import { initTranslations } from "../src/i18n/i18n";

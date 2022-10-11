@@ -11,7 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import BackIcon from "@mui/icons-material/ArrowBack";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { theme } from "../theme/theme";
-import { useTranslation } from "react-i18next";
 import SearchIcon from "@mui/icons-material/Search";
 import AppMenu from "./menu";
 import Search from "../search/search";
@@ -45,12 +44,12 @@ const ABar: React.FC = () => {
 
     if (!storage) return;
 
-    let sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
+    let sessionHistory: string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
     const path = globalThis?.location.pathname;
     if (path) {
       sessionHistory.push(globalThis?.location.pathname);
-    };
+    }
 
     storage.setItem("history", JSON.stringify(sessionHistory));
   }, [router.asPath]);
@@ -59,12 +58,12 @@ const ABar: React.FC = () => {
     const storage = globalThis?.sessionStorage;
 
     if (storage) {
-      const sessionHistory:string[] = JSON.parse(storage.getItem("history") ?? "[]");
+      const sessionHistory: string[] = JSON.parse(storage.getItem("history") ?? "[]");
 
-      const lastPage = sessionHistory[sessionHistory.length-2];
-      
+      const lastPage = sessionHistory[sessionHistory.length - 2];
+
       //Remove current page and last page from history (we remove the last page because navigating to it after will cause it to get added back)
-      sessionHistory.splice(sessionHistory.length-2, 2);
+      sessionHistory.splice(sessionHistory.length - 2, 2);
       storage.setItem("history", JSON.stringify(sessionHistory));
 
       router.replace(lastPage);
@@ -94,39 +93,35 @@ const ABar: React.FC = () => {
     <>
       <AppBar position="sticky">
         <Toolbar>
-          {hasHistory() &&
+          {hasHistory() && (
             <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={onClickBack}
-          >
-            <BackIcon />
-          </IconButton>
-          }
-          <Link href="/" passHref>
-            <Typography
-              variant="h6"
-              component="div"
-              className="pointer"
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={onClickBack}
             >
+              <BackIcon />
+            </IconButton>
+          )}
+          <Link href="/" passHref>
+            <Typography variant="h6" component="div" className="pointer">
               {isMdDown ? "TUAA" : "The Unus Annus Archive"}
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }}>
             {!isMdDown && (
-              <div style={{justifyContent:"center",alignItems:"center",textAlign:"center"}}>
+              <div style={{ justifyContent: "center", alignItems: "center", textAlign: "center" }}>
                 <Search />
               </div>
             )}
           </Box>
           {isMdDown && (
-              <IconButton onClick={toggleMobileSearch}>
-                <SearchIcon />
-              </IconButton>
-            )}
+            <IconButton onClick={toggleMobileSearch}>
+              <SearchIcon />
+            </IconButton>
+          )}
           <div className="d-flex">
             <AppMenu />
           </div>
@@ -135,7 +130,7 @@ const ABar: React.FC = () => {
           <LinearProgress className="routing-progress" />
         </Fade>
         {isMdDown && showMobileSearch && (
-          <div style={{marginBottom:16}}>
+          <div style={{ marginBottom: 16 }}>
             <Search />
           </div>
         )}

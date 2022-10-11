@@ -12,7 +12,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { Dispatch, SetStateAction, useState } from "react";
-import { cdn } from "../../src/endpoints";
+import { cdn } from "../../src/endpoints.json";
 import { IVideo } from "../../src/types";
 import ProgressBar from "./progressBar";
 

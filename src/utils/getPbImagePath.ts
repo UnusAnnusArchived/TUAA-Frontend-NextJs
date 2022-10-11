@@ -1,4 +1,4 @@
-import { db } from "../endpoints";
+import { pocketbase } from "../endpoints.json";
 
 export default function getPbImagePath(
   sub: string,
@@ -7,5 +7,5 @@ export default function getPbImagePath(
   x?: number,
   y?: number
 ): string {
-  return `${db}/api/files/${sub}/${recordId}/${filename}${x & y ? `?thumb=${x}x${y}` : ""}`;
+  return `${pocketbase}/api/files/${sub}/${recordId}/${filename}${x & y ? `?thumb=${x}x${y}` : ""}`;
 }

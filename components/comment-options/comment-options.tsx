@@ -2,7 +2,6 @@ import Menu from "@mui/material/Menu";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import PencilIcon from "@mui/icons-material/Edit";
 import TrashIcon from "@mui/icons-material/Delete";
-import pb from "../../src/pocketbase";
 import { IconButton, ListItemIcon, ListItemText, MenuItem } from "@mui/material";
 import { Record } from "pocketbase";
 import { useToasts } from "@geist-ui/react";

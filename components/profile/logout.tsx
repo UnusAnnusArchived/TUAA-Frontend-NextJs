@@ -1,12 +1,8 @@
 import { useToasts } from "@geist-ui/react";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import axios from "axios";
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
-import { LogoutResponse } from "../../src/types";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import pb from "../../src/pocketbase";

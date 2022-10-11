@@ -1,7 +1,6 @@
 import { FormControlLabel, Switch } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";

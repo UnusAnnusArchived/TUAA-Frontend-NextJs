@@ -1,11 +1,9 @@
 import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
 import useSWR from "swr";
-import { IComment } from "../../src/types";
-import { endpoint } from "../../src/endpoints";
 import { AddComment, CommentItem } from ".";
 import { useTranslation } from "react-i18next";
-import { Collection, Record } from "pocketbase";
+import { Record } from "pocketbase";
 import pb from "../../src/pocketbase";
 import moment from "moment";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";

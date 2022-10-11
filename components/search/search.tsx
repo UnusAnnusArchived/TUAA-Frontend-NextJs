@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { endpoint } from "../../src/endpoints";
+import { api } from "../../src/endpoints.json";
 import { IVideo } from "../../src/types";
 import { useToasts } from "@geist-ui/react";
 import { Autocomplete, CircularProgress } from "@mui/material";
@@ -28,7 +28,7 @@ const Search: React.FC = () => {
 
     (async () => {
       try {
-        const res = await axios.get(`${endpoint}/v2/metadata/all`);
+        const res = await axios.get(`${api}/v2/metadata/all`);
 
         if (res.status === 200) {
           if (active) {

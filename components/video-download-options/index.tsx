@@ -1,23 +1,10 @@
-import {
-  Typography,
-  Button,
-  Stack,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-} from "@mui/material";
-import { FaTimes } from "react-icons/fa";
+import { Typography, Button, Stack } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { IVideo } from "../../src/types";
-import DownloadPopupUI from "../download-popup-ui";
 import SubtitlePopup from "../subtitlePopup";
 import VideoPopup from "../videoPopup";
-import { cdn } from "../../src/endpoints";
+import { cdn } from "../../src/endpoints.json";
 
 interface IProps {
   video: IVideo;

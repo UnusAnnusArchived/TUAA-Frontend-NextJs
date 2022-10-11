@@ -4,7 +4,6 @@ import config from "../../src/config.json";
 import { IVideo } from "../../src/types";
 import { Player } from "../../components/player";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { endpoint } from "../../src/endpoints";
 
 interface IProps {
   watchCode: string;

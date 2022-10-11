@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Plyr from "plyr";
 import { IVideo } from "../../src/types";
-import { cdn, endpoint, localApi } from "../../src/endpoints";
+import { cdn, api } from "../../src/endpoints.json";
 import { Fade, Portal } from "@mui/material";
 import styles from "../../styles/Player.module.scss";
 import { useRouter } from "next/router";
-import { NextEpisodeButton } from "../episodes-controls";
 import { useTranslation } from "react-i18next";
 import embedStyles from "../../styles/embed.module.scss";
 
@@ -51,11 +50,11 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }) ?? [{ src: `${cdn}${video.video}` }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${localApi}/subtitles?url=${track.src}` };
+          return { ...track, src: `${api}/subtitles?url=${track.src}` };
         }) ?? [],
       previewThumbnails: {
         enabled: true,
-        src: `${endpoint}/v2/preview/${watchCode}`,
+        src: `${api}/v2/preview/${watchCode}`,
       },
     };
 
@@ -146,11 +145,11 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${localApi}/subtitles?url=${cdn}${track.src}` };
+          return { ...track, src: `${api}/subtitles?url=${cdn}${track.src}` };
         }) ?? [],
       previewThumbnails: {
         enabled: true,
-        src: `${endpoint}/v2/preview/${watchCode}`,
+        src: `${api}/v2/preview/${watchCode}`,
       },
     };
 
