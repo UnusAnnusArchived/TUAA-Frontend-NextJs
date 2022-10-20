@@ -13,9 +13,13 @@ const PatreonDonors = () => {
   const [patreons, setPatreons] = useState([]);
 
   useEffect(() => {
-    pb.records.getList("patreons", 1, 400).then((fetchedPatreons) => {
-      setPatreons(fetchedPatreons.items);
-    });
+    pb.records
+      .getList("patreons", 1, 400, {
+        sort: "name",
+      })
+      .then((fetchedPatreons) => {
+        setPatreons(fetchedPatreons.items);
+      });
   }, []);
 
   return (
