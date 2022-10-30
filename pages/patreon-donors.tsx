@@ -13,13 +13,10 @@ const PatreonDonors = () => {
   const [patreons, setPatreons] = useState([]);
 
   useEffect(() => {
-    pb.records
-      .getList("patreons", 1, 400, {
-        sort: "name",
-      })
-      .then((fetchedPatreons) => {
-        setPatreons(fetchedPatreons.items);
-      });
+    (async () => {
+      const fetchedPatreons = (await pb.collection("patreons").getList(1, 400, { sort: "name" })).items;
+      setPatreons(fetchedPatreons);
+    })();
   }, []);
 
   return (
@@ -35,7 +32,6 @@ const PatreonDonors = () => {
       </div>
       <div className="row">
         {patreons.map((patreon) => {
-          console.log(patreon);
           return (
             <div className="col-12 col-md-4 p-2 h-100">
               <Paper className={`p-2 h-100 ${styles.patreon}`}>

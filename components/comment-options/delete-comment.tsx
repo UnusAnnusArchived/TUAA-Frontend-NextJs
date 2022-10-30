@@ -22,7 +22,7 @@ const DeleteCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) =
   };
 
   const handleDelete = async () => {
-    await pb.records.delete("comments", comment.id);
+    await pb.collection("comments").delete(comment.id);
     mutate();
     handleClose();
   };

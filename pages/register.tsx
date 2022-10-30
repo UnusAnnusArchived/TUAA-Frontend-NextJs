@@ -25,10 +25,11 @@ const LoginPage: React.FC = () => {
   const { t } = useTranslation();
   const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const router = useRouter();
   const [, setToast] = useToasts();
 
@@ -37,7 +38,16 @@ const LoginPage: React.FC = () => {
   };
 
   const isValid = () => {
-    return email.trim().length > 0 && password.trim().length > 5 && password.trim() === confirmPassword.trim();
+    return (
+      email.trim().length > 0 &&
+      name.trim().length > 0 &&
+      !username.includes(" ") &&
+      username.trim().length >= 4 &&
+      username.trim().length <= 100 &&
+      password.trim().length >= 8 &&
+      password.trim().length <= 72 &&
+      password.trim() === confirmPassword.trim()
+    );
   };
 
   const onSubmit = async () => {
@@ -46,25 +56,26 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const pbUser = await pb.users.create({
-        email,
+      const user = await pb.collection("users").create({
+        email: email.trim(),
+        name: name.trim(),
+        username: username.trim(),
         password,
         passwordConfirm: confirmPassword,
-      });
-
-      await pb.users.authViaEmail(email, password);
-
-      await pb.records.update("profiles", pbUser.profile.id, {
-        name: username,
         emails_account: true,
         emails_updates: false,
       });
 
-      await pb.users.requestVerification(email);
+      await pb.collection("users").authWithPassword(email, password);
 
-      const user = await pb.users.getOne(pbUser.id);
+      await pb.collection("users").requestVerification(email);
 
-      router.push("/login");
+      setLoggedInUser(user);
+
+      if (previousPage) {
+        router.push(previousPage);
+      } else router.push("/");
+      router.push("/");
       setToast({
         type: "success",
         text: t("register:success"),
@@ -99,6 +110,16 @@ const LoginPage: React.FC = () => {
             value={email}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            className={classNames("my-3", styles.field)}
+            id="name-archive"
+            name="name-archive"
+            label="Name"
+            variant="standard"
+            value={name}
+            type="text"
+            onChange={(e) => setName(e.target.value)}
           />
           <TextField
             className={classNames("my-3", styles.field)}

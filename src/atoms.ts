@@ -1,5 +1,5 @@
-import { User } from "pocketbase";
 import { atom } from "recoil";
+import type { Record } from "pocketbase";
 
 const localStorageEffect =
   (key) =>
@@ -17,7 +17,7 @@ const localStorageEffect =
     });
   };
 
-export const userAtom = atom<User>({
+export const userAtom = atom<Record>({
   key: "userAtom",
   default: null,
   effects_UNSTABLE: [localStorageEffect("userAtom")],

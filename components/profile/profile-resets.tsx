@@ -13,12 +13,12 @@ const ResetProfile: React.FC = () => {
   const [newEmail, setNewEmail] = useState("");
 
   const resetEmail = async () => {
-    await pb.users.requestEmailChange(newEmail);
+    await pb.collection("users").requestEmailChange(newEmail);
     closeEmailChangeDialog();
   };
 
   const resetPassword = async () => {
-    await pb.users.requestPasswordReset(loggedInUser?.email);
+    await pb.collection("users").requestPasswordReset(loggedInUser?.email);
     setSentPassword(true);
   };
 

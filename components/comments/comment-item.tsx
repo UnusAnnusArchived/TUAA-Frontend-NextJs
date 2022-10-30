@@ -57,38 +57,37 @@ interface IProps {
 
 const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
   const { i18n } = useTranslation();
-  const [commentProfile, setCommentProfile] = useState<Record>(null);
+  const [commentUser, setCommentUser] = useState<Record>(null);
   const [loggedInUser] = useRecoilState(userAtom);
 
+  console.log(comment);
+
   useEffect(() => {
-    pb.records
-      .getList("profiles", 1, 5, {
-        filter: `userId="${comment.user}"`,
-        $autoCancel: false,
-      })
-      .then((profiles) => {
-        setCommentProfile(profiles.items[0]);
-      })
-      .catch((err) => {
-        console.error(err, err.isAbort);
-      });
+    (async () => {
+      try {
+        const user = await pb.collection("users").getOne(comment.user);
+        setCommentUser(user);
+      } catch (err) {
+        console.error(err, `id="${comment.user}"`);
+      }
+    })();
   }, []);
 
-  return commentProfile ? (
+  return commentUser ? (
     <div>
       <div className={styles.comment}>
         <div className={`row my-2 ${styles.commentBody}`}>
           <div className="col-2 col-md-1 mb-md-0 my-1 d-flex flex-column align-items-center justify-content-flex-start">
             <Avatar
-              alt={commentProfile.name}
-              src={`${getPbImagePath("systemprofiles0", commentProfile.id, commentProfile.avatar, 168, 168)}`}
+              alt={commentUser.name}
+              src={`${getPbImagePath("systemprofiles0", commentUser.id, commentUser.avatar, 168, 168)}`}
               sx={{ width: 56, height: 56 }}
             />
           </div>
           <div className="col-10 col-md-11 mb-md-0 my-1 d-flex flex-column justify-content-center">
             <div className="d-flex align-items-baseline">
               <Typography variant="body1" className="font-weight-bold">
-                <strong>{commentProfile.name}</strong>
+                <strong>{commentUser.name}</strong>
               </Typography>
               &nbsp;
               <Typography variant="body2" sx={{ color: "#a3a3a3" }}>
@@ -103,9 +102,9 @@ const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
           </div>
         </div>
         {comment.user === loggedInUser?.id ? (
-          <CommentOptions comment={comment} commentProfile={commentProfile} mutate={mutate} />
-        ) : loggedInUser?.profile.isAdmin === true ? (
-          <CommentOptions comment={comment} commentProfile={commentProfile} mutate={mutate} />
+          <CommentOptions comment={comment} commentUser={commentUser} mutate={mutate} />
+        ) : loggedInUser?.isAdmin === true ? (
+          <CommentOptions comment={comment} commentUser={commentUser} mutate={mutate} />
         ) : null}
       </div>
       <Divider sx={{ backgroundColor: "#fff" }} />

@@ -21,7 +21,7 @@ const ProfileData: React.FC = () => {
         {t("profile:dataTitle")}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>{t("profile:username")}:</strong> {loggedInUser?.profile?.name}
+        <strong>{t("profile:username")}:</strong> {loggedInUser?.name}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <strong>{t("profile:email")}:</strong> {loggedInUser?.email}{" "}
@@ -30,15 +30,7 @@ const ProfileData: React.FC = () => {
       <Typography variant="body1" component="p" className="my-1">
         <strong>User ID:</strong> <code>{loggedInUser?.id}</code>
       </Typography>
-      <Typography variant="body1" component="p" className="my-1">
-        <strong>Profile ID:</strong> <code>{loggedInUser?.profile.id}</code>
-      </Typography>
-      {loggedInUser?.profile.legacy_id ? (
-        <Typography variant="body1" component="p" className="my-1">
-          <strong>Legacy User ID:</strong> <code>{loggedInUser?.profile.legacy_id}</code>
-        </Typography>
-      ) : null}
-      {loggedInUser?.profile?.isAdmin ? (
+      {loggedInUser?.isAdmin ? (
         <Typography variant="body1" component="p" className="my-1">
           <strong>Admin Account</strong>
         </Typography>

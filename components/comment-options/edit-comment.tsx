@@ -24,7 +24,7 @@ const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => 
   };
 
   const handleEdit = async () => {
-    await pb.records.update("comments", comment.id, {
+    await pb.collection("comments").update(comment.id, {
       markdown: newMd,
       isEdited: true,
     });

@@ -9,25 +9,25 @@ const EmailPreferences: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const accountEmailsChange = async () => {
-    const profile = await pb.records.update("profiles", loggedInUser?.profile.id, {
-      emails_account: !loggedInUser?.profile.emails_account,
+    const user = await pb.collection("profiles").update(loggedInUser?.id, {
+      emails_account: !loggedInUser?.emails_account,
     });
 
     let tempUser = JSON.parse(JSON.stringify(loggedInUser)); // hacky way of copying loggedInUser so we can modify it
 
-    tempUser.profile.emails_account = profile.emails_account;
+    tempUser.emails_account = user.emails_account;
 
     setLoggedInUser(tempUser);
   };
 
   const websiteUpdatesChange = async () => {
-    const profile = await pb.records.update("profiles", loggedInUser?.profile.id, {
-      emails_updates: !loggedInUser?.profile.emails_updates,
+    const user = await pb.collection("profiles").update(loggedInUser?.id, {
+      emails_updates: !loggedInUser?.emails_updates,
     });
 
     let tempUser = JSON.parse(JSON.stringify(loggedInUser)); // hacky way of copying loggedInUser so we can modify it
 
-    tempUser.profile.emails_updates = profile.emails_updates;
+    tempUser.emails_updates = user.emails_updates;
 
     setLoggedInUser(tempUser);
   };
@@ -39,14 +39,14 @@ const EmailPreferences: React.FC = () => {
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <FormControlLabel
-          control={<Switch defaultChecked={loggedInUser?.profile.emails_account} />}
+          control={<Switch defaultChecked={loggedInUser?.emails_account} />}
           label="Account Updates"
           onClick={accountEmailsChange}
         />
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <FormControlLabel
-          control={<Switch defaultChecked={loggedInUser?.profile.emails_updates} />}
+          control={<Switch defaultChecked={loggedInUser?.emails_updates} />}
           label="Website Updates"
           onChange={websiteUpdatesChange}
         />

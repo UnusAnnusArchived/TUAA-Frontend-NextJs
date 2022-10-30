@@ -50,7 +50,7 @@ const AppMenu: React.FC = () => {
 
   const logout = async () => {
     try {
-      await pb.authStore.clear();
+      pb.authStore.clear();
       setLoggedInUser(null);
 
       handleClose();
@@ -69,8 +69,8 @@ const AppMenu: React.FC = () => {
       <IconButton onClick={handleClick}>
         {loggedInUser && (
           <Avatar
-            src={getPbImagePath("systemprofiles0", loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 120, 120)}
-            alt={loggedInUser?.profile?.name}
+            src={getPbImagePath("systemprofiles0", loggedInUser?.id, loggedInUser?.avatar, 120, 120)}
+            alt={loggedInUser.name}
           />
         )}
 
@@ -83,7 +83,7 @@ const AppMenu: React.FC = () => {
             <React.Fragment>
               <div className="my-2">
                 <Typography variant="h6" component="p" className="text-center">
-                  {loggedInUser?.profile?.name === "" ? loggedInUser?.email : loggedInUser?.profile?.name}
+                  {loggedInUser?.name ?? loggedInUser?.username ?? loggedInUser?.email ?? ""}
                 </Typography>
               </div>
               <Divider style={{ margin: "4px 0" }} />

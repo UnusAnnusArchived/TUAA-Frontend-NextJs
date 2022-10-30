@@ -12,11 +12,11 @@ import EditCommentUI from "./edit-comment";
 
 interface IProps {
   comment: Record;
-  commentProfile: Record;
+  commentUser: Record;
   mutate: KeyedMutator<Record[]>;
 }
 
-const CommentOptions: React.FC<IProps> = ({ comment, commentProfile, mutate }) => {
+const CommentOptions: React.FC<IProps> = ({ comment, commentUser, mutate }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [showEditCommentUI, setShowEditCommentUI] = useState(false);
   const [showDeleteCommentUI, setShowDeleteCommentUI] = useState(false);
@@ -42,7 +42,7 @@ const CommentOptions: React.FC<IProps> = ({ comment, commentProfile, mutate }) =
     handleClose();
   };
 
-  return commentProfile.userId === comment.user ? (
+  return commentUser.id === comment.user ? (
     <>
       <IconButton onClick={handleClick}>
         <MoreVertIcon />

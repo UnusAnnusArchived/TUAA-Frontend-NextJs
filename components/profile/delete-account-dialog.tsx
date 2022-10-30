@@ -25,9 +25,9 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const deleteAccount = async () => {
     if (password === confirmPassword) {
       try {
-        const response = await pb.users.authViaEmail(loggedInUser.email, password);
+        const response = await pb.collection("users").authWithPassword(loggedInUser.email, password);
         if (response.token) {
-          pb.users.delete(response.user.id);
+          pb.collection("users").delete(response.user.id);
           setLoggedInUser(null);
           setToast({
             text: "Sucessfully deleted your account and all associated information.",

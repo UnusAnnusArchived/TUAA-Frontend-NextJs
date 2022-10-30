@@ -16,13 +16,11 @@ const JSONDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const [, setToast] = useToasts();
 
   useEffect(() => {
-    pb.users
-      .getOne(loggedInUser?.id, {
-        $autoCancel: false,
-      })
-      .then((fetchedUser) => {
-        setUser(fetchedUser);
-      });
+    (async () => {
+      const fetchedUser = await pb.collection("users").getOne(loggedInUser?.id);
+
+      setUser(fetchedUser);
+    })();
   }, [open]);
 
   const close = () => {

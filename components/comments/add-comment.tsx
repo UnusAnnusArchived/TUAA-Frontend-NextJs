@@ -29,7 +29,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
 
     setIsSendingComment(true);
     try {
-      await pb.records.create("comments", {
+      await pb.collection("comments").create({
         episode: watchCode,
         markdown: commentText,
         user: loggedInUser?.id,

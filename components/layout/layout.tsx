@@ -28,11 +28,17 @@ const Layout: React.FC<IProps> = ({ children }) => {
 
   const refetchUser = async () => {
     if (loggedInUser) {
-      const user = await pb.users.getOne(loggedInUser?.id);
+      try {
+        const user = await pb.collection("users").getOne(loggedInUser?.id);
 
-      if (user.id) {
-        setLoggedInUser(user);
-      } else {
+        if (user.id) {
+          setLoggedInUser(user);
+        } else {
+          setLoggedInUser(null);
+        }
+      } catch (err) {
+        console.error(err);
+        console.info("Logging out due to error (printed above)!");
         setLoggedInUser(null);
       }
     }

@@ -10,7 +10,7 @@ const VerifyProfile: React.FC = () => {
   const [sent, setSent] = useState(false);
 
   const handleClick = () => {
-    pb.users.requestVerification(loggedInUser?.email);
+    pb.collection("users").requestVerification(loggedInUser?.email);
     setSent(true);
   };
 

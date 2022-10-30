@@ -44,9 +44,9 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const { user } = await pb.users.authViaEmail(email, password);
-      setLoggedInUser(user);
-      if (previousPage && previousPage.length > 3) {
+      const { record } = await pb.collection("users").authWithPassword(email, password);
+      setLoggedInUser(record);
+      if (previousPage) {
         router.push(previousPage);
       } else router.push("/");
     } catch (err) {

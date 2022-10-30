@@ -16,13 +16,8 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
   const { t } = useTranslation();
   const [sortType, setSortType] = useState("latest");
 
-  const fetcher = async (sortType) => {
-    const comments = (
-      await pb.records.getList("comments", 1, 400, {
-        filter: `episode="${watchCode}"`,
-        $autoCancel: false,
-      })
-    ).items;
+  const fetcher = async (sortType: string) => {
+    const comments = (await pb.collection("comments").getList(1, 400, { filter: `episode="${watchCode}"` })).items;
 
     if (sortType === "latest" || sortType === "oldest") {
       comments.sort((aDate, bDate) => {
@@ -65,14 +60,10 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
       comments.reverse();
     }
 
-    console.log(comments, sortType);
-
     return comments;
   };
 
   const { data, mutate, error } = useSWR<Record[]>(sortType, fetcher);
-
-  const [comments, setComment] = useState(null);
 
   const onAdded = async () => {
     mutate();
@@ -80,7 +71,6 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
 
   const onSortChange = (evt: SelectChangeEvent) => {
     setSortType(evt.target.value);
-    console.log(evt.target.value);
     mutate();
   };
 
