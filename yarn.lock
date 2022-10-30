@@ -1392,11 +1392,6 @@
   resolved "https://registry.yarnpkg.com/@types/linkify-it/-/linkify-it-3.0.2.tgz#fd2cd2edbaa7eaac7e7f3c1748b52a19143846c9"
   integrity sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==
 
-"@types/luxon@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-3.0.1.tgz#2b1657096473e24b049bdedf3710f99645f3a17f"
-  integrity sha512-/LAvk1cMOJt0ghzMFrZEvByUhsiEfeeT2IF53Le+Ki3A538yEL9pRZ7a6MuCxdrYK+YNqNIDmrKU/r2nnw04zQ==
-
 "@types/markdown-it@^12.2.3":
   version "12.2.3"
   resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-12.2.3.tgz#0d6f6e5e413f8daaa26522904597be3d6cd93b51"
@@ -3162,10 +3157,10 @@ plyr@^3.6.9:
     rangetouch "^2.0.1"
     url-polyfill "^1.1.12"
 
-pocketbase@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.7.1.tgz#fdff7e9c6b23f3543fa14b412a496279329ce12d"
-  integrity sha512-uA/Ltci3OrZ/sYfOjB/SCQX87xnB0Gowci0eUNgK7Sb0gk68Yy79ynTKgcmrw6wdXXVrY/vOoNR/DU8oahCBAA==
+pocketbase@^0.8.0-rc1:
+  version "0.8.0-rc1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.8.0-rc1.tgz#43b6f603db146fb373e0f243c8d33bec08fd67b9"
+  integrity sha512-PXY2d0Em639n0WlixAhUtpsUH8At7S2VH0eqPWU0Ouiv7NwJLFFNTIE1IQL9F/cEJZF9BGb6FIYZqb/I4Fj4Iw==
 
 postcss@8.4.14:
   version "8.4.14"
