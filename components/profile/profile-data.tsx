@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import moment from "moment";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
@@ -21,7 +22,10 @@ const ProfileData: React.FC = () => {
         {t("profile:dataTitle")}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>{t("profile:username")}:</strong> {loggedInUser?.name}
+        <strong>Name:</strong> {loggedInUser?.name}
+      </Typography>
+      <Typography variant="body1" component="p" className="my-1">
+        <strong>{t("profile:username")}:</strong> {loggedInUser?.username}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <strong>{t("profile:email")}:</strong> {loggedInUser?.email}{" "}
@@ -29,6 +33,10 @@ const ProfileData: React.FC = () => {
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
         <strong>User ID:</strong> <code>{loggedInUser?.id}</code>
+      </Typography>
+      <Typography variant="body1" component="p" className="my-1">
+        <strong>Created:</strong> {moment.utc(loggedInUser?.created).fromNow()} (
+        {moment.utc(loggedInUser?.created).local().format("MM/DD/YYYY HH:mm:ss")})
       </Typography>
       {loggedInUser?.isAdmin ? (
         <Typography variant="body1" component="p" className="my-1">
