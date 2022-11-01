@@ -9,7 +9,7 @@ const EmailPreferences: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const accountEmailsChange = async () => {
-    const user = await pb.collection("profiles").update(loggedInUser?.id, {
+    const user = await pb.collection("users").update(loggedInUser?.id, {
       emails_account: !loggedInUser?.emails_account,
     });
 
@@ -21,7 +21,7 @@ const EmailPreferences: React.FC = () => {
   };
 
   const websiteUpdatesChange = async () => {
-    const user = await pb.collection("profiles").update(loggedInUser?.id, {
+    const user = await pb.collection("users").update(loggedInUser?.id, {
       emails_updates: !loggedInUser?.emails_updates,
     });
 

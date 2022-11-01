@@ -62,7 +62,7 @@ const ChangePic: React.FC = () => {
       const formData = new FormData();
       formData.append("avatar", image);
 
-      const newProfile = await pb.collection("profiles").update(loggedInUser?.id, formData);
+      const newProfile = await pb.collection("users").update(loggedInUser?.id, formData);
       setToast({
         type: "success",
         text: t("profile:pfp:success"),
