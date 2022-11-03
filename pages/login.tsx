@@ -1,114 +1,146 @@
-import TextField from "@mui/material/TextField";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import PasswordIcon from "@mui/icons-material/VpnKey";
 import { Layout } from "../components/layout";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import Input from "@mui/material/Input";
-import FormControl from "@mui/material/FormControl";
-import IconButton from "@mui/material/IconButton";
-import styles from "../styles/Login.module.scss";
-import classNames from "classnames";
 import Button from "@mui/material/Button";
-import { useRecoilState } from "recoil";
-import { previousPageAtom, userAtom } from "../src/atoms";
 import { MetaHead } from "../components/meta-head";
-import { useRouter } from "next/router";
-import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
 import pb from "../src/pocketbase";
+import LoginDialog from "../components/login-dialog";
+import GoogleIcon from "@mui/icons-material/Google";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import { FaDiscord } from "react-icons/fa";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { FiGitlab } from "react-icons/fi";
+import classNames from "classnames";
+import styles from "../styles/Login.module.scss";
+import { useRecoilState } from "recoil";
+import { oAuthProviderAtom } from "../src/atoms";
+import { siteRoot } from "../src/endpoints.json";
+import { PBAuthMethodsList, PBAuthProvider } from "../src/types";
 
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
-  const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
-  const [previousPage, setPreviousPage] = useRecoilState(previousPageAtom);
-  const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const router = useRouter();
-  const [, setToast] = useToasts();
+  const [oAuthProvider, setOAuthProvider] = useRecoilState(oAuthProviderAtom);
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [authMethods, setAuthMethods] = useState<PBAuthMethodsList>();
+  const [authMethodsLoaded, setAuthMethodsLoaded] = useState(false);
 
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword);
+  useEffect(() => {
+    (async () => {
+      const fetchedAuthMethods = await pb.collection("users").listAuthMethods();
+
+      const sortedOrder = [];
+
+      for (let i = 0; i < fetchedAuthMethods.authProviders.length; i++) {
+        const provider = fetchedAuthMethods.authProviders[i];
+        switch (provider.name) {
+          case "google": {
+            sortedOrder[0] = provider;
+            break;
+          }
+          case "twitter": {
+            sortedOrder[1] = provider;
+            break;
+          }
+          case "facebook": {
+            sortedOrder[2] = provider;
+            break;
+          }
+          case "discord": {
+            sortedOrder[3] = provider;
+            break;
+          }
+          case "github": {
+            sortedOrder[4] = provider;
+            break;
+          }
+          case "gitlab": {
+            sortedOrder[5] = provider;
+          }
+        }
+      }
+
+      fetchedAuthMethods.authProviders = sortedOrder;
+
+      setAuthMethods(fetchedAuthMethods);
+      setAuthMethodsLoaded(true);
+    })();
+  }, []);
+
+  const openLoginDialog = () => {
+    setShowLoginDialog(true);
   };
 
-  const isValid = () => {
-    return email.length > 0 && password.length > 0;
+  const oAuthIcons = {
+    google: <GoogleIcon />,
+    twitter: <TwitterIcon />,
+    facebook: <FacebookIcon />,
+    discord: <FaDiscord />,
+    github: <GitHubIcon />,
+    gitlab: <FiGitlab />,
   };
 
-  const onSubmit = async () => {
-    if (!isValid()) {
-      return;
-    }
-
-    try {
-      const { record } = await pb.collection("users").authWithPassword(email, password);
-      setLoggedInUser(record);
-      if (previousPage) {
-        router.push(previousPage);
-      } else router.push("/");
-    } catch (err) {
-      setToast({
-        text: err.message ?? err.code,
-        type: "error",
-        delay: 1000,
-      });
-    }
-  };
-
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+  const oAuthLogin = (provider: PBAuthProvider) => {
+    setOAuthProvider(provider);
+    location.href = provider.authUrl + `${siteRoot}/oauth2`;
   };
 
   return (
     <Layout>
+      <LoginDialog open={showLoginDialog} setOpen={setShowLoginDialog} />
       <MetaHead baseTitle={t("login:title")} />
       <Typography className="text-center my-2" variant="h5" component="h1">
         {t("login:titleLong")}
       </Typography>
-      <form id="login-form">
-        <div className="d-flex flex-column justify-content-center align-items-center">
-          <p>If you have not previously migrated your account, it will now be deleted. Please create a new account.</p>
-          <TextField
-            className={classNames("my-3", styles.field)}
-            id="email-archive"
-            name="email-archive"
-            label={t("login:usernameEmail")}
-            variant="standard"
-            value={email}
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FormControl variant="standard" className={classNames("my-3", styles.field)}>
-            <InputLabel htmlFor="standard-adornment-password">{t("login:password")}</InputLabel>
-            <Input
-              id="password-archive"
-              name="password-archive"
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(event) => setPassword(event.currentTarget.value)}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-          <div className={classNames("my-4 d-flex justify-content-end", styles.field)}>
-            <Button variant="contained" disabled={!isValid()} onClick={onSubmit}>
-              {t("login:loginBtn")}
-            </Button>
-          </div>
-        </div>
-      </form>
+      <div className={classNames("d-flex flex-column justify-content-center align-items-center", styles.flexGap)}>
+        {authMethodsLoaded ? (
+          authMethods.usernamePassword || authMethods.emailPassword || authMethods.authProviders.length > 0 ? (
+            <>
+              <Button
+                variant="contained"
+                startIcon={<PasswordIcon />}
+                onClick={openLoginDialog}
+                disabled={!authMethods?.emailPassword && !authMethods?.usernamePassword}
+              >
+                {authMethods?.emailPassword || authMethods?.usernamePassword ? (
+                  <>
+                    {(authMethods?.emailPassword && authMethods?.usernamePassword) || authMethods?.emailPassword
+                      ? "Email"
+                      : "Username"}{" "}
+                    & Password
+                  </>
+                ) : (
+                  <>Password Authentication Disabled!</>
+                )}
+              </Button>
+              {authMethods &&
+                authMethods.authProviders.map((provider) => {
+                  return (
+                    <Button
+                      className={styles[provider.name]}
+                      variant="contained"
+                      startIcon={oAuthIcons[provider.name]}
+                      onClick={() => {
+                        oAuthLogin(provider);
+                      }}
+                    >
+                      Login With {provider.name}
+                    </Button>
+                  );
+                })}
+            </>
+          ) : (
+            <p>
+              Unfortunately logins have been disabled. This is most likely temporary due to an issue. Please visit{" "}
+              <a href="https://discord.gg/PbpJz8r4Pr">our Discord</a> for more info.
+            </p>
+          )
+        ) : (
+          <p>Loading Authentication Methods...</p>
+        )}
+      </div>
     </Layout>
   );
 };

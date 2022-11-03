@@ -8,7 +8,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Input from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
-import styles from "../styles/Login.module.scss";
+import styles from "../styles/Register.module.scss";
 import classNames from "classnames";
 import Button from "@mui/material/Button";
 import { useRecoilState } from "recoil";

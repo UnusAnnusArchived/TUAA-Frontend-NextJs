@@ -1,5 +1,6 @@
 import { atom } from "recoil";
 import type { Record } from "pocketbase";
+import type { PBAuthProvider } from "./types";
 
 const localStorageEffect =
   (key) =>
@@ -26,6 +27,7 @@ export const userAtom = atom<Record>({
 export const previousPageAtom = atom<string>({
   key: "previousPageAtom",
   default: null,
+  effects_UNSTABLE: [localStorageEffect("previousPageAtom")],
 });
 
 export const autoplayAtom = atom<boolean>({
@@ -38,4 +40,10 @@ export const showPatreonAtom = atom<boolean>({
   key: "patreon",
   default: true,
   effects_UNSTABLE: [localStorageEffect("patreon")],
+});
+
+export const oAuthProviderAtom = atom<PBAuthProvider>({
+  key: "oa2_provider",
+  default: null,
+  effects_UNSTABLE: [localStorageEffect("oa2_provider")],
 });

@@ -214,3 +214,19 @@ export interface IUser {
   loginKeys: string[];
   isAdmin?: boolean;
 }
+
+export interface PBAuthMethodsList {
+  [key: string]: any;
+  usernamePassword: boolean;
+  emailPassword: boolean;
+  authProviders: PBAuthProvider[];
+}
+
+export interface PBAuthProvider {
+  name: string;
+  state: string;
+  codeVerifier: string;
+  codeChallenge: string;
+  codeChallengeMethod: string;
+  authUrl: string;
+}

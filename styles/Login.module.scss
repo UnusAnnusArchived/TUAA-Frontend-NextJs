@@ -1,9 +1,33 @@
-@import "./_breakpoints.scss";
+.flexGap {
+  gap: 5px;
+}
 
-.field {
-  width: 40%;
+.google {
+  background-color: #ea4335 !important;
+  color: #ffffff !important;
+}
 
-  @include md-down {
-    width: 100%;
-  }
+.twitter {
+  background-color: #1da1f2 !important;
+  color: #ffffff !important;
+}
+
+.facebook {
+  background-color: #4267b2 !important;
+  color: #ffffff !important;
+}
+
+.discord {
+  background-color: #5865f2 !important;
+  color: #ffffff !important;
+}
+
+.github {
+  background-color: #4183c4 !important;
+  color: #ffffff !important;
+}
+
+.gitlab {
+  background-color: #e24329 !important;
+  color: #ffffff !important;
 }
