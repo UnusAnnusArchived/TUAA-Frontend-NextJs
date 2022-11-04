@@ -8,6 +8,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   comment: Record;
@@ -17,6 +18,8 @@ interface IProps {
 }
 
 const DeleteCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => {
+  const { t } = useTranslation();
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -35,21 +38,21 @@ const DeleteCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) =
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">Are you sure you want to delete your comment?</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{t("comments:actions:delete:dialog:header")}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Are you sure you want to permanently delete your comment? This can not be undone!
+            {t("comments:actions:delete:dialog:description")}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>{t("common:cancel")}</Button>
           <Button
             style={{ backgroundColor: "#D11A2A", color: "#ffffff" }}
             variant="contained"
             onClick={handleDelete}
             autoFocus
           >
-            Delete
+            {t("comments:actions:delete:dialog:action")}
           </Button>
         </DialogActions>
       </Dialog>

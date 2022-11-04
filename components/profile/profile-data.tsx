@@ -19,32 +19,34 @@ const ProfileData: React.FC = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-2">
-        {t("profile:dataTitle")}
+        {t("profile:data:header")}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>Name:</strong> {loggedInUser?.name}
+        <strong>{t("common:account:name")}:</strong> {loggedInUser?.name}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>{t("profile:username")}:</strong> {loggedInUser?.username}
+        <strong>{t("common:account:username")}:</strong> {loggedInUser?.username}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>{t("profile:email")}:</strong> {loggedInUser?.email}{" "}
-        {loggedInUser?.verified ? null : <strong style={{ color: "#ff0000" }}>(Not Verified)</strong>}
+        <strong>{t("common:account:email")}:</strong> {loggedInUser?.email}{" "}
+        {loggedInUser?.verified ? null : (
+          <strong style={{ color: "#ff0000" }}>{t("profile:data:email_not_verified")}</strong>
+        )}
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>User ID:</strong> <code>{loggedInUser?.id}</code>
+        <strong>{t("profile:data:user_id")}:</strong> <code>{loggedInUser?.id}</code>
       </Typography>
       <Typography variant="body1" component="p" className="my-1">
-        <strong>Created:</strong> {moment.utc(loggedInUser?.created).fromNow()} (
+        <strong>{t("profile:data:created")}:</strong> {moment.utc(loggedInUser?.created).fromNow()} (
         {moment.utc(loggedInUser?.created).local().format("MM/DD/YYYY HH:mm:ss")})
       </Typography>
       {loggedInUser?.isAdmin ? (
         <Typography variant="body1" component="p" className="my-1">
-          <strong>Admin Account</strong>
+          <strong>{t("profile:data:admin_account")}</strong>
         </Typography>
       ) : null}
       <Button variant="contained" onClick={openJSONInfo}>
-        Show Raw Profile Data
+        {t("profile:data:json_info:action")}
       </Button>
       <JSONDialog open={showJSONInfo} setOpen={setShowJSONInfo} />
     </div>

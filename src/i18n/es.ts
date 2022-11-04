@@ -14,7 +14,7 @@ const es = {
   },
   seasons: {
     season1: "Temporada 1",
-    season2: "Especiales",
+    season0: "Especiales",
   },
   common: {
     profile: "Perfil",
@@ -108,8 +108,7 @@ const es = {
     disabled: "Desactivado",
     enabled: "Habilitado",
     advertisement: "Anuncio",
-  }
+  },
 };
 
 export default es;
-

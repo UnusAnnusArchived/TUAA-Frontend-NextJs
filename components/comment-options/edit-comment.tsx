@@ -8,6 +8,8 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { TextField } from "@mui/material";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   comment: Record;
@@ -17,6 +19,7 @@ interface IProps {
 }
 
 const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => {
+  const { t } = useTranslation();
   const [newMd, setNewMd] = useState(comment.markdown);
 
   const handleClose = () => {
@@ -45,13 +48,13 @@ const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => 
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">Edit Comment</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{t("comments:actions:edit:dialog:header")}</DialogTitle>
         <DialogContent>
           <TextField
             multiline
             autoFocus
             margin="dense"
-            label="Comment"
+            label={t("comments:actions:edit:dialog:label")}
             type="text"
             fullWidth
             variant="standard"
@@ -60,9 +63,9 @@ const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => 
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>{t("common:cancel")}</Button>
           <Button variant="contained" onClick={handleEdit} autoFocus>
-            Edit
+            {t("comments:actions:edit:action")}
           </Button>
         </DialogActions>
       </Dialog>

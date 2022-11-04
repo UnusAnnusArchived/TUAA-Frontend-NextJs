@@ -11,6 +11,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { Dispatch, SetStateAction, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { cdn } from "../../src/endpoints.json";
 import { IVideo } from "../../src/types";
 
@@ -21,6 +22,7 @@ interface IProps {
 }
 
 const SubtitlePopup: React.FC<IProps> = ({ video, open, setOpen }) => {
+  const { t } = useTranslation();
   const [subtitleUrl, setSubtitleUrl] = useState<string>();
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -33,11 +35,11 @@ const SubtitlePopup: React.FC<IProps> = ({ video, open, setOpen }) => {
 
   return (
     <Dialog fullWidth open={open} onClose={handleClose}>
-      <DialogTitle>Subtitles</DialogTitle>
+      <DialogTitle>{t("downloads:specific_episode_page:subtitles:header")}</DialogTitle>
       <DialogContent>
         <FormControl fullWidth>
-          <InputLabel>Language</InputLabel>
-          <Select label="Language" onChange={handleChange}>
+          <InputLabel>{t("downloads:specific_episode_page:subtitles:language_selector")}</InputLabel>
+          <Select label={t("downloads:specific_episode_page:subtitles:language_selector")} onChange={handleChange}>
             {video.tracks?.map((subtitle) => {
               if (subtitle.kind === "captions") {
                 return (
@@ -51,9 +53,9 @@ const SubtitlePopup: React.FC<IProps> = ({ video, open, setOpen }) => {
         </FormControl>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleClose}>{t("common:cancel")}</Button>
         <Button onClick={handleClose} href={subtitleUrl} variant="contained" disabled={subtitleUrl === undefined}>
-          Download
+          {t("downloads:specific_episode_page:download_action")}
         </Button>
       </DialogActions>
     </Dialog>

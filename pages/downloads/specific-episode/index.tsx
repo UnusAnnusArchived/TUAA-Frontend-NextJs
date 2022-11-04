@@ -25,14 +25,14 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("downloads:specificEpisode:title")} />
+      <MetaHead baseTitle={t("pages:download_specific_episode")} />
       <div>
         <Typography textAlign="center" component="h2" variant="h5">
-          Select an episode to download
+          {t("downloads:specific_episodes_list:header")}
         </Typography>
         <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
           <Tab label={t("seasons:season1")} value={1} />
-          <Tab label={t("seasons:season2")} value={0} />
+          <Tab label={t("seasons:season0")} value={0} />
         </Tabs>
         {seasons.map((season, i) => {
           return (

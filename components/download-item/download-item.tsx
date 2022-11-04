@@ -22,7 +22,7 @@ const DownloadItem: React.FC<IProps> = ({ name, description, image, link, newTab
           <Paper className="p-2 h-100">
             <Image
               src={image.src}
-              alt={t("downloads:imageAlt").replace("{downloadName", name)}
+              alt={t("downloads:imageAlt").replace("{downloadName}", name)}
               width={image.width}
               height={image.height}
             />

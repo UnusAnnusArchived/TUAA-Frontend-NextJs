@@ -38,7 +38,7 @@ const LanguageSelect: React.FC = () => {
           <ListItemIcon>
             <LanguageIcon />
           </ListItemIcon>
-          <ListItemText>{t("common:language")}</ListItemText>
+          <ListItemText>{t("menu:language")}</ListItemText>
         </MenuItem>
       </div>
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>

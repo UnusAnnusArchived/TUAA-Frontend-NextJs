@@ -1,6 +1,7 @@
 import { useToasts } from "@geist-ui/react";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from "@mui/material";
 import { ChangeEventHandler, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
@@ -11,6 +12,7 @@ interface IProps {
 }
 
 const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
+  const { t } = useTranslation();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordsCorrect, setPasswordsCorrect] = useState(false);
@@ -30,17 +32,17 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
           pb.collection("users").delete(response.user.id);
           setLoggedInUser(null);
           setToast({
-            text: "Sucessfully deleted your account and all associated information.",
+            text: t("profile:delete:success"),
             type: "success",
           });
           close();
         } else {
           setPasswordsCorrect(false);
-          setPasswordError("Invalid Password!");
+          setPasswordError(t("profile:delete:dialog:invalid_password"));
         }
       } catch {
         setPasswordsCorrect(false);
-        setPasswordError("Invalid Password!");
+        setPasswordError(t("profile:delete:dialog:invalid_password"));
       }
     }
   };
@@ -64,25 +66,16 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
   };
 
   return (
-    <Dialog
-      fullWidth
-      open={open}
-      onClose={close}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
-    >
-      <DialogTitle id="alert-dialog-title">Delete Account?</DialogTitle>
+    <Dialog fullWidth open={open} onClose={close}>
+      <DialogTitle id="alert-dialog-title">{t("profile:delete:dialog:header")}</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          Are you sure you want to permanently delete your account? This will delete all your comments and cannot be
-          undone! To continue please enter your password below.
-        </DialogContentText>
+        <DialogContentText id="alert-dialog-description">{t("profile:delete:dialog:description")}</DialogContentText>
         <form>
           <TextField
             error={!!passwordError}
             key="delete-acc-pass"
             margin="dense"
-            label="Password"
+            label={t("common:account:password")}
             type="password"
             fullWidth
             variant="standard"
@@ -95,7 +88,7 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
             error={!!passwordError}
             key="delete-acc-pass-confirm"
             margin="dense"
-            label="Confirm Password"
+            label={t("common:account:confirm_password")}
             type="password"
             fullWidth
             variant="standard"
@@ -107,7 +100,7 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
         </form>
       </DialogContent>
       <DialogActions>
-        <Button onClick={close}>Cancel</Button>
+        <Button onClick={close}>{t("common:close")}</Button>
         <Button
           disabled={!passwordsCorrect}
           style={{
@@ -117,7 +110,7 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
           variant="contained"
           onClick={deleteAccount}
         >
-          Delete Account
+          {t("profile:delete:action")}
         </Button>
       </DialogActions>
     </Dialog>

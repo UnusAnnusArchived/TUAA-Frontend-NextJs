@@ -1,6 +1,7 @@
 import { useToasts } from "@geist-ui/react";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
@@ -11,6 +12,7 @@ interface IProps {
 }
 
 const JSONDialog: React.FC<IProps> = ({ open, setOpen }) => {
+  const { t } = useTranslation();
   const [loggedInUser] = useRecoilState(userAtom);
   const [user, setUser] = useState(null);
   const [, setToast] = useToasts();
@@ -30,7 +32,7 @@ const JSONDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const copy = () => {
     navigator.clipboard.writeText(JSON.stringify(user, null, 2));
     setToast({
-      text: "Copied text to clipboard",
+      text: t("common:copied_toast"),
     });
   };
 
@@ -42,13 +44,13 @@ const JSONDialog: React.FC<IProps> = ({ open, setOpen }) => {
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogTitle id="alert-dialog-title">Raw Profile Data</DialogTitle>
+      <DialogTitle id="alert-dialog-title">{t("profile:data:json_info:header")}</DialogTitle>
       <DialogContent>
         <TextField
           multiline
           autoFocus
           margin="dense"
-          label="Raw Profile Data"
+          label={t("profile:data:json_info:header")}
           type="text"
           fullWidth
           variant="outlined"
@@ -57,9 +59,9 @@ const JSONDialog: React.FC<IProps> = ({ open, setOpen }) => {
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={copy}>Copy</Button>
+        <Button onClick={copy}>{t("common:copy")}</Button>
         <Button variant="contained" onClick={close}>
-          Close
+          {t("common:close")}
         </Button>
       </DialogActions>
     </Dialog>

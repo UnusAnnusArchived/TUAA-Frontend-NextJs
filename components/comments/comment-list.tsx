@@ -76,23 +76,31 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
 
   return (
     <div>
-      <Typography variant="h6" component="h2">
-        <div style={{ display: "flex", alignItems: "flex-end" }}>
-          {t("comments:title")}
-          <div style={{ width: 10 }} />
-          <FormControl>
-            <InputLabel>Sort By</InputLabel>
-            <Select size="small" value={sortType} label="Sort By" onChange={onSortChange}>
-              <MenuItem value="latest">Newest</MenuItem>
-              <MenuItem value="oldest">Oldest</MenuItem>
-              {/* <MenuItem value="rating">Rating</MenuItem> */}
-            </Select>
-          </FormControl>
-        </div>
-      </Typography>
+      <div style={{ display: "flex", alignItems: "flex-end" }}>
+        <Typography variant="h6" component="h2">
+          {t("comments:header")}
+        </Typography>
+        <div style={{ width: 10 }} />
+        <FormControl>
+          <InputLabel>{t("comments:sort:label")}</InputLabel>
+          <Select size="small" value={sortType} label="Sort By" onChange={onSortChange}>
+            <MenuItem value="latest">{t("comments:sort:newest")}</MenuItem>
+            <MenuItem value="oldest">{t("comments:sort:oldest")}</MenuItem>
+            {/* <MenuItem value="rating">{t("comments:sort:rating")}</MenuItem> */}
+          </Select>
+        </FormControl>
+      </div>
       <AddComment watchCode={watchCode} onComment={onAdded} />
-      {error && <Typography>{t("comments:loadFail")}</Typography>}
-      {data && data.length < 1 && <Typography>{t("comments:noComments")}</Typography>}
+      {error && (
+        <Typography variant="h6" component="h3" sx={{ textAlign: "center" }}>
+          {t("comments:errors:generic")}
+        </Typography>
+      )}
+      {data && data.length < 1 && (
+        <Typography variant="h6" component="h3" sx={{ textAlign: "center" }}>
+          {t("comments:errors:no_comments")}
+        </Typography>
+      )}
       {data &&
         data.length > 0 &&
         data.map((comment, i) => {

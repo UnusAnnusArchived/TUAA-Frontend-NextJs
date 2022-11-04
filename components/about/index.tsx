@@ -11,6 +11,7 @@ import Image from "next/image";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { api } from "../../src/endpoints.json";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   open: boolean;
@@ -18,6 +19,7 @@ interface IProps {
 }
 
 const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
+  const { t } = useTranslation();
   const [build, setBuild] = useState<number>(NaN);
   const [builtOn, setBuiltOn] = useState<number>(0);
   const [branch, setBranch] = useState<string>("Loading Branch");
@@ -43,19 +45,21 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
 
   return (
     <Dialog fullWidth open={open} onClose={handleClose}>
-      <DialogTitle>About</DialogTitle>
+      <DialogTitle>{t("pages:about")}</DialogTitle>
       <DialogContent>
         <div style={{ textAlign: "center" }}>
           <Image src="/ua.png" width="75" height="75" style={{ borderRadius: "100%" }} />
-          <Typography variant="h5">The Unus Annus Archive</Typography>
+          <Typography variant="h5">{t("pages:site")}</Typography>
           <DialogContentText>
-            Build {build} ({moment.utc(builtOn).local().format("MM/DD/YYYY h:mm:ss A")})
+            {t("about:build_number")
+              .replace("{number}", build.toString())
+              .replace("{date}", moment.utc(builtOn).local().format("MM/DD/YYYY h:mm:ss A"))}
           </DialogContentText>
           <DialogContentText>{branch}</DialogContentText>
         </div>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Close</Button>
+        <Button onClick={handleClose}>{t("common:close")}</Button>
       </DialogActions>
     </Dialog>
   );

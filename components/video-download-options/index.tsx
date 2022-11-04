@@ -19,7 +19,7 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
   const downloadMetadata = () => {
     const element = document.createElement("a");
     element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(JSON.stringify(video, null, 2))}`);
-    element.setAttribute("download", `${video.title} Metadata.json`);
+    element.setAttribute("download", `${video.title} ${t("downloads:specific_episode_page:options:metadata")}.json`);
     element.style.display = "none";
     document.body.appendChild(element);
     element.click();
@@ -29,7 +29,7 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
   const downloadDescription = () => {
     const element = document.createElement("a");
     element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(video.description)}`);
-    element.setAttribute("download", `${video.title} Description.html`);
+    element.setAttribute("download", `${video.title} ${t("downloads:specific_episode_page:options:description")}.html`);
     element.style.display = "none";
     document.body.appendChild(element);
     element.click();
@@ -45,7 +45,10 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
           const url = e.target.result as string;
           const element = document.createElement("a");
           element.setAttribute("href", url);
-          element.setAttribute("download", `${video.title} Thumbnail.webp`);
+          element.setAttribute(
+            "download",
+            `${video.title} ${t("downloads:specific_episode_page:options:thumbnail")}.webp`
+          );
           element.style.display = "none";
           document.body.appendChild(element);
           element.click();
@@ -68,23 +71,23 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
   return (
     <>
       <Typography variant="h6" component="h2" marginBottom="6px">
-        {t("downloads:specificEpisode:downloadOptions:title")}
+        {t("downloads:specific_episode_page:header")}
       </Typography>
       <Stack spacing={1} direction="column" justifyContent="center" alignItems="flex-start">
         <Button variant="contained" onClick={toggleVideoPopup}>
-          Video
+          {t("downloads:specific_episode_page:options:video")}
         </Button>
         <Button variant="contained" onClick={toggleSubtitlesPopup} disabled={!video.tracks || video.tracks.length < 1}>
-          Subtitles
+          {t("downloads:specific_episode_page:options:subtitles")}
         </Button>
         <Button variant="contained" onClick={downloadThumbnail}>
-          Thumbnail
+          {t("downloads:specific_episode_page:options:thumbnail")}
         </Button>
         <Button variant="contained" onClick={downloadDescription}>
-          Description
+          {t("downloads:specific_episode_page:options:description")}
         </Button>
         <Button variant="contained" onClick={downloadMetadata}>
-          Metadata
+          {t("downloads:specific_episode_page:options:metadata")}
         </Button>
       </Stack>
 

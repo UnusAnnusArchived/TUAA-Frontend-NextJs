@@ -27,10 +27,10 @@ const Profile: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("profile:title")} />
+      <MetaHead baseTitle={t("pages:profile")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          {t("profile:title")}
+          {t("pages:profile")}
         </Typography>
         {loggedInUser && <ProfileSection />}
       </div>

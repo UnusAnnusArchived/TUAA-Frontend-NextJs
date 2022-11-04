@@ -47,7 +47,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
   if (!loggedInUser) {
     return (
       <div className="my-2">
-        <Typography>{t("comments:loggedOut")}</Typography>
+        <Typography>{t("comments:add_comment:logged_out")}</Typography>
         <Divider className="my-2 mt-4" sx={{ backgroundColor: "#fff" }} />
       </div>
     );
@@ -61,7 +61,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
             multiline
             variant="standard"
             fullWidth
-            label={t("comments:placeholder")}
+            label={t("comments:add_comment:placeholder")}
             id="comment-text"
             name="comment-text"
             autoComplete="off"
@@ -78,7 +78,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
             disabled={comment.trim().length < 1 || isSendingComment}
             onClick={onComment}
           >
-            {t("comments:send")}
+            {t("comments:add_comment:action")}
           </LoadingButton>
         </div>
       </div>

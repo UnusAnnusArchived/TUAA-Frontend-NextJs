@@ -14,7 +14,7 @@ const ProfilePicture: React.FC = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-3">
-        {t("profile:pfp:title")}
+        {t("profile:pfp:header")}
       </Typography>
       <Avatar
         src={getPbImagePath("systemprofiles0", loggedInUser?.id, loggedInUser?.avatar, 240, 240)}

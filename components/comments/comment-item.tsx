@@ -56,7 +56,7 @@ interface IProps {
 }
 
 const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [commentUser, setCommentUser] = useState<Record>(null);
   const [loggedInUser] = useRecoilState(userAtom);
 
@@ -94,7 +94,7 @@ const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
                 <span title={moment.utc(comment.created).locale(i18n.language).format("MMMM Do YYYY, h:mm A")}>
                   {moment.utc(comment.created).locale(i18n.language).fromNow()}
 
-                  {comment.isEdited ? <>&nbsp;(edited)</> : null}
+                  {comment.isEdited ? <>&nbsp;{t("comments:comment:edited")}</> : null}
                 </span>
               </Typography>
             </div>

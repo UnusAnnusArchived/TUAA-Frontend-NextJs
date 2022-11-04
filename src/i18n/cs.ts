@@ -14,7 +14,7 @@ const cs = {
   },
   seasons: {
     season1: "Řada 1",
-    season2: "Speciály",
+    season0: "Speciály",
   },
   common: {
     profile: "Profil",

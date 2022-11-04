@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import { KeyedMutator } from "swr";
 import DeleteCommentUI from "./delete-comment";
 import EditCommentUI from "./edit-comment";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   comment: Record;
@@ -17,6 +18,7 @@ interface IProps {
 }
 
 const CommentOptions: React.FC<IProps> = ({ comment, commentUser, mutate }) => {
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [showEditCommentUI, setShowEditCommentUI] = useState(false);
   const [showDeleteCommentUI, setShowDeleteCommentUI] = useState(false);

@@ -16,31 +16,31 @@ const Download: React.FC<void> = (props) => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("downloads:title")} />
+      <MetaHead baseTitle={t("pages:downloads")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          {t("downloads:title")}
+          {t("pages:downloads")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
 
           <DownloadItem
-            name="Download Specific Episode"
-            description={t("downloads:specificEpisode:description")}
+            name={t("downloads:specific_episode_link:name")}
+            description={t("downloads:specific_episode_link:description")}
             image={{ src: `${cdn}/thumbnails/01/001.webp`, width: 1280, height: 720 }}
             link="/downloads/specific-episode/"
             newTab={false}
           />
           <DownloadItem
-            name="The Unus Annus Downloader"
-            description={t("downloads:tuaaDownloader:description")}
+            name={t("downloads:tuaa_downloader_link:name")}
+            description={t("downloads:tuaa_downloader_link:description")}
             image={tuaaDownloaderPic}
             link="http://github.com/TheUnusAnnusArchive/TUAA-Downloader/releases/latest"
             newTab={true}
           ></DownloadItem>
           <DownloadItem
-            name="The Unus Annus Archive Node.JS API"
-            description={t("downloads:tuaaNodeApi:description")}
+            name={t("downloads:tuaa_node_api_link:name")}
+            description={t("downloads:tuaa_node_api_link:description")}
             image={tuaaNodeApiPic}
             link="http://github.com/TheUnusAnnusArchive/TUAA-Node-API"
             newTab={true}

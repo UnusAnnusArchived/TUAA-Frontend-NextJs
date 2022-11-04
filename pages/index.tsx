@@ -25,13 +25,13 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("home:title")} />
+      <MetaHead baseTitle={t("pages:home")} />
       <div>
         <PatreonPopup key="patreon" />
 
         <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
           <Tab label={t("seasons:season1")} value={1} />
-          <Tab label={t("seasons:season2")} value={0} />
+          <Tab label={t("seasons:season0")} value={0} />
         </Tabs>
         {seasons.map((season, i) => {
           return (

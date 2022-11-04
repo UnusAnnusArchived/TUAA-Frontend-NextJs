@@ -5,21 +5,14 @@ interface IProps {
   baseTitle?: string;
   video?: string;
   embed?: string;
-  date?: number
+  date?: number;
   description?: string;
   image?: string;
   width?: string;
   height?: string;
 }
 
-const MetaHead: React.FC<IProps> = ({
-  baseTitle,
-  video,
-  embed,
-  date,
-  description,
-  image,
-}) => {
+const MetaHead: React.FC<IProps> = ({ baseTitle, video, embed, date, description, image }) => {
   const baseDomain = "https://unusann.us/";
 
   var useSmallImage = false;
@@ -40,11 +33,11 @@ const MetaHead: React.FC<IProps> = ({
       <meta itemProp="name" content={baseTitle} />
       {/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */}
       <meta name="og:title" content={baseTitle} />
-      
+
       <meta name="og:image" content={image} />
       <meta name="og:url" content="https://unusann.us/" />
       <meta name="og:site_name" content="The Unus Annus Archive" />
-      <meta name="og:locale" content="en_UK" />
+      <meta name="og:locale" content="en_US" />
       <meta name="og:type" content={video ? "video.other" : "website"} />
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content={video ? "player" : useSmallImage ? "summary" : "summary_large_image"} />
@@ -52,27 +45,33 @@ const MetaHead: React.FC<IProps> = ({
       <meta name="twitter:image:src" content={image} />
       <meta name="twitter:site" content="@UA_Archive" />
 
-      { video && <React.Fragment>
-        <meta name="twitter:player" content={embed} />
-        <meta name="twitter:player:stream" content={video} />
-        <meta name="og:video" content={video} />
-        <meta name="twitter:card" content="player" />
-        <meta name="twitter:player:stream:content_type" content="video/mp4" />
-        <meta name="video:type" content="video/mp4" />
-        <meta name="video:release_date" content={date.toString()} />
-      </React.Fragment> }
+      {video && (
+        <React.Fragment>
+          <meta name="twitter:player" content={embed} />
+          <meta name="twitter:player:stream" content={video} />
+          <meta name="og:video" content={video} />
+          <meta name="twitter:card" content="player" />
+          <meta name="twitter:player:stream:content_type" content="video/mp4" />
+          <meta name="video:type" content="video/mp4" />
+          <meta name="video:release_date" content={date.toString()} />
+        </React.Fragment>
+      )}
 
-      { description && <React.Fragment>
-        <meta name="description" content={description} />
-        <meta itemProp="description" content={description} />
-        <meta name="og:description" content={description} />
-        <meta name="twitter:description" content={description} />
-      </React.Fragment> }
+      {description && (
+        <React.Fragment>
+          <meta name="description" content={description} />
+          <meta itemProp="description" content={description} />
+          <meta name="og:description" content={description} />
+          <meta name="twitter:description" content={description} />
+        </React.Fragment>
+      )}
 
-      { image && <React.Fragment>
-        <meta name="image" content={image} />
-        <meta itemProp="image" content={image} />
-      </React.Fragment> }
+      {image && (
+        <React.Fragment>
+          <meta name="image" content={image} />
+          <meta itemProp="image" content={image} />
+        </React.Fragment>
+      )}
     </Head>
   );
 };

@@ -4,8 +4,11 @@ import { useRecoilState } from "recoil";
 import { oAuthProviderAtom, userAtom } from "../src/atoms";
 import { siteRoot } from "../src/endpoints.json";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { MetaHead } from "../components/meta-head";
 
 const OAuth2: React.FC = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
   const [provider, setProvider] = useRecoilState(oAuthProviderAtom);
@@ -15,7 +18,7 @@ const OAuth2: React.FC = () => {
 
     if (params.state && params.code) {
       if (provider.state !== params.state) {
-        alert("State parameters do not match! Please try again.");
+        alert(t("oauth2:state_param_error"));
         router.push("/login");
         return;
       }
@@ -30,16 +33,19 @@ const OAuth2: React.FC = () => {
           router.push("/");
         } catch (err) {
           console.error(err);
-          alert(
-            `Error logging in! This is most likely because you do not have an account with us. Please create one and link your ${provider.name} account.`
-          );
+          alert(t("oauth2:generic_error").replace("{provider}", provider.name));
           router.push("/register");
         }
       })();
     }
   }, [router, router.query]);
 
-  return <p style={{ color: "#ffffff" }}>Redirecting...</p>;
+  return (
+    <>
+      <MetaHead baseTitle={t("pages:oauth2")} />
+      <p style={{ color: "#ffffff" }}>{t("pages:oauth2")}</p>;
+    </>
+  );
 };
 
 export default OAuth2;

@@ -12,6 +12,7 @@ import { Layout } from "../../../components/layout";
 import { MetaHead } from "../../../components/meta-head";
 import { IVideo } from "../../../src/types";
 import VideoDownloadOptions from "../../../components/video-download-options";
+import { t } from "i18next";
 
 interface IProps {
   watchCode: string;
@@ -20,22 +21,12 @@ interface IProps {
 
 const Download: React.FC<IProps> = ({ watchCode, video }) => {
   const { i18n } = useTranslation();
-  const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
 
   const published = new Date(video.date ?? video.releasedate);
-  const embedUrl = `https://unusann.us/embed/${watchCode}`;
-  const metaVideoUrl = video.video ?? video.sources[0].src;
 
   return (
     <Layout>
-      <MetaHead
-        baseTitle={video.title}
-        embed={embedUrl}
-        video={metaVideoUrl}
-        date={video.date ?? video.releasedate}
-        description={video.description}
-        image={`https:${image}`}
-      />
+      <MetaHead baseTitle={t("pages:download_episode").replace("{name}", video.title)} />
       <Paper className="my-3 p-3 desc">
         <Typography variant="h6" component="h1">
           {video.title}

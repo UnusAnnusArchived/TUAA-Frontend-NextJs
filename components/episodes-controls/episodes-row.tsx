@@ -29,7 +29,7 @@ const EpisodesRow: React.FC<IProps> = ({ watchCode, onDownloadPage }) => {
             passHref
           >
             <Button color="primary" sx={{ pointerEvents: "auto" }} startIcon={<SkipPreviousIcon />}>
-              {t("player:previousEpisode")}
+              {t("player:previous_episode")}
             </Button>
           </Link>
         )}
@@ -44,7 +44,7 @@ const EpisodesRow: React.FC<IProps> = ({ watchCode, onDownloadPage }) => {
             passHref
           >
             <Button color="primary" sx={{ pointerEvents: "auto" }} endIcon={<SkipNextIcon />}>
-              {t("player:nextEpisode")}
+              {t("player:next_episode")}
             </Button>
           </Link>
         )}

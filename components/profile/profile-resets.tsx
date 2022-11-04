@@ -1,11 +1,13 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
 
 const ResetProfile: React.FC = () => {
+  const { t } = useTranslation();
   const [loggedInUser] = useRecoilState(userAtom);
   const [emailChangeDialog, setEmailChangeDialog] = useState(false);
   const [sentEmail, setSentEmail] = useState(false);
@@ -38,29 +40,23 @@ const ResetProfile: React.FC = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Typography variant="h6" component="h2" className="my-2">
-        Reset
+        {t("profile:reset:header")}
       </Typography>
       <Button style={{ marginBottom: 5 }} variant="contained" onClick={openEmailChangeDialog} disabled={sentEmail}>
-        {sentEmail ? "Sent Email Reset" : "Send Email Reset"}
+        {sentEmail ? t("profile:reset:email:disabled") : t("profile:reset:email:action")}
       </Button>
       <Button style={{ marginTop: 5 }} variant="contained" onClick={resetPassword} disabled={sentPassword}>
-        {sentPassword ? "Sent Password Reset" : "Send Password Reset"}
+        {sentPassword ? t("profile:reset:password:disabled") : t("profile:reset:password:action")}
       </Button>
 
-      <Dialog
-        fullWidth
-        open={emailChangeDialog}
-        onClose={closeEmailChangeDialog}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">Update Email</DialogTitle>
+      <Dialog fullWidth open={emailChangeDialog} onClose={closeEmailChangeDialog}>
+        <DialogTitle id="alert-dialog-title">{t("profile:reset:email:dialog:header")}</DialogTitle>
         <DialogContent>
           <TextField
             multiline
             autoFocus
             margin="dense"
-            label="New Email"
+            label={t("profile:reset:email:dialog:label")}
             type="email"
             fullWidth
             variant="standard"
@@ -69,9 +65,9 @@ const ResetProfile: React.FC = () => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeEmailChangeDialog}>Cancel</Button>
+          <Button onClick={closeEmailChangeDialog}>{t("common:cancel")}</Button>
           <Button variant="contained" onClick={resetEmail} autoFocus>
-            Send Confirmation
+            {t("profile:reset:email:dialog:send")}
           </Button>
         </DialogActions>
       </Dialog>

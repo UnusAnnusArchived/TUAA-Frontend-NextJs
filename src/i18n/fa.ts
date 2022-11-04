@@ -14,7 +14,7 @@ const fa = {
   },
   seasons: {
     season1: "فصل اول",
-    season2: "قسمت های مخصوص",
+    season0: "قسمت های مخصوص",
   },
   common: {
     profile: "پروفایل",
@@ -76,4 +76,3 @@ const fa = {
 };
 
 export default fa;
-

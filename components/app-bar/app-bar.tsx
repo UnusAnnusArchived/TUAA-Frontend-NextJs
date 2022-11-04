@@ -14,8 +14,10 @@ import { theme } from "../theme/theme";
 import SearchIcon from "@mui/icons-material/Search";
 import AppMenu from "./menu";
 import Search from "../search/search";
+import { useTranslation } from "react-i18next";
 
 const ABar: React.FC = () => {
+  const { t } = useTranslation();
   const [isRouting, setIsRouting] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
@@ -107,7 +109,7 @@ const ABar: React.FC = () => {
           )}
           <Link href="/" passHref>
             <Typography variant="h6" component="div" className="pointer">
-              {isMdDown ? "TUAA" : "The Unus Annus Archive"}
+              {isMdDown ? t("pages:site_short") : t("pages:site")}
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }}>

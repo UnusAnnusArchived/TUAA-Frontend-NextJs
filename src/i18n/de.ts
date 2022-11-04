@@ -1,11 +1,11 @@
 const de = {
   home: {
-    title: "Startseite"
+    title: "Startseite",
   },
   player: {
     nextEpisode: "Nächste Folge",
     previousEpisode: "Vorherige Folge",
-    episode: "Folge"
+    episode: "Folge",
   },
   comments: {
     title: "Kommentare",
@@ -13,11 +13,11 @@ const de = {
     send: "Kommentieren",
     noComments: "Es gibt keine Kommentare",
     loadFail: "Kommentare konnten nicht geladen werden",
-    loggedOut: "Sie müssen sich anmelden, um dieses Video zu kommentieren"
+    loggedOut: "Sie müssen sich anmelden, um dieses Video zu kommentieren",
   },
   seasons: {
     season1: "Staffel 1",
-    season2: "Sonderangebote"
+    season0: "Sonderangebote",
   },
   common: {
     profile: "Profil",
@@ -26,7 +26,7 @@ const de = {
     login: "Anmeldung",
     register: "Registrieren",
     cancel: "Abbrechen",
-    save: "Speichern"
+    save: "Speichern",
   },
   login: {
     title: "Anmeldung",
@@ -34,7 +34,7 @@ const de = {
     usernameEmail: "Bunutzername oder E-Mail-Adresse",
     password: "Passwort",
     loginBtn: "Einloggen",
-    error: "Beim Anmelden ist ein Fehler aufgetreten"
+    error: "Beim Anmelden ist ein Fehler aufgetreten",
   },
   register: {
     title: "Registrieren",
@@ -45,7 +45,7 @@ const de = {
     confirmPassword: "Kennwort bestätigen",
     registerBtn: "Neuen Account erstellen",
     error: "Beim Erstellen eines Kontos ist ein Fehler aufgetreten",
-    success: "Ihr Konto wurde erstellt! Bitte melden Sie sich jetzt an."
+    success: "Ihr Konto wurde erstellt! Bitte melden Sie sich jetzt an.",
   },
   profile: {
     title: "Profil",
@@ -57,7 +57,7 @@ const de = {
       none: "keiner",
       fileSelect: "Bilddatei auswählen",
       error: "Beim Ändern deines Profilbuilds ist ein Fehler aufgetreten",
-      success: "Profilbild geändert!"
+      success: "Profilbild geändert!",
     },
     username: "Nutzername",
     email: "Email",
@@ -68,12 +68,12 @@ const de = {
       all: "Von allen Geräten abmelden",
       successAll: "Sie wurden von allen Geräten abgemeldet",
       successLocal: "Sie wurden von diesem Gerät abgemeldet",
-      error: "Beim Abmelden ist ein Fehler aufgetreten"
-    }
+      error: "Beim Abmelden ist ein Fehler aufgetreten",
+    },
   },
   errors: {
     pageNotFound: "Die gesuchte Seite wurde nicht gefunden",
-    returnToHome: "Zurück zur Startseite"
+    returnToHome: "Zurück zur Startseite",
   },
   plyr: {
     restart: "Neu starten",
@@ -111,7 +111,7 @@ const de = {
     disabled: "Behinderte",
     enabled: "Ermöglicht",
     advertisement: "Anzeige",
-  }
+  },
 };
-  
+
 export default de;

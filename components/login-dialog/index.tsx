@@ -76,7 +76,7 @@ const LoginDialog: React.FC<IProps> = ({ open, setOpen }) => {
 
   return (
     <Dialog fullWidth open={open} onClose={handleClose}>
-      <DialogTitle>Login</DialogTitle>
+      <DialogTitle>{t("pages:login")}</DialogTitle>
       <DialogContent>
         <form id="login-form">
           <div className="d-flex flex-column justify-content-center align-items-center">
@@ -84,14 +84,14 @@ const LoginDialog: React.FC<IProps> = ({ open, setOpen }) => {
               className={classNames("my-3", styles.field)}
               id="email-archive"
               name="email-archive"
-              label={t("login:usernameEmail")}
+              label={t("login:password_auth_dialog:username_or_email")}
               variant="standard"
               value={email}
               type="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <FormControl variant="standard" className={classNames("my-3", styles.field)}>
-              <InputLabel htmlFor="standard-adornment-password">{t("login:password")}</InputLabel>
+              <InputLabel htmlFor="standard-adornment-password">{t("login:password_auth_dialog:password")}</InputLabel>
               <Input
                 id="password-archive"
                 name="password-archive"
@@ -115,9 +115,9 @@ const LoginDialog: React.FC<IProps> = ({ open, setOpen }) => {
         </form>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Close</Button>
+        <Button onClick={handleClose}>{t("common:close")}</Button>
         <Button variant="contained" onClick={onSubmit} disabled={!isValid()}>
-          {t("login:loginBtn")}
+          {t("login:password_auth_dialog:action")}
         </Button>
       </DialogActions>
     </Dialog>

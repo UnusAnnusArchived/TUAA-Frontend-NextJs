@@ -4,8 +4,10 @@ import { showPatreonAtom } from "../../src/atoms";
 import { useRecoilState } from "recoil";
 import styles from "./style.module.scss";
 import NonSsrWrapper from "../non-ssr-wrapper";
+import { useTranslation } from "react-i18next";
 
 const PatreonPopup: React.FC = () => {
+  const { t } = useTranslation();
   const [, setToast] = useToasts();
   const [showPatreonToast, setPatreonToast] = useRecoilState(showPatreonAtom);
   const ref = useRef(null);
@@ -15,8 +17,8 @@ const PatreonPopup: React.FC = () => {
       {showPatreonToast ? (
         <>
           <div ref={ref} className={styles.patreonToast}>
-            <h2>Servers cost money!</h2>
-            <p>Would you like to donate to our Patreon to support us? All money will go towards improving the site.</p>
+            <h2>{t("patreon_popup:header")}</h2>
+            <p>{t("patreon_popup:description")}</p>
             <div style={{ flexDirection: "row" }}>
               <a
                 className="btn btn-primary"
@@ -25,17 +27,17 @@ const PatreonPopup: React.FC = () => {
                   window?.open?.("https://www.patreon.com/theunusannusarchive/", "_blank");
                 }}
               >
-                Yes
+                {t("patreon_popup:positive_action")}
               </a>
               &nbsp;
               <a
                 className="btn btn-secondary"
                 onClick={() => {
                   setPatreonToast(false);
-                  setToast({ text: "Alright, we won't show you this anymore.", type: "success", delay: 5000 });
+                  setToast({ text: t("patreon_popup:negative_action_toast"), type: "success", delay: 5000 });
                 }}
               >
-                No
+                {t("patreon_popup:negative_action")}
               </a>
               <br />
               <br />
@@ -45,7 +47,7 @@ const PatreonPopup: React.FC = () => {
                   ref.current.style.display = "none";
                 }}
               >
-                Cancel
+                {t("common:cancel")}
               </a>
             </div>
           </div>

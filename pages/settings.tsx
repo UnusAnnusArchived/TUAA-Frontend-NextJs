@@ -18,10 +18,10 @@ const Settings: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("settings:title")} />
+      <MetaHead baseTitle={t("pages:settings")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          {t("settings:title")}
+          {t("pages:settings")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
@@ -29,10 +29,8 @@ const Settings: React.FC = () => {
           {loggedInUser && (
             <React.Fragment>
               <Typography variant="body1" component="p">
-                {reactStringReplace(t("settings:accountSettings"), "{link}", () => (
-                  <Link href="/profile">
-                    {t("profile:title")} {t("common:page")}
-                  </Link>
+                {reactStringReplace(t("settings:account_settings:description"), "{link}", () => (
+                  <Link href="/profile">{t("settings:account_settings:link_text")}</Link>
                 ))}
               </Typography>
               <br />

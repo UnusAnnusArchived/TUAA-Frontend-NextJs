@@ -95,9 +95,9 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead baseTitle={t("register:title")} />
+      <MetaHead baseTitle={t("pages:register")} />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        {t("register:titleLong")}
+        {t("register:header")}
       </Typography>
       <form id="register-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -105,7 +105,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
             id="email-archive"
             name="email-archive"
-            label={t("register:email")}
+            label={t("common:account:email")}
             variant="standard"
             value={email}
             type="email"
@@ -115,7 +115,7 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
             id="name-archive"
             name="name-archive"
-            label="Name"
+            label={t("common:account:name")}
             variant="standard"
             value={name}
             type="text"
@@ -125,14 +125,14 @@ const LoginPage: React.FC = () => {
             className={classNames("my-3", styles.field)}
             id="username-archive"
             name="username-archive"
-            label={t("register:username")}
+            label={t("common:account:username")}
             variant="standard"
             value={username}
             type="text"
             onChange={(e) => setUsername(e.target.value)}
           />
           <FormControl variant="standard" className={classNames("my-3", styles.field)}>
-            <InputLabel htmlFor="standard-adornment-password">{t("register:password")}</InputLabel>
+            <InputLabel htmlFor="standard-adornment-password">{t("common:account:password")}</InputLabel>
             <Input
               id="password-archive"
               name="password-archive"
@@ -154,7 +154,7 @@ const LoginPage: React.FC = () => {
             />
           </FormControl>
           <FormControl variant="standard" className={classNames("my-3", styles.field)}>
-            <InputLabel htmlFor="standard-adornment-password">{t("register:confirmPassword")}</InputLabel>
+            <InputLabel htmlFor="standard-adornment-password">{t("common:account:confirm_password")}</InputLabel>
             <Input
               id="confirm-password-archive"
               name="confirm-password-archive"
@@ -177,7 +177,7 @@ const LoginPage: React.FC = () => {
           </FormControl>
           <div className={classNames("my-4 d-flex justify-content-end", styles.field)}>
             <Button variant="contained" disabled={!isValid()} onClick={onSubmit}>
-              {t("register:registerBtn")}
+              {t("register:submit")}
             </Button>
           </div>
         </div>

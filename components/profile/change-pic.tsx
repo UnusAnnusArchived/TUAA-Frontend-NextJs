@@ -65,7 +65,7 @@ const ChangePic: React.FC = () => {
       const newProfile = await pb.collection("users").update(loggedInUser?.id, formData);
       setToast({
         type: "success",
-        text: t("profile:pfp:success"),
+        text: t("profile:pfp:change:success"),
       });
       handleClose();
 
@@ -79,7 +79,7 @@ const ChangePic: React.FC = () => {
       setIsSendingImage(false);
       setToast({
         type: "error",
-        text: t("profile:pfp:error"),
+        text: t("profile:pfp:change:error"),
       });
     }
   };
@@ -91,16 +91,16 @@ const ChangePic: React.FC = () => {
   return (
     <div>
       <Button variant="text" onClick={handleClickOpen}>
-        {t("profile:pfp:change")}
+        {t("profile:pfp:change:header")}
       </Button>
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
-        <DialogTitle className="text-center">{t("profile:pfp:change")}</DialogTitle>
+        <DialogTitle className="text-center">{t("profile:pfp:change:header")}</DialogTitle>
 
         <DialogContent>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <DialogContentText>{t("profile:pfp:description")}</DialogContentText>
+            <DialogContentText>{t("profile:pfp:change:description")}</DialogContentText>
             <DialogContentText>
-              {t("profile:pfp:selected")}: {image ? image.name : t("profile:pfp:none")}
+              {t("profile:pfp:selected_file:description")}: {image ? image.name : t("profile:pfp:selected_file:none")}
             </DialogContentText>
 
             {imageUrl && (
@@ -112,7 +112,7 @@ const ChangePic: React.FC = () => {
               <label htmlFor="contained-button-file">
                 <Input accept="image/*" id="contained-button-file" onChange={onFileChange} type="file" />
                 <Button variant="contained" component="span">
-                  {t("profile:pfp:fileSelect")}
+                  {t("profile:pfp:change:select")}
                 </Button>
               </label>
             </div>

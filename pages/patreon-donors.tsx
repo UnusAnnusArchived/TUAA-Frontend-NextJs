@@ -8,8 +8,10 @@ import { Divider, Typography } from "@mui/material";
 import pb from "../src/pocketbase";
 import { useEffect, useState } from "react";
 import getPbImagePath from "../src/utils/getPbImagePath";
+import { useTranslation } from "react-i18next";
 
 const PatreonDonors = () => {
+  const { t } = useTranslation();
   const [patreons, setPatreons] = useState([]);
 
   useEffect(() => {
@@ -21,10 +23,10 @@ const PatreonDonors = () => {
 
   return (
     <Layout>
-      <MetaHead baseTitle="Patreon Donors" />
+      <MetaHead baseTitle={t("pages:patreon_donors")} />
       <div className="text-center">
         <Typography variant="h5" component="h1">
-          Patreon Donors
+          {t("pages:patreon_donors")}
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
@@ -40,11 +42,11 @@ const PatreonDonors = () => {
                   width="100"
                   height="100"
                   src={getPbImagePath("patreons", patreon.id, patreon.pfp, 200, 200)}
-                  alt={`${patreon.name}'s Patreon Profile Picture`}
+                  alt={t("patreon_donors:pfp_alt").replace("{name}", patreon.name)}
                 />
                 <div className={styles.infoContainer}>
                   <span className={styles.name}>{patreon.name}</span>
-                  <span>Since {moment.utc(patreon.since).fromNow()}</span>
+                  <span>{t("patreon_donors:since").replace("{time}", moment.utc(patreon.since).fromNow())}</span>
                   <span>{patreon.amount}</span>
                 </div>
               </Paper>
@@ -63,8 +65,8 @@ const PatreonDonors = () => {
                 <Plus style={{ width: 100, height: 100 }} />
               </div>
               <div className={styles.infoContainer}>
-                <span className={styles.name}>Want to see your name listed here?</span>
-                <span>Subscribe</span>
+                <span className={styles.name}>{t("patreon_donors:info_desc")}</span>
+                <span>{t("patreon_donors:info_action")}</span>
               </div>
             </Paper>
           </a>

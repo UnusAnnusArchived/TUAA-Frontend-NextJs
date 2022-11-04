@@ -94,7 +94,7 @@ const AppMenu: React.FC = () => {
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
-            <ListItemText>About</ListItemText>
+            <ListItemText>{t("pages:about")}</ListItemText>
           </MenuItem>
 
           {loggedInUser && (
@@ -103,7 +103,7 @@ const AppMenu: React.FC = () => {
                 <ListItemIcon>
                   <PersonIcon />
                 </ListItemIcon>
-                <ListItemText>{t("common:profile")}</ListItemText>
+                <ListItemText>{t("pages:profile")}</ListItemText>
               </MenuItem>
             </Link>
           )}
@@ -112,7 +112,7 @@ const AppMenu: React.FC = () => {
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText>{t("settings:title")}</ListItemText>
+              <ListItemText>{t("pages:settings")}</ListItemText>
             </MenuItem>
           </Link>
           <Link href="/downloads" passHref>
@@ -120,7 +120,7 @@ const AppMenu: React.FC = () => {
               <ListItemIcon>
                 <DownloadIcon />
               </ListItemIcon>
-              <ListItemText>{t("downloads:title")}</ListItemText>
+              <ListItemText>{t("pages:downloads")}</ListItemText>
             </MenuItem>
           </Link>
           <Link href="/patreon-donors" passHref>
@@ -128,7 +128,7 @@ const AppMenu: React.FC = () => {
               <ListItemIcon>
                 <FaMoneyBill style={{ width: "1.5rem" }} />
               </ListItemIcon>
-              <ListItemText>Patreon Donors</ListItemText>
+              <ListItemText>{t("pages:patreon_donors")}</ListItemText>
             </MenuItem>
           </Link>
           <Divider style={{ margin: "4px 0" }} />
@@ -138,7 +138,7 @@ const AppMenu: React.FC = () => {
                 <ListItemIcon>
                   <FaDiscord style={{ width: "1.5rem" }} />
                 </ListItemIcon>
-                <ListItemText>Discord</ListItemText>
+                <ListItemText>{t("menu:discord")}</ListItemText>
               </MenuItem>
             </a>
           </Link>
@@ -148,7 +148,7 @@ const AppMenu: React.FC = () => {
                 <ListItemIcon>
                   <FaGithub style={{ width: "1.5rem" }} />
                 </ListItemIcon>
-                <ListItemText>Github</ListItemText>
+                <ListItemText>{t("menu:github")}</ListItemText>
               </MenuItem>
             </a>
           </Link>
@@ -158,7 +158,7 @@ const AppMenu: React.FC = () => {
                 <ListItemIcon>
                   <FaPatreon style={{ width: "1.5rem" }} />
                 </ListItemIcon>
-                <ListItemText>Patreon</ListItemText>
+                <ListItemText>{t("menu:patreon")}</ListItemText>
               </MenuItem>
             </a>
           </Link>
@@ -171,7 +171,7 @@ const AppMenu: React.FC = () => {
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
-              <ListItemText>{t("common:logout")}</ListItemText>
+              <ListItemText>{t("profile:logout:action")}</ListItemText>
             </MenuItem>
           )}
 
@@ -182,7 +182,7 @@ const AppMenu: React.FC = () => {
                   <ListItemIcon>
                     <RegisterIcon />
                   </ListItemIcon>
-                  <ListItemText>{t("register:title")}</ListItemText>
+                  <ListItemText>{t("pages:register")}</ListItemText>
                 </MenuItem>
               </Link>
               <Link passHref href="/login">
@@ -190,7 +190,7 @@ const AppMenu: React.FC = () => {
                   <ListItemIcon>
                     <LoginIcon />
                   </ListItemIcon>
-                  <ListItemText>{t("login:title")}</ListItemText>
+                  <ListItemText>{t("pages:login")}</ListItemText>
                 </MenuItem>
               </Link>
             </React.Fragment>

@@ -11,14 +11,14 @@ const Page: React.FC = () => {
 
   return (
     <Layout>
-      <MetaHead baseTitle="Not Found" />
+      <MetaHead baseTitle={t("pages:not_found")} />
       <div className="d-flex flex-column align-items-center justify-content-center">
         <Typography variant="h5" className="text-white my-5">
-          {t("errors:pageNotFound")}
+          {t("errors:not_found")}
         </Typography>
         <Link passHref href="/">
           <Button variant="contained" color="primary">
-            {t("errors:returnToHome")}
+            {t("errors:return_to_home")}
           </Button>
         </Link>
       </div>

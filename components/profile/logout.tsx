@@ -23,7 +23,7 @@ const Logout: React.FC = () => {
       router.push("/");
       setToast({
         type: "success",
-        text: t("profile:logout:successLocal"),
+        text: t("profile:logout:success"),
       });
     } catch (error) {
       setToast({ type: "error", text: error.message ?? error.code });
@@ -38,7 +38,7 @@ const Logout: React.FC = () => {
     <div className="d-flex flex-column justify-content-center align-items-center">
       <div className="d-flex flex-column flex-md-row justify-content-center">
         <Button variant="contained" onClick={logout} className="mx-3 my-2 my-md-1">
-          Logout
+          {t("profile:logout:action")}
         </Button>
       </div>
       <div className="d-flex flex-column flex-md-row justify-content-center">
@@ -48,7 +48,7 @@ const Logout: React.FC = () => {
           className="mx-3 my-2 my-md-1"
           style={{ backgroundColor: "#D11A2A", color: "#ffffff" }}
         >
-          Delete Account
+          {t("profile:delete:action")}
         </Button>
       </div>
       <DeleteAccountDialog open={showDeleteAccountDialog} setOpen={setShowDeleteAccountDialog} />

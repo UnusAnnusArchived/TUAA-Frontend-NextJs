@@ -12,6 +12,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { Dispatch, SetStateAction, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { cdn } from "../../src/endpoints.json";
 import { IVideo } from "../../src/types";
 import ProgressBar from "./progressBar";
@@ -23,6 +24,7 @@ interface IProps {
 }
 
 const VideoPopup: React.FC<IProps> = ({ video, open, setOpen }) => {
+  const { t } = useTranslation();
   const [videoUrl, setVideoUrl] = useState<string>();
   const [downloading, setDownloading] = useState(false);
   const [filesize, setFilesize] = useState<number>();
@@ -80,11 +82,15 @@ const VideoPopup: React.FC<IProps> = ({ video, open, setOpen }) => {
 
   return (
     <Dialog fullWidth open={open} onClose={handleClose}>
-      <DialogTitle>Video</DialogTitle>
+      <DialogTitle>{t("downloads:specific_episode_page:video:header")}</DialogTitle>
       <DialogContent>
         <FormControl fullWidth>
-          <InputLabel>Resolution</InputLabel>
-          <Select label="Resolution" value={videoUrl} onChange={handleChange}>
+          <InputLabel>{t("downloads:specific_episode_page:video:resolution_selector")}</InputLabel>
+          <Select
+            label={t("downloads:specific_episode_page:video:resolution_selector")}
+            value={videoUrl}
+            onChange={handleChange}
+          >
             {(video?.sources ?? [{ size: "1080", src: video.video }]).map((source) => {
               return (
                 <MenuItem key={source.size} value={`${cdn}${source.src}`}>
@@ -99,7 +105,7 @@ const VideoPopup: React.FC<IProps> = ({ video, open, setOpen }) => {
         </FormControl>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleClose}>{t("common:cancel")}</Button>
         <LoadingButton
           style={{ paddingRight: downloading ? 40 : undefined }}
           onClick={download}
@@ -108,8 +114,8 @@ const VideoPopup: React.FC<IProps> = ({ video, open, setOpen }) => {
           variant="contained"
         >
           {downloading
-            ? `${Math.round(recievedFilesize / 1000) / 100}MB/${Math.round(filesize / 1000) / 100}MB`
-            : "Download"}
+            ? `${Math.round(recievedFilesize / 1000) / 1000}MB/${Math.round(filesize / 1000) / 1000}MB`
+            : t("downloads:specific_episode_page:download_action")}
         </LoadingButton>
       </DialogActions>
     </Dialog>

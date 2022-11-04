@@ -19,6 +19,7 @@ import { useRecoilState } from "recoil";
 import { oAuthProviderAtom } from "../src/atoms";
 import { siteRoot } from "../src/endpoints.json";
 import { PBAuthMethodsList, PBAuthProvider } from "../src/types";
+import reactStringReplace from "react-string-replace";
 
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
@@ -89,10 +90,10 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout>
+      <MetaHead baseTitle={t("pages:login")} />
       <LoginDialog open={showLoginDialog} setOpen={setShowLoginDialog} />
-      <MetaHead baseTitle={t("login:title")} />
       <Typography className="text-center my-2" variant="h5" component="h1">
-        {t("login:titleLong")}
+        {t("login:header")}
       </Typography>
       <div className={classNames("d-flex flex-column justify-content-center align-items-center", styles.flexGap)}>
         {authMethodsLoaded ? (
@@ -107,12 +108,11 @@ const LoginPage: React.FC = () => {
                 {authMethods?.emailPassword || authMethods?.usernamePassword ? (
                   <>
                     {(authMethods?.emailPassword && authMethods?.usernamePassword) || authMethods?.emailPassword
-                      ? "Email"
-                      : "Username"}{" "}
-                    & Password
+                      ? t("login:email_password")
+                      : t("login:username_password")}
                   </>
                 ) : (
-                  <>Password Authentication Disabled!</>
+                  <>{t("login:password_auth_disabled")}</>
                 )}
               </Button>
               {authMethods &&
@@ -126,19 +126,20 @@ const LoginPage: React.FC = () => {
                         oAuthLogin(provider);
                       }}
                     >
-                      Login With {provider.name}
+                      {t("login:login_with").replace("{provider}", provider.name)}
                     </Button>
                   );
                 })}
             </>
           ) : (
             <p>
-              Unfortunately logins have been disabled. This is most likely temporary due to an issue. Please visit{" "}
-              <a href="https://discord.gg/PbpJz8r4Pr">our Discord</a> for more info.
+              {reactStringReplace(t("login:logins_disabled"), "{link}", () => (
+                <a href="https://discord.gg/PbpJz8r4Pr">{t("login:logins_disabled_link_text")}</a>
+              ))}
             </p>
           )
         ) : (
-          <p>Loading Authentication Methods...</p>
+          <p>{t("login:loading")}</p>
         )}
       </div>
     </Layout>

@@ -54,7 +54,8 @@ const Layout: React.FC<IProps> = ({ children }) => {
         <style>{`body { all: unset; } #main { display: none!important; }`}</style>
         {/*eslint-disable-next-line*/}
         <h1>
-          Please enable JavaScript, or go to our <a href="https://legacy.unusann.us">Legacy browser page</a>.
+          Please enable JavaScript, or go to our <a href="https://legacy.unusann.us">Legacy browser page</a> (coming
+          soon).
         </h1>
       </noscript>
 
