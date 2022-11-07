@@ -32,6 +32,12 @@
       "label": "English",
       "srclang": "en",
       "src": "/subs/00/001.en.vtt"
+    },
+    {
+      "kind": "captions",
+      "label": "Svenska",
+      "srclang": "sv",
+      "src": "/subs/00/001.sv.vtt"
     }
   ],
   "posters": [
