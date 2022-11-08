@@ -52,7 +52,7 @@ const en = {
     password_auth_disabled: "Password Authentication Disabled!",
     login_with: "Login with {provider}",
     logins_disabled:
-      "Unfortunately logins have been disabled. THis is most likely temporary due to an issue. Please visit {link} for more info.",
+      "Unfortunately logins have been disabled. This is most likely temporary due to an issue. Please visit {link} for more info.",
     logins_disabled_link_text: "our Discord",
     password_auth_dialog: {
       username_or_email: "Username or Email",
@@ -72,13 +72,15 @@ const en = {
   patreon_donors: {
     pfp_alt: "{name}'s Patreon Profile Picture",
     since: "Since {time}",
-    info_desc: "Want to see your name listed here?",
-    info_action: "Subscribe",
+    info: {
+      description: "Want to see your name listed here?",
+      action: "Subscribe",
+    },
   },
   profile: {
     verify: {
       header: "Verify Profile",
-      action: "Resend Verificaiton Email",
+      action: "Resend Verification Email",
       action_disabled: "Sent",
     },
     pfp: {
@@ -288,7 +290,6 @@ const en = {
     not_found: "The page you were looking for was not found",
     return_to_home: "Return to home",
   },
-  translate_tuaa: {},
 };
 
 export default en;

@@ -65,8 +65,8 @@ const PatreonDonors = () => {
                 <Plus style={{ width: 100, height: 100 }} />
               </div>
               <div className={styles.infoContainer}>
-                <span className={styles.name}>{t("patreon_donors:info_desc")}</span>
-                <span>{t("patreon_donors:info_action")}</span>
+                <span className={styles.name}>{t("patreon_donors:info:description")}</span>
+                <span>{t("patreon_donors:info:action")}</span>
               </div>
             </Paper>
           </a>
