@@ -1,7 +1,7 @@
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import moment from "moment-with-locales-es6";
+import moment from "moment";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { useState } from "react";
 import fs from "fs";
@@ -12,7 +12,6 @@ import { EpisodesRow } from "../../components/episodes-controls";
 import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
-import { endpoint } from "../../src/endpoints";
 import { IVideo } from "../../src/types";
 import VideoDownloadOptions from "../../components/video-download-options";
 

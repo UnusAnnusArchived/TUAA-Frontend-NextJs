@@ -11,9 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import styles from "../styles/Login.module.scss";
 import classNames from "classnames";
 import Button from "@mui/material/Button";
-import { endpoint } from "../src/endpoints";
-import axios from "axios";
-import { LoginResponse } from "../src/types";
 import { useRecoilState } from "recoil";
 import { previousPageAtom, userAtom } from "../src/atoms";
 import { MetaHead } from "../components/meta-head";
@@ -21,6 +18,7 @@ import { useRouter } from "next/router";
 import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
+import pb from "../src/pocketbase";
 
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
@@ -46,41 +44,17 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const res = await axios.post<LoginResponse>(
-        `${endpoint}/v2/account/login`,
-        {
-          username: email,
-          password,
-        },
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        }
-      );
-
-      if (res.status !== 200) {
-        return;
-      }
-
-      const { data } = res;
-
-      if (data) {
-        if (data.isValid) {
-          setLoggedInUser(data);
-          if (previousPage && previousPage.length > 3) {
-            router.push(previousPage);
-          } else router.push("/");
-          return;
-        }
-
-        setToast({
-          type: "error",
-          text: t("login:error"),
-        });
-      }
+      const { user } = await pb.users.authViaEmail(email, password);
+      setLoggedInUser(user);
+      if (previousPage && previousPage.length > 3) {
+        router.push(previousPage);
+      } else router.push("/");
     } catch (err) {
-      console.log(err);
+      setToast({
+        text: err.message ?? err.code,
+        type: "error",
+        delay: 1000,
+      });
     }
   };
 
@@ -96,10 +70,7 @@ const LoginPage: React.FC = () => {
       </Typography>
       <form id="login-form">
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <p>
-            If you have already migrated your account and you chose to use a new password, you will have to use your old
-            one until October 10th.
-          </p>
+          <p>If you have not previously migrated your account, it will now be deleted. Please create a new account.</p>
           <TextField
             className={classNames("my-3", styles.field)}
             id="email-archive"

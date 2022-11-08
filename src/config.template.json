@@ -1,12 +1,5 @@
 {
-  "metadataPath": "src/metadata",
-  "mysql": {
-    "connectionLimit": 10,
-    "host": "www.example.com",
-    "user": "theunusannusarchive",
-    "password": "abc123",
-    "database": "theunusannusarchive"
-  },
+  "metadataPath": "metadata",
   "smtp": {
     "pool": true,
     "host": "smtp.example.com",
@@ -16,9 +9,5 @@
       "user": "noreply@unusannusarchive.tk",
       "pass": "abc123"
     }
-  },
-  "pocketbase": {
-    "email": "contact@unusannusarchive.tk",
-    "password": "abc123"
   }
 }

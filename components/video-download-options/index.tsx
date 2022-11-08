@@ -1,12 +1,10 @@
-import { Typography, Button, Stack, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
-import { FaTimes } from "react-icons/fa";
+import { Typography, Button, Stack } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { IVideo } from "../../src/types";
-import DownloadPopupUI from "../download-popup-ui";
 import SubtitlePopup from "../subtitlePopup";
 import VideoPopup from "../videoPopup";
-import { cdn } from "../../src/endpoints";
+import { cdn } from "../../src/endpoints.json";
 
 interface IProps {
   video: IVideo;
@@ -89,28 +87,9 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
           Metadata
         </Button>
       </Stack>
-      {showSubtitlesPopup && (
-        <DownloadPopupUI>
-          <div style={{ marginBottom: 30, display: "flex" }}>
-            <h3 style={{ flexGrow: 1 }}>Subtitles</h3>
-            <a href="#" style={{ color: "#ffffff" }} onClick={toggleSubtitlesPopup}>
-              <FaTimes style={{ fontSize: "1.5rem" }} />
-            </a>
-          </div>
-          <SubtitlePopup video={video} />
-        </DownloadPopupUI>
-      )}
-      {showVideoPopup && (
-        <DownloadPopupUI>
-          <div style={{ marginBottom: 30, display: "flex" }}>
-            <h3 style={{ flexGrow: 1 }}>Video</h3>
-            <a href="#" style={{ color: "#ffffff" }} onClick={toggleVideoPopup}>
-              <FaTimes style={{ fontSize: "1.5rem" }} />
-            </a>
-          </div>
-          <VideoPopup video={video} />
-        </DownloadPopupUI>
-      )}
+
+      <SubtitlePopup video={video} open={showSubtitlesPopup} setOpen={setShowSubtitlesPopup} />
+      <VideoPopup video={video} open={showVideoPopup} setOpen={setShowVideoPopup} />
     </>
   );
 };

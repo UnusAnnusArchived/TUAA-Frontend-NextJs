@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { endpoint } from "../../src/endpoints";
+import { api } from "../../src/endpoints.json";
 import { IVideo } from "../../src/types";
 import { useToasts } from "@geist-ui/react";
 import { Autocomplete, CircularProgress } from "@mui/material";
@@ -24,20 +24,20 @@ const Search: React.FC = () => {
 
     if (!loading) {
       return undefined;
-    };
+    }
 
-    (async() => {
+    (async () => {
       try {
-        const res = await axios.get(`${endpoint}/v2/metadata/all`);
+        const res = await axios.get(`${api}/v2/metadata/all`);
 
         if (res.status === 200) {
           if (active) {
-            setOptions([...res.data[0],...res.data[1]]);
+            setOptions([...res.data[0], ...res.data[1]]);
           }
         } else {
           setToast({
             type: "error",
-            text: JSON.stringify(res.data)
+            text: JSON.stringify(res.data),
           });
         }
       } catch (error) {
@@ -53,7 +53,7 @@ const Search: React.FC = () => {
   useEffect(() => {
     if (!open) {
       setOptions([]);
-    };
+    }
   }, [open]);
 
   const handleOpen = () => {
@@ -64,13 +64,13 @@ const Search: React.FC = () => {
     setOpen(false);
   };
 
-  const handleOptionEqualToValue = (option:IVideo, value:IVideo) => option.title === value.title;
+  const handleOptionEqualToValue = (option: IVideo, value: IVideo) => option.title === value.title;
 
-  const getOptionLabel = (option:IVideo) => {
+  const getOptionLabel = (option: IVideo) => {
     return option.title;
   };
 
-  const handleChange = (_, value:IVideo) => {
+  const handleChange = (_, value: IVideo) => {
     const season = value.season.toString().padStart(2, "0");
     const episode = value.episode.toString().padStart(3, "0");
 
@@ -78,17 +78,37 @@ const Search: React.FC = () => {
   };
 
   return (
-    <Autocomplete onChange={handleChange} sx={{textAlign: "center"}} open={open} onOpen={handleOpen} onClose={handleClose} isOptionEqualToValue={handleOptionEqualToValue} getOptionLabel={getOptionLabel} options={options} loading={loading} renderInput={(params) => (
-      <TextField {...params} variant="standard" style={{ width: isMdDown ? "calc(100% - 18px)" : "50%" }} label={t("common:search")} InputProps={{
-        ...params.InputProps,
-        endAdornment: (
-          <React.Fragment>
-            {loading ? <CircularProgress color="inherit" size={20} /> : null}
-            {params.InputProps.endAdornment}
-          </React.Fragment>
-        )
-      }} />
-    )} />
+    <Autocomplete
+      onChange={handleChange}
+      sx={{ textAlign: "center" }}
+      open={open}
+      onOpen={handleOpen}
+      onClose={handleClose}
+      isOptionEqualToValue={handleOptionEqualToValue}
+      getOptionLabel={getOptionLabel}
+      options={options}
+      loading={loading}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          key="search-bar"
+          variant="standard"
+          style={{ width: isMdDown ? "calc(100% - 18px)" : "50%" }}
+          label={t("common:search")}
+          type="search"
+          InputProps={{
+            ...params.InputProps,
+            endAdornment: (
+              <React.Fragment>
+                {loading ? <CircularProgress color="inherit" size={20} /> : null}
+                {params.InputProps.endAdornment}
+              </React.Fragment>
+            ),
+            autoComplete: "false",
+          }}
+        />
+      )}
+    />
   );
 };
 

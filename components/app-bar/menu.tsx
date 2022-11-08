@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Menu from "@mui/material/Menu";
 import Link from "next/link";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,9 +14,6 @@ import { LanguageSelect } from "../language-select";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
-import { LogoutResponse } from "../../src/types";
-import { endpoint, siteRoot } from "../../src/endpoints";
-import axios from "axios";
 import { useToasts } from "@geist-ui/react";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
@@ -26,15 +23,18 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import { theme } from "../theme/theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import pb from "../../src/pocketbase";
+import getPbImagePath from "../../src/utils/getPbImagePath";
+import { Info as InfoIcon } from "@mui/icons-material";
+import AboutDialog from "../about";
 
 const AppMenu: React.FC = () => {
   const { t } = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
+  const [aboutDialogOpen, setAboutDialogOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-
-  const user = loggedInUser?.user;
 
   const [, setToast] = useToasts();
 
@@ -50,58 +50,62 @@ const AppMenu: React.FC = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.post<LogoutResponse>(`${endpoint}/v2/account/logout`, {
-        id: loggedInUser.user.id,
-        loginKey: loggedInUser.loginKey,
-      });
+      await pb.authStore.clear();
+      setLoggedInUser(null);
 
-      if (res.status === 200) {
-        if (res.data.status === "success") {
-          setLoggedInUser(null);
-          setToast({
-            type: "success",
-            text: t("profile:logout:successLocal"),
-          });
-
-          handleClose();
-        } else {
-          setToast({ type: "error", text: res.data.error });
-        }
-      }
+      handleClose();
     } catch (error) {
-      console.log(error);
+      setToast({ type: "error", text: error.message ?? error.code });
     }
+  };
+
+  const openAbout = () => {
+    setAboutDialogOpen(true);
+    handleClose();
   };
 
   return (
     <React.Fragment>
       <IconButton onClick={handleClick}>
-        {user && (
-          <Avatar src={`${user.pfp.filename.startsWith("/") ? "" : "/"}${user.pfp.filename}`} alt={user.username} />
+        {loggedInUser && (
+          <Avatar
+            src={getPbImagePath("systemprofiles0", loggedInUser?.profile?.id, loggedInUser?.profile?.avatar, 120, 120)}
+            alt={loggedInUser?.profile?.name}
+          />
         )}
 
-        {!user && <MenuIcon />}
+        {!loggedInUser && <MenuIcon />}
       </IconButton>
 
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className="menu-container">
-          {user && (
+          {loggedInUser && (
             <React.Fragment>
               <div className="my-2">
                 <Typography variant="h6" component="p" className="text-center">
-                  {user.username}
+                  {loggedInUser?.profile?.name === "" ? loggedInUser?.email : loggedInUser?.profile?.name}
                 </Typography>
               </div>
               <Divider style={{ margin: "4px 0" }} />
-              <Link passHref href="/profile">
-                <MenuItem onClick={handleClose}>
-                  <ListItemIcon>
-                    <PersonIcon />
-                  </ListItemIcon>
-                  <ListItemText>{t("common:profile")}</ListItemText>
-                </MenuItem>
-              </Link>
             </React.Fragment>
+          )}
+
+          <MenuItem onClick={openAbout}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText>About</ListItemText>
+          </MenuItem>
+
+          {loggedInUser && (
+            <Link passHref href="/profile">
+              <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                  <PersonIcon />
+                </ListItemIcon>
+                <ListItemText>{t("common:profile")}</ListItemText>
+              </MenuItem>
+            </Link>
           )}
           <Link href="/settings" passHref>
             <MenuItem>
@@ -162,7 +166,7 @@ const AppMenu: React.FC = () => {
           <LanguageSelect />
           <Divider style={{ margin: "4px 0" }} />
 
-          {user && (
+          {loggedInUser && (
             <MenuItem onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />
@@ -171,7 +175,7 @@ const AppMenu: React.FC = () => {
             </MenuItem>
           )}
 
-          {!user && (
+          {!loggedInUser && (
             <React.Fragment>
               <Link passHref href="/register">
                 <MenuItem>
@@ -193,6 +197,7 @@ const AppMenu: React.FC = () => {
           )}
         </div>
       </Menu>
+      <AboutDialog open={aboutDialogOpen} setOpen={setAboutDialogOpen} />
     </React.Fragment>
   );
 };

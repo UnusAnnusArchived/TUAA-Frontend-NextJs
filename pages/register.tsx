@@ -11,9 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import styles from "../styles/Login.module.scss";
 import classNames from "classnames";
 import Button from "@mui/material/Button";
-import { endpoint } from "../src/endpoints";
-import axios from "axios";
-import { LoginResponse, SignupResponse } from "../src/types";
 import { useRecoilState } from "recoil";
 import { previousPageAtom, userAtom } from "../src/atoms";
 import { MetaHead } from "../components/meta-head";
@@ -49,22 +46,6 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const res = await axios.post<SignupResponse>(
-        `${endpoint}/v2/account/signup`,
-        JSON.stringify({
-          email: email.trim(),
-          username: username.trim(),
-          password: password.trim(),
-          confirmpassword: confirmPassword.trim(),
-        }),
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
       const pbUser = await pb.users.create({
         email,
         password,
@@ -73,60 +54,27 @@ const LoginPage: React.FC = () => {
 
       await pb.users.authViaEmail(email, password);
 
-      const user = (
-        await axios.post<LoginResponse>(
-          `${endpoint}/v2/account/login`,
-          JSON.stringify({
-            username: email,
-            password,
-            sendEmail: "false",
-          }),
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-      ).data;
-
-      await axios.post(`${endpoint}/v2/account/logout`, {
-        loginKey: user.loginKey,
-        id: user.user.id,
-      });
-
       await pb.records.update("profiles", pbUser.profile.id, {
         name: username,
-        legacy_id: user.user.id,
         emails_account: true,
         emails_updates: false,
       });
 
       await pb.users.requestVerification(email);
 
-      if (res.status !== 200) {
-        return;
-      }
+      const user = await pb.users.getOne(pbUser.id);
 
-      const { data } = res;
-
-      if (data) {
-        if (data.success) {
-          router.push("/login");
-          setToast({
-            type: "success",
-            text: t("register:success"),
-            delay: 10000,
-          });
-          return;
-        }
-
-        setToast({
-          type: "error",
-          text: data.error.message,
-        });
-      }
+      router.push("/login");
+      setToast({
+        type: "success",
+        text: t("register:success"),
+        delay: 10000,
+      });
     } catch (err) {
-      console.error(err);
+      setToast({
+        type: "error",
+        text: err.message ?? err.code,
+      });
     }
   };
 

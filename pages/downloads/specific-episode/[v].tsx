@@ -1,9 +1,9 @@
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import moment from "moment-with-locales-es6";
+import moment from "moment";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { useState } from "react";
+import React from "react";
 import fs from "fs";
 import config from "../../../src/config.json";
 import { useTranslation } from "react-i18next";

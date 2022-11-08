@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import dynamic from "next/dynamic";
 import { useToasts } from "@geist-ui/react";
 import { showPatreonAtom } from "../../src/atoms";
 import { useRecoilState } from "recoil";

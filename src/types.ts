@@ -79,9 +79,26 @@ export interface IUserPFP {
 }
 
 export interface LoginResponse {
-  isValid?: boolean;
-  loginKey?: string;
-  user?: LimitedUser;
+  id: string;
+  created: string;
+  updated: string;
+  email: string;
+  lastResetSentAt: string;
+  verified: boolean;
+  lastVerificationSentAt: string;
+  profile: {
+    "@collectionId": string;
+    "@collectionName": string;
+    created: string;
+    updated: string;
+    userId: string;
+    id: string;
+    name: string;
+    avatar: string;
+    legacy_id: string;
+    emails_account: boolean;
+    emails_updates: boolean;
+  };
 }
 
 export interface LimitedUser {

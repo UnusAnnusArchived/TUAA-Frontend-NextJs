@@ -5,11 +5,9 @@ import classNames from "classnames";
 import { AppBar } from "../app-bar";
 import { createStyles, makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material";
-import axios from "axios";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
-import { CheckLoginKeyResponse } from "../../src/types";
+import pb from "../../src/pocketbase";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,40 +17,30 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Layout: React.FC = ({ children }) => {
+interface IProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<IProps> = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const classes = useStyles(theme);
 
-  const refetchUser = async (): Promise<boolean> => {
-    const res = await axios.post<CheckLoginKeyResponse>(`${endpoint}/v2/account/checkloginkey`, {
-      loginKey: loggedInUser.loginKey,
-    });
+  const refetchUser = async () => {
+    if (loggedInUser) {
+      const user = await pb.users.getOne(loggedInUser?.id);
 
-    if (res.status === 200) {
-      if (res.data.isValid) {
-        return true;
+      if (user.id) {
+        setLoggedInUser(user);
+      } else {
+        setLoggedInUser(null);
       }
     }
-
-    return false;
-  };
-
-  const checkUser = async () => {
-    const res = await refetchUser();
-
-    if (!res) {
-      setLoggedInUser(null);
-    }
   };
 
   useEffect(() => {
-    if (loggedInUser) checkUser();
+    if (loggedInUser) refetchUser();
   }, []);
-
-  useEffect(() => {
-    if (loggedInUser) checkUser();
-  }, [loggedInUser]);
 
   return (
     <React.Fragment>
@@ -60,7 +48,7 @@ const Layout: React.FC = ({ children }) => {
         <style>{`body { all: unset; } #main { display: none!important; }`}</style>
         {/*eslint-disable-next-line*/}
         <h1>
-          Please enable JavaScript, or go to our <a href="/legacy/01">Legacy browser page</a>.
+          Please enable JavaScript, or go to our <a href="https://legacy.unusann.us">Legacy browser page</a>.
         </h1>
       </noscript>
 

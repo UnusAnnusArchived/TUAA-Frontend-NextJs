@@ -1,14 +1,12 @@
 import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import axios from "axios";
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
-import { endpoint } from "../../src/endpoints";
-import { PostCommentResponse } from "../../src/types";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { useTranslation } from "react-i18next";
+import pb from "../../src/pocketbase";
 
 interface IProps {
   watchCode: string;
@@ -31,15 +29,14 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
 
     setIsSendingComment(true);
     try {
-      const res = await axios.post<PostCommentResponse>(
-        `${endpoint}/v2/comments/post/${watchCode}`,
-        { loginKey: loggedInUser.loginKey, comment: commentText }
-      );
+      await pb.records.create("comments", {
+        episode: watchCode,
+        markdown: commentText,
+        user: loggedInUser?.id,
+      });
 
-      if (res.data.status === "success") {
-        setComment("");
-        await onC();
-      }
+      setComment("");
+      await onC();
     } catch (e) {
       console.error(e);
     }
@@ -61,6 +58,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
       <div className="d-flex flex-row flex-md-row flex-column">
         <div className="flex-grow">
           <TextField
+            multiline
             variant="standard"
             fullWidth
             label={t("comments:placeholder")}

@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import { useTranslation } from "react-i18next";
 import getEpisodesAround from "../../src/utils/episodes-around";
