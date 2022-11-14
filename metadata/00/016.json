@@ -1,11 +1,6 @@
 {
   "sources": [
     {
-      "src": "/00/016/4320.mp4",
-      "type": "video/mp4",
-      "size": 4320
-    },
-    {
       "src": "/00/016/2160.mp4",
       "type": "video/mp4",
       "size": 2160
