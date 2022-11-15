@@ -1,42 +1,42 @@
 {
   "sources": [
     {
-      "src": "/00/016/4320.mp4",
+      "src": "/00/017/4320.mp4",
       "type": "video/mp4",
       "size": 4320
     },
     {
-      "src": "/00/016/2160.mp4",
+      "src": "/00/017/2160.mp4",
       "type": "video/mp4",
       "size": 2160
     },
     {
-      "src": "/00/016/1440.mp4",
+      "src": "/00/017/1440.mp4",
       "type": "video/mp4",
       "size": 1440
     },
     {
-      "src": "/00/016/1080.mp4",
+      "src": "/00/017/1080.mp4",
       "type": "video/mp4",
       "size": 1080
     },
     {
-      "src": "/00/016/720.mp4",
+      "src": "/00/017/720.mp4",
       "type": "video/mp4",
       "size": 720
     },
     {
-      "src": "/00/016/480.mp4",
+      "src": "/00/017/480.mp4",
       "type": "video/mp4",
       "size": 480
     },
     {
-      "src": "/00/016/360.mp4",
+      "src": "/00/017/360.mp4",
       "type": "video/mp4",
       "size": 360
     },
     {
-      "src": "/00/016/240.mp4",
+      "src": "/00/017/240.mp4",
       "type": "video/mp4",
       "size": 240
     }
@@ -44,26 +44,26 @@
   "tracks": [],
   "posters": [
     {
-      "src": "/thumbnails/00/016.avif",
+      "src": "/thumbnails/00/017.avif",
       "type": "image/avif",
-      "size": 24547
+      "size": 38672
     },
     {
-      "src": "/thumbnails/00/016.jpg",
+      "src": "/thumbnails/00/017.jpg",
       "type": "image/jpeg",
-      "size": 44998
+      "size": 391207
     },
     {
-      "src": "/thumbnails/00/016.webp",
+      "src": "/thumbnails/00/017.webp",
       "type": "image/webp",
-      "size": 48534
+      "size": 59494
     }
   ],
   "season": 0,
-  "episode": 16,
-  "title": "Mori",
-  "description": "Memento ► <a href=\"https://unusann.us/watch/s00.e015\">https://youtu.be/yGxOsZOyyRg</a>",
+  "episode": 17,
+  "title": "Memento Mori (Combined Conversation)",
+  "description": "Combination of <a href=\"https://unusann.us/watch/s00.e015\">s00.e15</a> and <a href=\"https://unusann.us/watch/s00.e16\">s00.e16</a>.",
   "date": 1668340800000,
-  "islast": false,
+  "islast": true,
   "duration": 1525
 }
