@@ -10,7 +10,7 @@ import { Link } from "@mui/material";
 import reactStringReplace from "react-string-replace";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../src/atoms";
-import ColorSchemeToggle from "../components/color-scheme-toggle";
+import ColorSchemeToggle from "../components/settings/color-scheme-toggle";
 
 const Settings: React.FC = () => {
   const { t, i18n } = useTranslation();
