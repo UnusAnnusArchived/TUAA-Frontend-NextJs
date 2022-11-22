@@ -214,3 +214,5 @@ export interface IUser {
   loginKeys: string[];
   isAdmin?: boolean;
 }
+
+export type IColorScheme = "light" | "dark";

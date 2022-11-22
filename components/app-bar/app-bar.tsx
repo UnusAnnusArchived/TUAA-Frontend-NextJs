@@ -6,7 +6,6 @@ import Link from "next/link";
 import LinearProgress from "@mui/material/LinearProgress";
 import Fade from "@mui/material/Fade";
 import { useRouter } from "next/router";
-import Box from "@mui/system/Box";
 import IconButton from "@mui/material/IconButton";
 import BackIcon from "@mui/icons-material/ArrowBack";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -110,13 +109,13 @@ const ABar: React.FC = () => {
               {isMdDown ? "TUAA" : "The Unus Annus Archive"}
             </Typography>
           </Link>
-          <Box sx={{ flexGrow: 1 }}>
+          <div style={{ flexGrow: 1 }}>
             {!isMdDown && (
               <div style={{ justifyContent: "center", alignItems: "center", textAlign: "center" }}>
                 <Search />
               </div>
             )}
-          </Box>
+          </div>
           {isMdDown && (
             <IconButton onClick={toggleMobileSearch}>
               <SearchIcon />

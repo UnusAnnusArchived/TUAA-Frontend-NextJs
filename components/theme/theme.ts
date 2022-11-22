@@ -1,27 +1,66 @@
-import { darkScrollbar } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import type { ThemeOptions } from "@mui/material/styles";
 
-export const theme = createTheme({
+export const darkTheme: ThemeOptions = {
   palette: {
     mode: "dark",
     primary: {
       main: "#ffffff",
-      dark: "#ffffff",
-      light: "#ffffff",
     },
-    secondary: {
-      main: "#3f3f3f",
+  },
+  typography: {
+    allVariants: {
+      color: "#ffffff",
     },
-    // background: {
-    //   default: "#121212",
-    //   paper: "#3e3e3e",
-    // },
+  },
+};
+
+export const lightTheme: ThemeOptions = {
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#000000",
+    },
+  },
+  typography: {
+    allVariants: {
+      color: "#000000",
+    },
   },
   components: {
-    MuiCssBaseline: {
+    MuiAppBar: {
       styleOverrides: {
-        body: darkScrollbar(),
+        root: {
+          backgroundColor: "#eeeeee",
+          color: "#000000",
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        elevation: {
+          backgroundColor: "#eeeeee",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: "#eeeeee",
+          color: "#000000",
+          ":hover": {
+            backgroundColor: "#dddddd",
+            color: "#000000",
+          },
+        },
+        text: {
+          ":hover": {
+            color: "#000000",
+          },
+        },
       },
     },
   },
-});
+};
+
+export const theme = createTheme(darkTheme);

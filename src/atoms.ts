@@ -1,5 +1,6 @@
 import { User } from "pocketbase";
 import { atom } from "recoil";
+import { IColorScheme } from "./types";
 
 const localStorageEffect =
   (key) =>
@@ -26,6 +27,7 @@ export const userAtom = atom<User>({
 export const previousPageAtom = atom<string>({
   key: "previousPageAtom",
   default: null,
+  effects_UNSTABLE: [localStorageEffect("previousPageAtom")],
 });
 
 export const autoplayAtom = atom<boolean>({
@@ -38,4 +40,10 @@ export const showPatreonAtom = atom<boolean>({
   key: "patreon",
   default: true,
   effects_UNSTABLE: [localStorageEffect("patreon")],
+});
+
+export const colorSchemeAtom = atom<IColorScheme>({
+  key: "colorScheme",
+  default: "dark",
+  effects_UNSTABLE: [localStorageEffect("colorScheme")],
 });

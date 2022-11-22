@@ -63,7 +63,7 @@ const PatreonDonors = () => {
             target="_blank"
           >
             <Paper className={`p-2 h-100 ${styles.patreon}`}>
-              <div style={{ borderRadius: "100%", backgroundColor: "#3e3e3e" }}>
+              <div style={{ borderRadius: "100%", backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                 <Plus style={{ width: 100, height: 100 }} />
               </div>
               <div className={styles.infoContainer}>

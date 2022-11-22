@@ -16,6 +16,7 @@
     "@mui/material": "^5.10.8",
     "@mui/styles": "^5.10.8",
     "axios": "^0.24.0",
+    "bootstrap": "^5.2.2",
     "classnames": "^2.3.1",
     "formidable": "^2.0.1",
     "i18next": "^21.5.2",
@@ -36,6 +37,7 @@
     "react-string-replace": "^0.4.4",
     "react-window": "^1.8.6",
     "recoil": "^0.7.5",
+    "recoil-nexus": "^0.4.0",
     "sharp": "^0.29.3",
     "swr": "^1.0.1"
   },
