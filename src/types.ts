@@ -230,3 +230,5 @@ export interface PBAuthProvider {
   codeChallengeMethod: string;
   authUrl: string;
 }
+
+export type IColorScheme = "light" | "dark";

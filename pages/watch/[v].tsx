@@ -14,6 +14,7 @@ import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
 import { IVideo } from "../../src/types";
 import VideoDownloadOptions from "../../components/video-download-options";
+import { useTheme } from "@mui/material";
 
 interface IProps {
   watchCode: string;
@@ -30,6 +31,8 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
 
   const [showDownloadOptions, setShowDownloadOptions] = useState(false);
 
+  const theme = useTheme();
+
   return (
     <Layout>
       <MetaHead
@@ -45,7 +48,16 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
       <Paper className={`my-3 p-3 ${showDownloadOptions ? "" : "display-none"}`}>
         <VideoDownloadOptions video={video} />
       </Paper>
-      <Paper className="my-3 p-3 desc">
+      <Paper
+        className="my-3 p-3 desc"
+        sx={{
+          "& a": {
+            color: theme.palette.mode === "dark" ? "#c2c2c2" : "#3d3d3d",
+            "&:after": { backgroundColor: theme.palette.mode === "dark" ? "#ffffff" : "#000000" },
+            "&:hover": { color: theme.palette.mode === "dark" ? "#ffffff" : "#000000" },
+          },
+        }}
+      >
         <Typography variant="h6" component="h1">
           {video.title}
         </Typography>
@@ -53,13 +65,11 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
           {moment(published).locale(i18n.language).format("DD MMMM YYYY")}
         </Typography>
         <Divider className="my-2" sx={{ backgroundColor: "#fff" }} />
-        <Typography variant="body1" component="p">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: video.description.replace(/(\n)/g, "<br />"),
-            }}
-          />
-        </Typography>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: video.description.replace(/(\n)/g, "<br />"),
+          }}
+        />
       </Paper>
       <Paper className="my-3 p-3">
         <CommentList watchCode={watchCode} />

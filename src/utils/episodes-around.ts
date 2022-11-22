@@ -21,8 +21,8 @@ const getEpisodesAround = (currentEpisodeCode: string) => {
       const nextEp = `s00.e${(currentEpisode + 1).toString().padStart(3, "0")}`;
 
       const response: IEpisodeAround = {
-        nextEp: next >= 1 && next <= 14 ? nextEp : null,
-        prevEp: prev >= 1 && prev <= 14 ? prevEp : null,
+        nextEp: next >= 1 && next <= 17 ? nextEp : null,
+        prevEp: prev >= 1 && prev <= 17 ? prevEp : null,
       };
       return response;
     } else {

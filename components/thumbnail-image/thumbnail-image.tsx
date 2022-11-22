@@ -89,7 +89,7 @@ const ThumbnailImage: React.FC<IProps> = ({ video }) => {
         style={{
           backgroundImage: `url(${src})`,
           backgroundPosition:
-            video.season === 0 ? `calc(7.6922% * ${video.episode - 1})` : `calc(0.2724791% * ${video.episode - 1}) 0`, // percents literally calculated with trial and error 😭 also this method is really fucking stupid and will break the thumbnail locations if i add another episode but when that time comes i will deal with it.
+            video.season === 0 ? `calc(6.6667% * ${video.episode - 1})` : `calc(0.2724791% * ${video.episode - 1}) 0`, // percents literally calculated with trial and error 😭 also this method is really fucking stupid and will break the thumbnail locations if i add another episode but when that time comes i will deal with it.
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}

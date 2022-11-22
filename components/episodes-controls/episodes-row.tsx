@@ -4,7 +4,6 @@ import React from "react";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import Fade from "@mui/material/Fade";
-import Box from "@mui/system/Box";
 import { useTranslation } from "react-i18next";
 import getEpisodesAround from "../../src/utils/episodes-around";
 
@@ -33,8 +32,8 @@ const EpisodesRow: React.FC<IProps> = ({ watchCode, onDownloadPage }) => {
             </Button>
           </Link>
         )}
-        <Box
-          sx={{
+        <div
+          style={{
             flexGrow: 1,
           }}
         />
