@@ -4,7 +4,6 @@ import { ILanguage } from "../types";
 
 //Import language definitions
 import en from "./en";
-import es from "./es";
 import fr from "./fr";
 import de from "./de";
 import fil from "./fil";
@@ -14,7 +13,6 @@ export const initTranslations = async (locale: string) => {
   await i18next.use(initReactI18next).init({
     resources: {
       en,
-      es,
       fr,
       de,
       fil,
@@ -28,11 +26,4 @@ export const initTranslations = async (locale: string) => {
   });
 };
 
-export const availableLanguages: ILanguage[] = [
-  en.language,
-  es.language,
-  fr.language,
-  de.language,
-  fil.language,
-  sv.language,
-];
+export const availableLanguages: ILanguage[] = [en.language, fr.language, de.language, fil.language, sv.language];
