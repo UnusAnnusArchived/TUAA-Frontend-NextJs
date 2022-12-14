@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   baseTitle?: string;
@@ -13,6 +14,7 @@ interface IProps {
 }
 
 const MetaHead: React.FC<IProps> = ({ baseTitle, video, embed, date, description, image }) => {
+  const { t } = useTranslation();
   const baseDomain = "https://unusann.us/";
 
   var useSmallImage = false;
@@ -28,7 +30,7 @@ const MetaHead: React.FC<IProps> = ({ baseTitle, video, embed, date, description
 
   return (
     <Head>
-      <title>{baseTitle ? baseTitle + " | The Unus Annus Archive" : "The Unus Annus Archive"}</title>
+      <title>{baseTitle ? `${baseTitle} | ${t("pages:site")}` : t("pages:site")}</title>
       {/* <!-- Schema.org for Google --> */}
       <meta itemProp="name" content={baseTitle} />
       {/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */}
@@ -36,8 +38,8 @@ const MetaHead: React.FC<IProps> = ({ baseTitle, video, embed, date, description
 
       <meta name="og:image" content={image} />
       <meta name="og:url" content="https://unusann.us/" />
-      <meta name="og:site_name" content="The Unus Annus Archive" />
-      <meta name="og:locale" content="en_US" />
+      <meta name="og:site_name" content={t("pages:site")} />
+      <meta name="og:locale" content={t("language:code")} />
       <meta name="og:type" content={video ? "video.other" : "website"} />
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content={video ? "player" : useSmallImage ? "summary" : "summary_large_image"} />

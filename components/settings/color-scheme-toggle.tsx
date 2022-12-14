@@ -7,20 +7,14 @@ import {
   SelectChangeEvent,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { colorSchemeAtom } from "../../src/atoms";
 import { IColorScheme } from "../../src/types";
 
 const ColorSchemeToggle: React.FC = () => {
+  const { t } = useTranslation();
   const [colorScheme, setColorScheme] = useRecoilState(colorSchemeAtom);
-
-  const lightMode = () => {
-    setColorScheme("light");
-  };
-
-  const darkMode = () => {
-    setColorScheme("dark");
-  };
 
   const handleChange = (evt: SelectChangeEvent<"light" | "dark">) => {
     setColorScheme(evt.target.value as IColorScheme);
@@ -28,10 +22,10 @@ const ColorSchemeToggle: React.FC = () => {
 
   return (
     <FormControl>
-      <InputLabel>Color Scheme</InputLabel>
-      <Select label="Color Scheme" onChange={handleChange} value={colorScheme}>
-        <MenuItem value="dark">Dark Mode</MenuItem>
-        <MenuItem value="light">Light Mode</MenuItem>
+      <InputLabel>{t("settings:color_scheme:label")}</InputLabel>
+      <Select label={t("settings:color_scheme:label")} onChange={handleChange} value={colorScheme}>
+        <MenuItem value="dark">{t("settings:color_scheme:dark")}</MenuItem>
+        <MenuItem value="light">{t("settings:color_scheme:light")}</MenuItem>
       </Select>
     </FormControl>
   );

@@ -5,18 +5,20 @@ import { ILanguage } from "../types";
 //Import language definitions
 import en from "./en";
 import es from "./es";
+import fr from "./fr";
 import de from "./de";
-import cs from "./cs";
-import fa from "./fa";
+import fil from "./fil";
+import sv from "./sv";
 
 export const initTranslations = async (locale: string) => {
   await i18next.use(initReactI18next).init({
     resources: {
       en,
       es,
+      fr,
       de,
-      cs,
-      fa
+      fil,
+      sv,
     },
     lng: locale,
     fallbackLng: "en",
@@ -27,24 +29,10 @@ export const initTranslations = async (locale: string) => {
 };
 
 export const availableLanguages: ILanguage[] = [
-  {
-    name: "English",
-    code: "en"
-  },
-  {
-    name: "Español",
-    code: "es"
-  },
-  {
-    name: "Deutsch",
-    code: "de"
-  },
-  {
-    name: "Čeština",
-    code: "cs"
-  },
-  {
-    name: "فارسی",
-    code: "fa"
-  }
+  en.language,
+  es.language,
+  fr.language,
+  de.language,
+  fil.language,
+  sv.language,
 ];

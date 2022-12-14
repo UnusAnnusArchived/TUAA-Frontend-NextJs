@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
 interface IProps {
   name: string;
@@ -13,11 +14,11 @@ interface IProps {
 }
 
 const DownloadItem: React.FC<IProps> = ({ name, description, image, link, newTab }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="col-12 col-md-4 p-2">
-      <a href={link} target={newTab ? "_blank" : ""} rel="noreferrer" style={{ textDecoration: "none" }}>
+      <Link href={link} target={newTab ? "_blank" : ""} rel="noreferrer" style={{ textDecoration: "none" }}>
         <div className="pointer h-100">
           <Paper className="p-2 h-100">
             <Image
@@ -34,7 +35,7 @@ const DownloadItem: React.FC<IProps> = ({ name, description, image, link, newTab
             </div>
           </Paper>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

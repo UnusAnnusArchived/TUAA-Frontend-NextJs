@@ -149,6 +149,11 @@ const en = {
       description: "Looking for account settings? They're on the {link}.",
       link_text: "Profile page",
     },
+    color_scheme: {
+      label: "Color Scheme",
+      dark: "Dark Mode",
+      light: "Light Mode",
+    },
     autoplay: "Autoplay",
   },
   downloads: {
@@ -227,7 +232,7 @@ const en = {
     },
     errors: {
       generic: "Comments failed to load",
-      no_comments: "No comments found. Why don't you get the conversation started?",
+      no_comments: "No comments found. How about you get the conversation started?",
     },
   },
   patreon_popup: {
