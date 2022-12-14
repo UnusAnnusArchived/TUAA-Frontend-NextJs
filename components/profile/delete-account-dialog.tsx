@@ -29,7 +29,7 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
       try {
         const response = await pb.collection("users").authWithPassword(loggedInUser.email, password);
         if (response.token) {
-          pb.collection("users").delete(response.user.id);
+          pb.collection("users").delete(response.record.id);
           setLoggedInUser(null);
           setToast({
             text: t("profile:delete:success"),

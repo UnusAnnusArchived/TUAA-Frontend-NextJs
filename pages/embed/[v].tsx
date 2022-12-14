@@ -43,16 +43,18 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 
   const seasons = fs.readdirSync(config.metadataPath);
   for (const seasonName of seasons) {
-    const season = fs.readdirSync(`${config.metadataPath}/${seasonName}`);
-    for (const episodeName of season) {
-      const episode: IVideo = JSON.parse(
-        fs.readFileSync(`${config.metadataPath}/${seasonName}/${episodeName}`, "utf-8")
-      );
-      paths.push({
-        params: {
-          v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode.toString().padStart(3, "0")}`,
-        },
-      });
+    if (fs.statSync(`${config.metadataPath}/${seasonName}`).isDirectory()) {
+      const season = fs.readdirSync(`${config.metadataPath}/${seasonName}`);
+      for (const episodeName of season) {
+        const episode: IVideo = JSON.parse(
+          fs.readFileSync(`${config.metadataPath}/${seasonName}/${episodeName}`, "utf-8")
+        );
+        paths.push({
+          params: {
+            v: `s${episode.season.toString().padStart(2, "0")}.e${episode.episode.toString().padStart(3, "0")}`,
+          },
+        });
+      }
     }
   }
 

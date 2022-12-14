@@ -1,1 +1,3 @@
-// Turkish
+const tr = {};
+
+export default tr;

@@ -1,1 +1,3 @@
-// Welsh
+const cy = {};
+
+export default cy;

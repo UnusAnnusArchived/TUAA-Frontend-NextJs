@@ -1,1 +1,3 @@
-// Russian
+const ru = {};
+
+export default ru;

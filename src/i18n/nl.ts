@@ -50,3 +50,5 @@ const nl = {
     email_password: "Email & wachtwoord",
   },
 };
+
+export default nl;

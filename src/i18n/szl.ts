@@ -1,1 +1,3 @@
-// Silesian
+const szl = {};
+
+export default szl;

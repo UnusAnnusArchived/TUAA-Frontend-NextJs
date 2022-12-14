@@ -1,1 +1,3 @@
-// Ukrainian
+const uk = {};
+
+export default uk;

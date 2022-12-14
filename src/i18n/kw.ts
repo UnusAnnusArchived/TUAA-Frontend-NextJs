@@ -1,1 +1,3 @@
-// Cornish
+const kw = {};
+
+export default kw;

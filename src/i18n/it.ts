@@ -1,1 +1,3 @@
-// Italian
+const it = {};
+
+export default it;

@@ -1,1 +1,3 @@
-// Sami
+const se = {};
+
+export default se;

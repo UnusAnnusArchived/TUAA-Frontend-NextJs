@@ -1,1 +1,3 @@
-// Irish
+const ga = {};
+
+export default ga;

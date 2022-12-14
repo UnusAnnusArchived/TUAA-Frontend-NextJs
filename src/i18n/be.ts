@@ -1,1 +1,3 @@
-// Belarusian
+const be = {};
+
+export default be;

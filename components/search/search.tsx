@@ -70,7 +70,7 @@ const Search: React.FC = () => {
     return option.title;
   };
 
-  const handleChange = (_, value: IVideo) => {
+  const handleChange = (evt: any, value: IVideo) => {
     const season = value.season.toString().padStart(2, "0");
     const episode = value.episode.toString().padStart(3, "0");
 
@@ -79,6 +79,7 @@ const Search: React.FC = () => {
 
   return (
     <Autocomplete
+      // @ts-ignore mui is literally stupid and says it's an array but it's not
       onChange={handleChange}
       sx={{ textAlign: "center" }}
       open={open}
