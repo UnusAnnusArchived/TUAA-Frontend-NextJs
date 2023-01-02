@@ -48,7 +48,7 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
       <DialogTitle>{t("pages:about")}</DialogTitle>
       <DialogContent>
         <div style={{ textAlign: "center" }}>
-          <Image src="/ua.png" width="75" height="75" style={{ borderRadius: "100%" }} />
+          <Image src="/ua.png" alt="Unus Annus Logo" width="75" height="75" style={{ borderRadius: "100%" }} />
           <Typography variant="h5">{t("pages:site")}</Typography>
           <DialogContentText>
             {t("about:build_number")
