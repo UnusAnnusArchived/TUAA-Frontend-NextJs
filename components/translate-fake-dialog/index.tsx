@@ -1,6 +1,6 @@
 import { Paper } from "@mui/material";
 
-const TranslateFakeDialog: React.FC<React.PropsWithChildren> = ({ children }) => {
+const TranslateFakeDialog: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <Paper
       sx={{

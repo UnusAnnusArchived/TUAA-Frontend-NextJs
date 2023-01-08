@@ -2,7 +2,7 @@ import { ExpandMore } from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { SyntheticEvent } from "react";
 
-interface IProps extends React.PropsWithChildren {
+interface IProps extends React.PropsWithChildren<{}> {
   header: string | React.ReactNode;
   description?: string | React.ReactNode;
   expanded: boolean;

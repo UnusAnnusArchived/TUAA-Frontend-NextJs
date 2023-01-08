@@ -5,7 +5,7 @@ import { colorSchemeAtom } from "../../src/atoms";
 import { ThemeProvider as ActualThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./theme";
 
-const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
+const ThemeProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const [theme, setTheme] = useState(darkTheme);
 
   const [colorScheme] = useRecoilState(colorSchemeAtom);
