@@ -1,7 +1,7 @@
 const en = {
   language: {
     name: "English",
-    code: "en", // ISO 639-1
+    code: "en",
   },
   pages: {
     site: "The Unus Annus Archive",
@@ -27,6 +27,8 @@ const en = {
     save: "Save",
     copied_toast: "Copied text to clipboard",
     search: "Search",
+    episode: "Episode",
+    random_episode: "Random Episode",
     account: {
       email: "Email",
       name: "Name",
