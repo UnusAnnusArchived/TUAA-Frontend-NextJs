@@ -16,7 +16,7 @@ const getpath: NextApiHandler = async (req, res) => {
     });
 
     const signedUrl = await getSignedUrl(s3, command, {
-      expiresIn: 43200,
+      expiresIn: 86400, // 24 hours - longest video is 12 hours so we want it available for at least that amount of time
     });
 
     res.redirect(signedUrl);
