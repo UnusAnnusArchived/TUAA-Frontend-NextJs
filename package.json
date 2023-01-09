@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": ">=7.0.0 <8.0.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@geist-ui/react": "^2.2.0",
@@ -16,6 +17,7 @@
     "@mui/material": "^5.10.8",
     "@mui/styles": "^5.10.8",
     "@mui/system": "^5.10.12",
+    "@popperjs/core": "^2.11.6",
     "axios": "^0.24.0",
     "bootstrap": "^5.2.2",
     "classnames": "^2.3.1",
@@ -40,7 +42,8 @@
     "recoil": "^0.7.5",
     "recoil-nexus": "^0.4.0",
     "sharp": "^0.29.3",
-    "swr": "^1.0.1"
+    "swr": "^1.0.1",
+    "webpack": ">=5.9.0 <6.0.0"
   },
   "devDependencies": {
     "@types/formidable": "^2.0.3",
