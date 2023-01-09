@@ -10,6 +10,8 @@ import { MetaHead } from "../components/meta-head";
 import { VideoList } from "../components/video-list";
 import { IVideo, Seasons } from "../src/types";
 import PatreonPopup from "../components/patreon-popup";
+import RandomEpisode from "../components/random-episode";
+import styles from "../styles/Home.module.scss";
 
 interface IProps {
   seasons: Seasons;
@@ -29,10 +31,18 @@ const Page: React.FC<IProps> = ({ seasons }) => {
       <div>
         <PatreonPopup key="patreon" />
 
-        <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
-          <Tab label={t("seasons:season1")} value={1} />
-          <Tab label={t("seasons:season0")} value={0} />
-        </Tabs>
+        <div className={styles.seasonTabs}>
+          <div className={styles.grow} key="grow" />
+          <div className={styles.tabs} key="tabs">
+            <Tabs key="tabs" value={currentTab} onChange={handleChange} centered>
+              <Tab label={t("seasons:season1")} value={1} />
+              <Tab label={t("seasons:season0")} value={0} />
+            </Tabs>
+          </div>
+          <div className={styles.randomEpisode} key="random-episode">
+            <RandomEpisode seasons={seasons} />
+          </div>
+        </div>
         {seasons.map((season, i) => {
           return (
             <div key={`season-${i}`} hidden={currentTab !== i}>

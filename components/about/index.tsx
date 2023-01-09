@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import React, { useEffect, useState } from "react";
 import { api } from "../../src/endpoints.json";
 import { useTranslation } from "react-i18next";
@@ -23,6 +23,7 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const [build, setBuild] = useState<number>(NaN);
   const [builtOn, setBuiltOn] = useState<number>(0);
   const [branch, setBranch] = useState<string>("Loading Branch");
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     fetch(`${api}/v2/build-info`)
@@ -53,7 +54,7 @@ const AboutDialog: React.FC<IProps> = ({ open, setOpen }) => {
           <DialogContentText>
             {t("about:build_number")
               .replace("{number}", build.toString())
-              .replace("{date}", moment.utc(builtOn).local().format("MM/DD/YYYY h:mm:ss A"))}
+              .replace("{date}", moment.utc(builtOn).locale(i18n.language).local().format("MM/DD/YYYY h:mm:ss A"))}
           </DialogContentText>
           <DialogContentText>{branch}</DialogContentText>
         </div>

@@ -1,7 +1,7 @@
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { useState } from "react";
 import fs from "fs";

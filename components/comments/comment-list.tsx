@@ -5,7 +5,7 @@ import { AddComment, CommentItem } from ".";
 import { useTranslation } from "react-i18next";
 import { Record } from "pocketbase";
 import pb from "../../src/pocketbase";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 interface IProps {

@@ -1,7 +1,7 @@
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import { Record } from "pocketbase";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";

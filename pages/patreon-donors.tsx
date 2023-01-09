@@ -1,6 +1,6 @@
 import Paper from "@mui/material/Paper";
 import Plus from "@mui/icons-material/Add";
-import moment from "moment";
+import moment from "moment-with-locales-es6";
 import { Layout } from "../components/layout";
 import { MetaHead } from "../components/meta-head";
 import styles from "../styles/PatreonDonors.module.scss";
@@ -11,7 +11,7 @@ import getPbImagePath from "../src/utils/getPbImagePath";
 import { useTranslation } from "react-i18next";
 
 const PatreonDonors = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [patreons, setPatreons] = useState([]);
 
   useEffect(() => {
@@ -46,7 +46,12 @@ const PatreonDonors = () => {
                 />
                 <div className={styles.infoContainer}>
                   <span className={styles.name}>{patreon.name}</span>
-                  <span>{t("patreon_donors:since").replace("{time}", moment.utc(patreon.since).fromNow())}</span>
+                  <span>
+                    {t("patreon_donors:since").replace(
+                      "{time}",
+                      moment.utc(patreon.since).locale(i18n.language).fromNow()
+                    )}
+                  </span>
                   <span>{patreon.amount}</span>
                 </div>
               </Paper>
