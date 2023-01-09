@@ -9,14 +9,5 @@
       "user": "noreply@unusannusarchive.tk",
       "pass": "abc123"
     }
-  },
-  "s3": {
-    "endpoint": "https://bucket-name.s3.region-code.amazonaws.com",
-    "region": "region",
-    "forcePathStyle": false,
-    "credentials": {
-      "accessKeyId": "1234567890",
-      "secretAccessKey": "a1b2c3d4e5"
-    }
   }
 }
