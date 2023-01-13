@@ -56,13 +56,13 @@ const CommentOptions: React.FC<IProps> = ({ comment, commentUser, mutate }) => {
             <ListItemIcon>
               <PencilIcon />
             </ListItemIcon>
-            <ListItemText>Edit</ListItemText>
+            <ListItemText>{t("comments:actions:edit:action")}</ListItemText>
           </MenuItem>
           <MenuItem onClick={openDeleteCommentUI}>
             <ListItemIcon>
               <TrashIcon />
             </ListItemIcon>
-            <ListItemText>Delete</ListItemText>
+            <ListItemText>{t("comments:actions:delete:action")}</ListItemText>
           </MenuItem>
         </div>
       </Menu>
