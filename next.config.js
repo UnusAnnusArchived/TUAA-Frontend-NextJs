@@ -14,6 +14,7 @@ module.exports = withPWA({
   images: {
     domains: ["usc1.contabostorage.com", "signer.unusann.us"],
   },
+  productionBrowserSourceMaps: true,
   i18n: {
     locales: [
       "en",

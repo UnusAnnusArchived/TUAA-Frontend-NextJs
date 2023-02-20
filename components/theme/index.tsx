@@ -6,7 +6,7 @@ import { ThemeProvider as ActualThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./theme";
 
 const ThemeProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-  const [theme, setTheme] = useState(darkTheme);
+  const [theme, setTheme] = useState(createTheme(darkTheme));
 
   const [colorScheme] = useRecoilState(colorSchemeAtom);
 
