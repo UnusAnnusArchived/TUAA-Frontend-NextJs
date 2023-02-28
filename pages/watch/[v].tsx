@@ -12,7 +12,7 @@ import { EpisodesRow } from "../../components/episodes-controls";
 import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
-import { IVideo } from "../../src/types";
+import { IMetadataV2Source, IVideo } from "../../src/types";
 import VideoDownloadOptions from "../../components/video-download-options";
 import { useTheme } from "@mui/material";
 
@@ -27,7 +27,7 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
 
   const published = new Date(video.date ?? video.releasedate);
   const embedUrl = `https://unusann.us/embed/${watchCode}`;
-  const metaVideoUrl = video.video ?? video.sources[0].src;
+  const metaVideoUrl = video.video ?? (video.sources[0] as IMetadataV2Source).src;
 
   const [showDownloadOptions, setShowDownloadOptions] = useState(false);
 

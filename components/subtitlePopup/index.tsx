@@ -43,7 +43,7 @@ const SubtitlePopup: React.FC<IProps> = ({ video, open, setOpen }) => {
             {video.tracks?.map((subtitle) => {
               if (subtitle.kind === "captions") {
                 return (
-                  <MenuItem key={subtitle.srcLang} value={subtitle.src}>
+                  <MenuItem key={subtitle.srclang} value={subtitle.src}>
                     {subtitle.label}
                   </MenuItem>
                 );

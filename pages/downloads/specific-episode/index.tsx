@@ -12,7 +12,7 @@ import { IVideo, Seasons } from "../../../src/types";
 import { Typography } from "@mui/material";
 
 interface IProps {
-  seasons: Seasons;
+  seasons: Seasons<IVideo>;
 }
 
 const Page: React.FC<IProps> = ({ seasons }) => {
@@ -49,7 +49,7 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 export default Page;
 
 export const getStaticProps: GetStaticProps<IProps> = async (context) => {
-  let metadata: Seasons = [[], []];
+  let metadata: Seasons<IVideo> = [[], []];
 
   const s00 = fs.readdirSync(`${config.metadataPath}/00`);
   for (let i = 0; i < s00.length; i++) {

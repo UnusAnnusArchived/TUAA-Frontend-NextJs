@@ -50,7 +50,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }) ?? [{ src: `${cdn}${video.video}` }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${api}/subtitles?url=${track.src}` };
+          return { ...track, src: `${api}/subtitles?url=${track.src}`, kind: "captions" };
         }) ?? [],
       previewThumbnails: {
         enabled: true,
@@ -145,7 +145,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${api}/subtitles?url=${cdn}${track.src}` };
+          return { ...track, src: `${api}/subtitles?url=${cdn}${track.src}`, kind: "captions" };
         }) ?? [],
       previewThumbnails: {
         enabled: true,

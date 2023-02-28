@@ -3,7 +3,7 @@ import { handle404, handle500 } from "../../../../_handleErrors";
 import { cdn } from "../../../../../../src/endpoints.json";
 import { metadataPath } from "../../../../../../src/config.json";
 import type { NextApiHandler } from "next";
-import type { IVideo } from "../../../../../../src/types";
+import type { IMetadataV2Source, IVideo } from "../../../../../../src/types";
 
 const torrentSource: NextApiHandler = (req, res) => {
   const season = req.query.season.toString();
@@ -17,7 +17,7 @@ const torrentSource: NextApiHandler = (req, res) => {
       return res.redirect(`${cdn}${metadata.video}`);
     }
 
-    res.redirect(`${cdn}${metadata.sources[0].src}`);
+    res.redirect(`${cdn}${(metadata.sources[0] as IMetadataV2Source).src}`);
   } catch (err) {
     if (err.code === "ENOENT") {
       return handle404(req, res);

@@ -1,8 +1,26 @@
-import type { Source as PlyrSource, Track as PlyrTrack } from "plyr";
+export type IVideo = {
+  _metadata_version?: 1 | 2 | 3;
+  video?: string;
+  season: number;
+  episode: number;
+  title: string;
+  description: string;
+  releasedate?: number;
+  thumbnail?: string;
+  sources?: IMetadataV2Source[] | IMetadataV3Source[];
+  tracks?: IMetadataV2Track[];
+  posters?: IMetadataV2Poster[];
+  date?: number;
+  duration?: number;
+  audio?: IMetadataV3Audio[];
+  captions?: IMetadataV3Caption[];
+  thumbnails?: IMetadataV3Thumbnails;
+  previewSprites?: any;
+};
 
-export type IVideo = IMetadataV1 | IMetadataV2 | IMetadataV3;
+export type Seasons<T extends IMetadataV1 | IMetadataV2 | IMetadataV3 | IVideo> = [T[], T[]];
 
-export interface IMetadataV1 {
+export type IMetadataV1 = {
   _metadata_version: 1;
   video: string;
   season: number;
@@ -11,9 +29,9 @@ export interface IMetadataV1 {
   description: string;
   releasedate: number;
   thumbnail: string;
-}
+};
 
-export interface IMetadataV2 {
+export type IMetadataV2 = {
   _metadata_version: 2;
   sources: IMetadataV2Source[];
   tracks: IMetadataV2Track[];
@@ -24,30 +42,30 @@ export interface IMetadataV2 {
   description: string;
   date: number;
   duration?: number;
-}
+};
 
-export interface IMetadataV2Source {
+export type IMetadataV2Source = {
   src: string;
   type: string;
   size: number;
-}
+};
 
-export interface IMetadataV2Track {
+export type IMetadataV2Track = {
   kind: string;
   label: string;
   srclang: string;
   src: string;
-}
+};
 
-export interface IMetadataV2Poster {
+export type IMetadataV2Poster = {
   src: string;
   type: string;
   size?: number;
-}
+};
 
-export interface IMetadataV3 {
+export type IMetadataV3 = {
   _metadata_version: 3;
-  sources: Array<IMetadataV3TUAASource | IMetadataV3EmbedSource | IMetadataV3DirectSource>;
+  sources: Array<IMetadataV3Source>;
   audio: IMetadataV3Audio[];
   captions: IMetadataV3Caption[];
   thumbnails: IMetadataV3Thumbnails;
@@ -57,62 +75,64 @@ export interface IMetadataV3 {
   description: string;
   date: number;
   duration?: number;
-}
+};
 
-export interface IMetadataV3TUAASource {
+export type IMetadataV3Source = IMetadataV3TUAASource | IMetadataV3EmbedSource | IMetadataV3DirectSource;
+
+export type IMetadataV3TUAASource = {
   type: "tuaa";
   id: string;
   resolutions: IMetadataV3TUAASourceResolution[];
-}
+};
 
-export interface IMetadataV3EmbedSource {
+export type IMetadataV3EmbedSource = {
   type: "embed";
   id: string;
   name: string;
   src: string;
-}
+};
 
-export interface IMetadataV3DirectSource {
+export type IMetadataV3DirectSource = {
   type: "direct";
   id: string;
   name: string;
   resolutions: IMetadataV3DirectSourceResolution[];
-}
+};
 
-export interface IMetadataV3DirectSourceResolution {
+export type IMetadataV3DirectSourceResolution = {
   src: string;
   size: number;
-}
+};
 
-export interface IMetadataV3TUAASourceResolution {
+export type IMetadataV3TUAASourceResolution = {
   src: string;
   size: number;
-}
+};
 
-export interface IMetadataV3Audio {
+export type IMetadataV3Audio = {
   lang: string;
   label: string;
   src: string;
   default: boolean;
-}
+};
 
-export interface IMetadataV3Caption {
+export type IMetadataV3Caption = {
   label: string;
   srclang: string;
   src: string;
   default: boolean;
-}
+};
 
-export interface IMetadataV3Thumbnails {
+export type IMetadataV3Thumbnails = {
   avif: IMetadataV3Thumbnail;
   webp: IMetadataV3Thumbnail;
   jpg: IMetadataV3Thumbnail;
-}
+};
 
-export interface IMetadataV3Thumbnail {
+export type IMetadataV3Thumbnail = {
   src: string;
   size?: number;
-}
+};
 
 export interface IEpisodeAround {
   nextEp?: string;
