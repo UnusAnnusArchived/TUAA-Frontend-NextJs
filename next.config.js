@@ -12,7 +12,7 @@ const withPWA = require("next-pwa")({
 module.exports = withPWA({
   reactStrictMode: true,
   images: {
-    domains: ["usc1.contabostorage.com", "signer.unusann.us"],
+    domains: ["stream.unusann.us"],
   },
   productionBrowserSourceMaps: true,
   i18n: {
