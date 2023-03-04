@@ -36,6 +36,7 @@ yarn-error.log*
 .vscode/settings.json
 
 public/sw.js
+public/sw.js.map
 public/workbox-*.js
 
 db/*

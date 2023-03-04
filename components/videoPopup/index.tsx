@@ -1,4 +1,4 @@
-import { LoadingButton } from "@mui/lab";
+import { useToasts } from "@geist-ui/react";
 import {
   Button,
   Dialog,
@@ -10,12 +10,13 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
+  Typography,
 } from "@mui/material";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useRouter } from "next/router";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { cdn } from "../../src/endpoints.json";
-import { IVideo } from "../../src/types";
-import ProgressBar from "./progressBar";
+import endpoints from "../../src/endpoints.json";
+import { IMetadataV2Source, IVideo } from "../../src/types";
 
 interface IProps {
   video: IVideo;
@@ -25,98 +26,78 @@ interface IProps {
 
 const VideoPopup: React.FC<IProps> = ({ video, open, setOpen }) => {
   const { t } = useTranslation();
+  const [, setToast] = useToasts();
+  const [value, setValue] = useState<string>("");
   const [videoUrl, setVideoUrl] = useState<string>();
-  const [downloading, setDownloading] = useState(false);
-  const [filesize, setFilesize] = useState<number>();
-  const [recievedFilesize, setRecievedFilesize] = useState<number>();
-  const [err, setErr] = useState();
+  const [videoSize, setVideoSize] = useState<number>();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (video.video) {
+      setVideoUrl(`${endpoints.download}${video.video}`);
+      setVideoSize(1080);
+    }
+  }, []);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setVideoUrl(event.target.value);
+    setValue(event.target.value);
+    setVideoUrl(`${endpoints.download}${event.target.value}`);
+    setVideoSize(
+      (video.sources as unknown as IMetadataV2Source[])?.find?.((source) => source.src === event.target.value).size
+    );
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setValue("");
     setVideoUrl(undefined);
-    setDownloading(false);
-    setFilesize(undefined);
-    setRecievedFilesize(undefined);
+    setVideoSize(undefined);
+    setOpen(false);
   };
 
-  const download = async () => {
-    try {
-      setDownloading(true);
-      const res = await fetch(videoUrl);
-      const reader = res.body.getReader();
-      const contentLength = parseInt(res.headers.get("Content-Length"));
-      setFilesize(contentLength);
-      let contentReceived = 0;
-      let videoData = [];
-      while (true) {
-        const { done, value } = await reader.read();
-        // if (!downloading) {
-        //   reader.cancel();
-        //   break;
-        // }
-        if (done) {
-          setVideoUrl("");
-          setDownloading(false);
-          setFilesize(undefined);
-          setRecievedFilesize(undefined);
-          let blob = new Blob(videoData, { type: "video/mp4" });
-          const a = document.createElement("a");
-          a.href = URL.createObjectURL(blob);
-          a.download = `${video.title}.mp4`;
-          a.click();
-          URL.revokeObjectURL(a.href);
-          break;
-        }
-        videoData.push(value);
-        contentReceived += value.length;
-        setRecievedFilesize(contentReceived);
-      }
-    } catch (error) {
-      setErr(error);
-    }
+  const handleDownload = () => {
+    window && window.open(`${videoUrl}?filename=${encodeURIComponent(`${video.title} (${videoSize}p).mp4`)}`, "_blank");
+    handleClose();
+  };
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(`${videoUrl}?filename=${encodeURIComponent(`${video.title} (${videoSize}p).mp4`)}`);
+    handleClose();
+    setToast({ type: "default", text: t("common:copied_toast") });
   };
 
   return (
     <Dialog fullWidth open={open} onClose={handleClose}>
       <DialogTitle>{t("downloads:specific_episode_page:video:header")}</DialogTitle>
       <DialogContent>
-        <FormControl fullWidth>
-          <InputLabel>{t("downloads:specific_episode_page:video:resolution_selector")}</InputLabel>
-          <Select
-            label={t("downloads:specific_episode_page:video:resolution_selector")}
-            value={videoUrl}
-            onChange={handleChange}
-          >
-            {(video?.sources ?? [{ size: "1080", src: video.video }]).map((source) => {
-              return (
-                <MenuItem key={source.size} value={`${cdn}${source.src}`}>
-                  {source.size}p
-                </MenuItem>
-              );
-            })}
-          </Select>
-          <div style={{ marginTop: 10, textAlign: "center" }}>
-            {downloading && <ProgressBar value={(recievedFilesize / filesize) * 100} />}
-          </div>
-        </FormControl>
+        {video.video ? (
+          <Typography>{t("downloads:specific_episode_page:video:no_resolutions")}</Typography>
+        ) : (
+          <FormControl fullWidth>
+            <InputLabel>{t("downloads:specific_episode_page:video:resolution_selector")}</InputLabel>
+            <Select
+              label={t("downloads:specific_episode_page:video:resolution_selector")}
+              value={value}
+              onChange={handleChange}
+            >
+              {video.sources?.map((source) => {
+                return (
+                  <MenuItem key={source.src} value={source.src}>
+                    {source.size}p
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        )}
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>{t("common:cancel")}</Button>
-        <LoadingButton
-          style={{ paddingRight: downloading ? 40 : undefined }}
-          onClick={download}
-          loading={downloading}
-          loadingPosition="end"
-          variant="contained"
-        >
-          {downloading
-            ? `${Math.round(recievedFilesize / 1000) / 1000}MB/${Math.round(filesize / 1000) / 1000}MB`
-            : t("downloads:specific_episode_page:download_action")}
-        </LoadingButton>
+        <Button onClick={copyLink} disabled={videoUrl === undefined}>
+          {t("downloads:specific_episode_page:copy_action")}
+        </Button>
+        <Button onClick={handleDownload} variant="contained" disabled={videoUrl === undefined}>
+          {t("downloads:specific_episode_page:download_action")}
+        </Button>
       </DialogActions>
     </Dialog>
   );

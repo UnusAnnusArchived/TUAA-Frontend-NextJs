@@ -187,12 +187,14 @@ const en = {
       video: {
         header: "Video",
         resolution_selector: "Resolution",
+        no_resolutions: "This video does not have multiple resolutions to select.",
       },
       subtitles: {
         header: "Subtitles",
         language_selector: "Language",
       },
       download_action: "Download",
+      copy_action: "Copy Link",
     },
   },
   seasons: {
