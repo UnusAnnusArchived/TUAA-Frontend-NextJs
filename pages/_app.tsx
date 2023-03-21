@@ -50,7 +50,8 @@ const App = ({ Component, pageProps }: AppProps) => {
             <NonSsrWrapper>
               <Typography sx={{ textAlign: "center" }}>
                 The site is going to be offline due to planned maintenance on{" "}
-                {moment(1679504400000).format("MMMM Do YYYY [at] LT UTCZ")} (in {moment(1679504400000).fromNow()})
+                {moment(1679504400000).format("MMMM Do YYYY [at] LT UTCZ")} (in {moment(1679504400000).fromNow()}) and
+                on {moment(1679670000000).format("MMMM Do YYYY [at] LT UTCZ")} (in {moment(1679670000000).fromNow()}).
               </Typography>
               <Component {...pageProps} />
             </NonSsrWrapper>
