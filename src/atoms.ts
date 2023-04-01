@@ -54,3 +54,9 @@ export const colorSchemeAtom = atom<IColorScheme>({
   default: "dark",
   effects_UNSTABLE: [localStorageEffect("colorScheme")],
 });
+
+export const changedColorSchemeAtom = atom<boolean>({
+  key: "aprilFools23ChangedColorScheme",
+  default: false,
+  effects: [localStorageEffect("aprilFools23ChangedColorScheme")],
+});
