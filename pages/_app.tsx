@@ -1,17 +1,16 @@
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/globals.scss";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import { theme } from "../components/theme/theme";
-import { RecoilRoot, useRecoilState } from "recoil";
+import { RecoilRoot } from "recoil";
 import { GeistProvider } from "@geist-ui/react";
 import { useRouter } from "next/router";
 import { initTranslations } from "../src/i18n/i18n";
 import NonSsrWrapper from "../components/non-ssr-wrapper";
 import ThemeProvider from "../components/theme";
-import { Dialog, DialogContent, DialogTitle, Paper, Typography, colors } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import moment from "moment-with-locales-es6";
-import { changedColorSchemeAtom, colorSchemeAtom } from "../src/atoms";
 
 export const reportWebVitals = (metric: NextWebVitalsMetric) => {
   const { id, name, label, value } = metric;
@@ -49,7 +48,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <ThemeProvider>
           <GeistProvider>
             <NonSsrWrapper>
-              <ColorSwitcher />
+              <Typography sx={{ textAlign: "center" }}>
+                The site is going to be offline due to planned maintenance on{" "}
+                {moment(1679504400000).format("MMMM Do YYYY [at] LT UTCZ")} (in {moment(1679504400000).fromNow()}) and
+                on {moment(1679670000000).format("MMMM Do YYYY [at] LT UTCZ")} (in {moment(1679670000000).fromNow()}).
+              </Typography>
               <Component {...pageProps} />
             </NonSsrWrapper>
           </GeistProvider>
@@ -57,24 +60,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       </RecoilRoot>
     </>
   );
-};
-
-const ColorSwitcher: React.FC = () => {
-  const [changedColorScheme, setChangedColorScheme] = useRecoilState(changedColorSchemeAtom);
-  const [colorScheme, setColorScheme] = useRecoilState(colorSchemeAtom);
-
-  useEffect(() => {
-    if (!changedColorScheme) {
-      if (colorScheme === "dark") {
-        setColorScheme("light");
-      } else if (colorScheme === "light") {
-        setColorScheme("dark");
-      }
-      setChangedColorScheme(true);
-    }
-  }, [changedColorScheme, colorScheme]);
-
-  return <></>;
 };
 
 export default App;

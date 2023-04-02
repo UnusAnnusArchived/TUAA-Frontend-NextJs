@@ -129,33 +129,6 @@ body {
   display: none;
 }
 
-.april-fools-animation {
-  animation: aprilFoolsAnimation 5s ease;
-  transform-origin: top left;
-}
-
-.april-fools-animation-finished {
-  opacity: 0;
-}
-
-@keyframes aprilFoolsAnimation {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  10% {
-    transform: rotate(105deg);
-  }
-  25% {
-    transform: rotate(75deg);
-  }
-  55% {
-    transform: rotate(95deg);
-  }
-  100% {
-    transform: translate(-20px, 200vh) rotate(129deg);
-  }
-}
-
 // .text-center {
 //   text-align: center !important;
 // }
