@@ -10,9 +10,10 @@ import { ThumbnailImage } from "../thumbnail-image/thumbnail-image";
 
 interface IProps {
   video: IVideo;
+  showSeason?: boolean;
 }
 
-const VideoThumbnail: React.FC<IProps> = ({ video }) => {
+const VideoThumbnail: React.FC<IProps> = ({ video, showSeason }) => {
   const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
 
   const date = new Date(video.date ?? video.releasedate);
@@ -36,7 +37,8 @@ const VideoThumbnail: React.FC<IProps> = ({ video }) => {
       </div>
       <div className="text-center mt-2">
         <Typography variant="body2">
-          {t("player:episode")} {video.episode.toString()} - {moment(date).locale(i18n.language).format("DD. MMM YYYY")}
+          {t("player:season")} {video.season.toString()} {t("player:episode")} {video.episode.toString()} -{" "}
+          {moment(date).locale(i18n.language).format("DD. MMM YYYY")}
         </Typography>
       </div>
     </Paper>

@@ -13,7 +13,6 @@ export default function all(req: NextApiRequest, res: NextApiResponse) {
     );
     const version = detect(currentMetadata);
     const wantedVersion = parseInt(req.query.version as string) || (req.query.version as string);
-    console.log(handlers[version]);
     metadata[seasonIndex].push(handlers[version][wantedVersion](currentMetadata));
   };
 

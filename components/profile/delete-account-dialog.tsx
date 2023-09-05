@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 
 interface IProps {
   open: boolean;
@@ -27,9 +28,9 @@ const DeleteAccountDialog: React.FC<IProps> = ({ open, setOpen }) => {
   const deleteAccount = async () => {
     if (password === confirmPassword) {
       try {
-        const response = await pb.collection("users").authWithPassword(loggedInUser.email, password);
+        const response = await pb.collection(Collection.Users).authWithPassword(loggedInUser.email, password);
         if (response.token) {
-          pb.collection("users").delete(response.record.id);
+          pb.collection(Collection.Users).delete(response.record.id);
           setLoggedInUser(null);
           setToast({
             text: t("profile:delete:success"),

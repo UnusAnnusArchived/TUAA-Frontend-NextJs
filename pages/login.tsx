@@ -18,7 +18,7 @@ import styles from "../styles/Login.module.scss";
 import { useRecoilState } from "recoil";
 import { oAuthProviderAtom } from "../src/atoms";
 import { siteRoot } from "../src/endpoints.json";
-import { PBAuthMethodsList, PBAuthProvider } from "../src/types";
+import { Collection, PBAuthMethodsList, PBAuthProvider } from "../src/types";
 import reactStringReplace from "react-string-replace";
 
 const LoginPage: React.FC = () => {
@@ -30,7 +30,7 @@ const LoginPage: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      const fetchedAuthMethods = await pb.collection("users").listAuthMethods();
+      const fetchedAuthMethods = await pb.collection(Collection.Users).listAuthMethods();
 
       const sortedOrder = [];
 

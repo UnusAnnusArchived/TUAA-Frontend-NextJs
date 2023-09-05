@@ -9,6 +9,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useTranslation } from "react-i18next";
+import { Collection } from "../../src/types";
 
 interface IProps {
   comment: Record;
@@ -25,7 +26,7 @@ const DeleteCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) =
   };
 
   const handleDelete = async () => {
-    await pb.collection("comments").delete(comment.id);
+    await pb.collection(Collection.Comments).delete(comment.id);
     mutate();
     handleClose();
   };
