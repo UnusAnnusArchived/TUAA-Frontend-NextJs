@@ -116,14 +116,16 @@ const AppMenu: React.FC = () => {
               <ListItemText>{t("pages:settings")}</ListItemText>
             </MenuItem>
           </Link>
-          <Link href="/playlist/my-playlists" passHref>
-            <MenuItem>
-              <ListItemIcon>
-                <List />
-              </ListItemIcon>
-              <ListItemText>My Playlists</ListItemText>
-            </MenuItem>
-          </Link>
+          {loggedInUser && (
+            <Link href="/playlist/my-playlists" passHref>
+              <MenuItem>
+                <ListItemIcon>
+                  <List />
+                </ListItemIcon>
+                <ListItemText>My Playlists</ListItemText>
+              </MenuItem>
+            </Link>
+          )}
           <Link href="/downloads" passHref>
             <MenuItem>
               <ListItemIcon>
