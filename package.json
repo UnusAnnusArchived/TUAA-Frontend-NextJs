@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/core": ">=7.0.0 <8.0.0",
+    "@babel/runtime": "^7.22.5",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@geist-ui/react": "^2.2.0",
@@ -44,6 +45,7 @@
     "recoil-nexus": "^0.4.0",
     "sharp": "^0.29.3",
     "swr": "^1.0.1",
+    "typesense": "^1.5.4",
     "webpack": ">=5.9.0 <6.0.0"
   },
   "devDependencies": {

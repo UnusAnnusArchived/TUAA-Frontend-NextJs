@@ -9,6 +9,7 @@ import pb from "../src/pocketbase";
 import { useEffect, useState } from "react";
 import getPbImagePath from "../src/utils/getPbImagePath";
 import { useTranslation } from "react-i18next";
+import { Collection } from "../src/types";
 
 const PatreonDonors = () => {
   const { t, i18n } = useTranslation();
@@ -16,7 +17,7 @@ const PatreonDonors = () => {
 
   useEffect(() => {
     (async () => {
-      const fetchedPatreons = (await pb.collection("patreons").getList(1, 400, { sort: "name" })).items;
+      const fetchedPatreons = (await pb.collection(Collection.Patreons).getList(1, 400, { sort: "name" })).items;
       setPatreons(fetchedPatreons);
     })();
   }, []);

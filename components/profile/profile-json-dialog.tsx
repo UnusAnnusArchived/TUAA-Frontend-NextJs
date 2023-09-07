@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 
 interface IProps {
   open: boolean;
@@ -19,7 +20,7 @@ const JSONDialog: React.FC<IProps> = ({ open, setOpen }) => {
 
   useEffect(() => {
     (async () => {
-      const fetchedUser = await pb.collection("users").getOne(loggedInUser?.id);
+      const fetchedUser = await pb.collection(Collection.Users).getOne(loggedInUser?.id);
 
       setUser(fetchedUser);
     })();

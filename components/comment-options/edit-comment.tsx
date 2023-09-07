@@ -10,6 +10,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { TextField } from "@mui/material";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
+import { Collection } from "../../src/types";
 
 interface IProps {
   comment: Record;
@@ -27,7 +28,7 @@ const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => 
   };
 
   const handleEdit = async () => {
-    await pb.collection("comments").update(comment.id, {
+    await pb.collection(Collection.Comments).update(comment.id, {
       markdown: newMd,
       isEdited: true,
     });

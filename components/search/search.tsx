@@ -41,7 +41,10 @@ const Search: React.FC = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        setToast({
+          type: "error",
+          text: error,
+        });
       }
     })();
 

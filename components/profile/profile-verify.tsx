@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 
 const VerifyProfile: React.FC = () => {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ const VerifyProfile: React.FC = () => {
   const [sent, setSent] = useState(false);
 
   const handleClick = () => {
-    pb.collection("users").requestVerification(loggedInUser?.email);
+    pb.collection(Collection.Users).requestVerification(loggedInUser?.email);
     setSent(true);
   };
 

@@ -1,3 +1,17 @@
+import { Record } from "pocketbase";
+
+export enum Collection {
+  Users = "users",
+  Apps = "apps",
+  Comments = "comments",
+  Patreons = "patreons",
+  Releases = "releases",
+  TicketTags = "ticket_tags",
+  Tickets = "tickets",
+  UserPlaylists = "user_playlists",
+  VideoProgress = "video_progress",
+}
+
 export type IVideo = {
   _metadata_version?: 1 | 2 | 3;
   video?: string;
@@ -308,17 +322,6 @@ export interface ISwiftMetadata {
   season1: IVideo[];
 }
 
-export interface IUser {
-  id: string;
-  email: string;
-  username: string;
-  hash: string;
-  salt: string;
-  pfp: IUserPFP;
-  loginKeys: string[];
-  isAdmin?: boolean;
-}
-
 export interface PBAuthMethodsList {
   [key: string]: any;
   usernamePassword: boolean;
@@ -336,3 +339,24 @@ export interface PBAuthProvider {
 }
 
 export type IColorScheme = "light" | "dark";
+
+export interface IPlaylist extends Record {
+  user: string;
+  name: string;
+  description?: string;
+  episodes: string;
+  public: boolean;
+  isFavorites: boolean;
+}
+
+export interface IUser extends Record {
+  username: string;
+  email?: string;
+  emailVisability: boolean;
+  verified: boolean;
+  name: string;
+  avatar: string;
+  emails_account: boolean;
+  emails_updates: boolean;
+  isAdmin: boolean;
+}

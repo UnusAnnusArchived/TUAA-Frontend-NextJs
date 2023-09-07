@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 
 const ResetProfile: React.FC = () => {
   const { t } = useTranslation();
@@ -15,12 +16,12 @@ const ResetProfile: React.FC = () => {
   const [newEmail, setNewEmail] = useState("");
 
   const resetEmail = async () => {
-    await pb.collection("users").requestEmailChange(newEmail);
+    await pb.collection(Collection.Users).requestEmailChange(newEmail);
     closeEmailChangeDialog();
   };
 
   const resetPassword = async () => {
-    await pb.collection("users").requestPasswordReset(loggedInUser?.email);
+    await pb.collection(Collection.Users).requestPasswordReset(loggedInUser?.email);
     setSentPassword(true);
   };
 

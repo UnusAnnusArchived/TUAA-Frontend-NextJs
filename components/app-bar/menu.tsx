@@ -27,6 +27,7 @@ import pb from "../../src/pocketbase";
 import getPbImagePath from "../../src/utils/getPbImagePath";
 import { Info as InfoIcon } from "@mui/icons-material";
 import AboutDialog from "../about";
+import List from "@mui/icons-material/List";
 
 const AppMenu: React.FC = () => {
   const { t } = useTranslation();
@@ -113,6 +114,14 @@ const AppMenu: React.FC = () => {
                 <SettingsIcon />
               </ListItemIcon>
               <ListItemText>{t("pages:settings")}</ListItemText>
+            </MenuItem>
+          </Link>
+          <Link href="/playlist/my-playlists" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <List />
+              </ListItemIcon>
+              <ListItemText>My Playlists</ListItemText>
             </MenuItem>
           </Link>
           <Link href="/downloads" passHref>

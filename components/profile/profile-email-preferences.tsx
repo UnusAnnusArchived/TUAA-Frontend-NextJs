@@ -5,13 +5,14 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 
 const EmailPreferences: React.FC = () => {
   const { t } = useTranslation();
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
 
   const accountEmailsChange = async () => {
-    const user = await pb.collection("users").update(loggedInUser?.id, {
+    const user = await pb.collection(Collection.Users).update(loggedInUser?.id, {
       emails_account: !loggedInUser?.emails_account,
     });
 
@@ -23,7 +24,7 @@ const EmailPreferences: React.FC = () => {
   };
 
   const websiteUpdatesChange = async () => {
-    const user = await pb.collection("users").update(loggedInUser?.id, {
+    const user = await pb.collection(Collection.Users).update(loggedInUser?.id, {
       emails_updates: !loggedInUser?.emails_updates,
     });
 

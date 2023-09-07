@@ -5,10 +5,12 @@ import Link from "next/link";
 
 interface IProps {
   videos: IVideo[];
+  showSeasons?: boolean;
+  inPlaylist?: string;
   onDownloadPage?: boolean;
 }
 
-const VideoList: React.FC<IProps> = ({ videos, onDownloadPage }) => {
+const VideoList: React.FC<IProps> = ({ videos, showSeasons, inPlaylist, onDownloadPage }) => {
   return (
     <div className="row">
       {videos.map((video, index) => {
@@ -16,9 +18,16 @@ const VideoList: React.FC<IProps> = ({ videos, onDownloadPage }) => {
 
         return (
           <div key={index} className="col-12 col-md-4 p-2">
-            <Link href={onDownloadPage ? `/downloads/specific-episode/${videoId}` : `/watch/${videoId}`} passHref>
+            <Link
+              href={
+                onDownloadPage
+                  ? `/downloads/specific-episode/${videoId}`
+                  : `/watch/${videoId}${inPlaylist ? `?playlist=${inPlaylist}` : ""}`
+              }
+              passHref
+            >
               <div className="pointer h-100">
-                <VideoThumbnail video={video} />
+                <VideoThumbnail video={video} showSeason={showSeasons} />
               </div>
             </Link>
           </div>

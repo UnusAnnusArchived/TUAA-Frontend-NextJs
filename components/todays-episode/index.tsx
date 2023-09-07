@@ -30,8 +30,6 @@ const TodaysEpisode: React.FC<IProps> = ({ seasons }) => {
       }
     }
 
-    console.log(videosOnToday);
-
     setTodaysEpisodes(videosOnToday);
   }, []);
 

@@ -1,7 +1,20 @@
 import { createTheme } from "@mui/material/styles";
 import type { ThemeOptions } from "@mui/material/styles";
 
+const baseTheme: ThemeOptions = {
+  breakpoints: {
+    values: {
+      xl: 1200,
+      lg: 992,
+      md: 768,
+      sm: 540,
+      xs: 0,
+    },
+  },
+};
+
 export const darkTheme: ThemeOptions = {
+  ...baseTheme,
   palette: {
     mode: "dark",
     primary: {
@@ -16,6 +29,7 @@ export const darkTheme: ThemeOptions = {
 };
 
 export const lightTheme: ThemeOptions = {
+  ...baseTheme,
   palette: {
     mode: "light",
     primary: {

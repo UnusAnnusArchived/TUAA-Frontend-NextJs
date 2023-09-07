@@ -7,6 +7,7 @@ import { Record } from "pocketbase";
 import pb from "../../src/pocketbase";
 import moment from "moment-with-locales-es6";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Collection } from "../../src/types";
 
 interface IProps {
   watchCode: string;
@@ -17,7 +18,8 @@ const CommentList: React.FC<IProps> = ({ watchCode }) => {
   const [sortType, setSortType] = useState("latest");
 
   const fetcher = async (sortType: string) => {
-    const comments = (await pb.collection("comments").getList(1, 400, { filter: `episode="${watchCode}"` })).items;
+    const comments = (await pb.collection(Collection.Comments).getList(1, 400, { filter: `episode="${watchCode}"` }))
+      .items;
 
     if (sortType === "latest" || sortType === "oldest") {
       comments.sort((aDate, bDate) => {

@@ -14,6 +14,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import { useToasts } from "@geist-ui/react";
 import { useTranslation } from "react-i18next";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 const Input = styled("input")({
   display: "none",
 });
@@ -62,7 +63,7 @@ const ChangePic: React.FC = () => {
       const formData = new FormData();
       formData.append("avatar", image);
 
-      const newProfile = await pb.collection("users").update(loggedInUser?.id, formData);
+      const newProfile = await pb.collection(Collection.Users).update(loggedInUser?.id, formData);
       setToast({
         type: "success",
         text: t("profile:pfp:change:success"),

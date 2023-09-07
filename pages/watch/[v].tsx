@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import moment from "moment-with-locales-es6";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import fs from "fs";
 import config from "../../src/config.json";
 import { useTranslation } from "react-i18next";
@@ -12,9 +12,24 @@ import { EpisodesRow } from "../../components/episodes-controls";
 import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
-import { IMetadataV2Source, IVideo } from "../../src/types";
+import { Collection, IMetadataV2Source, IPlaylist, IVideo } from "../../src/types";
 import VideoDownloadOptions from "../../components/video-download-options";
-import { useTheme } from "@mui/material";
+import { IconButton, useMediaQuery, useTheme } from "@mui/material";
+import { useRouter } from "next/router";
+import PlaylistSmallView from "../../components/playlist-small-view";
+import pb from "../../src/pocketbase";
+import { Favorite, FavoriteBorder, PlaylistAdd } from "@mui/icons-material";
+import {
+  addVideoToPlaylist,
+  handleCreateFavorites,
+  handleCreatePlaylist,
+  removeVideoFromPlaylist,
+} from "../../src/utils/playlistActions";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
+import { useToasts } from "@geist-ui/react";
+import AddToPlaylist from "../../components/add-to-playlist";
+import CreatePlaylist, { HandleCreatePlaylist } from "../../components/create-playlist";
 
 interface IProps {
   watchCode: string;
@@ -22,16 +37,83 @@ interface IProps {
 }
 
 const Watch: React.FC<IProps> = ({ watchCode, video }) => {
+  const [inPlaylist, setInPlaylist] = useState<IPlaylist>();
   const { i18n } = useTranslation();
+  const router = useRouter();
   const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
+  const theme = useTheme();
+  const isLgDown = useMediaQuery(theme.breakpoints.down("lg"));
+  const [playerHeight, setPlayerHeight] = useState(0);
+  const [showDownloadOptions, setShowDownloadOptions] = useState(false);
+  const [videoIsFavorited, setVideoIsFavorited] = useState(false);
+  const [videoIsFavoritedBtn, setVideoIsFavoritedBtn] = useState(false);
+  const [addToPlaylistOpen, setAddToPlaylistOpen] = useState(false);
+  const [createPlaylistOpen, setCreatePlaylistOpen] = useState(false);
+  const [currentUser] = useRecoilState(userAtom);
+  const [, setToast] = useToasts();
 
   const published = new Date(video.date ?? video.releasedate);
   const embedUrl = `https://unusann.us/embed/${watchCode}`;
   const metaVideoUrl = video.video ?? (video.sources[0] as IMetadataV2Source).src;
 
-  const [showDownloadOptions, setShowDownloadOptions] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const playlistId = router.query.playlist as string;
 
-  const theme = useTheme();
+      if (playlistId) {
+        const playlist = await pb.collection(Collection.UserPlaylists).getOne<IPlaylist>(playlistId);
+
+        if (playlist.episodes.includes(watchCode)) {
+          setInPlaylist(playlist);
+        }
+      }
+    })();
+  }, [router, router.query]);
+
+  useMemo(() => {
+    setVideoIsFavoritedBtn(videoIsFavorited);
+  }, [videoIsFavorited]);
+
+  const handleFavorite = async () => {
+    try {
+      if (videoIsFavorited) {
+        setVideoIsFavoritedBtn(false);
+        await removeVideoFromPlaylist(currentUser, watchCode, "favorites");
+        setVideoIsFavorited(false);
+      } else {
+        setVideoIsFavoritedBtn(true);
+        await addVideoToPlaylist(currentUser, watchCode, "favorites");
+        setVideoIsFavorited(true);
+      }
+    } catch (err) {
+      setVideoIsFavoritedBtn(videoIsFavorited);
+      setToast({
+        type: "error",
+        text: err.toString(),
+      });
+    }
+  };
+
+  const handleOpenAddToPlaylistDialog = () => {
+    setAddToPlaylistOpen(true);
+  };
+
+  const handleOpenCreatePlaylistDialog = () => {
+    setAddToPlaylistOpen(false);
+    setCreatePlaylistOpen(true);
+  };
+
+  const handleCreatePlaylistFromDialog: HandleCreatePlaylist = async (
+    name: string,
+    description: string,
+    isPublic: boolean,
+    handleClose: () => void
+  ) => {
+    const playlist = await handleCreatePlaylist(currentUser, name, description, isPublic);
+    await addVideoToPlaylist(currentUser, watchCode, playlist.id);
+    handleClose();
+    router.push(`/playlist/${playlist.id}`);
+  };
 
   return (
     <Layout>
@@ -43,8 +125,18 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
         description={video.description}
         image={`https:${image}`}
       />
-      <Player video={video} watchCode={watchCode} setShowDownloadOptions={setShowDownloadOptions} />
-      <EpisodesRow watchCode={watchCode} />
+      <div style={{ display: "flex", flexDirection: isLgDown ? "column" : "row" }}>
+        <Player
+          video={video}
+          watchCode={watchCode}
+          setShowDownloadOptions={setShowDownloadOptions}
+          setPlayerHeight={setPlayerHeight}
+        />
+        {inPlaylist && (
+          <PlaylistSmallView playlist={inPlaylist} playerHeight={playerHeight} currentEpisodeId={watchCode} />
+        )}
+      </div>
+      {!inPlaylist && <EpisodesRow watchCode={watchCode} />}
       <Paper className={`my-3 p-3 ${showDownloadOptions ? "" : "display-none"}`}>
         <VideoDownloadOptions video={video} />
       </Paper>
@@ -58,9 +150,18 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
           },
         }}
       >
-        <Typography variant="h6" component="h1">
-          {video.title}
-        </Typography>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <Typography variant="h6" component="h1">
+            {video.title}
+          </Typography>
+          <div style={{ flexGrow: 1 }} />
+          <IconButton onClick={handleOpenAddToPlaylistDialog}>
+            <PlaylistAdd />
+          </IconButton>
+          <IconButton onClick={handleFavorite}>
+            {videoIsFavoritedBtn ? <Favorite color="error" /> : <FavoriteBorder />}
+          </IconButton>
+        </div>
         <Typography variant="body2" component="p">
           {moment(published).locale(i18n.language).format("DD MMMM YYYY")}
         </Typography>
@@ -74,6 +175,17 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
       <Paper className="my-3 p-3">
         <CommentList watchCode={watchCode} />
       </Paper>
+      <AddToPlaylist
+        videoId={watchCode}
+        open={addToPlaylistOpen}
+        setOpen={setAddToPlaylistOpen}
+        handleCreatePlaylist={handleOpenCreatePlaylistDialog}
+      />
+      <CreatePlaylist
+        open={createPlaylistOpen}
+        setOpen={setCreatePlaylistOpen}
+        handleResult={handleCreatePlaylistFromDialog}
+      />
     </Layout>
   );
 };

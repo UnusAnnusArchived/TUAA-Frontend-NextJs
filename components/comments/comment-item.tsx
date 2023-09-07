@@ -14,6 +14,7 @@ import styles from "./comment-item.module.scss";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import { KeyedMutator } from "swr";
+import { Collection } from "../../src/types";
 
 const md = MarkdownIt({ html: false, xhtmlOut: false, breaks: true, langPrefix: "", linkify: true })
   .disable(["image", "link"])
@@ -60,12 +61,10 @@ const CommentItem: React.FC<IProps> = ({ comment, mutate }) => {
   const [commentUser, setCommentUser] = useState<Record>(null);
   const [loggedInUser] = useRecoilState(userAtom);
 
-  console.log(comment);
-
   useEffect(() => {
     (async () => {
       try {
-        const user = await pb.collection("users").getOne(comment.user);
+        const user = await pb.collection(Collection.Users).getOne(comment.user);
         setCommentUser(user);
       } catch (err) {
         console.error(err, `id="${comment.user}"`);

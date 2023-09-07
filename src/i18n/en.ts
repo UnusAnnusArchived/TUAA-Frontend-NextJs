@@ -247,6 +247,7 @@ const en = {
     negative_action_toast: "Alright, we won't show you this anymore.",
   },
   player: {
+    season: "Season",
     episode: "Episode",
     previous_episode: "Previous Episode",
     next_episode: "Next Episode",
