@@ -8,7 +8,7 @@ import { Theme } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
-import { Collection } from "../../src/types";
+import { Collection, IUser } from "../../src/types";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,7 +34,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
 
         if (user.token) {
           document.cookie = pb.authStore.exportToCookie({ secure: false, httpOnly: false, sameSite: false });
-          setLoggedInUser(user.record);
+          setLoggedInUser(user.record as IUser);
         } else {
           setLoggedInUser(null);
         }

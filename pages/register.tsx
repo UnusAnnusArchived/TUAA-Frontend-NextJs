@@ -19,7 +19,7 @@ import { useToasts } from "@geist-ui/react";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
 import pb from "../src/pocketbase";
-import { Collection } from "../src/types";
+import { Collection, IUser } from "../src/types";
 
 const LoginPage: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useRecoilState(userAtom);
@@ -57,7 +57,7 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const user = await pb.collection(Collection.Users).create({
+      const user = await pb.collection(Collection.Users).create<IUser>({
         email: email.trim(),
         name: name.trim(),
         username: username.trim(),

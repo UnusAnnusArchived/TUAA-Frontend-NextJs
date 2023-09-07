@@ -6,6 +6,7 @@ import { siteRoot } from "../src/endpoints.json";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { MetaHead } from "../components/meta-head";
+import { IUser } from "../src/types";
 
 const OAuth2: React.FC = () => {
   const { t } = useTranslation();
@@ -27,7 +28,7 @@ const OAuth2: React.FC = () => {
         try {
           const authData = await pb
             .collection("users")
-            .authWithOAuth2(provider.name, params.code, provider.codeVerifier, `${siteRoot}/oauth2`);
+            .authWithOAuth2<IUser>(provider.name, params.code, provider.codeVerifier, `${siteRoot}/oauth2`);
           setLoggedInUser(authData.record);
           setProvider(null);
           router.push("/");
