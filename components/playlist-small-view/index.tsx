@@ -24,8 +24,6 @@ const PlaylistSmallView: React.FC<IProps> = ({ playlist, playerHeight, currentEp
 
         const arr = playlist.episodes === "" ? [] : playlist.episodes.split(",");
 
-        console.log(arr);
-
         for (let i = 0; i < arr.length; i++) {
           try {
             const episode = await fetch(`/api/v3/metadata/2/episode/${arr[i]}`).then((res) => res.json());

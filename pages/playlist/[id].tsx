@@ -160,7 +160,6 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (ctx) => {
       },
     };
   } catch (err) {
-    console.log(err, "gay");
     return { props: { initialPlaylist: null, episodes: null }, notFound: true };
   }
 };

@@ -16,8 +16,6 @@ interface IProps {
 }
 
 const MyPlaylists: NextPage<IProps> = ({ playlists, playlistsFirstEpisode }) => {
-  console.log(playlistsFirstEpisode);
-
   return (
     <Layout>
       <MetaHead baseTitle="My Playlists" />
@@ -79,8 +77,6 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (ctx) => {
       const episode = split[1].replace("e", "");
 
       const path = `${config.metadataPath}/${season}/${episode}.json`;
-
-      console.log(playlists.items[i].episodes, episodeId, split, season, episode);
 
       try {
         const video: IVideo = JSON.parse(await fs.readFile(path, "utf-8"));

@@ -41,7 +41,6 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
   }, []);
 
   const handlePlayerResize = () => {
-    console.log(plyr?.elements?.container?.offsetHeight);
     if (plyr?.elements?.container?.offsetHeight) {
       setPlayerHeight(plyr.elements.container.offsetHeight);
     }
