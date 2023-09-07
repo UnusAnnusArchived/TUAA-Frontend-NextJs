@@ -19,18 +19,22 @@ import { useRouter } from "next/router";
 import PlaylistSmallView from "../../components/playlist-small-view";
 import pb from "../../src/pocketbase";
 import { Favorite, FavoriteBorder, PlaylistAdd } from "@mui/icons-material";
-import { addVideoToPlaylist, removeVideoFromPlaylist } from "../../src/utils/playlistActions";
+import {
+  addVideoToPlaylist,
+  handleCreateFavorites,
+  handleCreatePlaylist,
+  removeVideoFromPlaylist,
+} from "../../src/utils/playlistActions";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import { useToasts } from "@geist-ui/react";
 import AddToPlaylist from "../../components/add-to-playlist";
+import CreatePlaylist, { HandleCreatePlaylist } from "../../components/create-playlist";
 
 interface IProps {
   watchCode: string;
   video: IVideo;
 }
-
-export type HandleCreatePlaylist = (videoIdToAdd: string) => Promise<void>;
 
 const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   const [inPlaylist, setInPlaylist] = useState<IPlaylist>();
@@ -44,7 +48,7 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   const [videoIsFavorited, setVideoIsFavorited] = useState(false);
   const [videoIsFavoritedBtn, setVideoIsFavoritedBtn] = useState(false);
   const [addToPlaylistOpen, setAddToPlaylistOpen] = useState(false);
-  const [createPlaylist, setCreatePlaylist] = useState(false);
+  const [createPlaylistOpen, setCreatePlaylistOpen] = useState(false);
   const [currentUser] = useRecoilState(userAtom);
   const [, setToast] = useToasts();
 
@@ -90,12 +94,25 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
     }
   };
 
-  const handleAddToPlaylist = () => {
+  const handleOpenAddToPlaylistDialog = () => {
     setAddToPlaylistOpen(true);
   };
 
-  const handleCreatePlaylist: HandleCreatePlaylist = async (videoIdToAdd: string) => {
+  const handleOpenCreatePlaylistDialog = () => {
     setAddToPlaylistOpen(false);
+    setCreatePlaylistOpen(true);
+  };
+
+  const handleCreatePlaylistFromDialog: HandleCreatePlaylist = async (
+    name: string,
+    description: string,
+    isPublic: boolean,
+    handleClose: () => void
+  ) => {
+    const playlist = await handleCreatePlaylist(currentUser, name, description, isPublic);
+    await addVideoToPlaylist(currentUser, watchCode, playlist.id);
+    handleClose();
+    router.push(`/playlist/${playlist.id}`);
   };
 
   return (
@@ -138,7 +155,7 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
             {video.title}
           </Typography>
           <div style={{ flexGrow: 1 }} />
-          <IconButton onClick={handleAddToPlaylist}>
+          <IconButton onClick={handleOpenAddToPlaylistDialog}>
             <PlaylistAdd />
           </IconButton>
           <IconButton onClick={handleFavorite}>
@@ -162,7 +179,12 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
         videoId={watchCode}
         open={addToPlaylistOpen}
         setOpen={setAddToPlaylistOpen}
-        handleCreatePlaylist={handleCreatePlaylist}
+        handleCreatePlaylist={handleOpenCreatePlaylistDialog}
+      />
+      <CreatePlaylist
+        open={createPlaylistOpen}
+        setOpen={setCreatePlaylistOpen}
+        handleResult={handleCreatePlaylistFromDialog}
       />
     </Layout>
   );

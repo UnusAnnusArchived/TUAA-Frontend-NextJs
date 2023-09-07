@@ -15,7 +15,6 @@ import endpoints from "../../src/endpoints.json";
 import { Collection, IMetadataV3, IPlaylist } from "../../src/types";
 import pb from "../../src/pocketbase";
 import ListItem from "./listItem";
-import { HandleCreatePlaylist } from "../../pages/watch/[v]";
 import { useToasts } from "@geist-ui/react";
 import { addVideoToPlaylist } from "../../src/utils/playlistActions";
 import { useRecoilState } from "recoil";
@@ -25,7 +24,7 @@ interface IProps {
   videoId: string;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  handleCreatePlaylist: HandleCreatePlaylist;
+  handleCreatePlaylist: () => void;
 }
 
 const AddToPlaylist: React.FC<IProps> = ({ videoId, open, setOpen, handleCreatePlaylist }) => {
@@ -49,7 +48,8 @@ const AddToPlaylist: React.FC<IProps> = ({ videoId, open, setOpen, handleCreateP
 
   const handleAdd = async () => {
     if (selectedPlaylistId === "create") {
-      await handleCreatePlaylist(videoId);
+      handleClose();
+      handleCreatePlaylist();
     } else {
       try {
         await addVideoToPlaylist(currentUser, videoId, selectedPlaylistId);
@@ -61,7 +61,7 @@ const AddToPlaylist: React.FC<IProps> = ({ videoId, open, setOpen, handleCreateP
       } catch (err) {
         setToast({
           type: "error",
-          text: err,
+          text: err.toString(),
         });
       }
     }

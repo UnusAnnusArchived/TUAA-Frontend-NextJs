@@ -19,7 +19,9 @@ const ListItem: React.FC<IProps> = ({ selectedPlaylistId, setSelectedPlaylistId,
     (async () => {
       if (!isAddPlaylist) {
         setFirstVideo(
-          await fetch(`/api/v3/metadata/3/episode/${playlist.episodes.split(",")[0]}`).then((res) => res.json())
+          await fetch(
+            `/api/v3/metadata/3/episode/${playlist.episodes === "" ? [] : playlist.episodes.split(",")[0]}`
+          ).then((res) => res.json())
         );
       }
     })();

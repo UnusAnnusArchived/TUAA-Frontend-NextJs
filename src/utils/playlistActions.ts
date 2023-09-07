@@ -18,7 +18,7 @@ export const addVideoToPlaylist = async (user: IUser, videoId: string, playlistI
     }
   }
 
-  let episodes = playlist.episodes.split(",");
+  let episodes = playlist.episodes === "" ? [] : playlist.episodes.split(",");
   let videoExists = false;
   for (let i = 0; i < episodes.length; i++) {
     if (episodes[i].includes(videoId)) {
@@ -57,7 +57,7 @@ export const removeVideoFromPlaylist = async (user: IUser, videoId: string, play
     }
   }
 
-  let episodes = playlist.episodes.split(",");
+  let episodes = playlist.episodes === "" ? [] : playlist.episodes.split(",");
   let videoExists = false;
   let videoIndex: number;
   for (let i = 0; i < episodes.length; i++) {
@@ -93,7 +93,7 @@ export const handleCreateFavorites = async (user: IUser) => {
 };
 
 export const handleCreatePlaylist = async (user: IUser, name: string, description: string, isPublic: boolean) => {
-  return await pb.collection(Collection.UserPlaylists).create({
+  return await pb.collection(Collection.UserPlaylists).create<IPlaylist>({
     user: user.id,
     name,
     description,
@@ -101,4 +101,22 @@ export const handleCreatePlaylist = async (user: IUser, name: string, descriptio
     public: isPublic,
     isFavorites: false,
   } as IPlaylist);
+};
+
+interface EditPlaylistProps {
+  name: string;
+  description: string;
+  isPublic: boolean;
+}
+
+export const handleEditPlaylist = async (playlistId: string, { name, description, isPublic }: EditPlaylistProps) => {
+  return await pb.collection(Collection.UserPlaylists).update<IPlaylist>(playlistId, {
+    name,
+    description,
+    public: isPublic,
+  } as IPlaylist);
+};
+
+export const handleDeletePlaylist = async (playlistId: string) => {
+  return await pb.collection(Collection.UserPlaylists).delete(playlistId);
 };

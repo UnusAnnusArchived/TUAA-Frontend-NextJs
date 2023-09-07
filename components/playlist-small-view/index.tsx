@@ -22,7 +22,9 @@ const PlaylistSmallView: React.FC<IProps> = ({ playlist, playerHeight, currentEp
       try {
         let episodes = [];
 
-        const arr = playlist.episodes.split(",");
+        const arr = playlist.episodes === "" ? [] : playlist.episodes.split(",");
+
+        console.log(arr);
 
         for (let i = 0; i < arr.length; i++) {
           try {
@@ -48,7 +50,7 @@ const PlaylistSmallView: React.FC<IProps> = ({ playlist, playerHeight, currentEp
     })();
   }, [playlist, playlist.user]);
 
-  const skeleton = new Array(playlist.episodes.split(",").length).fill(
+  const skeleton = new Array((playlist.episodes === "" ? [] : playlist.episodes.split(",")).length).fill(
     <>
       <div style={{ display: "flex", flexDirection: "row", margin: "8px 0" }}>
         <Skeleton variant="rectangular" width={100} height={56} animation="wave" />
@@ -84,7 +86,9 @@ const PlaylistSmallView: React.FC<IProps> = ({ playlist, playerHeight, currentEp
           {playlist?.name}
         </Typography>
         <Typography>
-          {user?.name} &bull; {episodes.length > 0 ? episodes.length : playlist.episodes.split(",").length} Videos
+          {user?.name} &bull;{" "}
+          {episodes.length > 0 ? episodes.length : playlist.episodes === "" ? [] : playlist.episodes.split(",").length}{" "}
+          Videos
         </Typography>
       </div>
       <Divider />
