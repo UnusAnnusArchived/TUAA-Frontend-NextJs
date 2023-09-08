@@ -9,9 +9,10 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useTranslation } from "react-i18next";
+import { IComment } from "../../src/types";
 
 interface IProps {
-  comment: Record;
+  comment: IComment;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   mutate: KeyedMutator<Record[]>;

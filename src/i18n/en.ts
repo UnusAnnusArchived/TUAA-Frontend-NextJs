@@ -12,6 +12,8 @@ const en = {
     login: "Login",
     register: "Register",
     oauth2: "Redirecting...",
+    modTools: "Moderator Tools",
+    documentation: "Documentation",
     patreon_donors: "Patreon Donors",
     profile: "Profile",
     settings: "Settings",

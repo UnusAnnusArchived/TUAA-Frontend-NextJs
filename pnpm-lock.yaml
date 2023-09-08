@@ -14,6 +14,7 @@ specifiers:
   '@mui/material': ^5.10.8
   '@mui/styles': ^5.10.8
   '@mui/system': ^5.10.12
+  '@mui/x-data-grid': ^5.17.22
   '@popperjs/core': ^2.11.6
   '@types/formidable': ^2.0.3
   '@types/markdown-it': ^12.2.3
@@ -63,6 +64,7 @@ dependencies:
   '@mui/material': 5.11.4_tczxhfvyguu7yzaxwycl7ermr4
   '@mui/styles': 5.11.2_7u6mpky5dbb5b3hgdescs5ficq
   '@mui/system': 5.11.4_ya2avx664kwrowp2a6u7o4ed6u
+  '@mui/x-data-grid': 5.17.22_t5gmx7k2ko7kbc6kl6cbi4xdlq
   '@popperjs/core': 2.11.6
   axios: 0.24.0
   bootstrap: 5.2.3_@popperjs+core@2.11.6
@@ -1699,6 +1701,26 @@ packages:
       prop-types: 15.8.1
       react: 17.0.2
       react-is: 18.2.0
+    dev: false
+
+  /@mui/x-data-grid/5.17.22_t5gmx7k2ko7kbc6kl6cbi4xdlq:
+    resolution: {integrity: sha512-75nc+BL5G8/KzMOBl7NQ622D9n6mLx3tsRnF0HmccGYLMrZ7jlBMz50M9thrDee7b27CsrZolay7tq+cPFrq4Q==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@mui/material': 5.11.4_tczxhfvyguu7yzaxwycl7ermr4
+      '@mui/system': 5.11.4_ya2avx664kwrowp2a6u7o4ed6u
+      '@mui/utils': 5.11.2_react@17.0.2
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      reselect: 4.1.7
     dev: false
 
   /@next/env/12.3.4:
@@ -4218,6 +4240,10 @@ packages:
   /require-from-string/2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /reselect/4.1.7:
+    resolution: {integrity: sha512-Zu1xbUt3/OPwsXL46hvOOoQrap2azE7ZQbokq61BQfiXvhewsKDwhMeZjTX9sX0nvw1t/U5Audyn1I9P/m9z0A==}
     dev: false
 
   /resolve-from/4.0.0:

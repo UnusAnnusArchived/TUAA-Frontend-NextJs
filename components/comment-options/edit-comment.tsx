@@ -1,5 +1,5 @@
 import { Record } from "pocketbase";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { KeyedMutator } from "swr";
 import pb from "../../src/pocketbase";
 import Button from "@mui/material/Button";
@@ -10,17 +10,23 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { TextField } from "@mui/material";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
+import { IComment } from "../../src/types";
 
 interface IProps {
-  comment: Record;
+  comment: IComment;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  mutate: KeyedMutator<Record[]>;
+  mutate: any;
+  showEdited?: boolean;
 }
 
-const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => {
+const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate, showEdited }) => {
   const { t } = useTranslation();
-  const [newMd, setNewMd] = useState(comment.markdown);
+  const [newMd, setNewMd] = useState(comment?.markdown ?? "");
+
+  useMemo(() => {
+    setNewMd(comment?.markdown);
+  }, [comment, comment?.markdown]);
 
   const handleClose = () => {
     setOpen(false);
@@ -29,7 +35,7 @@ const EditCommentUI: React.FC<IProps> = ({ comment, open, setOpen, mutate }) => 
   const handleEdit = async () => {
     await pb.collection("comments").update(comment.id, {
       markdown: newMd,
-      isEdited: true,
+      isEdited: showEdited ?? false,
     });
     mutate();
     handleClose();

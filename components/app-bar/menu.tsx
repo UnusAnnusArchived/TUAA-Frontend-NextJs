@@ -25,7 +25,7 @@ import { theme } from "../theme/theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import pb from "../../src/pocketbase";
 import getPbImagePath from "../../src/utils/getPbImagePath";
-import { Info as InfoIcon } from "@mui/icons-material";
+import { AdminPanelSettings, Code, Info as InfoIcon } from "@mui/icons-material";
 import AboutDialog from "../about";
 
 const AppMenu: React.FC = () => {
@@ -115,6 +115,17 @@ const AppMenu: React.FC = () => {
               <ListItemText>{t("pages:settings")}</ListItemText>
             </MenuItem>
           </Link>
+          <Divider style={{ margin: "4px 0" }} />
+          {loggedInUser.isAdmin && (
+            <Link href="/internal/moderation" passHref>
+              <MenuItem>
+                <ListItemIcon>
+                  <AdminPanelSettings />
+                </ListItemIcon>
+                <ListItemText>{t("pages:modTools")}</ListItemText>
+              </MenuItem>
+            </Link>
+          )}
           <Link href="/downloads" passHref>
             <MenuItem>
               <ListItemIcon>
@@ -122,6 +133,16 @@ const AppMenu: React.FC = () => {
               </ListItemIcon>
               <ListItemText>{t("pages:downloads")}</ListItemText>
             </MenuItem>
+          </Link>
+          <Link href="https://docs.unusann.us" passHref>
+            <a target="_blank" style={{ textDecoration: "none" }}>
+              <MenuItem>
+                <ListItemIcon>
+                  <Code />
+                </ListItemIcon>
+                <ListItemText>{t("pages:documentation")}</ListItemText>
+              </MenuItem>
+            </a>
           </Link>
           <Link href="/patreon-donors" passHref>
             <MenuItem>

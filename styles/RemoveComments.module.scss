@@ -1,0 +1,9 @@
+.popper span {
+  p {
+    font-size: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import { atom } from "recoil";
-import type { Record } from "pocketbase";
-import type { PBAuthProvider } from "./types";
+import type { IUser, PBAuthProvider } from "./types";
 import { IColorScheme } from "./types";
 
 const localStorageEffect =
@@ -19,7 +18,7 @@ const localStorageEffect =
     });
   };
 
-export const userAtom = atom<Record>({
+export const userAtom = atom<IUser>({
   key: "userAtom",
   default: null,
   effects_UNSTABLE: [localStorageEffect("userAtom")],

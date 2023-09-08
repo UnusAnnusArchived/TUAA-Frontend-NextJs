@@ -10,9 +10,10 @@ import { KeyedMutator } from "swr";
 import DeleteCommentUI from "./delete-comment";
 import EditCommentUI from "./edit-comment";
 import { useTranslation } from "react-i18next";
+import { IComment } from "../../src/types";
 
 interface IProps {
-  comment: Record;
+  comment: IComment;
   commentUser: Record;
   mutate: KeyedMutator<Record[]>;
 }
