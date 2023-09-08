@@ -63,14 +63,16 @@ const Playlist: React.FC<IProps> = ({ initialPlaylist, episodes }) => {
         <Typography variant="h4" component="h2">
           Playlist: {playlist.name}
         </Typography>
-        <div style={{ flexGrow: 1, display: "flex", justifyContent: "end", alignItems: "center" }}>
-          <IconButton onClick={handleOpenEdit}>
-            <Edit />
-          </IconButton>
-          <IconButton color="error" onClick={handleDelete}>
-            <Delete />
-          </IconButton>
-        </div>
+        {user && user.id === playlist.user && (
+          <div style={{ flexGrow: 1, display: "flex", justifyContent: "end", alignItems: "center" }}>
+            <IconButton onClick={handleOpenEdit}>
+              <Edit />
+            </IconButton>
+            <IconButton color="error" onClick={handleDelete}>
+              <Delete />
+            </IconButton>
+          </div>
+        )}
       </div>
       <Typography>
         {user?.name} &bull; {playlist.public ? "Public" : "Private"}
