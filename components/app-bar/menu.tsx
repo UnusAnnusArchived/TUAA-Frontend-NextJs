@@ -27,6 +27,7 @@ import pb from "../../src/pocketbase";
 import getPbImagePath from "../../src/utils/getPbImagePath";
 import { AdminPanelSettings, Code, Info as InfoIcon } from "@mui/icons-material";
 import AboutDialog from "../about";
+import List from "@mui/icons-material/List";
 
 const AppMenu: React.FC = () => {
   const { t } = useTranslation();
@@ -116,15 +117,25 @@ const AppMenu: React.FC = () => {
             </MenuItem>
           </Link>
           <Divider style={{ margin: "4px 0" }} />
-          {loggedInUser.isAdmin && (
+          {loggedInUser && (
+            <>
+            <Link href="/playlist/my-playlists" passHref>
+              <MenuItem>
+                <ListItemIcon>
+                  <List />
+                </ListItemIcon>
+                <ListItemText>My Playlists</ListItemText>
+              </MenuItem>
+            </Link>
             <Link href="/internal/moderation" passHref>
               <MenuItem>
                 <ListItemIcon>
                   <AdminPanelSettings />
                 </ListItemIcon>
                 <ListItemText>{t("pages:modTools")}</ListItemText>
-              </MenuItem>
-            </Link>
+                </MenuItem>
+              </Link>
+            </>
           )}
           <Link href="/downloads" passHref>
             <MenuItem>

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import type { IVideo } from "../../src/types";
 import SubtitlePopup from "../subtitlePopup";
 import VideoPopup from "../videoPopup";
-import { cdn } from "../../src/endpoints.json";
+import { cdn, download } from "../../src/endpoints.json";
 
 interface IProps {
   video: IVideo;
@@ -18,7 +18,10 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
 
   const downloadMetadata = () => {
     const element = document.createElement("a");
-    element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(JSON.stringify(video, null, 2))}`);
+    element.setAttribute(
+      "href",
+      `data:application/json;base64,${Buffer.from(JSON.stringify(video, null, 2)).toString("base64")}`
+    );
     element.setAttribute("download", `${video.title} ${t("downloads:specific_episode_page:options:metadata")}.json`);
     element.style.display = "none";
     document.body.appendChild(element);
@@ -28,7 +31,7 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
 
   const downloadDescription = () => {
     const element = document.createElement("a");
-    element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(video.description)}`);
+    element.setAttribute("href", `data:text/html;base64,${Buffer.from(video.description).toString("base64")}`);
     element.setAttribute("download", `${video.title} ${t("downloads:specific_episode_page:options:description")}.html`);
     element.style.display = "none";
     document.body.appendChild(element);
@@ -37,25 +40,19 @@ const VideoDownloadOptions: React.FC<IProps> = ({ video }) => {
   };
 
   const downloadThumbnail = () => {
-    fetch(`${cdn}${video.thumbnail ?? video.posters[0].src}`)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const dataUrl = new FileReader();
-        dataUrl.onload = function (e) {
-          const url = e.target.result as string;
-          const element = document.createElement("a");
-          element.setAttribute("href", url);
-          element.setAttribute(
-            "download",
-            `${video.title} ${t("downloads:specific_episode_page:options:thumbnail")}.webp`
-          );
-          element.style.display = "none";
-          document.body.appendChild(element);
-          element.click();
-          document.body.removeChild(element);
-        };
-        dataUrl.readAsDataURL(blob);
-      });
+    const url = `${download}${
+      video.thumbnails?.jpg?.src ??
+      video.posters?.find?.((poster) => poster.type === "image/jpeg")?.src ??
+      video.thumbnail?.replace?.(".webp", ".jpg")
+    }?filename=${encodeURIComponent(`${video.title} ${t("downloads:specific_episode_page:options:thumbnail")}.jpg`)}`;
+
+    const element = document.createElement("a");
+    element.setAttribute("target", "_blank");
+    element.setAttribute("href", url);
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
   };
 
   const toggleSubtitlesPopup = () => {

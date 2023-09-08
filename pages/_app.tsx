@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import { initTranslations } from "../src/i18n/i18n";
 import NonSsrWrapper from "../components/non-ssr-wrapper";
 import ThemeProvider from "../components/theme";
+import { Paper, Typography } from "@mui/material";
+import moment from "moment-with-locales-es6";
 
 export const reportWebVitals = (metric: NextWebVitalsMetric) => {
   const { id, name, label, value } = metric;

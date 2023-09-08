@@ -8,6 +8,7 @@ import { Theme } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
+import { Collection, IUser } from "../../src/types";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,16 +30,18 @@ const Layout: React.FC<IProps> = ({ children }) => {
   const refetchUser = async () => {
     if (loggedInUser) {
       try {
-        const user = await pb.collection("users").getOne(loggedInUser?.id);
+        const user = await pb.collection(Collection.Users).authRefresh();
 
-        if (user.id) {
-          setLoggedInUser(user);
+        if (user.token) {
+          document.cookie = pb.authStore.exportToCookie({ secure: false, httpOnly: false, sameSite: false });
+          setLoggedInUser(user.record as IUser);
         } else {
           setLoggedInUser(null);
         }
       } catch (err) {
         console.error(err);
         console.info("Logging out due to error (printed above)!");
+        pb.authStore.clear();
         setLoggedInUser(null);
       }
     }

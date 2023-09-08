@@ -1,35 +1,152 @@
-import type { Source as PlyrSource, Track as PlyrTrack } from "plyr";
 import { Record } from "pocketbase";
 
-export interface IVideo {
+export enum Collection {
+  Users = "users",
+  Apps = "apps",
+  Comments = "comments",
+  Patreons = "patreons",
+  Releases = "releases",
+  TicketTags = "ticket_tags",
+  Tickets = "tickets",
+  UserPlaylists = "user_playlists",
+  VideoProgress = "video_progress",
+}
+
+export type IVideo = {
+  _metadata_version?: 1 | 2 | 3;
+  video?: string;
   season: number;
   episode: number;
   title: string;
   description: string;
-  date?: number;
   releasedate?: number;
-  duration: number;
-  sources?: PlyrSource[];
-  video?: string;
-  tracks: PlyrTrack[];
-  posters?: IVideoPoster[];
   thumbnail?: string;
-  previewSprites?: IVideoPreviewSprite[];
-}
+  sources?: IMetadataV2Source[] | IMetadataV3Source[];
+  tracks?: IMetadataV2Track[];
+  posters?: IMetadataV2Poster[];
+  date?: number;
+  duration?: number;
+  audio?: IMetadataV3Audio[];
+  captions?: IMetadataV3Caption[];
+  thumbnails?: IMetadataV3Thumbnails;
+  previewSprites?: any;
+};
 
-interface IVideoPreviewSprite {
-  src: string;
-  length: number;
-}
+export type Seasons<T extends IMetadataV1 | IMetadataV2 | IMetadataV3 | IVideo> = [T[], T[]];
 
-interface IVideoPoster {
+export type IMetadataV1 = {
+  _metadata_version: 1;
+  video: string;
+  season: number;
+  episode: number;
+  title: string;
+  description: string;
+  releasedate: number;
+  thumbnail: string;
+};
+
+export type IMetadataV2 = {
+  _metadata_version: 2;
+  sources: IMetadataV2Source[];
+  tracks: IMetadataV2Track[];
+  posters: IMetadataV2Poster[];
+  season: number;
+  episode: number;
+  title: string;
+  description: string;
+  date: number;
+  duration?: number;
+};
+
+export type IMetadataV2Source = {
   src: string;
   type: string;
   size: number;
-}
+};
 
-export type Season = IVideo[];
-export type Seasons = Season[];
+export type IMetadataV2Track = {
+  kind: string;
+  label: string;
+  srclang: string;
+  src: string;
+};
+
+export type IMetadataV2Poster = {
+  src: string;
+  type: string;
+  size?: number;
+};
+
+export type IMetadataV3 = {
+  _metadata_version: 3;
+  sources: Array<IMetadataV3Source>;
+  audio: IMetadataV3Audio[];
+  captions: IMetadataV3Caption[];
+  thumbnails: IMetadataV3Thumbnails;
+  season: number;
+  episode: number;
+  title: string;
+  description: string;
+  date: number;
+  duration?: number;
+};
+
+export type IMetadataV3Source = IMetadataV3TUAASource | IMetadataV3EmbedSource | IMetadataV3DirectSource;
+
+export type IMetadataV3TUAASource = {
+  type: "tuaa";
+  id: string;
+  resolutions: IMetadataV3TUAASourceResolution[];
+};
+
+export type IMetadataV3EmbedSource = {
+  type: "embed";
+  id: string;
+  name: string;
+  src: string;
+};
+
+export type IMetadataV3DirectSource = {
+  type: "direct";
+  id: string;
+  name: string;
+  resolutions: IMetadataV3DirectSourceResolution[];
+};
+
+export type IMetadataV3DirectSourceResolution = {
+  src: string;
+  size: number;
+};
+
+export type IMetadataV3TUAASourceResolution = {
+  src: string;
+  size: number;
+};
+
+export type IMetadataV3Audio = {
+  lang: string;
+  label: string;
+  src: string;
+  default: boolean;
+};
+
+export type IMetadataV3Caption = {
+  label: string;
+  srclang: string;
+  src: string;
+  default: boolean;
+};
+
+export type IMetadataV3Thumbnails = {
+  avif: IMetadataV3Thumbnail;
+  webp: IMetadataV3Thumbnail;
+  jpg: IMetadataV3Thumbnail;
+};
+
+export type IMetadataV3Thumbnail = {
+  src: string;
+  size?: number;
+};
 
 export interface IEpisodeAround {
   nextEp?: string;
@@ -139,18 +256,6 @@ export interface ISwiftMetadata {
   season1: IVideo[];
 }
 
-export interface IUser extends Partial<Record> {
-  avatar: string;
-  email: string;
-  emailVisibility: boolean;
-  emails_account: boolean;
-  emails_updates: boolean;
-  isAdmin: boolean;
-  name: string;
-  username: string;
-  verified: boolean;
-}
-
 export interface PBAuthMethodsList {
   [key: string]: any;
   usernamePassword: boolean;
@@ -168,3 +273,24 @@ export interface PBAuthProvider {
 }
 
 export type IColorScheme = "light" | "dark";
+
+export interface IPlaylist extends Record {
+  user: string;
+  name: string;
+  description?: string;
+  episodes: string;
+  public: boolean;
+  isFavorites: boolean;
+}
+
+export interface IUser extends Partial<Record> {
+  username: string;
+  email?: string;
+  emailVisability: boolean;
+  verified: boolean;
+  name: string;
+  avatar: string;
+  emails_account: boolean;
+  emails_updates: boolean;
+  isAdmin: boolean;
+}

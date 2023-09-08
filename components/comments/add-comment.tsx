@@ -7,6 +7,7 @@ import { userAtom } from "../../src/atoms";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { useTranslation } from "react-i18next";
 import pb from "../../src/pocketbase";
+import { Collection } from "../../src/types";
 
 interface IProps {
   watchCode: string;
@@ -29,7 +30,7 @@ const AddComment: React.FC<IProps> = ({ watchCode, onComment: onC }) => {
 
     setIsSendingComment(true);
     try {
-      await pb.collection("comments").create({
+      await pb.collection(Collection.Comments).create({
         episode: watchCode,
         markdown: commentText,
         user: loggedInUser?.id,

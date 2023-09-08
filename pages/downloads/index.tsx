@@ -32,10 +32,10 @@ const Download: React.FC<void> = (props) => {
             newTab={false}
           />
           <DownloadItem
-            name={t("downloads:tuaa_downloader_link:name")}
-            description={t("downloads:tuaa_downloader_link:description")}
+            name="The Unus Annus Downloader (Beta)"
+            description="An easy way to mass download any of our episodes. This app is in beta so expect things to not work properly. Currently Windows only."
             image={tuaaDownloaderPic}
-            link="http://github.com/TheUnusAnnusArchive/TUAA-Downloader/releases/latest"
+            link="https://app-dl.unusann.us/tuaa-downloader/2.0.0-pre-1/TUAA-Downloader-2.0.0-pre-1-win.exe"
             newTab={true}
           ></DownloadItem>
           <DownloadItem

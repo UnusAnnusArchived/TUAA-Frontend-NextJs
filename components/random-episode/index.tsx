@@ -1,5 +1,5 @@
-import { Button } from "@mui/material";
-import Router from "next/router";
+import { ListItem, ListItemButton } from "@mui/material";
+import { useRouter } from "next/router";
 import type { IVideo } from "../../src/types";
 
 interface IProps {
@@ -7,6 +7,8 @@ interface IProps {
 }
 
 const RandomEpisode: React.FC<IProps> = ({ seasons }) => {
+  const router = useRouter();
+
   const handleClick = () => {
     const randomSeason = seasons[Math.floor(Math.random() * seasons.length)];
     const randomEpisode = randomSeason[Math.floor(Math.random() * randomSeason.length)];
@@ -14,11 +16,14 @@ const RandomEpisode: React.FC<IProps> = ({ seasons }) => {
       .toString()
       .padStart(3, "0")}`;
 
-    console.log("Random episode:", id);
-    Router.replace(`/watch/${id}`);
+    router.push(`/watch/${id}`);
   };
 
-  return <Button onClick={handleClick}>Random Episode</Button>;
+  return (
+    <ListItem disablePadding>
+      <ListItemButton onClick={handleClick}>Random Episode</ListItemButton>
+    </ListItem>
+  );
 };
 
 export default RandomEpisode;

@@ -21,6 +21,7 @@ import {
   TextField,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Collection, IUser } from "../../src/types";
 
 interface IProps {
   open: boolean;
@@ -55,7 +56,7 @@ const LoginDialog: React.FC<IProps> = ({ open, setOpen }) => {
     }
 
     try {
-      const { record } = await pb.collection("users").authWithPassword(email, password);
+      const { record } = await pb.collection(Collection.Users).authWithPassword<IUser>(email, password);
       setLoggedInUser(record);
       if (previousPage) {
         router.push(previousPage);

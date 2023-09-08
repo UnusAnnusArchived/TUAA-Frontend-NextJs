@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Plyr from "plyr";
 import { IVideo } from "../../src/types";
 import { cdn, api } from "../../src/endpoints.json";
@@ -13,10 +13,11 @@ interface IProps {
   watchCode: string;
   isEmbed?: boolean;
   setShowDownloadOptions?: React.Dispatch<React.SetStateAction<boolean>>;
+  setPlayerHeight?: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOptions }) => {
-  const playerEl = useRef(null);
+const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOptions, setPlayerHeight }) => {
+  const playerEl = useRef<HTMLVideoElement>(null);
   const [plyr, setPlyr] = useState<Plyr>(null);
   const [customControlsContainer, setCustomControlsContainer] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -24,6 +25,26 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
 
   const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
   const poster = `${cdn}${posterUrl}`;
+
+  useEffect(() => {
+    if (plyr?.elements?.container?.offsetHeight) {
+      setPlayerHeight(plyr.elements.container.offsetHeight);
+    }
+  }, [plyr, plyr?.elements?.container, plyr?.elements?.container?.offsetHeight]);
+
+  useEffect(() => {
+    window?.addEventListener?.("resize", handlePlayerResize);
+
+    return () => {
+      window?.removeEventListener?.("resize", handlePlayerResize);
+    };
+  }, []);
+
+  const handlePlayerResize = () => {
+    if (plyr?.elements?.container?.offsetHeight) {
+      setPlayerHeight(plyr.elements.container.offsetHeight);
+    }
+  };
 
   const router = useRouter();
 
@@ -50,12 +71,8 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }) ?? [{ src: `${cdn}${video.video}` }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${api}/subtitles?url=${track.src}` };
+          return { ...track, src: `${api}/subtitles?url=${track.src}`, kind: "captions" };
         }) ?? [],
-      previewThumbnails: {
-        enabled: true,
-        src: `${api}/v2/preview/${watchCode}`,
-      },
     };
 
     rebind(plyr);
@@ -145,12 +162,8 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }) ?? [{ src: `${cdn}${video.video}`, type: "video/mp4" }],
       tracks:
         video.tracks?.map((track) => {
-          return { ...track, src: `${api}/subtitles?url=${cdn}${track.src}` };
+          return { ...track, src: `${api}/subtitles?url=${cdn}${track.src}`, kind: "captions" };
         }) ?? [],
-      previewThumbnails: {
-        enabled: true,
-        src: `${api}/v2/preview/${watchCode}`,
-      },
     };
 
     rebind(player);
@@ -197,8 +210,8 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
   }, []);
 
   return (
-    <div>
-      <video className="player" autoPlay ref={playerEl} />
+    <div style={{ flexGrow: 1 }}>
+      <video id="player" className="player" autoPlay ref={playerEl} />
       <Portal container={customControlsContainer}>
         <div>
           <Fade in={currentTime > duration - 10}>
