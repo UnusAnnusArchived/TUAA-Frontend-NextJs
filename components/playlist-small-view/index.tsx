@@ -65,7 +65,7 @@ const PlaylistSmallView: React.FC<IProps> = ({ playlist, playerHeight, currentEp
     <Paper
       sx={{
         margin: isLgDown ? "16px 0" : "0 16px",
-        minWidth: "400px",
+        minWidth: isLgDown ? "100%" : "400px",
         maxWidth: isLgDown ? undefined : "400px",
         maxHeight: isLgDown ? "600px" : `${playerHeight}px`,
         minHeight: isLgDown ? "460px" : undefined,
