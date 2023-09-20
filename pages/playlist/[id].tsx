@@ -14,6 +14,8 @@ import { handleEditPlaylist } from "../../src/utils/playlistActions";
 import { useToasts } from "@geist-ui/react";
 import PlaylistDescription from "../../components/playlist-description";
 import DeletePlaylistDialog from "../../components/delete-playlist-dialog";
+import { useRecoilState } from "recoil";
+import { userAtom } from "../../src/atoms";
 
 interface IProps {
   initialPlaylist: IPlaylist;
@@ -21,6 +23,7 @@ interface IProps {
 }
 
 const Playlist: React.FC<IProps> = ({ initialPlaylist, episodes }) => {
+  const [currentUser, setCurrentUser] = useRecoilState(userAtom);
   const [playlist, setPlaylist] = useState(initialPlaylist);
   const [user, setUser] = useState<IUser>();
   const [editPlaylistOpen, setEditPlaylistOpen] = useState(false);
@@ -63,7 +66,7 @@ const Playlist: React.FC<IProps> = ({ initialPlaylist, episodes }) => {
         <Typography variant="h4" component="h2">
           Playlist: {playlist.name}
         </Typography>
-        {user && user.id === playlist.user && (
+        {currentUser && currentUser.id === user.id && (
           <div style={{ flexGrow: 1, display: "flex", justifyContent: "end", alignItems: "center" }}>
             <IconButton onClick={handleOpenEdit}>
               <Edit />
@@ -121,7 +124,8 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (ctx) => {
   try {
     const playlist: IPlaylist = await pb.send(`/api/collections/user_playlists/records/${playlistId}?perPage=400`, {
       headers: {
-        Authorization: JSON.parse(decodeURIComponent(ctx.req.cookies.pb_auth)).token,
+        Authorization:
+          (ctx.req.cookies.pb_auth && JSON.parse(decodeURIComponent(ctx.req.cookies.pb_auth)).token) ?? undefined,
       },
     });
 
@@ -165,22 +169,3 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (ctx) => {
     return { props: { initialPlaylist: null, episodes: null }, notFound: true };
   }
 };
-
-// export const getStaticPaths: GetStaticPaths = async (ctx) => {
-//   const paths = [];
-
-//   const playlists = await pb.collection(Collection.UserPlaylists).getFullList<IPlaylist>(undefined, {});
-
-//   for (let i = 0; i < playlists.length; i++) {
-//     paths.push({
-//       params: {
-//         id: playlists[i].id,
-//       },
-//     });
-//   }
-
-//   return {
-//     paths,
-//     fallback: "blocking",
-//   };
-// };
