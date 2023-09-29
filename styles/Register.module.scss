@@ -1,9 +1,0 @@
-@import "./_breakpoints.scss";
-
-.field {
-  width: 40%;
-
-  @include md-down {
-    width: 100%;
-  }
-}

@@ -1,5 +1,6 @@
 {
   "metadataPath": "metadata",
+  "bunnyAccessKey": "xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxx-xxxx",
   "smtp": {
     "pool": true,
     "host": "smtp.example.com",
