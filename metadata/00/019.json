@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "src": "/00/019/1080.mp4",
+      "type": "video/mp4",
+      "size": 1080
+    },
+    {
+      "src": "/00/019/720.mp4",
+      "type": "video/mp4",
+      "size": 720
+    },
+    {
+      "src": "/00/019/480.mp4",
+      "type": "video/mp4",
+      "size": 480
+    },
+    {
+      "src": "/00/019/360.mp4",
+      "type": "video/mp4",
+      "size": 360
+    },
+    {
+      "src": "/00/019/240.mp4",
+      "type": "video/mp4",
+      "size": 240
+    }
+  ],
+  "tracks": [],
+  "posters": [
+    {
+      "src": "/thumbnails/00/019.jpg",
+      "type": "image/jpeg",
+      "size": 0
+    }
+  ],
+  "season": 0,
+  "episode": 19,
+  "title": "I MADE UNUS ANNUS PROUD (kinda)",
+  "description": "Another year, another Unus Annus yearly review video.<br />And this year I did good, I finally made them proud ... kinda.<br /><br /><br />Unus► <a href=\"https://www.youtube.com/@ethan\">@ethan</a><br />Annus► <a href=\"https://www.youtube.com/@markiplier\">@markiplier</a><br /><br /><br />Twitter► <a href=\"https://twitter.com/LixianTV\">lixiantv</a><br />Become a Member► <a href=\"https://bit.ly/JoinLixian\">https://bit.ly/JoinLixian</a><br />Merch► <a href=\"https://teespring.com/stores/lixian\">teespring.com/stores/lixian</a><br /><br />I really hope you guys enjoy it<br />Love you all<br /><br /><a href=\"https://www.youtube.com/hashtag/unusannus\">#unusannus</a> <a href=\"https://www.youtube.com/hashtag/deathiversary\">#deathiversary</a>",
+  "date": 1699984817000
+}
