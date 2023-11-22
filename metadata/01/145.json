@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "537213b7-84c4-45f8-abc7-f0441353edc9"
+    }
+  ],
+  "uaid": "s01.e145",
+  "season": 1,
+  "episode": 145,
+  "title": "We Google Each Other to Find Our Darkest Forgotten Sins",
+  "description": "Mark thought he could hide that thing he did 4 years ago... Ethan thought he could forgotten the cringe he committed... But through the power of The Google, we will brings these sins back into the light!",
+  "releaseDate": 1586199600000
+}

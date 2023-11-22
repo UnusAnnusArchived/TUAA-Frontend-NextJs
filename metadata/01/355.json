@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "343983fc-6b7f-405f-af58-70643f93eaae"
+    }
+  ],
+  "uaid": "s01.e355",
+  "season": 1,
+  "episode": 355,
+  "title": "Accepting the Truth",
+  "description": "",
+  "releaseDate": 1604257200000
+}

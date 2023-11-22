@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "b1eb84dc-9884-4c6a-8a35-59316045b19f"
+    }
+  ],
+  "uaid": "s01.e091",
+  "season": 1,
+  "episode": 91,
+  "title": "Discussing the Idea of Murdering Each Other but It's Just a Joke and Definitely Not Serious Haha",
+  "description": "It's perfectly normal to discuss the possibility of how you would murder your friends with those friends and converse in great detail about how you would get away with said murder. We call this the Murder Your Friend Tag haha.",
+  "releaseDate": 1581534000000
+}

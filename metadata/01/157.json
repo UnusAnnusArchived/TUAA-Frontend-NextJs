@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "2e706dda-fd66-465e-8b1f-3d8039841c74"
+    }
+  ],
+  "uaid": "s01.e157",
+  "season": 1,
+  "episode": 157,
+  "title": "2 Men 200 Accents",
+  "description": "Close your eyes... how are you still reading this? It doesn't matter. Let your ears take you on a journey around the globe as we showcase our incredible talent for accents.",
+  "releaseDate": 1587236400000
+}

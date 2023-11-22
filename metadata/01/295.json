@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "288c7550-b24e-4dc8-8a6b-6087c60ab130"
+    }
+  ],
+  "uaid": "s01.e295",
+  "season": 1,
+  "episode": 295,
+  "title": "How Many Slaps Does It Take to Cook a Chicken?",
+  "description": "",
+  "releaseDate": 1599073200000
+}

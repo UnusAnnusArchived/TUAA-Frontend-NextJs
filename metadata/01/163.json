@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "4c982a38-5267-40e7-acca-754e3e906015"
+    }
+  ],
+  "uaid": "s01.e163",
+  "season": 1,
+  "episode": 163,
+  "title": "Running Internet Drama through Google Translate",
+  "description": "There are many universal languages. Love. Music. Art. ...Tea? Using the most advanced computational technologies, Mark and Ethan determine if internet drama transcends the limitations of the written word.",
+  "releaseDate": 1587754800000
+}

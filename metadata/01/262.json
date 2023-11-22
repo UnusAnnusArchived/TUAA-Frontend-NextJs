@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "da84c325-dddb-4b83-8b9e-4e1b360d084c"
+    }
+  ],
+  "uaid": "s01.e262",
+  "season": 1,
+  "episode": 262,
+  "title": "5 Products to Grow Your Patchy Beard",
+  "description": "",
+  "releaseDate": 1596222000000
+}

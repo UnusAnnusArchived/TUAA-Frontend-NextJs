@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "94922e0a-8507-4403-94b5-f8aa43ef596d"
+    }
+  ],
+  "uaid": "s01.e254",
+  "season": 1,
+  "episode": 254,
+  "title": "This Is The Most Dangerous Children's Toy Ever Made",
+  "description": "",
+  "releaseDate": 1595530800000
+}

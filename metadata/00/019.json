@@ -1,0 +1,20 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "161362e5-4d47-4e95-a6cb-32bb18129c8e"
+    },
+    {
+      "type": "youtube",
+      "youtubeId": "NKsEMwHYb1w"
+    }
+  ],
+  "uaid": "s00.e019",
+  "season": 0,
+  "episode": 19,
+  "title": "I MADE UNUS ANNUS PROUD (kinda)",
+  "description": "Another year, another Unus Annus yearly review video.<br />And this year I did good, I finally made them proud ... kinda.<br /><br /><br />Unus► <a href=\"https://www.youtube.com/@ethan\">@ethan</a><br />Annus► <a href=\"https://www.youtube.com/@markiplier\">@markiplier</a><br /><br /><br />Twitter► <a href=\"https://twitter.com/LixianTV\">lixiantv</a><br />Become a Member► <a href=\"https://bit.ly/JoinLixian\">https://bit.ly/JoinLixian</a><br />Merch► <a href=\"https://teespring.com/stores/lixian\">teespring.com/stores/lixian</a><br /><br />I really hope you guys enjoy it<br />Love you all<br /><br /><a href=\"https://www.youtube.com/hashtag/unusannus\">#unusannus</a> <a href=\"https://www.youtube.com/hashtag/deathiversary\">#deathiversary</a>",
+  "releaseDate": 1699984817000
+}

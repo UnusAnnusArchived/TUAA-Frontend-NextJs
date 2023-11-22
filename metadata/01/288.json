@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c7dc3dc0-8c72-4ab0-9ce2-6a01f598a85a"
+    }
+  ],
+  "uaid": "s01.e288",
+  "season": 1,
+  "episode": 288,
+  "title": "Team Building for 2: Trust Fall, Tug-of-War, and More!",
+  "description": "",
+  "releaseDate": 1598468400000
+}

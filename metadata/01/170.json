@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "5a9f1d07-9e72-4808-8bf6-94e2ab540904"
+    }
+  ],
+  "uaid": "s01.e170",
+  "season": 1,
+  "episode": 170,
+  "title": "Is Mark a Masochist?",
+  "description": "Here at Unus Annus, we've explored countless mysteries over the past few months. We've discovered El Dorado, Atlantis, and even revealed the horrors of our very own oceans. But no mystery is NEARLY as mysterious as Mark's private life. Let's explore!",
+  "releaseDate": 1588359600000
+}

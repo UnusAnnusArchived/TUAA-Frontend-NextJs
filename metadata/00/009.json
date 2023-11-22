@@ -1,0 +1,20 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "d6419ce5-7268-4689-a9fb-146068829bd2"
+    },
+    {
+      "type": "youtube",
+      "youtubeId": "U8bbwufCQk4"
+    }
+  ],
+  "uaid": "s00.e009",
+  "season": 0,
+  "episode": 9,
+  "title": "The End of Unus Annus",
+  "description": "thank you.",
+  "releaseDate": 1605389506000
+}

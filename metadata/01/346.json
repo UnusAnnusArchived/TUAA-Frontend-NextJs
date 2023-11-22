@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "e96b3d4c-9710-45b7-965a-36265811ea3e"
+    }
+  ],
+  "uaid": "s01.e346",
+  "season": 1,
+  "episode": 346,
+  "title": "Fighting Fish to the Death in the Deep Blue Sea",
+  "description": "",
+  "releaseDate": 1603479600000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "76376f0a-ca0f-4f3a-825b-57a15187de38"
+    }
+  ],
+  "uaid": "s01.e341",
+  "season": 1,
+  "episode": 341,
+  "title": "Momiplier Tells Us True Scary Stories from Korea",
+  "description": "",
+  "releaseDate": 1603047600000
+}

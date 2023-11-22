@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "e1da509e-552f-4f33-86e3-36deb71674da"
+    }
+  ],
+  "uaid": "s01.e302",
+  "season": 1,
+  "episode": 302,
+  "title": "Can Plants Feel Pain?",
+  "description": "",
+  "releaseDate": 1599678000000
+}

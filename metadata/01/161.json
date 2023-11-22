@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "0e6a131f-27b6-4ab1-8acb-8655735250a8"
+    }
+  ],
+  "uaid": "s01.e161",
+  "season": 1,
+  "episode": 161,
+  "title": "Mark and Ethan Take a Personality Test",
+  "description": "What type of human being is the joint creature known as Unus Annus? What characteristics would this amalgamation of horror entail? Only one way to find out...",
+  "releaseDate": 1587582000000
+}

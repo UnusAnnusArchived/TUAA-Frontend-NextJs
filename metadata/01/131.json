@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "50e571cb-5c14-47ca-af9e-07e32de403b3"
+    }
+  ],
+  "uaid": "s01.e131",
+  "season": 1,
+  "episode": 131,
+  "title": "We Force James Charles to Run a Military Obstacle Course",
+  "description": "James Charles joins us as we attempt to run a Military Obstacle Course!",
+  "releaseDate": 1584990000000
+}

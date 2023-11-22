@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "55b3f697-5db7-4cb2-9595-edcd718246f0"
+    }
+  ],
+  "uaid": "s01.e290",
+  "season": 1,
+  "episode": 290,
+  "title": "Mark's Outdoor Escape Room",
+  "description": "",
+  "releaseDate": 1598641200000
+}

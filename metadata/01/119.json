@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "f474620f-bdc8-4c0d-9615-457fce669c5d"
+    }
+  ],
+  "uaid": "s01.e119",
+  "season": 1,
+  "episode": 119,
+  "title": "We Give Each Other Tattoos Blindfolded ",
+  "description": "Henna Tattoos are temporary works of art the represent the temporary nature of life. We cover our eyes and let our souls guide the art.<br>",
+  "releaseDate": 1583953200000
+}

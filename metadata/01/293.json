@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "791e1ba7-3b47-49b5-bf5e-b62cbe7554d2"
+    }
+  ],
+  "uaid": "s01.e293",
+  "season": 1,
+  "episode": 293,
+  "title": "Mark Gives Ethan a HOT (stone) Massage",
+  "description": "",
+  "releaseDate": 1598900400000
+}

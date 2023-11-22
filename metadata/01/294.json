@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "fc614cc0-a611-4b3b-972f-9f8bcf12c7bb"
+    }
+  ],
+  "uaid": "s01.e294",
+  "season": 1,
+  "episode": 294,
+  "title": "We Smell Every Smell",
+  "description": "",
+  "releaseDate": 1598986800000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "ed1796a2-cdbd-4a06-a35d-ed287db272a2"
+    }
+  ],
+  "uaid": "s01.e360",
+  "season": 1,
+  "episode": 360,
+  "title": "Who’s Cutting Onions In Here???",
+  "description": "Only REAL men cry. And today we cry a lot. ",
+  "releaseDate": 1604689200000
+}

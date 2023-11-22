@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "aaf4ad58-ce7e-4481-a178-6e5287b71be2"
+    }
+  ],
+  "uaid": "s01.e223",
+  "season": 1,
+  "episode": 223,
+  "title": "Learning How to Lock Pick (FBI Please Don't Watch)",
+  "description": "There is nothing illegal about learning how to lock pick. It is a perfectly normal activity to train oneself to do. Please do not assume we will do anything nefarious with these skills.",
+  "releaseDate": 1592852400000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c06077a2-4d85-424a-9934-4dd35ee84e52"
+    }
+  ],
+  "uaid": "s01.e234",
+  "season": 1,
+  "episode": 234,
+  "title": "We Put an Apple Watch in a Rock Tumbler",
+  "description": "",
+  "releaseDate": 1593802800000
+}

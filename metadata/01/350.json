@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c33202b5-e6c0-40ad-8bb6-73ada48802a7"
+    }
+  ],
+  "uaid": "s01.e350",
+  "season": 1,
+  "episode": 350,
+  "title": "Blood Bath",
+  "description": "",
+  "releaseDate": 1603825200000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "a9ee85df-d32f-4813-9647-44659cec8a37"
+    }
+  ],
+  "uaid": "s01.e109",
+  "season": 1,
+  "episode": 109,
+  "title": "Nutball Extreme: Taser Edition ",
+  "description": "What happens when you combine the thrill of Nutball with the heart-stopping joy of a Taser? You get NUTBALL EXTREME!.<br>",
+  "releaseDate": 1583089200000
+}

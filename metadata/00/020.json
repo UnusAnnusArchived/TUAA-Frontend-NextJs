@@ -1,0 +1,20 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "2c5a3aba-2b0c-46d0-ad6a-6c90a853b704"
+    },
+    {
+      "type": "youtube",
+      "youtubeId": "fusSZkFZ08I"
+    }
+  ],
+  "uaid": "s00.e020",
+  "season": 0,
+  "episode": 20,
+  "title": "Remember Death",
+  "description": "Until next year. Memento Mori.<br />Death Remembers: <a href=\"https://www.youtube.com/watch?v=_WeSH0j7dCw\">https://www.youtube.com/watch?v=_WeSH0j7dCw</a>",
+  "releaseDate": 1700596815000
+}

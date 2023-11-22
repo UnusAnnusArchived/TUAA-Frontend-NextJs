@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "8bca8884-ee46-4a9c-942f-428cfa0261f5"
+    }
+  ],
+  "uaid": "s01.e093",
+  "season": 1,
+  "episode": 93,
+  "title": "Our Perfect (and last) Valentine's Day",
+  "description": "Today, Mark and Ethan discover the TRUE meaning of everlasting love.",
+  "releaseDate": 1581706800000
+}

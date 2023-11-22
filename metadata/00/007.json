@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "bf64cbaa-49df-4069-bed2-0c66ef7fd778"
+    }
+  ],
+  "uaid": "s00.e007",
+  "season": 0,
+  "episode": 7,
+  "title": "The End is Here...",
+  "description": "It's been quite a year for Unus Annus. But a year is not forever... and time has finally run out. So join us Friday, November 13th for The End of Unus Annus and help us say goodbye one last time.",
+  "releaseDate": 1604689200000
+}

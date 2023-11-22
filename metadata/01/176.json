@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "eb94f528-b667-486d-b71b-52b0e2b2ab44"
+    }
+  ],
+  "uaid": "s01.e176",
+  "season": 1,
+  "episode": 176,
+  "title": "Like It or Not... This is What The New Human Looks Like",
+  "description": "Humanity is still evolving... still changing... \"MUTANTS\" as some know them to be. Humans with real life super powers. Surely fiction, right? But could they living among us today...?",
+  "releaseDate": 1588878000000
+}

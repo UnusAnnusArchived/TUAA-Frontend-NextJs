@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "8f0d712b-a2cc-474e-ab44-95a40eecb735"
+    }
+  ],
+  "uaid": "s00.e002",
+  "season": 0,
+  "episode": 2,
+  "title": "This Will End in One Year (Ethan)",
+  "description": "",
+  "releaseDate": 1573844400000
+}

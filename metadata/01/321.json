@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c4d536a1-cf2e-48ec-80e0-3fd85fd6b070"
+    }
+  ],
+  "uaid": "s01.e321",
+  "season": 1,
+  "episode": 321,
+  "title": "Mark Teaches Ethan to Wrestle",
+  "description": "",
+  "releaseDate": 1601319600000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "a044efa5-d68e-4c59-af02-77ca27b93d73"
+    }
+  ],
+  "uaid": "s01.e081",
+  "season": 1,
+  "episode": 81,
+  "title": "Turning Mark Into an E-boy",
+  "description": "In an attempt to keep his youth, Mark transform into an E-Boy<br>",
+  "releaseDate": 1580670000000
+}

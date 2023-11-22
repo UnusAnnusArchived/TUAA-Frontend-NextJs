@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "ee2dd474-13ff-49cc-a3bf-f4781821db39"
+    }
+  ],
+  "uaid": "s01.e216",
+  "season": 1,
+  "episode": 216,
+  "title": "Finding the Most Cursed Image on the Internet",
+  "description": "BEWARE ALL WHO ATTEMPT TO WATCH THIS VIDEO! It's a curse or be cursed world in here. Actually though, this video is gross and horrible and upsetting.",
+  "releaseDate": 1592247600000
+}

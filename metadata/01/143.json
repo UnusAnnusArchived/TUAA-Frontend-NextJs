@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "fe3c83cb-0464-4181-bb73-33209d73571e"
+    }
+  ],
+  "uaid": "s01.e143",
+  "season": 1,
+  "episode": 143,
+  "title": "Wikifeet: A Tale of 2 Tootsies",
+  "description": "Many people heard of the mythical website known as Wikifeet... but few dare to dip their tootsies in the deep end of that particular pool...",
+  "releaseDate": 1586026800000
+}

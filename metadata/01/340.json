@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "f5f990db-2a7c-4dc6-bd47-1810cc0003e6"
+    }
+  ],
+  "uaid": "s01.e340",
+  "season": 1,
+  "episode": 340,
+  "title": "This Video is Completely Unedited",
+  "description": "",
+  "releaseDate": 1602961200000
+}

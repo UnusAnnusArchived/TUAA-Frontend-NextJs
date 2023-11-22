@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "8499461b-c529-4a16-8601-8d219d9fda1f"
+    }
+  ],
+  "uaid": "s01.e133",
+  "season": 1,
+  "episode": 133,
+  "title": "Reddit 50/50: Two Player Edition",
+  "description": "Reddit 50/50 is like a coin toss, where the outcomes are severe mental scarring that will last for the rest of your life... or not that!",
+  "releaseDate": 1585162800000
+}

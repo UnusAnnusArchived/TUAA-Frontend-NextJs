@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "4990ab8c-f621-4579-9a28-dc86cb541903"
+    }
+  ],
+  "uaid": "s01.e168",
+  "season": 1,
+  "episode": 168,
+  "title": "We Explore the Most MYSTERIOUS Mysteries of our Wildy Mysterious Mystery Moon of Mysteries",
+  "description": "what mysteries does our mysterious moon hold? does it hold mysteries that our mysterious minds could not even comprehend? Are there so many mysteries on our mysterious moon that they have gone above what it even means to be a mystery??? Well... here we are to find out.",
+  "releaseDate": 1588186800000
+}

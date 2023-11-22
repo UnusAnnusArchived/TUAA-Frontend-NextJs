@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "5090e56a-eff2-494d-81e8-e8b8cb71abab"
+    }
+  ],
+  "uaid": "s01.e244",
+  "season": 1,
+  "episode": 244,
+  "title": "Can You Bake a Cookie from Cookie Dough Ice Cream?",
+  "description": "",
+  "releaseDate": 1594666800000
+}

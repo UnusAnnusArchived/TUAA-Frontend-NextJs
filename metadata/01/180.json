@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "b771a0a0-4694-4a68-bd4d-4924388821f9"
+    }
+  ],
+  "uaid": "s01.e180",
+  "season": 1,
+  "episode": 180,
+  "title": "Making Our Own Gravestones to Prepare For Our Inevitable Demise",
+  "description": "We're all going to have a gravestone someday, so why not create ours preemptively and really make it our own?",
+  "releaseDate": 1589223600000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "7b7250aa-004d-407c-afd3-a0badaa6a98f"
+    }
+  ],
+  "uaid": "s01.e215",
+  "season": 1,
+  "episode": 215,
+  "title": "Will We Break the Boards... Or Will They Break Us?",
+  "description": "Breaking boards of wood is the foundation upon which all forms of Martial Arts are based on. Karate... Tae Kwon Do...Kung Fu... We attempt to master every single discipline in one fell CHOP!",
+  "releaseDate": 1592161200000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "29b2a8ea-8ed7-483a-b0b8-ec30cc15099b"
+    }
+  ],
+  "uaid": "s01.e309",
+  "season": 1,
+  "episode": 309,
+  "title": "Making Soda With Literally Anything But Soda",
+  "description": "Oreos... Snow Cones... and now... Soda. We work tirelessly to bring you cutting edge research in the field of absolutely disgusting flavor combinations that no one thought would taste good in the first place.",
+  "releaseDate": 1600282800000
+}

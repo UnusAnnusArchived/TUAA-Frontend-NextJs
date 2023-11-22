@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c5652b14-8bc0-4c2b-82c6-45594e3aaf06"
+    }
+  ],
+  "uaid": "s01.e299",
+  "season": 1,
+  "episode": 299,
+  "title": "2 Adults Take a 4th Grade Math Test",
+  "description": "",
+  "releaseDate": 1599418800000
+}

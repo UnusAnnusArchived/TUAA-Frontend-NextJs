@@ -1,6 +1,6 @@
 {
   "api": "https://unusann.us/api",
   "siteRoot": "https://unusann.us",
-  "cdn": "https://unusann.us/api/s3/cdn?key=",
+  "bunny": "https://vz-b39cd352-a49.b-cdn.net",
   "pocketbase": "https://db.unusann.us"
 }

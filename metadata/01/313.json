@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "bda95aca-6991-4446-aa35-7c4cb86150c1"
+    }
+  ],
+  "uaid": "s01.e313",
+  "season": 1,
+  "episode": 313,
+  "title": "We Attempt to Make Holy Water",
+  "description": "",
+  "releaseDate": 1600628400000
+}

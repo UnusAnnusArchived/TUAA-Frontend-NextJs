@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "624413bc-f68f-4912-9158-b77fc97845d9"
+    }
+  ],
+  "uaid": "s01.e213",
+  "season": 1,
+  "episode": 213,
+  "title": "Our Fans Try to Scare Us with Their Homemade Creepypasta",
+  "description": "We tried our best at haunting the internet. But we should have known that we were no match for the demonic artistic ability of our own fans.",
+  "releaseDate": 1591988400000
+}

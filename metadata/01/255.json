@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "4ba13617-8567-42c3-aad7-6a915417c262"
+    }
+  ],
+  "uaid": "s01.e255",
+  "season": 1,
+  "episode": 255,
+  "title": "Would Chica Save Us From Drowning?",
+  "description": "",
+  "releaseDate": 1595617200000
+}

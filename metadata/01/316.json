@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "660fc759-bbe6-4fd6-80ea-048f78396a69"
+    }
+  ],
+  "uaid": "s01.e316",
+  "season": 1,
+  "episode": 316,
+  "title": "This Video Will Never Make Sense",
+  "description": "",
+  "releaseDate": 1600887600000
+}

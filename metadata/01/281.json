@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "d711aedf-46d7-48ec-befb-763c68ee9683"
+    }
+  ],
+  "uaid": "s01.e281",
+  "season": 1,
+  "episode": 281,
+  "title": "The Koala Challenge: TikTok’s Intimate Couple’s Trend",
+  "description": "",
+  "releaseDate": 1597863600000
+}

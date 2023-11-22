@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "38d1f90c-4ef8-497a-b381-a06ea4026632"
+    }
+  ],
+  "uaid": "s01.e233",
+  "season": 1,
+  "episode": 233,
+  "title": "Recreating Mark's Childhood",
+  "description": "",
+  "releaseDate": 1593716400000
+}

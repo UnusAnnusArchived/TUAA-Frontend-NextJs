@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "2e77aa35-3d82-4dea-b84e-92808b905b2d"
+    }
+  ],
+  "uaid": "s01.e230",
+  "season": 1,
+  "episode": 230,
+  "title": "10 Miracle Products to Give YOU the Thiccest Jaw on Planet Earth",
+  "description": "The Jaw: the front porch of the face. It's the first thing you notice when you see a person, and the last thing you think about before you go to sleep at night.",
+  "releaseDate": 1593457200000
+}

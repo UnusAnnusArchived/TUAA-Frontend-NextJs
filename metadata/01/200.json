@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "4ff2ae3f-77c1-4c80-8112-fe128c8dd627"
+    }
+  ],
+  "uaid": "s01.e200",
+  "season": 1,
+  "episode": 200,
+  "title": "DIY Wine",
+  "description": "Bonjour! Je vois que vous êtes aussi une personne de culture qui aime les belles choses de la vie. Rejoignez-nous! Rejoignez-nous alors que nous prenons part au necteur des dieux qu'est le vin.",
+  "releaseDate": 1590865200000
+}

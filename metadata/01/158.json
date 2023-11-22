@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "b4dd4fc7-e168-44c8-984d-01a37abb32e9"
+    }
+  ],
+  "uaid": "s01.e158",
+  "season": 1,
+  "episode": 158,
+  "title": "The Illuminati... Do They Really Exist?",
+  "description": "We dive deep into the realms of Google and Wikipedia to discover the truth behind the curtain of the Illuminati. Are they real? Do they really control the world? Are they watching you right now?",
+  "releaseDate": 1587322800000
+}

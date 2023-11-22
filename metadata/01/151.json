@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "0e82b7e8-2ec2-4436-a1de-0069013c9092"
+    }
+  ],
+  "uaid": "s01.e151",
+  "season": 1,
+  "episode": 151,
+  "title": "The Scariest True Stories on the Internet",
+  "description": "Some things are just too scary, too creepy, too unsettling to be made up. These are some true stories of absolutely terrifying experiences...",
+  "releaseDate": 1586718000000
+}

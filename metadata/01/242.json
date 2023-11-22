@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "4ca54e9b-9160-4eca-b102-eae72bb32ce1"
+    }
+  ],
+  "uaid": "s01.e242",
+  "season": 1,
+  "episode": 242,
+  "title": "The Unus Annus Space Program",
+  "description": "",
+  "releaseDate": 1594494000000
+}

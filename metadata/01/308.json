@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "b049bbcd-df45-4529-91a0-21148f670866"
+    }
+  ],
+  "uaid": "s01.e308",
+  "season": 1,
+  "episode": 308,
+  "title": "Making the Ultimate Unus Annus Burger",
+  "description": "",
+  "releaseDate": 1600196400000
+}

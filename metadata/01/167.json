@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "248f917c-70cd-498a-8279-f5b9e0432bdb"
+    }
+  ],
+  "uaid": "s01.e167",
+  "season": 1,
+  "episode": 167,
+  "title": "Don't Go in the Ocean... Ever.",
+  "description": "The Ocean is a terrible place full of deadly creatures that will eat you without a moment's notice. You should never go there. Ever. Under any circumstances. It's an evil place. Full of evil creatures like SCP-3000 and the Loch Ness Monster. It's evil...",
+  "releaseDate": 1588100400000
+}

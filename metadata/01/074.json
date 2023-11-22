@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "bcf19a06-97fa-4a9a-a3df-07efe2c2a623"
+    }
+  ],
+  "uaid": "s01.e074",
+  "season": 1,
+  "episode": 74,
+  "title": "Mark and Ethan Learn About The Human Body",
+  "description": "Mark and Ethan learn the inner workings of the wonderful human body.<br>",
+  "releaseDate": 1580065200000
+}

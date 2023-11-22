@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "fe08dcbc-5b8b-43d8-aedf-9131ee4f81fb"
+    }
+  ],
+  "uaid": "s01.e312",
+  "season": 1,
+  "episode": 312,
+  "title": "Brick Soccer",
+  "description": "",
+  "releaseDate": 1600542000000
+}

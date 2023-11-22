@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "a4f41c02-d874-4f35-9bec-24d67e278887"
+    }
+  ],
+  "uaid": "s01.e154",
+  "season": 1,
+  "episode": 154,
+  "title": "Mark and Ethan Bet Everything on a Wikipedia Race",
+  "description": "A Wikipedia Race (aka Wiki Races) is the ultimate test of skill that 2 individuals could possible have. But with this race... the stakes are almost too high to endure.",
+  "releaseDate": 1586977200000
+}

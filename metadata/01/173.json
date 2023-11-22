@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "2073babc-bc52-4b55-9554-f51a88a746f7"
+    }
+  ],
+  "uaid": "s01.e173",
+  "season": 1,
+  "episode": 173,
+  "title": "Mark and Ethan Desperately Attempt to Feel Something",
+  "description": "Mark and Ethan scour the internet to try and find videos that make them FEEL something before their hearts stop",
+  "releaseDate": 1588618800000
+}

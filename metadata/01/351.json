@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "509e4035-e80e-461e-9887-4f21a316d43b"
+    }
+  ],
+  "uaid": "s01.e351",
+  "season": 1,
+  "episode": 351,
+  "title": "The Unus Annus Annual Costume Contest",
+  "description": "",
+  "releaseDate": 1603911600000
+}

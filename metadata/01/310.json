@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "058d776c-2717-4316-8fe6-7b15589d0e50"
+    }
+  ],
+  "uaid": "s01.e310",
+  "season": 1,
+  "episode": 310,
+  "title": "Pee Soda",
+  "description": "",
+  "releaseDate": 1600369200000
+}

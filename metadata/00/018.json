@@ -1,0 +1,20 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "e5bce365-cdba-42e8-8b68-edd06563acfc"
+    },
+    {
+      "type": "youtube",
+      "youtubeId": "zkHuv37Z7zM"
+    }
+  ],
+  "uaid": "s00.e018",
+  "season": 0,
+  "episode": 18,
+  "title": "I Failed Unus Annus AGAIN!",
+  "description": "Well ... I failed Unus Annus ... AGAIN!<br />I have reasons ... probably excuses ... but I have them.<br />We will go through all the reasons and then set the new goals for 2023.<br /><br /><br />Unus► <a href=\"https://www.youtube.com/c/CrankGame\">crankgame</a><br />Annus► <a href=\"https://www.youtube.com/user/markiplierGAME\">markipliergame</a><br /><br /><br />Twitter► <a href=\"https://twitter.com/LixianTV\">lixiantv</a><br />Become a Member► <a href=\"https://bit.ly/JoinLixian\">https://bit.ly/JoinLixian</a><br />Merch► <a href=\"https://teespring.com/stores/lixian\">teespring.com/stores/lixian</a><br /><br />I really hope you guys enjoy it<br />Love you all<br /><br /><a href=\"https://www.youtube.com/hashtag/unusannus\">#unusannus</a> <a href=\"https://www.youtube.com/hashtag/deathiversary\">#deathiversary</a>",
+  "releaseDate": 1668448832000
+}

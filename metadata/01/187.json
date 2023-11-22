@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "7743f3d1-ce6b-4471-bd84-f5ec1c06d52d"
+    }
+  ],
+  "uaid": "s01.e187",
+  "season": 1,
+  "episode": 187,
+  "title": "How Much Caffeine Does It Take to Kill a Man?",
+  "description": "As pioneer Phillip J. Fry has previously established, it is totally possible to transcend reality through the imbibition of gratuitous amounts of coffee. In this video, we explore the fine line betwixt god-like omnipotence and an untimely demise. Lo doth the tale of Icarus cometh whence to mine mind?",
+  "releaseDate": 1589828400000
+}

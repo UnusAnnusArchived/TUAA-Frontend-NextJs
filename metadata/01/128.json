@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "d7d46858-6319-4bdd-8827-779227626ae4"
+    }
+  ],
+  "uaid": "s01.e128",
+  "season": 1,
+  "episode": 128,
+  "title": "We Tried a Labor Pain Simulator",
+  "description": "Mark and Ethan will never know the TRUE feeling of child labor, but today they attempt to simulate that miracle.",
+  "releaseDate": 1584730800000
+}

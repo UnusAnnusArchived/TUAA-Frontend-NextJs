@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "78d4a2dc-800d-44d7-99ae-85b6424e65f0"
+    }
+  ],
+  "uaid": "s01.e359",
+  "season": 1,
+  "episode": 359,
+  "title": "All Our Video Ideas That Never Happened",
+  "description": "One year is a lot of videos. We finally spill the beans on the videos that never were.",
+  "releaseDate": 1604602800000
+}

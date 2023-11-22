@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "7c61f220-f34e-4def-abdc-ff8dc54e6314"
+    }
+  ],
+  "uaid": "s01.e078",
+  "season": 1,
+  "episode": 78,
+  "title": "Hacking The Very Fabric of the Universe",
+  "description": "Using the sacred texts of 5 Minute Crafts, we harness the incredible power of \"life hacks\" to achieve immortality.<br><br>Edited by  ► <a target=\"blank\" href=\"https://bit.ly/2Mv5aTM\">https://bit.ly/2Mv5aTM</a>",
+  "releaseDate": 1580410800000
+}

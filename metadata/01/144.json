@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "50e377e6-ca13-4cd6-963b-61674099dc6d"
+    }
+  ],
+  "uaid": "s01.e144",
+  "season": 1,
+  "episode": 144,
+  "title": "We Made Every YouTuber Battle in the Hunger Games",
+  "description": "Chaos ensues as Unus, Annus, Mark, Ethan and every single other YouTuber battle it out in the YouTuber Hunger Games",
+  "releaseDate": 1586113200000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "aa26723f-4e09-42b6-b3c2-e4b2d3469ced"
+    }
+  ],
+  "uaid": "s01.e368",
+  "season": 1,
+  "episode": 368,
+  "title": "Goodbye. (With chat)",
+  "description": "This is it. We will be deleting this channel live on stream. Join us for our final moments.",
+  "releaseDate": 1605294000000,
+  "isLast": true
+}

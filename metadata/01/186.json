@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "06939942-4bee-4bd6-a67d-2cf35abffc0d"
+    }
+  ],
+  "uaid": "s01.e186",
+  "season": 1,
+  "episode": 186,
+  "title": "How Big Can a Nuke Get?",
+  "description": "Every wanted answers to the fun, interesting questions that keep you awake at night? Well today's your lucky day!",
+  "releaseDate": 1589742000000
+}

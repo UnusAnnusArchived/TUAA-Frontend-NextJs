@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "f723397e-dc5b-4dab-8f45-49c42800011e"
+    }
+  ],
+  "uaid": "s01.e291",
+  "season": 1,
+  "episode": 291,
+  "title": "Hunting HeeHoo",
+  "description": "",
+  "releaseDate": 1598727600000
+}

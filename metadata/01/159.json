@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "98a5a081-2d87-440e-bd7e-1bcfc02ce5c1"
+    }
+  ],
+  "uaid": "s01.e159",
+  "season": 1,
+  "episode": 159,
+  "title": "Using Google Maps to Find The Lost City of Atlantis",
+  "description": "Mermaids. Piles of Gold. Talking Fish. All this and more lie before us in the great city of Atlantis... and today we find it.",
+  "releaseDate": 1587409200000
+}

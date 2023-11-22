@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "b2cf7325-c41b-46bd-9825-91d7cba4054a"
+    }
+  ],
+  "uaid": "s01.e362",
+  "season": 1,
+  "episode": 362,
+  "title": "God's Fitness Test",
+  "description": "It's all come down to this.... our final fitness challenge.",
+  "releaseDate": 1604862000000
+}

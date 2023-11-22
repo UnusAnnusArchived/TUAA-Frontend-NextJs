@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "043a7e74-6813-4e0c-bbeb-bd309bcaf747"
+    }
+  ],
+  "uaid": "s01.e285",
+  "season": 1,
+  "episode": 285,
+  "title": "How to Rescue a Cat from a Tree",
+  "description": "",
+  "releaseDate": 1598209200000
+}

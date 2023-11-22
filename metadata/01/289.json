@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "6e892360-092c-4ddb-8614-3c83a7d9a1d0"
+    }
+  ],
+  "uaid": "s01.e289",
+  "season": 1,
+  "episode": 289,
+  "title": "How to Start a Fire (except don't...)",
+  "description": "",
+  "releaseDate": 1598554800000
+}

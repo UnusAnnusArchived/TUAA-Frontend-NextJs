@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "9cded3a7-0449-436d-9633-0958ecbb375c"
+    }
+  ],
+  "uaid": "s01.e107",
+  "season": 1,
+  "episode": 107,
+  "title": "Blowing Our Souls Into Some Hot Glass ",
+  "description": "Glass blowing is a hot and dangerous art form that involves skill, patience, and a whole heck of a lot of blowing. Are Mark and Ethan up to the task?<br>",
+  "releaseDate": 1582916400000
+}

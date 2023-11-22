@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "248609fe-3832-4eb5-82b7-cd69ff3bca2f"
+    }
+  ],
+  "uaid": "s01.e148",
+  "season": 1,
+  "episode": 148,
+  "title": "Speed Reading 1000+ WPM to Gain a Complete Understanding of All Human Knowledge",
+  "description": "Ever wanted to know how to speed read? Do you even know what speed reading is? Well... this is what it means to take Speed Reading EVEN FURTHER BEYOND!!",
+  "releaseDate": 1586458800000
+}

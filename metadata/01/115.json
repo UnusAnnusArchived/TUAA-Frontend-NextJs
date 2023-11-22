@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "763f4274-608e-4395-ad9c-5fa1a727b788"
+    }
+  ],
+  "uaid": "s01.e115",
+  "season": 1,
+  "episode": 115,
+  "title": "DIY Chiropractor ",
+  "description": "There's probably a reason why chiropractors are licensed. But we here at Unus Annus never let little things like licenses or \"best practices\" or \"do no harm\" get in the way.<br>",
+  "releaseDate": 1583607600000
+}

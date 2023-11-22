@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "b0b40af1-f5bf-4d65-90ce-2c7d8e19ff72"
+    }
+  ],
+  "uaid": "s01.e120",
+  "season": 1,
+  "episode": 120,
+  "title": "What Does Astrology Say About Our Friendship? ",
+  "description": "The stars created us. They Define us. And they will end us. Today we check our birth charts to see what's in store for our little bodies<br>",
+  "releaseDate": 1584039600000
+}

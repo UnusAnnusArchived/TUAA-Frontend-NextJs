@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "ba836292-e6c9-49ab-a206-d3c640a1a46d"
+    }
+  ],
+  "uaid": "s01.e273",
+  "season": 1,
+  "episode": 273,
+  "title": "Hydro Dipping A Baby",
+  "description": "",
+  "releaseDate": 1597172400000
+}

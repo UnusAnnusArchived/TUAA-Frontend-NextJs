@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "6c3d5666-914d-4d60-843f-0e7105e302a4"
+    }
+  ],
+  "uaid": "s01.e240",
+  "season": 1,
+  "episode": 240,
+  "title": "This Is Hiding On Your Body RIGHT NOW.",
+  "description": "",
+  "releaseDate": 1594321200000
+}

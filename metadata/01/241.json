@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "17c1645c-c6b7-4687-a540-5ddb8e157b0d"
+    }
+  ],
+  "uaid": "s01.e241",
+  "season": 1,
+  "episode": 241,
+  "title": "Tasting Weird Food Combos: Pickles and Chocolate? Ice Cream and Soy Sauce?",
+  "description": "",
+  "releaseDate": 1594407600000
+}

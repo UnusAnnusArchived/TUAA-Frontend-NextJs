@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "563db22f-8b62-4a72-a802-7205e93f5f4a"
+    }
+  ],
+  "uaid": "s01.e286",
+  "season": 1,
+  "episode": 286,
+  "title": "A Bear Attacked Us in the Middle of the Night",
+  "description": "",
+  "releaseDate": 1598295600000
+}

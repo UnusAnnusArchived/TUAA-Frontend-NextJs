@@ -1,0 +1,20 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "f240d180-af32-4dc7-a8ec-ac840e613665"
+    },
+    {
+      "type": "youtube",
+      "youtubeId": "twvf_OsOo-o"
+    }
+  ],
+  "uaid": "s00.e012",
+  "season": 0,
+  "episode": 12,
+  "title": "Memento Mori (Mark)",
+  "description": "All we have left are the memories.",
+  "releaseDate": 1636876814000
+}

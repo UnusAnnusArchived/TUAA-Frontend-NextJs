@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "305f59ac-dc5b-4cdb-b8dc-e1437ce3c3e5"
+    }
+  ],
+  "uaid": "s01.e245",
+  "season": 1,
+  "episode": 245,
+  "title": "Bleachus Annus",
+  "description": "",
+  "releaseDate": 1594753200000
+}

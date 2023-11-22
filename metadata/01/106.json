@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "952abbce-40a1-4de3-84fc-a35dad8018c3"
+    }
+  ],
+  "uaid": "s01.e106",
+  "season": 1,
+  "episode": 106,
+  "title": "Mark and Ethan Go on a \"Drum Date\" ",
+  "description": "Sometimes you have to march to the beat of your own drum. But what happens when your drum matches the beat of your heart?<br>",
+  "releaseDate": 1582830000000
+}

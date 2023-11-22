@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "68f77bee-bbdc-458c-969a-cea143ea8ab2"
+    }
+  ],
+  "uaid": "s01.e126",
+  "season": 1,
+  "episode": 126,
+  "title": "Unus Annus Carves the Roast Beast",
+  "description": "How the Grinch Stole Christmas (with Jim Carrey) is the greatest film ever created. This cannot be disputed.",
+  "releaseDate": 1584558000000
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "9d9eebc4-7e5e-42b4-bddf-436bd699dd0d"
+    }
+  ],
+  "uaid": "s01.e105",
+  "season": 1,
+  "episode": 105,
+  "title": "We Wrote a Hit Pop Song in 30 Minutes ",
+  "description": "Mark and Ethan, joined by musician Leila Pari, craft lyrical genius in record time on the Santa Monica shore.",
+  "releaseDate": 1582743600000
+}

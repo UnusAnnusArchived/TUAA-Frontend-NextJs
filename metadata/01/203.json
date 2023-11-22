@@ -1,0 +1,16 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "dfd45020-2693-4554-9cdb-c9e34963ffee"
+    }
+  ],
+  "uaid": "s01.e203",
+  "season": 1,
+  "episode": 203,
+  "title": "BLACK LIVES MATTER. Resources and How You Can Help in the Description",
+  "description": "Black Lives Matter. Let's work together as a community to make a real difference.<br><br>Not sure where to begin? There are so many ways to get involved. This movement is fluid and growing every day, so it is up to us to seek out spaces where we can make a difference. Look on social media for local fundraising efforts that speak to you. Amplify those efforts and continue spreading the word.",
+  "releaseDate": 1591124400000
+}
