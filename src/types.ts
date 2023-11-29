@@ -157,43 +157,12 @@ export interface ChangePFPResponse {
   status?: "success" | string;
   error?: "Not logged in!" | string;
 }
-export interface IComment {
-  episode: string;
-  uid: string;
-  comment: CommentBody;
-  stats: CommentStats;
-  user: CommentUser;
-}
-export interface CommentBody {
-  plaintext: string;
-  html: string;
-}
-export interface CommentStats {
-  published: number;
-  likes: number;
-  dislikes: number;
-}
-export interface CommentUser {
-  id: string;
-  username: string;
-  pfp: IUserPFP;
-}
 
-export interface IStoredComment {
-  id?: string;
+export interface IComment extends Partial<Record> {
   episode: string;
-  uid: string;
-  user?: CommentUser;
-  comment: CommentBody;
-  stats: CommentStats;
-}
-
-export interface IUserPFP {
-  originalFilename: string;
-  filename: string;
-  width: number;
-  height: number;
-  format: "image/jpeg";
+  markdown: string;
+  user: string;
+  isEdited: boolean;
 }
 
 export interface LoginResponse {
@@ -216,41 +185,6 @@ export interface LoginResponse {
     legacy_id: string;
     emails_account: boolean;
     emails_updates: boolean;
-  };
-}
-
-export interface LimitedUser {
-  id: string;
-  email: string;
-  username: string;
-  pfp: IUserPFP;
-}
-
-export interface LogoutResponse {
-  status: "success" | "error";
-  error?: "Account does not exist!" | string;
-}
-
-export interface PostCommentResponse {
-  status?: "success";
-  comment?: IComment;
-  error?: {
-    code: 3 | "401" | number | string;
-    message: "Invalid message length!" | "Unauthorized!" | string;
-  };
-}
-
-export interface CheckLoginKeyResponse {
-  isValid: boolean;
-  user?: LimitedUser;
-}
-
-export interface SignupResponse {
-  success: boolean;
-  loginURI?: "/api/v2/account/login";
-  error?: {
-    code: 0 | 1 | 2 | number;
-    message: "Passwords do not match!" | "Account exists!" | "Missing info!" | string;
   };
 }
 
@@ -349,7 +283,7 @@ export interface IPlaylist extends Record {
   isFavorites: boolean;
 }
 
-export interface IUser extends Record {
+export interface IUser extends Partial<Record> {
   username: string;
   email?: string;
   emailVisability: boolean;

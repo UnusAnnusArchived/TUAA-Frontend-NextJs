@@ -39,6 +39,9 @@ dependencies:
   '@mui/system':
     specifier: ^5.10.12
     version: 5.11.4(@emotion/react@11.10.5)(@emotion/styled@11.10.5)(@types/react@17.0.2)(react@17.0.2)
+  '@mui/x-data-grid':
+    specifier: ^5.17.22
+    version: 5.17.22(@mui/material@5.11.4)(@mui/system@5.11.4)(react-dom@17.0.2)(react@17.0.2)
   '@popperjs/core':
     specifier: ^2.11.6
     version: 2.11.6
@@ -1754,6 +1757,26 @@ packages:
       prop-types: 15.8.1
       react: 17.0.2
       react-is: 18.2.0
+    dev: false
+
+  /@mui/x-data-grid@5.17.22(@mui/material@5.11.4)(@mui/system@5.11.4)(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-75nc+BL5G8/KzMOBl7NQ622D9n6mLx3tsRnF0HmccGYLMrZ7jlBMz50M9thrDee7b27CsrZolay7tq+cPFrq4Q==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.22.5
+      '@mui/material': 5.11.4(@emotion/react@11.10.5)(@emotion/styled@11.10.5)(@types/react@17.0.2)(react-dom@17.0.2)(react@17.0.2)
+      '@mui/system': 5.11.4(@emotion/react@11.10.5)(@emotion/styled@11.10.5)(@types/react@17.0.2)(react@17.0.2)
+      '@mui/utils': 5.11.2(react@17.0.2)
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
+      reselect: 4.1.8
     dev: false
 
   /@next/env@12.3.4:
@@ -4286,6 +4309,10 @@ packages:
   /require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /reselect@4.1.8:
+    resolution: {integrity: sha512-ab9EmR80F/zQTMNeneUr4cv+jSwPJgIlvEmVwLerwrWVbpLlBuls9XHzIeTFy4cegU2NHBp3va0LKOzU5qFEYQ==}
     dev: false
 
   /resolve-from@4.0.0:

@@ -1,5 +1,4 @@
 import { atom } from "recoil";
-import type { Record } from "pocketbase";
 import type { IUser, PBAuthProvider } from "./types";
 import { IColorScheme } from "./types";
 
