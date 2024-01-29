@@ -32,6 +32,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
   return (
     <iframe
       src={episode ? getBunnyEpisodeLinks(episode).directPlay : ""}
+      allowFullScreen
       style={{
         border: "none",
         width: "100%",
