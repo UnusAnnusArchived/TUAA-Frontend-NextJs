@@ -27,7 +27,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
         ).data
       );
     })();
-  }, []);
+  }, [video]);
 
   return (
     <iframe
