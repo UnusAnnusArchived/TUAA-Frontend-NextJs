@@ -1,9 +1,16 @@
 {
-  "video": "/01/320.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "5a9e5076-5a54-4b15-bf29-fc287aa4384f"
+    }
+  ],
+  "uaid": "s01.e320",
   "season": 1,
   "episode": 320,
   "title": "The Great Ice Cream Cake Race",
   "description": "Two boys. Two Cakes. One winner. Loser walks the plank.",
-  "releasedate": 1601233200000,
-  "thumbnail": "/thumbnails/01/320.webp"
+  "date": 1601233200000
 }

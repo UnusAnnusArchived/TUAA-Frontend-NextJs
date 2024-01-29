@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/097/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/097/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/097/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/097/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/097/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "90589fe0-551a-4559-aca4-5ba07564f7f7"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/097.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/097.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e097",
   "season": 1,
   "episode": 97,
   "title": "3 Big Boys Attempt the King's Royal Fitness Test",
   "description": "The Presidential Fitness test is so 2019... in 2020 it's time for the KING's ROYAL FITNESS TEST!! And we have a special guest to help us out...",
-  "date": 1582052400000,
-  "duration": 1512
+  "date": 1582052400000
 }

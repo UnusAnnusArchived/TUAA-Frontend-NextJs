@@ -1,52 +1,20 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/020/2160.mp4",
-      "type": "video/mp4",
-      "size": 2160
+      "type": "bunny",
+      "bunnyId": "2c5a3aba-2b0c-46d0-ad6a-6c90a853b704"
     },
     {
-      "src": "/00/020/1440.mp4",
-      "type": "video/mp4",
-      "size": 1440
-    },
-    {
-      "src": "/00/020/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/00/020/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/020/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/020/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/020/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "youtube",
+      "youtubeId": "fusSZkFZ08I"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/020.jpg",
-      "type": "image/jpeg",
-      "size": 0
-    }
-  ],
+  "uaid": "s00.e020",
   "season": 0,
   "episode": 20,
   "title": "Remember Death",
   "description": "Until next year. Memento Mori.<br />Death Remembers: <a href=\"https://www.youtube.com/watch?v=_WeSH0j7dCw\">https://www.youtube.com/watch?v=_WeSH0j7dCw</a>",
-  "date": 1699984817000
+  "date": 1700596815000
 }

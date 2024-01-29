@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/122/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/122/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/122/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/122/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/122/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "587ee3b5-10f3-4f94-98ad-67df53bfc868"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/122.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/122.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e122",
   "season": 1,
   "episode": 122,
   "title": "Mark Needs To Rub Ethan and Only His Mom Can Help Him",

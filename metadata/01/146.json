@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/146/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/146/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/146/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/146/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/146/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "0fc831c2-9560-40ce-bfc9-65a35934ecf8"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/146.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/146.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e146",
   "season": 1,
   "episode": 146,
   "title": "We Played Mad Libs And Ran It Through Google Translate",

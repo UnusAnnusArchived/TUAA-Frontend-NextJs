@@ -1,9 +1,16 @@
 {
-  "video": "/01/283.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "40fa66ab-10ed-410e-b764-3b5ed267125e"
+    }
+  ],
+  "uaid": "s01.e283",
   "season": 1,
   "episode": 283,
   "title": "Too Many Pickles",
   "description": "",
-  "releasedate": 1598036400000,
-  "thumbnail": "/thumbnails/01/283.webp"
+  "date": 1598036400000
 }

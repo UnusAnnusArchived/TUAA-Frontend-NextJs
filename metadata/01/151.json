@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/151/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/151/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/151/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/151/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/151/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "0e82b7e8-2ec2-4436-a1de-0069013c9092"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/151.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/151.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e151",
   "season": 1,
   "episode": 151,
   "title": "The Scariest True Stories on the Internet",

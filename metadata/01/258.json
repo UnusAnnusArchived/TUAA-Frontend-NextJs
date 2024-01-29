@@ -1,9 +1,16 @@
 {
-  "video": "/01/258.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "5d78c8c7-c6b3-4d24-aeb1-d370472e0386"
+    }
+  ],
+  "uaid": "s01.e258",
   "season": 1,
   "episode": 258,
   "title": "The Annual Unus Annus Dunk Contest",
   "description": "",
-  "releasedate": 1595876400000,
-  "thumbnail": "/thumbnails/01/258.webp"
+  "date": 1595876400000
 }

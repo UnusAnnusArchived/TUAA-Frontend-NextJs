@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/115/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/115/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/115/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/115/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/115/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "763f4274-608e-4395-ad9c-5fa1a727b788"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/115.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/115.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e115",
   "season": 1,
   "episode": 115,
   "title": "DIY Chiropractor ",
   "description": "There's probably a reason why chiropractors are licensed. But we here at Unus Annus never let little things like licenses or \"best practices\" or \"do no harm\" get in the way.<br>",
-  "date": 1583607600000,
-  "duration": 1080
+  "date": 1583607600000
 }

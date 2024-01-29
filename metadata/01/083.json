@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/083/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/083/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/083/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/083/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/083/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "46c57ba3-e11e-41a8-8343-e56d03537304"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/083.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/083.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e083",
   "season": 1,
   "episode": 83,
   "title": "Professional Fire Cupping (Going Even Further Beyond) ",
   "description": "Mark and Ethan turn to a professional to feed their cupping addiction. Fire cupping - facial cupping - acupuncture cupping - where does it end?",
-  "date": 1580842800000,
-  "duration": 1277
+  "date": 1580842800000
 }

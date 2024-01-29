@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/159/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/159/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/159/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/159/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/159/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "98a5a081-2d87-440e-bd7e-1bcfc02ce5c1"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/159.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/159.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e159",
   "season": 1,
   "episode": 159,
   "title": "Using Google Maps to Find The Lost City of Atlantis",

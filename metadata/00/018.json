@@ -1,39 +1,17 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/018/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
+      "type": "bunny",
+      "bunnyId": "e5bce365-cdba-42e8-8b68-edd06563acfc"
     },
     {
-      "src": "/00/018/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/018/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/018/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/018/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "youtube",
+      "youtubeId": "zkHuv37Z7zM"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/018.jpg",
-      "type": "image/jpeg",
-      "size": 0
-    }
-  ],
+  "uaid": "s00.e018",
   "season": 0,
   "episode": 18,
   "title": "I Failed Unus Annus AGAIN!",

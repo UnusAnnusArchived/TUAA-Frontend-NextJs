@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/058/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/058/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/058/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/058/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/058/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "0b049947-01ed-47a3-9493-237b6598eac5"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/058.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/058.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e058",
   "season": 1,
   "episode": 58,
   "title": "Ethan Finally Becomes a MAN",
   "description": "Mark teaches Ethan the ways of becoming a man... through hard MANual labor. Little does Ethan know the painful surprise that also comes with growing up...",
-  "date": 1578682800000,
-  "duration": 1585
+  "date": 1578682800000
 }

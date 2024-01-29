@@ -1,9 +1,16 @@
 {
-  "video": "/01/185.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "81b1bdce-3a32-40cc-8e0a-c2c2cb69d2ff"
+    }
+  ],
+  "uaid": "s01.e185",
   "season": 1,
   "episode": 185,
   "title": "We Explore the Unus Annus Subreddit for Your Delicious Memes",
   "description": "Once again, we look at all the wonderful, funny, and downright disturbing memes you fine folks have posted on the Unus Annus Subreddit.",
-  "releasedate": 1589655600000,
-  "thumbnail": "/thumbnails/01/185.webp"
+  "date": 1589655600000
 }

@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/170/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/170/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/170/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/170/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/170/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "5a9f1d07-9e72-4808-8bf6-94e2ab540904"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/170.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/170.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e170",
   "season": 1,
   "episode": 170,
   "title": "Is Mark a Masochist?",

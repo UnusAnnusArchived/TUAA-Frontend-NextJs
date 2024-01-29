@@ -1,9 +1,16 @@
 {
-  "video": "/01/239.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c0a6dbb1-23b6-4770-9090-cde2982fb193"
+    }
+  ],
+  "uaid": "s01.e239",
   "season": 1,
   "episode": 239,
   "title": "Unus Annus Try Pole Dancing",
   "description": "",
-  "releasedate": 1594234800000,
-  "thumbnail": "/thumbnails/01/239.webp"
+  "date": 1594234800000
 }

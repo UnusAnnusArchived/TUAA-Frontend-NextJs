@@ -1,9 +1,16 @@
 {
-  "video": "/01/277.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "8a3be8b2-fb51-4a83-bc27-a2a7ab105b4a"
+    }
+  ],
+  "uaid": "s01.e277",
   "season": 1,
   "episode": 277,
   "title": "Momiplier Teaches Self-Defense",
   "description": "",
-  "releasedate": 1597518000000,
-  "thumbnail": "/thumbnails/01/277.webp"
+  "date": 1597518000000
 }

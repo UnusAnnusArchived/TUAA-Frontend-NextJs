@@ -1,9 +1,16 @@
 {
-  "video": "/01/271.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "00372fbb-d0de-407a-bbde-e6e811e169a9"
+    }
+  ],
+  "uaid": "s01.e271",
   "season": 1,
   "episode": 271,
   "title": "DO NOT TRY THIS UNDER ANY CIRCUMSTANCES",
   "description": "",
-  "releasedate": 1596999600000,
-  "thumbnail": "/thumbnails/01/271.webp"
+  "date": 1596999600000
 }

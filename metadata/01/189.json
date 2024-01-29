@@ -1,9 +1,16 @@
 {
-  "video": "/01/189.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "785d0cac-645b-4c16-bb69-9e52d277b84a"
+    }
+  ],
+  "uaid": "s01.e189",
   "season": 1,
   "episode": 189,
   "title": "We Played Strip Poker",
   "description": "It's a risky game as old as time itself: Strip Poker. One Winner. One Loser. One ring to rule them all. One ring to find them. No clothes, all attitude. This summer, two mighty heroes take on their biggest challenge yet. Who will win? Who will die? Yes.",
-  "releasedate": 1590001200000,
-  "thumbnail": "/thumbnails/01/189.webp"
+  "date": 1590001200000
 }

@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/176/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/176/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/176/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/176/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/176/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "eb94f528-b667-486d-b71b-52b0e2b2ab44"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/176.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/176.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e176",
   "season": 1,
   "episode": 176,
   "title": "Like It or Not... This is What The New Human Looks Like",

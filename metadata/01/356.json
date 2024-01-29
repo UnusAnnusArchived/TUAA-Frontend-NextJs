@@ -1,9 +1,16 @@
 {
-  "video": "/01/356.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "97810168-38df-4620-8601-bfc731c7408b"
+    }
+  ],
+  "uaid": "s01.e356",
   "season": 1,
   "episode": 356,
   "title": "The Unus Annus Last Supper",
   "description": "",
-  "releasedate": 1604343600000,
-  "thumbnail": "/thumbnails/01/356.webp"
+  "date": 1604343600000
 }

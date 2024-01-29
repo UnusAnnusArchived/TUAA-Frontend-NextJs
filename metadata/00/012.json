@@ -1,64 +1,20 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/012/2160.mp4",
-      "type": "video/mp4",
-      "size": 2160
+      "type": "bunny",
+      "bunnyId": "f240d180-af32-4dc7-a8ec-ac840e613665"
     },
     {
-      "src": "/00/012/1440.mp4",
-      "type": "video/mp4",
-      "size": 1440
-    },
-    {
-      "src": "/00/012/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/00/012/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/012/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/012/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/012/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "youtube",
+      "youtubeId": "twvf_OsOo-o"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/012.avif",
-      "type": "image/avif",
-      "size": 28740
-    },
-    {
-      "src": "/thumbnails/00/012.webp",
-      "type": "image/webp",
-      "size": 49472
-    },
-    {
-      "src": "/thumbnails/00/012.jpg",
-      "type": "image/jpeg",
-      "size": 58136
-    }
-  ],
+  "uaid": "s00.e012",
   "season": 0,
   "episode": 12,
   "title": "Memento Mori (Mark)",
   "description": "All we have left are the memories.",
-  "date": 1636916400000,
-  "islast": false,
-  "duration": 296
+  "date": 1636876814000
 }

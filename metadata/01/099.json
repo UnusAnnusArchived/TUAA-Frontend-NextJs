@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/099/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/099/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/099/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/099/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/099/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "4ef7d9c1-26fe-4c52-87a8-c09ed716b297"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/099.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/099.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e099",
   "season": 1,
   "episode": 99,
   "title": "Learning the Ancient Art of Chinese Archery ",
   "description": "Mark and Ethan hone their mighty skills in archery. Not even death can escape their flying arrows. - or can it?",
-  "date": 1582225200000,
-  "duration": 1456
+  "date": 1582225200000
 }

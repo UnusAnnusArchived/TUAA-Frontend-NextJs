@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/148/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/148/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/148/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/148/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/148/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "248609fe-3832-4eb5-82b7-cd69ff3bca2f"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/148.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/148.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e148",
   "season": 1,
   "episode": 148,
   "title": "Speed Reading 1000+ WPM to Gain a Complete Understanding of All Human Knowledge",

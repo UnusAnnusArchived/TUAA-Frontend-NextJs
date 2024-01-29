@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "_metadataVersion": {
+      "type": "number",
+      "enum": [3]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["bunny"]
+              },
+              "bunnyId": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$"
+              }
+            },
+            "required": ["type", "bunnyId"]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["direct"]
+              },
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "resolutions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string",
+                      "pattern": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)"
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 1
+                    }
+                  },
+                  "required": ["src", "width"]
+                }
+              }
+            },
+            "required": ["type", "name", "id", "resolutions"]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["youtube"]
+              },
+              "youtubeId": {
+                "type": "string",
+                "pattern": "^[\\w\\d_\\-]{11}$"
+              }
+            },
+            "required": ["type", "youtubeId"]
+          }
+        ]
+      }
+    },
+    "uaid": {
+      "type": "string",
+      "pattern": "^s\\d{2}.e\\d{3}$"
+    },
+    "season": {
+      "type": "number",
+      "minimum": 0
+    },
+    "episode": {
+      "type": "number",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "date": {
+      "type": "number",
+      "minimum": 0
+    },
+    "isLast": {
+      "type": "boolean"
+    }
+  },
+  "required": ["_metadataVersion", "sources", "uaid", "season", "episode", "title", "description", "releaseDate"]
+}

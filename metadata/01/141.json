@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/141/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/141/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/141/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/141/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/141/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "2d7c928a-adb7-4936-8dd6-a6f695636b49"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/141.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/141.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e141",
   "season": 1,
   "episode": 141,
   "title": "Mark Builds a Pillow Fort for the Very First Time",

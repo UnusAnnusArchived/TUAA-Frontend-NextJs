@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/093/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/093/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/093/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/093/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/093/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "8bca8884-ee46-4a9c-942f-428cfa0261f5"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/093.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/093.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e093",
   "season": 1,
   "episode": 93,
   "title": "Our Perfect (and last) Valentine's Day",
   "description": "Today, Mark and Ethan discover the TRUE meaning of everlasting love.",
-  "date": 1581706800000,
-  "duration": 847
+  "date": 1581706800000
 }

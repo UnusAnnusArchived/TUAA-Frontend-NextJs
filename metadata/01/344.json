@@ -1,9 +1,16 @@
 {
-  "video": "/01/344.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "94f455fb-13bd-461e-9147-ca8906e4f8fe"
+    }
+  ],
+  "uaid": "s01.e344",
   "season": 1,
   "episode": 344,
   "title": "Pressure Washing Our Sins Away",
   "description": "",
-  "releasedate": 1603306800000,
-  "thumbnail": "/thumbnails/01/344.webp"
+  "date": 1603306800000
 }

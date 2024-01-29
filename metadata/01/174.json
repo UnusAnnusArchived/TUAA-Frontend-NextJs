@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/174/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/174/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/174/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/174/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/174/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "7c96b10d-8b17-4a99-b7c8-9ebcbec1d8df"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/174.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/174.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e174",
   "season": 1,
   "episode": 174,
   "title": "An A.I. Generates Our Worst Nightmare",

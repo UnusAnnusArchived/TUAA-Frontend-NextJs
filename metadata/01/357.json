@@ -1,9 +1,16 @@
 {
-  "video": "/01/357.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "9d7b277c-5b7d-4fcb-9643-34696667aba4"
+    }
+  ],
+  "uaid": "s01.e357",
   "season": 1,
   "episode": 357,
   "title": "Being Brutally Honest with Each Other",
   "description": "",
-  "releasedate": 1604430000000,
-  "thumbnail": "/thumbnails/01/357.webp"
+  "date": 1604430000000
 }

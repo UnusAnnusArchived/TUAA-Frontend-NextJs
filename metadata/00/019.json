@@ -1,39 +1,17 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/019/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
+      "type": "bunny",
+      "bunnyId": "161362e5-4d47-4e95-a6cb-32bb18129c8e"
     },
     {
-      "src": "/00/019/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/019/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/019/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/019/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "youtube",
+      "youtubeId": "NKsEMwHYb1w"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/019.jpg",
-      "type": "image/jpeg",
-      "size": 0
-    }
-  ],
+  "uaid": "s00.e019",
   "season": 0,
   "episode": 19,
   "title": "I MADE UNUS ANNUS PROUD (kinda)",

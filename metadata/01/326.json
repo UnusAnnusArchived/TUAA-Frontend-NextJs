@@ -1,9 +1,16 @@
 {
-  "video": "/01/326.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "91eb61d0-8f6d-497a-b1b9-fedd264d878f"
+    }
+  ],
+  "uaid": "s01.e326",
   "season": 1,
   "episode": 326,
   "title": "Bobbing For Apples But the Water Keeps Getting Thiccer",
   "description": "It's fall, baby. Time to get into the season by doing an old classic: Bobbing for apples",
-  "releasedate": 1601751600000,
-  "thumbnail": "/thumbnails/01/326.webp"
+  "date": 1601751600000
 }

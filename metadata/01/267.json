@@ -1,9 +1,16 @@
 {
-  "video": "/01/267.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "3500af9f-be19-437e-9242-871f945de245"
+    }
+  ],
+  "uaid": "s01.e267",
   "season": 1,
   "episode": 267,
   "title": "This is Goodbye",
   "description": "",
-  "releasedate": 1596654000000,
-  "thumbnail": "/thumbnails/01/267.webp"
+  "date": 1596654000000
 }

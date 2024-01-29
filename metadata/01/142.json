@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/142/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/142/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/142/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/142/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/142/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "00dfa018-8e49-44ab-b061-1ebc9c068ed8"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/142.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/142.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e142",
   "season": 1,
   "episode": 142,
   "title": "Mark's 1 Weird Talent Leaves Ethan Absolutely Speechless",

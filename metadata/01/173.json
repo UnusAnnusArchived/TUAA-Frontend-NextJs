@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/173/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/173/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/173/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/173/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/173/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "2073babc-bc52-4b55-9554-f51a88a746f7"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/173.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/173.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e173",
   "season": 1,
   "episode": 173,
   "title": "Mark and Ethan Desperately Attempt to Feel Something",

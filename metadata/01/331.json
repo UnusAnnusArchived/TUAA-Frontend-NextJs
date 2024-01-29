@@ -1,9 +1,16 @@
 {
-  "video": "/01/331.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "554f5768-5ef7-4e72-8790-4c9187ecce9b"
+    }
+  ],
+  "uaid": "s01.e331",
   "season": 1,
   "episode": 331,
   "title": "Literally Finding a Needle in a Haystack",
   "description": "",
-  "releasedate": 1602183600000,
-  "thumbnail": "/thumbnails/01/331.webp"
+  "date": 1602183600000
 }

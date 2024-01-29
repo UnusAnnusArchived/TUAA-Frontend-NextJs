@@ -1,9 +1,16 @@
 {
-  "video": "/01/265.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "78d4b2c3-4b3c-48d7-be50-ed5fd3bede2e"
+    }
+  ],
+  "uaid": "s01.e265",
   "season": 1,
   "episode": 265,
   "title": "We Lubed Our Floor for a Sliding Competition",
   "description": "",
-  "releasedate": 1596481200000,
-  "thumbnail": "/thumbnails/01/265.webp"
+  "date": 1596481200000
 }

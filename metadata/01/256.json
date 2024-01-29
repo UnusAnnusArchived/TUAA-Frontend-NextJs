@@ -1,9 +1,16 @@
 {
-  "video": "/01/256.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "175b6e4f-74e7-409e-be25-6ab92118d40e"
+    }
+  ],
+  "uaid": "s01.e256",
   "season": 1,
   "episode": 256,
   "title": "We Do It Better Than Icarus Ever Could",
   "description": "",
-  "releasedate": 1595703600000,
-  "thumbnail": "/thumbnails/01/256.webp"
+  "date": 1595703600000
 }

@@ -1,9 +1,16 @@
 {
-  "video": "/01/329.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "fd48b5c2-2ccc-48f6-9cd8-2c7847472c0f"
+    }
+  ],
+  "uaid": "s01.e329",
   "season": 1,
   "episode": 329,
   "title": "Shooting Archery ON A HORSE",
   "description": "",
-  "releasedate": 1602010800000,
-  "thumbnail": "/thumbnails/01/329.webp"
+  "date": 1602010800000
 }

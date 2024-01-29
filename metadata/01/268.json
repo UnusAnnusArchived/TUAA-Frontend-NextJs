@@ -1,9 +1,16 @@
 {
-  "video": "/01/268.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "2a380f39-7c0f-43de-b52a-caf4252f994b"
+    }
+  ],
+  "uaid": "s01.e268",
   "season": 1,
   "episode": 268,
   "title": "Mark and Ethan Share a Drink",
   "description": "",
-  "releasedate": 1596740400000,
-  "thumbnail": "/thumbnails/01/268.webp"
+  "date": 1596740400000
 }

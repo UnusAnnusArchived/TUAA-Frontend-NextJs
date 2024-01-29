@@ -1,9 +1,16 @@
 {
-  "video": "/01/206.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "4c992394-c544-4c5d-9a99-e2e5b1c47c29"
+    }
+  ],
+  "uaid": "s01.e206",
   "season": 1,
   "episode": 206,
   "title": "Reacting to Your Hilarious Green Screen Memes",
   "description": "As you know, the first annual Unus Annus Green Screen Competition took place just last week and now it's time to review the winners!",
-  "releasedate": 1591383600000,
-  "thumbnail": "/thumbnails/01/206.webp"
+  "date": 1591383600000
 }

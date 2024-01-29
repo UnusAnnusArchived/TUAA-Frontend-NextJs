@@ -1,9 +1,16 @@
 {
-  "video": "/01/363.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "da609bf9-31f2-4ddd-8f00-59aefab08473"
+    }
+  ],
+  "uaid": "s01.e363",
   "season": 1,
   "episode": 363,
   "title": "Saying Goodbye to All Our Guests",
   "description": "We've had the pleasure of meeting so many unique and talented people over our one year. We call as many of them as we can, and say goodbye before the end.",
-  "releasedate": 1604948400000,
-  "thumbnail": "/thumbnails/01/363.webp"
+  "date": 1604948400000
 }

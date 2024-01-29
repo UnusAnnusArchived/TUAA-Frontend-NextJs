@@ -1,9 +1,16 @@
 {
-  "video": "/01/249.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "cad52b11-57db-48c0-b835-65621b168b60"
+    }
+  ],
+  "uaid": "s01.e249",
   "season": 1,
   "episode": 249,
   "title": "How to Escape from a Hostage Situation",
   "description": "",
-  "releasedate": 1595098800000,
-  "thumbnail": "/thumbnails/01/249.webp"
+  "date": 1595098800000
 }

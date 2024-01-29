@@ -1,9 +1,16 @@
 {
-  "video": "/01/292.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "3ff9f35e-df1e-47b8-b460-31ff45d3d9b6"
+    }
+  ],
+  "uaid": "s01.e292",
   "season": 1,
   "episode": 292,
   "title": "Was 2020 a Bad Year for Unus Annus?",
   "description": "",
-  "releasedate": 1598814000000,
-  "thumbnail": "/thumbnails/01/292.webp"
+  "date": 1598814000000
 }

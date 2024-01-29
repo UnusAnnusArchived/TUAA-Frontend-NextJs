@@ -1,53 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/006/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/00/006/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/006/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/006/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/006/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "4ceb14c1-8c08-4ea2-af80-4b3706760b51"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/006.avif",
-      "type": "image/avif",
-      "size": 23335
-    },
-    {
-      "src": "/thumbnails/00/006.webp",
-      "type": "image/webp",
-      "size": 54228
-    },
-    {
-      "src": "/thumbnails/00/006.jpg",
-      "type": "image/jpeg",
-      "size": 56895
-    }
-  ],
+  "uaid": "s00.e006",
   "season": 0,
   "episode": 6,
   "title": "Traversing the Desert to Find Our Inner Truth",
   "description": "An alternate cut of <a target=\"blank\" href=\"/watch/?v=s01.e257\">episode 257</a>.<br><hr><br>Rage, rage against in the dying of the light.",
-  "date": 1595790000000,
-  "duration": 120
+  "date": 1595790000000
 }

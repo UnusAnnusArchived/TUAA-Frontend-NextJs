@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/100/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/100/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/100/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/100/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/100/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "e05f84e0-f862-46ae-abdd-dfb795d7f8b3"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/100.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/100.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e100",
   "season": 1,
   "episode": 100,
   "title": "The Ultimate Trolley Problem ",
   "description": "Today, Mark and Ethan give their morals the toughest test yet.",
-  "date": 1582311600000,
-  "duration": 974
+  "date": 1582311600000
 }

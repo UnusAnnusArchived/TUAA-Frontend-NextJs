@@ -1,9 +1,16 @@
 {
-  "video": "/01/296.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "0a2bf0e1-e6ea-4b6a-8dbc-b6c2d8881472"
+    }
+  ],
+  "uaid": "s01.e296",
   "season": 1,
   "episode": 296,
   "title": "2 Boys 2 Poops",
   "description": "",
-  "releasedate": 1599159600000,
-  "thumbnail": "/thumbnails/01/296.webp"
+  "date": 1599159600000
 }

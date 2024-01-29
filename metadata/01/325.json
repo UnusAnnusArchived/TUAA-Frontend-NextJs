@@ -1,9 +1,16 @@
 {
-  "video": "/01/325.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "0929810d-6c2f-4b63-a631-e570077d645c"
+    }
+  ],
+  "uaid": "s01.e325",
   "season": 1,
   "episode": 325,
   "title": "The 1000 High Five Challenge",
   "description": "",
-  "releasedate": 1601665200000,
-  "thumbnail": "/thumbnails/01/325.webp"
+  "date": 1601665200000
 }

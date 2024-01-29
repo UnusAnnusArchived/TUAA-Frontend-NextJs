@@ -1,9 +1,16 @@
 {
-  "video": "/01/182.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "50fca7e3-c3b9-4bc3-8da0-3146246fc926"
+    }
+  ],
+  "uaid": "s01.e182",
   "season": 1,
   "episode": 182,
   "title": "Mark Teaches Ethan Korean",
   "description": "Korean is a beautiful language that Mark is currently learning. However he doesn't really know it that well. But that doesn't stop him from attempting to beam Korean directly into Ethan's brain.",
-  "releasedate": 1589396400000,
-  "thumbnail": "/thumbnails/01/182.webp"
+  "date": 1589396400000
 }

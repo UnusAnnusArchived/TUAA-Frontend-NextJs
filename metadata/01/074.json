@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/074/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/074/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/074/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/074/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/074/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "bcf19a06-97fa-4a9a-a3df-07efe2c2a623"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/074.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/074.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e074",
   "season": 1,
   "episode": 74,
   "title": "Mark and Ethan Learn About The Human Body",
   "description": "Mark and Ethan learn the inner workings of the wonderful human body.<br>",
-  "date": 1580065200000,
-  "duration": 1175
+  "date": 1580065200000
 }

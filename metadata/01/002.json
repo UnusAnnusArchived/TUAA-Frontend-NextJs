@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/002/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/002/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/002/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/002/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/002/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "8e8a260e-5df1-4006-b880-f786f9de1971"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/002.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/002.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e002",
   "season": 1,
   "episode": 2,
   "title": "Cooking with Sex Toys",
   "description": "Mark and Ethan start the first last day of their lives right with a healthy wholesome breakfast. A tool is useless in the wrong hands, so the boys start cooking the perfect breakfast with the right tools. Sex toys.<br><br>Your Generous Contribution ► <a target=\"blank\" href=\"https://www.unusannus.com/\">https://www.unusannus.com/</a><br>Edited by Amy ► <a target=\"blank\" href=\"https://twitter.com/iceddarkroast\">https://twitter.com/iceddarkroast</a><br><br>This channel, along with every video that has or will ever be uploaded on this channel, will be deleted after our year has ended. This is inevitable. Inescapable. Irreversible.<br>Do not archive or re-upload anything. This is our last wish. Our parting gift. Stay true to the purpose of our final year or we shall lay down wrath upon those that attempt to escape the end.<br><br>Memento Mori.<br>Unus Annus.",
-  "date": 1573844400000,
-  "duration": 761
+  "date": 1573844400000
 }

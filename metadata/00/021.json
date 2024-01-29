@@ -1,53 +1,21 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/021/2160.mp4",
-      "type": "video/mp4",
-      "size": 2160
+      "type": "bunny",
+      "bunnyId": "790e8268-2e46-4b67-b1cd-71c31b54d0f4"
     },
     {
-      "src": "/00/021/1440.mp4",
-      "type": "video/mp4",
-      "size": 1440
-    },
-    {
-      "src": "/00/021/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/00/021/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/021/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/021/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/021/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "youtube",
+      "youtubeId": "_WeSH0j7dCw"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/021.jpg",
-      "type": "image/jpeg",
-      "size": 0
-    }
-  ],
+  "uaid": "s00.e021",
   "season": 0,
   "episode": 21,
   "title": "Death Remembers",
   "description": "How easily we forget.<br />Remember Death: <a href=\"https://www.youtube.com/watch?v=fusSZkFZ08I\">https://www.youtube.com/watch?v=fusSZkFZ08I</a>",
   "date": 1700596819000,
-  "islast": true
+  "isLast": true
 }

@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/088/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/088/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/088/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/088/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/088/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "234a7165-6aa9-4ee5-9bb2-8290d8d447a3"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/088.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/088.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e088",
   "season": 1,
   "episode": 88,
   "title": "Making an Indoor Tornado to Flex on Mother Nature ",
   "description": "Mother Nature thinks that she alone holds the power of the elements in her big meaty claws - well what will she think when we CREATE A TORNADO INDOORS?.",
-  "date": 1581274800000,
-  "duration": 784
+  "date": 1581274800000
 }

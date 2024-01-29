@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/131/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/131/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/131/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/131/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/131/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "50e571cb-5c14-47ca-af9e-07e32de403b3"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/131.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/131.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e131",
   "season": 1,
   "episode": 131,
   "title": "We Force James Charles to Run a Military Obstacle Course",

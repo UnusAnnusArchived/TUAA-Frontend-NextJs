@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/153/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/153/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/153/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/153/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/153/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "1d8e1c94-a07c-42e3-bda6-caeaaa9358cf"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/153.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/153.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e153",
   "season": 1,
   "episode": 153,
   "title": "Mark and Ethan Find The Lost City of El Dorado",

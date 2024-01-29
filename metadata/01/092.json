@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/092/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/092/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/092/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/092/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/092/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "016cedc9-584b-47c4-8fe0-303b446490bd"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/092.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/092.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e092",
   "season": 1,
   "episode": 92,
   "title": "Are We Already Dead?",
   "description": "Mark and Ethan try to answer some of life's most perplexing questions. Are we already dead? How many ways have you padded out the running time of your brother's funeral?",
-  "date": 1581620400000,
-  "duration": 830
+  "date": 1581620400000
 }

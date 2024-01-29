@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/154/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/154/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/154/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/154/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/154/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "a4f41c02-d874-4f35-9bec-24d67e278887"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/154.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/154.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e154",
   "season": 1,
   "episode": 154,
   "title": "Mark and Ethan Bet Everything on a Wikipedia Race",

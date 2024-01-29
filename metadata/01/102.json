@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/102/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/102/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/102/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/102/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/102/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "ee08fd56-aac5-4fe5-bc0c-c99971491108"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/102.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/102.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e102",
   "season": 1,
   "episode": 102,
   "title": "Edible Slime was a Mistake. ",
   "description": "Make the slime. Play with the slime. CONSUME the slime. Last we saw, the boys were unwilling to even touch the slime. Today they must eat it.",
-  "date": 1582484400000,
-  "duration": 890
+  "date": 1582484400000
 }

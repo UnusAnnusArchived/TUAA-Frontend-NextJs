@@ -1,9 +1,16 @@
 {
-  "video": "/01/237.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "13b071c2-bebf-452a-8ecb-dd88257c31c0"
+    }
+  ],
+  "uaid": "s01.e237",
   "season": 1,
   "episode": 237,
   "title": "The Candy Bra Challenge",
   "description": "",
-  "releasedate": 1594062000000,
-  "thumbnail": "/thumbnails/01/237.webp"
+  "date": 1594062000000
 }

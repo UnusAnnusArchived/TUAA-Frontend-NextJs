@@ -1,9 +1,16 @@
 {
-  "video": "/01/332.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "a238be2c-3000-4fa2-a846-5bb79d567d86"
+    }
+  ],
+  "uaid": "s01.e332",
   "season": 1,
   "episode": 332,
   "title": "Drawing on Each Other's Backs in Total Darkness",
   "description": "",
-  "releasedate": 1602270000000,
-  "thumbnail": "/thumbnails/01/332.webp"
+  "date": 1602270000000
 }

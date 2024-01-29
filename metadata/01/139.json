@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/139/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/139/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/139/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/139/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/139/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "f8184a49-9cc3-434e-9bf0-a54bbaa01a23"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/139.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/139.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e139",
   "season": 1,
   "episode": 139,
   "title": "The Deep End of Omegle: Risky Boogaloo",

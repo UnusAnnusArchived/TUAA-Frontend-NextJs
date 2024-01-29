@@ -1,9 +1,16 @@
 {
-  "video": "/01/312.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "fe08dcbc-5b8b-43d8-aedf-9131ee4f81fb"
+    }
+  ],
+  "uaid": "s01.e312",
   "season": 1,
   "episode": 312,
   "title": "Brick Soccer",
   "description": "",
-  "releasedate": 1600542000000,
-  "thumbnail": "/thumbnails/01/312.webp"
+  "date": 1600542000000
 }

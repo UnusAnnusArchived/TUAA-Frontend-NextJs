@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { IMetadataV3, IPlaylist } from "../../src/types";
+import { IPlaylist, IVideo } from "../../src/types";
 import { Radio, ListItem as MuiListItem, ListItemButton, ListItemIcon, Skeleton, ListItemText } from "@mui/material";
 import endpoints from "../../src/endpoints.json";
 import { Add } from "@mui/icons-material";
+import { Video } from "bunny-stream";
+import axios from "axios";
+import getBunnyEpisodeLinks from "../../src/utils/getBunnyLinks";
+import getBunnyEpisode from "../../pages/api/bunny-api-temporary/get-episode/[guid]";
 
 interface IProps {
   selectedPlaylistId: string;
@@ -12,17 +16,27 @@ interface IProps {
 }
 
 const ListItem: React.FC<IProps> = ({ selectedPlaylistId, setSelectedPlaylistId, playlist, isAddPlaylist }) => {
-  const [firstVideo, setFirstVideo] = useState<IMetadataV3>();
+  const [firstVideo, setFirstVideo] = useState<IVideo>();
+  const [firstVideoBunny, setFirstVideoBunny] = useState<Video>();
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
     (async () => {
       if (!isAddPlaylist) {
-        setFirstVideo(
-          await fetch(
-            `/api/v3/metadata/3/episode/${playlist.episodes === "" ? [] : playlist.episodes.split(",")[0]}`
-          ).then((res) => res.json())
-        );
+        const firstVideo: IVideo = await fetch(
+          `/api/v2/metadata/episode/${playlist.episodes === "" ? [] : playlist.episodes.split(",")[0]}`
+        ).then((res) => res.json());
+
+        const bunny: Video = (
+          await axios(
+            `/api/bunny-api-temporary/get-episode/${
+              firstVideo.sources.find((source) => source.type === "bunny")!.bunnyId
+            }`
+          )
+        ).data;
+
+        setFirstVideo(firstVideo);
+        setFirstVideoBunny(bunny);
       }
     })();
   }, [playlist]);
@@ -72,7 +86,7 @@ const ListItem: React.FC<IProps> = ({ selectedPlaylistId, setSelectedPlaylistId,
                 onLoad={() => {
                   setImgLoaded(true);
                 }}
-                src={`${endpoints.cdn}${firstVideo?.thumbnails?.webp.src}`}
+                src={firstVideoBunny ? getBunnyEpisodeLinks(firstVideoBunny).thumbnail : ""}
                 style={{ height: 72, aspectRatio: 16 / 9, marginRight: 16, display: imgLoaded ? undefined : "none" }}
               />
             </>

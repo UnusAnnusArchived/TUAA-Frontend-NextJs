@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/087/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/087/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/087/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/087/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/087/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "4e6a3a5c-1064-4c42-80b5-c7a2f17291e5"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/087.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/087.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e087",
   "season": 1,
   "episode": 87,
   "title": "Literally Laying On Literal Broken Glass ",
   "description": "<br>Testing the limits of the human body, Mark and Ethan lay themselves upon a bed of broken glass. So sharp and so deadly that only the BRAVE and the BOLD could survive its teeth.",
-  "date": 1581188400000,
-  "duration": 753
+  "date": 1581188400000
 }

@@ -12,8 +12,7 @@ import { EpisodesRow } from "../../components/episodes-controls";
 import { Layout } from "../../components/layout";
 import { MetaHead } from "../../components/meta-head";
 import { Player } from "../../components/player";
-import { Collection, IMetadataV2Source, IPlaylist, IVideo } from "../../src/types";
-import VideoDownloadOptions from "../../components/video-download-options";
+import { Collection, IPlaylist, IVideo } from "../../src/types";
 import { IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { useRouter } from "next/router";
 import PlaylistSmallView from "../../components/playlist-small-view";
@@ -40,7 +39,6 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   const [inPlaylist, setInPlaylist] = useState<IPlaylist>();
   const { i18n } = useTranslation();
   const router = useRouter();
-  const image = video.thumbnail ?? video.posters.find((x) => x.src.toLowerCase().includes("jpg")).src;
   const theme = useTheme();
   const isLgDown = useMediaQuery(theme.breakpoints.down("lg"));
   const [playerHeight, setPlayerHeight] = useState(0);
@@ -52,9 +50,8 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
   const [currentUser] = useRecoilState(userAtom);
   const [, setToast] = useToasts();
 
-  const published = new Date(video.date ?? video.releasedate);
+  const published = new Date(video.date);
   const embedUrl = `https://unusann.us/embed/${watchCode}`;
-  const metaVideoUrl = video.video ?? (video.sources[0] as IMetadataV2Source).src;
 
   useEffect(() => {
     (async () => {
@@ -117,14 +114,7 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
 
   return (
     <Layout>
-      <MetaHead
-        baseTitle={video.title}
-        embed={embedUrl}
-        video={metaVideoUrl}
-        date={video.date ?? video.releasedate}
-        description={video.description}
-        image={`https:${image}`}
-      />
+      <MetaHead baseTitle={video.title} embed={embedUrl} date={video.date} description={video.description} />
       <div style={{ display: "flex", flexDirection: isLgDown ? "column" : "row" }}>
         <Player
           video={video}
@@ -137,9 +127,9 @@ const Watch: React.FC<IProps> = ({ watchCode, video }) => {
         )}
       </div>
       {!inPlaylist && <EpisodesRow watchCode={watchCode} />}
-      <Paper className={`my-3 p-3 ${showDownloadOptions ? "" : "display-none"}`}>
+      {/* <Paper className={`my-3 p-3 ${showDownloadOptions ? "" : "display-none"}`}>
         <VideoDownloadOptions video={video} />
-      </Paper>
+      </Paper> */}
       <Paper
         className="my-3 p-3 desc"
         sx={{

@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/130/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/130/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/130/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/130/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/130/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "78c558cb-bd16-4b57-8def-26f63ec62256"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/130.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/130.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e130",
   "season": 1,
   "episode": 130,
   "title": "Mark and Ethan Are Now Fathers",

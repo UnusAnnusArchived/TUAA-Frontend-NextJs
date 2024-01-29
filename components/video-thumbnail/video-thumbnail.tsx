@@ -14,9 +14,7 @@ interface IProps {
 }
 
 const VideoThumbnail: React.FC<IProps> = ({ video, showSeason }) => {
-  const posterUrl = video.posters?.length > 0 ? video.posters[0].src : video.thumbnail;
-
-  const date = new Date(video.date ?? video.releasedate);
+  const date = new Date(video.date);
 
   const { t, i18n } = useTranslation();
 

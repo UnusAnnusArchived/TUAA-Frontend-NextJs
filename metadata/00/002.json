@@ -1,60 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/002/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/00/002/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/002/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/002/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/002/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "8f0d712b-a2cc-474e-ab44-95a40eecb735"
     }
   ],
-  "tracks": [
-    {
-      "kind": "captions",
-      "label": "English",
-      "srclang": "en",
-      "src": "/subs/00/002.en.vtt"
-    }
-  ],
-  "posters": [
-    {
-      "src": "/thumbnails/00/002.avif",
-      "type": "image/avif",
-      "size": 9000
-    },
-    {
-      "src": "/thumbnails/00/002.webp",
-      "type": "image/webp",
-      "size": 18204
-    },
-    {
-      "src": "/thumbnails/00/002.jpg",
-      "type": "image/jpeg",
-      "size": 25825
-    }
-  ],
+  "uaid": "s00.e002",
   "season": 0,
   "episode": 2,
   "title": "This Will End in One Year (Ethan)",
   "description": "",
-  "date": 1573844400000,
-  "duration": 57
+  "date": 1573844400000
 }

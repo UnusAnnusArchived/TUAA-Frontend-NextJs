@@ -1,9 +1,16 @@
 {
-  "video": "/01/342.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "ec265c03-adf1-4f87-897f-ada5abdb2f86"
+    }
+  ],
+  "uaid": "s01.e342",
   "season": 1,
   "episode": 342,
   "title": "Pumpkin Spice “Challenge”",
   "description": "",
-  "releasedate": 1603134000000,
-  "thumbnail": "/thumbnails/01/342.webp"
+  "date": 1603134000000
 }

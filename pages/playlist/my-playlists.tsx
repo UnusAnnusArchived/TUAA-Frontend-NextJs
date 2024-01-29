@@ -83,16 +83,14 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (ctx) => {
         playlistsFirstEpisode.push(video);
       } catch {
         playlistsFirstEpisode.push({
-          _metadata_version: 2,
+          _metadataVersion: 3,
           title: "Could not find video!",
           description: "",
           season: parseInt(season),
           episode: parseInt(episode),
           date: 0,
-          posters: [],
-          duration: 0,
           sources: [],
-          tracks: [],
+          uaid: "",
         });
       }
     }

@@ -1,9 +1,16 @@
 {
-  "video": "/01/212.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "debfc8a2-b1ce-4067-814b-12e3751f1470"
+    }
+  ],
+  "uaid": "s01.e212",
   "season": 1,
   "episode": 212,
   "title": "We Made Fanart for Each Other",
   "description": "Fanart is the purest expression of appreciation. It is love distilled. It is light purified. Today, Mark and Ethan express their undying appreciation for each other through the delightful medium of fanart.",
-  "releasedate": 1591902000000,
-  "thumbnail": "/thumbnails/01/212.webp"
+  "date": 1591902000000
 }

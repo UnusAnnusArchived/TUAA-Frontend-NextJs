@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/124/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/124/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/124/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/124/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/124/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "ccea6d68-d238-4749-8260-4d35a0a5369d"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/124.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/124.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e124",
   "season": 1,
   "episode": 124,
   "title": "Beer Sauna: Turning a Portable Sauna into a Portable Hell",

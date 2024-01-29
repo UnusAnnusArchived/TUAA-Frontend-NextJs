@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/169/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/169/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/169/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/169/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/169/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "db6d3c75-3a92-4c19-b1ba-f40f846820a8"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/169.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/169.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e169",
   "season": 1,
   "episode": 169,
   "title": "We Looked at Unus Annus Memes",

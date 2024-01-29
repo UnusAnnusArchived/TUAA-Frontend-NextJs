@@ -1,9 +1,16 @@
 {
-  "video": "/01/198.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "1e7edfe0-c912-4555-8e13-d08cd2ae0fc8"
+    }
+  ],
+  "uaid": "s01.e198",
   "season": 1,
   "episode": 198,
   "title": "Only ANNUS-es May Watch This Video",
   "description": "If you are an ANNUS... you already know that you're welcome here. Those are an unworthy... I shall not even speak thy name... BEGONE, CRETIN!!",
-  "releasedate": 1590692400000,
-  "thumbnail": "/thumbnails/01/198.webp"
+  "date": 1590692400000
 }

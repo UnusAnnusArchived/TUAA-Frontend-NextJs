@@ -1,9 +1,16 @@
 {
-  "video": "/01/347.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "62e9f127-709d-41d6-958f-d5121a26703c"
+    }
+  ],
+  "uaid": "s01.e347",
   "season": 1,
   "episode": 347,
   "title": "Cryptid Olympics",
   "description": "",
-  "releasedate": 1603566000000,
-  "thumbnail": "/thumbnails/01/347.webp"
+  "date": 1603566000000
 }

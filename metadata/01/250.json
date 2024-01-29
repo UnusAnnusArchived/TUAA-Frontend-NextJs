@@ -1,9 +1,16 @@
 {
-  "video": "/01/250.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "e166445b-a466-43e8-a2d4-d856def4ec82"
+    }
+  ],
+  "uaid": "s01.e250",
   "season": 1,
   "episode": 250,
   "title": "Does This Magnetic Skincare Routine Really Work?",
   "description": "",
-  "releasedate": 1595185200000,
-  "thumbnail": "/thumbnails/01/250.webp"
+  "date": 1595185200000
 }

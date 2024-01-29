@@ -1,9 +1,16 @@
 {
-  "video": "/01/257.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "d29a9aa9-499b-4acb-bb6a-5ca53f439f20"
+    }
+  ],
+  "uaid": "s01.e257",
   "season": 1,
   "episode": 257,
   "title": "The Beginning of The End",
   "description": "",
-  "releasedate": 1595790000000,
-  "thumbnail": "/thumbnails/01/257.webp"
+  "date": 1595790000000
 }

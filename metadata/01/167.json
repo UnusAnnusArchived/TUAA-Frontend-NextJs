@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/167/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/167/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/167/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/167/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/167/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "248f917c-70cd-498a-8279-f5b9e0432bdb"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/167.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/167.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e167",
   "season": 1,
   "episode": 167,
   "title": "Don't Go in the Ocean... Ever.",

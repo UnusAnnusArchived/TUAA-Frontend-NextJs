@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/125/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/125/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/125/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/125/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/125/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "2ec82a41-ada9-48b5-84d2-7b560a8da4e1"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/125.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/125.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e125",
   "season": 1,
   "episode": 125,
   "title": "Mark and Ethan Hunt The World's Most Wanted Criminals",

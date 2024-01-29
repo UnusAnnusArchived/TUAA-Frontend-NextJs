@@ -1,9 +1,16 @@
 {
-  "video": "/01/311.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c427de9d-5604-4125-b0d5-3fbad5c2a4e1"
+    }
+  ],
+  "uaid": "s01.e311",
   "season": 1,
   "episode": 311,
   "title": "Learning to Use The Force",
   "description": "",
-  "releasedate": 1600455600000,
-  "thumbnail": "/thumbnails/01/311.webp"
+  "date": 1600455600000
 }

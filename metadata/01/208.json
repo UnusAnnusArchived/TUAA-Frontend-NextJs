@@ -1,9 +1,16 @@
 {
-  "video": "/01/208.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "2ce9e4d2-05e7-4b39-80f6-b1444f44100a"
+    }
+  ],
+  "uaid": "s01.e208",
   "season": 1,
   "episode": 208,
   "title": "Ethan Roasts Mark for 15 Minutes Straight",
   "description": "Mark is a bad bad man who needs to be exposed for his sins. Ethan is just the right big bold boy to roast Mark to a crisp!",
-  "releasedate": 1591556400000,
-  "thumbnail": "/thumbnails/01/208.webp"
+  "date": 1591556400000
 }

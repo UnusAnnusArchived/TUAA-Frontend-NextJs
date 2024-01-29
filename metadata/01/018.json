@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/018/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/018/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/018/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/018/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/018/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "50ee8d7f-0f20-41b5-9aae-34b72877c7e3"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/018.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/018.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e018",
   "season": 1,
   "episode": 18,
   "title": "1 Man 100 Accents",
   "description": "Ethan is a man of many talents. Accents is one of them. Watch and be amazed as he regales you all the accents of the world.<br><br>Edited by  ► <a target=\"blank\" href=\"http://www.youtube.com/markiplier\">http://www.youtube.com/markiplier</a><br><br>This channel, along with every video that has or will ever be uploaded on this channel, will be deleted after our year has ended. This is inevitable. Inescapable. Irreversible.<br>Do not archive or re-upload anything. This is our last wish. Our parting gift. Stay true to the purpose of our final year or we shall lay down wrath upon those that attempt to escape the end.<br><br>Memento Mori.<br>Unus Annus.",
-  "date": 1575226800000,
-  "duration": 644
+  "date": 1575226800000
 }

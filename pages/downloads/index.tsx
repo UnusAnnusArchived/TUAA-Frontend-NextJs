@@ -23,14 +23,14 @@ const Download: React.FC<void> = (props) => {
         </Typography>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <Divider sx={{ width: "50%", backgroundColor: "#fff" }} className="my-3" />
-
+          {/* 
           <DownloadItem
             name={t("downloads:specific_episode_link:name")}
             description={t("downloads:specific_episode_link:description")}
             image={{ src: `${cdn}/thumbnails/01/001.webp`, width: 1280, height: 720 }}
             link="/downloads/specific-episode/"
             newTab={false}
-          />
+          /> */}
           <DownloadItem
             name="The Unus Annus Downloader (Beta)"
             description="An easy way to mass download any of our episodes. This app is in beta so expect things to not work properly. Currently Windows only."

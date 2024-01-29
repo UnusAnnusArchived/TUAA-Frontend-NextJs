@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/155/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/155/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/155/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/155/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/155/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "a602e5ee-eed9-4e09-a7aa-6529811e6f83"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/155.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/155.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e155",
   "season": 1,
   "episode": 155,
   "title": "The Creepiest Videos on Youtube",

@@ -1,9 +1,16 @@
 {
-  "video": "/01/338.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "1d0005ee-7db2-44a1-b83b-d960ec0817e8"
+    }
+  ],
+  "uaid": "s01.e338",
   "season": 1,
   "episode": 338,
   "title": "Learn to Jump Higher in 16 Minutes and 16 Seconds",
   "description": "",
-  "releasedate": 1602788400000,
-  "thumbnail": "/thumbnails/01/338.webp"
+  "date": 1602788400000
 }

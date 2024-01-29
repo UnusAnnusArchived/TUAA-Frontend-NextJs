@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/129/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/129/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/129/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/129/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/129/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "8eeed9bb-cb8f-40e2-b78c-6ecc3f6d619e"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/129.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/129.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e129",
   "season": 1,
   "episode": 129,
   "title": "Recreating the Miracle of Childbirth",

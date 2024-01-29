@@ -1,9 +1,16 @@
 {
-  "video": "/01/193.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "6b3220a1-250e-4de8-ac7a-f221906b7cec"
+    }
+  ],
+  "uaid": "s01.e193",
   "season": 1,
   "episode": 193,
   "title": "DIY Boob",
   "description": "The Boys Make a  Boob... Quarantine will make anyone desperate.",
-  "releasedate": 1590346800000,
-  "thumbnail": "/thumbnails/01/193.webp"
+  "date": 1590346800000
 }

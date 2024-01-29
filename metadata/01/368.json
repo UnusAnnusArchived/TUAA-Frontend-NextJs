@@ -1,47 +1,17 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/368/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/368/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/368/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/368/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/368/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "aa26723f-4e09-42b6-b3c2-e4b2d3469ced"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/368.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/368.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e368",
   "season": 1,
   "episode": 368,
   "title": "Goodbye. (With chat)",
   "description": "This is it. We will be deleting this channel live on stream. Join us for our final moments.",
   "date": 1605294000000,
-  "islast": true,
-  "duration": 43208
+  "isLast": true
 }

@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/123/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/123/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/123/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/123/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/123/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "8b961bbd-6444-4e63-b98e-3ccc5d79f498"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/123.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/123.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e123",
   "season": 1,
   "episode": 123,
   "title": "2 Idiots Get Crushed by 18-Foot Giant Snakes",

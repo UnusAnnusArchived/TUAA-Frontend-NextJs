@@ -1,9 +1,16 @@
 {
-  "video": "/01/322.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "95558970-184d-4256-b2e8-743c91398396"
+    }
+  ],
+  "uaid": "s01.e322",
   "season": 1,
   "episode": 322,
   "title": "Ethan Watches as Mark Achieves the Impossible",
   "description": "",
-  "releasedate": 1601406000000,
-  "thumbnail": "/thumbnails/01/322.webp"
+  "date": 1601406000000
 }

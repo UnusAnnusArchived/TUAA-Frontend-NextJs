@@ -17,7 +17,7 @@ import { theme } from "../components/theme/theme";
 import VideoLinks from "../components/videoLinks";
 
 interface IProps {
-  seasons: Seasons<IVideo>;
+  seasons: Seasons;
 }
 
 const Page: React.FC<IProps> = ({ seasons }) => {
@@ -89,7 +89,7 @@ const Page: React.FC<IProps> = ({ seasons }) => {
 export default Page;
 
 export const getStaticProps: GetStaticProps<IProps> = async (context) => {
-  let metadata: Seasons<IVideo> = [[], []];
+  let metadata: Seasons = [[], []];
 
   const s00 = fs.readdirSync(`${config.metadataPath}/00`);
   for (let i = 0; i < s00.length; i++) {

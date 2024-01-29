@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/161/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/161/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/161/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/161/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/161/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "0e6a131f-27b6-4ab1-8acb-8655735250a8"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/161.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/161.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e161",
   "season": 1,
   "episode": 161,
   "title": "Mark and Ethan Take a Personality Test",

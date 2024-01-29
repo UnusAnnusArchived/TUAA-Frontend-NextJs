@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/127/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/127/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/127/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/127/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/127/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "161909a0-a03a-42b7-befe-20e768357b17"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/127.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/127.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e127",
   "season": 1,
   "episode": 127,
   "title": "5 Weird Apps That Predicted Our Death",

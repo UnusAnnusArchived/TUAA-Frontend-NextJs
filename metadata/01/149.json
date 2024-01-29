@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/149/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/149/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/149/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/149/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/149/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "7d6b2b0b-b666-4544-b262-8f685517123c"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/149.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/149.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e149",
   "season": 1,
   "episode": 149,
   "title": "What is the Least Viewed Video on YouTube?",

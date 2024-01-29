@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/178/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/178/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/178/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/178/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/178/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "1dc0157d-0eee-4d5a-905b-9ed01fd98305"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/178.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/178.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e178",
   "season": 1,
   "episode": 178,
   "title": "Unus Annus ASMR",

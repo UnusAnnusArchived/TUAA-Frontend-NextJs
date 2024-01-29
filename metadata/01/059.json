@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/059/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/059/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/059/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/059/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/059/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "e1277861-d37a-4d3f-8e38-90673deef250"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/059.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/059.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e059",
   "season": 1,
   "episode": 59,
   "title": "Mark and Ethan Go Casket Shopping",
   "description": "In yet another step towards preparing for the inevitable end, Mark and Evan go shopping to find the perfect casket.",
-  "date": 1578769200000,
-  "duration": 1200
+  "date": 1578769200000
 }

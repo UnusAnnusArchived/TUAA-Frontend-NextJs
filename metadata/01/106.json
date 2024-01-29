@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/106/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/106/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/106/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/106/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/106/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "952abbce-40a1-4de3-84fc-a35dad8018c3"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/106.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/106.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e106",
   "season": 1,
   "episode": 106,
   "title": "Mark and Ethan Go on a \"Drum Date\" ",
   "description": "Sometimes you have to march to the beat of your own drum. But what happens when your drum matches the beat of your heart?<br>",
-  "date": 1582830000000,
-  "duration": 1167
+  "date": 1582830000000
 }

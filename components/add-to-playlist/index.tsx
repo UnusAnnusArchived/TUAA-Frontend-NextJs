@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import endpoints from "../../src/endpoints.json";
-import { Collection, IMetadataV3, IPlaylist } from "../../src/types";
+import { Collection, IPlaylist } from "../../src/types";
 import pb from "../../src/pocketbase";
 import ListItem from "./listItem";
 import { useToasts } from "@geist-ui/react";

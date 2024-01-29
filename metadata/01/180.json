@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/180/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/180/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/180/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/180/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/180/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "b771a0a0-4694-4a68-bd4d-4924388821f9"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/180.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/180.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e180",
   "season": 1,
   "episode": 180,
   "title": "Making Our Own Gravestones to Prepare For Our Inevitable Demise",

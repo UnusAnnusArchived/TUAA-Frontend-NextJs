@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/171/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/171/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/171/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/171/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/171/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "001b5778-8dfe-497a-a39c-223eb5c85d9c"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/171.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/171.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e171",
   "season": 1,
   "episode": 171,
   "title": "What the Hell is a Pink Trombone?",

@@ -7,6 +7,10 @@ import { useRouter } from "next/router";
 import classNames from "classnames";
 import { useRecoilState } from "recoil";
 import { colorSchemeAtom } from "../../src/atoms";
+import { useEffect, useState } from "react";
+import { Video } from "bunny-stream";
+import axios from "axios";
+import getBunnyEpisodeLinks from "../../src/utils/getBunnyLinks";
 
 interface IProps {
   episode: IVideo;
@@ -19,6 +23,19 @@ interface IProps {
 const PlaylistSmallEpisode: React.FC<IProps> = ({ episode, currentEpisodeId, playlistId }) => {
   const router = useRouter();
   const [colorScheme] = useRecoilState(colorSchemeAtom);
+  const [bunnyEpisode, setBunnyEpisode] = useState<Video>();
+
+  useEffect(() => {
+    (async () => {
+      setBunnyEpisode(
+        (
+          await axios(
+            `/api/bunny-api-temporary/get-episode/${episode.sources.find((source) => source.type === "bunny")!.bunnyId}`
+          )
+        ).data
+      );
+    })();
+  }, [episode]);
 
   const episodeId = `s${episode.season.toString().padStart(2, "0")}.e${episode.episode.toString().padStart(3, "0")}`;
 
@@ -40,7 +57,12 @@ const PlaylistSmallEpisode: React.FC<IProps> = ({ episode, currentEpisodeId, pla
         onClick={handleClick}
       >
         {/* <Skeleton variant="rectangular" width={100} height={56} animation="wave" /> */}
-        <img width={100} height={56} src={`${endpoints.cdn}${episode.posters[0].src}`} style={{ flexShrink: 0 }} />
+        <img
+          width={100}
+          height={56}
+          src={bunnyEpisode ? getBunnyEpisodeLinks(bunnyEpisode).thumbnail : ""}
+          style={{ flexShrink: 0 }}
+        />
         <div style={{ marginLeft: 8, display: "flex", flexDirection: "column", maxWidth: "calc(100% - 116px)" }}>
           {/* <Skeleton variant="text" width="35%" animation="wave" /> */}
           <Typography sx={{ fontSize: "1rem", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>

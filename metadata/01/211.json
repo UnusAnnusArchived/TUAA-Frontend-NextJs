@@ -1,9 +1,16 @@
 {
-  "video": "/01/211.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "1ec0fa74-c312-41ea-b57a-56354b7d90ba"
+    }
+  ],
+  "uaid": "s01.e211",
   "season": 1,
   "episode": 211,
   "title": "Mark and Ethan Become United States Citizens",
   "description": "ah, America. Land of the free(?) Home of the brave(?) Do Mark and Ethan have what it takes to be top tier US citizens?",
-  "releasedate": 1591815600000,
-  "thumbnail": "/thumbnails/01/211.webp"
+  "date": 1591815600000
 }

@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/160/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/160/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/160/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/160/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/160/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "f5f5e984-0a3b-49c2-80f9-a7fbd7b80b91"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/160.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/160.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e160",
   "season": 1,
   "episode": 160,
   "title": "Reading YOUR Scariest True Stories",

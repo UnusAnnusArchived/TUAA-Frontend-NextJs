@@ -1,9 +1,16 @@
 {
-  "video": "/01/261.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "e74b9d40-107d-4a55-a8b2-a219eb77b16e"
+    }
+  ],
+  "uaid": "s01.e261",
   "season": 1,
   "episode": 261,
   "title": "Recharging Our Phones Using Only Brute Strength",
   "description": "",
-  "releasedate": 1596135600000,
-  "thumbnail": "/thumbnails/01/261.webp"
+  "date": 1596135600000
 }

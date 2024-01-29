@@ -1,9 +1,16 @@
 {
-  "video": "/01/279.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "c5493157-b0b7-43e3-915a-cfc4f643e4b2"
+    }
+  ],
+  "uaid": "s01.e279",
   "season": 1,
   "episode": 279,
   "title": "Playing Children’s Games in Total Darkness",
   "description": "",
-  "releasedate": 1597690800000,
-  "thumbnail": "/thumbnails/01/279.webp"
+  "date": 1597690800000
 }

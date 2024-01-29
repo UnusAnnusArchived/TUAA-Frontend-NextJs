@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/118/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/118/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/118/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/118/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/118/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "c25343db-7e91-4c11-ad96-03e23ce5464a"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/118.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/118.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e118",
   "season": 1,
   "episode": 118,
   "title": "We Got Pepper Sprayed ",
   "description": "WARNING: DO NOT TRY THIS. We were pepper sprayed by trained professional in a controlled environment. This is not a joke. This is real and painful but was done to understand the severity.<br>",
-  "date": 1583866800000,
-  "duration": 673
+  "date": 1583866800000
 }

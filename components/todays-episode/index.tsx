@@ -25,7 +25,7 @@ const TodaysEpisode: React.FC<IProps> = ({ seasons }) => {
     const videosOnToday: IVideo[] = [];
 
     for (let i = 0; i < videos.length; i++) {
-      if (formatter(videos[i].date ?? videos[i].releasedate) === todaysDate) {
+      if (formatter(videos[i].date) === todaysDate) {
         videosOnToday.push(videos[i]);
       }
     }
@@ -49,7 +49,7 @@ const TodaysEpisode: React.FC<IProps> = ({ seasons }) => {
             >
               <ListItemText
                 primary={episode.title}
-                secondary={`Video on ${moment(episode.date ?? episode.releasedate).format("MM/DD/YYYY")}`}
+                secondary={`Video on ${moment(episode.date).format("MM/DD/YYYY")}`}
                 primaryTypographyProps={{ sx: { overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" } }}
               />
             </ListItemButton>

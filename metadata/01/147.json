@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/147/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/147/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/147/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/147/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/147/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "f7542d9a-f793-48ca-acfe-70c955b7cff5"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/147.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/147.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e147",
   "season": 1,
   "episode": 147,
   "title": "Mark and Ethan Desperately Try and Name a Single State in the USA",

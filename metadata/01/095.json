@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/095/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/095/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/095/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/095/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/095/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "855fedd1-23e2-4af0-a493-9de30c63d1d5"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/095.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/095.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e095",
   "season": 1,
   "episode": 95,
   "title": "10 Strange Amazon Products Ethan Bought Mark Because He Doesn't Know How to Spend Money Responsibly",
   "description": "Ethan bought Mark some gifts. Mark does not know why. Ethan does not even know what the gifts are. This is a lesson on how not to spend money.",
-  "date": 1581879600000,
-  "duration": 837
+  "date": 1581879600000
 }

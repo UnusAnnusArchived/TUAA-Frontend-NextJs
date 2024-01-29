@@ -13,140 +13,23 @@ export enum Collection {
 }
 
 export type IVideo = {
-  _metadata_version?: 1 | 2 | 3;
-  video?: string;
-  season: number;
-  episode: number;
-  title: string;
-  description: string;
-  releasedate?: number;
-  thumbnail?: string;
-  sources?: IMetadataV2Source[] | IMetadataV3Source[];
-  tracks?: IMetadataV2Track[];
-  posters?: IMetadataV2Poster[];
-  date?: number;
-  duration?: number;
-  audio?: IMetadataV3Audio[];
-  captions?: IMetadataV3Caption[];
-  thumbnails?: IMetadataV3Thumbnails;
-  previewSprites?: any;
-};
-
-export type Seasons<T extends IMetadataV1 | IMetadataV2 | IMetadataV3 | IVideo> = [T[], T[]];
-
-export type IMetadataV1 = {
-  _metadata_version: 1;
-  video: string;
-  season: number;
-  episode: number;
-  title: string;
-  description: string;
-  releasedate: number;
-  thumbnail: string;
-};
-
-export type IMetadataV2 = {
-  _metadata_version: 2;
-  sources: IMetadataV2Source[];
-  tracks: IMetadataV2Track[];
-  posters: IMetadataV2Poster[];
+  _metadataVersion: 3;
+  sources: ISource[];
+  uaid: string;
   season: number;
   episode: number;
   title: string;
   description: string;
   date: number;
-  duration?: number;
+  isLast?: boolean;
 };
 
-export type IMetadataV2Source = {
-  src: string;
-  type: string;
-  size: number;
+export type ISource = {
+  type: "bunny";
+  bunnyId: string;
 };
 
-export type IMetadataV2Track = {
-  kind: string;
-  label: string;
-  srclang: string;
-  src: string;
-};
-
-export type IMetadataV2Poster = {
-  src: string;
-  type: string;
-  size?: number;
-};
-
-export type IMetadataV3 = {
-  _metadata_version: 3;
-  sources: Array<IMetadataV3Source>;
-  audio: IMetadataV3Audio[];
-  captions: IMetadataV3Caption[];
-  thumbnails: IMetadataV3Thumbnails;
-  season: number;
-  episode: number;
-  title: string;
-  description: string;
-  date: number;
-  duration?: number;
-};
-
-export type IMetadataV3Source = IMetadataV3TUAASource | IMetadataV3EmbedSource | IMetadataV3DirectSource;
-
-export type IMetadataV3TUAASource = {
-  type: "tuaa";
-  id: string;
-  resolutions: IMetadataV3TUAASourceResolution[];
-};
-
-export type IMetadataV3EmbedSource = {
-  type: "embed";
-  id: string;
-  name: string;
-  src: string;
-};
-
-export type IMetadataV3DirectSource = {
-  type: "direct";
-  id: string;
-  name: string;
-  resolutions: IMetadataV3DirectSourceResolution[];
-};
-
-export type IMetadataV3DirectSourceResolution = {
-  src: string;
-  size: number;
-};
-
-export type IMetadataV3TUAASourceResolution = {
-  src: string;
-  size: number;
-};
-
-export type IMetadataV3Audio = {
-  lang: string;
-  label: string;
-  src: string;
-  default: boolean;
-};
-
-export type IMetadataV3Caption = {
-  label: string;
-  srclang: string;
-  src: string;
-  default: boolean;
-};
-
-export type IMetadataV3Thumbnails = {
-  avif: IMetadataV3Thumbnail;
-  webp: IMetadataV3Thumbnail;
-  jpg: IMetadataV3Thumbnail;
-};
-
-export type IMetadataV3Thumbnail = {
-  src: string;
-  size?: number;
-};
+export type Seasons = [IVideo[], IVideo[]];
 
 export interface IEpisodeAround {
   nextEp?: string;
@@ -259,69 +142,6 @@ export interface ILanguage {
   code: string;
 }
 
-export interface IRokuFeed {
-  providerName: "The Unus Annus Archive";
-  lastUpdated: string;
-  language: "en";
-  playlists: IRokuPlaylist[];
-  series: IRokuSeries[];
-}
-
-export interface IRokuPlaylist {
-  name: "Specials" | "Season 1";
-  itemIds: string[];
-}
-
-export interface IRokuSeries {
-  id: "UnusAnnus";
-  title: "Unus Annus";
-  seasons: IRokuSeason[];
-  genres: ["comedy"];
-  thumbnail: "https://cdn.unusann.us/roku-assets/series-thumbnail.jpg";
-  releaseDate: "2019-11-15";
-  shortDescription: "What would you do if you only had a year left to live? Would you squander the time you were given? Or would you make every second count? Welcome to Unus Annus. In exactly 365 days this channel will be...";
-  longDescription: "What would you do if you only had a year left to live? Would you squander the time you were given? Or would you make every second count? Welcome to Unus Annus. In exactly 365 days this channel will be deleted along with all of the daily uploads accumulated since then. Nothing will be saved. Nothing will be reuploaded. This is your one chance to join us at the onset of our adventure. To be there from the beginning. To make every second count. Subscribe now and relish what little time we have left or have the choice made for you as we disappear from existence forever. But remember... everything has an end. Even you. Memento mori. Unus annus.";
-}
-
-export interface IRokuSeason {
-  seasonNumber: "0" | "1";
-  episodes: IRokuEpisode[];
-}
-
-export interface IRokuEpisode {
-  id: string;
-  title: string;
-  content: {
-    dateAdded: string;
-    videos: IRokuVideo[];
-    duration: number;
-    captions: IRokuCaption[];
-    language: "en";
-  };
-  thumbnail: string;
-  releaseDate: string;
-  episodeNumber: number;
-  shortDescription: string;
-  longDescription?: string;
-}
-
-export interface IRokuVideo {
-  url: string;
-  quality: "SD" | "HD" | "FHD" | "UHD";
-  videoType: string;
-}
-
-export interface IRokuCaption {
-  url: string;
-  language: string;
-  captionType: "SUBTITLE";
-}
-
-export interface ISwiftMetadata {
-  specials: IVideo[];
-  season1: IVideo[];
-}
-
 export interface PBAuthMethodsList {
   [key: string]: any;
   usernamePassword: boolean;
@@ -359,4 +179,12 @@ export interface IUser extends Record {
   emails_account: boolean;
   emails_updates: boolean;
   isAdmin: boolean;
+}
+
+export interface EpisodeLinks {
+  baseUrl: string;
+  hls: string;
+  directPlay: string;
+  thumbnail: string;
+  preview: string;
 }

@@ -1,9 +1,16 @@
 {
-  "video": "/01/232.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "edc2c997-654b-4c63-af6b-b5bd013acba2"
+    }
+  ],
+  "uaid": "s01.e232",
   "season": 1,
   "episode": 232,
   "title": "Mark is Guilty. Ethan Has the Proof.",
   "description": "The proof is in the pudding. And Mark's belly is jiggling like a bowl full of it.",
-  "releasedate": 1593630000000,
-  "thumbnail": "/thumbnails/01/232.webp"
+  "date": 1593630000000
 }

@@ -1,9 +1,16 @@
 {
-  "video": "/01/269.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "d38b6a66-f4d0-4673-8da6-8334eb04b607"
+    }
+  ],
+  "uaid": "s01.e269",
   "season": 1,
   "episode": 269,
   "title": "The Wubble",
   "description": "",
-  "releasedate": 1596826800000,
-  "thumbnail": "/thumbnails/01/269.webp"
+  "date": 1596826800000
 }

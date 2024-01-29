@@ -1,9 +1,16 @@
 {
-  "video": "/01/260.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "cda36da5-a856-4285-a858-0bd082996dc9"
+    }
+  ],
+  "uaid": "s01.e260",
   "season": 1,
   "episode": 260,
   "title": "A Serious Conversation Under the Stars",
   "description": "",
-  "releasedate": 1596049200000,
-  "thumbnail": "/thumbnails/01/260.webp"
+  "date": 1596049200000
 }

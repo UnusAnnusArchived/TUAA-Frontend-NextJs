@@ -1,68 +1,20 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/00/017/4320.mp4",
-      "type": "video/mp4",
-      "size": 4320
+      "type": "bunny",
+      "bunnyId": "c83d5a3f-2d59-4c5a-becc-ddcd382c187b"
     },
     {
-      "src": "/00/017/2160.mp4",
-      "type": "video/mp4",
-      "size": 2160
-    },
-    {
-      "src": "/00/017/1440.mp4",
-      "type": "video/mp4",
-      "size": 1440
-    },
-    {
-      "src": "/00/017/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/00/017/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/00/017/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/00/017/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/00/017/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "youtube",
+      "youtubeId": "IOr8LlLqv1Q"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/00/017.avif",
-      "type": "image/avif",
-      "size": 38672
-    },
-    {
-      "src": "/thumbnails/00/017.jpg",
-      "type": "image/jpeg",
-      "size": 391207
-    },
-    {
-      "src": "/thumbnails/00/017.webp",
-      "type": "image/webp",
-      "size": 59494
-    }
-  ],
+  "uaid": "s00.e017",
   "season": 0,
   "episode": 17,
   "title": "Memento Mori (Combined Conversation)",
   "description": "Combination of <a href=\"https://unusann.us/watch/s00.e015\">s00.e015</a> and <a href=\"https://unusann.us/watch/s00.e016\">s00.e016</a>.",
-  "date": 1668340800000,
-  "duration": 1525
+  "date": 1668369600000
 }

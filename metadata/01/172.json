@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/172/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/172/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/172/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/172/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/172/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "7b4f0b12-d435-4832-8a66-325f4a796636"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/172.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/172.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e172",
   "season": 1,
   "episode": 172,
   "title": "Professional Fetish Scientists Rank the Best/Worst Fetishes of 2020",

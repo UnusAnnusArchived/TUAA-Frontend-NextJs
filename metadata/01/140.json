@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/140/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/140/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/140/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/140/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/140/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "cb4aa85b-9a9b-4939-9913-1368088e55a6"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/140.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/140.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e140",
   "season": 1,
   "episode": 140,
   "title": "Where in the World is Unus Annus?",

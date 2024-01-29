@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/133/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/133/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/133/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/133/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/133/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "8499461b-c529-4a16-8601-8d219d9fda1f"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/133.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/133.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e133",
   "season": 1,
   "episode": 133,
   "title": "Reddit 50/50: Two Player Edition",

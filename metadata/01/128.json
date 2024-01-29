@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/128/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/128/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/128/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/128/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/128/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "d7d46858-6319-4bdd-8827-779227626ae4"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/128.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/128.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e128",
   "season": 1,
   "episode": 128,
   "title": "We Tried a Labor Pain Simulator",

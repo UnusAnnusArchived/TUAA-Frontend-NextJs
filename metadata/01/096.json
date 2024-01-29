@@ -1,46 +1,16 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/096/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/096/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/096/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/096/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/096/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "faeb9374-2156-4194-8202-ee857e1916c3"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/096.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/096.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e096",
   "season": 1,
   "episode": 96,
   "title": "Chickens Teach Us About Life and Death",
   "description": "The eternal question: what came first? Life? Or Death? Fiona helps guide us towards The Truth.",
-  "date": 1581966000000,
-  "duration": 897
+  "date": 1581966000000
 }

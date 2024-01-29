@@ -1,9 +1,16 @@
 {
-  "video": "/01/343.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "83be0934-a1e1-4cc3-bae6-e19536420ca7"
+    }
+  ],
+  "uaid": "s01.e343",
   "season": 1,
   "episode": 343,
   "title": "Mark and Ethan Build a Scarecrow",
   "description": "",
-  "releasedate": 1603220400000,
-  "thumbnail": "/thumbnails/01/343.webp"
+  "date": 1603220400000
 }

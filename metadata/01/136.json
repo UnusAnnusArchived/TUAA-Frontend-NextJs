@@ -1,42 +1,13 @@
 {
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
   "sources": [
     {
-      "src": "/01/136/1080.mp4",
-      "type": "video/mp4",
-      "size": 1080
-    },
-    {
-      "src": "/01/136/720.mp4",
-      "type": "video/mp4",
-      "size": 720
-    },
-    {
-      "src": "/01/136/480.mp4",
-      "type": "video/mp4",
-      "size": 480
-    },
-    {
-      "src": "/01/136/360.mp4",
-      "type": "video/mp4",
-      "size": 360
-    },
-    {
-      "src": "/01/136/240.mp4",
-      "type": "video/mp4",
-      "size": 240
+      "type": "bunny",
+      "bunnyId": "b901fb64-f66d-4c78-a48c-e32e2869e54a"
     }
   ],
-  "tracks": [],
-  "posters": [
-    {
-      "src": "/thumbnails/01/136.webp",
-      "type": "image/webp"
-    },
-    {
-      "src": "/thumbnails/01/136.jpg",
-      "type": "image/jpeg"
-    }
-  ],
+  "uaid": "s01.e136",
   "season": 1,
   "episode": 136,
   "title": "Amazon Shopping for the Apocalypse",

@@ -1,9 +1,16 @@
 {
-  "video": "/01/303.mp4",
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "bunnyId": "53610a19-4cdf-4993-aeaa-744699a2706f"
+    }
+  ],
+  "uaid": "s01.e303",
   "season": 1,
   "episode": 303,
   "title": "How Far Can We Chuck a 16lbs Rock?",
   "description": "",
-  "releasedate": 1599764400000,
-  "thumbnail": "/thumbnails/01/303.webp"
+  "date": 1599764400000
 }
