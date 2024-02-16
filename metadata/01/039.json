@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "0ce20eef-260a-497e-a565-9a64ada5e4d5"
-    }
-  ],
   "uaid": "s01.e039",
   "season": 1,
   "episode": 39,

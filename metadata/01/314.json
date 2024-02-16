@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "b75ad08c-266b-4b43-9f3c-9ba899c88d76"
-    }
-  ],
   "uaid": "s01.e314",
   "season": 1,
   "episode": 314,

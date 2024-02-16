@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "4c06fb9d-e5e8-4ac3-b81a-166ba460d669"
-    }
-  ],
   "uaid": "s01.e103",
   "season": 1,
   "episode": 103,

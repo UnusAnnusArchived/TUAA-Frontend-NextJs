@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "942b3368-6942-4e67-8fc0-e3ed249277c4"
-    }
-  ],
   "uaid": "s01.e037",
   "season": 1,
   "episode": 37,
