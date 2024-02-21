@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "5f5404cd-a253-45f9-bee7-e86ad200a431"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "l1HJJAJggZM"
+    }
+  ],
+  "uaid": "s00.e005",
+  "season": 0,
+  "episode": 5,
+  "title": "Subscribe to Norbert Moses.",
+  "description": "just subscribe.",
+  "releaseDate": 1587157222000
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "dafe5b38-a8ef-43b5-988d-808a5019b15b"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "jm7ZAMAsPxI"
+    }
+  ],
+  "uaid": "s00.e010",
+  "season": 0,
+  "episode": 10,
+  "title": "Unus Annus - Post Mortem",
+  "description": "1.5 Million people were watching as we laid Unus Annus to rest. Thank you for turning these past 365 days into something truly special. Without you, it wouldn't have mattered at all. Memento Mori.<br>And now... ONTO MORE CRAZY IDEAS!!",
+  "releaseDate": 1605399170000
+}

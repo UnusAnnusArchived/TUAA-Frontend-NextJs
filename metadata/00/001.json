@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "d15ddd68-7983-4914-8523-950ccdefd1b7"
+    }
+  ],
+  "uaid": "s00.e001",
+  "season": 0,
+  "episode": 1,
+  "title": "This Will End in One Year (Mark)",
+  "description": "",
+  "releaseDate": 1573844400000
+}

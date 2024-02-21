@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "945d1fa2-494e-473c-94d3-a61f7eb74fbe"
+    }
+  ],
+  "uaid": "s01.e086",
+  "season": 1,
+  "episode": 86,
+  "title": "Unregulated Axe Throwing ",
+  "description": "<br>While being watched over by the Axe Gods themselves, Mark and Ethan compete to see who is truly the axe-throwing champion",
+  "releaseDate": 1581102000000
+}

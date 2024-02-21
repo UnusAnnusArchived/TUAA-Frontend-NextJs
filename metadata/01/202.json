@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "a820acd6-3853-48c8-879e-03b0fecca13a"
+    }
+  ],
+  "uaid": "s01.e202",
+  "season": 1,
+  "episode": 202,
+  "title": "2 Complete Amateurs Enter a Body Building Competition",
+  "description": "Welcome to the First Annual Unus Annus Body Building Competition Extravaganza! Who will wear the crown of best bod?",
+  "releaseDate": 1591038000000
+}

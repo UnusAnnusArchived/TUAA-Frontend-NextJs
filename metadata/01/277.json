@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "8a3be8b2-fb51-4a83-bc27-a2a7ab105b4a"
+    }
+  ],
+  "uaid": "s01.e277",
+  "season": 1,
+  "episode": 277,
+  "title": "Momiplier Teaches Self-Defense",
+  "description": "",
+  "releaseDate": 1597518000000
+}

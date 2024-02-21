@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "2bda8154-bb3d-4965-8c54-0a86d413eb6b"
+    }
+  ],
+  "uaid": "s01.e266",
+  "season": 1,
+  "episode": 266,
+  "title": "Breaking Glass With Our Screams",
+  "description": "",
+  "releaseDate": 1596567600000
+}

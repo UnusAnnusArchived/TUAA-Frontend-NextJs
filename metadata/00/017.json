@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "c83d5a3f-2d59-4c5a-becc-ddcd382c187b"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "IOr8LlLqv1Q"
+    }
+  ],
+  "uaid": "s00.e017",
+  "season": 0,
+  "episode": 17,
+  "title": "Memento Mori (Combined Conversation)",
+  "description": "Combination of <a href=\"https://unusann.us/watch/s00.e015\">s00.e015</a> and <a href=\"https://unusann.us/watch/s00.e016\">s00.e016</a>.",
+  "releaseDate": 1668369600000
+}

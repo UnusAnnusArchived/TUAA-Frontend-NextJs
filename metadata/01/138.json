@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "a0aec308-ed4f-4030-9f64-43adb10fa27b"
+    }
+  ],
+  "uaid": "s01.e138",
+  "season": 1,
+  "episode": 138,
+  "title": "Ultimate YouTuber Boxing Showdown",
+  "description": "Recruited from all corners of the internet, Mark and Ethan create their own YouTuber Boxing Teams to try and find out who has the strongest punch.",
+  "releaseDate": 1585594800000
+}

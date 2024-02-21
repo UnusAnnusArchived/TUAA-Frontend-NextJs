@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "04779d07-7f6f-4513-a3d9-5bc6e0548661"
+    }
+  ],
+  "uaid": "s01.e166",
+  "season": 1,
+  "episode": 166,
+  "title": "Bored? Press This Button.",
+  "description": "'ya ever been bored?",
+  "releaseDate": 1588014000000
+}

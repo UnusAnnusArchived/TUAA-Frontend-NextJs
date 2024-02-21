@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "83be0934-a1e1-4cc3-bae6-e19536420ca7"
+    }
+  ],
+  "uaid": "s01.e343",
+  "season": 1,
+  "episode": 343,
+  "title": "Mark and Ethan Build a Scarecrow",
+  "description": "",
+  "releaseDate": 1603220400000
+}

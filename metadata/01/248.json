@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "c43261c3-6388-4674-9748-d096c1f0237e"
+    }
+  ],
+  "uaid": "s01.e248",
+  "season": 1,
+  "episode": 248,
+  "title": "DIY TEETH",
+  "description": "",
+  "releaseDate": 1595012400000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "57b9e00f-b743-452d-9e5b-f5f5579039f7"
+    }
+  ],
+  "uaid": "s01.e219",
+  "season": 1,
+  "episode": 219,
+  "title": "Building IKEA's Hardest Piece of Furniture Without Instructions is Impossible",
+  "description": "Ikea is known for easy-to-follow instructions for simple pieces of furniture that we are gladly able to hah just kidding this is impossible.",
+  "releaseDate": 1592506800000
+}

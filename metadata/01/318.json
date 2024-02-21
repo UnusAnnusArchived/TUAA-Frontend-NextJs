@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "04d39f43-a82b-49d5-b4d0-c4b6f7f4c041"
+    }
+  ],
+  "uaid": "s01.e318",
+  "season": 1,
+  "episode": 318,
+  "title": "We Will Churn Thy Butter",
+  "description": "",
+  "releaseDate": 1601060400000
+}

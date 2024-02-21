@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "d2837361-4169-4d34-9c52-0644acb373ee"
+    }
+  ],
+  "uaid": "s01.e275",
+  "season": 1,
+  "episode": 275,
+  "title": "Puberty Simulator",
+  "description": "",
+  "releaseDate": 1597345200000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "3b337452-474b-42b7-95f5-2ea063ede9d1"
+    }
+  ],
+  "uaid": "s01.e253",
+  "season": 1,
+  "episode": 253,
+  "title": "Can Sound Therapy Heal All Wounds?",
+  "description": "",
+  "releaseDate": 1595444400000
+}

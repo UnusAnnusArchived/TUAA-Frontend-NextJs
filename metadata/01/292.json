@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "3ff9f35e-df1e-47b8-b460-31ff45d3d9b6"
+    }
+  ],
+  "uaid": "s01.e292",
+  "season": 1,
+  "episode": 292,
+  "title": "Was 2020 a Bad Year for Unus Annus?",
+  "description": "",
+  "releaseDate": 1598814000000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "bc9e882c-8aab-4024-bfec-8f3fb9bc6812"
+    }
+  ],
+  "uaid": "s01.e364",
+  "season": 1,
+  "episode": 364,
+  "title": "Everything's Legal If You're Dead",
+  "description": "Mark and Ethan start one of the last day of their lives off right with a healthy wholesome breakfast. And a whole bunch of crime.",
+  "releaseDate": 1605034800000
+}

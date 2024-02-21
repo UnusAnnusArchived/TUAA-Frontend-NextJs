@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "faeb9374-2156-4194-8202-ee857e1916c3"
+    }
+  ],
+  "uaid": "s01.e096",
+  "season": 1,
+  "episode": 96,
+  "title": "Chickens Teach Us About Life and Death",
+  "description": "The eternal question: what came first? Life? Or Death? Fiona helps guide us towards The Truth.",
+  "releaseDate": 1581966000000
+}

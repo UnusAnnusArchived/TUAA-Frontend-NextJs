@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Nedladdningar"
+  },
+  "episodeLink" : {
+    "episode" : "Avsnitt {episode}",
+    "season" : "Säsong {season}",
+    "specials" : "Specialerbjudanden"
+  },
+  "header" : {
+    "closeSearch" : "Stäng sökning",
+    "enableDarkMode" : "Aktivera mörkt läge",
+    "enableLightMode" : "Aktivera ljusläge",
+    "openSearch" : "Öppna sökning",
+    "search" : "Sök",
+    "searchGetStarted" : "Skriv in en fråga för att börja!"
+  },
+  "home" : {
+    "title" : "Hem",
+    "videoLoadError" : "Fel vid laddning av avsnitt!"
+  },
+  "patreonDonors" : {
+    "title" : "Patreon Donatorer"
+  },
+  "settings" : {
+    "title" : "Inställningar"
+  },
+  "vidstack" : {
+    "audio" : "Ljud",
+    "auto" : "Auto",
+    "captions" : "Textning",
+    "chapters" : "Kapitel",
+    "closedCaptionsOff" : "Stäng av textning",
+    "closedCaptionsOn" : "Sätt på textning",
+    "default" : "Standard",
+    "enterFullscreen" : "Gå till helskärm",
+    "enterPiP" : "Gå till PiP",
+    "exitFullscreen" : "Avsluta helskärm",
+    "exitPiP" : "Avsluta PiP\n",
+    "mute" : "Ljud av\n",
+    "nextEpisode" : "Nästa avsnitt",
+    "normal" : "Normalt",
+    "off" : "Av",
+    "pause" : "Paus",
+    "play" : "Spela",
+    "previousEpisode" : "Föregående avsnitt",
+    "quality" : "Kvalitet",
+    "resolution" : "Upplösning",
+    "seekBackward" : "Spola bakåt",
+    "seekForward" : "Spola framåt",
+    "settings" : "Inställningar",
+    "source" : "Källa",
+    "speed" : "Hastighet",
+    "unmute" : "Slå på ljudet"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Ogiltiga argument: {argumentsErrorList}.",
+    "invalidDate" : "Ogiltigt datum.",
+    "invalidEnumValue" : "Ogiltigt värde för enum: {optionsList}.",
+    "invalidIntersectionTypes" : "Ogiltiga snittyper.",
+    "invalidLiteral" : "Ogiltig literal; förväntade {expected}, fick {received}.",
+    "invalidReturnType" : "Ogiltig returtyp: {returnTypeErrors}.",
+    "invalidString" : "{validatorType}-validering misslyckades för strängen.",
+    "invalidType" : "Ogiltig typ; förväntade {expectedValue}, fick {receivedValue}.",
+    "invalidUnion" : "Ogiltig union: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Ogiltig union-diskriminator.",
+    "notFinite" : "Inte ändlig.",
+    "notMultipleOf" : "Talet är inte ett multiplum av {multipleOf}.",
+    "required" : "Obligatoriskt.",
+    "tooBig" : "{type} för stor; maxvärdet är {maximum}.",
+    "tooSmall" : "{type} för liten; minimumvärdet är {minimum}.",
+    "unrecognizedKeys" : "Okända nycklar: {keysList}."
+  }
+}

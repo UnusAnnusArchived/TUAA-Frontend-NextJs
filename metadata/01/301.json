@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "56155e81-62fc-4d61-a824-2b21aa97d3e3"
+    }
+  ],
+  "uaid": "s01.e301",
+  "season": 1,
+  "episode": 301,
+  "title": "We Attempt Pottery Without Amy's Help",
+  "description": "",
+  "releaseDate": 1599591600000
+}

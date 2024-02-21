@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "5d2a5cbe-0572-4ec1-93ac-22d74771fc89"
+    }
+  ],
+  "uaid": "s01.e114",
+  "season": 1,
+  "episode": 114,
+  "title": "Middle School Science Experiment Teaches Us About Life and Death ",
+  "description": "Dissection is common in the science classroom. From worms to frogs to fetal pigs - but most of us started with a simple owl pellet.<br>",
+  "releaseDate": 1583521200000
+}

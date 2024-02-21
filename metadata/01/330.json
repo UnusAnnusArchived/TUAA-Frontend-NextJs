@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "8f7c0139-ffef-418f-8e4a-9dcba730fdcf"
+    }
+  ],
+  "uaid": "s01.e330",
+  "season": 1,
+  "episode": 330,
+  "title": "DIY Minesweeper",
+  "description": "",
+  "releaseDate": 1602097200000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "6b3cf207-2f5d-45fa-a72c-86d9f7d2b5ec"
+    }
+  ],
+  "uaid": "s01.e101",
+  "season": 1,
+  "episode": 101,
+  "title": "Goat Yoga ",
+  "description": "Goat Yoga. Yoga with Goats. The Yoga that you do with Goats. Yoga of the Goat. The Yoga Goat.",
+  "releaseDate": 1582398000000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "b9cbd5e1-fc8a-4550-9908-d91d2110c6bc"
+    }
+  ],
+  "uaid": "s01.e034",
+  "season": 1,
+  "episode": 34,
+  "title": "Ethan Explores Mark's Haunted Basement",
+  "description": "Strange noises have been emanating from Mark's basement. He dares not venture down there. He is no fool. But he knows a fool. He knows the most foolish fool there is...<br><br>Edited by Lixian ► <a target=\"blank\" href=\"https://www.youtube.com/channel/UCAua9maY1vtNdBlYqnHRhwA\">https://www.youtube.com/channel/UCAua9maY1vtNdBlYqnHRhwA</a><br><br>This channel, along with every video that has or will ever be uploaded on this channel, will be deleted after our year has ended. This is inevitable. Inescapable. Irreversible.<br>Do not archive or re-upload anything. This is our last wish. Our parting gift. Stay true to the purpose of our final year or we shall lay down wrath upon those that attempt to escape the end.<br><br>Memento Mori.<br>Unus Annus.",
+  "releaseDate": 1576609200000
+}

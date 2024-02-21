@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "2b86c493-c9f9-41a1-936a-35470db342e4"
+    }
+  ],
+  "uaid": "s01.e199",
+  "season": 1,
+  "episode": 199,
+  "title": "Only Watch from 2:15 to 6:11 --- DO NOT WATCH ANY OTHER PART OF THIS VIDEO",
+  "description": "Annus has officially been declared the WINNER! Please skip to 2:15 to view Annus's glorious appreciation segment and cease watching at exactly 6:11. DO NOT WATCH ANY OTHER PART OF THE VIDEO. DO NOT.",
+  "releaseDate": 1590778800000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "81894c50-0ef3-4fa9-ae22-90dc6da22aca"
+    }
+  ],
+  "uaid": "s01.e365",
+  "season": 1,
+  "episode": 365,
+  "title": "7 Minutes in Heaven | 7 Minutes in Hell",
+  "description": "What awaits for us in the great beyond? ",
+  "releaseDate": 1605121200000
+}

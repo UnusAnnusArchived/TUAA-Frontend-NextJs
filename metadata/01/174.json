@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "7c96b10d-8b17-4a99-b7c8-9ebcbec1d8df"
+    }
+  ],
+  "uaid": "s01.e174",
+  "season": 1,
+  "episode": 174,
+  "title": "An A.I. Generates Our Worst Nightmare",
+  "description": "We dream of a future where A.I. will help humanity flourish. This is not one of those times.",
+  "releaseDate": 1588705200000
+}

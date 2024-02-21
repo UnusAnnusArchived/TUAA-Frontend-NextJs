@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "6cde76be-0a55-4ed3-89d1-0a4d2a9da2fc"
+    }
+  ],
+  "uaid": "s01.e221",
+  "season": 1,
+  "episode": 221,
+  "title": "The Ultimate Paper Airplane Showdown",
+  "description": "Today we hone an ancient craft passed down from generation to generation: The Art of the Paper Airplane",
+  "releaseDate": 1592679600000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "e560e3ad-fb9c-4b4d-af30-364e8bcfb0a8"
+    }
+  ],
+  "uaid": "s01.e019",
+  "season": 1,
+  "episode": 19,
+  "title": "An A.I. Predicts How We're Going to Die",
+  "description": "A.I. is advancing at an incredible pace and Talk to Transformer is the latest example of Artificial Intelligence being used in new and slightly scary ways. Can this A.I. predict how we will die?<br><br>Edited by  ► <a target=\"blank\" href=\"http://www.youtube.com/markiplier\">http://www.youtube.com/markiplier</a><br><br>This channel, along with every video that has or will ever be uploaded on this channel, will be deleted after our year has ended. This is inevitable. Inescapable. Irreversible.<br>Do not archive or re-upload anything. This is our last wish. Our parting gift. Stay true to the purpose of our final year or we shall lay down wrath upon those that attempt to escape the end.<br><br>Memento Mori.<br>Unus Annus.",
+  "releaseDate": 1575313200000
+}

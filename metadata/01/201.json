@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "bd1620c6-1bfa-436d-adf7-43960707b692"
+    }
+  ],
+  "uaid": "s01.e201",
+  "season": 1,
+  "episode": 201,
+  "title": "Tearing a Phone Book in Half with Our Huge Manly Muscles",
+  "description": "One half Unus, the other half Annus. Two halves of one whole. One soul. One Phone book now torn in half. We have big big muscles, we know. ",
+  "releaseDate": 1590951600000
+}

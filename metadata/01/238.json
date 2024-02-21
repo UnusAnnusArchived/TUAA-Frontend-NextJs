@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "50658ce0-31df-4a24-af58-90c90abd0b21"
+    }
+  ],
+  "uaid": "s01.e238",
+  "season": 1,
+  "episode": 238,
+  "title": "Mark and Ethan Look at a Puppy for 10 Minutes",
+  "description": "",
+  "releaseDate": 1594148400000
+}

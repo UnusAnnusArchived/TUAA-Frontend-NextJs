@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Downloads"
+  },
+  "episodeLink" : {
+    "episode" : "Episode {episode}",
+    "season" : "Staffel {season}",
+    "specials" : "Specials"
+  },
+  "header" : {
+    "closeSearch" : "Suche schließen",
+    "enableDarkMode" : "Dunkelmodus aktivieren",
+    "enableLightMode" : "Lichtmodus aktivieren",
+    "openSearch" : "Suche öffnen",
+    "search" : "Suche",
+    "searchGetStarted" : "Geben Sie eine Anfrage ein, um zu beginnen!"
+  },
+  "home" : {
+    "title" : "Startseite",
+    "videoLoadError" : "Fehler beim Laden der Episoden!"
+  },
+  "patreonDonors" : {
+    "title" : "Patreon Spender"
+  },
+  "settings" : {
+    "title" : "Einstellungen"
+  },
+  "vidstack" : {
+    "audio" : "Audio",
+    "auto" : "Auto",
+    "captions" : "Untertitel",
+    "chapters" : "Kapitel",
+    "closedCaptionsOff" : "Untertitel aus",
+    "closedCaptionsOn" : "Untertitel ein",
+    "default" : "Standard",
+    "enterFullscreen" : "Vollbild anzeigen",
+    "enterPiP" : "Bild-in-Bild starten",
+    "exitFullscreen" : "Vollbild beenden",
+    "exitPiP" : "Bild-in-Bild beenden",
+    "mute" : "Stummschalten",
+    "nextEpisode" : "Nächste Episode",
+    "normal" : "Normal",
+    "off" : "Aus",
+    "pause" : "Pause",
+    "play" : "Abspielen",
+    "previousEpisode" : "Vorherige Episode",
+    "quality" : "Qualität",
+    "resolution" : "Auflösung",
+    "seekBackward" : "Zurückspulen",
+    "seekForward" : "Vorspulen",
+    "settings" : "Einstellungen",
+    "source" : "Quelle",
+    "speed" : "Geschwindigkeit",
+    "unmute" : "Ton einschalten\n"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Ungültige Argumente: {argumentsErrorList}.",
+    "invalidDate" : "Ungültiges Datum.",
+    "invalidEnumValue" : "Ungültiger Enumerationswert: {optionsList}.",
+    "invalidIntersectionTypes" : "Ungültige Schnittstellen-Typen.",
+    "invalidLiteral" : "Ungültige Konstante; erwartet: {expected}, erhalten: {received}.",
+    "invalidReturnType" : "Ungültiger Rückgabetyp: {returnTypeErrors}.",
+    "invalidString" : "Überprüfung des Typs {validatorType} für Zeichenfolgen fehlgeschlagen.",
+    "invalidType" : "Ungültiger Typ; erwartet: {expectedValue}, erhalten: {receivedValue}.",
+    "invalidUnion" : "Ungültige Vereinigung: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Ungültiger Vereinigungs-Diskriminator.",
+    "notFinite" : "Nicht endlich.",
+    "notMultipleOf" : "Die Zahl ist kein Vielfaches von {multipleOf}.",
+    "required" : "Erforderlich.",
+    "tooBig" : "{type} zu groß; Maximalwert beträgt {maximum}.",
+    "tooSmall" : "{type} zu klein; Mindestwert beträgt {minimum}.",
+    "unrecognizedKeys" : "Nicht erkannte Schlüssel: {keysList}."
+  }
+}

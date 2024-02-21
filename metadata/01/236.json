@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "e4ebdbca-b3a6-451c-b7e1-9553808eb0d6"
+    }
+  ],
+  "uaid": "s01.e236",
+  "season": 1,
+  "episode": 236,
+  "title": "Reverse Engineering a Kite to Steal the Idea of Electricity From Benjamin Franklin",
+  "description": "",
+  "releaseDate": 1593975600000
+}

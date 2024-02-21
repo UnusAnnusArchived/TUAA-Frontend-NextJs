@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "e05f84e0-f862-46ae-abdd-dfb795d7f8b3"
+    }
+  ],
+  "uaid": "s01.e100",
+  "season": 1,
+  "episode": 100,
+  "title": "The Ultimate Trolley Problem ",
+  "description": "Today, Mark and Ethan give their morals the toughest test yet.",
+  "releaseDate": 1582311600000
+}

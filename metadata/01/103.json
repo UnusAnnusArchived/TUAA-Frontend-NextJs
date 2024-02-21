@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "4c06fb9d-e5e8-4ac3-b81a-166ba460d669"
+    }
+  ],
+  "uaid": "s01.e103",
+  "season": 1,
+  "episode": 103,
+  "title": "Granting Access Into Heaven's Sweet Gates ",
+  "description": "Heaven. Hell. Two places. Two different outcomes. Two sweet boys. Take the quiz. To Find out. Where they belong.",
+  "releaseDate": 1582570800000
+}

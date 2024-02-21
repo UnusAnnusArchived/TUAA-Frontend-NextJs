@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "b57f22f9-cc56-443e-8087-615ebf9d565e"
+    }
+  ],
+  "uaid": "s01.e252",
+  "season": 1,
+  "episode": 252,
+  "title": "The Human Mop",
+  "description": "",
+  "releaseDate": 1595358000000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "8f7cf0bb-1e57-4339-8498-05b46a450798"
+    }
+  ],
+  "uaid": "s01.e194",
+  "season": 1,
+  "episode": 194,
+  "title": "We Have the Best Bellies on Youtube",
+  "description": "Our bellies are the best bellies. Anyone who disagrees is WRONG with the FACT and will have their heads squooshed betwixt our glorious tummies. Also we learn to belly dance.",
+  "releaseDate": 1590433200000
+}

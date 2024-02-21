@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "a8ffe40a-84c6-4e39-ad03-2ae551e0d18e"
+    }
+  ],
+  "uaid": "s01.e026",
+  "season": 1,
+  "episode": 26,
+  "title": "Ethan Gives Mark a Viking Funeral",
+  "description": "A Viking Funeral is when you send your dearly departed down a river on a boat and then light that boat on fire with a flaming arrow. Probably not historically accurate but neither is our reacreation.<br><br>Edited by Amy ► <a target=\"blank\" href=\"https://twitter.com/iceddarkroast\">https://twitter.com/iceddarkroast</a><br><br>This channel, along with every video that has or will ever be uploaded on this channel, will be deleted after our year has ended. This is inevitable. Inescapable. Irreversible.<br>Do not archive or re-upload anything. This is our last wish. Our parting gift. Stay true to the purpose of our final year or we shall lay down wrath upon those that attempt to escape the end.<br><br>Memento Mori.<br>Unus Annus.",
+  "releaseDate": 1575918000000
+}

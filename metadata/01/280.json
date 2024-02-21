@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "116bc439-4956-4d77-8149-ddeaf31810ca"
+    }
+  ],
+  "uaid": "s01.e280",
+  "season": 1,
+  "episode": 280,
+  "title": "We’re Better Than Dogs",
+  "description": "",
+  "releaseDate": 1597777200000
+}

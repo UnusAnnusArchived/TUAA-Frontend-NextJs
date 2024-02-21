@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "8b961bbd-6444-4e63-b98e-3ccc5d79f498"
+    }
+  ],
+  "uaid": "s01.e123",
+  "season": 1,
+  "episode": 123,
+  "title": "2 Idiots Get Crushed by 18-Foot Giant Snakes",
+  "description": "We join Jay's Prehistoric Pets to see some amazing reptiles! Lizards, Alligators, and GIANT SNAKES!! Will we be eaten alive?",
+  "releaseDate": 1584298800000
+}

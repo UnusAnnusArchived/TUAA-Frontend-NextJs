@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "25aa8466-2b67-4c4a-b05b-b870a9ac104e"
+    }
+  ],
+  "uaid": "s01.e073",
+  "season": 1,
+  "episode": 73,
+  "title": "We Turned Our Bodies Into Art",
+  "description": "Art comes in many forms. This time it comes in the form of our bodies.<br><br>Edited by  ► <a target=\"blank\" href=\"https://bit.ly/2Mv5aTM\">https://bit.ly/2Mv5aTM</a>",
+  "releaseDate": 1579978800000
+}

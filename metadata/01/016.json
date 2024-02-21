@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "50505074-63f7-47b4-ae14-edb26e92db30"
+    }
+  ],
+  "uaid": "s01.e016",
+  "season": 1,
+  "episode": 16,
+  "title": "Helium Therapy",
+  "description": "As their voices grow higher, Ethan and Mark's friendship grows stronger.<br><br>This channel, along with every video that has or will ever be uploaded on this channel, will be deleted after our year has ended. This is inevitable. Inescapable. Irreversible.<br>Do not archive or re-upload anything. This is our last wish. Our parting gift. Stay true to the purpose of our final year or we shall lay down wrath upon those that attempt to escape the end.<br><br>Memento Mori.<br>Unus Annus.",
+  "releaseDate": 1575054000000
+}

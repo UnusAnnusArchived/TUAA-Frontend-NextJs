@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "ee08fd56-aac5-4fe5-bc0c-c99971491108"
+    }
+  ],
+  "uaid": "s01.e102",
+  "season": 1,
+  "episode": 102,
+  "title": "Edible Slime was a Mistake. ",
+  "description": "Make the slime. Play with the slime. CONSUME the slime. Last we saw, the boys were unwilling to even touch the slime. Today they must eat it.",
+  "releaseDate": 1582484400000
+}

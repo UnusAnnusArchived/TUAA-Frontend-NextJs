@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "002d662c-04b9-4fff-951c-7610f8f907bc"
+    }
+  ],
+  "uaid": "s01.e077",
+  "season": 1,
+  "episode": 77,
+  "title": "DIY Cheese",
+  "description": "Mark and Ethan explore the wonderful world of cheese. Will they succeed in becoming world class cheesemongers, or will their dreams curdle before their eyes?<br><br>Edited by Amy ► <a target=\"blank\" href=\"https://twitter.com/iceddarkroast\">https://twitter.com/iceddarkroast</a>",
+  "releaseDate": 1580324400000
+}

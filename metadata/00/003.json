@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "650e2d4b-a3ec-491c-a97e-2564c3067f0b"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "daXDEGRBsWM"
+    }
+  ],
+  "uaid": "s00.e003",
+  "season": 0,
+  "episode": 3,
+  "title": "Unus Annus Memes",
+  "description": "Let me be the Unus to your Annus ► <a target=\"blank\" href=\"<a target=\"blank\" href=\"www.\">www.</a>\">http://www.youtube.com/unusannus</a><br>Soft Boi Merch ☁ <a target=\"blank\" href=\"http://www.crankgameplays.com\">http://www.crankgameplays.com</a><br>chairgameplays ►<a target=\"blank\" href=\"http://bit.ly/2YDvaUt\">http://bit.ly/2YDvaUt</a><br><br>Music I Use ➤ <a target=\"blank\" href=\"http://share.epidemicsound.com/crank\">http://share.epidemicsound.com/crank</a><br>Follow me on twitter ➤ <a target=\"blank\" href=\"http://bit.ly/1CeHBpd\">http://bit.ly/1CeHBpd</a><br>Follow me on Twitch ➤ <a target=\"blank\" href=\"http://www.twitch.tv/CrankGameplays\">http://www.twitch.tv/CrankGameplays</a><br>Follow me on Instagram ➤ <a target=\"blank\" href=\"http://instagram.com/crankgameplays\">http://instagram.com/crankgameplays</a><br><br>edited by ► <a target=\"blank\" href=\"http://www.twitter.com/buffdaddyhd\">http://www.twitter.com/buffdaddyhd</a><br><br>Outro Art Designed by: <a target=\"blank\" href=\"https://www.youtube.com/channel/UCQ1qrORSWqjYgyABk-wzOBw\">https://www.youtube.com/channel/UCQ1qrORSWqjYgyABk-wzOBw</a><br><br>Outro Song Created by: <a target=\"blank\" href=\"https://soundcloud.com/divinewub/the-cranky-crew-a-tribute-to-old-friends\">https://soundcloud.com/divinewub/the-cranky-crew-a-tribute-to-old-friends</a>",
+  "releaseDate": 1574802310000
+}

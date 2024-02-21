@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "ab54e2d3-5b7b-4390-9448-e8d78c1e82c9"
+    }
+  ],
+  "uaid": "s01.e284",
+  "season": 1,
+  "episode": 284,
+  "title": "Pitching a Tent in the Woods But There's a Bear 15 Feet Away",
+  "description": "",
+  "releaseDate": 1598122800000
+}

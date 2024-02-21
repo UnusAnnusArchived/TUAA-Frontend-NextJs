@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Downloads"
+  },
+  "episodeLink" : {
+    "episode" : "Episodyo {episode}",
+    "season" : "Season {season}",
+    "specials" : "Mga Espesyal"
+  },
+  "header" : {
+    "closeSearch" : "Isara ang Paghahanap",
+    "enableDarkMode" : "Paganahin ang Madilim na Modo",
+    "enableLightMode" : "Paganahin ang liwanag Mode",
+    "openSearch" : "Buksan ang Paghahanap",
+    "search" : "Paghahanap",
+    "searchGetStarted" : "Mag-type ng katanungan para magsimula!"
+  },
+  "home" : {
+    "title" : "Bahay",
+    "videoLoadError" : "Error sa Pag-lo-load ng Mga Kabanata!\nAI"
+  },
+  "patreonDonors" : {
+    "title" : "Mga Donor sa Patreon"
+  },
+  "settings" : {
+    "title" : "Mga Setting"
+  },
+  "vidstack" : {
+    "audio" : "Audio",
+    "auto" : "Auto",
+    "captions" : "Mga Subtitle",
+    "chapters" : "Mga Kabanata",
+    "closedCaptionsOff" : "Isara ang Captions",
+    "closedCaptionsOn" : "Mga Subtitle sa",
+    "default" : "Default",
+    "enterFullscreen" : "Pumasok sa Buong Screen",
+    "enterPiP" : "Pumasok sa PiP",
+    "exitFullscreen" : "Lumabas sa Buong Screen",
+    "exitPiP" : "Lumabas sa PiP",
+    "mute" : "Patayin tunog",
+    "nextEpisode" : "Susunod na kabanata",
+    "normal" : "Normal",
+    "off" : "Patayin",
+    "pause" : "Itigil Video",
+    "play" : "Maglaro",
+    "previousEpisode" : "Nakaraang kabanata",
+    "quality" : "Kalidad",
+    "resolution" : "Resolusyon",
+    "seekBackward" : "Magbalik sa Likod",
+    "seekForward" : "Magbalik sa Harap",
+    "settings" : "Mga Setting\n",
+    "source" : "Pinagmulan",
+    "speed" : "Bilis",
+    "unmute" : "I-unmute"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Hindi wastong mga argumento: {argumentsErrorList}.",
+    "invalidDate" : "Hindi wastong petsa.",
+    "invalidEnumValue" : "Hindi wastong halaga ng enum: {optionsList}.",
+    "invalidIntersectionTypes" : "Hindi wastong mga uri ng intersection.",
+    "invalidLiteral" : "Hindi wastong literal; inaasahan {expected}, natanggap {received}.",
+    "invalidReturnType" : "Hindi wastong uri ng pagbalik: {returnTypeErrors}.",
+    "invalidString" : "Nabigo ang string na validator na {validatorType}.",
+    "invalidType" : "Hindi wastong uri; inaasahan {expectedValue}, natanggap {receivedValue}.",
+    "invalidUnion" : "Hindi wastong union: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Hindi wastong discriminator ng union.",
+    "notFinite" : "Hindi katapusang.",
+    "notMultipleOf" : "Ang numero ay hindi karamihan ng {multipleOf}.\nKinakailangan.",
+    "required" : "Kinakailangan.",
+    "tooBig" : "Ang {type} ay masyadong malaki; ang pinakamataas na halaga ay {maximum}.",
+    "tooSmall" : "Ang {type} ay masyadong maliit; ang pinakamababang halaga ay {minimum}.",
+    "unrecognizedKeys" : "Hindi kilalang mga susi: {keysList}."
+  }
+}

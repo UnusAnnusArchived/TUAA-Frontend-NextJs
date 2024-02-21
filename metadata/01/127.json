@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "161909a0-a03a-42b7-befe-20e768357b17"
+    }
+  ],
+  "uaid": "s01.e127",
+  "season": 1,
+  "episode": 127,
+  "title": "5 Weird Apps That Predicted Our Death",
+  "description": "It's 2020 people. Get with the times. Go into that app store, and find yourself a free app that will predict your future with 100% certainty. The future is now. Much like your death.",
+  "releaseDate": 1584644400000
+}

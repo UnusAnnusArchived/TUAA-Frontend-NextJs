@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "94ae1218-9c21-42c9-b828-3cd1d1916758"
+    }
+  ],
+  "uaid": "s01.e287",
+  "season": 1,
+  "episode": 287,
+  "title": "How to Safely Bury Your Friend",
+  "description": "",
+  "releaseDate": 1598382000000
+}

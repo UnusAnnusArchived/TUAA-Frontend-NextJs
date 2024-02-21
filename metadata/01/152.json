@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "dca218c1-d58d-4448-80b5-8a1d4f051048"
+    }
+  ],
+  "uaid": "s01.e152",
+  "season": 1,
+  "episode": 152,
+  "title": "How to NOT be the Perfect Boyfriend",
+  "description": "**TW: Please be aware that in this video we discuss abuse and unhealthy relationship dynamics.**<br><a target=\"blank\" href=\"https://www.domesticshelters.org/resources/national-global-organizations\">https://www.domesticshelters.org/resources/national-global-organizations</a><br><a target=\"blank\" href=\"https://www.acf.hhs.gov/fysb/resource/help-fv\">https://www.acf.hhs.gov/fysb/resource/help-fv</a><br><a target=\"blank\" href=\"https://www.thehotline.org/help/\">https://www.thehotline.org/help/</a><br><a target=\"blank\" href=\"https://www.womenshealth.gov/relationships-and-safety/get-help/state-resources\">https://www.womenshealth.gov/relationships-and-safety/get-help/state-resources</a>",
+  "releaseDate": 1586804400000
+}

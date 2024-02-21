@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "f5f5e984-0a3b-49c2-80f9-a7fbd7b80b91"
+    }
+  ],
+  "uaid": "s01.e160",
+  "season": 1,
+  "episode": 160,
+  "title": "Reading YOUR Scariest True Stories",
+  "description": "You thought you were safe. Scary stories on the internet are just stories... right? Your fellow comments have something to say about that.",
+  "releaseDate": 1587495600000
+}

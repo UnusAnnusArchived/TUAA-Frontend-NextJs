@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "599ab133-f042-4243-a751-f86daf99a4d4"
+    }
+  ],
+  "uaid": "s01.e315",
+  "season": 1,
+  "episode": 315,
+  "title": "Mark Knows What Ethan Did...",
+  "description": "",
+  "releaseDate": 1600801200000
+}

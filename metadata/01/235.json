@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "101b6201-526b-4272-83cc-b395ef1c580d"
+    }
+  ],
+  "uaid": "s01.e235",
+  "season": 1,
+  "episode": 235,
+  "title": "Dummy THICC for Dummies | A Tale of 2 Butts | Pushing Our Butts Even Further Beyond",
+  "description": "",
+  "releaseDate": 1593889200000
+}

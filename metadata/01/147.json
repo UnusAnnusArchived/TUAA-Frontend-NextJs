@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "f7542d9a-f793-48ca-acfe-70c955b7cff5"
+    }
+  ],
+  "uaid": "s01.e147",
+  "season": 1,
+  "episode": 147,
+  "title": "Mark and Ethan Desperately Try and Name a Single State in the USA",
+  "description": "Today we're kickin' it all the way back to fourth grade where Mark and Ethan earn the knowledge of our great states and their capitals.",
+  "releaseDate": 1586372400000
+}

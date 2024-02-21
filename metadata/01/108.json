@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "9beae927-41d5-48a1-8be0-607561abb3dd"
+    }
+  ],
+  "uaid": "s01.e108",
+  "season": 1,
+  "episode": 108,
+  "title": "Top 10 Worst Things Your Friend Could Possibly Spend Their Money On ",
+  "description": "Ethan is back at it again. His sleigh filled to the brim with horrible, horrible gifts to give his lovely friend Mark.<br>",
+  "releaseDate": 1583002800000
+}

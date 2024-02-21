@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "0f8455f8-5d52-47ba-93a9-70d2e142edb3"
+    }
+  ],
+  "uaid": "s01.e361",
+  "season": 1,
+  "episode": 361,
+  "title": "The 1st Annual Unus Annus Roast",
+  "description": "Everyone's all boo-hoo about Unus Annus coming to an end, but have people really forgotten how terrible we actual are? It's time for a roast.",
+  "releaseDate": 1604775600000
+}

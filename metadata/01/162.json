@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "346acd80-3e3a-458c-b33f-5e83cf813025"
+    }
+  ],
+  "uaid": "s01.e162",
+  "season": 1,
+  "episode": 162,
+  "title": "Will AI Soon Take Over Humanity As We Know It?",
+  "description": "Robots. Androids. AI. It's not all that far away... and neither is the revolution of said robots... and the end of humanity.... oh well!",
+  "releaseDate": 1587668400000
+}

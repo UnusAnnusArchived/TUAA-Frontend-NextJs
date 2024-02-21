@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "39d9e928-0746-4480-86e2-8e87625da7fb"
+    }
+  ],
+  "uaid": "s01.e352",
+  "season": 1,
+  "episode": 352,
+  "title": "Ethan Turns Mark into a Werewolf",
+  "description": "",
+  "releaseDate": 1603998000000
+}

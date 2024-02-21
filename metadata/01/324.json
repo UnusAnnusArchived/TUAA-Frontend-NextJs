@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "e1f8c3cf-007c-4ea0-ba81-6332a86ee90a"
+    }
+  ],
+  "uaid": "s01.e324",
+  "season": 1,
+  "episode": 324,
+  "title": "This Video Went Completely Out of Control",
+  "description": "",
+  "releaseDate": 1601578800000
+}

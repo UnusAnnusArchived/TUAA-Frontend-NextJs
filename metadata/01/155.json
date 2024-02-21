@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "a602e5ee-eed9-4e09-a7aa-6529811e6f83"
+    }
+  ],
+  "uaid": "s01.e155",
+  "season": 1,
+  "episode": 155,
+  "title": "The Creepiest Videos on Youtube",
+  "description": "Sometimes creepiness transcends mere words or images... sometimes only grainy footage from the 1990's can truly express the definition of fear.",
+  "releaseDate": 1587063600000
+}

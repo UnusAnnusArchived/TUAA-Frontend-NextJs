@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "4ceb14c1-8c08-4ea2-af80-4b3706760b51"
+    }
+  ],
+  "uaid": "s00.e006",
+  "season": 0,
+  "episode": 6,
+  "title": "Traversing the Desert to Find Our Inner Truth",
+  "description": "An alternate cut of <a target=\"blank\" href=\"/watch/?v=s01.e257\">episode 257</a>.<br><hr><br>Rage, rage against in the dying of the light.",
+  "releaseDate": 1595790000000
+}

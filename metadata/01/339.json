@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "c6fce684-3ca3-4017-bcdc-4081bcf2ce03"
+    }
+  ],
+  "uaid": "s01.e339",
+  "season": 1,
+  "episode": 339,
+  "title": "Bobbing For Literally Anything But Apples",
+  "description": "",
+  "releaseDate": 1602874800000
+}

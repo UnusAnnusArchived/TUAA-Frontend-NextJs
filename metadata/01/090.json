@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "820c2bf8-ebf5-49f9-ae61-31e01c6cb232"
+    }
+  ],
+  "uaid": "s01.e090",
+  "season": 1,
+  "episode": 90,
+  "title": "Becoming a Master of Mime",
+  "description": "To become a master of life and death, one must first become a master of the body. A master of movement. A master of mime.",
+  "releaseDate": 1581447600000
+}

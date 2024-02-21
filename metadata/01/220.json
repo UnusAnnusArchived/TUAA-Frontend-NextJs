@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "f04af05e-2d18-4343-a0d4-ddc552b028b9"
+    }
+  ],
+  "uaid": "s01.e220",
+  "season": 1,
+  "episode": 220,
+  "title": "Becoming One With the Horse",
+  "description": "Long have we yearned to gallop the great fields with our mighty hooves. The slurp from grand rivers with our mighty slurpers. Well today... our dreams shall no longer remain dreams!",
+  "releaseDate": 1592593200000
+}

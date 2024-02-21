@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "c9160b31-22c9-4b6c-9094-515e38f83efd"
+    }
+  ],
+  "uaid": "s01.e229",
+  "season": 1,
+  "episode": 229,
+  "title": "Ethan Teaches Mark How to Swim",
+  "description": "Mark has the densest bones known to man. Can Mark overcome this obstacle with Ethan's legendary teaching and or swimming ability?",
+  "releaseDate": 1593370800000
+}

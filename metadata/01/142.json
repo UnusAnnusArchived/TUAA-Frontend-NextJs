@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "00dfa018-8e49-44ab-b061-1ebc9c068ed8"
+    }
+  ],
+  "uaid": "s01.e142",
+  "season": 1,
+  "episode": 142,
+  "title": "Mark's 1 Weird Talent Leaves Ethan Absolutely Speechless",
+  "description": "Mark is the most talented human in the world and took #MarchusAnnus very seriously. ",
+  "releaseDate": 1585940400000
+}

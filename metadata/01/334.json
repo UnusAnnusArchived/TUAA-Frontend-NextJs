@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "c4d0f726-e20e-46c9-980d-e960028a61b8"
+    }
+  ],
+  "uaid": "s01.e334",
+  "season": 1,
+  "episode": 334,
+  "title": "Mark Conquers His Fear of Night Swimming",
+  "description": "",
+  "releaseDate": 1602442800000
+}

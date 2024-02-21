@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "fb2c0b51-ba2e-4ae0-b807-33b3b2558cd8"
+    }
+  ],
+  "uaid": "s01.e336",
+  "season": 1,
+  "episode": 336,
+  "title": "We Bought Every Grinch Costume on Ebay",
+  "description": "We will never get another Christmas. Luckily, Ebay is here to help us forget the inevitable end through the power of the Grinch.",
+  "releaseDate": 1602615600000
+}

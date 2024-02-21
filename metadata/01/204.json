@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "ee6c3e0e-6513-4df5-96c9-c8d57b82a45a"
+    }
+  ],
+  "uaid": "s01.e204",
+  "season": 1,
+  "episode": 204,
+  "title": "Crushing Watermelons Betwixt Our Mighty Thighs",
+  "description": "We return once again to showcase our feats of incredible strength. Gaze upon our mammoth hams as we quash these juicy gourds.",
+  "releaseDate": 1591210800000
+}

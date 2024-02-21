@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "4fed8b4b-e43f-4457-901c-d3e3a7e3d192"
+    }
+  ],
+  "uaid": "s01.e098",
+  "season": 1,
+  "episode": 98,
+  "title": "Being Attacked by a Fully Trained Bodyguard Dog ",
+  "description": "Dog's are incredibly intelligent creatures that can be trained to guard your life. We learn about this process and experience what it feels like to have a dog attack us up close and personal.",
+  "releaseDate": 1582138800000
+}

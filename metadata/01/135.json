@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "3ae53a36-a388-45fa-ab4b-6318036efec6"
+    }
+  ],
+  "uaid": "s01.e135",
+  "season": 1,
+  "episode": 135,
+  "title": "Having an Adventure In VR Chat Because We Can't Go Outside",
+  "description": "While we can't go out into the real world, we decided to take an adventure in the virtual world of VR Chat",
+  "releaseDate": 1585335600000
+}

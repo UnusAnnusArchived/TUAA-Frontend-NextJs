@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "7a1e8712-c956-40cc-97c3-975b250b489f"
+    }
+  ],
+  "uaid": "s01.e072",
+  "season": 1,
+  "episode": 72,
+  "title": "We Hired a Real Hypnotherapist to Analyze Our Darkest Dreams",
+  "description": "Hypnotherapy is the art of mental suggestion. This isn't the stage entertainment variety of hypnosis. This is real therapy to help people get in touch with what's bothering them deep inside. <br>Find Liza Here ➤ <a target=\"blank\" href=\"https://healwithin.com\">https://healwithin.com</a><br><br>Edited By ► <a target=\"blank\" href=\"http://www.youtube.com/LixianTV\">http://www.youtube.com/LixianTV</a>",
+  "releaseDate": 1579892400000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "810db2a4-83e2-4d71-a575-79a4b45bca4f"
+    }
+  ],
+  "uaid": "s01.e259",
+  "season": 1,
+  "episode": 259,
+  "title": "Ultimate Horseshoes",
+  "description": "",
+  "releaseDate": 1595962800000
+}

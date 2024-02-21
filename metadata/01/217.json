@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "e479c2a9-303c-4d1f-8a0d-70757b92405d"
+    }
+  ],
+  "uaid": "s01.e217",
+  "season": 1,
+  "episode": 217,
+  "title": "Learning to Cry on Command to Increase Our YouTube Views",
+  "description": "None have been able to capture sadness as good as a crying YouTuber. Today, we harness that power to increase our views tenfold.",
+  "releaseDate": 1592334000000
+}

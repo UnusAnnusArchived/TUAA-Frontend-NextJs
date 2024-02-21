@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "22056ba0-60a9-4cf7-8f36-35941152fb88"
+    }
+  ],
+  "uaid": "s01.e304",
+  "season": 1,
+  "episode": 304,
+  "title": "We Pierced Each Other’s Ears",
+  "description": "",
+  "releaseDate": 1599850800000
+}

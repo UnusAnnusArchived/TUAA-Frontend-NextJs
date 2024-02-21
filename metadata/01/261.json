@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "e74b9d40-107d-4a55-a8b2-a219eb77b16e"
+    }
+  ],
+  "uaid": "s01.e261",
+  "season": 1,
+  "episode": 261,
+  "title": "Recharging Our Phones Using Only Brute Strength",
+  "description": "",
+  "releaseDate": 1596135600000
+}

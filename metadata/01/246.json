@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "017b7bc4-7414-46fb-9e52-76eb23efd954"
+    }
+  ],
+  "uaid": "s01.e246",
+  "season": 1,
+  "episode": 246,
+  "title": "Dunking Oreos In Literally Anything But Milk",
+  "description": "",
+  "releaseDate": 1594839600000
+}

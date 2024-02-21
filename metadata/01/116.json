@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "0df9a0c2-6b34-4b89-81bf-3f2a40a8ccc6"
+    }
+  ],
+  "uaid": "s01.e116",
+  "season": 1,
+  "episode": 116,
+  "title": "Mark and Ethan Get Into a Fight ",
+  "description": "Mark and Ethan have finally had enough. Its time for them to fight with their ultimate weapons of destruction: their fists.<br>",
+  "releaseDate": 1583694000000
+}

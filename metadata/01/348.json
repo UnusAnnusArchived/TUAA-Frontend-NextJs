@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "9e5bb475-a078-422e-b745-9cb7613f2ccc"
+    }
+  ],
+  "uaid": "s01.e348",
+  "season": 1,
+  "episode": 348,
+  "title": "Phasmophobia in Real Life",
+  "description": "",
+  "releaseDate": 1603652400000
+}

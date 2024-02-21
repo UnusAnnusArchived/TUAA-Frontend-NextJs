@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "b901fb64-f66d-4c78-a48c-e32e2869e54a"
+    }
+  ],
+  "uaid": "s01.e136",
+  "season": 1,
+  "episode": 136,
+  "title": "Amazon Shopping for the Apocalypse",
+  "description": "What if you had only one bag to grab before sprinting for your life into the woods? Would you be prepared for an apocalypse situation? If not, turn to your lord and savior, AMAZON, for all your survival needs!",
+  "releaseDate": 1585422000000
+}

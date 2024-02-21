@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "188c8917-9bed-4765-83be-9de3949480a5"
+    }
+  ],
+  "uaid": "s01.e207",
+  "season": 1,
+  "episode": 207,
+  "title": "Mark Teaches Ethan to Read with Hooked on Phonics",
+  "description": "Ethan's dream has always been to learn the mysteries of the written word. With Mark's BIG BRAIN, he might just make a breakthrough.",
+  "releaseDate": 1591470000000
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "5e7c2de3-31fc-4322-8459-5282f17c38d0"
+    }
+  ],
+  "uaid": "s01.e197",
+  "season": 1,
+  "episode": 197,
+  "title": "Only UNUS-es May Watch This Video",
+  "description": "If you are an UNUS... you are welcome here. If you are an ANNUS... begone!! You shall not befoul this sacred ground with your musk!",
+  "releaseDate": 1590692400000
+}

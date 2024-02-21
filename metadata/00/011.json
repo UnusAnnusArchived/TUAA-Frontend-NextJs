@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "442ff894-c2d7-4905-9c04-4cbdf506b897"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "xH4Nw1NXkQs"
+    }
+  ],
+  "uaid": "s00.e011",
+  "season": 0,
+  "episode": 11,
+  "title": "What It Was Like To Edit For Unus Annus",
+  "description": "Hey! In this video I speak about my journey as the editor of Unus Annus!<br>Follow me on Twitter oki :3? <a target=\"blank\" href=\"https://twitter.com/Dicerolltv\">https://twitter.com/Dicerolltv</a>",
+  "releaseDate": 1605386651000
+}

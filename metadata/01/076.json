@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "bf538485-693f-4dc7-80c3-122dd94ea619"
+    }
+  ],
+  "uaid": "s01.e076",
+  "season": 1,
+  "episode": 76,
+  "title": "Strange (and legal) Things You Can Do With Your Body After Death",
+  "description": "Eventually, we'll all have to decide what is to be done with our remains once we pass on. How will you be remembered?<br><br>Edited By ► <a target=\"blank\" href=\"http://www.youtube.com/markiplier\">http://www.youtube.com/markiplier</a>",
+  "releaseDate": 1580238000000
+}

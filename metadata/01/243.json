@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "a7322c8a-2bee-4aa5-955b-475bc89b3776"
+    }
+  ],
+  "uaid": "s01.e243",
+  "season": 1,
+  "episode": 243,
+  "title": "The Egg Smashing Game",
+  "description": "",
+  "releaseDate": 1594580400000
+}

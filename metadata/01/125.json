@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "2ec82a41-ada9-48b5-84d2-7b560a8da4e1"
+    }
+  ],
+  "uaid": "s01.e125",
+  "season": 1,
+  "episode": 125,
+  "title": "Mark and Ethan Hunt The World's Most Wanted Criminals",
+  "description": "When $10,000,000 is on the line, Mark and Ethan will stop at nothing(?) to find and capture America's Most Wanted Criminals.",
+  "releaseDate": 1584471600000
+}

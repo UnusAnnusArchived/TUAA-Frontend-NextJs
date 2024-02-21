@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "a998e1de-8f24-42f6-b93c-c4c580a5a215"
+    }
+  ],
+  "uaid": "s01.e272",
+  "season": 1,
+  "episode": 272,
+  "title": "Judging Your Terrible Unus Annus Ideas",
+  "description": "",
+  "releaseDate": 1597086000000
+}

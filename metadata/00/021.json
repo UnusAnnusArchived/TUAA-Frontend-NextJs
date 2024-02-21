@@ -1,0 +1,24 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "790e8268-2e46-4b67-b1cd-71c31b54d0f4"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "_WeSH0j7dCw"
+    }
+  ],
+  "uaid": "s00.e021",
+  "season": 0,
+  "episode": 21,
+  "title": "Death Remembers",
+  "description": "How easily we forget.<br />Remember Death: <a href=\"https://www.youtube.com/watch?v=fusSZkFZ08I\">https://www.youtube.com/watch?v=fusSZkFZ08I</a>",
+  "releaseDate": 1700596819000,
+  "isLast": true
+}

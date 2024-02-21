@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Stahování"
+  },
+  "episodeLink" : {
+    "episode" : "Epizoda {episode}",
+    "season" : "Série {season}",
+    "specials" : "Speciály"
+  },
+  "header" : {
+    "closeSearch" : "Zavřít hledání",
+    "enableDarkMode" : "Povolit tmavý režim",
+    "enableLightMode" : "Povolit světlý režim",
+    "openSearch" : "Otevřít hledání",
+    "search" : "Hledat",
+    "searchGetStarted" : "Napište dotaz pro začátek!"
+  },
+  "home" : {
+    "title" : "Domů",
+    "videoLoadError" : "Chyba při načítání epizod!"
+  },
+  "patreonDonors" : {
+    "title" : "Patreon Dárci"
+  },
+  "settings" : {
+    "title" : "Nastavení"
+  },
+  "vidstack" : {
+    "audio" : "Zvuk",
+    "auto" : "Automaticky",
+    "captions" : "Titulky",
+    "chapters" : "Kapitoly",
+    "closedCaptionsOff" : "Vypnout uzavřené titulky",
+    "closedCaptionsOn" : "Zapnout uzavřené titulky",
+    "default" : "Výchozí",
+    "enterFullscreen" : "Zobrazit na celou obrazovku",
+    "enterPiP" : "Otevřít v režimu obrazu v obraze",
+    "exitFullscreen" : "Opustit režim celé obrazovky",
+    "exitPiP" : "Opustit režim obrazu v obraze",
+    "mute" : "Ztlumit",
+    "nextEpisode" : "Další epizoda",
+    "normal" : "Normální",
+    "off" : "Vypnuto",
+    "pause" : "Pauza",
+    "play" : "Přehrát",
+    "previousEpisode" : "Předchozí epizoda",
+    "quality" : "Kvalita",
+    "resolution" : "Rozlišení",
+    "seekBackward" : "Hledat vzad",
+    "seekForward" : "Hledat vpřed",
+    "settings" : "Nastavení",
+    "source" : "Zdroj",
+    "speed" : "Rychlost",
+    "unmute" : "Zrušit utlumení"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Neplatné argumenty: {argumentsErrorList}.",
+    "invalidDate" : "Neplatné datum.",
+    "invalidEnumValue" : "Neplatná hodnota výčtu: {optionsList}.",
+    "invalidIntersectionTypes" : "Neplatné typy průniku.",
+    "invalidLiteral" : "Neplatný literál; očekáváno {expected}, obdrženo {received}.",
+    "invalidReturnType" : "Neplatný návratový typ: {returnTypeErrors}.",
+    "invalidString" : "Řetězec neprošel kontrolou {validatorType}.",
+    "invalidType" : "Neplatný typ; očekáváno {expectedValue}, obdrženo {receivedValue}.",
+    "invalidUnion" : "Neplatný spolek: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Neplatný diskriminátor spolku.",
+    "notFinite" : "Není konečné.",
+    "notMultipleOf" : "Číslo není násobkem {multipleOf}.",
+    "required" : "Povinné.",
+    "tooBig" : "{type} je příliš velký; maximální hodnota je {maximum}.",
+    "tooSmall" : "{type} je příliš malý; minimální hodnota je {minimum}.",
+    "unrecognizedKeys" : "Nerozpoznané klíče: {keysList}."
+  }
+}

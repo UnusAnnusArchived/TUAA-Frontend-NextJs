@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "b3caed98-cf6a-4013-8701-750b870ea748"
+    }
+  ],
+  "uaid": "s01.e345",
+  "season": 1,
+  "episode": 345,
+  "title": "We Force Mark to Swim in the Ocean (HIS GREATEST FEAR)",
+  "description": "",
+  "releaseDate": 1603393200000
+}

@@ -1,0 +1,14 @@
+{
+  "metadataPath": "metadata",
+  "bunny": {
+    "accessKey": "xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxx-xxxx",
+    "libraryId": 123456
+  },
+  "tolgee": {
+    "devApiKey": "tgpak_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "prodApiKey": "tgpak_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "mail": {
+    "key": ""
+  }
+}

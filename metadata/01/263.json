@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "ac27fd90-33d3-4c79-83fc-000e8f300af3"
+    }
+  ],
+  "uaid": "s01.e263",
+  "season": 1,
+  "episode": 263,
+  "title": "Mark Teaches Ethan How to Play the Trumpet",
+  "description": "",
+  "releaseDate": 1596308400000
+}

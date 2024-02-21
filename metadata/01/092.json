@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "016cedc9-584b-47c4-8fe0-303b446490bd"
+    }
+  ],
+  "uaid": "s01.e092",
+  "season": 1,
+  "episode": 92,
+  "title": "Are We Already Dead?",
+  "description": "Mark and Ethan try to answer some of life's most perplexing questions. Are we already dead? How many ways have you padded out the running time of your brother's funeral?",
+  "releaseDate": 1581620400000
+}

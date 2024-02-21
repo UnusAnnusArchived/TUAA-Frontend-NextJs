@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "533413bb-bc96-42c6-a3c3-22276be3ed5a"
+    }
+  ],
+  "uaid": "s01.e305",
+  "season": 1,
+  "episode": 305,
+  "title": "We Ate Dog Treats So You Don't Have To",
+  "description": "",
+  "releaseDate": 1599937200000
+}

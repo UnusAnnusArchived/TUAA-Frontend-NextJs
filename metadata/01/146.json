@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "0fc831c2-9560-40ce-bfc9-65a35934ecf8"
+    }
+  ],
+  "uaid": "s01.e146",
+  "season": 1,
+  "episode": 146,
+  "title": "We Played Mad Libs And Ran It Through Google Translate",
+  "description": "If you've ever played a classic game of Mad Libs, then you know it is often... not very funny. Luckily for us, Mark and Ethan have devised a foolproof plan to create humor where there is none.",
+  "releaseDate": 1586286000000
+}

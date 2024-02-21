@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "37c35e26-87e0-4339-910b-ac8b3066349e"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "Lvicaufi5O0"
+    }
+  ],
+  "uaid": "s00.e016",
+  "season": 0,
+  "episode": 16,
+  "title": "Mori",
+  "description": "Memento ► <a href=\"https://unusann.us/watch/s00.e015\">https://youtu.be/yGxOsZOyyRg</a>",
+  "releaseDate": 1668369720000
+}

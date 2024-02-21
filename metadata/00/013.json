@@ -1,0 +1,23 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "71fd9c8a-2925-4ffa-ad99-cf6b7a2960cd"
+    },
+    {
+      "type": "youtube",
+      "id": "youtube",
+      "name": "YouTube",
+      "youtubeId": "Ib1prHD6Wks"
+    }
+  ],
+  "uaid": "s00.e013",
+  "season": 0,
+  "episode": 13,
+  "title": "Memento Mori (Ethan)",
+  "description": "All we have left are the memories.",
+  "releaseDate": 1636876808000
+}

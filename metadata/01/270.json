@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "dac2512e-7864-4e5f-a41a-7f5fd7f5d2fa"
+    }
+  ],
+  "uaid": "s01.e270",
+  "season": 1,
+  "episode": 270,
+  "title": "Mark and Ethan Shave Chica",
+  "description": "",
+  "releaseDate": 1596913200000
+}

@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Descargas"
+  },
+  "episodeLink" : {
+    "episode" : "Episodio {episode}",
+    "season" : "Temporada {season}",
+    "specials" : "Especiales"
+  },
+  "header" : {
+    "closeSearch" : "Cerrar búsqueda",
+    "enableDarkMode" : "Activar modo oscuro",
+    "enableLightMode" : "Activar modo claro",
+    "openSearch" : "Abrir búsqueda",
+    "search" : "Buscar",
+    "searchGetStarted" : "¡Escribe una consulta para empezar!"
+  },
+  "home" : {
+    "title" : "Inicio",
+    "videoLoadError" : "¡Error cargando episodios!"
+  },
+  "patreonDonors" : {
+    "title" : "Donantes de Patreon"
+  },
+  "settings" : {
+    "title" : "Configuración"
+  },
+  "vidstack" : {
+    "audio" : "Audio",
+    "auto" : "Automático",
+    "captions" : "Subtítulos",
+    "chapters" : "Capítulos",
+    "closedCaptionsOff" : "Subtítulos desactivados",
+    "closedCaptionsOn" : "Subtítulos activados",
+    "default" : "Predeterminado",
+    "enterFullscreen" : "Entrar en pantalla completa",
+    "enterPiP" : "Entrar en PiP",
+    "exitFullscreen" : "Salir de pantalla completa",
+    "exitPiP" : "Salir de PiP",
+    "mute" : "Silenciar",
+    "nextEpisode" : "Próximo episodio",
+    "normal" : "Normal",
+    "off" : "Apagado",
+    "pause" : "Pausa",
+    "play" : "Reproducir",
+    "previousEpisode" : "Episodio anterior",
+    "quality" : "Calidad",
+    "resolution" : "Resolución",
+    "seekBackward" : "Retroceso",
+    "seekForward" : "Avance",
+    "settings" : "Configuración",
+    "source" : "Fuente",
+    "speed" : "Velocidad",
+    "unmute" : "Activar sonido"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Argumentos inválidos: {argumentsErrorList}.",
+    "invalidDate" : "Fecha inválida.",
+    "invalidEnumValue" : "Valor de enumeración inválido: {optionsList}.\n",
+    "invalidIntersectionTypes" : "Tipos de intersección no válidos.",
+    "invalidLiteral" : "Literal no válido; se esperaba {expected}, recibido {received}.",
+    "invalidReturnType" : "Tipo de retorno no válido: {returnTypeErrors}.",
+    "invalidString" : "Error en la validación de cadena tipo {validatorType}.",
+    "invalidType" : "Tipo no válido; se esperaba {expectedValue}, recibido {receivedValue}.",
+    "invalidUnion" : "Unión no válida: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Discriminador de unión no válido.",
+    "notFinite" : "No es finito.",
+    "notMultipleOf" : "El número no es un múltiplo de {multipleOf}.",
+    "required" : "Requerido.",
+    "tooBig" : "{type} demasiado grande; el valor máximo es {maximum}.",
+    "tooSmall" : "{type} demasiado pequeño; el valor mínimo es {minimum}.",
+    "unrecognizedKeys" : "Claves no reconocidas: {keysList}."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "1d8e1c94-a07c-42e3-bda6-caeaaa9358cf"
+    }
+  ],
+  "uaid": "s01.e153",
+  "season": 1,
+  "episode": 153,
+  "title": "Mark and Ethan Find The Lost City of El Dorado",
+  "description": "hundreds of brave treasure hunters have attempted to find it, but none have succeeded... until now.",
+  "releaseDate": 1586890800000
+}

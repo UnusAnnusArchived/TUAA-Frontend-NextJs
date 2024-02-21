@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "2d7c928a-adb7-4936-8dd6-a6f695636b49"
+    }
+  ],
+  "uaid": "s01.e141",
+  "season": 1,
+  "episode": 141,
+  "title": "Mark Builds a Pillow Fort for the Very First Time",
+  "description": "Dirt. Dirt is all Mark had for fun as a child, but now that he's a big rich YouTuber, he can finally make his childhood dream a reality.",
+  "releaseDate": 1585854000000
+}

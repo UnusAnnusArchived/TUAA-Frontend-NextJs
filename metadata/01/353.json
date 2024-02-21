@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "8bb21a9e-6f17-4af3-ad0c-05b509b904d7"
+    }
+  ],
+  "uaid": "s01.e353",
+  "season": 1,
+  "episode": 353,
+  "title": "Ethan Kidnapped Mark",
+  "description": "",
+  "releaseDate": 1604084400000
+}

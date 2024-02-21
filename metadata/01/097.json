@@ -1,0 +1,17 @@
+{
+  "$schema": "../_schema.json",
+  "_metadataVersion": 3,
+  "sources": [
+    {
+      "type": "bunny",
+      "id": "bunny",
+      "bunnyId": "90589fe0-551a-4559-aca4-5ba07564f7f7"
+    }
+  ],
+  "uaid": "s01.e097",
+  "season": 1,
+  "episode": 97,
+  "title": "3 Big Boys Attempt the King's Royal Fitness Test",
+  "description": "The Presidential Fitness test is so 2019... in 2020 it's time for the KING's ROYAL FITNESS TEST!! And we have a special guest to help us out...",
+  "releaseDate": 1582052400000
+}
