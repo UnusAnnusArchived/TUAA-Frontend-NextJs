@@ -1,10 +1,9 @@
 "use client";
 
-import { useClientTranslation } from "@/hooks/useTranslation";
 import { IError } from "@/types";
 import { z } from "zod";
 import { ErrorCode } from "zod_utilz";
-import T from "../T";
+import { useTranslate } from "@tolgee/react";
 import { useRecoilState } from "recoil";
 
 interface IProps {
@@ -12,7 +11,7 @@ interface IProps {
 }
 
 const ErrorDisplay: React.FC<IProps> = ({ errors }) => {
-  const [t] = useClientTranslation(useRecoilState);
+  const { t } = useTranslate();
 
   return (
     <>
@@ -54,84 +53,102 @@ const ErrorDisplay: React.FC<IProps> = ({ errors }) => {
 
                               switch (errArr[0]) {
                                 case "invalid_type": {
-                                  translated = t.zodErrors.invalidType
-                                    .replace("{expectedValue}", errArr[1])
-                                    .replace("{receivedValue}", errArr[2]);
+                                  translated = t({
+                                    key: "zodErrors.invalidType",
+                                    params: { expectedValue: errArr[1], receivedValue: errArr[2] },
+                                  });
                                   break;
                                 }
                                 case "unrecognized_keys": {
-                                  translated = t.zodErrors.unrecognizedKeys.replace("{keysList}", errArr[1]);
+                                  translated = t({
+                                    key: "zodErrors.unrecognizedKeys",
+                                    params: { keysList: errArr[1] },
+                                  });
                                   break;
                                 }
                                 case "invalid_union": {
-                                  translated = t.zodErrors.invalidUnion.replace("{unionErrorsList}", errArr[1]);
+                                  translated = t({
+                                    key: "zodErrors.invalidUnion",
+                                    params: { unionErrorsList: errArr[1] },
+                                  });
                                   break;
                                 }
                                 case "invalid_enum_value": {
-                                  translated = t.zodErrors.invalidEnumValue.replace("{optionsList}", errArr[1]);
+                                  translated = t({
+                                    key: "zodErrors.invalidEnumValue",
+                                    params: { optionsList: errArr[1] },
+                                  });
                                   break;
                                 }
                                 case "invalid_arguments": {
-                                  translated = t.zodErrors.invalidArguments.replace("{argumentsErrorList}", errArr[1]);
+                                  translated = t({
+                                    key: "zodErrors.invalidArguments",
+                                    params: { argumentsErrorList: errArr[1] },
+                                  });
                                   break;
                                 }
                                 case "invalid_return_type": {
-                                  translated = t.zodErrors.invalidReturnType.replace("{returnTypeErrors}", errArr[1]);
+                                  translated = t({
+                                    key: "zodErrors.invalidReturnType",
+                                    params: { returnTypeErrors: errArr[1] },
+                                  });
                                   break;
                                 }
                                 case "invalid_string": {
-                                  translated = t.zodErrors.invalidString.replace("{validatorType}", errArr[1]);
+                                  translated = t({
+                                    key: "zodErrors.invalidString",
+                                    params: { validatorType: errArr[1] },
+                                  });
                                   break;
                                 }
                                 case "too_small": {
-                                  translated = t.zodErrors.tooSmall
-                                    .replace("{type}", errArr[1])
-                                    .replace("{minimum}", errArr[2]);
+                                  translated = t({
+                                    key: "zodErrors.tooSmall",
+                                    params: { type: errArr[1], minimum: errArr[2] },
+                                  });
                                   break;
                                 }
                                 case "too_big": {
-                                  translated = t.zodErrors.tooBig
-                                    .replace("{type}", errArr[1])
-                                    .replace("{maximum}", errArr[2]);
+                                  translated = t({
+                                    key: "zodErrors.tooBig",
+                                    params: { type: errArr[1], maximum: errArr[2] },
+                                  });
                                   break;
                                 }
                                 case "not_multiple_of": {
-                                  translated = t.zodErrors.notMultipleOf.replace("{multipleOf}", errArr[1]);
+                                  translated = t({ key: "zodErrors.notMultipleOf", params: { multipleOf: errArr[1] } });
                                   break;
                                 }
                                 case "invalid_literal": {
-                                  translated = t.zodErrors.invalidLiteral
-                                    .replace("{expected}", errArr[1])
-                                    .replace("{received}", errArr[2]);
+                                  translated = t({
+                                    key: "zodErrors.invalidLiteral",
+                                    params: { expected: errArr[1], received: errArr[2] },
+                                  });
                                   break;
                                 }
                                 case "invalid_date": {
-                                  translated = t.zodErrors.invalidDate;
+                                  translated = t("zodErrors.invalidDate");
                                   break;
                                 }
                                 case "invalid_intersection_types": {
-                                  translated = t.zodErrors.invalidIntersectionTypes;
+                                  translated = t("zodErrors.invalidIntersectionTypes");
                                   break;
                                 }
                                 case "invalid_union_discriminator": {
-                                  translated = t.zodErrors.invalidUnionDiscriminator;
+                                  translated = t("zodErrors.invalidUnionDiscriminator");
                                   break;
                                 }
                                 case "not_finite": {
-                                  translated = t.zodErrors.notFinite;
+                                  translated = t("zodErrors.notFinite");
                                   break;
                                 }
                                 case "required": {
-                                  translated = t.zodErrors.required;
+                                  translated = t("zodErrors.required");
                                   break;
                                 }
                               }
 
-                              return (
-                                <li>
-                                  <T>{translated}</T>
-                                </li>
-                              );
+                              return <li suppressHydrationWarning>{translated}</li>;
                             } catch (err: any) {
                               return <li>Error while parsing error: {err.toString()}</li>;
                             }

@@ -6,92 +6,85 @@ import { useTheme } from "@mui/material";
 import NextImage, { ImageProps } from "next/image";
 import { useEffect, useRef, useState } from "react";
 import ThumbnailLoading from "./thumbnail-loading";
+import styles from "./styles.module.scss";
+import { useInViewport } from "react-in-viewport";
 
 interface IProps
   extends Partial<Omit<ImageProps, "style" | "src" | "alt" | "ref" | "onMouseEnter" | "onMouseLeave" | "width">> {
   episode: IMetadata;
-  episodeLinks: EpisodeLinks;
+  episodeLinks?: EpisodeLinks;
   ThumbnailProps?: Partial<ImageProps>;
   PreviewProps?: Partial<ImageProps>;
 }
 
 const EpisodeThumbnail: React.FC<IProps> = (props) => {
   const [showPreview, setShowPreview] = useState(false);
-  const [[thumbnailX, thumbnailY, thumbnailWidth, thumbnailHeight], setThumbnailPosition] = useState([0, 0, 0, 0]);
   const [thumbnailBlob, setThumbnailBlob] = useState<string>();
   const [previewBlob, setPreviewBlob] = useState<string>();
+  const divRef = useRef<HTMLDivElement>(null);
+  const { inViewport } = useInViewport(divRef);
   const theme = useTheme();
   const thumbnailRef = useRef<HTMLImageElement>(null);
 
-  const handleResize = () => {
-    if (thumbnailRef.current) {
-      const rect = thumbnailRef.current.getBoundingClientRect();
-      setThumbnailPosition([rect.x, rect.top, rect.width, rect.height]);
-    } else {
-      setThumbnailPosition([0, 0, 0, 0]);
-    }
-  };
-
   useEffect(() => {
-    handleResize();
-  }, [thumbnailRef.current, thumbnailBlob]);
+    console.log(props.episodeLinks, inViewport);
+    if (props.episodeLinks) {
+      if (inViewport) {
+        const abortController = new AbortController();
 
-  useEffect(() => {
-    if (window) {
-      window.addEventListener("resize", handleResize);
-    }
+        fetch(props.episodeLinks.thumbnail, {
+          signal: abortController.signal,
+        }).then(async (thumbnail) => {
+          setThumbnailBlob(URL.createObjectURL(await thumbnail.blob()));
+        });
 
-    return () => {
-      if (window) {
-        window.removeEventListener("resize", handleResize);
+        return () => {
+          abortController.abort("UI reloaded");
+          if (thumbnailBlob) {
+            URL.revokeObjectURL(thumbnailBlob);
+          }
+        };
+      } else {
+        if (thumbnailBlob) {
+          URL.revokeObjectURL(thumbnailBlob);
+          setThumbnailBlob(undefined);
+        }
       }
-    };
-  }, []);
+    }
+  }, [inViewport, props.episodeLinks, props.episodeLinks?.thumbnail]);
 
   useEffect(() => {
-    const abortController = new AbortController();
+    if (props.episodeLinks) {
+      if (inViewport) {
+        const abortController = new AbortController();
 
-    fetch(props.episodeLinks.thumbnail, {
-      signal: abortController.signal,
-    }).then(async (thumbnail) => {
-      setThumbnailBlob(URL.createObjectURL(await thumbnail.blob()));
-    });
+        fetch(props.episodeLinks.preview, {
+          signal: abortController.signal,
+        }).then(async (preview) => {
+          setPreviewBlob(URL.createObjectURL(await preview.blob()));
+        });
 
-    return () => {
-      abortController.abort("UI reloaded");
-    };
-  }, [props.episodeLinks.thumbnail]);
+        return () => {
+          abortController.abort("UI reloaded");
+          if (previewBlob) {
+            URL.revokeObjectURL(previewBlob);
+          }
+        };
+      } else {
+        if (previewBlob) {
+          URL.revokeObjectURL(previewBlob);
+          setPreviewBlob(undefined);
+        }
+      }
+    }
+  }, [inViewport, props.episodeLinks, props.episodeLinks?.preview]);
 
-  useEffect(() => {
-    const abortController = new AbortController();
-
-    fetch(props.episodeLinks.preview, {
-      signal: abortController.signal,
-    }).then(async (preview) => {
-      setPreviewBlob(URL.createObjectURL(await preview.blob()));
-    });
-
-    return () => {
-      abortController.abort("UI reloaded");
-    };
-  }, [props.episodeLinks.preview]);
-
-  const handleMouseEnter = () => {
-    setShowPreview(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowPreview(false);
-  };
-
-  if (thumbnailBlob) {
-    return (
-      <div>
+  return (
+    <div ref={divRef} style={{ position: "relative" }}>
+      {thumbnailBlob ? (
         <NextImage
           src={thumbnailBlob ?? "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
           alt={`Thumbnail for ${props.episode.title}`}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
           ref={thumbnailRef}
           width="1280"
           height="720"
@@ -99,34 +92,32 @@ const EpisodeThumbnail: React.FC<IProps> = (props) => {
           {...props}
           {...props.ThumbnailProps}
         />
-        <NextImage
-          src={
-            showPreview && previewBlob
-              ? previewBlob
-              : "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-          }
-          alt={`Preview for ${props.episode.title}`}
-          style={{
-            opacity: showPreview && previewBlob ? 1 : 0,
-            transition: theme.transitions.create("opacity"),
-            position: "absolute",
-            left: thumbnailX,
-            top: `calc(${thumbnailY}px - 4.5rem)`,
-            width: thumbnailWidth,
-            height: thumbnailHeight,
-            borderRadius: theme.shape.borderRadius,
-            pointerEvents: "none",
-          }}
-          width="320"
-          height="180"
-          {...props}
-          {...props.PreviewProps}
-        />
-      </div>
-    );
-  } else {
-    return <ThumbnailLoading />;
-  }
+      ) : (
+        <ThumbnailLoading />
+      )}
+      <NextImage
+        src={previewBlob ?? "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
+        alt={`Preview for ${props.episode.title}`}
+        style={{
+          opacity: 0,
+          transition: theme.transitions.create("opacity"),
+          position: "absolute",
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "auto",
+          aspectRatio: 16 / 9,
+          borderRadius: theme.shape.borderRadius,
+          pointerEvents: "none",
+        }}
+        className={styles.animation}
+        width="320"
+        height="180"
+        {...props}
+        {...props.PreviewProps}
+      />
+    </div>
+  );
 };
 
 export default EpisodeThumbnail;

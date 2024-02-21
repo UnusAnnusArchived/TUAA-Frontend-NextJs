@@ -1,6 +1,8 @@
 {
   "api": "https://unusann.us/api",
   "siteRoot": "https://unusann.us",
-  "bunny": "https://vz-b39cd352-a49.b-cdn.net",
-  "pocketbase": "https://db.unusann.us"
+  "cdn": "https://cdn.unusann.us",
+  "pocketbase": "https://db.unusann.us",
+  "tolgee": "https://tolgee.unusann.us",
+  "mail": "https://mail.unusann.us"
 }

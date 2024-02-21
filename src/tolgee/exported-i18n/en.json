@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Downloads"
+  },
+  "episodeLink" : {
+    "episode" : "Episode {episode}",
+    "season" : "Season {season}",
+    "specials" : "Specials"
+  },
+  "header" : {
+    "closeSearch" : "Close Search",
+    "enableDarkMode" : "Enable Dark Mode",
+    "enableLightMode" : "Enable Light Mode",
+    "openSearch" : "Open Search",
+    "search" : "Search",
+    "searchGetStarted" : "Type in a query to get started!"
+  },
+  "home" : {
+    "title" : "Home",
+    "videoLoadError" : "Error Loading Episodes!"
+  },
+  "patreonDonors" : {
+    "title" : "Patreon Donors"
+  },
+  "settings" : {
+    "title" : "Settings"
+  },
+  "vidstack" : {
+    "audio" : "Audio",
+    "auto" : "Auto",
+    "captions" : "Captions",
+    "chapters" : "Chapters",
+    "closedCaptionsOff" : "Closed-Captions Off",
+    "closedCaptionsOn" : "Closed-Captions On",
+    "default" : "Default",
+    "enterFullscreen" : "Enter Fullscreen",
+    "enterPiP" : "Enter PiP",
+    "exitFullscreen" : "Exit Fullscreen",
+    "exitPiP" : "Exit PiP",
+    "mute" : "Mute",
+    "nextEpisode" : "Next Episode",
+    "normal" : "Normal",
+    "off" : "Off",
+    "pause" : "Pause",
+    "play" : "Play",
+    "previousEpisode" : "Previous Episode",
+    "quality" : "Quality",
+    "resolution" : "Resolution",
+    "seekBackward" : "Seek Backward",
+    "seekForward" : "Seek Forward",
+    "settings" : "Settings",
+    "source" : "Source",
+    "speed" : "Speed",
+    "unmute" : "Unmute"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Invalid arguments: {argumentsErrorList}.",
+    "invalidDate" : "Invalid date.",
+    "invalidEnumValue" : "Invalid enum value: {optionsList}.",
+    "invalidIntersectionTypes" : "Invalid intersection types.",
+    "invalidLiteral" : "Invalid literal; expected {expected}, received {received}.",
+    "invalidReturnType" : "Invalid return type: {returnTypeErrors}.",
+    "invalidString" : "String failed {validatorType} validator.",
+    "invalidType" : "Invalid type; expected {expectedValue}, received {receivedValue}.",
+    "invalidUnion" : "Invalid union: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Invalid union discriminator.",
+    "notFinite" : "Not finite.",
+    "notMultipleOf" : "Number is not a multiple of {multipleOf}.",
+    "required" : "Required.",
+    "tooBig" : "{type} too big; maximum value is {maximum}.",
+    "tooSmall" : "{type} too small; minimum value is {minimum}.",
+    "unrecognizedKeys" : "Unrecognized keys: {keysList}."
+  }
+}

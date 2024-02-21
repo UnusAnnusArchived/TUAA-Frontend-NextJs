@@ -1,0 +1,74 @@
+{
+  "downloads" : {
+    "title" : "Téléchargements"
+  },
+  "episodeLink" : {
+    "episode" : "Épisode {episode}",
+    "season" : "Saison {season}",
+    "specials" : "Spécialités"
+  },
+  "header" : {
+    "closeSearch" : "Fermer la recherche",
+    "enableDarkMode" : "Activer le mode sombre",
+    "enableLightMode" : "Activer le mode clair",
+    "openSearch" : "Ouvrir la recherche",
+    "search" : "Rechercher",
+    "searchGetStarted" : "Tapez une requête pour commencer!"
+  },
+  "home" : {
+    "title" : "Accueil",
+    "videoLoadError" : "Erreur lors du chargement des épisodes!"
+  },
+  "patreonDonors" : {
+    "title" : "Donateurs Patreon"
+  },
+  "settings" : {
+    "title" : "Paramètres"
+  },
+  "vidstack" : {
+    "audio" : "Audio",
+    "auto" : "Automatique",
+    "captions" : "Sous-titres",
+    "chapters" : "Chapitres",
+    "closedCaptionsOff" : "Sous-titres désactivés",
+    "closedCaptionsOn" : "Sous-titres activés",
+    "default" : "Par défaut",
+    "enterFullscreen" : "Entrer en plein écran",
+    "enterPiP" : "Entrer en mode Picture-in-Picture\n",
+    "exitFullscreen" : "Quitter le plein écran",
+    "exitPiP" : "Quitter le mode Picture-in-Picture",
+    "mute" : "Muet",
+    "nextEpisode" : "Prochain épisode",
+    "normal" : "Normal",
+    "off" : "Désactivé",
+    "pause" : "Pause",
+    "play" : "Lecture",
+    "previousEpisode" : "Épisode précédent",
+    "quality" : "Qualité",
+    "resolution" : "Résolution",
+    "seekBackward" : "Revenir en arrière",
+    "seekForward" : "Avancer",
+    "settings" : "Paramètres",
+    "source" : "Source",
+    "speed" : "Vitesse",
+    "unmute" : "Désactiver le mode muet"
+  },
+  "zodErrors" : {
+    "invalidArguments" : "Arguments invalides: {argumentsErrorList}.",
+    "invalidDate" : "Date invalide.",
+    "invalidEnumValue" : "Valeur d'énumération invalide: {optionsList}.",
+    "invalidIntersectionTypes" : "Types d'intersection invalides.",
+    "invalidLiteral" : "Constante invalide; attendu {expected}, reçu {received}.",
+    "invalidReturnType" : "Type de retour invalide: {returnTypeErrors}.",
+    "invalidString" : "Échec de la validation de chaîne avec le validateur {validatorType}.",
+    "invalidType" : "Type invalide; attendu {expectedValue}, reçu {receivedValue}.",
+    "invalidUnion" : "Union invalide: {unionErrorsList}.",
+    "invalidUnionDiscriminator" : "Discriminant d'union invalide.",
+    "notFinite" : "Non fini.",
+    "notMultipleOf" : "Le nombre n'est pas un multiple de {multipleOf}.",
+    "required" : "Requis.",
+    "tooBig" : "{type} trop grand; valeur maximale est {maximum}.",
+    "tooSmall" : "{type} trop petit; valeur minimale est {minimum}.",
+    "unrecognizedKeys" : "Clés non reconnues: {keysList}."
+  }
+}

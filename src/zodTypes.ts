@@ -98,4 +98,4 @@ export type IDirectResolution = z.infer<typeof DirectResolution>;
 
 export type IDirectSource = z.infer<typeof DirectSource>;
 
-export type IEmbedSource = z.infer<typeof YouTubeSource>;
+export type IYouTubeSource = z.infer<typeof YouTubeSource>;

@@ -1,7 +1,6 @@
 "use client";
 
 import { AtomEffect, DefaultValue, Loadable, RecoilState, RecoilValue, StoreID, WrappedValue, atom } from "recoil";
-import { Languages, fallbackLanguage } from "./i18n/_i18n";
 import { getCookie, setCookie } from "cookies-next";
 
 const localStorageEffect: AtomEffect<any> = ({ setSelf, onSet, node }) => {
@@ -40,24 +39,30 @@ const sessionStorageEffect: AtomEffect<any> = ({ setSelf, onSet, node }) => {
   });
 };
 
-const cookieEffect: AtomEffect<any> = ({ setSelf, onSet, node }) => {
-  try {
-    const cookie = getCookie(node.key);
-
-    if (cookie !== undefined) {
-      setSelf(JSON.parse(cookie));
-    }
-  } catch (err) {
-    console.error(err);
-  }
-
-  onSet((newValue) => {
+const cookieEffect = (initialCookie: any) => {
+  const effect: AtomEffect<any> = ({ setSelf, onSet, node }) => {
     try {
-      setCookie(node.key, JSON.stringify(newValue), { expires: new Date(Date.now() + 3.154e10) });
+      const cookie = getCookie(node.key);
+
+      if (cookie === undefined) {
+        setSelf(initialCookie);
+      } else {
+        setSelf(JSON.parse(cookie));
+      }
     } catch (err) {
       console.error(err);
     }
-  });
+
+    onSet((newValue) => {
+      try {
+        setCookie(node.key, JSON.stringify(newValue), { expires: new Date(Date.now() + 3.154e10) });
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  };
+
+  return effect;
 };
 
 // export const userAtom = atom<IUser>({
@@ -82,12 +87,6 @@ export const selectedSeasonAtom = atom<number>({
   key: "selectedSeason",
   default: 0,
   effects: [sessionStorageEffect],
-});
-
-export const currentLanguageAtom = atom<Languages>({
-  key: "lang",
-  default: fallbackLanguage,
-  effects: [cookieEffect],
 });
 
 // export const autoplayAtom = atom<boolean>({

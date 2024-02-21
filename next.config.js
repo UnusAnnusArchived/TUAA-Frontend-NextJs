@@ -15,8 +15,4 @@ module.exports = withPWA({
     domains: ["vz-b39cd352-a49.b-cdn.net"],
   },
   productionBrowserSourceMaps: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
 });

@@ -1,16 +1,30 @@
 import { ErrorToast } from "@/components/ErrorDisplay";
 import getAllMetadata from "@/tools/getAllMetadata";
-import { userServerTranslation } from "@/hooks/useTranslation";
 import { NextPage } from "next";
-import T from "$/T";
+import SeasonSwitcher from "@/components/SeasonSwitcher";
+import { Video } from "bunny-stream";
+import getBunnyEpisode from "@/tools/getBunnyEpisode";
+import { IBunnySource } from "@/zodTypes";
+import { getTranslate } from "@/tolgee/server";
 
-const Home: NextPage = async () => {
+interface ISearchParams {
+  season?: string;
+}
+
+const Home: NextPage<{ searchParams: ISearchParams }> = async ({ searchParams }) => {
   const { seasons, errors } = await getAllMetadata();
-  const [t] = await userServerTranslation();
+  const t = await getTranslate();
+
+  await new Promise((resolve) => setTimeout(resolve, 30000));
+
+  const requestedSeason = parseInt(searchParams.season ?? "1");
+
+  let initialBunnyEpisodes: Video[] = [];
 
   return (
     <>
-      <ErrorToast title={t.home.videoLoadError} errors={errors} />
+      <SeasonSwitcher initialSeason={requestedSeason} seasons={seasons} initialBunnyEpisodes={initialBunnyEpisodes} />
+      <ErrorToast title={t("home.videoLoadError")} errors={errors} />
     </>
   );
 };

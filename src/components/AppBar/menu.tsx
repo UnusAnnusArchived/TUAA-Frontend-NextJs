@@ -1,6 +1,5 @@
 "use client";
 
-import { useClientTranslation } from "@/hooks/useTranslation";
 import {
   Button,
   Divider,
@@ -17,7 +16,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "./menuItem";
 import { useRecoilState } from "recoil";
 import { searchBarIsOpenContext } from "@/contexts/searchBarOpenContext";
-import T from "../T";
+import { T } from "@tolgee/react";
 
 export const Menu: React.FC = () => {
   const theme = useTheme();
@@ -95,6 +94,8 @@ export const MobileMenu: React.FC = () => {
       </>
     );
   }
+
+  return <></>;
 };
 
 interface MenuElementsProps {
@@ -103,24 +104,22 @@ interface MenuElementsProps {
 }
 
 const MenuElements: React.FC<MenuElementsProps> = ({ Divider, isMobile }) => {
-  const [t] = useClientTranslation(useRecoilState);
-
   return (
     <>
       <MenuItem href="/" isMobile={isMobile}>
-        <T>{t.home.title}</T>
+        <T keyName="home.title" />
       </MenuItem>
       <Divider />
       <MenuItem href="/downloads" isMobile={isMobile}>
-        <T>{t.downloads.title}</T>
+        <T keyName="downloads.title" />
       </MenuItem>
       <Divider />
       <MenuItem href="/settings" isMobile={isMobile}>
-        <T>{t.settings.title}</T>
+        <T keyName="settings.title" />
       </MenuItem>
       <Divider />
       <MenuItem href="/patreon-donors" isMobile={isMobile}>
-        <T>{t.patreonDonors.title}</T>
+        <T keyName="patreonDonors.title" />
       </MenuItem>
     </>
   );

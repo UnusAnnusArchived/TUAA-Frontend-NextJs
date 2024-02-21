@@ -13,6 +13,9 @@ const ScrollHelper: React.FC<React.PropsWithChildren> = ({ children }) => {
         height: "100vh",
         overflowY: searchBarIsOpen ? "hidden" : "scroll",
         overflowX: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       {children}

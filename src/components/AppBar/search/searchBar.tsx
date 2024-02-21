@@ -2,11 +2,10 @@
 
 import { searchBarIsOpenContext } from "@/contexts/searchBarOpenContext";
 import { searchButtonCoordsContext } from "@/contexts/searchButtonCoordsContext";
-import { useClientTranslation } from "@/hooks/useTranslation";
 import { Divider, Paper, TextField, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { ChangeEventHandler, useContext, useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
-import T from "../../T";
+import { T } from "@tolgee/react";
 import styles from "./searchBar.module.scss";
 import SearchResults from "./searchResults";
 
@@ -17,7 +16,6 @@ export const DesktopSearchBar: React.FC = () => {
   const isLgDown = useMediaQuery(theme.breakpoints.down("lg"));
   const [searchBarIsOpen] = useContext(searchBarIsOpenContext);
   const [[searchBtnX, searchBtnY, searchBtnHeight]] = useContext(searchButtonCoordsContext);
-  const [t] = useClientTranslation(useRecoilState);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -41,7 +39,7 @@ export const DesktopSearchBar: React.FC = () => {
           value={query}
           onChange={handleSetQuery}
           variant="outlined"
-          label={<T>{t.header.search}</T>}
+          label={<T keyName="header.search" />}
           autoComplete="off"
           inputRef={searchBarRef}
           sx={{
@@ -74,6 +72,8 @@ export const DesktopSearchBar: React.FC = () => {
       </>
     );
   }
+
+  return <></>;
 };
 
 export const MobileSearchBar: React.FC = () => {
@@ -83,7 +83,6 @@ export const MobileSearchBar: React.FC = () => {
   const [searchBarIsOpen] = useContext(searchBarIsOpenContext);
   const [[searchBtnX, searchBtnY, searchBtnHeight]] = useContext(searchButtonCoordsContext);
   const [query, setQuery] = useState("");
-  const [t] = useClientTranslation(useRecoilState);
 
   useEffect(() => {
     if (searchBarIsOpen && searchBarRef.current) {
@@ -128,7 +127,7 @@ export const MobileSearchBar: React.FC = () => {
               value={query}
               onChange={handleQueryChange}
               variant="outlined"
-              label={<T>{t.header.search}</T>}
+              label={<T keyName="header.search" />}
               autoComplete="off"
               fullWidth
               inputRef={searchBarRef}
@@ -141,4 +140,6 @@ export const MobileSearchBar: React.FC = () => {
       </>
     );
   }
+
+  return <></>;
 };
