@@ -1,8 +1,7 @@
 "use client";
 
-import { IBunnySource, IMetadata } from "@/zodTypes";
-import getBunnyEpisode from "@/tools/getBunnyEpisode";
-import getBunnyEpisodeLinks, { EpisodeLinks } from "@/tools/getBunnyEpisodeLink";
+import { IMetadata } from "@/zodTypes";
+import getEpisodeLinks, { EpisodeLinks } from "@/tools/getBunnyEpisodeLink";
 import { Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Video } from "bunny-stream";
@@ -22,14 +21,8 @@ const EpisodeLink: React.FC<IProps> = ({ episode }) => {
     const abortController = new AbortController();
 
     (async () => {
-      const bunnySource = episode.sources.find((source) => source.type === "bunny")! as IBunnySource;
+      const newEpisodeLinks = getEpisodeLinks(episode.uaid);
 
-      const newBunnyEpisode = await getBunnyEpisode(bunnySource.bunnyId, {
-        signal: abortController.signal,
-      });
-      const newEpisodeLinks = getBunnyEpisodeLinks(newBunnyEpisode);
-
-      setBunnyEpisode(newBunnyEpisode);
       setEpisodeLinks(newEpisodeLinks);
     })();
 

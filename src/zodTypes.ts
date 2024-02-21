@@ -31,14 +31,6 @@ const errorMap = zu.makeErrorMap({
   required: JSON.stringify(["required"]),
 });
 
-export const BunnySource = z.object(
-  {
-    type: z.literal("bunny", { errorMap }),
-    bunnyId: z.string({ errorMap }).uuid(),
-  },
-  { errorMap }
-);
-
 export const DirectResolution = z.object(
   {
     src: z.string({ errorMap }).url(),
@@ -57,24 +49,22 @@ export const DirectSource = z.object(
   { errorMap }
 );
 
-export const EmbedSource = z.object(
+export const YouTubeSource = z.object(
   {
-    type: z.literal("embed", { errorMap }),
-    name: z.string({ errorMap }),
-    id: z.string({ errorMap }),
-    src: z.string({ errorMap }).url(),
+    type: z.literal("youtube", { errorMap }),
+    youtubeId: z.string({ errorMap }),
   },
   { errorMap }
 );
 
-export const Source = z.union([BunnySource, DirectSource, EmbedSource], { errorMap });
+export const Source = z.union([DirectSource, YouTubeSource], { errorMap });
 
 export const Metadata = z.object(
   {
     _metadataVersion: z.literal(3, {
       errorMap,
     }),
-    sources: z.array(Source, { errorMap }),
+    externalSources: z.array(Source, { errorMap }).optional(),
     uaid: z.string({ errorMap }).regex(/^s\d{2}.e\d{3}$/),
     season: z
       .number({
@@ -104,10 +94,8 @@ export const Metadata = z.object(
 
 export type IMetadata = z.infer<typeof Metadata>;
 
-export type IBunnySource = z.infer<typeof BunnySource>;
-
 export type IDirectResolution = z.infer<typeof DirectResolution>;
 
 export type IDirectSource = z.infer<typeof DirectSource>;
 
-export type IEmbedSource = z.infer<typeof EmbedSource>;
+export type IEmbedSource = z.infer<typeof YouTubeSource>;

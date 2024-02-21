@@ -5,5 +5,5 @@ interface IProps {
 }
 
 const SeasonList: React.FC<IProps> = ({ seasons }) => {
-  return;
+  return <></>;
 };

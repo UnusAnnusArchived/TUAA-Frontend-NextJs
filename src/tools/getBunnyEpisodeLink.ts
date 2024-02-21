@@ -1,24 +1,26 @@
 import { Video } from "bunny-stream";
-import config from "@/config.json";
+import endpoints from "@/endpoints.json";
 
 export interface EpisodeLinks {
-  baseUrl: string;
+  cdn: string;
   hls: string;
-  directPlay: string;
+  original: string;
   thumbnail: string;
+  seek: string;
   preview: string;
 }
 
-const getBunnyEpisodeLinks = (video: Video) => {
-  const baseUrl = `https://${config.bunny.pullZone}.b-cdn.net`;
+const getEpisodeLinks = (uaId: string): EpisodeLinks => {
+  const cdn = endpoints.cdn;
 
   return {
-    baseUrl,
-    hls: `${baseUrl}/${video.guid}/playlist.m3u8`,
-    directPlay: `https://iframe.mediadelivery.net/play/${config.bunny.libraryId}/${video.guid}`,
-    thumbnail: `${baseUrl}/${video.guid}/${video.thumbnailFileName}`,
-    preview: `${baseUrl}/${video.guid}/preview.webp`,
+    cdn,
+    hls: `${cdn}/${uaId}/index.m3u8`,
+    original: `${cdn}/${uaId}/original.mp4`,
+    thumbnail: `${cdn}/${uaId}/thumb.webp`,
+    seek: `${cdn}/${uaId}/seek/seek.vtt`,
+    preview: `${cdn}/${uaId}/preview.webp`,
   };
 };
 
-export default getBunnyEpisodeLinks;
+export default getEpisodeLinks;
