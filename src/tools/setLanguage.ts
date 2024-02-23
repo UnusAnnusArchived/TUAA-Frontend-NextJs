@@ -1,6 +1,6 @@
 "use client";
 
-import tolgee from "@/tolgee";
+import { tolgee } from "@/tolgee/client";
 import { setCookie } from "cookies-next";
 
 const setLanguage = (lang: string) => {

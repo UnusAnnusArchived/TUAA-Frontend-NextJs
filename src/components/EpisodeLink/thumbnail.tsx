@@ -1,6 +1,6 @@
 "use client";
 
-import { EpisodeLinks } from "@/tools/getBunnyEpisodeLink";
+import { EpisodeLinks } from "@/tools/getEpisodeLinks";
 import { IMetadata } from "@/zodTypes";
 import { useTheme } from "@mui/material";
 import NextImage, { ImageProps } from "next/image";

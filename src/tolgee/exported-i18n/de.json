@@ -19,6 +19,10 @@
     "title" : "Startseite",
     "videoLoadError" : "Fehler beim Laden der Episoden!"
   },
+  "language" : {
+    "code" : "de",
+    "name" : "Deutsch"
+  },
   "patreonDonors" : {
     "title" : "Patreon Spender"
   },

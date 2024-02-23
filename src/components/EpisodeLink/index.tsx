@@ -1,8 +1,7 @@
 "use client";
 
-import { IBunnySource, IMetadata } from "@/zodTypes";
-import getBunnyEpisode from "@/tools/getBunnyEpisode";
-import getBunnyEpisodeLinks, { EpisodeLinks } from "@/tools/getBunnyEpisodeLink";
+import { IMetadata } from "@/zodTypes";
+import getBunnyEpisodeLinks, { EpisodeLinks } from "@/tools/getEpisodeLinks";
 import { Paper, Typography, useTheme } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Video } from "bunny-stream";
@@ -16,6 +15,8 @@ import { T } from "@tolgee/react";
 import { useRecoilState } from "recoil";
 import { useInViewport } from "react-in-viewport";
 import { tolgee } from "@/tolgee/client";
+import getEpisodeLinks from "@/tools/getEpisodeLinks";
+import getEpisode from "@/tools/getEpisode";
 
 export interface IProps {
   episode: IMetadata;
@@ -24,8 +25,7 @@ export interface IProps {
   initialBunnyEpisode?: Video;
 }
 
-const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason, initialBunnyEpisode }) => {
-  const [bunnyEpisode, setBunnyEpisode] = useState<Video | undefined>(initialBunnyEpisode);
+const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason }) => {
   const [episodeLinks, setEpisodeLinks] = useState<EpisodeLinks>();
   const ref = useRef<HTMLAnchorElement>(null);
   const { inViewport } = useInViewport(ref);
@@ -34,26 +34,13 @@ const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason, initial
   console.log(language);
 
   useEffect(() => {
-    if (inViewport && (!bunnyEpisode || !episodeLinks)) {
+    if (inViewport && !episodeLinks) {
       const abortController = new AbortController();
 
       (async () => {
-        if (bunnyEpisode) {
-          const newEpisodeLinks = getBunnyEpisodeLinks(bunnyEpisode);
+        const newEpisodeLinks = getEpisodeLinks(episode.uaid);
 
-          setEpisodeLinks(newEpisodeLinks);
-        } else {
-          const bunnySource = episode.sources.find((source) => source.type === "bunny")! as IBunnySource;
-
-          const newBunnyEpisode = await getBunnyEpisode(bunnySource.bunnyId, {
-            signal: abortController.signal,
-          });
-
-          const newEpisodeLinks = getBunnyEpisodeLinks(newBunnyEpisode);
-
-          setBunnyEpisode(newBunnyEpisode);
-          setEpisodeLinks(newEpisodeLinks);
-        }
+        setEpisodeLinks(newEpisodeLinks);
       })();
 
       return () => {

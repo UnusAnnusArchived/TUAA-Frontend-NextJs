@@ -19,6 +19,10 @@
     "title" : "Accueil",
     "videoLoadError" : "Erreur lors du chargement des épisodes!"
   },
+  "language" : {
+    "code" : "fr",
+    "name" : "Français"
+  },
   "patreonDonors" : {
     "title" : "Donateurs Patreon"
   },

@@ -19,6 +19,10 @@
     "title" : "Domů",
     "videoLoadError" : "Chyba při načítání epizod!"
   },
+  "language" : {
+    "code" : "cs",
+    "name" : " Český"
+  },
   "patreonDonors" : {
     "title" : "Patreon Dárci"
   },

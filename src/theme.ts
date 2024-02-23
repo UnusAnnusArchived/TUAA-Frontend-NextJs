@@ -16,7 +16,7 @@ const baseTheme: ThemeOptions = {
     values: {
       xl: 1200,
       lg: 992,
-      md: 768,
+      md: 785,
       sm: 540,
       xs: 0,
     },

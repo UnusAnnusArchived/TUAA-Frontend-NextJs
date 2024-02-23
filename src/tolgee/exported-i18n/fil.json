@@ -19,6 +19,10 @@
     "title" : "Bahay",
     "videoLoadError" : "Error sa Pag-lo-load ng Mga Kabanata!\nAI"
   },
+  "language" : {
+    "code" : "fil",
+    "name" : "Filipino"
+  },
   "patreonDonors" : {
     "title" : "Mga Donor sa Patreon"
   },

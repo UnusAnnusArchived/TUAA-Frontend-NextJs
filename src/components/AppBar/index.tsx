@@ -6,6 +6,7 @@ import SearchButton from "./search/searchButton";
 import { SearchBarIsOpenProvider } from "@/contexts/searchBarOpenContext";
 import { DesktopSearchBar, MobileSearchBar } from "./search/searchBar";
 import { SearchButtonCoordsProvider } from "@/contexts/searchButtonCoordsContext";
+import LangSwitcher from "./langSwitcher";
 
 const AppBar: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const AppBar: React.FC = () => {
             <Menu />
 
             <SearchButton />
+            <LangSwitcher />
             <ThemeToggle />
             <MobileMenu />
           </Toolbar>

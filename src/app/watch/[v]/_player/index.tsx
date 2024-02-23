@@ -17,16 +17,15 @@ import React, { createContext, useEffect, useRef, useState } from "react";
 import { VideoLayout } from "./layouts/video";
 import styles from "./player.module.css";
 import "@vidstack/react/player/styles/default/theme.css";
-import { IDirectResolution, IMetadata } from "@/zodTypes";
+import { IDirectResolution, IDirectSource, IMetadata, ISource, IYouTubeSource } from "@/zodTypes";
 import { Video } from "bunny-stream";
-import { EpisodeLinks } from "@/tools/getBunnyEpisodeLink";
+import { EpisodeLinks } from "@/tools/getEpisodeLinks";
 import { useTolgee } from "@tolgee/react";
 import endpoints from "@/endpoints.json";
 
 interface IProps {
   episode: IMetadata;
-  bunnyEpisode: Video;
-  bunnyLinks: EpisodeLinks;
+  episodeLinks: EpisodeLinks;
 }
 
 export const playerContext = createContext<IProps>(undefined as any as IProps);
@@ -37,29 +36,46 @@ export const directSourceResolutionHeightContext = createContext<
   [number, React.Dispatch<React.SetStateAction<number>>]
 >([1080, () => 1080]);
 
-const Player: React.FC<IProps> = ({ episode, bunnyEpisode, bunnyLinks }) => {
+const Player: React.FC<IProps> = ({ episode, episodeLinks }) => {
   const player = useRef<MediaPlayerInstance>(null);
-  const [srcId, setSrcId] = useState<string>("bunny");
-  const [directSourceResolutionHeight, setDirectSourceResolutionHeight] = useState(1080);
+  const [srcId, setSrcId] = useState<string>("tuaa");
+  const [directSourceResolutionWidth, setDirectSourceResolutionWidth] = useState(1920);
   const tolgee = useTolgee();
   const language = tolgee.getLanguage();
 
   console.log(srcId);
 
-  const source = episode.sources.find((source) => source.id === srcId)!;
   let srcUrl = "";
-  switch (source.type) {
-    case "bunny": {
-      srcUrl = bunnyLinks.hls;
+
+  switch (srcId) {
+    case "tuaa": {
+      srcUrl = episodeLinks.hls;
       break;
     }
-    case "direct": {
-      const resolution = source.resolutions.find((resolution) => resolution.height === directSourceResolutionHeight)!;
-      srcUrl = resolution.src;
+    case "youtube":
+      {
+        const source = episode.externalSources?.find((source) => source.type === "youtube") as IYouTubeSource;
+        if (source) {
+          srcUrl = `youtube/${source.youtubeId}`;
+        } else {
+          setSrcId("tuaa");
+        }
+      }
       break;
-    }
-    case "youtube": {
-      srcUrl = `youtube/${source.youtubeId}`;
+    default: {
+      const source = episode.externalSources?.find(
+        (source) => source.type === "direct" && source.id === srcId
+      ) as IDirectSource;
+      if (source) {
+        let resolution = source.resolutions.find((resolution) => resolution.width === directSourceResolutionWidth);
+        if (!resolution) {
+          resolution = source.resolutions[0];
+        }
+        srcUrl = resolution.src;
+      } else {
+        setSrcId("tuaa");
+      }
+      break;
     }
   }
 
@@ -84,11 +100,11 @@ const Player: React.FC<IProps> = ({ episode, bunnyEpisode, bunnyLinks }) => {
         <MediaProvider>
           <Poster
             className={`${styles.poster} vds-poster`}
-            src={bunnyLinks.thumbnail}
+            src={episodeLinks.thumbnail}
             alt={`Thumbnail for ${episode.uaid}`}
           />
 
-          {bunnyLinks.captions.map((track) => (
+          {/* {bunnyLinks.captions.map((track) => (
             <Track
               kind="captions"
               src={track.src}
@@ -96,16 +112,16 @@ const Player: React.FC<IProps> = ({ episode, bunnyEpisode, bunnyLinks }) => {
               label={track.label}
               default={language === track.srclang}
             />
-          ))}
+          ))} */}
           {/* <Track kind="chapters" content="" /> */}
         </MediaProvider>
 
-        <playerContext.Provider value={{ episode, bunnyEpisode, bunnyLinks }}>
+        <playerContext.Provider value={{ episode, episodeLinks }}>
           <sourceIdContext.Provider value={[srcId, setSrcId]}>
             <directSourceResolutionHeightContext.Provider
-              value={[directSourceResolutionHeight, setDirectSourceResolutionHeight]}
+              value={[directSourceResolutionWidth, setDirectSourceResolutionWidth]}
             >
-              <VideoLayout thumbnails={`${endpoints.api}/v3/seekImages/${bunnyEpisode.guid}`} />
+              <VideoLayout thumbnails={episodeLinks.seek} />
             </directSourceResolutionHeightContext.Provider>
           </sourceIdContext.Provider>
         </playerContext.Provider>

@@ -3,9 +3,8 @@ import { NextPage } from "next";
 import "@vidstack/react/player/styles/default/theme.css";
 import Player from "./_player";
 import getEpisode from "@/tools/getEpisode";
-import getBunnyEpisode from "@/tools/getBunnyEpisode";
-import { IBunnySource, IMetadata } from "@/zodTypes";
-import getBunnyEpisodeLinks from "@/tools/getBunnyEpisodeLink";
+import { IYouTubeSource, IMetadata } from "@/zodTypes";
+import getEpisodeLinks from "@/tools/getEpisodeLinks";
 
 interface IParams {
   v: string;
@@ -14,14 +13,12 @@ interface IParams {
 const Watch: NextPage<{ params: IParams }> = async ({ params: { v: uaid } }) => {
   try {
     const metadata: IMetadata = JSON.parse(await getEpisode(uaid));
-    const bunnySource = metadata.sources.find((source) => source.type === "bunny") as IBunnySource;
-    const bunnyEpisode = await getBunnyEpisode(bunnySource.bunnyId);
-    const bunnyLinks = getBunnyEpisodeLinks(bunnyEpisode);
+    const episodeLinks = getEpisodeLinks(uaid);
 
     return (
       <>
         <div style={{ width: "100%" }}>
-          <Player episode={metadata} bunnyEpisode={bunnyEpisode} bunnyLinks={bunnyLinks} />
+          <Player episode={metadata} episodeLinks={episodeLinks} />
           <Paper sx={{ padding: "1rem" }}>
             <Typography variant="h5" component="h2">
               {metadata.title}

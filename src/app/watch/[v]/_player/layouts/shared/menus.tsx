@@ -35,7 +35,7 @@ import {
   ListItemSecondaryAction,
 } from "@mui/material";
 import { useTranslate } from "@tolgee/react";
-import { ISource } from "@/zodTypes";
+import { IDirectSource, ISource } from "@/zodTypes";
 
 const currentPageContext = createContext<[string, React.Dispatch<React.SetStateAction<string>>]>([
   "home",
@@ -193,43 +193,67 @@ const SourceSubmenu: React.FC = () => {
   const [currentPage, setCurrentPage] = useContext(currentPageContext);
   const { t } = useTranslate();
 
-  const currentSource = episode.sources.find((source) => source.id === srcId)!;
-
-  const getSourceName = (source: ISource) => {
-    switch (source.type) {
-      case "bunny": {
+  const getSourceName = (sourceType: string) => {
+    switch (sourceType) {
+      case "tuaa": {
         return "TUAA";
       }
+      case "youtube": {
+        return "YouTube";
+      }
       default: {
-        return source.name;
+        const source = episode.externalSources?.find(
+          (source) => source.type === "direct" && source.id === sourceType
+        ) as IDirectSource;
+
+        if (source) {
+          return source.name;
+        } else {
+          return "Unknown";
+        }
       }
     }
   };
 
-  let currentSourceName = getSourceName(currentSource);
+  const sourceIsSelected = (source: ISource) => {
+    switch (srcId) {
+      case "youtube": {
+        return source.type === "youtube";
+      }
+      default: {
+        return source.type === "direct" && source.id === srcId;
+      }
+    }
+  };
+
+  let currentSourceName = getSourceName(srcId);
 
   return (
     <>
       <SubmenuButton
         label={t("vidstack.source")}
         hint={currentSourceName}
-        disabled={episode.sources.length === 1}
+        disabled={(episode.externalSources?.length ?? 0) < 1}
         icon={Language}
         pageId="sources"
       />
       {currentPage === "sources" && (
         <List>
-          {episode.sources.map((source) => {
+          {episode.externalSources?.map((source) => {
             console.log(source, "asdf");
             const select = () => {
-              setSrcId(source.id);
+              if (source.type === "youtube") {
+                setSrcId("youtube");
+              } else {
+                setSrcId(source.id);
+              }
             };
 
             return (
               <ListItemButton onClick={select}>
-                <ListItemText primary={getSourceName(source)} />
+                <ListItemText primary={getSourceName(source.type)} />
                 <ListItemSecondaryAction sx={{ minWidth: "0", marginLeft: "1rem" }}>
-                  {currentSource.id === source.id && <Check />}
+                  {sourceIsSelected(source) && <Check />}
                 </ListItemSecondaryAction>
               </ListItemButton>
             );

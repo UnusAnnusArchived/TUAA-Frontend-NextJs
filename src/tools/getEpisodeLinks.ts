@@ -1,4 +1,3 @@
-import { Video } from "bunny-stream";
 import endpoints from "@/endpoints.json";
 
 export interface EpisodeLinks {
