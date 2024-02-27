@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "ee2dd474-13ff-49cc-a3bf-f4781821db39"
-    }
-  ],
   "uaid": "s01.e216",
   "season": 1,
   "episode": 216,

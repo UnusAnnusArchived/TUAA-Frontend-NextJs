@@ -14,19 +14,7 @@ interface IProps extends Omit<ImageProps, OmittedProps> {
 const ThumbnailImage: React.FC<IProps> = (props) => {
   const { video } = props;
 
-  const [src, setSrc] = useState(null);
-
-  useEffect(() => {
-    (async () => {
-      const bunny = (
-        await axios(
-          `/api/bunny-api-temporary/get-episode/${video.sources.find((source) => source.type === "bunny")!.bunnyId}`
-        )
-      ).data;
-
-      setSrc(getBunnyEpisodeLinks(bunny).thumbnail);
-    })();
-  }, []);
+  const [src, setSrc] = useState(`${cdn}/${video.uaid}/thumb.webp`);
 
   return (
     <>

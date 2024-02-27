@@ -1,11 +1,7 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "442ff894-c2d7-4905-9c04-4cbdf506b897"
-    },
+  "externalSources": [
     {
       "type": "youtube",
       "youtubeId": "xH4Nw1NXkQs"

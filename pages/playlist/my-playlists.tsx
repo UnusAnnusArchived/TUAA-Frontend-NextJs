@@ -89,7 +89,6 @@ export const getServerSideProps: GetServerSideProps<IProps> = async (ctx) => {
           season: parseInt(season),
           episode: parseInt(episode),
           date: 0,
-          sources: [],
           uaid: "",
         });
       }

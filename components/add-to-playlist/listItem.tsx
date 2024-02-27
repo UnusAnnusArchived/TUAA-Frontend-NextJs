@@ -6,7 +6,6 @@ import { Add } from "@mui/icons-material";
 import { Video } from "bunny-stream";
 import axios from "axios";
 import getBunnyEpisodeLinks from "../../src/utils/getBunnyLinks";
-import getBunnyEpisode from "../../pages/api/bunny-api-temporary/get-episode/[guid]";
 
 interface IProps {
   selectedPlaylistId: string;
@@ -17,7 +16,6 @@ interface IProps {
 
 const ListItem: React.FC<IProps> = ({ selectedPlaylistId, setSelectedPlaylistId, playlist, isAddPlaylist }) => {
   const [firstVideo, setFirstVideo] = useState<IVideo>();
-  const [firstVideoBunny, setFirstVideoBunny] = useState<Video>();
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
@@ -27,16 +25,7 @@ const ListItem: React.FC<IProps> = ({ selectedPlaylistId, setSelectedPlaylistId,
           `/api/v2/metadata/episode/${playlist.episodes === "" ? [] : playlist.episodes.split(",")[0]}`
         ).then((res) => res.json());
 
-        const bunny: Video = (
-          await axios(
-            `/api/bunny-api-temporary/get-episode/${
-              firstVideo.sources.find((source) => source.type === "bunny")!.bunnyId
-            }`
-          )
-        ).data;
-
         setFirstVideo(firstVideo);
-        setFirstVideoBunny(bunny);
       }
     })();
   }, [playlist]);
@@ -86,7 +75,7 @@ const ListItem: React.FC<IProps> = ({ selectedPlaylistId, setSelectedPlaylistId,
                 onLoad={() => {
                   setImgLoaded(true);
                 }}
-                src={firstVideoBunny ? getBunnyEpisodeLinks(firstVideoBunny).thumbnail : ""}
+                src={firstVideo ? `${endpoints.cdn}/${firstVideo.uaid}/thumb.webp` : ""}
                 style={{ height: 72, aspectRatio: 16 / 9, marginRight: 16, display: imgLoaded ? undefined : "none" }}
               />
             </>

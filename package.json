@@ -24,6 +24,7 @@
     "bunny-stream": "^1.0.2",
     "classnames": "^2.3.1",
     "formidable": "^2.0.1",
+    "hls.js": "^1.5.6",
     "i18next": "^21.5.2",
     "markdown-it": "^12.3.2",
     "markdown-it-for-inline": "^0.1.1",

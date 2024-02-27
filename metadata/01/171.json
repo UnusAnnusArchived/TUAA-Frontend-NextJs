@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "001b5778-8dfe-497a-a39c-223eb5c85d9c"
-    }
-  ],
   "uaid": "s01.e171",
   "season": 1,
   "episode": 171,

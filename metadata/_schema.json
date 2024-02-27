@@ -6,24 +6,10 @@
       "type": "number",
       "enum": [3]
     },
-    "sources": {
+    "externalSources": {
       "type": "array",
       "items": {
         "oneOf": [
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": ["bunny"]
-              },
-              "bunnyId": {
-                "type": "string",
-                "pattern": "^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$"
-              }
-            },
-            "required": ["type", "bunnyId"]
-          },
           {
             "type": "object",
             "properties": {
@@ -100,5 +86,5 @@
       "type": "boolean"
     }
   },
-  "required": ["_metadataVersion", "sources", "uaid", "season", "episode", "title", "description", "releaseDate"]
+  "required": ["_metadataVersion", "uaid", "season", "episode", "title", "description", "date"]
 }

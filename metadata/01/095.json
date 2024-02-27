@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "855fedd1-23e2-4af0-a493-9de30c63d1d5"
-    }
-  ],
   "uaid": "s01.e095",
   "season": 1,
   "episode": 95,

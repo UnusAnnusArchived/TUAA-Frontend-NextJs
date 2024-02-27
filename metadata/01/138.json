@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "a0aec308-ed4f-4030-9f64-43adb10fa27b"
-    }
-  ],
   "uaid": "s01.e138",
   "season": 1,
   "episode": 138,

@@ -14,7 +14,6 @@ export enum Collection {
 
 export type IVideo = {
   _metadataVersion: 3;
-  sources: ISource[];
   uaid: string;
   season: number;
   episode: number;
@@ -22,11 +21,6 @@ export type IVideo = {
   description: string;
   date: number;
   isLast?: boolean;
-};
-
-export type ISource = {
-  type: "bunny";
-  bunnyId: string;
 };
 
 export type Seasons = [IVideo[], IVideo[]];

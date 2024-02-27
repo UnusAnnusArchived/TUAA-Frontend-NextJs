@@ -1,12 +1,6 @@
 {
   "$schema": "../_schema.json",
   "_metadataVersion": 3,
-  "sources": [
-    {
-      "type": "bunny",
-      "bunnyId": "1128563c-e87e-4735-bd67-4a8a09f21b5c"
-    }
-  ],
   "uaid": "s01.e335",
   "season": 1,
   "episode": 335,
