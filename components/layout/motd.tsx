@@ -24,7 +24,7 @@ const Motd: React.FC = () => {
             {title}
           </Typography>
         )}
-        {description && <Typography>{description}</Typography>}
+        {description && <Typography dangerouslySetInnerHTML={{ __html: description }} />}
       </Paper>
     );
   }
