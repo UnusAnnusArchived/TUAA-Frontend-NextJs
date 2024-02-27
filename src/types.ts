@@ -10,6 +10,7 @@ export enum Collection {
   Tickets = "tickets",
   UserPlaylists = "user_playlists",
   VideoProgress = "video_progress",
+  Meta = "meta",
 }
 
 export type IVideo = {

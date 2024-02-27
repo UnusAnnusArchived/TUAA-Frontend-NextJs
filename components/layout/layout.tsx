@@ -9,6 +9,7 @@ import { useRecoilState } from "recoil";
 import { userAtom } from "../../src/atoms";
 import pb from "../../src/pocketbase";
 import { Collection, IUser } from "../../src/types";
+import Motd from "./motd";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -66,6 +67,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
         <AppBar />
         <div className={styles.toolbar} />
         <main id="main" className="container pb-5 text-white">
+          <Motd />
           {children}
         </main>
       </div>
