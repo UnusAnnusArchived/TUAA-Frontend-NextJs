@@ -50,7 +50,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
 
   useEffect(() => {
     initPlayer();
-  }, []);
+  }, [router.asPath]);
 
   useEffect(() => {
     if (!plyr) return;
@@ -102,6 +102,9 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
       }
 
       const player = new Plyr(playerEl.current, {
+        previewThumbnails: {
+          src: `${cdn}/${video.uaid}/seek/seek.vtt`,
+        },
         controls: [
           "play-large",
           "play",
@@ -111,7 +114,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
           "volume",
           "captions",
           "settings",
-          isEmbed ? "" : "download",
+          // isEmbed ? "" : "download",
           "airplay",
           "fullscreen",
         ],
@@ -172,6 +175,9 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
         type: "video",
         title: video.title ?? "",
         poster,
+        previewThumbnails: {
+          src: `${cdn}/${video.uaid}/seek/seek.vtt`,
+        },
         sources: !Hls.isSupported()
           ? [
               {
@@ -201,13 +207,13 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
         playerContainer.classList.add(embedStyles["embed-player"]);
       }
 
-      const plyrDownloadBtn = document.querySelector('a[data-plyr="download"]') as HTMLAnchorElement;
-      if (plyrDownloadBtn) {
-        plyrDownloadBtn.addEventListener("click", (evt) => {
-          evt.preventDefault();
-          setShowDownloadOptions(true);
-        });
-      }
+      // const plyrDownloadBtn = document.querySelector('a[data-plyr="download"]') as HTMLAnchorElement;
+      // if (plyrDownloadBtn) {
+      //   plyrDownloadBtn.addEventListener("click", (evt) => {
+      //     evt.preventDefault();
+      //     setShowDownloadOptions(true);
+      //   });
+      // }
 
       /* Choice Bar */
       const container = document.createElement("div");
@@ -220,7 +226,7 @@ const Player: React.FC<IProps> = ({ video, watchCode, isEmbed, setShowDownloadOp
     hls.on(Hls.Events.LEVEL_SWITCHED, (evt, data) => {
       const span = document.querySelector(".plyr__menu__container [data-plyr='quality'][value='0'] span");
       const qualityOption = document.querySelector(
-        "#plyr-settings-8476-home > div > button:nth-child(2) > span > span"
+        "plyr_menu_container > div > div > div > button:nth-child(2) > span > span"
       );
       if (hls.autoLevelEnabled) {
         qualityOption.innerHTML = "Auto";
