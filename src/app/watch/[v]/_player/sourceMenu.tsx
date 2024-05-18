@@ -49,8 +49,27 @@ const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources })
                   className="vds-radio"
                   value="tuaa"
                   onSelect={() => {
+                    if (srcId === "youtube") {
+                      if (
+                        confirm(
+                          "Due to a bug in our video player we are not able to switch away from a YouTube source without reloading the page. Would you like to reload?"
+                        )
+                      ) {
+                        return window.location.reload();
+                      } else {
+                        return;
+                      }
+                    }
                     switchSources("tuaa");
                   }}
+                  style={
+                    srcId === "youtube"
+                      ? {
+                          opacity: 0.5,
+                          cursor: "not-allowed",
+                        }
+                      : {}
+                  }
                 >
                   <Check className="vds-icon" />
                   <span className="vds-radio-label">TUAA</span>
@@ -62,12 +81,35 @@ const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources })
                 if (source.type === "direct") [(sourceId = source.id)];
 
                 const handleSelect = () => {
+                  if (srcId === "youtube") {
+                    if (
+                      confirm(
+                        "Due to a bug in our video player we are not able to switch away from a YouTube source without reloading the page. Would you like to reload?"
+                      )
+                    ) {
+                      return window.location.reload();
+                    } else {
+                      return;
+                    }
+                  }
                   switchSources(sourceId);
                 };
 
                 return (
                   <div className="vds-menu-item" key={sourceId} style={{ padding: 0 }}>
-                    <RadioGroup.Item className="vds-radio" value={sourceId} onSelect={handleSelect}>
+                    <RadioGroup.Item
+                      className="vds-radio"
+                      value={sourceId}
+                      onSelect={handleSelect}
+                      style={
+                        srcId === "youtube"
+                          ? {
+                              opacity: 0.5,
+                              cursor: "not-allowed",
+                            }
+                          : {}
+                      }
+                    >
                       <Check className="vds-icon" />
                       <span className="vds-radio-label">{source.type === "youtube" ? "YouTube" : source.name}</span>
                     </RadioGroup.Item>

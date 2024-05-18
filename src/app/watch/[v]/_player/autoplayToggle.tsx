@@ -16,7 +16,7 @@ const AutoplayToggle: React.FC = () => {
   return (
     <div className="vds-menu-item">
       <div className="vds-menu-item-label">Autoplay</div>
-      <Tooltip title="Temporarily Disabled" arrow>
+      <Tooltip title="Not Implemented" arrow>
         <div className="vds-menu-checkbox" aria-checked={checked} onClick={handleClick} style={disabledStyles} />
       </Tooltip>
     </div>
