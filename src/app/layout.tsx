@@ -1,4 +1,4 @@
-import { Layout } from "@/types";
+import { Layout as ILayout } from "@/types";
 import type { Metadata } from "next";
 import ThemeRegistry from "$/ThemeRegistry";
 import AppBar from "$/AppBar";
@@ -12,12 +12,13 @@ import { TolgeeNextProvider } from "@/tolgee/client";
 import { ALL_LOCALES, getStaticData } from "@/tolgee/shared";
 import { headers as useHeaders } from "next/headers";
 import Negotiator from "negotiator";
+import { Container } from "@mui/system";
 
 export const metadata: Metadata = {
   title: "The Unus Annus Archive",
 };
 
-const Layout: Layout = async ({ children }) => {
+const Layout: ILayout = async ({ children }) => {
   const cookies = useCookies();
   const headers = useHeaders();
 
@@ -44,7 +45,7 @@ const Layout: Layout = async ({ children }) => {
                   <ScrollHelper>
                     <AppBar />
                     <AppBarMargin />
-                    <div
+                    <Container
                       style={{
                         display: "flex",
                         flexDirection: "column",
@@ -60,7 +61,7 @@ const Layout: Layout = async ({ children }) => {
                         </Typography>
                       </noscript>
                       {children}
-                    </div>
+                    </Container>
                   </ScrollHelper>
                 </div>
               </ThemeRegistry>

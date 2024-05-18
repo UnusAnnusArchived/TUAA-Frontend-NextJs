@@ -6,7 +6,9 @@ import setLanguage from "@/tools/setLanguage";
 import { Check, Translate } from "@mui/icons-material";
 import { IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import { T } from "@tolgee/react";
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import endpoints from "@/endpoints.json";
 
 interface Language {
   name: string;
@@ -29,24 +31,19 @@ const LangSwitcher = () => {
 
   useEffect(() => {
     (async () => {
-      const languages = await getLanguagesClient();
+      //tolgee sdk doesn't have a built in way to get all languages, but the api does
+      const languages = await axios.get(`${endpoints.tolgee}/v2/projects//languages`);
 
-      const a = await tolgee.loadRecords(
-        languages.map((language) => {
-          return {
-            language,
-          };
-        })
-      );
+      // console.log(a);
 
-      setLanguages(
-        a.map((value) => {
-          return {
-            name: value.get("language.name")!.toString()!,
-            code: value.get("language.code")!.toString()!,
-          };
-        })
-      );
+      // setLanguages(
+      //   a.map((value) => {
+      //     return {
+      //       name: value.get("language.name")!.toString()!,
+      //       code: value.get("language.code")!.toString()!,
+      //     };
+      //   })
+      // );
     })();
   }, []);
 

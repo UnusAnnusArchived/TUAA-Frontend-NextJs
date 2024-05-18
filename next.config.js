@@ -10,6 +10,10 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
+  webpack: (config) => {
+    config.externals.push("@node-rs/argon2", "@node-rs/bcrypt");
+    return config;
+  },
   reactStrictMode: true,
   images: {
     domains: ["vz-b39cd352-a49.b-cdn.net"],

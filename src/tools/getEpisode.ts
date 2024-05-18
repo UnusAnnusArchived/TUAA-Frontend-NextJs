@@ -21,7 +21,7 @@ const getEpisode = async (uaid: string) => {
       });
     }
   } catch (err: any) {
-    console.log(err);
+    console.error(err);
     throw err.toString();
   }
 };

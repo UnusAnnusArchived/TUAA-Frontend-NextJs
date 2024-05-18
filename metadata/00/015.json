@@ -5,6 +5,29 @@
     {
       "type": "youtube",
       "youtubeId": "yGxOsZOyyRg"
+    },
+    {
+      "type": "direct",
+      "id": "test",
+      "name": "Test",
+      "resolutions": [
+        {
+          "src": "https://file-examples.com/storage/fe90abeceb65e0e85a0f042/2017/04/file_example_MP4_1920_18MG.mp4",
+          "width": 1920
+        },
+        {
+          "src": "https://file-examples.com/storage/fe90abeceb65e0e85a0f042/2017/04/file_example_MP4_1280_10MG.mp4",
+          "width": 1280
+        },
+        {
+          "src": "https://file-examples.com/storage/fe90abeceb65e0e85a0f042/2017/04/file_example_MP4_640_3MG.mp4",
+          "width": 640
+        },
+        {
+          "src": "https://file-examples.com/storage/fe90abeceb65e0e85a0f042/2017/04/file_example_MP4_480_1_5MG.mp4",
+          "width": 480
+        }
+      ]
     }
   ],
   "uaid": "s00.e015",

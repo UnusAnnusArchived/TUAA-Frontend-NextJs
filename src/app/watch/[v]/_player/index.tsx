@@ -1,27 +1,42 @@
 "use client";
 
-import {
-  MediaCanPlayDetail,
-  MediaCanPlayEvent,
-  MediaPlayer,
-  MediaPlayerInstance,
-  MediaProvider,
-  MediaProviderAdapter,
-  MediaProviderChangeEvent,
-  MediaViewType,
-  Poster,
-  Track,
-  isHLSProvider,
-} from "@vidstack/react";
-import React, { createContext, useEffect, useRef, useState } from "react";
-import { VideoLayout } from "./layouts/video";
-import styles from "./player.module.css";
+import { MediaPlayer, MediaPlayerInstance, MediaProvider, Poster } from "@vidstack/react";
+import React, { createContext, useRef, useState } from "react";
 import "@vidstack/react/player/styles/default/theme.css";
-import { IDirectResolution, IDirectSource, IMetadata, ISource, IYouTubeSource } from "@/zodTypes";
-import { Video } from "bunny-stream";
+import { IDirectSource, IMetadata, IYouTubeSource } from "@/zodTypes";
 import { EpisodeLinks } from "@/tools/getEpisodeLinks";
 import { useTolgee } from "@tolgee/react";
-import endpoints from "@/endpoints.json";
+import { DefaultVideoLayout } from "@vidstack/react/player/layouts/default";
+import "@vidstack/react/player/styles/default/theme.css";
+import "@vidstack/react/player/styles/default/layouts/video.css";
+import {
+  Audiotrack,
+  Cast,
+  CastConnected,
+  ChevronLeft,
+  ChevronRight,
+  FontDownload,
+  Forward10,
+  Fullscreen,
+  FullscreenExit,
+  Pause,
+  PictureInPictureAlt,
+  PlayArrow,
+  Replay,
+  Replay10,
+  Settings,
+  Speed,
+  Subtitles,
+  SubtitlesOff,
+  Tune,
+  VolumeDown,
+  VolumeOff,
+  VolumeUp,
+} from "@mui/icons-material";
+import PreviousEpisode from "./previousEpisode";
+import NextEpisode from "./nextEpisode";
+import SourceMenu from "./sourceMenu";
+import PlayerLayout from "./layout";
 
 interface IProps {
   episode: IMetadata;
@@ -40,10 +55,21 @@ const Player: React.FC<IProps> = ({ episode, episodeLinks }) => {
   const player = useRef<MediaPlayerInstance>(null);
   const [srcId, setSrcId] = useState<string>("tuaa");
   const [directSourceResolutionWidth, setDirectSourceResolutionWidth] = useState(1920);
-  const tolgee = useTolgee();
-  const language = tolgee.getLanguage();
+  const { t } = useTolgee();
 
-  console.log(srcId);
+  const switchSources = (newSource: string) => {
+    if (player.current) {
+      const time = player.current?.currentTime;
+
+      setSrcId(newSource);
+
+      player.current?.listen("can-play", () => {
+        if (player.current) {
+          player.current.currentTime = time;
+        }
+      });
+    }
+  };
 
   let srcUrl = "";
 
@@ -82,11 +108,10 @@ const Player: React.FC<IProps> = ({ episode, episodeLinks }) => {
   return (
     <>
       <MediaPlayer
-        className={`${styles.player} media-player`}
+        // className={`${styles.player} media-player`}
         title={episode.title}
+        playsInline
         src={srcUrl}
-        crossorigin
-        playsinline
         ref={player}
         style={{
           aspectRatio: 16 / 9,
@@ -97,12 +122,8 @@ const Player: React.FC<IProps> = ({ episode, episodeLinks }) => {
           flexDirection: "column",
         }}
       >
-        <MediaProvider>
-          <Poster
-            className={`${styles.poster} vds-poster`}
-            src={episodeLinks.thumbnail}
-            alt={`Thumbnail for ${episode.uaid}`}
-          />
+        <MediaProvider style={{ position: "absolute" }}>
+          <Poster className={`vds-poster`} src={episodeLinks.thumbnail} alt={`Thumbnail for ${episode.uaid}`} />
 
           {/* {bunnyLinks.captions.map((track) => (
             <Track
@@ -116,15 +137,7 @@ const Player: React.FC<IProps> = ({ episode, episodeLinks }) => {
           {/* <Track kind="chapters" content="" /> */}
         </MediaProvider>
 
-        <playerContext.Provider value={{ episode, episodeLinks }}>
-          <sourceIdContext.Provider value={[srcId, setSrcId]}>
-            <directSourceResolutionHeightContext.Provider
-              value={[directSourceResolutionWidth, setDirectSourceResolutionWidth]}
-            >
-              <VideoLayout thumbnails={episodeLinks.seek} />
-            </directSourceResolutionHeightContext.Provider>
-          </sourceIdContext.Provider>
-        </playerContext.Provider>
+        <PlayerLayout episode={episode} srcId={srcId} switchSources={switchSources} />
       </MediaPlayer>
     </>
   );

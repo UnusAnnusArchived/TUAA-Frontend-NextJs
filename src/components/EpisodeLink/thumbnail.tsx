@@ -27,7 +27,6 @@ const EpisodeThumbnail: React.FC<IProps> = (props) => {
   const thumbnailRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    console.log(props.episodeLinks, inViewport);
     if (props.episodeLinks) {
       if (inViewport) {
         const abortController = new AbortController();

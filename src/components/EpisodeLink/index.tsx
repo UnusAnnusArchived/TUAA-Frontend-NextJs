@@ -4,7 +4,6 @@ import { IMetadata } from "@/zodTypes";
 import getBunnyEpisodeLinks, { EpisodeLinks } from "@/tools/getEpisodeLinks";
 import { Paper, Typography, useTheme } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { Video } from "bunny-stream";
 import Image from "next/image";
 import EpisodeThumbnail from "./thumbnail";
 import EpisodeLinkLoading from "./loading";
@@ -22,7 +21,6 @@ export interface IProps {
   episode: IMetadata;
   elevation?: number;
   showSeason?: boolean;
-  initialBunnyEpisode?: Video;
 }
 
 const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason }) => {
@@ -31,7 +29,6 @@ const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason }) => {
   const { inViewport } = useInViewport(ref);
   const theme = useTheme();
   const language = tolgee.getLanguage() ?? "en";
-  console.log(language);
 
   useEffect(() => {
     if (inViewport && !episodeLinks) {
