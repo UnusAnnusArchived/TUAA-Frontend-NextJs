@@ -1,7 +1,7 @@
-import { Layout } from "@/types";
+import { Layout as ILayout } from "@/types";
 import "@vidstack/react/player/styles/default/theme.css";
 
-const Layout: Layout = ({ children }) => {
+const Layout: ILayout = ({ children }) => {
   return <>{children}</>;
 };
 

@@ -2,8 +2,8 @@ import { ErrorToast } from "@/components/ErrorDisplay";
 import getAllMetadata from "@/tools/getAllMetadata";
 import { NextPage } from "next";
 import SeasonSwitcher from "@/components/SeasonSwitcher";
-import { Video } from "bunny-stream";
 import { getTranslate } from "@/tolgee/server";
+import { IMetadata } from "@/zodTypes";
 
 interface ISearchParams {
   season?: string;
@@ -17,7 +17,7 @@ const Home: NextPage<{ searchParams: ISearchParams }> = async ({ searchParams })
 
   const requestedSeason = parseInt(searchParams.season ?? "1");
 
-  let initialEpisodes: Video[] = [];
+  let initialEpisodes: IMetadata[] = [];
 
   return (
     <>

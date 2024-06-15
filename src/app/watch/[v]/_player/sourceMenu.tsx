@@ -1,5 +1,6 @@
 import { IDirectSource, ISource } from "@/zodTypes";
 import { Check, ChevronLeft, ChevronRight, Language } from "@mui/icons-material";
+import { useTolgee } from "@tolgee/react";
 import { Menu, RadioGroup } from "@vidstack/react";
 import { ReactNode, useMemo, useState } from "react";
 
@@ -11,6 +12,7 @@ interface IProps {
 
 const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources }) => {
   const [selectedSourceName, setSelectedSourceName] = useState("TUAA");
+  const { t } = useTolgee();
 
   useMemo(() => {
     if (externalSources) {
@@ -26,7 +28,7 @@ const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources })
         if (source) {
           setSelectedSourceName(source.name);
         } else {
-          setSelectedSourceName("Unknown");
+          setSelectedSourceName(t("vidstack.custom.source.unknown"));
         }
       }
     }
@@ -35,7 +37,7 @@ const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources })
   return (
     <Menu.Root className="vds-accessibility-menu vds-menu">
       <SubmenuButton
-        label="Source"
+        label={t("vidstack.custom.source")}
         hint={selectedSourceName}
         disabled={externalSources === undefined}
         icon={Language}
@@ -50,11 +52,7 @@ const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources })
                   value="tuaa"
                   onSelect={() => {
                     if (srcId === "youtube") {
-                      if (
-                        confirm(
-                          "Due to a bug in our video player we are not able to switch away from a YouTube source without reloading the page. Would you like to reload?"
-                        )
-                      ) {
+                      if (confirm(t("vidstack.custom.source.youtubeBug"))) {
                         return window.location.reload();
                       } else {
                         return;
@@ -82,11 +80,7 @@ const SourceMenu: React.FC<IProps> = ({ externalSources, srcId, switchSources })
 
                 const handleSelect = () => {
                   if (srcId === "youtube") {
-                    if (
-                      confirm(
-                        "Due to a bug in our video player we are not able to switch away from a YouTube source without reloading the page. Would you like to reload?"
-                      )
-                    ) {
+                    if (confirm(t("vidstack.custom.source.youtubeBug"))) {
                       return window.location.reload();
                     } else {
                       return;
