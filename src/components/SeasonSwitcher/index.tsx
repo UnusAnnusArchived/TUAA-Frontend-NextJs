@@ -4,17 +4,15 @@ import { IMetadata } from "@/zodTypes";
 import { Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 import EpisodesList from "../EpisodesList";
-import { Video } from "bunny-stream";
 import { useRecoilState } from "recoil";
 import { T } from "@tolgee/react";
 
 interface IProps {
   seasons: IMetadata[][];
   initialSeason: number;
-  initialBunnyEpisodes?: Video[];
 }
 
-const SeasonSwitcher: React.FC<IProps> = ({ seasons, initialSeason, initialBunnyEpisodes }) => {
+const SeasonSwitcher: React.FC<IProps> = ({ seasons, initialSeason }) => {
   const [currentSeason, setCurrentSeason] = useState(initialSeason);
 
   const handleChange = (evt: React.SyntheticEvent, newValue: number) => {

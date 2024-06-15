@@ -21,7 +21,7 @@ const Home: NextPage<{ searchParams: ISearchParams }> = async ({ searchParams })
 
   return (
     <>
-      <SeasonSwitcher initialSeason={requestedSeason} seasons={seasons} initialBunnyEpisodes={initialEpisodes} />
+      <SeasonSwitcher initialSeason={requestedSeason} seasons={seasons} />
       <ErrorToast title={t("home.videoLoadError")} errors={errors} />
     </>
   );
