@@ -6,6 +6,7 @@
     "build": "node .build/scripts/cleanAndExporti18n.js && node .build/scripts/increaseBuildNumber.js && next build",
     "start": "next start"
   },
+  "packageManager": "pnpm@8.8.0",
   "dependencies": {
     "@babel/core": "^7.23.2",
     "@babel/runtime": "^7.23.2",
