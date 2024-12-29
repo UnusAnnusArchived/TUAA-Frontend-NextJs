@@ -16,7 +16,7 @@ module.exports = withPWA({
   },
   reactStrictMode: true,
   images: {
-    domains: ["r2.unusann.us"],
+    domains: ["rust-lore.dpaste.org"],
   },
   productionBrowserSourceMaps: true,
   output: "standalone",
