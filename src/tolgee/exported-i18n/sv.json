@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Nedladdningar"
+  "downloads": {
+    "title": "Nedladdningar"
   },
-  "episodeLink" : {
-    "episode" : "Avsnitt {episode}",
-    "season" : "Säsong {season}",
-    "specials" : "Specialerbjudanden"
+  "episodeLink": {
+    "episode": "Avsnitt {episode}",
+    "season": "Säsong {season}",
+    "specials": "Specialerbjudanden"
   },
-  "header" : {
-    "changeLanguage" : "Ändra språk",
-    "closeSearch" : "Stäng sökning",
-    "enableDarkMode" : "Aktivera mörkt läge",
-    "enableLightMode" : "Aktivera ljusläge",
-    "openSearch" : "Öppna sökning",
-    "search" : "Sök",
-    "searchGetStarted" : "Skriv in en fråga för att börja!"
+  "header": {
+    "changeLanguage": "Ändra språk",
+    "closeSearch": "Stäng sökning",
+    "enableDarkMode": "Aktivera mörkt läge",
+    "enableLightMode": "Aktivera ljusläge",
+    "openSearch": "Öppna sökning",
+    "search": "Sök",
+    "searchGetStarted": "Skriv in en fråga för att börja!"
   },
-  "home" : {
-    "title" : "Hem",
-    "videoLoadError" : "Fel vid laddning av avsnitt!"
+  "home": {
+    "title": "Hem",
+    "videoLoadError": "Fel vid laddning av avsnitt!"
   },
-  "language" : {
-    "code" : "sv",
-    "name" : "Svenska"
+  "language": {
+    "code": "sv",
+    "name": "Svenska"
   },
-  "notImplemented" : " Ej implementerat",
-  "patreonDonors" : {
-    "title" : "Patreon Donatorer"
+  "notImplemented": " Ej implementerat",
+  "patreonDonors": {
+    "title": "Patreon Donatorer"
   },
-  "settings" : {
-    "title" : "Inställningar"
+  "settings": {
+    "title": "Inställningar"
   },
-  "vidstack" : {
-    "accessibility" : "Tillgänglighet",
-    "accessibility.announcements" : "Meddelanden",
-    "accessibility.keyboardAnimations" : "Tangentbordsanimationer",
-    "audio" : "Ljud",
-    "audio.boost" : "Förstärkning",
-    "auto" : "Auto",
-    "captions" : "Bildtexter",
-    "captions.captionStyles" : "Textningsstilar",
-    "captions.captionsLookLikeThis" : "Undertexter ser ut så här\n\n\n\n\n\n\n",
-    "captions.color" : "Färg",
-    "captions.displayBackground" : "Visa bakgrund",
-    "captions.family" : "Teckensnittsfamilj",
-    "captions.font" : "Typsnitt",
-    "captions.off" : "Stäng av textning",
-    "captions.on" : "Slå på textning",
-    "captions.opacity" : "Opacitet",
-    "captions.shadow" : "Skugga",
-    "captions.size" : "Storlek",
-    "captions.text" : "Text",
-    "captions.textBackground" : "Textbakgrund",
-    "chapters" : "Kapitel",
-    "continue" : "Fortsätt",
-    "custom" : {
-      "autoplay" : "Autouppspelning",
-      "nextEpisode" : "Nästa avsnitt",
-      "previousEpisode" : "Föregående avsnitt",
-      "source" : "Källa",
-      "source.unknown" : "Okänd",
-      "source.youtubeBug" : "På grund av en bugg i vår videospelare kan vi inte byta bort från en YouTube-källa utan att ladda om sidan. Vill du ladda om?"
+  "vidstack": {
+    "accessibility": "Tillgänglighet",
+    "accessibility.announcements": "Meddelanden",
+    "accessibility.keyboardAnimations": "Tangentbordsanimationer",
+    "audio": "Ljud",
+    "audio.boost": "Förstärkning",
+    "auto": "Auto",
+    "captions": "Bildtexter",
+    "captions.captionStyles": "Textningsstilar",
+    "captions.captionsLookLikeThis": "Undertexter ser ut så här\n\n\n\n\n\n\n",
+    "captions.color": "Färg",
+    "captions.displayBackground": "Visa bakgrund",
+    "captions.family": "Teckensnittsfamilj",
+    "captions.font": "Typsnitt",
+    "captions.off": "Stäng av textning",
+    "captions.on": "Slå på textning",
+    "captions.opacity": "Opacitet",
+    "captions.shadow": "Skugga",
+    "captions.size": "Storlek",
+    "captions.text": "Text",
+    "captions.textBackground": "Textbakgrund",
+    "chapters": "Kapitel",
+    "continue": "Fortsätt",
+    "custom": {
+      "autoplay": "Autouppspelning",
+      "nextEpisode": "Nästa avsnitt",
+      "previousEpisode": "Föregående avsnitt",
+      "source": "Källa",
+      "source.unknown": "Okänd",
+      "source.youtubeBug": "På grund av en bugg i vår videospelare kan vi inte byta bort från en YouTube-källa utan att ladda om sidan. Vill du ladda om?"
     },
-    "default" : "Standard",
-    "disabled" : "Inaktiverad",
-    "download" : "Ladda ner",
-    "enterFullscreen" : "Gå till helskärm",
-    "enterPip" : "Gå till PiP-läge",
-    "exitFullscreen" : "Avsluta helskärm",
-    "exitPip" : "Avsluta PiP-läge",
-    "live" : "LIVE",
-    "mute" : "Ljudlös",
-    "normal" : "Normal",
-    "off" : "Av",
-    "pause" : "Paus",
-    "pip" : "PiP",
-    "play" : "Spela",
-    "playback" : "Uppspelning",
-    "playback.loop" : "Loopa",
-    "quality" : "Kvalitet",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Ansluten",
-      "connecting" : "Ansluter",
-      "disconnected" : "Frånkopplad",
-      "googleCast" : "Google Cast"
+    "default": "Standard",
+    "disabled": "Inaktiverad",
+    "download": "Ladda ner",
+    "enterFullscreen": "Gå till helskärm",
+    "enterPip": "Gå till PiP-läge",
+    "exitFullscreen": "Avsluta helskärm",
+    "exitPip": "Avsluta PiP-läge",
+    "live": "LIVE",
+    "mute": "Ljudlös",
+    "normal": "Normal",
+    "off": "Av",
+    "pause": "Paus",
+    "pip": "PiP",
+    "play": "Spela",
+    "playback": "Uppspelning",
+    "playback.loop": "Loopa",
+    "quality": "Kvalitet",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Ansluten",
+      "connecting": "Ansluter",
+      "disconnected": "Frånkopplad",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Spela om",
-    "reset" : "Återställ",
-    "seek" : "Sök",
-    "seekBackward" : "Sök bakåt",
-    "seekForward" : "Sök framåt",
-    "settings" : "Inställningar",
-    "skipToLive" : "Hoppa till Live",
-    "speed" : "Hastighet",
-    "track" : "Spår",
-    "unmute" : "Ta bort ljudlöst",
-    "volume" : "Volym"
+    "replay": "Spela om",
+    "reset": "Återställ",
+    "seek": "Sök",
+    "seekBackward": "Sök bakåt",
+    "seekForward": "Sök framåt",
+    "settings": "Inställningar",
+    "skipToLive": "Hoppa till Live",
+    "speed": "Hastighet",
+    "track": "Spår",
+    "unmute": "Ta bort ljudlöst",
+    "volume": "Volym"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Ogiltiga argument: {argumentsErrorList}.",
-    "invalidDate" : "Ogiltigt datum.",
-    "invalidEnumValue" : "Ogiltigt värde för enum: {optionsList}.",
-    "invalidIntersectionTypes" : "Ogiltiga snittyper.",
-    "invalidLiteral" : "Ogiltig literal; förväntade {expected}, fick {received}.",
-    "invalidReturnType" : "Ogiltig returtyp: {returnTypeErrors}.",
-    "invalidString" : "{validatorType}-validering misslyckades för strängen.",
-    "invalidType" : "Ogiltig typ; förväntade {expectedValue}, fick {receivedValue}.",
-    "invalidUnion" : "Ogiltig union: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Ogiltig union-diskriminator.",
-    "notFinite" : "Inte ändlig.",
-    "notMultipleOf" : "Talet är inte ett multiplum av {multipleOf}.",
-    "required" : "Obligatoriskt.",
-    "tooBig" : "{type} för stor; maxvärdet är {maximum}.",
-    "tooSmall" : "{type} för liten; minimumvärdet är {minimum}.",
-    "unrecognizedKeys" : "Okända nycklar: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Ogiltiga argument: {argumentsErrorList}.",
+    "invalidDate": "Ogiltigt datum.",
+    "invalidEnumValue": "Ogiltigt värde för enum: {optionsList}.",
+    "invalidIntersectionTypes": "Ogiltiga snittyper.",
+    "invalidLiteral": "Ogiltig literal; förväntade {expected}, fick {received}.",
+    "invalidReturnType": "Ogiltig returtyp: {returnTypeErrors}.",
+    "invalidString": "{validatorType}-validering misslyckades för strängen.",
+    "invalidType": "Ogiltig typ; förväntade {expectedValue}, fick {receivedValue}.",
+    "invalidUnion": "Ogiltig union: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Ogiltig union-diskriminator.",
+    "notFinite": "Inte ändlig.",
+    "notMultipleOf": "Talet är inte ett multiplum av {multipleOf}.",
+    "required": "Obligatoriskt.",
+    "tooBig": "{type} för stor; maxvärdet är {maximum}.",
+    "tooSmall": "{type} för liten; minimumvärdet är {minimum}.",
+    "unrecognizedKeys": "Okända nycklar: {keysList}."
   }
 }

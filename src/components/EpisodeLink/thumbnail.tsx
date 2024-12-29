@@ -94,7 +94,7 @@ const EpisodeThumbnail: React.FC<IProps> = (props) => {
       ) : (
         <ThumbnailLoading />
       )}
-      <NextImage
+      {/* <NextImage
         src={previewBlob ?? "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
         alt={`Preview for ${props.episode.title}`}
         style={{
@@ -114,7 +114,7 @@ const EpisodeThumbnail: React.FC<IProps> = (props) => {
         height="180"
         {...props}
         {...props.PreviewProps}
-      />
+      /> */}
     </div>
   );
 };

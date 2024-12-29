@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Téléchargements"
+  "downloads": {
+    "title": "Téléchargements"
   },
-  "episodeLink" : {
-    "episode" : "Épisode {episode}",
-    "season" : "Saison {season}",
-    "specials" : "Spécialités"
+  "episodeLink": {
+    "episode": "Épisode {episode}",
+    "season": "Saison {season}",
+    "specials": "Spécialités"
   },
-  "header" : {
-    "changeLanguage" : "Changer la langue",
-    "closeSearch" : "Fermer la recherche",
-    "enableDarkMode" : "Activer le mode sombre",
-    "enableLightMode" : "Activer le mode clair",
-    "openSearch" : "Ouvrir la recherche",
-    "search" : "Rechercher",
-    "searchGetStarted" : "Tapez une requête pour commencer!"
+  "header": {
+    "changeLanguage": "Changer la langue",
+    "closeSearch": "Fermer la recherche",
+    "enableDarkMode": "Activer le mode sombre",
+    "enableLightMode": "Activer le mode clair",
+    "openSearch": "Ouvrir la recherche",
+    "search": "Rechercher",
+    "searchGetStarted": "Tapez une requête pour commencer!"
   },
-  "home" : {
-    "title" : "Accueil",
-    "videoLoadError" : "Erreur lors du chargement des épisodes!"
+  "home": {
+    "title": "Accueil",
+    "videoLoadError": "Erreur lors du chargement des épisodes!"
   },
-  "language" : {
-    "code" : "fr",
-    "name" : "Français"
+  "language": {
+    "code": "fr",
+    "name": "Français"
   },
-  "notImplemented" : "Non implémenté",
-  "patreonDonors" : {
-    "title" : "Donateurs Patreon"
+  "notImplemented": "Non implémenté",
+  "patreonDonors": {
+    "title": "Donateurs Patreon"
   },
-  "settings" : {
-    "title" : "Paramètres"
+  "settings": {
+    "title": "Paramètres"
   },
-  "vidstack" : {
-    "accessibility" : "Accessibilité",
-    "accessibility.announcements" : "Annonces",
-    "accessibility.keyboardAnimations" : "Animations du clavier",
-    "audio" : "Audio",
-    "audio.boost" : "Amplification",
-    "auto" : "Automatique",
-    "captions" : "Sous-titres",
-    "captions.captionStyles" : "Styles de sous-titres",
-    "captions.captionsLookLikeThis" : "Les sous-titres ressemblent à ceci",
-    "captions.color" : "Couleur",
-    "captions.displayBackground" : "Affichage de l'arrière-plan",
-    "captions.family" : "Famille de polices",
-    "captions.font" : "Police de caractères",
-    "captions.off" : "Sous-titres fermés désactivés",
-    "captions.on" : "Sous-titres fermés activés",
-    "captions.opacity" : "Opacité",
-    "captions.shadow" : "Ombre",
-    "captions.size" : "Taille",
-    "captions.text" : "Texte",
-    "captions.textBackground" : "Arrière-plan du texte",
-    "chapters" : "Chapitres",
-    "continue" : "Continuer",
-    "custom" : {
-      "autoplay" : "Lecture automatique",
-      "nextEpisode" : "Épisode suivant",
-      "previousEpisode" : "Épisode précédent",
-      "source" : "Source",
-      "source.unknown" : "Inconnu",
-      "source.youtubeBug" : "En raison d'un bogue dans notre lecteur vidéo, nous ne pouvons pas passer d'une source YouTube sans recharger la page. Souhaitez-vous recharger ?"
+  "vidstack": {
+    "accessibility": "Accessibilité",
+    "accessibility.announcements": "Annonces",
+    "accessibility.keyboardAnimations": "Animations du clavier",
+    "audio": "Audio",
+    "audio.boost": "Amplification",
+    "auto": "Automatique",
+    "captions": "Sous-titres",
+    "captions.captionStyles": "Styles de sous-titres",
+    "captions.captionsLookLikeThis": "Les sous-titres ressemblent à ceci",
+    "captions.color": "Couleur",
+    "captions.displayBackground": "Affichage de l'arrière-plan",
+    "captions.family": "Famille de polices",
+    "captions.font": "Police de caractères",
+    "captions.off": "Sous-titres fermés désactivés",
+    "captions.on": "Sous-titres fermés activés",
+    "captions.opacity": "Opacité",
+    "captions.shadow": "Ombre",
+    "captions.size": "Taille",
+    "captions.text": "Texte",
+    "captions.textBackground": "Arrière-plan du texte",
+    "chapters": "Chapitres",
+    "continue": "Continuer",
+    "custom": {
+      "autoplay": "Lecture automatique",
+      "nextEpisode": "Épisode suivant",
+      "previousEpisode": "Épisode précédent",
+      "source": "Source",
+      "source.unknown": "Inconnu",
+      "source.youtubeBug": "En raison d'un bogue dans notre lecteur vidéo, nous ne pouvons pas passer d'une source YouTube sans recharger la page. Souhaitez-vous recharger ?"
     },
-    "default" : "Par défaut",
-    "disabled" : "Désactivé",
-    "download" : "Télécharger",
-    "enterFullscreen" : "Passer en mode plein écran",
-    "enterPip" : "Passer en mode PIP",
-    "exitFullscreen" : "Quitter le mode plein écran",
-    "exitPip" : "Quitter le mode PIP",
-    "live" : "EN DIRECT",
-    "mute" : "Muet",
-    "normal" : "Normal",
-    "off" : "Désactivé",
-    "pause" : "Pause",
-    "pip" : "PiP",
-    "play" : "Lire",
-    "playback" : "Lecture",
-    "playback.loop" : "Boucle",
-    "quality" : "Qualité",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Connecté",
-      "connecting" : "Connexion en cours",
-      "disconnected" : "Déconnecté",
-      "googleCast" : "Google Cast"
+    "default": "Par défaut",
+    "disabled": "Désactivé",
+    "download": "Télécharger",
+    "enterFullscreen": "Passer en mode plein écran",
+    "enterPip": "Passer en mode PIP",
+    "exitFullscreen": "Quitter le mode plein écran",
+    "exitPip": "Quitter le mode PIP",
+    "live": "EN DIRECT",
+    "mute": "Muet",
+    "normal": "Normal",
+    "off": "Désactivé",
+    "pause": "Pause",
+    "pip": "PiP",
+    "play": "Lire",
+    "playback": "Lecture",
+    "playback.loop": "Boucle",
+    "quality": "Qualité",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Connecté",
+      "connecting": "Connexion en cours",
+      "disconnected": "Déconnecté",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Rejouer",
-    "reset" : "Réinitialiser",
-    "seek" : "Rechercher",
-    "seekBackward" : "Rechercher en arrière",
-    "seekForward" : "Rechercher en avant\n",
-    "settings" : "Paramètres",
-    "skipToLive" : "Passer en direct",
-    "speed" : "Vitesse",
-    "track" : "Piste",
-    "unmute" : "Activer le son",
-    "volume" : "Volume"
+    "replay": "Rejouer",
+    "reset": "Réinitialiser",
+    "seek": "Rechercher",
+    "seekBackward": "Rechercher en arrière",
+    "seekForward": "Rechercher en avant\n",
+    "settings": "Paramètres",
+    "skipToLive": "Passer en direct",
+    "speed": "Vitesse",
+    "track": "Piste",
+    "unmute": "Activer le son",
+    "volume": "Volume"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Arguments invalides: {argumentsErrorList}.",
-    "invalidDate" : "Date invalide.",
-    "invalidEnumValue" : "Valeur d'énumération invalide: {optionsList}.",
-    "invalidIntersectionTypes" : "Types d'intersection invalides.",
-    "invalidLiteral" : "Constante invalide; attendu {expected}, reçu {received}.",
-    "invalidReturnType" : "Type de retour invalide: {returnTypeErrors}.",
-    "invalidString" : "Échec de la validation de chaîne avec le validateur {validatorType}.",
-    "invalidType" : "Type invalide; attendu {expectedValue}, reçu {receivedValue}.",
-    "invalidUnion" : "Union invalide: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Discriminant d'union invalide.",
-    "notFinite" : "Non fini.",
-    "notMultipleOf" : "Le nombre n'est pas un multiple de {multipleOf}.",
-    "required" : "Requis.",
-    "tooBig" : "{type} trop grand; valeur maximale est {maximum}.",
-    "tooSmall" : "{type} trop petit; valeur minimale est {minimum}.",
-    "unrecognizedKeys" : "Clés non reconnues: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Arguments invalides: {argumentsErrorList}.",
+    "invalidDate": "Date invalide.",
+    "invalidEnumValue": "Valeur d'énumération invalide: {optionsList}.",
+    "invalidIntersectionTypes": "Types d'intersection invalides.",
+    "invalidLiteral": "Constante invalide; attendu {expected}, reçu {received}.",
+    "invalidReturnType": "Type de retour invalide: {returnTypeErrors}.",
+    "invalidString": "Échec de la validation de chaîne avec le validateur {validatorType}.",
+    "invalidType": "Type invalide; attendu {expectedValue}, reçu {receivedValue}.",
+    "invalidUnion": "Union invalide: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Discriminant d'union invalide.",
+    "notFinite": "Non fini.",
+    "notMultipleOf": "Le nombre n'est pas un multiple de {multipleOf}.",
+    "required": "Requis.",
+    "tooBig": "{type} trop grand; valeur maximale est {maximum}.",
+    "tooSmall": "{type} trop petit; valeur minimale est {minimum}.",
+    "unrecognizedKeys": "Clés non reconnues: {keysList}."
   }
 }

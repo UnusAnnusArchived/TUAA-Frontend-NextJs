@@ -109,7 +109,7 @@ const MenuElements: React.FC<MenuElementsProps> = ({ Divider, isMobile }) => {
       <MenuItem href="/" isMobile={isMobile}>
         <T keyName="home.title" />
       </MenuItem>
-      <Divider />
+      {/* <Divider />
       <MenuItem href="/downloads" isMobile={isMobile}>
         <T keyName="downloads.title" />
       </MenuItem>
@@ -120,7 +120,7 @@ const MenuElements: React.FC<MenuElementsProps> = ({ Divider, isMobile }) => {
       <Divider />
       <MenuItem href="/patreon-donors" isMobile={isMobile}>
         <T keyName="patreonDonors.title" />
-      </MenuItem>
+      </MenuItem> */}
     </>
   );
 };

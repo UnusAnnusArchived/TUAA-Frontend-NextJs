@@ -16,7 +16,8 @@ module.exports = withPWA({
   },
   reactStrictMode: true,
   images: {
-    domains: ["vz-b39cd352-a49.b-cdn.net"],
+    domains: ["r2.unusann.us"],
   },
   productionBrowserSourceMaps: true,
+  output: "standalone",
 });

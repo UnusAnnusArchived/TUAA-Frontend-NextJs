@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Downloads"
+  "downloads": {
+    "title": "Downloads"
   },
-  "episodeLink" : {
-    "episode" : "Episode {episode}",
-    "season" : "Staffel {season}",
-    "specials" : "Specials"
+  "episodeLink": {
+    "episode": "Episode {episode}",
+    "season": "Staffel {season}",
+    "specials": "Specials"
   },
-  "header" : {
-    "changeLanguage" : "Sprache ändern",
-    "closeSearch" : "Suche schließen",
-    "enableDarkMode" : "Dunkelmodus aktivieren",
-    "enableLightMode" : "Lichtmodus aktivieren",
-    "openSearch" : "Suche öffnen",
-    "search" : "Suche",
-    "searchGetStarted" : "Geben Sie eine Anfrage ein, um zu beginnen!"
+  "header": {
+    "changeLanguage": "Sprache ändern",
+    "closeSearch": "Suche schließen",
+    "enableDarkMode": "Dunkelmodus aktivieren",
+    "enableLightMode": "Lichtmodus aktivieren",
+    "openSearch": "Suche öffnen",
+    "search": "Suche",
+    "searchGetStarted": "Geben Sie eine Anfrage ein, um zu beginnen!"
   },
-  "home" : {
-    "title" : "Startseite",
-    "videoLoadError" : "Fehler beim Laden der Episoden!"
+  "home": {
+    "title": "Startseite",
+    "videoLoadError": "Fehler beim Laden der Episoden!"
   },
-  "language" : {
-    "code" : "de",
-    "name" : "Deutsch"
+  "language": {
+    "code": "de",
+    "name": "Deutsch"
   },
-  "notImplemented" : "Nicht implementiert",
-  "patreonDonors" : {
-    "title" : "Patreon Spender"
+  "notImplemented": "Nicht implementiert",
+  "patreonDonors": {
+    "title": "Patreon Spender"
   },
-  "settings" : {
-    "title" : "Einstellungen"
+  "settings": {
+    "title": "Einstellungen"
   },
-  "vidstack" : {
-    "accessibility" : "Barrierefreiheit",
-    "accessibility.announcements" : "Ankündigungen",
-    "accessibility.keyboardAnimations" : "Tastaturanimationen",
-    "audio" : "Audio",
-    "audio.boost" : "Verstärkung",
-    "auto" : "Auto",
-    "captions" : "Untertitel",
-    "captions.captionStyles" : "Untertitelstile",
-    "captions.captionsLookLikeThis" : "Untertitel sehen so aus",
-    "captions.color" : "Farbe",
-    "captions.displayBackground" : "Hintergrund anzeigen",
-    "captions.family" : "Schriftfamilie",
-    "captions.font" : "Schrift",
-    "captions.off" : "Untertitel ausschalten",
-    "captions.on" : "Untertitel einschalten",
-    "captions.opacity" : "Deckkraft",
-    "captions.shadow" : "Schatten",
-    "captions.size" : "Größe",
-    "captions.text" : "Text",
-    "captions.textBackground" : "Texthintergrund",
-    "chapters" : "Kapitel",
-    "continue" : "Fortsetzen",
-    "custom" : {
-      "autoplay" : "Autoplay",
-      "nextEpisode" : "Nächste Episode",
-      "previousEpisode" : "Vorherige Episode",
-      "source" : "Quelle",
-      "source.unknown" : "Unbekannt",
-      "source.youtubeBug" : "Aufgrund eines Fehlers in unserem Videoplayer können wir nicht von einer YouTube-Quelle wegwechseln, ohne die Seite neu zu laden. Möchten Sie neu laden?"
+  "vidstack": {
+    "accessibility": "Barrierefreiheit",
+    "accessibility.announcements": "Ankündigungen",
+    "accessibility.keyboardAnimations": "Tastaturanimationen",
+    "audio": "Audio",
+    "audio.boost": "Verstärkung",
+    "auto": "Auto",
+    "captions": "Untertitel",
+    "captions.captionStyles": "Untertitelstile",
+    "captions.captionsLookLikeThis": "Untertitel sehen so aus",
+    "captions.color": "Farbe",
+    "captions.displayBackground": "Hintergrund anzeigen",
+    "captions.family": "Schriftfamilie",
+    "captions.font": "Schrift",
+    "captions.off": "Untertitel ausschalten",
+    "captions.on": "Untertitel einschalten",
+    "captions.opacity": "Deckkraft",
+    "captions.shadow": "Schatten",
+    "captions.size": "Größe",
+    "captions.text": "Text",
+    "captions.textBackground": "Texthintergrund",
+    "chapters": "Kapitel",
+    "continue": "Fortsetzen",
+    "custom": {
+      "autoplay": "Autoplay",
+      "nextEpisode": "Nächste Episode",
+      "previousEpisode": "Vorherige Episode",
+      "source": "Quelle",
+      "source.unknown": "Unbekannt",
+      "source.youtubeBug": "Aufgrund eines Fehlers in unserem Videoplayer können wir nicht von einer YouTube-Quelle wegwechseln, ohne die Seite neu zu laden. Möchten Sie neu laden?"
     },
-    "default" : "Standard",
-    "disabled" : "Deaktiviert",
-    "download" : "Herunterladen",
-    "enterFullscreen" : "Vollbildmodus aktivieren",
-    "enterPip" : "PiP-Modus aktivieren",
-    "exitFullscreen" : "Vollbildmodus beenden",
-    "exitPip" : "PiP-Modus beenden",
-    "live" : "LIVE",
-    "mute" : "Stummschalten",
-    "normal" : "Normal",
-    "off" : "Aus",
-    "pause" : "Pause",
-    "pip" : "PiP",
-    "play" : "Abspielen",
-    "playback" : "Wiedergabe",
-    "playback.loop" : "Schleife",
-    "quality" : "Qualität",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Verbunden",
-      "connecting" : "Verbinden",
-      "disconnected" : "Getrennt",
-      "googleCast" : "Google Cast"
+    "default": "Standard",
+    "disabled": "Deaktiviert",
+    "download": "Herunterladen",
+    "enterFullscreen": "Vollbildmodus aktivieren",
+    "enterPip": "PiP-Modus aktivieren",
+    "exitFullscreen": "Vollbildmodus beenden",
+    "exitPip": "PiP-Modus beenden",
+    "live": "LIVE",
+    "mute": "Stummschalten",
+    "normal": "Normal",
+    "off": "Aus",
+    "pause": "Pause",
+    "pip": "PiP",
+    "play": "Abspielen",
+    "playback": "Wiedergabe",
+    "playback.loop": "Schleife",
+    "quality": "Qualität",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Verbunden",
+      "connecting": "Verbinden",
+      "disconnected": "Getrennt",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Wiederholen",
-    "reset" : "Zurücksetzen",
-    "seek" : "Suchen",
-    "seekBackward" : "Rückwärts suchen",
-    "seekForward" : "Vorwärts suchen",
-    "settings" : "Einstellungen",
-    "skipToLive" : "Zum Live-Stream springen",
-    "speed" : "Geschwindigkeit",
-    "track" : "Spur",
-    "unmute" : "Ton einschalten\n",
-    "volume" : "Lautstärke"
+    "replay": "Wiederholen",
+    "reset": "Zurücksetzen",
+    "seek": "Suchen",
+    "seekBackward": "Rückwärts suchen",
+    "seekForward": "Vorwärts suchen",
+    "settings": "Einstellungen",
+    "skipToLive": "Zum Live-Stream springen",
+    "speed": "Geschwindigkeit",
+    "track": "Spur",
+    "unmute": "Ton einschalten\n",
+    "volume": "Lautstärke"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Ungültige Argumente: {argumentsErrorList}.",
-    "invalidDate" : "Ungültiges Datum.",
-    "invalidEnumValue" : "Ungültiger Enumerationswert: {optionsList}.",
-    "invalidIntersectionTypes" : "Ungültige Schnittstellen-Typen.",
-    "invalidLiteral" : "Ungültige Konstante; erwartet: {expected}, erhalten: {received}.",
-    "invalidReturnType" : "Ungültiger Rückgabetyp: {returnTypeErrors}.",
-    "invalidString" : "Überprüfung des Typs {validatorType} für Zeichenfolgen fehlgeschlagen.",
-    "invalidType" : "Ungültiger Typ; erwartet: {expectedValue}, erhalten: {receivedValue}.",
-    "invalidUnion" : "Ungültige Vereinigung: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Ungültiger Vereinigungs-Diskriminator.",
-    "notFinite" : "Nicht endlich.",
-    "notMultipleOf" : "Die Zahl ist kein Vielfaches von {multipleOf}.",
-    "required" : "Erforderlich.",
-    "tooBig" : "{type} zu groß; Maximalwert beträgt {maximum}.",
-    "tooSmall" : "{type} zu klein; Mindestwert beträgt {minimum}.",
-    "unrecognizedKeys" : "Nicht erkannte Schlüssel: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Ungültige Argumente: {argumentsErrorList}.",
+    "invalidDate": "Ungültiges Datum.",
+    "invalidEnumValue": "Ungültiger Enumerationswert: {optionsList}.",
+    "invalidIntersectionTypes": "Ungültige Schnittstellen-Typen.",
+    "invalidLiteral": "Ungültige Konstante; erwartet: {expected}, erhalten: {received}.",
+    "invalidReturnType": "Ungültiger Rückgabetyp: {returnTypeErrors}.",
+    "invalidString": "Überprüfung des Typs {validatorType} für Zeichenfolgen fehlgeschlagen.",
+    "invalidType": "Ungültiger Typ; erwartet: {expectedValue}, erhalten: {receivedValue}.",
+    "invalidUnion": "Ungültige Vereinigung: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Ungültiger Vereinigungs-Diskriminator.",
+    "notFinite": "Nicht endlich.",
+    "notMultipleOf": "Die Zahl ist kein Vielfaches von {multipleOf}.",
+    "required": "Erforderlich.",
+    "tooBig": "{type} zu groß; Maximalwert beträgt {maximum}.",
+    "tooSmall": "{type} zu klein; Mindestwert beträgt {minimum}.",
+    "unrecognizedKeys": "Nicht erkannte Schlüssel: {keysList}."
   }
 }

@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Downloads"
+  "downloads": {
+    "title": "Downloads"
   },
-  "episodeLink" : {
-    "episode" : "Episodyo {episode}",
-    "season" : "Season {season}",
-    "specials" : "Mga Espesyal"
+  "episodeLink": {
+    "episode": "Episodyo {episode}",
+    "season": "Season {season}",
+    "specials": "Mga Espesyal"
   },
-  "header" : {
-    "changeLanguage" : "Baguhin ang Wika",
-    "closeSearch" : "Isara ang Paghahanap",
-    "enableDarkMode" : "Paganahin ang Madilim na Modo",
-    "enableLightMode" : "Paganahin ang liwanag Mode",
-    "openSearch" : "Buksan ang Paghahanap",
-    "search" : "Paghahanap",
-    "searchGetStarted" : "Mag-type ng katanungan para magsimula!"
+  "header": {
+    "changeLanguage": "Baguhin ang Wika",
+    "closeSearch": "Isara ang Paghahanap",
+    "enableDarkMode": "Paganahin ang Madilim na Modo",
+    "enableLightMode": "Paganahin ang liwanag Mode",
+    "openSearch": "Buksan ang Paghahanap",
+    "search": "Paghahanap",
+    "searchGetStarted": "Mag-type ng katanungan para magsimula!"
   },
-  "home" : {
-    "title" : "Bahay",
-    "videoLoadError" : "Error sa Pag-lo-load ng Mga Kabanata!\nAI"
+  "home": {
+    "title": "Bahay",
+    "videoLoadError": "Error sa Pag-lo-load ng Mga Kabanata!\nAI"
   },
-  "language" : {
-    "code" : "fil",
-    "name" : "Filipino"
+  "language": {
+    "code": "fil",
+    "name": "Filipino"
   },
-  "notImplemented" : "Hindi naipatupad",
-  "patreonDonors" : {
-    "title" : "Mga Donor sa Patreon"
+  "notImplemented": "Hindi naipatupad",
+  "patreonDonors": {
+    "title": "Mga Donor sa Patreon"
   },
-  "settings" : {
-    "title" : "Mga Setting"
+  "settings": {
+    "title": "Mga Setting"
   },
-  "vidstack" : {
-    "accessibility" : "Pagkakaabot",
-    "accessibility.announcements" : "Mga Anunsyo",
-    "accessibility.keyboardAnimations" : "Mga Animasyon ng Keyboard",
-    "audio" : "Audio",
-    "audio.boost" : "Dagdag",
-    "auto" : "Auto",
-    "captions" : "Captions",
-    "captions.captionStyles" : " Mga Estilo ng Caption",
-    "captions.captionsLookLikeThis" : "Ganito ang itsura ng mga caption",
-    "captions.color" : "Kulay",
-    "captions.displayBackground" : "Background ng Display",
-    "captions.family" : "Pamilya ng font",
-    "captions.font" : "Font",
-    "captions.off" : "Ipatay ang Closed Captions",
-    "captions.on" : "Ibuksan ang Closed Captions",
-    "captions.opacity" : "Opacity",
-    "captions.shadow" : "Anino",
-    "captions.size" : "Laki",
-    "captions.text" : "Teksto",
-    "captions.textBackground" : " Background ng Teksto",
-    "chapters" : "Mga Kabanata",
-    "continue" : "Magpatuloy",
-    "custom" : {
-      "autoplay" : " Awtomatikong Pag-play",
-      "nextEpisode" : "Susunod na Episode",
-      "previousEpisode" : "Nakaraang Episode",
-      "source" : "Pinagmulan",
-      "source.unknown" : "Hindi alam",
-      "source.youtubeBug" : "Dahil sa isang bug sa aming video player, hindi namin magawang lumipat mula sa isang YouTube source nang hindi binabasa ang pahina. Gusto mo bang mag-refresh?\n"
+  "vidstack": {
+    "accessibility": "Pagkakaabot",
+    "accessibility.announcements": "Mga Anunsyo",
+    "accessibility.keyboardAnimations": "Mga Animasyon ng Keyboard",
+    "audio": "Audio",
+    "audio.boost": "Dagdag",
+    "auto": "Auto",
+    "captions": "Captions",
+    "captions.captionStyles": " Mga Estilo ng Caption",
+    "captions.captionsLookLikeThis": "Ganito ang itsura ng mga caption",
+    "captions.color": "Kulay",
+    "captions.displayBackground": "Background ng Display",
+    "captions.family": "Pamilya ng font",
+    "captions.font": "Font",
+    "captions.off": "Ipatay ang Closed Captions",
+    "captions.on": "Ibuksan ang Closed Captions",
+    "captions.opacity": "Opacity",
+    "captions.shadow": "Anino",
+    "captions.size": "Laki",
+    "captions.text": "Teksto",
+    "captions.textBackground": " Background ng Teksto",
+    "chapters": "Mga Kabanata",
+    "continue": "Magpatuloy",
+    "custom": {
+      "autoplay": " Awtomatikong Pag-play",
+      "nextEpisode": "Susunod na Episode",
+      "previousEpisode": "Nakaraang Episode",
+      "source": "Pinagmulan",
+      "source.unknown": "Hindi alam",
+      "source.youtubeBug": "Dahil sa isang bug sa aming video player, hindi namin magawang lumipat mula sa isang YouTube source nang hindi binabasa ang pahina. Gusto mo bang mag-refresh?\n"
     },
-    "default" : "Default",
-    "disabled" : "Hindi pinagana",
-    "download" : " I-download",
-    "enterFullscreen" : "Pumasok sa Buong Screen",
-    "enterPip" : "Pumasok sa PiP",
-    "exitFullscreen" : "Lumabas sa Buong Screen",
-    "exitPip" : "Lumabas sa PiP",
-    "live" : "LIVE",
-    "mute" : "Ipatay ang Tunog",
-    "normal" : "Normal",
-    "off" : "Hinto",
-    "pause" : "Itigil",
-    "pip" : "PiP",
-    "play" : "Panoorin",
-    "playback" : "Pag-playback",
-    "playback.loop" : "I-loop",
-    "quality" : "Kalidad",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Naka-konekta",
-      "connecting" : "Nagko-konekta",
-      "disconnected" : "Hindi konektado\n",
-      "googleCast" : "Google Cast"
+    "default": "Default",
+    "disabled": "Hindi pinagana",
+    "download": " I-download",
+    "enterFullscreen": "Pumasok sa Buong Screen",
+    "enterPip": "Pumasok sa PiP",
+    "exitFullscreen": "Lumabas sa Buong Screen",
+    "exitPip": "Lumabas sa PiP",
+    "live": "LIVE",
+    "mute": "Ipatay ang Tunog",
+    "normal": "Normal",
+    "off": "Hinto",
+    "pause": "Itigil",
+    "pip": "PiP",
+    "play": "Panoorin",
+    "playback": "Pag-playback",
+    "playback.loop": "I-loop",
+    "quality": "Kalidad",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Naka-konekta",
+      "connecting": "Nagko-konekta",
+      "disconnected": "Hindi konektado\n",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Ulitin",
-    "reset" : "I-reset",
-    "seek" : "Maghanap",
-    "seekBackward" : "Maghanap Pabalik",
-    "seekForward" : "Maghanap Paharap",
-    "settings" : "Mga Setting",
-    "skipToLive" : "Maglipat sa Live",
-    "speed" : "Bilis",
-    "track" : "Track",
-    "unmute" : "Ibalik ang Tunog\n",
-    "volume" : "Bolyum"
+    "replay": "Ulitin",
+    "reset": "I-reset",
+    "seek": "Maghanap",
+    "seekBackward": "Maghanap Pabalik",
+    "seekForward": "Maghanap Paharap",
+    "settings": "Mga Setting",
+    "skipToLive": "Maglipat sa Live",
+    "speed": "Bilis",
+    "track": "Track",
+    "unmute": "Ibalik ang Tunog\n",
+    "volume": "Bolyum"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Hindi wastong mga argumento: {argumentsErrorList}.",
-    "invalidDate" : "Hindi wastong petsa.",
-    "invalidEnumValue" : "Hindi wastong halaga ng enum: {optionsList}.",
-    "invalidIntersectionTypes" : "Hindi wastong mga uri ng intersection.",
-    "invalidLiteral" : "Hindi wastong literal; inaasahan {expected}, natanggap {received}.",
-    "invalidReturnType" : "Hindi wastong uri ng pagbalik: {returnTypeErrors}.",
-    "invalidString" : "Nabigo ang string na validator na {validatorType}.",
-    "invalidType" : "Hindi wastong uri; inaasahan {expectedValue}, natanggap {receivedValue}.",
-    "invalidUnion" : "Hindi wastong union: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Hindi wastong discriminator ng union.",
-    "notFinite" : "Hindi katapusang.",
-    "notMultipleOf" : "Ang numero ay hindi karamihan ng {multipleOf}.\nKinakailangan.",
-    "required" : "Kinakailangan.",
-    "tooBig" : "Ang {type} ay masyadong malaki; ang pinakamataas na halaga ay {maximum}.",
-    "tooSmall" : "Ang {type} ay masyadong maliit; ang pinakamababang halaga ay {minimum}.",
-    "unrecognizedKeys" : "Hindi kilalang mga susi: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Hindi wastong mga argumento: {argumentsErrorList}.",
+    "invalidDate": "Hindi wastong petsa.",
+    "invalidEnumValue": "Hindi wastong halaga ng enum: {optionsList}.",
+    "invalidIntersectionTypes": "Hindi wastong mga uri ng intersection.",
+    "invalidLiteral": "Hindi wastong literal; inaasahan {expected}, natanggap {received}.",
+    "invalidReturnType": "Hindi wastong uri ng pagbalik: {returnTypeErrors}.",
+    "invalidString": "Nabigo ang string na validator na {validatorType}.",
+    "invalidType": "Hindi wastong uri; inaasahan {expectedValue}, natanggap {receivedValue}.",
+    "invalidUnion": "Hindi wastong union: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Hindi wastong discriminator ng union.",
+    "notFinite": "Hindi katapusang.",
+    "notMultipleOf": "Ang numero ay hindi karamihan ng {multipleOf}.\nKinakailangan.",
+    "required": "Kinakailangan.",
+    "tooBig": "Ang {type} ay masyadong malaki; ang pinakamataas na halaga ay {maximum}.",
+    "tooSmall": "Ang {type} ay masyadong maliit; ang pinakamababang halaga ay {minimum}.",
+    "unrecognizedKeys": "Hindi kilalang mga susi: {keysList}."
   }
 }

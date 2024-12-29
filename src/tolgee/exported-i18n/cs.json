@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Stahování"
+  "downloads": {
+    "title": "Stahování"
   },
-  "episodeLink" : {
-    "episode" : "Epizoda {episode}",
-    "season" : "Série {season}",
-    "specials" : "Speciály"
+  "episodeLink": {
+    "episode": "Epizoda {episode}",
+    "season": "Série {season}",
+    "specials": "Speciály"
   },
-  "header" : {
-    "changeLanguage" : "Změnit jazyk",
-    "closeSearch" : "Zavřít hledání",
-    "enableDarkMode" : "Povolit tmavý režim",
-    "enableLightMode" : "Povolit světlý režim",
-    "openSearch" : "Otevřít hledání",
-    "search" : "Hledat",
-    "searchGetStarted" : "Napište dotaz pro začátek!"
+  "header": {
+    "changeLanguage": "Změnit jazyk",
+    "closeSearch": "Zavřít hledání",
+    "enableDarkMode": "Povolit tmavý režim",
+    "enableLightMode": "Povolit světlý režim",
+    "openSearch": "Otevřít hledání",
+    "search": "Hledat",
+    "searchGetStarted": "Napište dotaz pro začátek!"
   },
-  "home" : {
-    "title" : "Domů",
-    "videoLoadError" : "Chyba při načítání epizod!"
+  "home": {
+    "title": "Domů",
+    "videoLoadError": "Chyba při načítání epizod!"
   },
-  "language" : {
-    "code" : "cs",
-    "name" : " Český"
+  "language": {
+    "code": "cs",
+    "name": " Český"
   },
-  "notImplemented" : "Není implementováno",
-  "patreonDonors" : {
-    "title" : "Patreon Dárci"
+  "notImplemented": "Není implementováno",
+  "patreonDonors": {
+    "title": "Patreon Dárci"
   },
-  "settings" : {
-    "title" : "Nastavení"
+  "settings": {
+    "title": "Nastavení"
   },
-  "vidstack" : {
-    "accessibility" : "Přístupnost",
-    "accessibility.announcements" : "Oznámení",
-    "accessibility.keyboardAnimations" : "Animace klávesnice",
-    "audio" : "Zvuk",
-    "audio.boost" : "Zesílení",
-    "auto" : "Automatický",
-    "captions" : "Titulky",
-    "captions.captionStyles" : "Styly titulků",
-    "captions.captionsLookLikeThis" : "Titulky vypadají takto",
-    "captions.color" : "Barva",
-    "captions.displayBackground" : "Zobrazení pozadí",
-    "captions.family" : "Rodina písem",
-    "captions.font" : "Písmo",
-    "captions.off" : "Vypnout uzavřené titulky",
-    "captions.on" : "Zapnout uzavřené titulky",
-    "captions.opacity" : "Neprůhlednost",
-    "captions.shadow" : "Stín",
-    "captions.size" : "Velikost",
-    "captions.text" : "Text",
-    "captions.textBackground" : "Pozadí textu",
-    "chapters" : "Kapitoly",
-    "continue" : "Pokračovat",
-    "custom" : {
-      "autoplay" : "Automatické přehrávání",
-      "nextEpisode" : "Další epizoda",
-      "previousEpisode" : "Předchozí epizoda",
-      "source" : "Zdroj",
-      "source.unknown" : "Neznámý",
-      "source.youtubeBug" : "Kvůli chybě ve videopřehrávači není možné přepnout z YouTube zdroje bez obnovení stránky. Chcete provést obnovení?"
+  "vidstack": {
+    "accessibility": "Přístupnost",
+    "accessibility.announcements": "Oznámení",
+    "accessibility.keyboardAnimations": "Animace klávesnice",
+    "audio": "Zvuk",
+    "audio.boost": "Zesílení",
+    "auto": "Automatický",
+    "captions": "Titulky",
+    "captions.captionStyles": "Styly titulků",
+    "captions.captionsLookLikeThis": "Titulky vypadají takto",
+    "captions.color": "Barva",
+    "captions.displayBackground": "Zobrazení pozadí",
+    "captions.family": "Rodina písem",
+    "captions.font": "Písmo",
+    "captions.off": "Vypnout uzavřené titulky",
+    "captions.on": "Zapnout uzavřené titulky",
+    "captions.opacity": "Neprůhlednost",
+    "captions.shadow": "Stín",
+    "captions.size": "Velikost",
+    "captions.text": "Text",
+    "captions.textBackground": "Pozadí textu",
+    "chapters": "Kapitoly",
+    "continue": "Pokračovat",
+    "custom": {
+      "autoplay": "Automatické přehrávání",
+      "nextEpisode": "Další epizoda",
+      "previousEpisode": "Předchozí epizoda",
+      "source": "Zdroj",
+      "source.unknown": "Neznámý",
+      "source.youtubeBug": "Kvůli chybě ve videopřehrávači není možné přepnout z YouTube zdroje bez obnovení stránky. Chcete provést obnovení?"
     },
-    "default" : "Výchozí",
-    "disabled" : "Zakázáno",
-    "download" : "Stáhnout",
-    "enterFullscreen" : "Vstoupit do režimu celé obrazovky",
-    "enterPip" : "Vstoupit do režimu PIP",
-    "exitFullscreen" : "Opustit režim celé obrazovky",
-    "exitPip" : "Opustit režim PIP",
-    "live" : "ŽIVĚ",
-    "mute" : "Ztlumit zvuk",
-    "normal" : "Normální",
-    "off" : "Vypnuto",
-    "pause" : "Pozastavit",
-    "pip" : "PiP",
-    "play" : "Přehrát",
-    "playback" : "Přehrávání",
-    "playback.loop" : "Smyčka",
-    "quality" : "Kvalita",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Připojeno",
-      "connecting" : "Připojuje se",
-      "disconnected" : "Odpojeno",
-      "googleCast" : "Google Cast"
+    "default": "Výchozí",
+    "disabled": "Zakázáno",
+    "download": "Stáhnout",
+    "enterFullscreen": "Vstoupit do režimu celé obrazovky",
+    "enterPip": "Vstoupit do režimu PIP",
+    "exitFullscreen": "Opustit režim celé obrazovky",
+    "exitPip": "Opustit režim PIP",
+    "live": "ŽIVĚ",
+    "mute": "Ztlumit zvuk",
+    "normal": "Normální",
+    "off": "Vypnuto",
+    "pause": "Pozastavit",
+    "pip": "PiP",
+    "play": "Přehrát",
+    "playback": "Přehrávání",
+    "playback.loop": "Smyčka",
+    "quality": "Kvalita",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Připojeno",
+      "connecting": "Připojuje se",
+      "disconnected": "Odpojeno",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Přehrát znovu",
-    "reset" : "Obnovit",
-    "seek" : "Přeskočit",
-    "seekBackward" : "Přeskočit zpět",
-    "seekForward" : "Přeskočit vpřed",
-    "settings" : "Nastavení",
-    "skipToLive" : "Přeskočit na živý přenos",
-    "speed" : "Rychlost",
-    "track" : "Stopa",
-    "unmute" : "Zrušit ztlumení",
-    "volume" : "Hlasitost"
+    "replay": "Přehrát znovu",
+    "reset": "Obnovit",
+    "seek": "Přeskočit",
+    "seekBackward": "Přeskočit zpět",
+    "seekForward": "Přeskočit vpřed",
+    "settings": "Nastavení",
+    "skipToLive": "Přeskočit na živý přenos",
+    "speed": "Rychlost",
+    "track": "Stopa",
+    "unmute": "Zrušit ztlumení",
+    "volume": "Hlasitost"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Neplatné argumenty: {argumentsErrorList}.",
-    "invalidDate" : "Neplatné datum.",
-    "invalidEnumValue" : "Neplatná hodnota výčtu: {optionsList}.",
-    "invalidIntersectionTypes" : "Neplatné typy průniku.",
-    "invalidLiteral" : "Neplatný literál; očekáváno {expected}, obdrženo {received}.",
-    "invalidReturnType" : "Neplatný návratový typ: {returnTypeErrors}.",
-    "invalidString" : "Řetězec neprošel kontrolou {validatorType}.",
-    "invalidType" : "Neplatný typ; očekáváno {expectedValue}, obdrženo {receivedValue}.",
-    "invalidUnion" : "Neplatný spolek: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Neplatný diskriminátor spolku.",
-    "notFinite" : "Není konečné.",
-    "notMultipleOf" : "Číslo není násobkem {multipleOf}.",
-    "required" : "Povinné.",
-    "tooBig" : "{type} je příliš velký; maximální hodnota je {maximum}.",
-    "tooSmall" : "{type} je příliš malý; minimální hodnota je {minimum}.",
-    "unrecognizedKeys" : "Nerozpoznané klíče: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Neplatné argumenty: {argumentsErrorList}.",
+    "invalidDate": "Neplatné datum.",
+    "invalidEnumValue": "Neplatná hodnota výčtu: {optionsList}.",
+    "invalidIntersectionTypes": "Neplatné typy průniku.",
+    "invalidLiteral": "Neplatný literál; očekáváno {expected}, obdrženo {received}.",
+    "invalidReturnType": "Neplatný návratový typ: {returnTypeErrors}.",
+    "invalidString": "Řetězec neprošel kontrolou {validatorType}.",
+    "invalidType": "Neplatný typ; očekáváno {expectedValue}, obdrženo {receivedValue}.",
+    "invalidUnion": "Neplatný spolek: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Neplatný diskriminátor spolku.",
+    "notFinite": "Není konečné.",
+    "notMultipleOf": "Číslo není násobkem {multipleOf}.",
+    "required": "Povinné.",
+    "tooBig": "{type} je příliš velký; maximální hodnota je {maximum}.",
+    "tooSmall": "{type} je příliš malý; minimální hodnota je {minimum}.",
+    "unrecognizedKeys": "Nerozpoznané klíče: {keysList}."
   }
 }

@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Downloads"
+  "downloads": {
+    "title": "Downloads"
   },
-  "episodeLink" : {
-    "episode" : "Episode {episode}",
-    "season" : "Season {season}",
-    "specials" : "Specials"
+  "episodeLink": {
+    "episode": "Episode {episode}",
+    "season": "Season {season}",
+    "specials": "Specials"
   },
-  "header" : {
-    "changeLanguage" : "Change Language",
-    "closeSearch" : "Close Search",
-    "enableDarkMode" : "Enable Dark Mode",
-    "enableLightMode" : "Enable Light Mode",
-    "openSearch" : "Open Search",
-    "search" : "Search",
-    "searchGetStarted" : "Type in a query to get started!"
+  "header": {
+    "changeLanguage": "Change Language",
+    "closeSearch": "Close Search",
+    "enableDarkMode": "Enable Dark Mode",
+    "enableLightMode": "Enable Light Mode",
+    "openSearch": "Open Search",
+    "search": "Search",
+    "searchGetStarted": "Type in a query to get started!"
   },
-  "home" : {
-    "title" : "Home",
-    "videoLoadError" : "Error Loading Episodes!"
+  "home": {
+    "title": "Home",
+    "videoLoadError": "Error Loading Episodes!"
   },
-  "language" : {
-    "code" : "en",
-    "name" : "English"
+  "language": {
+    "code": "en",
+    "name": "English"
   },
-  "notImplemented" : "Not Implemented",
-  "patreonDonors" : {
-    "title" : "Patreon Donors"
+  "notImplemented": "Not Implemented",
+  "patreonDonors": {
+    "title": "Patreon Donors"
   },
-  "settings" : {
-    "title" : "Settings"
+  "settings": {
+    "title": "Settings"
   },
-  "vidstack" : {
-    "accessibility" : "Accessibility",
-    "accessibility.announcements" : "Announcements",
-    "accessibility.keyboardAnimations" : "Keyboard Animations",
-    "audio" : "Audio",
-    "audio.boost" : "Boost",
-    "auto" : "Auto",
-    "captions" : "Captions",
-    "captions.captionStyles" : "Caption Styles",
-    "captions.captionsLookLikeThis" : "Captions look like this",
-    "captions.color" : "Color",
-    "captions.displayBackground" : "Display Background",
-    "captions.family" : "Family",
-    "captions.font" : "Font",
-    "captions.off" : "Closed Captions Off",
-    "captions.on" : "Closed Captions On",
-    "captions.opacity" : "Opacity",
-    "captions.shadow" : "Shadow",
-    "captions.size" : "Size",
-    "captions.text" : "Text",
-    "captions.textBackground" : "Text Background",
-    "chapters" : "Chapters",
-    "continue" : "Continue",
-    "custom" : {
-      "autoplay" : "Autoplay",
-      "nextEpisode" : "Next Episode",
-      "previousEpisode" : "Previous Episode",
-      "source" : "Source",
-      "source.unknown" : "Unknown",
-      "source.youtubeBug" : "Due to a bug in our video player we are not able to switch away from a YouTube source without reloading the page. Would you like to reload?"
+  "vidstack": {
+    "accessibility": "Accessibility",
+    "accessibility.announcements": "Announcements",
+    "accessibility.keyboardAnimations": "Keyboard Animations",
+    "audio": "Audio",
+    "audio.boost": "Boost",
+    "auto": "Auto",
+    "captions": "Captions",
+    "captions.captionStyles": "Caption Styles",
+    "captions.captionsLookLikeThis": "Captions look like this",
+    "captions.color": "Color",
+    "captions.displayBackground": "Display Background",
+    "captions.family": "Family",
+    "captions.font": "Font",
+    "captions.off": "Closed Captions Off",
+    "captions.on": "Closed Captions On",
+    "captions.opacity": "Opacity",
+    "captions.shadow": "Shadow",
+    "captions.size": "Size",
+    "captions.text": "Text",
+    "captions.textBackground": "Text Background",
+    "chapters": "Chapters",
+    "continue": "Continue",
+    "custom": {
+      "autoplay": "Autoplay",
+      "nextEpisode": "Next Episode",
+      "previousEpisode": "Previous Episode",
+      "source": "Source",
+      "source.unknown": "Unknown",
+      "source.youtubeBug": "Due to a bug in our video player we are not able to switch away from a YouTube source without reloading the page. Would you like to reload?"
     },
-    "default" : "Default",
-    "disabled" : "Disabled",
-    "download" : "Download",
-    "enterFullscreen" : "Enter Fullscreen",
-    "enterPip" : "Enter PiP",
-    "exitFullscreen" : "Exit Fullscreen",
-    "exitPip" : "Exit PiP",
-    "live" : "LIVE",
-    "mute" : "Mute",
-    "normal" : "Normal",
-    "off" : "Off",
-    "pause" : "Pause",
-    "pip" : "PiP",
-    "play" : "Play",
-    "playback" : "Playback",
-    "playback.loop" : "Loop",
-    "quality" : "Quality",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Connected",
-      "connecting" : "Connecting",
-      "disconnected" : "Disconnected",
-      "googleCast" : "Google Cast"
+    "default": "Default",
+    "disabled": "Disabled",
+    "download": "Download",
+    "enterFullscreen": "Enter Fullscreen",
+    "enterPip": "Enter PiP",
+    "exitFullscreen": "Exit Fullscreen",
+    "exitPip": "Exit PiP",
+    "live": "LIVE",
+    "mute": "Mute",
+    "normal": "Normal",
+    "off": "Off",
+    "pause": "Pause",
+    "pip": "PiP",
+    "play": "Play",
+    "playback": "Playback",
+    "playback.loop": "Loop",
+    "quality": "Quality",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Connected",
+      "connecting": "Connecting",
+      "disconnected": "Disconnected",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Replay",
-    "reset" : "Reset",
-    "seek" : "Seek",
-    "seekBackward" : "Seek Backward",
-    "seekForward" : "Seek Forward",
-    "settings" : "Settings",
-    "skipToLive" : "Skip To Live",
-    "speed" : "Speed",
-    "track" : "Track",
-    "unmute" : "Unmute",
-    "volume" : "Volume"
+    "replay": "Replay",
+    "reset": "Reset",
+    "seek": "Seek",
+    "seekBackward": "Seek Backward",
+    "seekForward": "Seek Forward",
+    "settings": "Settings",
+    "skipToLive": "Skip To Live",
+    "speed": "Speed",
+    "track": "Track",
+    "unmute": "Unmute",
+    "volume": "Volume"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Invalid arguments: {argumentsErrorList}.",
-    "invalidDate" : "Invalid date.",
-    "invalidEnumValue" : "Invalid enum value: {optionsList}.",
-    "invalidIntersectionTypes" : "Invalid intersection types.",
-    "invalidLiteral" : "Invalid literal; expected {expected}, received {received}.",
-    "invalidReturnType" : "Invalid return type: {returnTypeErrors}.",
-    "invalidString" : "String failed {validatorType} validator.",
-    "invalidType" : "Invalid type; expected {expectedValue}, received {receivedValue}.",
-    "invalidUnion" : "Invalid union: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Invalid union discriminator.",
-    "notFinite" : "Not finite.",
-    "notMultipleOf" : "Number is not a multiple of {multipleOf}.",
-    "required" : "Required.",
-    "tooBig" : "{type} too big; maximum value is {maximum}.",
-    "tooSmall" : "{type} too small; minimum value is {minimum}.",
-    "unrecognizedKeys" : "Unrecognized keys: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Invalid arguments: {argumentsErrorList}.",
+    "invalidDate": "Invalid date.",
+    "invalidEnumValue": "Invalid enum value: {optionsList}.",
+    "invalidIntersectionTypes": "Invalid intersection types.",
+    "invalidLiteral": "Invalid literal; expected {expected}, received {received}.",
+    "invalidReturnType": "Invalid return type: {returnTypeErrors}.",
+    "invalidString": "String failed {validatorType} validator.",
+    "invalidType": "Invalid type; expected {expectedValue}, received {receivedValue}.",
+    "invalidUnion": "Invalid union: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Invalid union discriminator.",
+    "notFinite": "Not finite.",
+    "notMultipleOf": "Number is not a multiple of {multipleOf}.",
+    "required": "Required.",
+    "tooBig": "{type} too big; maximum value is {maximum}.",
+    "tooSmall": "{type} too small; minimum value is {minimum}.",
+    "unrecognizedKeys": "Unrecognized keys: {keysList}."
   }
 }

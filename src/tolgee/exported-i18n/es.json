@@ -1,119 +1,119 @@
 {
-  "downloads" : {
-    "title" : "Descargas"
+  "downloads": {
+    "title": "Descargas"
   },
-  "episodeLink" : {
-    "episode" : "Episodio {episode}",
-    "season" : "Temporada {season}",
-    "specials" : "Especiales"
+  "episodeLink": {
+    "episode": "Episodio {episode}",
+    "season": "Temporada {season}",
+    "specials": "Especiales"
   },
-  "header" : {
-    "changeLanguage" : "Cambiar idioma",
-    "closeSearch" : "Cerrar búsqueda",
-    "enableDarkMode" : "Activar modo oscuro",
-    "enableLightMode" : "Activar modo claro",
-    "openSearch" : "Abrir búsqueda",
-    "search" : "Buscar",
-    "searchGetStarted" : "¡Escribe una consulta para empezar!"
+  "header": {
+    "changeLanguage": "Cambiar idioma",
+    "closeSearch": "Cerrar búsqueda",
+    "enableDarkMode": "Activar modo oscuro",
+    "enableLightMode": "Activar modo claro",
+    "openSearch": "Abrir búsqueda",
+    "search": "Buscar",
+    "searchGetStarted": "¡Escribe una consulta para empezar!"
   },
-  "home" : {
-    "title" : "Inicio",
-    "videoLoadError" : "¡Error cargando episodios!"
+  "home": {
+    "title": "Inicio",
+    "videoLoadError": "¡Error cargando episodios!"
   },
-  "language" : {
-    "code" : "es",
-    "name" : "Español"
+  "language": {
+    "code": "es",
+    "name": "Español"
   },
-  "notImplemented" : "No implementado",
-  "patreonDonors" : {
-    "title" : "Donantes de Patreon"
+  "notImplemented": "No implementado",
+  "patreonDonors": {
+    "title": "Donantes de Patreon"
   },
-  "settings" : {
-    "title" : "Configuración"
+  "settings": {
+    "title": "Configuración"
   },
-  "vidstack" : {
-    "accessibility" : "Accesibilidad",
-    "accessibility.announcements" : "Anuncios",
-    "accessibility.keyboardAnimations" : "Animaciones de teclado",
-    "audio" : "Audio",
-    "audio.boost" : "Aumento",
-    "auto" : "Automático",
-    "captions" : "Subtítulos",
-    "captions.captionStyles" : " Estilos de subtítulos",
-    "captions.captionsLookLikeThis" : "Los subtítulos se ven así",
-    "captions.color" : "Color",
-    "captions.displayBackground" : "Fondo de pantalla",
-    "captions.family" : "Familia de fuentes",
-    "captions.font" : "Fuente",
-    "captions.off" : "Desactivar subtítulos cerrados",
-    "captions.on" : "Activar subtítulos cerrados",
-    "captions.opacity" : "Opacidad",
-    "captions.shadow" : "Sombra",
-    "captions.size" : "Tamaño",
-    "captions.text" : "Texto",
-    "captions.textBackground" : "Fondo de texto",
-    "chapters" : "Capítulos",
-    "continue" : "Continuar",
-    "custom" : {
-      "autoplay" : "Reproducción automática",
-      "nextEpisode" : "Próximo episodio",
-      "previousEpisode" : "Episodio anterior",
-      "source" : "Fuente",
-      "source.unknown" : "Desconocido",
-      "source.youtubeBug" : "Debido a un error en nuestro reproductor de video, no podemos cambiar desde una fuente de YouTube sin recargar la página. ¿Te gustaría recargar?"
+  "vidstack": {
+    "accessibility": "Accesibilidad",
+    "accessibility.announcements": "Anuncios",
+    "accessibility.keyboardAnimations": "Animaciones de teclado",
+    "audio": "Audio",
+    "audio.boost": "Aumento",
+    "auto": "Automático",
+    "captions": "Subtítulos",
+    "captions.captionStyles": " Estilos de subtítulos",
+    "captions.captionsLookLikeThis": "Los subtítulos se ven así",
+    "captions.color": "Color",
+    "captions.displayBackground": "Fondo de pantalla",
+    "captions.family": "Familia de fuentes",
+    "captions.font": "Fuente",
+    "captions.off": "Desactivar subtítulos cerrados",
+    "captions.on": "Activar subtítulos cerrados",
+    "captions.opacity": "Opacidad",
+    "captions.shadow": "Sombra",
+    "captions.size": "Tamaño",
+    "captions.text": "Texto",
+    "captions.textBackground": "Fondo de texto",
+    "chapters": "Capítulos",
+    "continue": "Continuar",
+    "custom": {
+      "autoplay": "Reproducción automática",
+      "nextEpisode": "Próximo episodio",
+      "previousEpisode": "Episodio anterior",
+      "source": "Fuente",
+      "source.unknown": "Desconocido",
+      "source.youtubeBug": "Debido a un error en nuestro reproductor de video, no podemos cambiar desde una fuente de YouTube sin recargar la página. ¿Te gustaría recargar?"
     },
-    "default" : "Predeterminado",
-    "disabled" : "Desactivado",
-    "download" : "Descargar",
-    "enterFullscreen" : "Entrar en pantalla completa",
-    "enterPip" : "Entrar en modo PIP",
-    "exitFullscreen" : "Salir de pantalla completa",
-    "exitPip" : "Salir de modo PIP",
-    "live" : "EN VIVO",
-    "mute" : "Silenciar",
-    "normal" : "Normal",
-    "off" : "Apagar",
-    "pause" : "Pausa",
-    "pip" : "PiP",
-    "play" : "Reproducir",
-    "playback" : "Reproducción",
-    "playback.loop" : "Bucle",
-    "quality" : "Calidad",
-    "remote" : {
-      "airplay" : "AirPlay",
-      "connected" : "Conectado",
-      "connecting" : "Conectando",
-      "disconnected" : "Desconectado",
-      "googleCast" : "Google Cast"
+    "default": "Predeterminado",
+    "disabled": "Desactivado",
+    "download": "Descargar",
+    "enterFullscreen": "Entrar en pantalla completa",
+    "enterPip": "Entrar en modo PIP",
+    "exitFullscreen": "Salir de pantalla completa",
+    "exitPip": "Salir de modo PIP",
+    "live": "EN VIVO",
+    "mute": "Silenciar",
+    "normal": "Normal",
+    "off": "Apagar",
+    "pause": "Pausa",
+    "pip": "PiP",
+    "play": "Reproducir",
+    "playback": "Reproducción",
+    "playback.loop": "Bucle",
+    "quality": "Calidad",
+    "remote": {
+      "airplay": "AirPlay",
+      "connected": "Conectado",
+      "connecting": "Conectando",
+      "disconnected": "Desconectado",
+      "googleCast": "Google Cast"
     },
-    "replay" : "Repetir",
-    "reset" : "Restablecer",
-    "seek" : "Buscar",
-    "seekBackward" : "Retroceder",
-    "seekForward" : "Avanzar",
-    "settings" : "Configuración",
-    "skipToLive" : "Ir a directo",
-    "speed" : "Velocidad",
-    "track" : "Pista",
-    "unmute" : "Quitar silencio",
-    "volume" : "Volumen"
+    "replay": "Repetir",
+    "reset": "Restablecer",
+    "seek": "Buscar",
+    "seekBackward": "Retroceder",
+    "seekForward": "Avanzar",
+    "settings": "Configuración",
+    "skipToLive": "Ir a directo",
+    "speed": "Velocidad",
+    "track": "Pista",
+    "unmute": "Quitar silencio",
+    "volume": "Volumen"
   },
-  "zodErrors" : {
-    "invalidArguments" : "Argumentos inválidos: {argumentsErrorList}.",
-    "invalidDate" : "Fecha inválida.",
-    "invalidEnumValue" : "Valor de enumeración inválido: {optionsList}.\n",
-    "invalidIntersectionTypes" : "Tipos de intersección no válidos.",
-    "invalidLiteral" : "Literal no válido; se esperaba {expected}, recibido {received}.",
-    "invalidReturnType" : "Tipo de retorno no válido: {returnTypeErrors}.",
-    "invalidString" : "Error en la validación de cadena tipo {validatorType}.",
-    "invalidType" : "Tipo no válido; se esperaba {expectedValue}, recibido {receivedValue}.",
-    "invalidUnion" : "Unión no válida: {unionErrorsList}.",
-    "invalidUnionDiscriminator" : "Discriminador de unión no válido.",
-    "notFinite" : "No es finito.",
-    "notMultipleOf" : "El número no es un múltiplo de {multipleOf}.",
-    "required" : "Requerido.",
-    "tooBig" : "{type} demasiado grande; el valor máximo es {maximum}.",
-    "tooSmall" : "{type} demasiado pequeño; el valor mínimo es {minimum}.",
-    "unrecognizedKeys" : "Claves no reconocidas: {keysList}."
+  "zodErrors": {
+    "invalidArguments": "Argumentos inválidos: {argumentsErrorList}.",
+    "invalidDate": "Fecha inválida.",
+    "invalidEnumValue": "Valor de enumeración inválido: {optionsList}.\n",
+    "invalidIntersectionTypes": "Tipos de intersección no válidos.",
+    "invalidLiteral": "Literal no válido; se esperaba {expected}, recibido {received}.",
+    "invalidReturnType": "Tipo de retorno no válido: {returnTypeErrors}.",
+    "invalidString": "Error en la validación de cadena tipo {validatorType}.",
+    "invalidType": "Tipo no válido; se esperaba {expectedValue}, recibido {receivedValue}.",
+    "invalidUnion": "Unión no válida: {unionErrorsList}.",
+    "invalidUnionDiscriminator": "Discriminador de unión no válido.",
+    "notFinite": "No es finito.",
+    "notMultipleOf": "El número no es un múltiplo de {multipleOf}.",
+    "required": "Requerido.",
+    "tooBig": "{type} demasiado grande; el valor máximo es {maximum}.",
+    "tooSmall": "{type} demasiado pequeño; el valor mínimo es {minimum}.",
+    "unrecognizedKeys": "Claves no reconocidas: {keysList}."
   }
 }
