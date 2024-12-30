@@ -1,6 +1,7 @@
 "use client";
 
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Title: React.FC = () => {
@@ -21,7 +22,7 @@ const Title: React.FC = () => {
         ":hover": { textDecoration: "underline" },
       }}
     >
-      <a
+      <Link
         href="/"
         onMouseEnter={handlePrefetch}
         style={{
@@ -36,7 +37,7 @@ const Title: React.FC = () => {
         }}
       >
         {isLgDown ? "TUAA" : "The Unus Annus Archive"}
-      </a>
+      </Link>
     </Typography>
   );
 };

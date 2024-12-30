@@ -2,7 +2,7 @@ import EpisodeLinkLoading from "@/components/EpisodeLink/loading";
 import { Skeleton, Tab, Tabs, Typography } from "@mui/material";
 import { NextPage } from "next";
 
-const Loading: NextPage = () => {
+const HomeLoading: NextPage = () => {
   return (
     <>
       <div style={{ display: "flex", width: "100%" }}>
@@ -44,4 +44,4 @@ const Loading: NextPage = () => {
   );
 };
 
-export default Loading;
+export default HomeLoading;

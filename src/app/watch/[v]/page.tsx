@@ -3,19 +3,17 @@ import { NextPage } from "next";
 import "@vidstack/react/player/styles/default/theme.css";
 import Player from "./_player";
 import getEpisode from "@/tools/getEpisode";
-import { IYouTubeSource, IMetadata } from "@/zodTypes";
+import { IMetadata } from "@/zodTypes";
 import getEpisodeLinks from "@/tools/getEpisodeLinks";
-import moment from "moment-with-locales-es6";
-import { getTolgee } from "@/tolgee/server";
+import Comments from "./_comments";
+import Description from "./description";
+import MomentClientLocale from "@/components/momentClientLocale";
 
 interface IParams {
   v: string;
 }
 
 const Watch: NextPage<{ params: IParams }> = async ({ params: { v: uaid } }) => {
-  const tolgee = await getTolgee();
-  const language = tolgee.getLanguage() ?? "en";
-
   try {
     const metadata: IMetadata = JSON.parse(await getEpisode(uaid));
     const episodeLinks = getEpisodeLinks(uaid);
@@ -28,10 +26,12 @@ const Watch: NextPage<{ params: IParams }> = async ({ params: { v: uaid } }) => 
             <Typography variant="h5" component="h2">
               {metadata.title}
             </Typography>
-            <Typography>{moment(metadata.releaseDate).locale(language).format("DD MMMM YYYY")}</Typography>
-            <Divider sx={{ margin: ".5rem 0" }} />
-            <div dangerouslySetInnerHTML={{ __html: metadata.description }} />
+            <Typography>
+              <MomentClientLocale date={metadata.releaseDate} type="format" format="DD MMMM YYYY" />
+            </Typography>
+            <Description description={metadata.description} />
           </Paper>
+          <Comments video={metadata} />
         </div>
       </>
     );

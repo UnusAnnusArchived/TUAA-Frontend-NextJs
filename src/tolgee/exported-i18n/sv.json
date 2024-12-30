@@ -31,6 +31,10 @@
   "settings": {
     "title": "Inställningar"
   },
+  "video": {
+    "comments": "Kommentarer",
+    "comments.edited": "redigerad {value}"
+  },
   "vidstack": {
     "accessibility": "Tillgänglighet",
     "accessibility.announcements": "Meddelanden",

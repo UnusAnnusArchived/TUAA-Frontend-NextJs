@@ -1,0 +1,12 @@
+.description {
+  a {
+    font: inherit;
+    color: var(--color);
+    text-decoration: underline;
+    text-decoration-color: var(--decoration-color);
+
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.commentText {
+  p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+  }
+
+  a {
+    margin: 0;
+    font: inherit;
+    color: var(--color);
+    text-decoration: underline;
+    text-decoration-color: var(--decoration-color);
+
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
+}

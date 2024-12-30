@@ -31,6 +31,10 @@
   "settings": {
     "title": "Mga Setting"
   },
+  "video": {
+    "comments": "Mga Komento\n",
+    "comments.edited": "inedit {value}"
+  },
   "vidstack": {
     "accessibility": "Pagkakaabot",
     "accessibility.announcements": "Mga Anunsyo",

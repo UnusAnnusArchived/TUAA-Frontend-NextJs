@@ -31,6 +31,10 @@
   "settings": {
     "title": "Nastavení"
   },
+  "video": {
+    "comments": "Komentáře",
+    "comments.edited": "upraveno {value}"
+  },
   "vidstack": {
     "accessibility": "Přístupnost",
     "accessibility.announcements": "Oznámení",

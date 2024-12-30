@@ -13,6 +13,7 @@ import { ALL_LOCALES, getStaticData } from "@/tolgee/shared";
 import { headers as useHeaders } from "next/headers";
 import Negotiator from "negotiator";
 import { Container } from "@mui/system";
+import "./styles.scss";
 
 export const metadata: Metadata = {
   title: "The Unus Annus Archive",

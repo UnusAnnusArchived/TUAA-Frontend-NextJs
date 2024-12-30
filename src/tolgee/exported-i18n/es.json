@@ -31,6 +31,10 @@
   "settings": {
     "title": "Configuración"
   },
+  "video": {
+    "comments": "Comentarios",
+    "comments.edited": "editado {value}"
+  },
   "vidstack": {
     "accessibility": "Accesibilidad",
     "accessibility.announcements": "Anuncios",

@@ -1,21 +1,16 @@
 "use client";
 
 import { IMetadata } from "@/zodTypes";
-import getBunnyEpisodeLinks, { EpisodeLinks } from "@/tools/getEpisodeLinks";
+import { EpisodeLinks } from "@/tools/getEpisodeLinks";
 import { Paper, Typography, useTheme } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import EpisodeThumbnail from "./thumbnail";
-import EpisodeLinkLoading from "./loading";
-import moment from "moment-with-locales-es6";
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import { T } from "@tolgee/react";
-import { useRecoilState } from "recoil";
 import { useInViewport } from "react-in-viewport";
-import { tolgee } from "@/tolgee/client";
 import getEpisodeLinks from "@/tools/getEpisodeLinks";
-import getEpisode from "@/tools/getEpisode";
+import MomentClientLocale from "../momentClientLocale";
 
 export interface IProps {
   episode: IMetadata;
@@ -28,7 +23,6 @@ const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason }) => {
   const ref = useRef<HTMLAnchorElement>(null);
   const { inViewport } = useInViewport(ref);
   const theme = useTheme();
-  const language = tolgee.getLanguage() ?? "en";
 
   useEffect(() => {
     if (inViewport && !episodeLinks) {
@@ -68,7 +62,7 @@ const EpisodeLink: React.FC<IProps> = ({ episode, elevation, showSeason }) => {
               ]
             : ""}
           <T keyName="episodeLink.episode" params={{ episode: episode.episode.toString() }} /> -{" "}
-          {moment(episode.releaseDate).locale(language).format("Do MMM YYYY")}
+          <MomentClientLocale date={episode.releaseDate} type="format" format="Do MMM YYYY" />
         </Typography>
       </Paper>
     </Link>
