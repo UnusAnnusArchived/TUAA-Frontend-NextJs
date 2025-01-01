@@ -28,7 +28,7 @@ export const getTolgeeInstance = cache(async (locale: string) => {
 });
 
 export const getTolgee = async () => {
-  const cookies = useCookies();
+  const cookies = await useCookies();
 
   const lang = cookies.get("lang")?.value ?? "en";
 

@@ -8,12 +8,15 @@ import getEpisodeLinks from "@/tools/getEpisodeLinks";
 import Comments from "./_comments";
 import Description from "./description";
 import MomentClientLocale from "@/components/momentClientLocale";
+import { useParams } from "next/navigation";
 
-interface IParams {
+type IParams = {
   v: string;
-}
+};
 
-const Watch: NextPage<{ params: IParams }> = async ({ params: { v: uaid } }) => {
+const Watch: NextPage = async () => {
+  const { v: uaid } = useParams<IParams>();
+
   try {
     const metadata: IMetadata = JSON.parse(await getEpisode(uaid));
     const episodeLinks = getEpisodeLinks(uaid);

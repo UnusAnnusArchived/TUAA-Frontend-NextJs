@@ -2,7 +2,7 @@
 
 import { useTolgee } from "@tolgee/react";
 import moment from "moment-with-locales-es6";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type JSX } from "react";
 import T from "../T";
 
 interface IProps {

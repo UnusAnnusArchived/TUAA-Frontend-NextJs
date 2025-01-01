@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 };
 
 const Layout: ILayout = async ({ children }) => {
-  const cookies = useCookies();
-  const headers = useHeaders();
+  const cookies = await useCookies();
+  const headers = await useHeaders();
 
   let lang = cookies.get("lang")?.value;
 
