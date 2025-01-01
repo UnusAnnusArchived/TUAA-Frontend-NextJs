@@ -4,10 +4,10 @@ import * as React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import NextAppDirEmotionCacheProvider from "./EmotionCache";
-import useColorScheme from "#/useColorScheme";
+import useInitialTheme from "@/hooks/useTheme";
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
-  const [[theme]] = useColorScheme();
+  const theme = useInitialTheme();
 
   return (
     <NextAppDirEmotionCacheProvider options={{ key: "mui" }}>

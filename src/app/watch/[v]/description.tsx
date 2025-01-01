@@ -1,15 +1,15 @@
 "use client";
 
-import useColorScheme from "@/hooks/useColorScheme";
 import { Divider } from "@mui/material";
 import styles from "./description.module.scss";
+import { useColorScheme } from "@/hooks/localStorageHooks";
 
 interface IProps {
   description: string;
 }
 
 const Description: React.FC<IProps> = ({ description }) => {
-  const [[_, colorScheme]] = useColorScheme();
+  const [colorScheme] = useColorScheme();
 
   if (description === "") {
     return <></>;

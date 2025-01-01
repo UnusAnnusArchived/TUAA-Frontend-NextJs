@@ -2,7 +2,7 @@
 
 import fs from "fs";
 
-const getLanguages = () => {
+const getLanguages = async () => {
   return fs.readdirSync("src/tolgee/exported-i18n").map((value) => value.replace(".json", ""));
 };
 
@@ -11,8 +11,8 @@ export interface Language {
   code: string;
 }
 
-export const getLanguageInfo = () => {
-  const languages = getLanguages();
+export const getLanguageInfo = async () => {
+  const languages = await getLanguages();
 
   return languages.map((code) => {
     const language: { language: Language } = JSON.parse(
@@ -21,15 +21,6 @@ export const getLanguageInfo = () => {
 
     return language.language;
   });
-};
-
-//Same function, different types; when `getLanguages` is called in a client component, it will return an async function even though the types don't call for that, so thats what this is for.
-export const getLanguagesClient = async () => {
-  return getLanguages();
-};
-
-export const getLanguageInfoClient = async () => {
-  return getLanguageInfo();
 };
 
 export default getLanguages;

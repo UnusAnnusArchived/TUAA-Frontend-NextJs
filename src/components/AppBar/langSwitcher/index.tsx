@@ -1,7 +1,7 @@
 "use client";
 
 import { tolgee } from "@/tolgee/client";
-import { getLanguageInfoClient, Language } from "@/tolgee/getLanguages";
+import { getLanguageInfo, Language } from "@/tolgee/getLanguages";
 import setLanguage from "@/tools/setLanguage";
 import { Check, Translate } from "@mui/icons-material";
 import { IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
@@ -24,7 +24,7 @@ const LangSwitcher = () => {
 
   useEffect(() => {
     (async () => {
-      const languages = await getLanguageInfoClient();
+      const languages = await getLanguageInfo();
 
       setLanguages(languages);
     })();
@@ -46,6 +46,7 @@ const LangSwitcher = () => {
                   setLanguage(language.code);
                   setSelectedLanguage(language.code);
                 }}
+                key={language.code}
               >
                 {language.name}
                 {selectedLanguage === language.code && (

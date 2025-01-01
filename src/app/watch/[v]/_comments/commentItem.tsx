@@ -6,12 +6,12 @@ import { Avatar, Paper, Tooltip, Typography } from "@mui/material";
 import MarkdownIt from "markdown-it";
 import mdIterator from "markdown-it-for-inline";
 import styles from "./commentItem.module.scss";
-import useColorScheme from "@/hooks/useColorScheme";
 import pb from "@/pb/client";
 import MomentClientLocale, { useLanguage } from "@/components/momentClientLocale";
 import TC from "@/components/T/tClient";
 import { useTolgee } from "@tolgee/react";
 import moment from "moment-with-locales-es6";
+import { useColorScheme } from "@/hooks/localStorageHooks";
 
 const md = MarkdownIt({ html: false, xhtmlOut: false, breaks: true, langPrefix: "", linkify: true })
   .disable(["image", "link"])
@@ -56,7 +56,7 @@ interface IProps {
 }
 
 const CommentItem: React.FC<IProps> = ({ comment, video }) => {
-  const [[_, colorScheme]] = useColorScheme();
+  const [colorScheme] = useColorScheme();
   const tolgee = useTolgee(["language"]);
   const language = tolgee.getLanguage();
 

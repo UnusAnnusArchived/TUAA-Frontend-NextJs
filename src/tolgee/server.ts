@@ -1,14 +1,17 @@
 import { cache } from "react";
 import { cookies as useCookies } from "next/headers";
 
-import { TolgeeBase, ALL_LOCALES, getStaticData } from "./shared";
+import { TolgeeBase, getStaticData } from "./shared";
+import getLanguages from "./getLanguages";
 
 // wrapping in `cache` function will ensure
 // that we are sharing the instance within a single request
 export const getTolgeeInstance = cache(async (locale: string) => {
+  const allLocales = await getLanguages();
+
   const tolgee = TolgeeBase().init({
     // include all static data on the server, as the bundle size is not a concern here
-    staticData: await getStaticData(ALL_LOCALES),
+    staticData: await getStaticData(allLocales),
     observerOptions: {
       // include full information about the key into the watermark
       // make sure you have newest SDK for this feature

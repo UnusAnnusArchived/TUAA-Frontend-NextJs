@@ -1,10 +1,6 @@
 import { DevTools, Tolgee, FormatSimple } from "@tolgee/web";
-import getLanguages from "./getLanguages";
 import config from "@/config.json";
-import endpoints from "@/endpoints.json"
-import isDev from "./isDev";
-
-export const ALL_LOCALES = getLanguages();
+import endpoints from "@/endpoints.json";
 
 export const DEFAULT_LOCALE = "en";
 
@@ -29,7 +25,7 @@ export function TolgeeBase() {
       .use(DevTools())
       // Preset shared settings
       .updateDefaults({
-        apiKey: isDev() ? config.tolgee.devApiKey : config.tolgee.prodApiKey,
+        apiKey: config.tolgee.prodApiKey,
         apiUrl: endpoints.tolgee,
       })
   );

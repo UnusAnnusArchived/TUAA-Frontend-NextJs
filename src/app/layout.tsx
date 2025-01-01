@@ -9,11 +9,12 @@ import GeistProvider from "$/GeistProdivder";
 import ScrollHelper from "@/components/ScrollHelper";
 import { cookies as useCookies } from "next/headers";
 import { TolgeeNextProvider } from "@/tolgee/client";
-import { ALL_LOCALES, getStaticData } from "@/tolgee/shared";
+import { getStaticData } from "@/tolgee/shared";
 import { headers as useHeaders } from "next/headers";
 import Negotiator from "negotiator";
 import { Container } from "@mui/system";
 import "./styles.scss";
+import getLanguages from "@/tolgee/getLanguages";
 
 export const metadata: Metadata = {
   title: "The Unus Annus Archive",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 const Layout: ILayout = async ({ children }) => {
   const cookies = await useCookies();
   const headers = await useHeaders();
+  const allLocales = await getLanguages();
 
   let lang = cookies.get("lang")?.value;
 
@@ -30,7 +32,7 @@ const Layout: ILayout = async ({ children }) => {
     const acceptLanguageHeader = headers.get("Accept-Language") ?? "en-US,en;q=0.9";
     const negotiator = new Negotiator({ headers: { "accept-language": acceptLanguageHeader } });
 
-    lang = negotiator.language(ALL_LOCALES) ?? "en";
+    lang = negotiator.language(allLocales) ?? "en";
   }
 
   const locales = await getStaticData([lang]);
