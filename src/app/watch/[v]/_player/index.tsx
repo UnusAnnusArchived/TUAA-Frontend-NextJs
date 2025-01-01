@@ -9,6 +9,7 @@ import { useTolgee } from "@tolgee/react";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
 import PlayerLayout from "./layout";
+import LoadingPlayer from "./loading";
 
 interface IProps {
   episode: IMetadata;
@@ -79,35 +80,37 @@ const Player: React.FC<IProps> = ({ episode, episodeLinks }) => {
     }
   }, [srcId, directResolutionWidth]);
 
+  if (src === "") {
+    return <LoadingPlayer />;
+  }
   return (
-    <>
-      <MediaPlayer
-        title={episode.title}
-        playsInline
-        src={src}
-        ref={player}
-        style={{
-          aspectRatio: 16 / 9,
-          width: "100%",
-          height: "auto",
-          overflow: "hidden",
-          backgroundColor: "#000000",
-          flexDirection: "column",
-        }}
-      >
-        <MediaProvider style={{ position: "absolute" }}>
-          <Poster className="vds-poster" src={episodeLinks.thumbnail} alt={`Thumbnail for ${episode.uaid}`} />
-        </MediaProvider>
+    <MediaPlayer
+      title={episode.title}
+      playsInline
+      src={src}
+      ref={player}
+      style={{
+        aspectRatio: 16 / 9,
+        width: "100%",
+        height: "auto",
+        overflow: "hidden",
+        backgroundColor: "#000000",
+        flexDirection: "column",
+      }}
+    >
+      <MediaProvider style={{ position: "absolute" }}>
+        {/* This is causing errors (An empty string ("") was passed to the src attribute.) but we have no control over it, it must be something vidstack is doing bc it's impossible for episodeLinks.thumbnail to be "". */}
+        <Poster className="vds-poster" src={episodeLinks.thumbnail} alt={`Thumbnail for ${episode.uaid}`} />
+      </MediaProvider>
 
-        <PlayerLayout
-          episode={episode}
-          srcId={srcId}
-          switchSources={switchSources}
-          currentResolutionWidth={directResolutionWidth}
-          setResolutionWidth={setDirectResolutionWidth}
-        />
-      </MediaPlayer>
-    </>
+      <PlayerLayout
+        episode={episode}
+        srcId={srcId}
+        switchSources={switchSources}
+        currentResolutionWidth={directResolutionWidth}
+        setResolutionWidth={setDirectResolutionWidth}
+      />
+    </MediaPlayer>
   );
 };
 

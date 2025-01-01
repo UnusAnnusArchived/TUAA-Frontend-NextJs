@@ -12,6 +12,7 @@ import TC from "@/components/T/tClient";
 import { useTolgee } from "@tolgee/react";
 import moment from "moment-with-locales-es6";
 import { useColorScheme } from "@/hooks/localStorageHooks";
+import { useIsClient } from "@uidotdev/usehooks";
 
 const md = MarkdownIt({ html: false, xhtmlOut: false, breaks: true, langPrefix: "", linkify: true })
   .disable(["image", "link"])
@@ -56,13 +57,12 @@ interface IProps {
 }
 
 const CommentItem: React.FC<IProps> = ({ comment, video }) => {
-  const [colorScheme] = useColorScheme();
   const tolgee = useTolgee(["language"]);
   const language = tolgee.getLanguage();
 
   return (
     <Paper sx={{ margin: "1rem 0", padding: "1rem", display: "flex", gap: ".5rem" }} elevation={2}>
-      <Avatar src={pb.files.getUrl(comment.expand.user, comment.expand.user.avatar)}>
+      <Avatar src={pb.files.getURL(comment.expand.user, comment.expand.user.avatar)}>
         {comment.expand.user.name
           .split(" ")
           .map((username) => username[0])
@@ -106,18 +106,45 @@ const CommentItem: React.FC<IProps> = ({ comment, video }) => {
             </Tooltip>
           )}
         </span>
-        <div
-          className={styles.commentText}
-          style={
-            colorScheme === "dark"
-              ? // @ts-ignore
-                { "--color": "#ffffff", "--decoration-color": "rgba(255, 255, 255, 0.4)" }
-              : { "--color": "#000000", "--decoration-color": "rgba(0, 0, 0, 0.4)" }
-          }
-          dangerouslySetInnerHTML={{ __html: markdownToHTML(comment.markdown, video.uaid) }}
-        />
+        <CommentText html={markdownToHTML(comment.markdown, video.uaid)} />
       </div>
     </Paper>
+  );
+};
+
+const CommentText: React.FC<{ html: string }> = ({ html }) => {
+  const isClient = useIsClient();
+
+  if (isClient) {
+    return <CommentTextClient html={html} />;
+  }
+
+  return (
+    <div
+      className={styles.commentText}
+      style={
+        // @ts-ignore
+        { "--color": "#ffffff", "--decoration-color": "rgba(255, 255, 255, 0.4)" }
+      }
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
+};
+
+const CommentTextClient: React.FC<{ html: string }> = ({ html }) => {
+  const [colorScheme] = useColorScheme();
+
+  return (
+    <div
+      className={styles.commentText}
+      style={
+        colorScheme === "dark"
+          ? // @ts-ignore
+            { "--color": "#ffffff", "--decoration-color": "rgba(255, 255, 255, 0.4)" }
+          : { "--color": "#000000", "--decoration-color": "rgba(0, 0, 0, 0.4)" }
+      }
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 };
 

@@ -6,8 +6,12 @@ import { getTranslate } from "@/tolgee/server";
 import { IMetadata } from "@/zodTypes";
 import { ReadonlyURLSearchParams } from "next/navigation";
 
+interface IParams {
+  season?: string;
+}
+
 interface IProps {
-  params: Promise<Record<string, string | undefined>>;
+  params: Promise<IParams>;
 }
 
 const Home: NextPage<IProps> = async ({ params }) => {

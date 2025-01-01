@@ -7,8 +7,21 @@ import { Tooltip } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { T } from "@tolgee/react";
 import { useColorScheme } from "@/hooks/localStorageHooks";
+import { useIsClient } from "@uidotdev/usehooks";
 
-export function ThemeToggle() {
+const ThemeToggle: React.FC = () => {
+  const isClient = useIsClient();
+
+  if (!isClient) {
+    return <></>;
+  }
+
+  return <ThemeToggleMain />;
+};
+
+export default ThemeToggle;
+
+const ThemeToggleMain: React.FC = () => {
   const [colorScheme, setColorScheme] = useColorScheme();
 
   const handleToggleTheme = () => {
@@ -24,4 +37,4 @@ export function ThemeToggle() {
       </IconButton>
     </Tooltip>
   );
-}
+};

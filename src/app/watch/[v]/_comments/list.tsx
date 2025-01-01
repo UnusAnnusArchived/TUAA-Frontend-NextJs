@@ -17,7 +17,7 @@ const CommentList: React.FC<IProps> = async ({ video }) => {
   return (
     <>
       {comments.map((comment) => {
-        return <CommentItem comment={comment} video={video} />;
+        return <CommentItem comment={comment} video={video} key={comment.id} />;
       })}
     </>
   );

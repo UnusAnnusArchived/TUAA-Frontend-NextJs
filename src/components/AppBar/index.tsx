@@ -1,5 +1,5 @@
 import { AppBar as MuiAppBar, Toolbar, Typography } from "@mui/material";
-import { ThemeToggle } from "./themeToggle";
+import ThemeToggle from "./themeToggle";
 import { Menu, MobileMenu } from "./menu";
 import Title from "./title";
 import SearchButton from "./search/searchButton";

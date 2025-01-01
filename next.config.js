@@ -11,7 +11,7 @@ const withPWA = require("next-pwa")({
 
 module.exports = withPWA({
   webpack: (config) => {
-    config.externals.push("@node-rs/argon2", "@node-rs/bcrypt");
+    // config.externals.push("@node-rs/argon2", "@node-rs/bcrypt");
     return config;
   },
   reactStrictMode: true,
@@ -20,4 +20,7 @@ module.exports = withPWA({
   },
   productionBrowserSourceMaps: true,
   output: "standalone",
+  experimental: {
+    turbo: {},
+  },
 });

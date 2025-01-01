@@ -8,35 +8,36 @@ import getEpisodeLinks from "@/tools/getEpisodeLinks";
 import Comments from "./_comments";
 import Description from "./description";
 import MomentClientLocale from "@/components/momentClientLocale";
-import { useParams } from "next/navigation";
 
-type IParams = {
+interface IParams {
   v: string;
-};
+}
 
-const Watch: NextPage = async () => {
-  const { v: uaid } = useParams<IParams>();
+interface IProps {
+  params: Promise<IParams>;
+}
+
+const Watch: NextPage<IProps> = async ({ params }) => {
+  const { v: uaid } = await params;
 
   try {
     const metadata: IMetadata = JSON.parse(await getEpisode(uaid));
     const episodeLinks = getEpisodeLinks(uaid);
 
     return (
-      <>
-        <div style={{ width: "100%" }}>
-          <Player episode={metadata} episodeLinks={episodeLinks} />
-          <Paper sx={{ padding: "1rem", marginTop: "1rem" }}>
-            <Typography variant="h5" component="h2">
-              {metadata.title}
-            </Typography>
-            <Typography>
-              <MomentClientLocale date={metadata.releaseDate} type="format" format="DD MMMM YYYY" />
-            </Typography>
-            <Description description={metadata.description} />
-          </Paper>
-          <Comments video={metadata} />
-        </div>
-      </>
+      <div style={{ width: "100%" }}>
+        <Player episode={metadata} episodeLinks={episodeLinks} />
+        <Paper sx={{ padding: "1rem", marginTop: "1rem" }}>
+          <Typography variant="h5" component="h2">
+            {metadata.title}
+          </Typography>
+          <Typography>
+            <MomentClientLocale date={metadata.releaseDate} type="format" format="DD MMMM YYYY" />
+          </Typography>
+          <Description description={metadata.description} />
+        </Paper>
+        <Comments video={metadata} />
+      </div>
     );
   } catch (err: any) {
     console.error(err);

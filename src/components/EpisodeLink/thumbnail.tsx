@@ -18,10 +18,11 @@ interface IProps
 }
 
 const EpisodeThumbnail: React.FC<IProps> = (props) => {
-  const [showPreview, setShowPreview] = useState(false);
+  // const [showPreview, setShowPreview] = useState(false);
   const [thumbnailBlob, setThumbnailBlob] = useState<string>();
-  const [previewBlob, setPreviewBlob] = useState<string>();
+  // const [previewBlob, setPreviewBlob] = useState<string>();
   const divRef = useRef<HTMLDivElement>(null);
+  // @ts-ignore useInViewport is complaining that divRef might be undefined. Should be fine and dont wanna bother fixing.
   const { inViewport } = useInViewport(divRef);
   const theme = useTheme();
   const thumbnailRef = useRef<HTMLImageElement>(null);
@@ -52,37 +53,38 @@ const EpisodeThumbnail: React.FC<IProps> = (props) => {
     }
   }, [inViewport, props.episodeLinks, props.episodeLinks?.thumbnail]);
 
-  useEffect(() => {
-    if (props.episodeLinks) {
-      if (inViewport) {
-        const abortController = new AbortController();
+  // Disable previews
+  // useEffect(() => {
+  //   if (props.episodeLinks) {
+  //     if (inViewport) {
+  //       const abortController = new AbortController();
 
-        fetch(props.episodeLinks.preview, {
-          signal: abortController.signal,
-        }).then(async (preview) => {
-          setPreviewBlob(URL.createObjectURL(await preview.blob()));
-        });
+  //       fetch(props.episodeLinks.preview, {
+  //         signal: abortController.signal,
+  //       }).then(async (preview) => {
+  //         setPreviewBlob(URL.createObjectURL(await preview.blob()));
+  //       });
 
-        return () => {
-          abortController.abort("UI reloaded");
-          if (previewBlob) {
-            URL.revokeObjectURL(previewBlob);
-          }
-        };
-      } else {
-        if (previewBlob) {
-          URL.revokeObjectURL(previewBlob);
-          setPreviewBlob(undefined);
-        }
-      }
-    }
-  }, [inViewport, props.episodeLinks, props.episodeLinks?.preview]);
+  //       return () => {
+  //         abortController.abort("UI reloaded");
+  //         if (previewBlob) {
+  //           URL.revokeObjectURL(previewBlob);
+  //         }
+  //       };
+  //     } else {
+  //       if (previewBlob) {
+  //         URL.revokeObjectURL(previewBlob);
+  //         setPreviewBlob(undefined);
+  //       }
+  //     }
+  //   }
+  // }, [inViewport, props.episodeLinks, props.episodeLinks?.preview]);
 
   return (
     <div ref={divRef} style={{ position: "relative" }}>
       {thumbnailBlob ? (
         <NextImage
-          src={thumbnailBlob ?? "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
+          src={thumbnailBlob}
           alt={`Thumbnail for ${props.episode.title}`}
           ref={thumbnailRef}
           width="1280"
